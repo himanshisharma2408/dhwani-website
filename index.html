@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dhwani RIS — home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#15100f; --cream:#f4f0e8; --paper:#faf6ef; --beige:#eae4d9; --beige-h:#e3dccd;
+  --maroon:#8a1420; --maroon-2:#6d0f1a; --orange:#d9722e; --orange-soft:#eab588;
+  --muted:#6f6157; --muted-d:rgba(255,255,255,.62); --line:#e2d8c8; --line-d:rgba(255,255,255,.14); --tint:#f6ece0;
+  --serif:'Newsreader',Georgia,serif; --sans:'Inter',system-ui,sans-serif;
+  --max:1160px; --pad:72px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.62;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 34px}
+h1,h2,h3,h4,h5{font-family:var(--serif);font-weight:500;letter-spacing:-.012em;line-height:1.1}
+em{font-style:italic}
+.eyebrow{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--maroon)}
+.eyebrow.on-dark{color:var(--orange-soft)}
+.pill{display:inline-flex;align-items:center;gap:9px;font-weight:500;font-size:.95rem;padding:14px 26px;border-radius:999px;border:1.5px solid transparent;cursor:pointer;transition:.22s;font-family:var(--sans)}
+.pill-primary{background:var(--maroon);color:#fff}.pill-primary:hover{background:var(--maroon-2)}
+.pill-dark{background:transparent;border-color:rgba(255,255,255,.34);color:#fff}.pill-dark:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.arw{transition:transform .2s}.pill:hover .arw,.tlink:hover .arw{transform:translateX(3px)}
+.tlink{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.9rem;color:var(--maroon)}
+.section{padding:var(--pad) 0}
+.shead{font-size:clamp(2.1rem,3.9vw,3rem);font-weight:500}
+
+/* ============ HERO ============ */
+.hero{position:relative;border-radius:28px;margin:16px;overflow:hidden;min-height:648px;display:flex;flex-direction:column;background:var(--ink)}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg .slide{position:absolute;inset:0;background-size:cover;background-position:center 28%;opacity:0;animation:heroFade 24s infinite}
+.hero-bg .slide:nth-child(1){background-image:url('https://images.unsplash.com/photo-1609252509229-364936a1d1a2?q=80&w=2000&auto=format&fit=crop')}
+.hero-bg .slide:nth-child(2){background-image:url('https://images.unsplash.com/photo-1623211269755-569fec0536d2?q=80&w=2000&auto=format&fit=crop');animation-delay:6s}
+.hero-bg .slide:nth-child(3){background-image:url('https://images.unsplash.com/photo-1707721690544-781fe6ede937?q=80&w=2000&auto=format&fit=crop');animation-delay:12s}
+.hero-bg .slide:nth-child(4){background-image:url('https://images.unsplash.com/photo-1597743622436-c6b5661731e0?q=80&w=2000&auto=format&fit=crop');animation-delay:18s}
+@keyframes heroFade{0%{opacity:0}2.5%{opacity:1}22%{opacity:1}25%{opacity:0}100%{opacity:0}}
+.hero-veil{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(18,12,11,.66) 0%,rgba(18,12,11,.2) 32%,rgba(18,12,11,.9) 100%)}
+@media(prefers-reduced-motion:reduce){.hero-bg .slide{animation:none}.hero-bg .slide:nth-child(1){opacity:1}}
+#topnav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .3s ease,box-shadow .3s ease}
+#topnav .nav-in{display:flex;align-items:center;justify-content:space-between;padding:28px 40px;gap:20px}
+#topnav .logo{height:56px;transition:.25s;display:block}
+#topnav .logo-dark{display:none}
+#topnav .links{display:flex;gap:32px;align-items:center}
+#topnav .links a{font-size:.92rem;color:rgba(255,255,255,.9)}#topnav .links a:hover{color:#fff}
+#topnav .nav-right{display:flex;align-items:center;gap:14px}
+#topnav .navpill{background:var(--maroon);color:#fff;padding:11px 21px;border-radius:999px;font-weight:500;white-space:nowrap}#topnav .navpill:hover{background:var(--maroon-2)}
+#topnav .menu-btn{display:none;background:none;border:none;color:#fff;cursor:pointer;padding:2px;line-height:0}
+#topnav.scrolled,#topnav.open{background:rgba(244,240,232,.96);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line),0 8px 24px rgba(21,16,15,.05)}
+#topnav.scrolled .nav-in{padding:11px 40px}
+#topnav.scrolled .logo{height:50px}
+#topnav.scrolled .logo-white,#topnav.open .logo-white{display:none}
+#topnav.scrolled .logo-dark,#topnav.open .logo-dark{display:block}
+#topnav.scrolled .links a{color:var(--muted)}#topnav.scrolled .links a:hover{color:var(--ink)}
+#topnav.scrolled .menu-btn,#topnav.open .menu-btn{color:var(--ink)}
+@media(max-width:960px){
+  #topnav .menu-btn{display:block}
+  #topnav .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;background:var(--paper);padding:4px 40px 16px;gap:0;border-top:1px solid var(--line)}
+  #topnav.open .links{display:flex}
+  #topnav .links a{color:var(--ink);padding:14px 0;font-size:1rem;border-bottom:1px solid var(--line)}
+  #topnav .links a:last-child{border-bottom:none}
+}
+.hbody{position:relative;z-index:2;margin-top:auto;padding:0 42px 30px}
+.hgrid{display:grid;grid-template-columns:1.4fr .82fr;gap:44px;align-items:end}
+.hbody h1{color:#fff;font-size:clamp(2.9rem,5.8vw,4.9rem);font-weight:500;margin-top:18px;line-height:1.02}
+.hbody h1 em{color:var(--orange-soft)}
+.hside p{color:rgba(255,255,255,.86);font-size:1.03rem;margin-bottom:24px}
+.hside .btns{display:flex;gap:12px;flex-wrap:wrap}
+.hcreds{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.14);margin:0 42px;padding:18px 0 24px;font-size:.82rem;letter-spacing:.03em;color:rgba(255,255,255,.6)}
+
+/* ============ DPDP STRIP ============ */
+.dpdp{max-width:var(--max);margin:38px auto 0;padding:0 34px}
+.dpdp-in{display:flex;align-items:center;gap:20px;flex-wrap:wrap;background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--orange);border-radius:14px;padding:18px 24px}
+.dpdp-badge{display:inline-flex;align-items:center;gap:7px;font-size:.68rem;letter-spacing:.12em;font-weight:700;text-transform:uppercase;color:var(--maroon);background:var(--tint);padding:7px 13px;border-radius:8px;white-space:nowrap}
+.dpdp-in p{font-size:.96rem;flex:1;min-width:250px;color:var(--muted)}
+.dpdp-in p b{color:var(--ink);font-weight:600}
+
+/* ============ WHAT WE DO ============ */
+.wwd h2{margin-bottom:52px}
+.grp{margin-bottom:30px}
+.grp:last-child{margin-bottom:0}
+.grp h4{font-size:1.28rem;font-weight:500;color:var(--ink);margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.cgrid{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
+.ocard{display:flex;flex-direction:column;min-height:300px;background:var(--beige);border-radius:8px;padding:34px 30px 30px;transition:.2s}
+.ocard:hover{background:var(--beige-h)}
+.ocard .ic{flex:1;display:flex;align-items:center;justify-content:center;color:#4a423c}
+.ocard .ic svg{width:78px;height:78px;stroke-width:1.05}
+.ocard h5{font-size:1.34rem;font-weight:500;margin-bottom:9px;color:var(--ink)}
+.ocard p{color:var(--muted);font-size:.92rem;line-height:1.5;max-width:26ch}
+.ocard.fill{background:var(--maroon)}
+.ocard.fill:hover{background:var(--maroon-2)}
+.ocard.fill .ic{color:#fff}
+.ocard.fill h5{color:#fff}
+.ocard.fill p{color:rgba(255,255,255,.82)}
+.ocard.span2{grid-column:span 2}
+.ocard.span-all{grid-column:1/-1;min-height:0;padding:34px 30px;align-items:center;text-align:center}
+.ocard.span-all .ic{flex:0 0 auto;margin-bottom:16px}
+.ocard.span-all .ic svg{width:38px;height:38px}
+.ocard.span-all p{max-width:none}
+
+/* ============ WHO WE SERVE ============ */
+.serve h2{margin-bottom:44px}
+.serve-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.scard{background:var(--beige);border-radius:10px;padding:32px 30px;transition:.2s;display:flex;flex-direction:column}
+.scard:hover{background:var(--beige-h)}
+.scard .ic{color:var(--ink);margin-bottom:24px}
+.scard h3{font-size:1.5rem;font-weight:500;margin-bottom:10px}
+.scard p{color:var(--muted);font-size:.97rem;flex:1;margin-bottom:18px}
+.scard .tags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:20px}
+.scard .tags span{font-size:.74rem;font-weight:600;color:var(--maroon);background:var(--tint);padding:5px 11px;border-radius:999px}
+
+/* ============ TRUSTED / MARQUEE ============ */
+.trusted{text-align:center;padding:22px 0 78px}
+.trusted h4{font-size:.9rem;font-weight:500;color:var(--muted);letter-spacing:.02em;margin-bottom:34px;font-family:var(--sans)}
+.marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.mtrack{display:flex;align-items:center;gap:60px;width:max-content}
+.mtrack.l{animation:scrollx 48s linear infinite}
+.mtrack.r{animation:scrollx 54s linear infinite reverse;margin-top:26px}
+@keyframes scrollx{to{transform:translateX(-50%)}}
+.mtrack img{height:30px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.5}
+
+/* ============ TESTIMONIALS ============ */
+.tm{text-align:center;padding:20px 0 var(--pad)}
+.tm .qmark{font-family:var(--serif);font-size:4rem;line-height:.4;color:var(--maroon);opacity:.32}
+.tm-track{position:relative;min-height:210px;max-width:920px;margin:24px auto 0}
+.tm-slide{position:absolute;inset:0;opacity:0;transition:opacity .5s ease;pointer-events:none}
+.tm-slide.on{opacity:1;pointer-events:auto;position:relative}
+.tm-slide .q{font-family:var(--serif);font-weight:400;font-size:clamp(1.6rem,3vw,2.35rem);line-height:1.32}
+.tm-slide .q em{color:var(--maroon)}
+.tm-slide .who{margin-top:28px}
+.tm-slide .who b{font-family:var(--serif);font-size:1.15rem;font-weight:500;display:block}
+.tm-slide .who span{font-size:.88rem;color:var(--muted)}
+.tm-arrows{display:flex;gap:12px;justify-content:center;margin-top:36px}
+.tm-arrows button{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--line);background:transparent;color:var(--maroon);cursor:pointer;font-size:1.1rem;transition:.2s}
+.tm-arrows button:hover{background:var(--maroon);color:#fff;border-color:var(--maroon)}
+
+/* ============ CTA ============ */
+.cta{position:relative;border-radius:28px;margin:0 16px;text-align:center;overflow:hidden;color:#fff;
+  background:linear-gradient(rgba(18,12,11,.84),rgba(18,12,11,.9)),url('https://images.unsplash.com/photo-1707721690544-781fe6ede937?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat,var(--ink)}
+.cta .in{position:relative;z-index:2;padding:94px 0}
+.cta h2{font-size:clamp(2.1rem,4.2vw,3.1rem);font-weight:500;color:#fff;margin-bottom:30px;max-width:18ch;margin-left:auto;margin-right:auto}
+.cta-chips{display:flex;gap:11px;justify-content:center;flex-wrap:wrap;margin-bottom:34px}
+.cta-chips a{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.26);color:#fff;font-size:.92rem;font-weight:450;padding:11px 19px;border-radius:999px;transition:.2s}
+.cta-chips a:hover{background:#fff;color:var(--ink)}
+
+/* ============ FOOTER ============ */
+footer{background:var(--ink);color:var(--muted-d);border-radius:28px;margin:16px;padding:76px 0 40px}
+.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;gap:36px}
+.fbrand .flogo{height:40px;margin-bottom:18px}
+.fbrand .tag{font-size:.92rem;max-width:250px;color:var(--muted-d)}
+.fbadges{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}
+.fbadges span{font-size:.66rem;font-weight:600;letter-spacing:.05em;color:var(--orange-soft);border:1px solid var(--line-d);border-radius:6px;padding:5px 9px}
+.fsoc{display:flex;gap:16px;margin-top:20px}
+.fsoc a{font-size:.82rem;color:var(--muted-d);font-weight:500}.fsoc a:hover{color:#fff}
+footer h5{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--orange-soft);margin-bottom:16px;font-weight:600;font-family:var(--sans)}
+footer ul{list-style:none}footer li{margin-bottom:10px}
+footer li a{font-size:.88rem;color:var(--muted-d)}footer li a:hover{color:#fff}
+.frow2{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;gap:36px;margin-top:48px}
+.fnews{grid-column:span 2;background:rgba(255,255,255,.04);border:1px solid var(--line-d);border-radius:16px;padding:24px}
+.fnews h5{margin-bottom:8px}.fnews p{font-size:.86rem;color:var(--muted-d);margin-bottom:14px}
+.fnews form{display:flex;gap:8px}
+.fnews input{flex:1;border:1px solid var(--line-d);border-radius:10px;padding:11px 13px;font-family:var(--sans);font-size:.88rem;background:rgba(255,255,255,.05);color:#fff}
+.fnews input::placeholder{color:rgba(255,255,255,.4)}
+.fcontact{font-size:.88rem;color:var(--muted-d);line-height:1.9;margin-top:12px}
+.fcontact a{color:var(--orange-soft);font-weight:500}
+.foot-bot{border-top:1px solid var(--line-d);margin-top:52px;padding-top:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.82rem;color:rgba(255,255,255,.45)}
+
+@media(max-width:960px){
+  .hgrid{grid-template-columns:1fr;gap:22px}
+  .cgrid,.serve-grid,.fgrid,.frow2{grid-template-columns:1fr 1fr}
+  .ocard.span2{grid-column:auto}.fnews{grid-column:span 2}
+}
+@media(max-width:640px){
+  .wrap{padding:0 22px}
+  #topnav .nav-in{padding:14px 22px}
+  #topnav .links{padding:4px 22px 16px}
+  #topnav .logo{height:50px}#topnav.scrolled .logo{height:46px}
+  .hero{margin:10px;border-radius:20px;min-height:540px}
+  .hbody{padding:0 24px 26px}.hgrid{gap:16px}.hcreds{margin:0 24px;font-size:.76rem}
+  .dpdp{padding:0 22px}
+  .section{padding:58px 0}
+  .cgrid,.serve-grid,.fgrid,.frow2{grid-template-columns:1fr}.fnews{grid-column:auto}
+  .ocard{min-height:196px;padding:26px 24px}.ocard .ic svg{width:58px;height:58px}
+  .grp h4{font-size:1.15rem}.shead{font-size:2rem}
+  .cta,footer{margin:10px;border-radius:20px}.cta .in{padding:64px 0}
+  footer{padding:56px 0 32px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== HERO ===================== -->
+<header id="topnav"><div class="nav-in">
+  <a href="#" style="display:flex"><img class="logo logo-white" src="assets/img/dhwani-logo-full-white.png" alt="Dhwani RIS"><img class="logo logo-dark" src="assets/img/dhwani-logo-full.png" alt="Dhwani RIS"></a>
+  <div class="links">
+    <a href="index.html">Home</a><a href="#">Solutions</a><a href="#">Who we serve</a><a href="#">Our work</a><a href="#">Resources</a><a href="#">Company</a>
+  </div>
+  <div class="nav-right">
+    <a href="contact.html" class="navpill">Book a call</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</div></header>
+
+<div class="hero">
+  <div class="hero-bg"><div class="slide"></div><div class="slide"></div><div class="slide"></div><div class="slide"></div></div>
+  <div class="hero-veil"></div>
+  <div class="hbody"><div class="hgrid">
+    <div>
+      <h1>Technology the impact sector <em>runs</em> on.</h1>
+    </div>
+    <div class="hside">
+      <p>We build the software that funders, NGOs and governments run their programmes on. Built by people who have spent their careers in the sector.</p>
+      <div class="btns"><a class="pill pill-primary" href="contact.html">Book a call <span class="arw">→</span></a><a class="pill pill-dark" href="#">See our work</a></div>
+    </div>
+  </div></div>
+  <div class="hcreds">ISO 27001 certified · DPDP-ready · Trusted by 200+ organisations across 6 countries</div>
+</div>
+
+<!-- ===================== DPDP STRIP ===================== -->
+<div class="dpdp"><div class="dpdp-in">
+  <span class="dpdp-badge">DPDP Act · 2027</span>
+  <p><b>Handling personal data in your programmes?</b> India's data-protection law fully applies from May 2027. We help impact organisations get ready.</p>
+  <a class="tlink" href="#">DPDP Act Readiness <span class="arw">→</span></a>
+</div></div>
+
+<!-- ===================== WHAT WE DO ===================== -->
+<section class="section wwd"><div class="wrap">
+  <h2 class="shead">What we do</h2>
+
+  <div class="grp">
+    <h4>Systems we build</h4>
+    <div class="cgrid">
+      <a class="ocard" href="#"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span><div class="txt"><h5>Programme MIS</h5><p>Run your whole programme in one system.</p></div></a>
+      <a class="ocard" href="#"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 2 4-6"/></svg></span><div class="txt"><h5>Impact Dashboards</h5><p>Live results for funders and boards.</p></div></a>
+      <a class="ocard" href="#"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="M9 13h6M9 17h4"/></svg></span><div class="txt"><h5>Grant Management</h5><p>From disbursement to utilisation.</p></div></a>
+      <a class="ocard" href="#"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.5a3 3 0 0 1 0 5.5M21 20c0-2.6-1.6-4.9-4-5.8"/></svg></span><div class="txt"><h5>Donor Management</h5><p>Track every funder and commitment.</p></div></a>
+      <a class="ocard" href="#"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span><div class="txt"><h5>Field Data Apps</h5><p>Offline-first data from the field.</p></div></a>
+      <a class="ocard" href="#"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="6" rx="1.5"/><rect x="2" y="14" width="20" height="6" rx="1.5"/><path d="M6 7h.01M6 17h.01"/></svg></span><div class="txt"><h5>Back-office IT</h5><p>Finance, HR and IT, connected.</p></div></a>
+      <a class="ocard" href="#"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><path d="M12 11.5v1"/></svg></span><div class="txt"><h5>Monitoring &amp; Evaluation</h5><p>Track indicators and outcomes in real time.</p></div></a>
+      <a class="ocard fill span2" href="#"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><div class="txt"><h5>Explore our work</h5><p>Case studies &amp; solutions →</p></div></a>
+    </div>
+  </div>
+
+  <div class="grp">
+    <h4>Consulting &amp; advisory</h4>
+    <div class="cgrid">
+      <a class="ocard" href="#"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 8.5-8 11-4.6-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></span><div class="txt"><h5>DPDP Act Readiness</h5><p>Get compliant before May 2027.</p></div></a>
+      <a class="ocard" href="#"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 17a4 4 0 0 1 0-8 5.5 5.5 0 0 1 10.6-1.5A3.8 3.8 0 0 1 18 17z"/><path d="M12 12v5M9.5 14.5L12 12l2.5 2.5"/></svg></span><div class="txt"><h5>Cloud Optimisation</h5><p>Cut cloud bills 30–40%.</p></div></a>
+      <a class="ocard" href="#"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l1.8 4.4L18 8l-4.2 1.6L12 14l-1.8-4.4L6 8l4.2-1.6z"/><path d="M18 15l.9 2.1L21 18l-2.1.9L18 21l-.9-2.1L15 18l2.1-.9z"/></svg></span><div class="txt"><h5>AI for Impact</h5><p>AI where it saves real time.</p></div></a>
+      <a class="ocard" href="#"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20L20 4M9 4h11v11"/></svg></span><div class="txt"><h5>Digital Transformation</h5><p>A roadmap, then the build.</p></div></a>
+      <a class="ocard fill span2" href="#"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><div class="txt"><h5>Explore our work</h5><p>Case studies &amp; solutions →</p></div></a>
+    </div>
+  </div>
+</div></section>
+
+<!-- ===================== WHO WE SERVE ===================== -->
+<section class="section serve"><div class="wrap">
+  <h2 class="shead">Who we serve</h2>
+  <div class="serve-grid">
+    <div class="scard">
+      <span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 13l3-3 3 2 4-5"/></svg></span>
+      <h3>For Donors &amp; Funders</h3>
+      <p>One live view of every grantee, with portfolio dashboards and grant management.</p>
+      <div class="tags"><span>Dashboards</span><span>Grants</span></div>
+      <a class="tlink" href="for-donors.html">For Donors &amp; Funders <span class="arw">→</span></a>
+    </div>
+    <div class="scard">
+      <span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-7-10a7 7 0 0 1 14 0c0 5.6-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg></span>
+      <h3>For NGOs</h3>
+      <p>Field-ready systems your team can run, online or off.</p>
+      <div class="tags"><span>Field apps</span><span>Programme MIS</span></div>
+      <a class="tlink" href="for-ngos.html">For NGOs <span class="arw">→</span></a>
+    </div>
+    <div class="scard">
+      <span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-4 7 4v11M9 21v-5h6v5"/></svg></span>
+      <h3>For Government &amp; Multilaterals</h3>
+      <p>Digital public infrastructure and goods, built for population scale.</p>
+      <div class="tags"><span>DPI</span><span>DPG</span><span>Large-scale MIS</span></div>
+      <a class="tlink" href="for-government.html">For Government &amp; Multilaterals <span class="arw">→</span></a>
+    </div>
+  </div>
+</div></section>
+
+<!-- ===================== TRUSTED / MARQUEE ===================== -->
+<div class="trusted">
+  <h4>Trusted by 200+ organisations across 6 countries</h4>
+  <div class="marquee"><div class="mtrack l" id="row1"></div></div>
+  <div class="marquee"><div class="mtrack r" id="row2"></div></div>
+</div>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<div class="tm"><div class="wrap">
+  <div class="qmark">&ldquo;</div>
+  <div class="tm-track">
+    <div class="tm-slide on">
+      <p class="q">They understood every problem in our data first, then gave us options so we could <em>choose what worked</em>.</p>
+      <div class="who"><b>Azad Foundation</b><span>Women with Wheels programme</span></div>
+    </div>
+    <div class="tm-slide">
+      <p class="q">Effective, creative solutions and a team that <em>stayed approachable</em> throughout. Their flexibility reinforced our trust.</p>
+      <div class="who"><b>Social Innovation for Youth</b><span>Technology lead</span></div>
+    </div>
+    <div class="tm-slide">
+      <p class="q">Prompt, effective support whenever we needed it. A <em>genuine partnership</em>, not just a vendor.</p>
+      <div class="who"><b>A national programme</b><span>Programme director</span></div>
+    </div>
+  </div>
+  <div class="tm-arrows"><button id="tmPrev" aria-label="Previous">←</button><button id="tmNext" aria-label="Next">→</button></div>
+</div></div>
+
+<!-- ===================== CTA ===================== -->
+<div class="cta"><div class="in wrap">
+  <h2>Where could tech help your programme most?</h2>
+  <div class="cta-chips">
+    <a href="contact.html?topic=field-data">Field data</a><a href="contact.html?topic=programme-mis">Programme MIS</a><a href="contact.html?topic=grants-donors">Grants &amp; donors</a><a href="contact.html?topic=dashboards">Impact dashboards</a><a href="contact.html?topic=dpdp">DPDP Act Readiness</a><a href="contact.html?topic=brainstorm">Not sure? Let's talk</a>
+  </div>
+  <a class="pill pill-primary" href="contact.html">Book a call <span class="arw">→</span></a>
+</div></div>
+
+<!-- ===================== FOOTER ===================== -->
+<footer><div class="wrap">
+  <div class="fgrid">
+    <div class="fbrand">
+      <img class="flogo" src="assets/img/dhwani-logo-full-white.png" alt="Dhwani RIS">
+      <p class="tag">Technology the impact sector runs on. Built by the sector, for the sector, since 2015.</p>
+      <div class="fbadges"><span>ISO 27001</span><span>DPDP</span><span>GDPR</span></div>
+      <div class="fsoc"><a href="#">LinkedIn</a><a href="#">YouTube</a><a href="#">Community</a></div>
+    </div>
+    <div><h5>Products</h5><ul><li><a href="#">mForm</a></li><li><a href="#">mGrant for Grantors</a></li><li><a href="#">mGrant NUO</a></li><li><a href="#">Anumati (DPDP)</a></li></ul></div>
+    <div><h5>Systems</h5><ul><li><a href="#">Programme MIS</a></li><li><a href="#">Impact Dashboards</a></li><li><a href="#">Grant Management</a></li><li><a href="#">Donor Management</a></li><li><a href="#">Field Data Apps</a></li><li><a href="#">Back-office IT</a></li></ul></div>
+    <div><h5>Consulting</h5><ul><li><a href="#">DPDP Act Readiness</a></li><li><a href="#">Cloud Optimisation</a></li><li><a href="#">AI for Impact</a></li><li><a href="#">Digital Transformation</a></li></ul></div>
+    <div><h5>By sector</h5><ul><li><a href="#">Healthcare</a></li><li><a href="#">Agriculture &amp; Livelihoods</a></li><li><a href="#">Education &amp; Skilling</a></li><li><a href="#">Financial Inclusion</a></li><li><a href="#">Governance</a></li><li><a href="#">All sectors →</a></li></ul></div>
+  </div>
+  <div class="frow2">
+    <div class="fnews">
+      <h5>The Dhwani newsletter</h5>
+      <p>Practical tech-for-good, once a month. No fluff.</p>
+      <form onsubmit="return false"><input type="email" placeholder="you@organisation.org"><button class="pill pill-primary" style="padding:11px 18px">Subscribe</button></form>
+    </div>
+    <div><h5>Who we serve</h5><ul><li><a href="for-donors.html">Donors &amp; CSR</a></li><li><a href="for-ngos.html">NGOs</a></li><li><a href="for-government.html">Government</a></li><li><a href="#">Philanthropy</a></li><li><a href="#">Academic &amp; Research</a></li></ul></div>
+    <div><h5>Company</h5><ul><li><a href="#">About</a></li><li><a href="#">Careers</a></li><li><a href="#">Community</a></li><li><a href="#">Our work</a></li></ul></div>
+    <div><h5>Resources</h5><ul><li><a href="#">Insights</a></li><li><a href="#">Playbooks</a></li><li><a href="#">Reports</a></li><li><a href="#">Contact</a></li></ul><p class="fcontact">Gurugram, India<br><a href="#">partnerships@dhwaniris.com</a></p></div>
+  </div>
+  <div class="foot-bot"><span>© 2026 Dhwani Rural Information Systems · ISO 27001 · DPDP · GDPR</span><span>Privacy · Terms · Data protection · Sitemap</span></div>
+</div></footer>
+
+<script>
+(function(){
+  var logos=['world-bank','unicef','who','undp','unesco','gates-foundation.svg','tata-trusts','tata-steel','mahindra','hdfc-bank','axis-bank-foundation','bajaj-finserv','reliance-foundation','godrej','sun-pharma','pratham','educate-girls','pradan','smile-foundation','save-the-children','helpage-india','azim-premji-philanthropic-initiatives','omidyar-network-india','dasra','give','nudge','central-square-foundation','transform-rural-india','jindal-stainless','lupin'];
+  function build(id,a){document.getElementById(id).innerHTML=a.concat(a).map(function(n){var f=n.indexOf('.')>-1?n:n+'.png';return '<img src="assets/img/clients/'+f+'" alt="">';}).join('');}
+  build('row1',logos.slice(0,15));build('row2',logos.slice(15));
+  var s=[].slice.call(document.querySelectorAll('.tm-slide')),i=0,t;
+  function show(n){i=(n+s.length)%s.length;s.forEach(function(x,k){x.classList.toggle('on',k===i);});}
+  function rs(){clearInterval(t);t=setInterval(function(){show(i+1);},6500);}
+  document.getElementById('tmPrev').onclick=function(){show(i-1);rs();};
+  document.getElementById('tmNext').onclick=function(){show(i+1);rs();};rs();
+  var nav=document.getElementById('topnav'),hero=document.querySelector('.hero');
+  function navState(){var h=hero?hero.offsetHeight:600;nav.classList.toggle('scrolled',window.scrollY>h-70);}
+  window.addEventListener('scroll',navState,{passive:true});navState();
+  var menuBtn=document.getElementById('menuBtn');
+  if(menuBtn){menuBtn.addEventListener('click',function(){nav.classList.toggle('open');});
+    nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');});});}
+})();
+</script>
+</body>
+</html>

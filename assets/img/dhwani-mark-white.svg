@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 64" width="72" height="64" role="img" aria-label="Dhwani mark">
+  <path d="M7 41 C 20 58, 47 57, 65 39 C 55 50, 30 51, 19 39 Z" fill="#ffffff"/>
+  <path d="M9 38 C 22 53, 47 52, 64 36" fill="none" stroke="#ffffff" stroke-width="5.5" stroke-linecap="round"/>
+  <path d="M20 8 h24 a12 12 0 0 1 12 12 v12 a12 12 0 0 1 -12 12 h-24 a12 12 0 0 1 -12 -12 v-12 a12 12 0 0 1 12 -12 Z" fill="#f38634"/>
+  <path d="M45 15 C 30 15, 22 25, 24 38 C 39 37, 47 27, 45 15 Z" fill="#5e0d16"/>
+</svg>
