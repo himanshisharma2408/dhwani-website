@@ -12,7 +12,7 @@
   --ink:#15100f; --cream:#f4f0e8; --paper:#faf6ef; --beige:#eae4d9; --beige-h:#e3dccd;
   --maroon:#8a1420; --maroon-2:#6d0f1a; --orange:#d9722e; --orange-soft:#eab588;
   --muted:#6f6157; --muted-d:rgba(255,255,255,.62); --line:#e2d8c8; --line-d:rgba(255,255,255,.14); --tint:#f6ece0;
-  --serif:'Newsreader',Georgia,serif; --sans:'Inter',system-ui,sans-serif; --max:1160px; --pad:80px;
+  --serif:'Newsreader',Georgia,serif; --sans:'Inter',system-ui,sans-serif; --max:1160px; --pad:72px;
 }
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
 body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.62;-webkit-font-smoothing:antialiased}
@@ -24,7 +24,7 @@ h1,h2,h3,h4,h5{font-family:var(--serif);font-weight:500;letter-spacing:-.012em;l
 .pill-dark{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.4);color:#fff}.pill-dark:hover{border-color:#fff;background:rgba(255,255,255,.16)}
 .arw{transition:transform .2s}.pill:hover .arw,.tlink:hover .arw{transform:translateX(3px)}
 .tlink{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.9rem;color:var(--maroon)}
-.section{padding:var(--pad) 0}.shead{font-size:clamp(2rem,3.7vw,2.8rem);font-weight:500}
+.section{padding:var(--pad) 0}.shead{font-size:clamp(2.1rem,3.9vw,3rem);font-weight:500}
 
 /* nav (shared) */
 #topnav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .3s,box-shadow .3s}
@@ -56,12 +56,12 @@ h1,h2,h3,h4,h5{font-family:var(--serif);font-weight:500;letter-spacing:-.012em;l
 /* what you get (tiles) */
 .wyg h2{margin-bottom:44px}
 .cgrid{display:grid;gap:16px;grid-template-columns:repeat(4,1fr)}
-.ocard{display:flex;flex-direction:column;min-height:260px;background:var(--beige);border-radius:8px;padding:30px 26px;transition:.2s}
+.ocard{display:flex;flex-direction:column;min-height:300px;background:var(--beige);border-radius:8px;padding:34px 30px 30px;transition:.2s}
 .ocard:hover{background:var(--beige-h)}
 .ocard .ic{flex:1;display:flex;align-items:center;justify-content:center;color:#4a423c}
-.ocard .ic svg{width:60px;height:60px;stroke-width:1.1}
-.ocard h5{font-size:1.24rem;font-weight:500;margin-bottom:8px}
-.ocard p{color:var(--muted);font-size:.9rem;line-height:1.5}
+.ocard .ic svg{width:78px;height:78px;stroke-width:1.05}
+.ocard h5{font-size:1.34rem;font-weight:500;margin-bottom:9px;color:var(--ink)}
+.ocard p{color:var(--muted);font-size:.92rem;line-height:1.5;max-width:26ch}
 
 /* proof / case study */
 .proof.section{background:var(--paper)}
@@ -186,7 +186,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 
 <script>
 (function(){var nav=document.getElementById('topnav');
-function s(){nav.classList.toggle('solid',window.scrollY>40);}window.addEventListener('scroll',s,{passive:true});s();
+function s(){var h=(document.querySelector('.ahero')||{}).offsetHeight||520;nav.classList.toggle('solid',window.scrollY>h-70);}window.addEventListener('scroll',s,{passive:true});s();
 var mb=document.getElementById('menuBtn');if(mb){mb.addEventListener('click',function(){nav.classList.toggle('open');});
 nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');});});}})();
 </script>

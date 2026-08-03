@@ -250,7 +250,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 <script>
 (function(){
   var nav=document.getElementById('topnav');
-  function navState(){nav.classList.toggle('solid',window.scrollY>40);}
+  function navState(){var h=(document.querySelector('.chero')||{}).offsetHeight||420;nav.classList.toggle('solid',window.scrollY>h-70);}
   window.addEventListener('scroll',navState,{passive:true});navState();
   var mb=document.getElementById('menuBtn');
   if(mb){mb.addEventListener('click',function(){nav.classList.toggle('open');});
