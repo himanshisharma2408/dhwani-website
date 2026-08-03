@@ -92,6 +92,32 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 @media(max-width:640px){.wrap{padding:0 22px}#topnav .nav-in{padding:22px 22px}#topnav .logo{height:50px}
   .ahero{margin:10px;border-radius:20px;padding:130px 24px 48px}.section{padding:58px 0}.serve-grid{grid-template-columns:1fr}
   .cta,footer{margin:10px;border-radius:20px}.fgrid,.frow2{grid-template-columns:1fr}.fnews{grid-column:auto}}
+
+/* ===== nav dropdowns ===== */
+.has-dd{position:relative;display:flex;align-items:center}
+.has-dd>a{display:inline-flex;align-items:center;gap:5px}
+.caret{font-size:.6rem;line-height:1;opacity:.75;transition:transform .2s;position:relative;top:1px}
+.has-dd:hover .caret{transform:rotate(180deg)}
+.dd-toggle{display:none;background:none;border:none;color:inherit;cursor:pointer;font-size:.85rem;padding:8px 4px;transition:transform .2s}
+.dd{position:absolute;top:100%;left:50%;margin-top:12px;transform:translateX(-50%);min-width:238px;background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:0 16px 40px rgba(21,16,15,.16);padding:12px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s ease;z-index:220}
+.dd::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px}
+.has-dd:hover>.dd{opacity:1;visibility:visible;pointer-events:auto}
+#topnav .dd a{display:block;color:var(--ink)!important;font-size:.9rem;font-weight:450;letter-spacing:0;padding:9px 12px;border-radius:8px;white-space:nowrap}
+#topnav .dd a:hover{background:var(--beige)}
+.dd-mega{left:0;margin-top:12px;transform:none;min-width:0;display:grid;grid-template-columns:repeat(4,minmax(150px,1fr));gap:2px 14px;padding:20px 22px}
+.dd-col h6{font-family:var(--sans);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--maroon);font-weight:600;padding:6px 12px 4px}
+@media(max-width:960px){
+  .has-dd{flex-wrap:wrap;justify-content:space-between;border-bottom:1px solid var(--line)}
+  #topnav .links .has-dd>a{flex:1;border-bottom:none!important}
+  .dd-toggle{display:block;color:var(--ink)}
+  .has-dd.open .dd-toggle{transform:rotate(180deg)}
+  .caret{display:none}
+  .dd,.dd-mega{position:static;transform:none;margin-top:0;opacity:1;visibility:visible;pointer-events:auto;box-shadow:none;border:none;background:transparent;padding:0 0 8px;min-width:0;width:100%;display:none;grid-template-columns:1fr}
+  .dd::before{display:none}
+  .has-dd.open>.dd{display:block}
+  #topnav .dd a{color:var(--muted)!important;padding:11px 12px}
+  .dd-col h6{padding:12px 12px 4px}
+}
 </style>
 </head>
 <body>
@@ -99,7 +125,42 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 <!-- NAV -->
 <header id="topnav"><div class="nav-in">
   <a href="index.html" style="display:flex"><img class="logo logo-white" src="assets/img/dhwani-logo-full-white.png" alt="Dhwani RIS"><img class="logo logo-dark" src="assets/img/dhwani-logo-full.png" alt="Dhwani RIS"></a>
-  <div class="links"><a href="index.html">Home</a><a href="solutions.html">Solutions</a><a href="who-we-serve.html">Who we serve</a><a href="our-work.html">Our work</a><a href="resources.html">Resources</a><a href="company.html">Company</a></div>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <div class="has-dd">
+      <a href="solutions.html">Solutions <span class="caret">&#9662;</span></a>
+      <button class="dd-toggle" aria-label="Toggle Solutions submenu">&#9662;</button>
+      <div class="dd dd-mega">
+        <div class="dd-col"><h6>Products</h6><a href="solutions.html#products">mForm</a><a href="solutions.html#products">mGrant for Grantors</a><a href="solutions.html#products">mGrant NUO</a><a href="solutions.html#products">Anumati</a></div>
+        <div class="dd-col"><h6>Systems</h6><a href="solutions.html#systems">Programme MIS</a><a href="solutions.html#systems">Impact Dashboards</a><a href="solutions.html#systems">Grant Management</a><a href="solutions.html#systems">Donor Management</a><a href="solutions.html#systems">Field Data Apps</a><a href="solutions.html#systems">Back-office IT</a></div>
+        <div class="dd-col"><h6>Consulting</h6><a href="solutions.html#consulting">DPDP Act Readiness</a><a href="solutions.html#consulting">Cloud Optimisation</a><a href="solutions.html#consulting">AI for Impact</a><a href="solutions.html#consulting">Digital Transformation</a><a href="solutions.html#consulting">Managed Services</a></div>
+        <div class="dd-col"><h6>Explore</h6><a href="solutions.html#sectors">Browse by sector</a><a href="solutions.html">All solutions</a><a href="our-work.html">Our work</a></div>
+      </div>
+    </div>
+    <div class="has-dd">
+      <a href="who-we-serve.html">Who we serve <span class="caret">&#9662;</span></a>
+      <button class="dd-toggle" aria-label="Toggle Who we serve submenu">&#9662;</button>
+      <div class="dd">
+        <a href="for-donors.html">For Donors &amp; Funders</a>
+        <a href="for-ngos.html">For NGOs</a>
+        <a href="for-government.html">For Government &amp; Multilaterals</a>
+        <a href="who-we-serve.html">Philanthropy</a>
+        <a href="who-we-serve.html">Academic &amp; Research</a>
+      </div>
+    </div>
+    <a href="our-work.html">Our work</a>
+    <a href="resources.html">Resources</a>
+    <div class="has-dd">
+      <a href="company.html">Company <span class="caret">&#9662;</span></a>
+      <button class="dd-toggle" aria-label="Toggle Company submenu">&#9662;</button>
+      <div class="dd">
+        <a href="company.html">About</a>
+        <a href="company.html#careers">Careers</a>
+        <a href="company.html#community">Community</a>
+        <a href="our-work.html">Our work</a>
+      </div>
+    </div>
+  </div>
   <div class="nav-right"><a href="contact.html" class="navpill">Book a call</a>
     <button class="menu-btn" id="menuBtn" aria-label="Menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button></div>
 </div></header>
@@ -203,7 +264,8 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 (function(){var nav=document.getElementById('topnav');
 function s(){var h=(document.querySelector('.ahero')||{}).offsetHeight||520;nav.classList.toggle('solid',window.scrollY>h-70);}window.addEventListener('scroll',s,{passive:true});s();
 var mb=document.getElementById('menuBtn');if(mb){mb.addEventListener('click',function(){nav.classList.toggle('open');});
-nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');});});}})();
+nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');});});}
+  nav.querySelectorAll('.dd-toggle').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();b.parentElement.classList.toggle('open');});});})();
 </script>
 </body>
 </html>
