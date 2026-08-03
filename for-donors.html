@@ -137,6 +137,20 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
   #topnav .dd a{color:var(--muted)!important;padding:11px 12px}
   .dd-col h6{padding:12px 12px 4px}
 }
+
+/* audience wayfinding + case grid */
+.ahero .crumb{font-size:.8rem;letter-spacing:.02em;color:rgba(255,255,255,.72);margin-bottom:16px}
+.ahero .crumb a{color:rgba(255,255,255,.72)}.ahero .crumb a:hover{color:#fff}
+.cases3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+.ccard{background:var(--beige);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:.2s}
+.ccard:hover{background:var(--beige-h)}
+.ccard .ph{height:150px;background-size:cover;background-position:center}
+.ccard .bd{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
+.ccard h3{font-size:1.18rem;font-weight:500;line-height:1.25;margin-bottom:8px}
+.ccard p{font-size:.9rem;color:var(--muted);flex:1;margin-bottom:12px}
+.ccard .org{font-size:.8rem;color:var(--maroon);font-weight:600}
+.cases-cta{margin-top:28px}
+@media(max-width:900px){.cases3{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -163,7 +177,6 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
         <a href="for-donors.html">For Donors &amp; Funders</a>
         <a href="for-ngos.html">For NGOs</a>
         <a href="for-government.html">For Government &amp; Multilaterals</a>
-        <a href="who-we-serve.html">Philanthropy</a>
         <a href="who-we-serve.html">Academic &amp; Research</a>
       </div>
     </div>
@@ -188,16 +201,17 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
   <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1597743622436-c6b5661731e0?q=80&w=2000&auto=format&fit=crop')"></div>
   <div class="veil"></div>
   <div class="in">
+    <div class="crumb"><a href="who-we-serve.html">Who we serve</a> / For Donors &amp; Funders</div>
     <h1>See your <em>whole</em> portfolio in one place.</h1>
     <p>Live visibility across every grantee: spend, reach and results in one place, so you can compare, verify and report without the quarterly scramble.</p>
     <div class="btns"><a class="pill pill-primary" href="contact.html?topic=grants-donors">Book a call <span class="arw">→</span></a><a class="pill pill-dark" href="our-work.html">See our work</a></div>
-    <div class="hcreds">ISO 27001 certified · DPDP-ready · Trusted by 200+ organisations across 6 countries</div>
+    <div class="hcreds">Trusted by 200+ organisations across 6 countries</div>
   </div>
 </div>
 
 <!-- WHAT YOU GET -->
 <section class="section wyg"><div class="wrap">
-  <h2 class="shead">What you get</h2>
+  <h2 class="shead">What we build for you</h2>
   <div class="cgrid">
     <a class="ocard" href="solutions.html#systems"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 2 4-6"/></svg></span><h5>Impact Dashboards</h5><p>One live view of spend, reach and results across every grantee.</p></a>
     <a class="ocard" href="solutions.html#systems"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="M9 13h6M9 17h4"/></svg></span><h5>Grant Management</h5><p>Track tranches, milestones and utilisation against plan.</p></a>
@@ -208,15 +222,22 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 
 <!-- PROOF -->
 <section class="section proof"><div class="wrap">
-  <h2 class="shead">Proof, not promises</h2>
-  <div class="cs-card">
-    <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1623211269755-569fec0536d2?q=80&w=1200&auto=format&fit=crop')"></div>
-    <div class="body">
-      <h3>40 grantees, one live view</h3>
-      <p class="res">A funder's whole portfolio rolled into a single dashboard. Quarterly reporting went from weeks of chasing spreadsheets to a click.</p>
-      <div class="quote">"They understood every problem in our data first, then gave us options so we could choose what worked."<span>Azad Foundation</span></div>
-    </div>
+  <h2 class="shead">Case studies</h2>
+  <div class="cases3">
+    <a class="ccard" href="our-work.html?audience=donors">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1623211269755?q=80&w=800&auto=format&fit=crop')"></div>
+      <div class="bd"><h3>40 grantees, one live view</h3><p>A funder's whole portfolio in a single dashboard — quarterly reporting went from weeks to a click.</p><div class="org">Azad Foundation</div></div>
+    </a>
+    <a class="ccard" href="our-work.html?audience=donors">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1597743622436?q=80&w=800&auto=format&fit=crop')"></div>
+      <div class="bd"><h3>Portfolio view for a social-impact fund</h3><p>Every investee's spend, reach and results in one live view.</p><div class="org">A social-impact fund</div></div>
+    </a>
+    <a class="ccard" href="our-work.html?audience=donors">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1531206715517?q=80&w=800&auto=format&fit=crop')"></div>
+      <div class="bd"><h3>Grant portal for an education funder</h3><p>Applications, disbursement and utilisation tracked against plan.</p><div class="org">An education funder</div></div>
+    </a>
   </div>
+  <p class="cases-cta"><a class="tlink" href="our-work.html?audience=donors">See more of our work <span class="arw">&#8594;</span></a></p>
   <div class="mq-wrap">
     <p class="mq-lbl">Funders and CSR teams we work with</p>
     <div class="marquee"><div class="mtrack l" id="row1"></div></div>
@@ -250,11 +271,11 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
       <p>Practical tech-for-good, once a month. No fluff.</p>
       <form onsubmit="return false"><input type="email" placeholder="you@organisation.org"><button class="pill pill-primary" style="padding:11px 18px">Subscribe</button></form>
     </div>
-    <div><h5>Who we serve</h5><ul><li><a href="for-donors.html">Donors &amp; CSR</a></li><li><a href="for-ngos.html">NGOs</a></li><li><a href="for-government.html">Government</a></li><li><a href="who-we-serve.html">Philanthropy</a></li><li><a href="who-we-serve.html">Academic &amp; Research</a></li></ul></div>
-    <div><h5>Company</h5><ul><li><a href="about.html">About</a></li><li><a href="careers.html">Careers</a></li><li><a href="community.html">Community</a></li><li><a href="our-work.html">Our work</a></li></ul></div>
+    <div><h5>Who we serve</h5><ul><li><a href="for-donors.html">Donors &amp; CSR</a></li><li><a href="for-ngos.html">NGOs</a></li><li><a href="for-government.html">Government</a></li><li><a href="who-we-serve.html">Academic &amp; Research</a></li></ul></div>
+    <div><h5>Company</h5><ul><li><a href="about.html">About</a></li><li><a href="careers.html">Careers</a></li><li><a href="community.html">Community</a></li></ul></div>
     <div><h5>Resources</h5><ul><li><a href="resources.html">Insights</a></li><li><a href="resources.html">Playbooks</a></li><li><a href="resources.html">Reports</a></li><li><a href="contact.html">Contact</a></li></ul><p class="fcontact">Sector 44, Gurugram, Haryana 122002<br><a href="tel:+919574655961">+91 95746 55961</a><br><a href="mailto:partnerships@dhwaniris.com">partnerships@dhwaniris.com</a></p></div>
   </div>
-  <div class="foot-bot"><span>© 2026 Dhwani Rural Information Systems · ISO 27001 · DPDP · GDPR</span><span><a href="privacy.html">Privacy</a> · Terms · Data protection · Sitemap</span></div>
+  <div class="foot-bot"><span>© 2026 Dhwani Rural Information Systems</span><span><a href="privacy.html">Privacy</a> · Terms · Data protection · Sitemap</span></div>
 </div></footer>
 
 <script>
