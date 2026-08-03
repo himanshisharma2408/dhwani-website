@@ -151,6 +151,8 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .ccard .org{font-size:.8rem;color:var(--maroon);font-weight:600}
 .cases-cta{margin-top:28px}
 @media(max-width:900px){.cases3{grid-template-columns:1fr}}
+#topnav .links a.n-active{color:#fff;font-weight:600}
+#topnav.solid .links a.n-active,#topnav.scrolled .links a.n-active{color:var(--maroon)}
 </style>
 </head>
 <body>
@@ -164,20 +166,20 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
       <a href="solutions.html">Solutions <span class="caret">&#9662;</span></a>
       <button class="dd-toggle" aria-label="Toggle Solutions submenu">&#9662;</button>
       <div class="dd dd-mega">
-        <div class="dd-col"><h6>Products</h6><a href="solutions.html#products">mForm</a><a href="solutions.html#products">mGrant for Grantors</a><a href="solutions.html#products">mGrant NUO</a><a href="solutions.html#products">Anumati</a></div>
+        <div class="dd-col"><h6>Products</h6><a href="mform.html">mForm</a><a href="mgrant.html">mGrant for Grantors</a><a href="mgrant.html">mGrant NUO</a><a href="anumati.html">Anumati</a></div>
         <div class="dd-col"><h6>Systems</h6><a href="our-work.html?offering=programme-mis">Programme MIS</a><a href="our-work.html?offering=dashboards">Impact Dashboards</a><a href="our-work.html?offering=grants-donors">Grant Management</a><a href="our-work.html?offering=grants-donors">Donor Management</a><a href="our-work.html?offering=field-data">Field Data Apps</a><a href="our-work.html?offering=programme-mis">Back-office IT</a></div>
         <div class="dd-col"><h6>Consulting</h6><a href="our-work.html?offering=dpdp">DPDP Act Readiness</a><a href="our-work.html?offering=ai-cloud">Cloud Optimisation</a><a href="our-work.html?offering=ai-cloud">AI for Impact</a><a href="our-work.html?offering=digital-transformation">Digital Transformation</a><a href="solutions.html#consulting">Managed Services</a></div>
         <div class="dd-col"><h6>Explore</h6><a href="our-work.html">Browse by sector</a><a href="solutions.html">All solutions</a><a href="our-work.html">Our work</a></div>
       </div>
     </div>
     <div class="has-dd">
-      <a href="who-we-serve.html">Who we serve <span class="caret">&#9662;</span></a>
+      <a class="n-active" href="who-we-serve.html">Who we serve <span class="caret">&#9662;</span></a>
       <button class="dd-toggle" aria-label="Toggle Who we serve submenu">&#9662;</button>
       <div class="dd">
-        <a href="for-donors.html">For Donors &amp; Funders</a>
+        <a href="for-donors.html">For Donors &amp; CSRs</a>
         <a href="for-ngos.html">For NGOs</a>
         <a href="for-government.html">For Government &amp; Multilaterals</a>
-        <a href="who-we-serve.html">Academic &amp; Research</a>
+        <a href="for-academic.html">Academic &amp; Research</a>
       </div>
     </div>
     <a href="our-work.html">Our work</a>
@@ -260,7 +262,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
       <div class="fbadges"><span>ISO 27001</span><span>DPDP</span><span>GDPR</span></div>
       <div class="fsoc"><a href="https://www.linkedin.com/company/14388289/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/dhwaniris" target="_blank" rel="noopener">Instagram</a><a href="community.html">Community</a></div>
     </div>
-    <div><h5>Products</h5><ul><li><a href="solutions.html#products">mForm</a></li><li><a href="solutions.html#products">mGrant for Grantors</a></li><li><a href="solutions.html#products">mGrant NUO</a></li><li><a href="solutions.html#products">Anumati (DPDP)</a></li></ul></div>
+    <div><h5>Products</h5><ul><li><a href="mform.html">mForm</a></li><li><a href="mgrant.html">mGrant for Grantors</a></li><li><a href="mgrant.html">mGrant NUO</a></li><li><a href="anumati.html">Anumati (DPDP)</a></li></ul></div>
     <div><h5>Systems</h5><ul><li><a href="our-work.html?offering=programme-mis">Programme MIS</a></li><li><a href="our-work.html?offering=dashboards">Impact Dashboards</a></li><li><a href="our-work.html?offering=grants-donors">Grant Management</a></li><li><a href="our-work.html?offering=grants-donors">Donor Management</a></li><li><a href="our-work.html?offering=field-data">Field Data Apps</a></li><li><a href="our-work.html?offering=programme-mis">Back-office IT</a></li></ul></div>
     <div><h5>Consulting</h5><ul><li><a href="our-work.html?offering=dpdp">DPDP Act Readiness</a></li><li><a href="our-work.html?offering=ai-cloud">Cloud Optimisation</a></li><li><a href="our-work.html?offering=ai-cloud">AI for Impact</a></li><li><a href="our-work.html?offering=digital-transformation">Digital Transformation</a></li></ul></div>
     <div><h5>By sector</h5><ul><li><a href="our-work.html?sector=healthcare">Healthcare</a></li><li><a href="our-work.html?sector=agriculture">Agriculture &amp; Livelihoods</a></li><li><a href="our-work.html?sector=education">Education &amp; Skilling</a></li><li><a href="our-work.html?sector=financial-inclusion">Financial Inclusion</a></li><li><a href="our-work.html?sector=governance">Governance</a></li><li><a href="our-work.html">All sectors →</a></li></ul></div>
@@ -271,7 +273,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
       <p>Practical tech-for-good, once a month. No fluff.</p>
       <form onsubmit="return false"><input type="email" placeholder="you@organisation.org"><button class="pill pill-primary" style="padding:11px 18px">Subscribe</button></form>
     </div>
-    <div><h5>Who we serve</h5><ul><li><a href="for-donors.html">Donors &amp; CSR</a></li><li><a href="for-ngos.html">NGOs</a></li><li><a href="for-government.html">Government</a></li><li><a href="who-we-serve.html">Academic &amp; Research</a></li></ul></div>
+    <div><h5>Who we serve</h5><ul><li><a href="for-donors.html">Donors &amp; CSRs</a></li><li><a href="for-ngos.html">NGOs</a></li><li><a href="for-government.html">Government</a></li><li><a href="for-academic.html">Academic &amp; Research</a></li></ul></div>
     <div><h5>Company</h5><ul><li><a href="about.html">About</a></li><li><a href="careers.html">Careers</a></li><li><a href="community.html">Community</a></li></ul></div>
     <div><h5>Resources</h5><ul><li><a href="resources.html">Insights</a></li><li><a href="resources.html">Playbooks</a></li><li><a href="resources.html">Reports</a></li><li><a href="contact.html">Contact</a></li></ul><p class="fcontact">Sector 44, Gurugram, Haryana 122002<br><a href="tel:+919574655961">+91 95746 55961</a><br><a href="mailto:partnerships@dhwaniris.com">partnerships@dhwaniris.com</a></p></div>
   </div>

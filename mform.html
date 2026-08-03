@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>About — Dhwani RIS</title>
+<title>mForm — Dhwani RIS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
@@ -26,7 +26,6 @@ em{font-style:italic}
 .arw{transition:transform .2s}.pill:hover .arw,.tlink:hover .arw{transform:translateX(3px)}
 .tlink{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.9rem;color:var(--maroon)}
 .section{padding:var(--pad) 0}.shead{font-size:clamp(2.1rem,3.9vw,3rem);font-weight:500}
-.lede{color:var(--muted);font-size:1.05rem;max-width:60ch;margin-top:14px}
 
 /* nav (shared) */
 #topnav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .3s,box-shadow .3s}
@@ -46,50 +45,52 @@ em{font-style:italic}
   #topnav .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;background:var(--paper);padding:4px 40px 16px;border-top:1px solid var(--line)}
   #topnav.open .links{display:flex}#topnav .links a{color:var(--ink);padding:14px 0;font-size:1rem;border-bottom:1px solid var(--line)}#topnav .links a:last-child{border-bottom:none}}
 
-/* hero */
+/* audience hero (dark photo) */
 .ahero{position:relative;border-radius:28px;margin:16px;overflow:hidden;color:#fff;padding:170px 42px 60px;background:var(--ink)}
 .ahero .bg{position:absolute;inset:0;background-size:cover;background-position:center 30%}
 .ahero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,12,11,.66) 0%,rgba(18,12,11,.42) 40%,rgba(18,12,11,.9) 100%)}
-.ahero .in{position:relative;z-index:2;max-width:700px}
+.ahero .in{position:relative;z-index:2;max-width:680px}
 .ahero h1{font-size:clamp(2.7rem,5.2vw,4.4rem);margin-bottom:20px}
 .ahero h1 em{color:var(--orange-soft)}
-.ahero p{color:rgba(255,255,255,.88);font-size:1.08rem;max-width:580px;margin-bottom:28px}
+.ahero p{color:rgba(255,255,255,.88);font-size:1.08rem;max-width:560px;margin-bottom:28px}
 .ahero .btns{display:flex;gap:12px;flex-wrap:wrap}
 .ahero .hcreds{border-top:1px solid rgba(255,255,255,.16);margin-top:34px;padding-top:20px;font-size:.82rem;letter-spacing:.03em;color:rgba(255,255,255,.62)}
 
-/* story */
-.story .grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-top:8px}
-.story p{color:var(--muted);font-size:1.05rem;margin-bottom:18px}
-.story p:first-child{color:var(--ink);font-family:var(--serif);font-size:1.5rem;line-height:1.4}
+/* what you get (tiles) */
+.wyg h2{margin-bottom:44px}
+.cgrid{display:grid;gap:16px;grid-template-columns:repeat(4,1fr)}
+.ocard{display:flex;flex-direction:column;min-height:300px;background:var(--beige);border-radius:8px;padding:34px 30px 30px;transition:.2s}
+.ocard:hover{background:var(--beige-h)}
+.ocard .ic{flex:1;display:flex;align-items:center;justify-content:center;color:#4a423c}
+.ocard .ic svg{width:78px;height:78px;stroke-width:1.05}
+.ocard h5{font-size:1.34rem;font-weight:500;margin-bottom:9px;color:var(--ink)}
+.ocard p{color:var(--muted);font-size:.92rem;line-height:1.5;max-width:26ch}
 
-/* stats */
-.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:48px}
-.stat{background:var(--beige);border-radius:10px;padding:30px 28px}
-.stat b{display:block;font-family:var(--serif);font-size:2.6rem;font-weight:500;line-height:1;margin-bottom:8px}
-.stat span{font-size:.92rem;color:var(--muted)}
-.stat .pl{color:var(--orange)}
-.stats-note{margin-top:20px;font-size:.85rem;color:var(--muted);max-width:80ch}
+/* proof / case study */
+.proof.section{background:var(--paper)}
+.proof h2{margin-bottom:40px}
+.cs-card{display:grid;grid-template-columns:1.1fr 1fr;background:var(--beige);border-radius:16px;overflow:hidden}
+.cs-card .ph{background-size:cover;background-position:center;min-height:340px}
+.cs-card .body{padding:44px 42px;display:flex;flex-direction:column;justify-content:center}
+.cs-card h3{font-size:1.7rem;margin-bottom:12px}
+.cs-card .res{color:var(--muted);font-size:1rem;margin-bottom:20px}
+.cs-card .quote{font-family:var(--serif);font-style:italic;font-size:1.05rem;border-top:1px solid var(--line);padding-top:18px}
+.cs-card .quote span{display:block;font-style:normal;font-family:var(--sans);font-size:.82rem;color:var(--maroon);font-weight:600;margin-top:8px}
 
-/* people */
-.people.section{background:var(--paper)}
-.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
-.pcard{background:var(--beige);border-radius:12px;padding:30px 28px}
-.pcard .av{width:64px;height:64px;border-radius:50%;background:var(--tint);color:var(--maroon);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.4rem;margin-bottom:18px}
-.pcard h4{font-size:1.25rem;font-weight:500;margin-bottom:4px}
-.pcard .role{font-size:.85rem;color:var(--maroon);font-weight:600;margin-bottom:12px}
-.pcard p{color:var(--muted);font-size:.92rem}
-
-/* two-up (careers / community) */
-.twoup{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
-.upcard{background:var(--beige);border-radius:14px;padding:40px 38px}
-.upcard h3{font-size:1.6rem;margin-bottom:10px}
-.upcard p{color:var(--muted);margin-bottom:20px}
-.upcard .links{display:flex;flex-direction:column;gap:10px}
+/* trusted marquee (shared) */
+.mq-wrap{margin-top:56px}
+.mq-lbl{text-align:center;font-size:.9rem;color:var(--muted);margin-bottom:28px;font-family:var(--sans)}
+.marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.mtrack{display:flex;align-items:center;gap:60px;width:max-content}
+.mtrack.l{animation:scrollx 48s linear infinite}
+.mtrack.r{animation:scrollx 54s linear infinite reverse;margin-top:26px}
+@keyframes scrollx{to{transform:translateX(-50%)}}
+.mtrack img{height:30px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.5}
 
 /* cta */
 .cta{position:relative;border-radius:28px;margin:0 16px;text-align:center;overflow:hidden;color:#fff;background:linear-gradient(rgba(18,12,11,.84),rgba(18,12,11,.9)),url('https://images.unsplash.com/photo-1707721690544-781fe6ede937?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat,var(--ink)}
 .cta .in{position:relative;z-index:2;padding:94px 0}
-.cta h2{font-size:clamp(2.1rem,4.2vw,3.1rem);color:#fff;margin-bottom:26px;max-width:20ch;margin-inline:auto}
+.cta h2{font-size:clamp(2.1rem,4.2vw,3.1rem);color:#fff;margin-bottom:26px;max-width:18ch;margin-inline:auto}
 
 /* footer (shared) */
 footer{background:var(--ink);color:var(--muted-d);border-radius:28px;margin:16px;padding:76px 0 40px}
@@ -106,9 +107,9 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .fcontact{font-size:.88rem;color:var(--muted-d);line-height:1.9;margin-top:12px}.fcontact a{color:var(--orange-soft);font-weight:500}
 .foot-bot{border-top:1px solid var(--line-d);margin-top:52px;padding-top:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.82rem;color:rgba(255,255,255,.45)}
 
-@media(max-width:900px){.story .grid,.twoup{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.pgrid{grid-template-columns:1fr 1fr}.fgrid,.frow2{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){.cgrid{grid-template-columns:1fr 1fr}.cs-card{grid-template-columns:1fr}.cs-card .ph{min-height:240px}.fgrid,.frow2{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.wrap{padding:0 22px}#topnav .nav-in{padding:22px 22px}#topnav .logo{height:50px}
-  .ahero{margin:10px;border-radius:20px;padding:130px 24px 48px}.section{padding:58px 0}.stats,.pgrid{grid-template-columns:1fr}
+  .ahero{margin:10px;border-radius:20px;padding:130px 24px 48px}.cgrid{grid-template-columns:1fr}
   .cta,footer{margin:10px;border-radius:20px}.fgrid,.frow2{grid-template-columns:1fr}.fnews{grid-column:auto}}
 
 /* ===== nav dropdowns ===== */
@@ -136,6 +137,20 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
   #topnav .dd a{color:var(--muted)!important;padding:11px 12px}
   .dd-col h6{padding:12px 12px 4px}
 }
+
+/* audience wayfinding + case grid */
+.ahero .crumb{font-size:.8rem;letter-spacing:.02em;color:rgba(255,255,255,.72);margin-bottom:16px}
+.ahero .crumb a{color:rgba(255,255,255,.72)}.ahero .crumb a:hover{color:#fff}
+.cases3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+.ccard{background:var(--beige);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:.2s}
+.ccard:hover{background:var(--beige-h)}
+.ccard .ph{height:150px;background-size:cover;background-position:center}
+.ccard .bd{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
+.ccard h3{font-size:1.18rem;font-weight:500;line-height:1.25;margin-bottom:8px}
+.ccard p{font-size:.9rem;color:var(--muted);flex:1;margin-bottom:12px}
+.ccard .org{font-size:.8rem;color:var(--maroon);font-weight:600}
+.cases-cta{margin-top:28px}
+@media(max-width:900px){.cases3{grid-template-columns:1fr}}
 #topnav .links a.n-active{color:#fff;font-weight:600}
 #topnav.solid .links a.n-active,#topnav.scrolled .links a.n-active{color:var(--maroon)}
 </style>
@@ -148,7 +163,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
   <div class="links">
     <a href="index.html">Home</a>
     <div class="has-dd">
-      <a href="solutions.html">Solutions <span class="caret">&#9662;</span></a>
+      <a class="n-active" href="solutions.html">Solutions <span class="caret">&#9662;</span></a>
       <button class="dd-toggle" aria-label="Toggle Solutions submenu">&#9662;</button>
       <div class="dd dd-mega">
         <div class="dd-col"><h6>Products</h6><a href="mform.html">mForm</a><a href="mgrant.html">mGrant for Grantors</a><a href="mgrant.html">mGrant NUO</a><a href="anumati.html">Anumati</a></div>
@@ -170,7 +185,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
     <a href="our-work.html">Our work</a>
     <a href="resources.html">Resources</a>
     <div class="has-dd">
-      <a class="n-active" href="about.html">Company <span class="caret">&#9662;</span></a>
+      <a href="about.html">Company <span class="caret">&#9662;</span></a>
       <button class="dd-toggle" aria-label="Toggle Company submenu">&#9662;</button>
       <div class="dd">
         <a href="about.html">About</a>
@@ -185,81 +200,44 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 
 <!-- HERO -->
 <div class="ahero">
-  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1623211269755-569fec0536d2?q=80&w=2000&auto=format&fit=crop')"></div>
+  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1707721690544?q=80&w=2000&auto=format&fit=crop')"></div>
   <div class="veil"></div>
   <div class="in">
-    <h1>Built by the sector, for the <em>sector</em>.</h1>
-    <p>Since 2015, from Gurugram, we have built the technology that funders, NGOs and governments run their programmes on.</p>
+    <div class="crumb"><a href="solutions.html">Solutions</a> / mForm</div>
+    <h1>Field data, from the last <em>mile</em>.</h1>
+    <p>mForm is offline-first mobile data collection built for the field &mdash; surveys, supervision and monitoring that sync the moment you reconnect, straight into your MIS.</p>
     <div class="btns"><a class="pill pill-primary" href="contact.html">Book a call <span class="arw">&#8594;</span></a><a class="pill pill-dark" href="our-work.html">See our work</a></div>
-    <div class="hcreds">300+ projects &middot; 200+ organisations &middot; 6 countries</div>
   </div>
 </div>
 
-<!-- STORY -->
-<section class="section story"><div class="wrap">
-  <h2 class="shead">Our story</h2>
-  <div class="grid">
-    <div>
-      <p>We started Dhwani because good programmes were being let down by bad technology.</p>
-      <p>Field teams were stuck with paper and spreadsheets. Funders could not see what was happening. Governments were running population-scale programmes on tools that could not keep up.</p>
-    </div>
-    <div>
-      <p>So we built software specifically for the impact sector, with people who have spent their careers in it. Field data apps that work offline. Dashboards funders actually use. Grant and donor systems, MIS, and the consulting to make it all land.</p>
-      <p>Ten years on, that work runs across 6 countries and 200+ organisations, and it is held to ISO 27001, DPDP and GDPR standards.</p>
-    </div>
+<!-- WHAT IT DOES -->
+<section class="section wyg"><div class="wrap">
+  <h2 class="shead">What it does</h2>
+  <div class="cgrid">
+    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span><h5>Offline-first collection</h5><p>Collect anywhere, sync when you reconnect &mdash; no data lost.</p></a>
+    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.5a3 3 0 0 1 0 5.5M21 20c0-2.6-1.6-4.9-4-5.8"/></svg></span><h5>Surveyor management</h5><p>Assign, track and support field teams from one place.</p></a>
+    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 8.5-8 11-4.6-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></span><h5>Clean, consistent data</h5><p>Validation at the point of entry, so errors never reach your MIS.</p></a>
+    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 2 4-6"/></svg></span><h5>Dashboards &amp; M&amp;E</h5><p>Reporting mapped to your own monitoring framework.</p></a>
   </div>
-  <div class="stats">
-    <div class="stat"><b>300<span class="pl">+</span></b><span>Projects delivered</span></div>
-    <div class="stat"><b>200<span class="pl">+</span></b><span>Organisations equipped</span></div>
-    <div class="stat"><b>80<span class="pl">+</span></b><span>ICT4D professionals</span></div>
-    <div class="stat"><b>100<span class="pl">M+</span></b><span>Lives reached*</span></div>
-    <div class="stat"><b>6</b><span>Countries</span></div>
-  </div>
-  <p class="stats-note">*Reach — people whose data, services or entitlements run on Dhwani-built platforms; not direct beneficiaries. Outcomes belong to our partners.</p>
 </div></section>
 
-<!-- LEADERSHIP -->
-<section class="section people" id="team"><div class="wrap">
-  <h2 class="shead">Leadership</h2>
-  <p class="lede">The people steering how we build and where we go next.</p>
-  <div class="pgrid">
-    <div class="pcard"><div class="av">AJ</div><h4>Abhishek Jain</h4><div class="role">Chief Strategy &amp; Growth Officer</div></div>
-    <div class="pcard"><div class="av">RB</div><h4>Rajeev Bharadwaj</h4><div class="role">Chief Technology Officer</div></div>
-    <div class="pcard"><div class="av">SB</div><h4>Siddharth Bhargava</h4><div class="role">Chief Operating Officer</div></div>
-    <div class="pcard"><div class="av">SB</div><h4>Seema Bhardwaj</h4><div class="role">Chief Delivery Officer</div></div>
-    <div class="pcard"><div class="av">DB</div><h4>Deepak Batra</h4><div class="role">VP &mdash; Engineering</div></div>
-    <div class="pcard"><div class="av">SA</div><h4>Sahjad Ansari</h4><div class="role">AVP &mdash; Products</div></div>
-    <div class="pcard"><div class="av">SM</div><h4>Shobhit Mathur</h4><div class="role">Director &mdash; Partnerships</div></div>
-    <div class="pcard"><div class="av">NA</div><h4>Nidhi Arora</h4><div class="role">Process Consultant</div></div>
-  </div>
-  <p class="lede" style="margin-top:26px">Behind them, a team of around 50 across management, engineering, delivery and the field &mdash; building and running programmes every day.</p>
-</div></section>
-
-<!-- JOIN -->
-<section class="section"><div class="wrap">
-  <div class="twoup">
-    <div class="upcard">
-      <h3>Careers</h3>
-      <p>We are always looking for people who want to build technology that matters. Engineering, product, delivery and field roles.</p>
-      <div class="links">
-        <a class="tlink" href="careers.html">See how to join <span class="arw">&#8594;</span></a>
-        <a class="tlink" href="mailto:careers@dhwaniris.com">careers@dhwaniris.com <span class="arw">&#8594;</span></a>
-      </div>
-    </div>
-    <div class="upcard">
-      <h3>Community</h3>
-      <p>Practitioners, partners and tech-for-good folk. Join the newsletter and our community channels.</p>
-      <div class="links">
-        <a class="tlink" href="community.html">Our community <span class="arw">&#8594;</span></a>
-        <a class="tlink" href="resources.html">Read our Insights <span class="arw">&#8594;</span></a>
-      </div>
+<!-- PROOF -->
+<section class="section proof"><div class="wrap">
+  <h2 class="shead">Case studies</h2>
+  <div class="cs-card">
+    <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1623211269755?q=80&w=1200&auto=format&fit=crop')"></div>
+    <div class="body">
+      <h3>From paper to progress</h3>
+      <p class="res">A field programme moved from paper and spreadsheets to mForm &mdash; data captured offline in the field now lands clean in the MIS the same day.</p>
+      <div class="quote">"They understood every problem in our data first, then gave us options so we could choose what worked."<span>A livelihoods NGO</span></div>
     </div>
   </div>
+  <p class="cases-cta" style="margin-top:26px"><a class="tlink" href="our-work.html">See more of our work <span class="arw">&#8594;</span></a></p>
 </div></section>
 
 <!-- CTA -->
 <div class="cta"><div class="in wrap">
-  <h2>Want to build something with us?</h2>
+  <h2>Ready to take your field data digital?</h2>
   <a class="pill pill-primary" href="contact.html">Book a call <span class="arw">&#8594;</span></a>
 </div></div>
 
@@ -295,7 +273,10 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 function s(){var h=(document.querySelector('.ahero')||{}).offsetHeight||520;nav.classList.toggle('solid',window.scrollY>h-70);}window.addEventListener('scroll',s,{passive:true});s();
 var mb=document.getElementById('menuBtn');if(mb){mb.addEventListener('click',function(){nav.classList.toggle('open');});
 nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');});});}
-  nav.querySelectorAll('.dd-toggle').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();b.parentElement.classList.toggle('open');});});})();
+  nav.querySelectorAll('.dd-toggle').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();b.parentElement.classList.toggle('open');});});
+var logos=['world-bank','unicef','who','undp','unesco','gates-foundation.svg','tata-trusts','tata-steel','mahindra','hdfc-bank','axis-bank-foundation','bajaj-finserv','reliance-foundation','godrej','sun-pharma','pratham','educate-girls','pradan','smile-foundation','save-the-children','helpage-india','azim-premji-philanthropic-initiatives','omidyar-network-india','dasra','give','nudge','central-square-foundation','transform-rural-india','jindal-stainless','lupin'];
+function build(id,a){var el=document.getElementById(id);if(!el)return;el.innerHTML=a.concat(a).map(function(n){var f=n.indexOf('.')>-1?n:n+'.png';return '<img src="assets/img/clients/'+f+'" alt="">';}).join('');}
+build('row1',logos.slice(0,15));build('row2',logos.slice(15));})();
 </script>
 </body>
 </html>
