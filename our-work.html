@@ -155,6 +155,35 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
   #topnav .dd a{color:var(--muted)!important;padding:11px 12px}
   .dd-col h6{padding:12px 12px 4px}
 }
+
+/* ===== work catalogue ===== */
+.cat h2{margin-bottom:6px}
+.filters{margin:30px 0 6px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.frow{display:flex;align-items:baseline;gap:16px;padding:14px 0;flex-wrap:wrap}
+.frow+.frow{border-top:1px solid var(--line)}
+.frow .flabel{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;min-width:74px;padding-top:4px}
+.chips2{display:flex;gap:8px;flex-wrap:wrap}
+.fchip{font-size:.85rem;font-weight:500;color:var(--ink);background:var(--beige);border:none;border-radius:999px;padding:8px 15px;cursor:pointer;transition:.15s;font-family:var(--sans)}
+.fchip:hover{background:var(--beige-h)}
+.fchip.on{background:var(--maroon);color:#fff}
+.cat-bar{display:flex;justify-content:space-between;align-items:center;margin:22px 0 20px;flex-wrap:wrap;gap:10px}
+.cat-count{font-size:.95rem;color:var(--muted)}.cat-count b{color:var(--ink);font-weight:600;font-family:var(--serif);font-size:1.1rem}
+.cat-clear{font-size:.85rem;color:var(--maroon);font-weight:600;cursor:pointer;background:none;border:none;font-family:var(--sans);padding:0}
+.wgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.wcard{display:flex;flex-direction:column;background:var(--beige);border-radius:12px;overflow:hidden;transition:.2s}
+.wcard:hover{background:var(--beige-h)}
+.wcard .ph{height:150px;background-size:cover;background-position:center}
+.wcard .bd{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
+.wcard .sect{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--maroon);font-weight:600;margin-bottom:9px}
+.wcard h4{font-size:1.16rem;font-weight:500;line-height:1.25;margin-bottom:8px;color:var(--ink)}
+.wcard p{font-size:.9rem;color:var(--muted);flex:1;margin-bottom:14px}
+.wcard .meta{display:flex;gap:6px;flex-wrap:wrap}
+.wcard .meta span{font-size:.7rem;color:var(--muted);background:var(--tint);border-radius:999px;padding:4px 10px}
+.wcard.hide{display:none}
+.cat-empty{display:none;padding:36px 0;color:var(--muted)}
+.cat-empty.show{display:block}
+@media(max-width:900px){.wgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.wgrid{grid-template-columns:1fr}.frow .flabel{min-width:0;width:100%}}
 </style>
 </head>
 <body>
@@ -169,9 +198,9 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
       <button class="dd-toggle" aria-label="Toggle Solutions submenu">&#9662;</button>
       <div class="dd dd-mega">
         <div class="dd-col"><h6>Products</h6><a href="solutions.html#products">mForm</a><a href="solutions.html#products">mGrant for Grantors</a><a href="solutions.html#products">mGrant NUO</a><a href="solutions.html#products">Anumati</a></div>
-        <div class="dd-col"><h6>Systems</h6><a href="solutions.html#systems">Programme MIS</a><a href="solutions.html#systems">Impact Dashboards</a><a href="solutions.html#systems">Grant Management</a><a href="solutions.html#systems">Donor Management</a><a href="solutions.html#systems">Field Data Apps</a><a href="solutions.html#systems">Back-office IT</a></div>
-        <div class="dd-col"><h6>Consulting</h6><a href="solutions.html#consulting">DPDP Act Readiness</a><a href="solutions.html#consulting">Cloud Optimisation</a><a href="solutions.html#consulting">AI for Impact</a><a href="solutions.html#consulting">Digital Transformation</a><a href="solutions.html#consulting">Managed Services</a></div>
-        <div class="dd-col"><h6>Explore</h6><a href="solutions.html#sectors">Browse by sector</a><a href="solutions.html">All solutions</a><a href="our-work.html">Our work</a></div>
+        <div class="dd-col"><h6>Systems</h6><a href="our-work.html?offering=programme-mis">Programme MIS</a><a href="our-work.html?offering=dashboards">Impact Dashboards</a><a href="our-work.html?offering=grants-donors">Grant Management</a><a href="our-work.html?offering=grants-donors">Donor Management</a><a href="our-work.html?offering=field-data">Field Data Apps</a><a href="our-work.html?offering=programme-mis">Back-office IT</a></div>
+        <div class="dd-col"><h6>Consulting</h6><a href="our-work.html?offering=dpdp">DPDP Act Readiness</a><a href="our-work.html?offering=ai-cloud">Cloud Optimisation</a><a href="our-work.html?offering=ai-cloud">AI for Impact</a><a href="our-work.html?offering=digital-transformation">Digital Transformation</a><a href="solutions.html#consulting">Managed Services</a></div>
+        <div class="dd-col"><h6>Explore</h6><a href="our-work.html">Browse by sector</a><a href="solutions.html">All solutions</a><a href="our-work.html">Our work</a></div>
       </div>
     </div>
     <div class="has-dd">
@@ -194,7 +223,6 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
         <a href="about.html">About</a>
         <a href="careers.html">Careers</a>
         <a href="community.html">Community</a>
-        <a href="our-work.html">Our work</a>
       </div>
     </div>
   </div>
@@ -222,37 +250,92 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
   <div class="stat"><b>2015</b><span>Building since</span></div>
 </div></section>
 
-<!-- CASES -->
-<section class="section cases"><div class="wrap">
-  <h2 class="shead">Selected work</h2>
-  <p class="lede">A few of the programmes we have built and run with our partners.</p>
-
-  <div class="cs-card">
-    <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1623211269755-569fec0536d2?q=80&w=1200&auto=format&fit=crop')"></div>
-    <div class="body">
-      <h3>40 grantees, one live view</h3>
-      <p class="res">A funder's whole portfolio rolled into a single dashboard. Quarterly reporting went from weeks of chasing spreadsheets to a click.</p>
-      <div class="quote">"They understood every problem in our data first, then gave us options so we could choose what worked."<span>Azad Foundation</span></div>
-    </div>
+<!-- CATALOGUE -->
+<section class="section cat"><div class="wrap">
+  <h2 class="shead">Browse our work</h2>
+  <p class="lede">Filter by sector, by what we built, or by who it was for. Deep-links from Solutions and the audience pages arrive here pre-filtered.</p>
+  <div class="filters">
+    <div class="frow"><span class="flabel">Sector</span><div class="chips2"><button class="fchip" data-dim="sector" data-val="">All</button><button class="fchip" data-dim="sector" data-val="healthcare">Healthcare</button><button class="fchip" data-dim="sector" data-val="agriculture">Agriculture & Livelihoods</button><button class="fchip" data-dim="sector" data-val="education">Education & Skilling</button><button class="fchip" data-dim="sector" data-val="financial-inclusion">Financial Inclusion</button><button class="fchip" data-dim="sector" data-val="climate">Climate & Environment</button><button class="fchip" data-dim="sector" data-val="governance">Governance</button><button class="fchip" data-dim="sector" data-val="mel">Programme Mgmt & MEL</button><button class="fchip" data-dim="sector" data-val="digital-ai">Digital & AI</button></div></div>
+    <div class="frow"><span class="flabel">Offering</span><div class="chips2"><button class="fchip" data-dim="offering" data-val="">All</button><button class="fchip" data-dim="offering" data-val="programme-mis">Programme MIS</button><button class="fchip" data-dim="offering" data-val="dashboards">Dashboards</button><button class="fchip" data-dim="offering" data-val="grants-donors">Grants & Donors</button><button class="fchip" data-dim="offering" data-val="field-data">Field Data</button><button class="fchip" data-dim="offering" data-val="monitoring-evaluation">M&E</button><button class="fchip" data-dim="offering" data-val="dpdp">DPDP Readiness</button><button class="fchip" data-dim="offering" data-val="ai-cloud">AI & Cloud</button><button class="fchip" data-dim="offering" data-val="digital-transformation">Digital Transformation</button></div></div>
+    <div class="frow"><span class="flabel">For</span><div class="chips2"><button class="fchip" data-dim="audience" data-val="">All</button><button class="fchip" data-dim="audience" data-val="donors">Donors & Funders</button><button class="fchip" data-dim="audience" data-val="ngos">NGOs</button><button class="fchip" data-dim="audience" data-val="government">Government</button></div></div>
   </div>
-
-  <div class="cs-card">
-    <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1707721690544-781fe6ede937?q=80&w=1200&auto=format&fit=crop')"></div>
-    <div class="body">
-      <h3>One MIS, every district</h3>
-      <p class="res">A country-scale livelihoods programme running on a single system, from the block office to the ministry, with field data captured offline.</p>
-      <div class="quote">"Effective, creative solutions and a team that stayed approachable throughout. Their flexibility reinforced our trust."<span>Social Innovation for Youth</span></div>
-    </div>
+  <div class="cat-bar"><div class="cat-count"><b id="catCount">18</b> projects</div><button class="cat-clear" id="catClear">Clear filters</button></div>
+  <div class="wgrid">
+    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="healthcare" data-offering="field-data programme-mis" data-audience="ngos">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1609252509229-364936a1d1a2?q=80&w=800&auto=format&fit=crop')"></div>
+      <div class="bd"><div class="sect">Healthcare</div><h4>Community health-worker app across 12 districts</h4><p>Offline data capture and supervision for frontline health workers, live to a district dashboard.</p><div class="meta"><span>NGO</span><span>Field Data</span></div></div>
+    </a>
+    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="healthcare" data-offering="dashboards programme-mis" data-audience="government">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1623211269755-569fec0536d2?q=80&w=800&auto=format&fit=crop')"></div>
+      <div class="bd"><div class="sect">Healthcare</div><h4>Real-time immunisation dashboard for a state</h4><p>Coverage and drop-out tracked across facilities, so gaps show up the same week.</p><div class="meta"><span>Government</span><span>Dashboards</span></div></div>
+    </a>
+    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="agriculture" data-offering="programme-mis field-data" data-audience="government">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1707721690544-781fe6ede937?q=80&w=800&auto=format&fit=crop')"></div>
+      <div class="bd"><div class="sect">Agriculture & Livelihoods</div><h4>Livelihoods MIS, from block office to ministry</h4><p>One system for a state livelihoods programme, with field data captured offline.</p><div class="meta"><span>Government</span><span>Programme MIS</span></div></div>
+    </a>
+    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="agriculture" data-offering="field-data monitoring-evaluation" data-audience="ngos">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1601689892697-b64daa00ff6d?q=80&w=800&auto=format&fit=crop')"></div>
+      <div class="bd"><div class="sect">Agriculture & Livelihoods</div><h4>Farmer &amp; FPO tracking for a livelihoods NGO</h4><p>Household and producer-group data, from enrolment to outcomes.</p><div class="meta"><span>NGO</span><span>Field Data</span></div></div>
+    </a>
+    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="education" data-offering="programme-mis dashboards" data-audience="ngos">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1597743622436-c6b5661731e0?q=80&w=800&auto=format&fit=crop')"></div>
+      <div class="bd"><div class="sect">Education & Skilling</div><h4>Skilling MIS for 40,000 learners</h4><p>Enrolment, attendance and placement in one place, across centres.</p><div class="meta"><span>NGO</span><span>Programme MIS</span></div></div>
+    </a>
+    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="education" data-offering="grants-donors dashboards" data-audience="donors">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?q=80&w=800&auto=format&fit=crop')"></div>
+      <div class="bd"><div class="sect">Education & Skilling</div><h4>Grant portal for an education funder</h4><p>Applications, disbursement and utilisation tracked against plan.</p><div class="meta"><span>Donor/Funder</span><span>Grants & Donors</span></div></div>
+    </a>
+    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="financial-inclusion" data-offering="programme-mis field-data" data-audience="ngos">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1609252509229-364936a1d1a2?q=80&w=800&auto=format&fit=crop')"></div>
+      <div class="bd"><div class="sect">Financial Inclusion</div><h4>Beneficiary MIS for a financial-inclusion programme</h4><p>A single record per beneficiary, from the field to the report.</p><div class="meta"><span>NGO</span><span>Programme MIS</span></div></div>
+    </a>
+    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="financial-inclusion" data-offering="dashboards grants-donors" data-audience="donors">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1623211269755-569fec0536d2?q=80&w=800&auto=format&fit=crop')"></div>
+      <div class="bd"><div class="sect">Financial Inclusion</div><h4>Portfolio view for a social-impact fund</h4><p>Every investee's spend, reach and results in one live view.</p><div class="meta"><span>Donor/Funder</span><span>Dashboards</span></div></div>
+    </a>
+    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="climate" data-offering="field-data monitoring-evaluation" data-audience="ngos">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1707721690544-781fe6ede937?q=80&w=800&auto=format&fit=crop')"></div>
+      <div class="bd"><div class="sect">Climate & Environment</div><h4>Field monitoring for a climate-resilience programme</h4><p>Offline surveys and indicators across remote sites.</p><div class="meta"><span>NGO</span><span>Field Data</span></div></div>
+    </a>
+    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="governance" data-offering="programme-mis" data-audience="government">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1601689892697-b64daa00ff6d?q=80&w=800&auto=format&fit=crop')"></div>
+      <div class="bd"><div class="sect">Governance</div><h4>A city finance portal, live across departments</h4><p>One portal connecting departments and partners, with real data governance.</p><div class="meta"><span>Government</span><span>Programme MIS</span></div></div>
+    </a>
+    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="governance" data-offering="programme-mis dashboards" data-audience="government">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1597743622436-c6b5661731e0?q=80&w=800&auto=format&fit=crop')"></div>
+      <div class="bd"><div class="sect">Governance</div><h4>Citizen grievance platform for a state</h4><p>Intake, routing and resolution tracked end to end.</p><div class="meta"><span>Government</span><span>Programme MIS</span></div></div>
+    </a>
+    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="mel" data-offering="monitoring-evaluation dashboards" data-audience="ngos">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?q=80&w=800&auto=format&fit=crop')"></div>
+      <div class="bd"><div class="sect">Programme Mgmt & MEL</div><h4>Outcome tracking for a multi-state programme</h4><p>Indicators rolled up from the field to the funder, in real time.</p><div class="meta"><span>NGO</span><span>M&E</span></div></div>
+    </a>
+    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="digital-ai" data-offering="ai-cloud field-data" data-audience="ngos">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1609252509229-364936a1d1a2?q=80&w=800&auto=format&fit=crop')"></div>
+      <div class="bd"><div class="sect">Digital & AI</div><h4>AI-assisted data cleaning for a research programme</h4><p>Faster, cleaner datasets, so the team gets to analysis sooner.</p><div class="meta"><span>NGO</span><span>AI & Cloud</span></div></div>
+    </a>
+    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="mel" data-offering="dpdp" data-audience="ngos">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1623211269755-569fec0536d2?q=80&w=800&auto=format&fit=crop')"></div>
+      <div class="bd"><div class="sect">Programme Mgmt & MEL</div><h4>DPDP readiness for a large NGO's beneficiary data</h4><p>A five-stage adoption path to get compliant before May 2027.</p><div class="meta"><span>NGO</span><span>DPDP Readiness</span></div></div>
+    </a>
+    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="governance" data-offering="dpdp grants-donors" data-audience="donors">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1707721690544-781fe6ede937?q=80&w=800&auto=format&fit=crop')"></div>
+      <div class="bd"><div class="sect">Governance</div><h4>Consent management rollout for a CSR programme</h4><p>Consent, data residency and audit trails, built in with Anumati.</p><div class="meta"><span>Donor/Funder</span><span>DPDP Readiness</span></div></div>
+    </a>
+    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="financial-inclusion" data-offering="grants-donors dashboards" data-audience="donors">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1601689892697-b64daa00ff6d?q=80&w=800&auto=format&fit=crop')"></div>
+      <div class="bd"><div class="sect">Financial Inclusion</div><h4>A global funder's India grant portfolio</h4><p>Grant-making and reporting for dozens of grantees in one system.</p><div class="meta"><span>Donor/Funder</span><span>Grants & Donors</span></div></div>
+    </a>
+    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="digital-ai" data-offering="ai-cloud" data-audience="ngos">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1597743622436-c6b5661731e0?q=80&w=800&auto=format&fit=crop')"></div>
+      <div class="bd"><div class="sect">Digital & AI</div><h4>Cloud cost optimisation for a data platform</h4><p>Same platform, 30–40% lower cloud bills.</p><div class="meta"><span>NGO</span><span>AI & Cloud</span></div></div>
+    </a>
+    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="mel" data-offering="digital-transformation" data-audience="donors">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?q=80&w=800&auto=format&fit=crop')"></div>
+      <div class="bd"><div class="sect">Programme Mgmt & MEL</div><h4>Digital transformation roadmap for a foundation</h4><p>A practical roadmap, then the build, sequenced to value.</p><div class="meta"><span>Donor/Funder</span><span>Digital Transformation</span></div></div>
+    </a>
   </div>
-
-  <div class="cs-card">
-    <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1601689892697-b64daa00ff6d?q=80&w=1200&auto=format&fit=crop')"></div>
-    <div class="body">
-      <h3>A city finance portal, live across departments</h3>
-      <p class="res">One portal connecting departments and partners, with the interoperability and data governance a public system has to stand behind.</p>
-      <div class="quote">"Prompt, effective support whenever we needed it. A genuine partnership, not just a vendor."<span>A national programme</span></div>
-    </div>
-  </div>
+  <p class="cat-empty" id="catEmpty">No projects match those filters yet. <button class="cat-clear" id="catClear2">Clear filters</button></p>
+  <p class="lede" style="margin-top:26px"><span style="opacity:.7">Representative of our delivery across sectors; named, detailed case studies are being added.</span></p>
 </div></section>
 
 <!-- WHERE WE WORK -->
@@ -308,9 +391,9 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
       <div class="fsoc"><a href="https://www.linkedin.com/company/14388289/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/dhwaniris" target="_blank" rel="noopener">Instagram</a><a href="community.html">Community</a></div>
     </div>
     <div><h5>Products</h5><ul><li><a href="solutions.html#products">mForm</a></li><li><a href="solutions.html#products">mGrant for Grantors</a></li><li><a href="solutions.html#products">mGrant NUO</a></li><li><a href="solutions.html#products">Anumati (DPDP)</a></li></ul></div>
-    <div><h5>Systems</h5><ul><li><a href="solutions.html#systems">Programme MIS</a></li><li><a href="solutions.html#systems">Impact Dashboards</a></li><li><a href="solutions.html#systems">Grant Management</a></li><li><a href="solutions.html#systems">Donor Management</a></li><li><a href="solutions.html#systems">Field Data Apps</a></li><li><a href="solutions.html#systems">Back-office IT</a></li></ul></div>
-    <div><h5>Consulting</h5><ul><li><a href="solutions.html#consulting">DPDP Act Readiness</a></li><li><a href="solutions.html#consulting">Cloud Optimisation</a></li><li><a href="solutions.html#consulting">AI for Impact</a></li><li><a href="solutions.html#consulting">Digital Transformation</a></li></ul></div>
-    <div><h5>By sector</h5><ul><li><a href="solutions.html#sectors">Healthcare</a></li><li><a href="solutions.html#sectors">Agriculture &amp; Livelihoods</a></li><li><a href="solutions.html#sectors">Education &amp; Skilling</a></li><li><a href="solutions.html#sectors">Financial Inclusion</a></li><li><a href="solutions.html#sectors">Governance</a></li><li><a href="solutions.html#sectors">All sectors →</a></li></ul></div>
+    <div><h5>Systems</h5><ul><li><a href="our-work.html?offering=programme-mis">Programme MIS</a></li><li><a href="our-work.html?offering=dashboards">Impact Dashboards</a></li><li><a href="our-work.html?offering=grants-donors">Grant Management</a></li><li><a href="our-work.html?offering=grants-donors">Donor Management</a></li><li><a href="our-work.html?offering=field-data">Field Data Apps</a></li><li><a href="our-work.html?offering=programme-mis">Back-office IT</a></li></ul></div>
+    <div><h5>Consulting</h5><ul><li><a href="our-work.html?offering=dpdp">DPDP Act Readiness</a></li><li><a href="our-work.html?offering=ai-cloud">Cloud Optimisation</a></li><li><a href="our-work.html?offering=ai-cloud">AI for Impact</a></li><li><a href="our-work.html?offering=digital-transformation">Digital Transformation</a></li></ul></div>
+    <div><h5>By sector</h5><ul><li><a href="our-work.html?sector=healthcare">Healthcare</a></li><li><a href="our-work.html?sector=agriculture">Agriculture &amp; Livelihoods</a></li><li><a href="our-work.html?sector=education">Education &amp; Skilling</a></li><li><a href="our-work.html?sector=financial-inclusion">Financial Inclusion</a></li><li><a href="our-work.html?sector=governance">Governance</a></li><li><a href="our-work.html">All sectors →</a></li></ul></div>
   </div>
   <div class="frow2">
     <div class="fnews">
@@ -339,6 +422,36 @@ function show(n){i=(n+sl.length)%sl.length;sl.forEach(function(x,k){x.classList.
 function rs(){clearInterval(t);t=setInterval(function(){show(i+1);},6500);}
 var p=document.getElementById('tmPrev'),nx=document.getElementById('tmNext');
 if(p&&nx){p.onclick=function(){show(i-1);rs();};nx.onclick=function(){show(i+1);rs();};rs();}})();
+</script>
+<script>
+(function(){
+  var cards=[].slice.call(document.querySelectorAll('.wcard'));
+  var chips=[].slice.call(document.querySelectorAll('.fchip'));
+  var state={sector:'',offering:'',audience:''};
+  function has(list,v){return (' '+(list||'')+' ').indexOf(' '+v+' ')>-1;}
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var ok=(!state.sector||has(c.dataset.sector,state.sector))
+           &&(!state.offering||has(c.dataset.offering,state.offering))
+           &&(!state.audience||has(c.dataset.audience,state.audience));
+      c.classList.toggle('hide',!ok); if(ok)n++;
+    });
+    var cc=document.getElementById('catCount'); if(cc)cc.textContent=n;
+    var ce=document.getElementById('catEmpty'); if(ce)ce.classList.toggle('show',n===0);
+    chips.forEach(function(ch){ch.classList.toggle('on',state[ch.dataset.dim]===ch.dataset.val);});
+    var q=[]; ['sector','offering','audience'].forEach(function(k){if(state[k])q.push(k+'='+state[k]);});
+    try{history.replaceState(null,'','our-work.html'+(q.length?'?'+q.join('&'):''));}catch(e){}
+  }
+  chips.forEach(function(ch){ch.addEventListener('click',function(){
+    var d=ch.dataset.dim,v=ch.dataset.val; state[d]=(state[d]===v?'':v); apply();
+  });});
+  function clear(){state={sector:'',offering:'',audience:''};apply();}
+  ['catClear','catClear2'].forEach(function(id){var b=document.getElementById(id);if(b)b.addEventListener('click',clear);});
+  var pr=new URLSearchParams(location.search);
+  ['sector','offering','audience'].forEach(function(k){if(pr.get(k))state[k]=pr.get(k);});
+  apply();
+})();
 </script>
 </body>
 </html>
