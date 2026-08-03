@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Careers — Dhwani RIS</title>
+<title>Field Data Apps — Dhwani RIS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
@@ -26,7 +26,6 @@ em{font-style:italic}
 .arw{transition:transform .2s}.pill:hover .arw,.tlink:hover .arw{transform:translateX(3px)}
 .tlink{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.9rem;color:var(--maroon)}
 .section{padding:var(--pad) 0}.shead{font-size:clamp(2.1rem,3.9vw,3rem);font-weight:500}
-.lede{color:var(--muted);font-size:1.05rem;max-width:60ch;margin-top:14px}
 
 /* nav (shared) */
 #topnav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .3s,box-shadow .3s}
@@ -46,48 +45,52 @@ em{font-style:italic}
   #topnav .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;background:var(--paper);padding:4px 40px 16px;border-top:1px solid var(--line)}
   #topnav.open .links{display:flex}#topnav .links a{color:var(--ink);padding:14px 0;font-size:1rem;border-bottom:1px solid var(--line)}#topnav .links a:last-child{border-bottom:none}}
 
-/* hero */
+/* audience hero (dark photo) */
 .ahero{position:relative;border-radius:28px;margin:16px;overflow:hidden;color:#fff;padding:170px 42px 60px;background:var(--ink)}
 .ahero .bg{position:absolute;inset:0;background-size:cover;background-position:center 30%}
 .ahero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,12,11,.66) 0%,rgba(18,12,11,.42) 40%,rgba(18,12,11,.9) 100%)}
-.ahero .in{position:relative;z-index:2;max-width:700px}
+.ahero .in{position:relative;z-index:2;max-width:680px}
 .ahero h1{font-size:clamp(2.7rem,5.2vw,4.4rem);margin-bottom:20px}
 .ahero h1 em{color:var(--orange-soft)}
-.ahero p{color:rgba(255,255,255,.88);font-size:1.08rem;max-width:580px;margin-bottom:28px}
+.ahero p{color:rgba(255,255,255,.88);font-size:1.08rem;max-width:560px;margin-bottom:28px}
 .ahero .btns{display:flex;gap:12px;flex-wrap:wrap}
 .ahero .hcreds{border-top:1px solid rgba(255,255,255,.16);margin-top:34px;padding-top:20px;font-size:.82rem;letter-spacing:.03em;color:rgba(255,255,255,.62)}
 
-/* story */
-.story .grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-top:8px}
-.story p{color:var(--muted);font-size:1.05rem;margin-bottom:18px}
-.story p:first-child{color:var(--ink);font-family:var(--serif);font-size:1.5rem;line-height:1.4}
+/* what you get (tiles) */
+.wyg h2{margin-bottom:44px}
+.cgrid{display:grid;gap:16px;grid-template-columns:repeat(4,1fr)}
+.ocard{display:flex;flex-direction:column;min-height:300px;background:var(--beige);border-radius:8px;padding:34px 30px 30px;transition:.2s}
+.ocard:hover{background:var(--beige-h)}
+.ocard .ic{flex:1;display:flex;align-items:center;justify-content:center;color:#4a423c}
+.ocard .ic svg{width:78px;height:78px;stroke-width:1.05}
+.ocard h5{font-size:1.34rem;font-weight:500;margin-bottom:9px;color:var(--ink)}
+.ocard p{color:var(--muted);font-size:.92rem;line-height:1.5;max-width:26ch}
 
-/* stats */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
-.stat{background:var(--beige);border-radius:10px;padding:30px 28px}
-.stat b{display:block;font-family:var(--serif);font-size:2.6rem;font-weight:500;line-height:1;margin-bottom:8px}
-.stat span{font-size:.92rem;color:var(--muted)}
+/* proof / case study */
+.proof.section{background:var(--paper)}
+.proof h2{margin-bottom:40px}
+.cs-card{display:grid;grid-template-columns:1.1fr 1fr;background:var(--beige);border-radius:16px;overflow:hidden}
+.cs-card .ph{background-size:cover;background-position:center;min-height:340px}
+.cs-card .body{padding:44px 42px;display:flex;flex-direction:column;justify-content:center}
+.cs-card h3{font-size:1.7rem;margin-bottom:12px}
+.cs-card .res{color:var(--muted);font-size:1rem;margin-bottom:20px}
+.cs-card .quote{font-family:var(--serif);font-style:italic;font-size:1.05rem;border-top:1px solid var(--line);padding-top:18px}
+.cs-card .quote span{display:block;font-style:normal;font-family:var(--sans);font-size:.82rem;color:var(--maroon);font-weight:600;margin-top:8px}
 
-/* people */
-.people.section{background:var(--paper)}
-.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
-.pcard{background:var(--beige);border-radius:12px;padding:30px 28px}
-.pcard .av{width:64px;height:64px;border-radius:50%;background:var(--tint);color:var(--maroon);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.4rem;margin-bottom:18px}
-.pcard h4{font-size:1.25rem;font-weight:500;margin-bottom:4px}
-.pcard .role{font-size:.85rem;color:var(--maroon);font-weight:600;margin-bottom:12px}
-.pcard p{color:var(--muted);font-size:.92rem}
-
-/* two-up (careers / community) */
-.twoup{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
-.upcard{background:var(--beige);border-radius:14px;padding:40px 38px}
-.upcard h3{font-size:1.6rem;margin-bottom:10px}
-.upcard p{color:var(--muted);margin-bottom:20px}
-.upcard .links{display:flex;flex-direction:column;gap:10px}
+/* trusted marquee (shared) */
+.mq-wrap{margin-top:56px}
+.mq-lbl{text-align:center;font-size:.9rem;color:var(--muted);margin-bottom:28px;font-family:var(--sans)}
+.marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.mtrack{display:flex;align-items:center;gap:60px;width:max-content}
+.mtrack.l{animation:scrollx 48s linear infinite}
+.mtrack.r{animation:scrollx 54s linear infinite reverse;margin-top:26px}
+@keyframes scrollx{to{transform:translateX(-50%)}}
+.mtrack img{height:30px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.5}
 
 /* cta */
 .cta{position:relative;border-radius:28px;margin:0 16px;text-align:center;overflow:hidden;color:#fff;background:linear-gradient(rgba(18,12,11,.84),rgba(18,12,11,.9)),url('https://images.unsplash.com/photo-1707721690544-781fe6ede937?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat,var(--ink)}
 .cta .in{position:relative;z-index:2;padding:94px 0}
-.cta h2{font-size:clamp(2.1rem,4.2vw,3.1rem);color:#fff;margin-bottom:26px;max-width:20ch;margin-inline:auto}
+.cta h2{font-size:clamp(2.1rem,4.2vw,3.1rem);color:#fff;margin-bottom:26px;max-width:18ch;margin-inline:auto}
 
 /* footer (shared) */
 footer{background:var(--ink);color:var(--muted-d);border-radius:28px;margin:16px;padding:76px 0 40px}
@@ -104,9 +107,9 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .fcontact{font-size:.88rem;color:var(--muted-d);line-height:1.9;margin-top:12px}.fcontact a{color:var(--orange-soft);font-weight:500}
 .foot-bot{border-top:1px solid var(--line-d);margin-top:52px;padding-top:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.82rem;color:rgba(255,255,255,.45)}
 
-@media(max-width:900px){.story .grid,.twoup{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.pgrid{grid-template-columns:1fr 1fr}.fgrid,.frow2{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){.cgrid{grid-template-columns:1fr 1fr}.cs-card{grid-template-columns:1fr}.cs-card .ph{min-height:240px}.fgrid,.frow2{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.wrap{padding:0 22px}#topnav .nav-in{padding:22px 22px}#topnav .logo{height:50px}
-  .ahero{margin:10px;border-radius:20px;padding:130px 24px 48px}.section{padding:58px 0}.stats,.pgrid{grid-template-columns:1fr}
+  .ahero{margin:10px;border-radius:20px;padding:130px 24px 48px}.cgrid{grid-template-columns:1fr}
   .cta,footer{margin:10px;border-radius:20px}.fgrid,.frow2{grid-template-columns:1fr}.fnews{grid-column:auto}}
 
 /* ===== nav dropdowns ===== */
@@ -134,6 +137,20 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
   #topnav .dd a{color:var(--muted)!important;padding:11px 12px}
   .dd-col h6{padding:12px 12px 4px}
 }
+
+/* audience wayfinding + case grid */
+.ahero .crumb{font-size:.8rem;letter-spacing:.02em;color:rgba(255,255,255,.72);margin-bottom:16px}
+.ahero .crumb a{color:rgba(255,255,255,.72)}.ahero .crumb a:hover{color:#fff}
+.cases3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+.ccard{background:var(--beige);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:.2s}
+.ccard:hover{background:var(--beige-h)}
+.ccard .ph{height:150px;background-size:cover;background-position:center}
+.ccard .bd{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
+.ccard h3{font-size:1.18rem;font-weight:500;line-height:1.25;margin-bottom:8px}
+.ccard p{font-size:.9rem;color:var(--muted);flex:1;margin-bottom:12px}
+.ccard .org{font-size:.8rem;color:var(--maroon);font-weight:600}
+.cases-cta{margin-top:28px}
+@media(max-width:900px){.cases3{grid-template-columns:1fr}}
 #topnav .links a.n-active{color:#fff;font-weight:600}
 #topnav.solid .links a.n-active,#topnav.scrolled .links a.n-active{color:var(--maroon)}
 </style>
@@ -146,7 +163,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
   <div class="links">
     <a href="index.html">Home</a>
     <div class="has-dd">
-      <a href="solutions.html">Solutions <span class="caret">&#9662;</span></a>
+      <a class="n-active" href="solutions.html">Solutions <span class="caret">&#9662;</span></a>
       <button class="dd-toggle" aria-label="Toggle Solutions submenu">&#9662;</button>
       <div class="dd dd-mega">
         <div class="dd-col"><h6>Products</h6><a href="mform.html">mForm</a><a href="mgrant.html">mGrant for Grantors</a><a href="mgrant.html">mGrant NUO</a><a href="anumati.html">Anumati</a></div>
@@ -168,7 +185,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
     <a href="our-work.html">Our work</a>
     <a href="resources.html">Resources</a>
     <div class="has-dd">
-      <a class="n-active" href="about.html">Company <span class="caret">&#9662;</span></a>
+      <a href="about.html">Company <span class="caret">&#9662;</span></a>
       <button class="dd-toggle" aria-label="Toggle Company submenu">&#9662;</button>
       <div class="dd">
         <a href="about.html">About</a>
@@ -184,67 +201,38 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 
 <!-- HERO -->
 <div class="ahero">
-  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2000&auto=format&fit=crop')"></div>
+  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1707721690544?q=80&w=2000&auto=format&fit=crop')"></div>
   <div class="veil"></div>
   <div class="in">
-    <h1>Build technology that <em>matters</em>.</h1>
-    <p>Engineering, product, delivery and field roles, working on software that runs real programmes for millions of people.</p>
-    <div class="btns"><a class="pill pill-primary" href="mailto:careers@dhwaniris.com">Write to us <span class="arw">&#8594;</span></a><a class="pill pill-dark" href="about.html">About Dhwani</a></div>
-    <div class="hcreds">A team of ~50 &middot; Gurugram, India &middot; Building since 2015</div>
+    <div class="crumb"><a href="solutions.html">Solutions</a> / Field Data Apps</div>
+    <h1>Data from the last <em>mile</em>.</h1>
+    <p>Offline-first mobile data collection built for the field, with mForm.</p>
+    <div class="btns"><a class="pill pill-primary" href="contact.html">Book a call <span class="arw">&#8594;</span></a><a class="pill pill-dark" href="our-work.html?offering=field-data">See it in our work</a></div>
   </div>
 </div>
 
-<!-- WHY -->
-<section class="section story"><div class="wrap">
-  <h2 class="shead">Why Dhwani</h2>
-  <div class="grid">
-    <div>
-      <p>Your work ships to the field, not to a backlog.</p>
-      <p>We build software for NGOs, funders and governments &mdash; the systems that run health, livelihoods, education and governance programmes. What you build gets used by real teams, often where connectivity is patchy and the stakes are high.</p>
-    </div>
-    <div>
-      <p>You will work close to the problem, with people who have spent their careers in the impact sector. Small teams, real ownership, and the space to do the work well.</p>
-      <p>We hire across engineering, product, delivery and field roles, at every level.</p>
-    </div>
+<!-- WHAT IT DOES -->
+<section class="section wyg"><div class="wrap">
+  <h2 class="shead">What it does</h2>
+  <div class="cgrid">
+    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span><h5>Offline collection</h5><p>Collect anywhere, sync when you reconnect.</p></a>
+    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.5a3 3 0 0 1 0 5.5M21 20c0-2.6-1.6-4.9-4-5.8"/></svg></span><h5>Surveyor management</h5><p>Assign, track and support field teams.</p></a>
+    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 8.5-8 11-4.6-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></span><h5>Validation</h5><p>Catch errors at the point of entry.</p></a>
+    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span><h5>Sync to MIS</h5><p>Field data lands clean in your system.</p></a>
   </div>
 </div></section>
 
-<!-- AREAS -->
-<section class="section people"><div class="wrap">
-  <h2 class="shead">Where you could fit</h2>
-  <div class="pgrid">
-    <div class="pcard"><div class="av">E</div><h4>Engineering</h4><div class="role">Web &middot; Mobile &middot; Data</div><p>Build offline-first apps, dashboards and large-scale MIS.</p></div>
-    <div class="pcard"><div class="av">P</div><h4>Product &amp; Design</h4><div class="role">PM &middot; UX</div><p>Shape tools that people with little tech exposure can actually use.</p></div>
-    <div class="pcard"><div class="av">D</div><h4>Delivery &amp; Field</h4><div class="role">PM &middot; Implementation</div><p>Take systems from kickoff to the last-mile team using them.</p></div>
-  </div>
-</div></section>
-
-<!-- HOW -->
-<section class="section"><div class="wrap">
-  <div class="twoup">
-    <div class="upcard">
-      <h3>How to apply</h3>
-      <p>Send your CV and a short note about what you would like to work on. We read every one.</p>
-      <div class="links">
-        <a class="tlink" href="mailto:careers@dhwaniris.com">careers@dhwaniris.com <span class="arw">&#8594;</span></a>
-        <a class="tlink" href="https://www.linkedin.com/company/14388289/" target="_blank" rel="noopener">Follow us on LinkedIn <span class="arw">&#8594;</span></a>
-      </div>
-    </div>
-    <div class="upcard">
-      <h3>Life at Dhwani</h3>
-      <p>Gurugram-based, with field exposure across our programmes. A team that stays close to the work and to each other.</p>
-      <div class="links">
-        <a class="tlink" href="about.html">Meet the team <span class="arw">&#8594;</span></a>
-        <a class="tlink" href="community.html">Our community <span class="arw">&#8594;</span></a>
-      </div>
-    </div>
-  </div>
+<!-- PROOF -->
+<section class="section proof"><div class="wrap">
+  <h2 class="shead">See it in our work</h2>
+  <p class="lede">Programmes running on Field Data Apps across the sectors we work in.</p>
+  <p class="cases-cta" style="margin-top:22px"><a class="tlink" href="our-work.html?offering=field-data">Browse Field Data Apps projects <span class="arw">&#8594;</span></a></p>
 </div></section>
 
 <!-- CTA -->
 <div class="cta"><div class="in wrap">
-  <h2>Want to build with us?</h2>
-  <a class="pill pill-primary" href="mailto:careers@dhwaniris.com">Write to us <span class="arw">&#8594;</span></a>
+  <h2>Ready to take your field data digital?</h2>
+  <a class="pill pill-primary" href="contact.html">Book a call <span class="arw">&#8594;</span></a>
 </div></div>
 
 <!-- FOOTER -->
@@ -279,7 +267,10 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 function s(){var h=(document.querySelector('.ahero')||{}).offsetHeight||520;nav.classList.toggle('solid',window.scrollY>h-70);}window.addEventListener('scroll',s,{passive:true});s();
 var mb=document.getElementById('menuBtn');if(mb){mb.addEventListener('click',function(){nav.classList.toggle('open');});
 nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');});});}
-  nav.querySelectorAll('.dd-toggle').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();b.parentElement.classList.toggle('open');});});})();
+  nav.querySelectorAll('.dd-toggle').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();b.parentElement.classList.toggle('open');});});
+var logos=['world-bank','unicef','who','undp','unesco','gates-foundation.svg','tata-trusts','tata-steel','mahindra','hdfc-bank','axis-bank-foundation','bajaj-finserv','reliance-foundation','godrej','sun-pharma','pratham','educate-girls','pradan','smile-foundation','save-the-children','helpage-india','azim-premji-philanthropic-initiatives','omidyar-network-india','dasra','give','nudge','central-square-foundation','transform-rural-india','jindal-stainless','lupin'];
+function build(id,a){var el=document.getElementById(id);if(!el)return;el.innerHTML=a.concat(a).map(function(n){var f=n.indexOf('.')>-1?n:n+'.png';return '<img src="assets/img/clients/'+f+'" alt="">';}).join('');}
+build('row1',logos.slice(0,15));build('row2',logos.slice(15));})();
 </script>
 </body>
 </html>
