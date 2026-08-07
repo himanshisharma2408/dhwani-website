@@ -145,6 +145,19 @@ button.rcard:hover{background:var(--beige-h)}
 .deck-modal .done{display:none;color:#2f6b45;font-size:.92rem}
 .deck-modal.sent .form-row{display:none}
 .deck-modal.sent .done{display:block}
+
+/* resource tabs */
+.rtabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px;border-bottom:1px solid var(--line);padding-bottom:0}
+.rtab{font-family:var(--sans);font-size:.95rem;font-weight:500;color:var(--muted);background:none;border:none;cursor:pointer;padding:12px 6px 14px;position:relative;display:flex;align-items:center;gap:7px}
+.rtab::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:transparent;border-radius:2px}
+.rtab:hover{color:var(--ink)}
+.rtab.on{color:var(--ink);font-weight:600}
+.rtab.on::after{background:var(--maroon)}
+.rtab-count{font-size:.72rem;font-weight:600;color:var(--muted);background:var(--beige);border-radius:999px;padding:2px 8px}
+.rtab.on .rtab-count{color:#fff;background:var(--maroon)}
+.rgroup{display:none;margin-top:0}
+.rgroup.on{display:block}
+@media(max-width:640px){.rtabs{gap:4px 14px;overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch}.rtab{padding:10px 2px 12px;white-space:nowrap}}
 </style>
 </head>
 <body>
@@ -182,9 +195,9 @@ button.rcard:hover{background:var(--beige-h)}
       <div class="dd">
         <a href="about.html">About</a>
         <a href="team.html">Team</a>
-        <a href="open-source.html">Open Source</a>
         <a href="careers.html">Careers</a>
         <a href="community.html">Community</a>
+        <a href="technology.html">Technology at Dhwani</a>
         <a href="contact.html">Contact</a>
       </div>
     </div>
@@ -207,12 +220,15 @@ button.rcard:hover{background:var(--beige-h)}
 
 <!-- RESOURCES -->
 <section class="section"><div class="wrap">
-  <h2 class="shead">Resources</h2>
-  <p class="lede">What we are reading, building and learning, shared openly.</p>
+  <div class="rtabs" role="tablist">
+    <button class="rtab" data-tab="toolkits">Toolkits</button>
+    <button class="rtab" data-tab="playbooks">Playbooks</button>
+    <button class="rtab" data-tab="decks">Decks</button>
+    <button class="rtab" data-tab="insights">Insights <span class="rtab-count">17</span></button>
+  </div>
 
   <div class="rgroup" id="toolkits">
-    <h4>Toolkits</h4>
-    <p class="lede" style="margin-top:-8px;margin-bottom:18px">We build on open-source technology like Frappe, and try to give back where we can. <a class="tlink" href="open-source.html">Our open-source approach &#8594;</a></p>
+    <p class="lede" style="margin-top:-8px;margin-bottom:18px">We build on open-source technology like Frappe, and try to give back where we can. <a class="tlink" href="technology.html">Our open-source approach &#8594;</a></p>
     <div class="rgrid">
       <a class="rcard" href="https://x.mgrant.in/" target="_blank" rel="noopener"><div class="kind">Toolkit</div><h3>mGrant Toolkit</h3><p>A free, lightweight version of mGrant to try grant workflows before you commit.</p><span class="tlink">Open toolkit <span class="arw">&#8594;</span></span></a>
       <a class="rcard" href="https://dpdp.dhwaniris.com/#top" target="_blank" rel="noopener"><div class="kind">Toolkit</div><h3>DPDP Readiness Primer</h3><p>A practical primer to start your DPDP Act readiness journey.</p><span class="tlink">Open primer <span class="arw">&#8594;</span></span></a>
@@ -221,7 +237,6 @@ button.rcard:hover{background:var(--beige-h)}
   </div>
 
   <div class="rgroup" id="playbooks">
-    <h4>Playbooks</h4>
     <div class="rgrid">
       <a class="rcard" href="#"><div class="kind">Playbook</div><h3>Choosing a programme MIS</h3><p>A step-by-step guide to scoping, choosing and rolling out an MIS your team will use.</p><span class="tlink">Get the playbook <span class="arw">→</span></span></a>
       <a class="rcard" href="#"><div class="kind">Playbook</div><h3>Running grants without spreadsheets</h3><p>How funders and grantees can move to a shared grant-management system.</p><span class="tlink">Get the playbook <span class="arw">→</span></span></a>
@@ -231,7 +246,6 @@ button.rcard:hover{background:var(--beige-h)}
 
   
   <div class="rgroup" id="decks">
-    <h4>Decks</h4>
     <div class="rgrid">
       <button class="rcard deck-card" data-deck="Company Overview"><div class="kind">Deck</div><h3>Company Overview</h3><p>Who we are, what we build, and the sectors we work in.</p><span class="tlink">Download <span class="arw">&#8594;</span></span></button>
       <button class="rcard deck-card" data-deck="mGrant Product Deck"><div class="kind">Deck</div><h3>mGrant Product Deck</h3><p>A walkthrough of mGrant for donors and for nonprofits.</p><span class="tlink">Download <span class="arw">&#8594;</span></span></button>
@@ -240,7 +254,6 @@ button.rcard:hover{background:var(--beige-h)}
   </div>
 
   <div class="rgroup" id="insights">
-    <h4>Insights</h4>
     <div class="rgrid">
     <a class="rcard" href="#"><div class="kind">Blog</div><h3>What I&#x27;ve Learned About Impact, Iteration and Imperfection at Dhwani RIS</h3><p>By Aashima Takkar &middot; June 5, 2025</p><span class="tlink">Read <span class="arw">&#8594;</span></span></a>
     <a class="rcard" href="#"><div class="kind">Blog</div><h3>mGrant: Streamlining Grant-Making and Project Management for Social Sector Pioneers</h3><p>By Gitesh Aggarwal &middot; February 28, 2023</p><span class="tlink">Read <span class="arw">&#8594;</span></span></a>
@@ -305,7 +318,7 @@ button.rcard:hover{background:var(--beige-h)}
       <form onsubmit="return false"><input type="email" placeholder="you@organisation.org"><button class="pill pill-primary" style="padding:11px 18px">Subscribe</button></form>
     </div>
     <div><h5>Who we serve</h5><ul><li><a href="for-donors.html">Donors &amp; CSRs</a></li><li><a href="for-ngos.html">NGOs</a></li><li><a href="for-government.html">Government</a></li><li><a href="for-academic.html">Academic &amp; Research</a></li></ul></div>
-    <div><h5>Company</h5><ul><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="open-source.html">Open Source</a></li><li><a href="careers.html">Careers</a></li><li><a href="community.html">Community</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h5>Company</h5><ul><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="careers.html">Careers</a></li><li><a href="community.html">Community</a></li><li><a href="technology.html">Technology at Dhwani</a></li><li><a href="contact.html">Contact</a></li></ul></div>
     <div><h5>Resources</h5><ul><li><a href="resources.html#toolkits">Toolkits</a></li><li><a href="resources.html#decks">Decks</a></li><li><a href="resources.html#playbooks">Playbooks</a></li><li><a href="resources.html#insights">Insights</a></li></ul><p class="fcontact">Sector 44, Gurugram, Haryana 122002<br><a href="tel:+919574655961">+91 95746 55961</a><br><a href="mailto:partnerships@dhwaniris.com">partnerships@dhwaniris.com</a></p></div>
   </div>
   <div class="foot-bot"><span>© 2026 Dhwani Rural Information Systems</span><span><a href="privacy.html">Privacy</a> · Terms · Data protection · Sitemap</span></div>
@@ -382,6 +395,9 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
 .dch-chips{display:flex;flex-wrap:wrap;gap:7px;padding:4px 16px 12px;flex:none}
 .dch-chips button{background:var(--beige);border:none;border-radius:999px;padding:8px 13px;font-size:.8rem;color:var(--ink);cursor:pointer;font-family:var(--sans)}
 .dch-chips button:hover{background:var(--beige-h)}
+.dch-actions{display:flex;gap:8px;padding:4px 16px 10px;flex:none}
+.dch-act{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;background:var(--maroon);color:#fff;border-radius:10px;padding:10px 8px;font-size:.82rem;font-weight:600;text-align:center;transition:.2s}
+.dch-act:hover{background:var(--maroon-2)}
 #dhwani-chat-form{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--line);flex:none;background:var(--paper)}
 #dhwani-chat-input{flex:1;border:1.5px solid var(--line);border-radius:999px;padding:10px 15px;font-family:var(--sans);font-size:.88rem;background:#fff}
 #dhwani-chat-input:focus{outline:none;border-color:var(--maroon)}
@@ -401,11 +417,14 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
     <button class="dch-close" id="dhwani-chat-close" aria-label="Close chat">&times;</button>
   </div>
   <div id="dhwani-chat-body"></div>
+  <div class="dch-actions">
+    <a class="dch-act" id="dchBook" href="contact.html#book"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Book a call</a>
+    <a class="dch-act" href="mailto:partnerships@dhwaniris.com"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg> Email us</a>
+  </div>
   <div class="dch-chips" id="dhwani-chat-chips">
     <button data-q="What do you build?">What do you build?</button>
     <button data-q="Who do you serve?">Who do you serve?</button>
     <button data-q="How do I get DPDP-ready?">DPDP readiness</button>
-    <button data-q="How do I contact you?">Contact</button>
   </div>
   <form id="dhwani-chat-form">
     <input id="dhwani-chat-input" type="text" placeholder="Ask a question…" autocomplete="off">
@@ -423,7 +442,7 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
     {kw:['deck','overview','one-pager','brochure','pdf','presentation'],
      a:"We've got a Company Overview deck (and a few others) &mdash; you can request one on our Resources page. <a href=\"resources.html#decks\">Get a deck &#8594;</a>"},
     {kw:['open source','frappe','erpnext'],
-     a:"Much of what we build sits on Frappe, the open-source framework behind ERPNext, and we try to give back where we can. <a href=\"open-source.html\">Read about our open-source approach &#8594;</a>"},
+     a:"Much of what we build sits on Frappe, the open-source framework behind ERPNext, and we try to give back where we can. <a href=\"technology.html\">Read about our open-source approach &#8594;</a>"},
     {kw:['radar','due diligence','risk intelligence'],
      a:"Radar is our AI-driven due-diligence and risk-intelligence platform for donors and CSR teams. <a href=\"radar.html\">See Radar &#8594;</a>"},
     {kw:['team','who works','employee','leadership','founder'],
@@ -503,5 +522,23 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
 })();
 </script>
 
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.rtab'));
+  var panels=[].slice.call(document.querySelectorAll('.rgroup'));
+  if(!tabs.length) return;
+  function activate(name){
+    tabs.forEach(function(t){t.classList.toggle('on',t.dataset.tab===name);});
+    panels.forEach(function(p){p.classList.toggle('on',p.id===name);});
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){
+    activate(t.dataset.tab);
+    try{history.replaceState(null,'','resources.html#'+t.dataset.tab);}catch(e){}
+  });});
+  var hash=location.hash.replace('#','');
+  var valid=tabs.some(function(t){return t.dataset.tab===hash;});
+  activate(valid?hash:'toolkits');
+})();
+</script>
 </body>
 </html>

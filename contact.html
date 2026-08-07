@@ -60,10 +60,28 @@ em{font-style:italic}
 .chero p{color:rgba(255,255,255,.82);font-size:1.08rem}
 
 /* ===== contact body ===== */
-.contact-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:32px;align-items:start}
+.ctabs{display:flex;gap:10px;justify-content:center;margin-bottom:32px;border-bottom:1px solid var(--line)}
+.ctab{font-family:var(--sans);font-size:1rem;font-weight:500;color:var(--muted);background:none;border:none;cursor:pointer;padding:12px 6px 14px;position:relative}
+.ctab::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:transparent;border-radius:2px}
+.ctab:hover{color:var(--ink)}
+.ctab.on{color:var(--ink);font-weight:600}
+.ctab.on::after{background:var(--maroon)}
+.cpanel-wrap{max-width:640px;margin:0 auto}
+.cpanel{display:none}
+.cpanel.on{display:block}
 .form-card{background:var(--beige);border-radius:16px;padding:38px 36px}
 .form-card h2{font-size:1.7rem;margin-bottom:6px}
 .form-card .lede{color:var(--muted);margin-bottom:26px}
+.reach-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:980px;margin:44px auto 0}
+.reach{display:flex;gap:12px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 16px}
+.reach:hover{background:var(--beige)}
+.reach .ci{width:38px;height:38px;flex:none;border-radius:10px;background:var(--tint);color:var(--maroon);display:flex;align-items:center;justify-content:center}
+.reach .rx b{display:block;font-family:var(--serif);font-size:.98rem;font-weight:500}
+.reach .rx span{font-size:.8rem;color:var(--muted)}
+.wrap>p.resp{max-width:980px;margin:20px auto 0;background:var(--beige-h);border-radius:12px;padding:16px 18px;font-size:.9rem;color:var(--muted)}
+.wrap>p.resp b{color:var(--ink);font-weight:600}
+@media(max-width:900px){.reach-row{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.reach-row{grid-template-columns:1fr}}
 .field{margin-bottom:18px}
 .field label{display:block;font-size:.85rem;font-weight:600;margin-bottom:7px}
 .field label .req{color:var(--maroon)}
@@ -157,12 +175,6 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .pill.ghost{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.4);color:#fff}
 .pill.ghost:hover{border-color:#fff;background:rgba(255,255,255,.16)}
 .two-cta{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
-.side-card{background:var(--beige);border-radius:16px;padding:38px 36px;display:flex;flex-direction:column}
-.side-card h2{font-size:1.7rem;margin-bottom:6px}
-.side-card>p{color:var(--muted);margin-bottom:20px}
-.side-card .mini{font-size:.82rem;margin-top:12px}
-.side-divider{border:none;border-top:1px solid var(--line);margin:28px 0 6px}
-.reach-label{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--maroon);font-weight:600;margin-bottom:2px}
 @media(max-width:820px){.two-cta,.reach-row{grid-template-columns:1fr}}
 #topnav .links a.n-active{color:#fff;font-weight:600}
 #topnav.solid .links a.n-active,#topnav.scrolled .links a.n-active{color:var(--maroon)}
@@ -203,9 +215,9 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
       <div class="dd">
         <a href="about.html">About</a>
         <a href="team.html">Team</a>
-        <a href="open-source.html">Open Source</a>
         <a href="careers.html">Careers</a>
         <a href="community.html">Community</a>
+        <a href="technology.html">Technology at Dhwani</a>
         <a href="contact.html">Contact</a>
       </div>
     </div>
@@ -223,10 +235,15 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
   <div class="chero-btns"><a class="pill pill-primary" href="#book">Book a call <span class="arw">&#8594;</span></a><a class="pill ghost" href="#message">Send a message</a></div>
 </div></div>
 
-<!-- ===== MAIN: message + book ===== -->
-<section class="wrap" style="padding-top:var(--pad);padding-bottom:var(--pad)">
-  <div class="contact-grid">
-    <div id="message">
+<!-- ===== MAIN: message / book tabs ===== -->
+<section class="wrap" style="padding-top:var(--pad);padding-bottom:52px">
+  <div class="ctabs" role="tablist">
+    <button class="ctab on" data-tab="message">Send a message</button>
+    <button class="ctab" data-tab="book">Book a call</button>
+  </div>
+
+  <div class="cpanel-wrap">
+    <div class="cpanel on" id="message">
       <form class="form-card" id="contact-form" novalidate>
         <h2>Send us a message</h2>
         <p class="lede">Three fields. A real person picks it up.</p>
@@ -248,7 +265,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
         <div class="field">
           <label for="c-msg">Your message <span class="req">*</span></label>
           <textarea id="c-msg" required placeholder="What does your programme need?"></textarea>
-          <p class="form-note" id="prefill-note" hidden>We've started this off for you. Edit it however you like.</p>
+          <p class="form-note" id="prefill-note" hidden>We&#39;ve started this off for you. Edit it however you like.</p>
         </div>
         <button type="submit" class="pill pill-primary">Send message <span class="arw">→</span></button>
       </form>
@@ -257,20 +274,24 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
         <p>Thanks — someone from our team will reply within one working day.</p>
       </div>
     </div>
-    <div class="side-card" id="book">
-      <h2>Book a call</h2>
-      <p>Pick a time that suits you and talk to a real person.</p>
-      <a class="pill pill-primary" href="#">Pick a slot <span class="arw">&#8594;</span></a>
-      <p class="mini"><span style="opacity:.7">[Calendar booking link to be connected.]</span></p>
-      <hr class="side-divider">
-      <p class="reach-label">Or reach us directly</p>
-      <a class="copt" href="https://wa.me/919574655961?text=Hi%20Dhwani%2C%20I%27d%20like%20to%20talk%20about%20our%20programme." target="_blank" rel="noopener"><span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span><span><b>WhatsApp us</b><span>+91 95746 55961</span></span></a>
-      <a class="copt" href="mailto:partnerships@dhwaniris.com"><span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></span><span><b>Email us</b><span>partnerships@dhwaniris.com</span></span></a>
-      <a class="copt" href="tel:+919574655961"><span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><span><b>Call us</b><span>+91 95746 55961</span></span></a>
-      <a class="copt" href="#map"><span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-7-10a7 7 0 0 1 14 0c0 5.6-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg></span><span><b>Visit us</b><span>See our office on the map</span></span></a>
-      <div class="resp"><b>Response time:</b> within one working day. For live programmes, mention it and we&#39;ll prioritise.</div>
+
+    <div class="cpanel" id="book">
+      <div class="form-card" style="text-align:center">
+        <h2>Book a call</h2>
+        <p class="lede">Pick a time that suits you and talk to a real person about what your programme needs.</p>
+        <a class="pill pill-primary" href="#">Pick a slot <span class="arw">&#8594;</span></a>
+        <p class="form-note"><span style="opacity:.7">[Calendar booking link to be connected.]</span></p>
+      </div>
     </div>
   </div>
+
+  <div class="reach-row">
+    <a class="reach" href="https://wa.me/919574655961?text=Hi%20Dhwani%2C%20I%27d%20like%20to%20talk%20about%20our%20programme." target="_blank" rel="noopener"><span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span><span class="rx"><b>WhatsApp us</b><span>+91 95746 55961</span></span></a>
+    <a class="reach" href="mailto:partnerships@dhwaniris.com"><span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></span><span class="rx"><b>Email us</b><span>partnerships@dhwaniris.com</span></span></a>
+    <a class="reach" href="tel:+919574655961"><span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><span class="rx"><b>Call us</b><span>+91 95746 55961</span></span></a>
+    <a class="reach" href="#map"><span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-7-10a7 7 0 0 1 14 0c0 5.6-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg></span><span class="rx"><b>Visit us</b><span>See our office on the map</span></span></a>
+  </div>
+  <p class="resp"><b>Response time:</b> within one working day. For live programmes, mention it and we&#39;ll prioritise.</p>
 </section>
 
 <!-- ===== OFFICE MAP ===== -->
@@ -307,7 +328,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
       <form onsubmit="return false"><input type="email" placeholder="you@organisation.org"><button class="pill pill-primary" style="padding:11px 18px">Subscribe</button></form>
     </div>
     <div><h5>Who we serve</h5><ul><li><a href="for-donors.html">Donors &amp; CSRs</a></li><li><a href="for-ngos.html">NGOs</a></li><li><a href="for-government.html">Government</a></li><li><a href="for-academic.html">Academic &amp; Research</a></li></ul></div>
-    <div><h5>Company</h5><ul><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="open-source.html">Open Source</a></li><li><a href="careers.html">Careers</a></li><li><a href="community.html">Community</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h5>Company</h5><ul><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="careers.html">Careers</a></li><li><a href="community.html">Community</a></li><li><a href="technology.html">Technology at Dhwani</a></li><li><a href="contact.html">Contact</a></li></ul></div>
     <div><h5>Resources</h5><ul><li><a href="resources.html#toolkits">Toolkits</a></li><li><a href="resources.html#decks">Decks</a></li><li><a href="resources.html#playbooks">Playbooks</a></li><li><a href="resources.html#insights">Insights</a></li></ul><p class="fcontact">Sector 44, Gurugram, Haryana 122002<br><a href="tel:+919574655961">+91 95746 55961</a><br><a href="mailto:partnerships@dhwaniris.com">partnerships@dhwaniris.com</a></p></div>
   </div>
   <div class="foot-bot"><span>© 2026 Dhwani Rural Information Systems</span><span><a href="privacy.html">Privacy</a> · Terms · Data protection · Sitemap</span></div>
@@ -338,6 +359,32 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 
   var form=document.getElementById('contact-form'),done=document.getElementById('contact-done');
   form.addEventListener('submit',function(e){e.preventDefault();if(!form.checkValidity()){form.reportValidity();return;}form.style.display='none';done.classList.add('show');window.scrollTo({top:0,behavior:'smooth'});});
+
+  /* message / book a call tabs */
+  var ctabs=[].slice.call(document.querySelectorAll('.ctab'));
+  var cpanels=[].slice.call(document.querySelectorAll('.cpanel'));
+  function activateTab(name){
+    ctabs.forEach(function(t){t.classList.toggle('on',t.dataset.tab===name);});
+    cpanels.forEach(function(p){p.classList.toggle('on',p.id===name);});
+  }
+  ctabs.forEach(function(t){t.addEventListener('click',function(){
+    activateTab(t.dataset.tab);
+    try{history.replaceState(null,'','contact.html#'+t.dataset.tab);}catch(e){}
+  });});
+  document.querySelectorAll('a[href="#message"],a[href="#book"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      var name=a.getAttribute('href').slice(1);
+      activateTab(name);
+      document.querySelector('.ctabs').scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+  var startHash=location.hash.replace('#','');
+  activateTab(startHash==='book'?'book':'message');
+  window.addEventListener('hashchange',function(){
+    var h=location.hash.replace('#','');
+    if(h==='book'||h==='message'){activateTab(h);document.querySelector('.ctabs').scrollIntoView({behavior:'smooth',block:'start'});}
+  });
 })();
 </script>
 
@@ -366,6 +413,9 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .dch-chips{display:flex;flex-wrap:wrap;gap:7px;padding:4px 16px 12px;flex:none}
 .dch-chips button{background:var(--beige);border:none;border-radius:999px;padding:8px 13px;font-size:.8rem;color:var(--ink);cursor:pointer;font-family:var(--sans)}
 .dch-chips button:hover{background:var(--beige-h)}
+.dch-actions{display:flex;gap:8px;padding:4px 16px 10px;flex:none}
+.dch-act{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;background:var(--maroon);color:#fff;border-radius:10px;padding:10px 8px;font-size:.82rem;font-weight:600;text-align:center;transition:.2s}
+.dch-act:hover{background:var(--maroon-2)}
 #dhwani-chat-form{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--line);flex:none;background:var(--paper)}
 #dhwani-chat-input{flex:1;border:1.5px solid var(--line);border-radius:999px;padding:10px 15px;font-family:var(--sans);font-size:.88rem;background:#fff}
 #dhwani-chat-input:focus{outline:none;border-color:var(--maroon)}
@@ -385,11 +435,14 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
     <button class="dch-close" id="dhwani-chat-close" aria-label="Close chat">&times;</button>
   </div>
   <div id="dhwani-chat-body"></div>
+  <div class="dch-actions">
+    <a class="dch-act" id="dchBook" href="contact.html#book"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Book a call</a>
+    <a class="dch-act" href="mailto:partnerships@dhwaniris.com"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg> Email us</a>
+  </div>
   <div class="dch-chips" id="dhwani-chat-chips">
     <button data-q="What do you build?">What do you build?</button>
     <button data-q="Who do you serve?">Who do you serve?</button>
     <button data-q="How do I get DPDP-ready?">DPDP readiness</button>
-    <button data-q="How do I contact you?">Contact</button>
   </div>
   <form id="dhwani-chat-form">
     <input id="dhwani-chat-input" type="text" placeholder="Ask a question…" autocomplete="off">
@@ -407,7 +460,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
     {kw:['deck','overview','one-pager','brochure','pdf','presentation'],
      a:"We've got a Company Overview deck (and a few others) &mdash; you can request one on our Resources page. <a href=\"resources.html#decks\">Get a deck &#8594;</a>"},
     {kw:['open source','frappe','erpnext'],
-     a:"Much of what we build sits on Frappe, the open-source framework behind ERPNext, and we try to give back where we can. <a href=\"open-source.html\">Read about our open-source approach &#8594;</a>"},
+     a:"Much of what we build sits on Frappe, the open-source framework behind ERPNext, and we try to give back where we can. <a href=\"technology.html\">Read about our open-source approach &#8594;</a>"},
     {kw:['radar','due diligence','risk intelligence'],
      a:"Radar is our AI-driven due-diligence and risk-intelligence platform for donors and CSR teams. <a href=\"radar.html\">See Radar &#8594;</a>"},
     {kw:['team','who works','employee','leadership','founder'],
