@@ -103,9 +103,12 @@ em{font-style:italic}
 .tm-slide .who{margin-top:28px}
 .tm-slide .who b{font-family:var(--serif);font-size:1.15rem;font-weight:500;display:block}
 .tm-slide .who span{font-size:.88rem;color:var(--muted)}
-.tm-arrows{display:flex;gap:12px;justify-content:center;margin-top:36px}
-.tm-arrows button{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--line);background:transparent;color:var(--maroon);cursor:pointer;font-size:1.1rem;transition:.2s}
+.tm-track{padding:0 62px}
+.tm-arrows button{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1.5px solid var(--line);background:var(--paper);color:var(--maroon);cursor:pointer;font-size:1.1rem;transition:.2s;z-index:2}
 .tm-arrows button:hover{background:var(--maroon);color:#fff;border-color:var(--maroon)}
+#tmPrev{left:0}
+#tmNext{right:0}
+@media(max-width:640px){.tm-track{padding:0 0 60px}.tm-arrows button{top:auto;bottom:0;transform:none}#tmPrev{left:calc(50% - 58px)}#tmNext{right:calc(50% - 58px)}}
 
 /* cta */
 .cta{position:relative;border-radius:28px;margin:0 16px;text-align:center;overflow:hidden;color:#fff;background:linear-gradient(rgba(18,12,11,.84),rgba(18,12,11,.9)),url('https://images.unsplash.com/photo-1707721690544-781fe6ede937?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat,var(--ink)}
@@ -202,7 +205,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
       <button class="dd-toggle" aria-label="Toggle Solutions submenu">&#9662;</button>
       <div class="dd dd-mega">
         <div class="dd-col"><h6>Products</h6><a href="mgrant.html">mGrant for Donors</a><a href="mgrant.html">mGrant for Nonprofits</a><a href="mform.html">mForm</a><a href="anumati.html">Anumati</a><a href="radar.html">Radar</a></div>
-        <div class="dd-col"><h6>Systems</h6><a href="programme-mis.html">Programme MIS</a><a href="impact-dashboards.html">Impact Dashboards</a><a href="grant-management.html">Grant Management</a><a href="donor-management.html">Donor Management</a><a href="field-data-apps.html">Field Data Apps</a><a href="back-office-it.html">Back-office IT</a></div>
+        <div class="dd-col"><h6>Systems</h6><a href="programme-mis.html">Programme MIS</a><a href="impact-dashboards.html">Impact Dashboards</a><a href="grant-management.html">Grant Management</a><a href="donor-management.html">Donor Management</a><a href="field-data-apps.html">Field Data Apps</a><a href="back-office-it.html">Back-office IT</a><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></div>
         <div class="dd-col"><h6>Consulting</h6><a href="dpdp-act-readiness.html">DPDP Act Readiness</a><a href="cloud-optimisation.html">Cloud Optimisation</a><a href="ai-for-impact.html">AI for Impact</a><a href="digital-transformation.html">Digital Transformation</a><a href="programme-management.html">Programme Management as a Service</a></div>
         <div class="dd-col"><h6>Explore</h6><a href="our-work.html">Browse by sector</a><a href="solutions.html">All solutions</a><a class="n-active" href="our-work.html">Our work</a></div>
       </div>
@@ -252,7 +255,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
   <h2 class="shead">Browse our work</h2>
   <p class="lede">Filter by sector, by what we built, or by who it was for. Deep-links from Solutions and the audience pages arrive here pre-filtered.</p>
   <div class="filters">
-    <div class="frow"><span class="flabel">Sector</span><div class="chips2"><button class="fchip" data-dim="sector" data-val="">All</button><button class="fchip" data-dim="sector" data-val="healthcare">Healthcare</button><button class="fchip" data-dim="sector" data-val="agriculture">Agriculture & Livelihoods</button><button class="fchip" data-dim="sector" data-val="education">Education & Skilling</button><button class="fchip" data-dim="sector" data-val="financial-inclusion">Financial Inclusion</button><button class="fchip" data-dim="sector" data-val="climate">Climate & Environment</button><button class="fchip" data-dim="sector" data-val="governance">Governance</button><button class="fchip" data-dim="sector" data-val="mel">Programme Mgmt & MEL</button><button class="fchip" data-dim="sector" data-val="digital-ai">Digital & AI</button></div></div>
+    <div class="frow"><span class="flabel">Sector</span><div class="chips2"><button class="fchip" data-dim="sector" data-val="">All</button><button class="fchip" data-dim="sector" data-val="healthcare">Healthcare</button><button class="fchip" data-dim="sector" data-val="agriculture">Agriculture & Livelihoods</button><button class="fchip" data-dim="sector" data-val="education">Education & Skilling</button><button class="fchip" data-dim="sector" data-val="financial-inclusion">Financial Inclusion</button><button class="fchip" data-dim="sector" data-val="climate">Climate & Environment</button><button class="fchip" data-dim="sector" data-val="governance">Governance</button><button class="fchip" data-dim="sector" data-val="entrepreneurship">Entrepreneurship</button><button class="fchip" data-dim="sector" data-val="mel">Programme Mgmt & MEL</button><button class="fchip" data-dim="sector" data-val="digital-ai">Digital & AI</button></div></div>
     <div class="frow"><span class="flabel">Offering</span><div class="chips2"><button class="fchip" data-dim="offering" data-val="">All</button><button class="fchip" data-dim="offering" data-val="programme-mis">Programme MIS</button><button class="fchip" data-dim="offering" data-val="dashboards">Dashboards</button><button class="fchip" data-dim="offering" data-val="grants-donors">Grants & Donors</button><button class="fchip" data-dim="offering" data-val="field-data">Field Data</button><button class="fchip" data-dim="offering" data-val="monitoring-evaluation">M&E</button><button class="fchip" data-dim="offering" data-val="dpdp">DPDP Readiness</button><button class="fchip" data-dim="offering" data-val="ai-cloud">AI & Cloud</button><button class="fchip" data-dim="offering" data-val="digital-transformation">Digital Transformation</button><button class="fchip" data-dim="offering" data-val="pmu">Programme Management</button></div></div>
     <div class="frow"><span class="flabel">For</span><div class="chips2"><button class="fchip" data-dim="audience" data-val="">All</button><button class="fchip" data-dim="audience" data-val="donors">Donors & Funders</button><button class="fchip" data-dim="audience" data-val="ngos">NGOs</button><button class="fchip" data-dim="audience" data-val="government">Government</button></div></div>
   </div>
@@ -318,7 +321,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
       <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1707721690544-781fe6ede937?q=80&w=800&auto=format&fit=crop')"></div>
       <div class="bd"><div class="sect">Governance</div><h4>Consent management rollout for a CSR programme</h4><p>Consent, data residency and audit trails, built in with Anumati.</p><div class="meta"><span>Donor/Funder</span><span>DPDP Readiness</span></div></div>
     </a>
-    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="financial-inclusion" data-offering="grants-donors dashboards" data-audience="donors">
+    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="financial-inclusion entrepreneurship" data-offering="grants-donors dashboards" data-audience="donors">
       <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1601689892697-b64daa00ff6d?q=80&w=800&auto=format&fit=crop')"></div>
       <div class="bd"><div class="sect">Financial Inclusion</div><h4>A global funder's India grant portfolio</h4><p>Grant-making and reporting for dozens of grantees in one system.</p><div class="meta"><span>Donor/Funder</span><span>Grants & Donors</span></div></div>
     </a>
@@ -346,6 +349,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 <div class="tm"><div class="wrap">
   <div class="qmark">&ldquo;</div>
   <div class="tm-track">
+    <div class="tm-arrows"><button id="tmPrev" aria-label="Previous">←</button><button id="tmNext" aria-label="Next">→</button></div>
     <div class="tm-slide on">
       <p class="q">They understood every problem in our data first, then gave us options so we could <em>choose what worked</em>.</p>
       <div class="who"><b>Azad Foundation</b><span>Women with Wheels programme</span></div>
@@ -359,7 +363,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
       <div class="who"><b>A national programme</b><span>Programme director</span></div>
     </div>
   </div>
-  <div class="tm-arrows"><button id="tmPrev" aria-label="Previous">←</button><button id="tmNext" aria-label="Next">→</button></div>
+  
 </div></div>
 
 <!-- CTA -->
@@ -378,7 +382,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
       <div class="fsoc"><a href="https://www.linkedin.com/company/14388289/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/dhwaniris" target="_blank" rel="noopener">Instagram</a><a href="community.html">Community</a></div>
     </div>
     <div><h5>Products</h5><ul><li><a href="mgrant.html">mGrant for Donors</a></li><li><a href="mgrant.html">mGrant for Nonprofits</a></li><li><a href="mform.html">mForm</a></li><li><a href="anumati.html">Anumati (DPDP)</a></li><li><a href="radar.html">Radar</a></li></ul></div>
-    <div><h5>Systems</h5><ul><li><a href="programme-mis.html">Programme MIS</a></li><li><a href="impact-dashboards.html">Impact Dashboards</a></li><li><a href="grant-management.html">Grant Management</a></li><li><a href="donor-management.html">Donor Management</a></li><li><a href="field-data-apps.html">Field Data Apps</a></li><li><a href="back-office-it.html">Back-office IT</a></li></ul></div>
+    <div><h5>Systems</h5><ul><li><a href="programme-mis.html">Programme MIS</a></li><li><a href="impact-dashboards.html">Impact Dashboards</a></li><li><a href="grant-management.html">Grant Management</a></li><li><a href="donor-management.html">Donor Management</a></li><li><a href="field-data-apps.html">Field Data Apps</a></li><li><a href="back-office-it.html">Back-office IT</a></li><li><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></li></ul></div>
     <div><h5>Consulting</h5><ul><li><a href="dpdp-act-readiness.html">DPDP Act Readiness</a></li><li><a href="cloud-optimisation.html">Cloud Optimisation</a></li><li><a href="ai-for-impact.html">AI for Impact</a></li><li><a href="digital-transformation.html">Digital Transformation</a></li><li><a href="programme-management.html">Programme Management as a Service</a></li></ul></div>
     <div><h5>By sector</h5><ul><li><a href="our-work.html?sector=healthcare">Healthcare</a></li><li><a href="our-work.html?sector=agriculture">Agriculture &amp; Livelihoods</a></li><li><a href="our-work.html?sector=education">Education &amp; Skilling</a></li><li><a href="our-work.html?sector=financial-inclusion">Financial Inclusion</a></li><li><a href="our-work.html?sector=governance">Governance</a></li><li><a href="our-work.html">All sectors →</a></li></ul></div>
   </div>
