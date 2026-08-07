@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>About — Dhwani RIS</title>
+<title>Sitemap — Dhwani RIS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
@@ -63,12 +63,10 @@ em{font-style:italic}
 .story p:first-child{color:var(--ink);font-family:var(--serif);font-size:1.5rem;line-height:1.4}
 
 /* stats */
-.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:48px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
 .stat{background:var(--beige);border-radius:10px;padding:30px 28px}
 .stat b{display:block;font-family:var(--serif);font-size:2.6rem;font-weight:500;line-height:1;margin-bottom:8px}
 .stat span{font-size:.92rem;color:var(--muted)}
-.stat .pl{color:var(--orange)}
-.stats-note{margin-top:20px;font-size:.85rem;color:var(--muted);max-width:80ch}
 
 /* people */
 .people.section{background:var(--paper)}
@@ -139,36 +137,6 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 }
 #topnav .links a.n-active{color:#fff;font-weight:600}
 #topnav.solid .links a.n-active,#topnav.scrolled .links a.n-active{color:var(--maroon)}
-
-/* team groups + compact list */
-.tgrp{font-size:1.28rem;font-weight:500;color:var(--ink);margin:46px 0 22px;padding-bottom:12px;border-bottom:1px solid var(--line)}
-.tlist{display:grid;grid-template-columns:repeat(3,1fr);gap:16px 28px}
-.tmember b{display:block;font-family:var(--serif);font-size:1.08rem;font-weight:500;color:var(--ink)}
-.tmember span{font-size:.85rem;color:var(--muted)}
-@media(max-width:760px){.tlist{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.tlist{grid-template-columns:1fr}}
-
-/* where we work */
-.where.section{background:var(--paper)}
-.where .chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.where .chips span{background:var(--beige);border-radius:999px;padding:12px 22px;font-family:var(--serif);font-size:1.05rem;color:var(--ink)}
-.where .note{margin-top:22px;font-size:.95rem;color:var(--muted)}
-
-/* deck promo callout + modal */
-.deck-promo{background:var(--beige);border-radius:16px;padding:34px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin:0 16px 16px}
-.deck-promo h3{font-size:1.3rem;margin-bottom:6px}
-.deck-promo p{color:var(--muted);font-size:.92rem;max-width:46ch}
-.deck-modal{display:none;position:fixed;inset:0;z-index:400;align-items:center;justify-content:center;padding:20px}
-.deck-modal.open{display:flex}
-.deck-modal .backdrop{position:absolute;inset:0;background:rgba(21,16,15,.5)}
-.deck-modal .box{position:relative;background:var(--paper);border-radius:18px;padding:36px 34px;max-width:420px;width:100%}
-.deck-modal h3{font-size:1.4rem;margin-bottom:8px}
-.deck-modal p{color:var(--muted);font-size:.92rem;margin-bottom:20px}
-.deck-modal input{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;font-family:var(--sans);font-size:.95rem;margin-bottom:14px}
-.deck-modal .close{position:absolute;top:16px;right:16px;background:none;border:none;font-size:1.3rem;color:var(--muted);cursor:pointer;line-height:1}
-.deck-modal .done{display:none;color:#2f6b45;font-size:.92rem}
-.deck-modal.sent .form-row{display:none}
-.deck-modal.sent .done{display:block}
 </style>
 </head>
 <body>
@@ -201,7 +169,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
     <a href="our-work.html">Our work</a>
     <a href="resources.html">Resources</a>
     <div class="has-dd">
-      <a class="n-active" href="about.html">Company <span class="caret">&#9662;</span></a>
+      <a href="about.html">Company <span class="caret">&#9662;</span></a>
       <button class="dd-toggle" aria-label="Toggle Company submenu">&#9662;</button>
       <div class="dd">
         <a href="about.html">About</a>
@@ -218,123 +186,41 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 </div></header>
 
 <!-- HERO -->
-<div class="ahero">
-  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1623211269755-569fec0536d2?q=80&w=2000&auto=format&fit=crop')"></div>
+<div class="ahero" style="padding:150px 42px 54px">
+  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=2000&auto=format&fit=crop')"></div>
   <div class="veil"></div>
   <div class="in">
-    <h1>Built by the sector, for the <em>sector</em>.</h1>
-    <p>Since 2015, from Gurugram, we have built the technology that funders, NGOs and governments run their programmes on.</p>
-    <div class="btns"><a class="pill pill-primary" href="contact.html">Book a call <span class="arw">&#8594;</span></a><a class="pill pill-dark" href="our-work.html">See our work</a></div>
-    <div class="hcreds">300+ projects &middot; 200+ organisations &middot; 6 countries</div>
+    <h1>Site<em>map</em>.</h1>
+    <p>Every page on dhwaniris.com, in one place.</p>
   </div>
 </div>
 
-<!-- STORY -->
-<section class="section story"><div class="wrap">
-  <h2 class="shead">Our story</h2>
-  <div class="grid">
-    <div>
-      <p>We started Dhwani because good programmes were being let down by bad technology.</p>
-      <p>Field teams were stuck with paper and spreadsheets. Funders could not see what was happening. Governments were running population-scale programmes on tools that could not keep up.</p>
-    </div>
-    <div>
-      <p>So we built software specifically for the impact sector, with people who have spent their careers in it. Field data apps that work offline. Dashboards funders actually use. Grant and donor systems, MIS, and the consulting to make it all land.</p>
-      <p>Ten years on, that work runs across 6 countries and 200+ organisations, and it is held to ISO 27001, DPDP and GDPR standards.</p>
-    </div>
-  </div>
-  <div class="stats">
-    <div class="stat"><b>300<span class="pl">+</span></b><span>Projects delivered</span></div>
-    <div class="stat"><b>200<span class="pl">+</span></b><span>Organisations equipped</span></div>
-    <div class="stat"><b>80<span class="pl">+</span></b><span>ICT4D professionals</span></div>
-    <div class="stat"><b>100<span class="pl">M+</span></b><span>Lives reached*</span></div>
-    <div class="stat"><b>6</b><span>Countries</span></div>
-  </div>
-  <p class="stats-note">*Reach — people whose data, services or entitlements run on Dhwani-built platforms; not direct beneficiaries. Outcomes belong to our partners.</p>
+<style>.smap{max-width:900px;columns:2;column-gap:60px}.smap h4{font-family:var(--serif);font-size:1.1rem;font-weight:500;margin:26px 0 10px;break-after:avoid}.smap h4:first-child{margin-top:0}.smap ul{list-style:none;margin-bottom:4px}.smap li{margin-bottom:8px;break-inside:avoid}.smap a{color:var(--muted);font-size:.95rem}.smap a:hover{color:var(--maroon)}@media(max-width:640px){.smap{columns:1}}</style>
+<section class="section"><div class="wrap smap">
+  <h4>Main</h4>
+  <ul><li><a href="index.html">Home</a></li><li><a href="solutions.html">Solutions</a></li><li><a href="who-we-serve.html">Who we serve</a></li><li><a href="our-work.html">Our work</a></li><li><a href="resources.html">Resources</a></li></ul>
+
+  <h4>Products</h4>
+  <ul><li><a href="mgrant.html">mGrant (for Donors &amp; Nonprofits)</a></li><li><a href="mform.html">mForm</a></li><li><a href="anumati.html">Anumati</a></li><li><a href="radar.html">Radar</a></li></ul>
+
+  <h4>Systems we build</h4>
+  <ul><li><a href="programme-mis.html">Programme MIS</a></li><li><a href="impact-dashboards.html">Impact Dashboards</a></li><li><a href="grant-management.html">Grant Management</a></li><li><a href="donor-management.html">Donor Management</a></li><li><a href="field-data-apps.html">Field Data Apps</a></li><li><a href="back-office-it.html">Back-office IT</a></li><li><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></li></ul>
+
+  <h4>Consulting &amp; advisory</h4>
+  <ul><li><a href="dpdp-act-readiness.html">DPDP Act Readiness</a></li><li><a href="cloud-optimisation.html">Cloud Optimisation</a></li><li><a href="ai-for-impact.html">AI for Impact</a></li><li><a href="digital-transformation.html">Digital Transformation</a></li><li><a href="programme-management.html">Programme Management as a Service</a></li></ul>
+
+  <h4>Who we serve</h4>
+  <ul><li><a href="for-donors.html">For Donors &amp; CSRs</a></li><li><a href="for-ngos.html">For NGOs</a></li><li><a href="for-government.html">For Government &amp; Multilaterals</a></li><li><a href="for-academic.html">For Academic &amp; Research</a></li></ul>
+
+  <h4>Company</h4>
+  <ul><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="careers.html">Careers</a></li><li><a href="life-at-dhwani.html">Life at Dhwani</a></li><li><a href="community.html">Community</a></li><li><a href="technology.html">Technology at Dhwani</a></li></ul>
+
+  <h4>Resources</h4>
+  <ul><li><a href="resources.html#toolkits">Toolkits</a></li><li><a href="resources.html#playbooks">Playbooks</a></li><li><a href="resources.html#decks">Decks</a></li><li><a href="resources.html#insights">Insights</a></li></ul>
+
+  <h4>Other</h4>
+  <ul><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="sitemap.html">Sitemap</a></li></ul>
 </div></section>
-
-<!-- OPEN SOURCE -->
-<section class="section story" style="background:var(--paper)"><div class="wrap">
-  <h2 class="shead">Built on open source</h2>
-  <div class="grid">
-    <div>
-      <p>Much of what we build sits on <b>Frappe</b>, the open-source low-code framework behind ERPNext &mdash; not a closed, proprietary stack we control alone.</p>
-    </div>
-    <div>
-      <p>We think the impact sector is better served by open, inspectable technology than by vendor lock-in. Where we can, we contribute back &mdash; through code, documentation, and by helping the developers who extend these tools.</p>
-    </div>
-  </div>
-  <p class="lede" style="margin-top:22px"><a class="tlink" href="technology.html">Read more about our open-source approach <span class="arw">&#8594;</span></a></p>
-</div></section>
-
-<!-- WHERE WE WORK -->
-<section class="section where"><div class="wrap">
-  <h2 class="shead">Where we work</h2>
-  <p class="lede">Delivery across South and South-East Asia, with funders and partners worldwide.</p>
-  <div class="chips"><span>India</span><span>Nepal</span><span>Bangladesh</span><span>Kenya</span><span>Ethiopia</span><span>Philippines</span></div>
-  <p class="note"><span style="opacity:.75">[Exact country list to be confirmed with the team.]</span></p>
-</div></section>
-
-<!-- TEAM TEASER -->
-<section class="section people"><div class="wrap">
-  <h2 class="shead">Our team</h2>
-  <p class="lede">Founded in 2015 by Sunandan Madan and Swapnil Agarwal, Dhwani is now a team of 97 across leadership, delivery, engineering and support.</p>
-  <div class="pgrid lead-grid">
-    <div class="pcard"><div class="av"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></div><h4>Sunandan Madan</h4><div class="role">Co-founder</div><p>Started Dhwani after seeing how hard it was for grassroots organisations to use technology.</p></div>
-    <div class="pcard"><div class="av"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></div><h4>Swapnil Agarwal</h4><div class="role">Co-founder</div><p>Co-founded Dhwani to build technology the impact sector could actually run on.</p></div>
-  </div>
-  <p class="lede" style="margin-top:26px"><a class="tlink" href="team.html">Meet the full team &mdash; leadership, advisors, delivery and engineering <span class="arw">&#8594;</span></a></p>
-</div></section>
-
-<!-- JOIN -->
-<section class="section"><div class="wrap">
-  <div class="twoup">
-    <div class="upcard">
-      <h3>Careers</h3>
-      <p>We are always looking for people who want to build technology that matters. Engineering, product, delivery and field roles.</p>
-      <div class="links">
-        <a class="tlink" href="careers.html">See how to join <span class="arw">&#8594;</span></a>
-        <a class="tlink" href="mailto:careers@dhwaniris.com">careers@dhwaniris.com <span class="arw">&#8594;</span></a>
-      </div>
-    </div>
-    <div class="upcard">
-      <h3>Community</h3>
-      <p>Practitioners, partners and tech-for-good folk. Join the newsletter and our community channels.</p>
-      <div class="links">
-        <a class="tlink" href="community.html">Our community <span class="arw">&#8594;</span></a>
-        <a class="tlink" href="resources.html">Read our Insights <span class="arw">&#8594;</span></a>
-      </div>
-    </div>
-  </div>
-</div></section>
-
-<!-- DECK PROMO -->
-<section class="wrap"><div class="deck-promo">
-  <div><h3>Want the details in one place?</h3><p>A quick look at what we build, who we work with, and how we work.</p></div>
-  <button class="pill pill-primary deck-card" data-deck="Company Overview">Get the deck <span class="arw">&#8594;</span></button>
-</div></section>
-
-<!-- DECK MODAL -->
-<div class="deck-modal" id="deckModal">
-  <div class="backdrop"></div>
-  <div class="box">
-    <button class="close" id="deckClose" aria-label="Close">&times;</button>
-    <div class="form-row">
-      <h3>Download <span id="deckTitle">this deck</span></h3>
-      <p>Enter your work email and we&#39;ll consider it downloaded &mdash; this is a preview, nothing is sent yet.</p>
-      <form id="deckForm">
-        <input type="email" id="deckEmail" required placeholder="you@organisation.org">
-        <button type="submit" class="pill pill-primary">Get the deck <span class="arw">&#8594;</span></button>
-      </form>
-    </div>
-    <p class="done">Thanks &mdash; once this deck is live, it will come straight to your inbox.</p>
-  </div>
-</div>
-
-<!-- CTA -->
-<div class="cta"><div class="in wrap">
-  <h2>Want to build something with us?</h2>
-  <a class="pill pill-primary" href="contact.html">Book a call <span class="arw">&#8594;</span></a>
-</div></div>
 
 <!-- FOOTER -->
 <footer><div class="wrap">
@@ -521,25 +407,5 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
 })();
 </script>
 
-<script>
-(function(){
-  var modal=document.getElementById('deckModal');
-  if(!modal) return;
-  var title=document.getElementById('deckTitle');
-  document.querySelectorAll('.deck-card').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      title.textContent=btn.dataset.deck||'this deck';
-      modal.classList.remove('sent');
-      modal.classList.add('open');
-    });
-  });
-  document.getElementById('deckClose').addEventListener('click',function(){modal.classList.remove('open');});
-  modal.querySelector('.backdrop').addEventListener('click',function(){modal.classList.remove('open');});
-  document.getElementById('deckForm').addEventListener('submit',function(e){
-    e.preventDefault();
-    modal.classList.add('sent');
-  });
-})();
-</script>
 </body>
 </html>
