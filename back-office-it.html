@@ -220,7 +220,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
     <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="M9 13h6M9 17h4"/></svg></span><h5>Finance</h5><p>Budgets, spend and reconciliation, connected.</p></a>
     <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.5a3 3 0 0 1 0 5.5M21 20c0-2.6-1.6-4.9-4-5.8"/></svg></span><h5>HR</h5><p>People, payroll and leave in one place.</p></a>
     <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="6" rx="1.5"/><rect x="2" y="14" width="20" height="6" rx="1.5"/><path d="M6 7h.01M6 17h.01"/></svg></span><h5>IT &amp; access</h5><p>Accounts, devices and access, managed.</p></a>
-    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></span><h5>Integrations</h5><p>Your tools, talking to each other.</p></a>
+    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span><h5>Integrations</h5><p>Your tools, talking to each other.</p></a>
   </div>
 </div></section>
 
@@ -300,9 +300,9 @@ build('row1',logos.slice(0,15));build('row2',logos.slice(15));})();
 .dch-chips{display:flex;flex-wrap:wrap;gap:7px;padding:4px 16px 12px;flex:none}
 .dch-chips button{background:var(--beige);border:none;border-radius:999px;padding:8px 13px;font-size:.8rem;color:var(--ink);cursor:pointer;font-family:var(--sans)}
 .dch-chips button:hover{background:var(--beige-h)}
-.dch-actions{display:flex;gap:8px;padding:4px 16px 10px;flex:none}
-.dch-act{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;background:var(--maroon);color:#fff;border-radius:10px;padding:10px 8px;font-size:.82rem;font-weight:600;text-align:center;transition:.2s}
-.dch-act:hover{background:var(--maroon-2)}
+.dch-inline-act{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.dch-msg .dch-inline-act a{display:flex;align-items:center;gap:6px;background:var(--maroon);color:#fff!important;border-radius:10px;padding:8px 12px;font-size:.8rem;font-weight:600}
+.dch-inline-act a:hover{background:var(--maroon-2)}
 #dhwani-chat-form{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--line);flex:none;background:var(--paper)}
 #dhwani-chat-input{flex:1;border:1.5px solid var(--line);border-radius:999px;padding:10px 15px;font-family:var(--sans);font-size:.88rem;background:#fff}
 #dhwani-chat-input:focus{outline:none;border-color:var(--maroon)}
@@ -322,10 +322,6 @@ build('row1',logos.slice(0,15));build('row2',logos.slice(15));})();
     <button class="dch-close" id="dhwani-chat-close" aria-label="Close chat">&times;</button>
   </div>
   <div id="dhwani-chat-body"></div>
-  <div class="dch-actions">
-    <a class="dch-act" id="dchBook" href="contact.html#book"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Book a call</a>
-    <a class="dch-act" href="mailto:partnerships@dhwaniris.com"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg> Email us</a>
-  </div>
   <div class="dch-chips" id="dhwani-chat-chips">
     <button data-q="What do you build?">What do you build?</button>
     <button data-q="Who do you serve?">Who do you serve?</button>
@@ -366,20 +362,21 @@ build('row1',logos.slice(0,15));build('row2',logos.slice(15));})();
      a:"Our products: mGrant for Donors, mGrant for Nonprofits, mForm, Anumati and Radar. <a href=\"solutions.html#products\">See our products &#8594;</a>"},
     {kw:['career','job','hire','hiring','work with you','join'],
      a:"We're always looking for people who want to build technology that matters. <a href=\"careers.html\">See Careers &#8594;</a>"},
-    {kw:['price','cost','pricing','how much','budget'],
-     a:"Pricing depends on your programme's scope. The fastest way to get a number is to book a call. <a href=\"contact.html\">Book a call &#8594;</a>"},
     {kw:['sector','industry','health','education','agriculture','climate','livelihood'],
      a:"We work across Healthcare, Agriculture &amp; Livelihoods, Education &amp; Skilling, Financial Inclusion, Climate, Governance and more. <a href=\"our-work.html\">Browse our work by sector &#8594;</a>"},
     {kw:['contact','call','talk','reach','email','phone','whatsapp','book'],
-     a:"The fastest way is to book a call or send a message. <a href=\"contact.html\">Go to Contact &#8594;</a>"},
+     a:"The fastest way is to book a call or send a message.", act:true},
+    {kw:['price','cost','pricing','how much','budget'],
+     a:"Pricing depends on your programme's scope — the fastest way to get a number is to talk to us directly.", act:true},
   ];
-  var FALLBACK="I don't have a ready answer for that one &mdash; the fastest way to get a real answer is to book a call, or email <a href=\"mailto:partnerships@dhwaniris.com\">partnerships@dhwaniris.com</a>. <a href=\"contact.html\">Book a call &#8594;</a>";
+  var FALLBACK={a:"I don't have a ready answer for that one — the fastest way to get a real one is to book a call or email us directly.", act:true};
   var GREETING="Hi, I'm the Dhwani assistant. Ask me about what we build, who we work with, or how to get in touch &mdash; or pick a question below.";
 
-  function addMsg(text,who){
+  var ACTIONS_HTML='<div class="dch-inline-act"><a href="contact.html#book"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Book a call</a><a href="mailto:partnerships@dhwaniris.com"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg> Email us</a></div>';
+  function addMsg(text,who,withActions){
     var d=document.createElement('div');
     d.className='dch-msg '+who;
-    d.innerHTML=text;
+    d.innerHTML=text+(withActions?ACTIONS_HTML:'');
     body.appendChild(d);
     body.scrollTop=body.scrollHeight;
   }
@@ -387,7 +384,7 @@ build('row1',logos.slice(0,15));build('row2',logos.slice(15));})();
     var ql=q.toLowerCase();
     for(var i=0;i<FAQ.length;i++){
       for(var j=0;j<FAQ[i].kw.length;j++){
-        if(ql.indexOf(FAQ[i].kw[j])>-1) return FAQ[i].a;
+        if(ql.indexOf(FAQ[i].kw[j])>-1) return FAQ[i];
       }
     }
     return FALLBACK;
@@ -400,7 +397,8 @@ build('row1',logos.slice(0,15));build('row2',logos.slice(15));})();
     body.appendChild(typing); body.scrollTop=body.scrollHeight;
     setTimeout(function(){
       typing.remove();
-      addMsg(answer(q),'bot');
+      var r=answer(q);
+      addMsg(r.a,'bot',!!r.act);
     },500);
   }
   function toggle(){
