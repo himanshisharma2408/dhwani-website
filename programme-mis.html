@@ -93,11 +93,11 @@ em{font-style:italic}
 .mq-wrap{margin-top:56px}
 .mq-lbl{text-align:center;font-size:.9rem;color:var(--muted);margin-bottom:28px;font-family:var(--sans)}
 .marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
-.mtrack{display:flex;align-items:center;gap:60px;width:max-content}
+.mtrack{display:flex;align-items:center;gap:56px;width:max-content}
 .mtrack.l{animation:scrollx 48s linear infinite}
 .mtrack.r{animation:scrollx 54s linear infinite reverse;margin-top:26px}
 @keyframes scrollx{to{transform:translateX(-50%)}}
-.mtrack img{height:30px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.5;transition:filter .25s,opacity .25s}
+.mtrack img{height:auto;width:auto;max-height:42px;max-width:124px;object-fit:contain;filter:grayscale(1);opacity:.55;transition:filter .25s,opacity .25s}
 .mtrack img:hover{filter:grayscale(0);opacity:1}
 
 /* cta */
@@ -275,13 +275,13 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
     <div class="fnews">
       <h5>The Dhwani newsletter</h5>
       <p>Practical tech-for-good, once a month. No fluff.</p>
-      <form onsubmit="return false"><input type="email" placeholder="you@organisation.org"><button class="pill pill-primary" style="padding:11px 18px">Subscribe</button></form>
+      <form onsubmit="return false" data-pending="newsletter-provider"><input type="email" placeholder="you@organisation.org"><button class="pill pill-primary" style="padding:11px 18px">Subscribe</button></form>
     </div>
     <div><h5>Who we serve</h5><ul><li><a href="for-donors.html">Donors &amp; CSRs</a></li><li><a href="for-ngos.html">NGOs</a></li><li><a href="for-government.html">Government</a></li><li><a href="for-academic.html">Academic &amp; Research</a></li></ul></div>
     <div><h5>Company</h5><ul><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="careers.html">Careers</a></li><li><a href="community.html">Community</a></li><li><a href="technology.html">Technology at Dhwani</a></li><li><a href="contact.html">Contact</a></li></ul></div>
     <div><h5>Resources</h5><ul><li><a href="resources.html#toolkits">Toolkits</a></li><li><a href="resources.html#decks">Decks</a></li><li><a href="resources.html#insights">Insights</a></li></ul><p class="fcontact">Sector 44, Gurugram, Haryana 122002<br><a href="tel:+919574655961">+91 95746 55961</a><br><a href="mailto:partnerships@dhwaniris.com">partnerships@dhwaniris.com</a></p></div>
   </div>
-  <div class="foot-bot"><span>© 2026 Dhwani Rural Information Systems</span><span><a href="privacy.html">Privacy</a> · Terms · Data protection · <a href="sitemap.html">Sitemap</a></span></div>
+  <div class="foot-bot"><span>© 2026 Dhwani Rural Information Systems</span><span><a href="privacy.html">Privacy</a> · <a href="sitemap.html">Sitemap</a></span></div>
 </div></footer>
 
 <script>

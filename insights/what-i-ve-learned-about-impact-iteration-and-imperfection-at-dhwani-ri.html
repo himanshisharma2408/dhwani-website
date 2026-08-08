@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Technology at Dhwani — Dhwani RIS</title>
+<title>What I've Learned About Impact, Iteration and Imperfection at Dhwani RIS &mdash; Dhwani RIS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
@@ -57,35 +57,24 @@ em{font-style:italic}
 .ahero .btns{display:flex;gap:12px;flex-wrap:wrap}
 .ahero .hcreds{border-top:1px solid rgba(255,255,255,.16);margin-top:34px;padding-top:20px;font-size:.82rem;letter-spacing:.03em;color:rgba(255,255,255,.62)}
 
-/* story */
-.story .grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-top:8px}
-.story p{color:var(--muted);font-size:1.05rem;margin-bottom:18px}
-.story p:first-child{color:var(--ink);font-family:var(--serif);font-size:1.5rem;line-height:1.4}
+/* resource cards */
+.rgroup{margin-top:44px}
+.rgroup h4{font-size:1.28rem;font-weight:500;color:var(--ink);margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rcard{background:var(--beige);border-radius:12px;padding:30px 28px;transition:.2s;display:flex;flex-direction:column}
+.rcard:hover{background:var(--beige-h)}
+.rcard .kind{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--maroon);font-weight:600;margin-bottom:14px}
+.rcard h3{font-size:1.32rem;font-weight:500;margin-bottom:10px}
+.rcard p{color:var(--muted);font-size:.92rem;flex:1;margin-bottom:18px}
 
-/* stats */
-.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:48px}
-.stat{background:var(--beige);border-radius:10px;padding:30px 28px}
-.stat b{display:block;font-family:var(--serif);font-size:2.6rem;font-weight:500;line-height:1;margin-bottom:8px}
-.stat span{font-size:.92rem;color:var(--muted)}
-.stat .pl{color:var(--orange)}
-.stats-note{margin-top:20px;font-size:.85rem;color:var(--muted);max-width:80ch}
-
-/* people */
-.people.section{background:var(--paper)}
-.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
-.pcard{background:var(--beige);border-radius:12px;padding:30px 28px}
-.pcard .av{width:88px;height:88px;border-radius:14px;background:var(--tint);color:var(--muted);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
-.pgrid.lead-grid{grid-template-columns:1fr 1fr;max-width:660px}
-.pcard h4{font-size:1.25rem;font-weight:500;margin-bottom:4px}
-.pcard .role{font-size:.85rem;color:var(--maroon);font-weight:600;margin-bottom:12px}
-.pcard p{color:var(--muted);font-size:.92rem}
-
-/* two-up (careers / community) */
-.twoup{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
-.upcard{background:var(--beige);border-radius:14px;padding:40px 38px}
-.upcard h3{font-size:1.6rem;margin-bottom:10px}
-.upcard p{color:var(--muted);margin-bottom:20px}
-.upcard .links{display:flex;flex-direction:column;gap:10px}
+/* newsletter band */
+.nl.section{background:var(--paper)}
+.nl-card{background:var(--beige);border-radius:18px;padding:52px 48px;display:grid;grid-template-columns:1.2fr 1fr;gap:34px;align-items:center}
+.nl-card h2{font-size:clamp(1.8rem,3vw,2.4rem)}
+.nl-card p{color:var(--muted);margin-top:10px}
+.nl-card form{display:flex;gap:10px;flex-wrap:wrap}
+.nl-card input{flex:1;min-width:200px;border:1.5px solid var(--line);border-radius:10px;padding:13px 15px;font-family:var(--sans);font-size:.96rem;background:#fff;color:var(--ink)}
+.nl-card input:focus{outline:none;border-color:var(--maroon);box-shadow:0 0 0 3px rgba(138,20,32,.09)}
 
 /* cta */
 .cta{position:relative;border-radius:28px;margin:0 16px;text-align:center;overflow:hidden;color:#fff;background:linear-gradient(rgba(18,12,11,.84),rgba(18,12,11,.9)),url('https://images.unsplash.com/photo-1707721690544-781fe6ede937?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat,var(--ink)}
@@ -107,9 +96,9 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .fcontact{font-size:.88rem;color:var(--muted-d);line-height:1.9;margin-top:12px}.fcontact a{color:var(--orange-soft);font-weight:500}
 .foot-bot{border-top:1px solid var(--line-d);margin-top:52px;padding-top:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.82rem;color:rgba(255,255,255,.45)}
 
-@media(max-width:900px){.story .grid,.twoup{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.pgrid{grid-template-columns:1fr 1fr}.fgrid,.frow2{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){.rgrid{grid-template-columns:1fr 1fr}.nl-card{grid-template-columns:1fr}.fgrid,.frow2{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.wrap{padding:0 22px}#topnav .nav-in{padding:22px 22px}#topnav .logo{height:50px}
-  .ahero{margin:10px;border-radius:20px;padding:130px 24px 48px}.section{padding:58px 0}.stats,.pgrid{grid-template-columns:1fr}
+  .ahero{margin:10px;border-radius:20px;padding:130px 24px 48px}.section{padding:58px 0}.rgrid{grid-template-columns:1fr}.nl-card{padding:36px 26px}
   .cta,footer{margin:10px;border-radius:20px}.fgrid,.frow2{grid-template-columns:1fr}.fnews{grid-column:auto}}
 
 /* ===== nav dropdowns ===== */
@@ -140,181 +129,179 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 #topnav .links a.n-active{color:#fff;font-weight:600}
 #topnav.solid .links a.n-active,#topnav.scrolled .links a.n-active{color:var(--maroon)}
 
-/* team groups + compact list */
-.tgrp{font-size:1.28rem;font-weight:500;color:var(--ink);margin:46px 0 22px;padding-bottom:12px;border-bottom:1px solid var(--line)}
-.tlist{display:grid;grid-template-columns:repeat(3,1fr);gap:16px 28px}
-.tmember b{display:block;font-family:var(--serif);font-size:1.08rem;font-weight:500;color:var(--ink)}
-.tmember span{font-size:.85rem;color:var(--muted)}
-@media(max-width:760px){.tlist{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.tlist{grid-template-columns:1fr}}
+/* toolkit + deck cards */
+.rcard.soon{opacity:.6;cursor:default}
+button.rcard{all:unset;box-sizing:border-box;display:flex;flex-direction:column;width:100%;cursor:pointer;background:var(--beige);border-radius:12px;padding:30px 28px;transition:.2s}
+button.rcard:hover{background:var(--beige-h)}
+/* deck modal */
+.deck-modal{display:none;position:fixed;inset:0;z-index:400;align-items:center;justify-content:center;padding:20px}
+.deck-modal.open{display:flex}
+.deck-modal .backdrop{position:absolute;inset:0;background:rgba(21,16,15,.5)}
+.deck-modal .box{position:relative;background:var(--paper);border-radius:18px;padding:36px 34px;max-width:420px;width:100%}
+.deck-modal h3{font-size:1.4rem;margin-bottom:8px}
+.deck-modal p{color:var(--muted);font-size:.92rem;margin-bottom:20px}
+.deck-modal input{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;font-family:var(--sans);font-size:.95rem;margin-bottom:14px}
+.deck-modal .close{position:absolute;top:16px;right:16px;background:none;border:none;font-size:1.3rem;color:var(--muted);cursor:pointer;line-height:1}
+.deck-modal .done{display:none;color:#2f6b45;font-size:.92rem}
+.deck-modal.sent .form-row{display:none}
+.deck-modal.sent .done{display:block}
 
-/* where we work */
-.where.section{background:var(--paper)}
-.where .chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.where .chips span{background:var(--beige);border-radius:999px;padding:12px 22px;font-family:var(--serif);font-size:1.05rem;color:var(--ink)}
-.where .note{margin-top:22px;font-size:.95rem;color:var(--muted)}
+/* resource sidebar rail */
+.rlayout{display:grid;grid-template-columns:230px 1fr;gap:40px;align-items:start}
+.rrail{display:flex;flex-direction:column;gap:3px;position:sticky;top:100px}
+.rtab{font-family:var(--sans);font-size:.95rem;font-weight:500;color:var(--muted);background:none;border:none;cursor:pointer;text-align:left;display:flex;align-items:center;gap:11px;padding:12px 14px;border-radius:10px;width:100%}
+.rtab svg{flex:none;opacity:.8}
+.rtab span:first-of-type{}
+.rtab:hover{background:var(--beige)}
+.rtab.on{background:var(--beige-h);color:var(--ink);font-weight:600}
+.rtab-count{margin-left:auto;font-size:.72rem;font-weight:600;color:var(--muted);background:var(--beige);border-radius:999px;padding:2px 9px}
+.rtab.on .rtab-count{color:#fff;background:var(--maroon)}
+.rpanels{min-width:0}
+.rgroup{display:none;margin-top:0}
+.rgroup.on{display:block}
+@media(max-width:900px){
+  .rlayout{grid-template-columns:1fr}
+  .rrail{position:static;flex-direction:row;overflow-x:auto;gap:8px;-webkit-overflow-scrolling:touch;padding-bottom:4px}
+  .rtab{white-space:nowrap;flex:none;width:auto}
+}
 
-.osgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
-.oscard{display:flex;flex-direction:column;background:var(--beige);border-radius:12px;padding:22px 24px 20px;transition:.2s}
-.oscard:hover{background:var(--beige-h)}
-.osk{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:10px}
-.oscard b{font-family:var(--mono,var(--sans));font-size:1.02rem;font-weight:600;color:var(--ink);margin-bottom:6px;word-break:break-word}
-.osd{font-size:.88rem;color:var(--muted);flex:1;margin-bottom:14px}
-@media(max-width:820px){.osgrid{grid-template-columns:1fr}}
+.post{max-width:760px;margin:0 auto;padding:130px 24px 0}
+.post .crumb{font-size:.85rem;color:var(--muted);margin-bottom:18px}
+.post .crumb a{color:var(--maroon)}
+.post h1{font-size:clamp(2rem,4.2vw,2.9rem);font-weight:500;line-height:1.15;margin-bottom:16px}
+.post .byline{font-size:.92rem;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:30px}
+.post .byline a{color:var(--maroon);font-weight:600}
+.post h2{font-family:var(--serif);font-size:1.5rem;font-weight:500;margin:34px 0 12px;line-height:1.25}
+.post p{font-size:1.06rem;line-height:1.75;margin-bottom:18px;color:var(--ink)}
+.post img{width:100%;height:auto;border-radius:12px;margin:26px 0}
+.post .backlink{display:block;margin:44px 0 0;padding-top:26px;border-top:1px solid var(--line)}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<header id="topnav"><div class="nav-in">
-  <a href="index.html" style="display:flex"><img class="logo logo-white" src="assets/img/dhwani-logo-full-white.png" alt="Dhwani RIS"><img class="logo logo-dark" src="assets/img/dhwani-logo-full.png" alt="Dhwani RIS"></a>
+<header id="topnav" class="solid"><div class="nav-in">
+  <a href="../index.html" style="display:flex"><img class="logo logo-white" src="../assets/img/dhwani-logo-full-white.png" alt="Dhwani RIS"><img class="logo logo-dark" src="../assets/img/dhwani-logo-full.png" alt="Dhwani RIS"></a>
   <div class="links">
-    <a href="index.html">Home</a>
+    <a href="../index.html">Home</a>
     <div class="has-dd">
-      <a href="solutions.html">Solutions <span class="caret">&#9662;</span></a>
+      <a href="../solutions.html">Solutions <span class="caret">&#9662;</span></a>
       <button class="dd-toggle" aria-label="Toggle Solutions submenu">&#9662;</button>
       <div class="dd dd-mega">
-        <div class="dd-col"><h6>Products</h6><a href="mgrant.html">mGrant for Donors</a><a href="mgrant.html">mGrant for Nonprofits</a><a href="mform.html">mForm</a><a href="anumati.html">Anumati</a><a href="radar.html">Radar</a></div>
-        <div class="dd-col"><h6>Systems</h6><a href="programme-mis.html">Programme MIS</a><a href="impact-dashboards.html">Impact Dashboards</a><a href="grant-management.html">Grant Management</a><a href="donor-management.html">Donor Management</a><a href="field-data-apps.html">Field Data Apps</a><a href="back-office-it.html">Back-office IT</a><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></div>
-        <div class="dd-col"><h6>Consulting</h6><a href="dpdp-act-readiness.html">DPDP Act Readiness</a><a href="cloud-optimisation.html">Cloud Optimisation</a><a href="ai-for-impact.html">AI for Impact</a><a href="digital-transformation.html">Digital Transformation</a><a href="programme-management.html">Programme Management as a Service</a></div>
-        <div class="dd-col"><h6>Explore</h6><a href="our-work.html">Browse by sector</a></div>
+        <div class="dd-col"><h6>Products</h6><a href="../mgrant.html">mGrant for Donors</a><a href="../mgrant.html">mGrant for Nonprofits</a><a href="../mform.html">mForm</a><a href="../anumati.html">Anumati</a><a href="../radar.html">Radar</a></div>
+        <div class="dd-col"><h6>Systems</h6><a href="../programme-mis.html">Programme MIS</a><a href="../impact-dashboards.html">Impact Dashboards</a><a href="../grant-management.html">Grant Management</a><a href="../donor-management.html">Donor Management</a><a href="../field-data-apps.html">Field Data Apps</a><a href="../back-office-it.html">Back-office IT</a><a href="../monitoring-evaluation.html">Monitoring &amp; Evaluation</a></div>
+        <div class="dd-col"><h6>Consulting</h6><a href="../dpdp-act-readiness.html">DPDP Act Readiness</a><a href="../cloud-optimisation.html">Cloud Optimisation</a><a href="../ai-for-impact.html">AI for Impact</a><a href="../digital-transformation.html">Digital Transformation</a><a href="../programme-management.html">Programme Management as a Service</a></div>
+        <div class="dd-col"><h6>Explore</h6><a href="../our-work.html">Browse by sector</a></div>
       </div>
     </div>
     <div class="has-dd">
-      <a href="who-we-serve.html">Who we serve <span class="caret">&#9662;</span></a>
+      <a href="../who-we-serve.html">Who we serve <span class="caret">&#9662;</span></a>
       <button class="dd-toggle" aria-label="Toggle Who we serve submenu">&#9662;</button>
       <div class="dd">
-        <a href="for-donors.html">For Donors &amp; CSRs</a>
-        <a href="for-ngos.html">For NGOs</a>
-        <a href="for-government.html">For Government &amp; Multilaterals</a>
-        <a href="for-academic.html">Academic &amp; Research</a>
+        <a href="../for-donors.html">For Donors &amp; CSRs</a>
+        <a href="../for-ngos.html">For NGOs</a>
+        <a href="../for-government.html">For Government &amp; Multilaterals</a>
+        <a href="../for-academic.html">Academic &amp; Research</a>
       </div>
     </div>
-    <a href="our-work.html">Our work</a>
-    <a href="resources.html">Resources</a>
+    <a href="../our-work.html">Our work</a>
+    <a class="n-active" href="../resources.html">Resources</a>
     <div class="has-dd">
-      <a class="n-active" href="about.html">Company <span class="caret">&#9662;</span></a>
+      <a href="../about.html">Company <span class="caret">&#9662;</span></a>
       <button class="dd-toggle" aria-label="Toggle Company submenu">&#9662;</button>
       <div class="dd">
-        <a href="about.html">About</a>
-        <a href="team.html">Team</a>
-        <a href="careers.html">Careers</a>
-        <a href="community.html">Community</a>
-        <a href="technology.html">Technology at Dhwani</a>
-        <a href="contact.html">Contact</a>
+        <a href="../about.html">About</a>
+        <a href="../team.html">Team</a>
+        <a href="../careers.html">Careers</a>
+        <a href="../community.html">Community</a>
+        <a href="../technology.html">Technology at Dhwani</a>
+        <a href="../contact.html">Contact</a>
       </div>
     </div>
   </div>
-  <div class="nav-right"><a href="contact.html" class="navpill">Book a call</a>
+  <div class="nav-right"><a href="../contact.html" class="navpill">Book a call</a>
     <button class="menu-btn" id="menuBtn" aria-label="Menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button></div>
 </div></header>
 
-<!-- HERO -->
-<div class="ahero">
-  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2000&auto=format&fit=crop')"></div>
-  <div class="veil"></div>
-  <div class="in">
-    <div class="crumb"><a href="about.html">Company</a> / Open Source</div>
-    <h1>Open, not <em>locked in</em>.</h1>
-    <p>Much of what we build sits on open-source technology &mdash; not a closed stack only we control. Here&#39;s why, and what that means in practice.</p>
-    <div class="btns"><a class="pill pill-primary" href="careers.html">Join our tech team</a><a class="pill pill-dark" href="team.html">Meet the team</a></div>
-  </div>
-</div>
-
-<!-- WHY -->
-<section class="section story"><div class="wrap">
-  <h2 class="shead">Why open source</h2>
-  <div class="grid">
-    <div>
-      <p>The impact sector runs on tight budgets and long time horizons. Locking an NGO or a government programme into a closed, single-vendor stack makes both worse: harder to afford, harder to leave, harder to inspect.</p>
-    </div>
-    <div>
-      <p>Open, inspectable technology means our clients aren&#39;t betting their programme on one company staying in business, staying interested, or staying reasonably priced. It also means the code we write can outlive any single contract.</p>
-    </div>
-  </div>
-</div></section>
-
-<!-- WHAT WE BUILD ON -->
-<section class="section story" style="background:var(--paper)"><div class="wrap">
-  <h2 class="shead">What we build on</h2>
-  <div class="grid">
-    <div>
-      <p>Much of what we build sits on <b>Frappe</b>, the open-source low-code framework behind ERPNext. It gives us a fast, well-tested foundation for the systems and workflows our clients need &mdash; instead of reinventing forms, permissions and reporting from scratch on every project.</p>
-    </div>
-    <div>
-      <p>A meaningful part of our engineering team works in Frappe day to day, alongside PHP, full-stack JavaScript and mobile development &mdash; so it&#39;s a real, load-bearing part of how we build, not a marketing line.</p>
-    </div>
-  </div>
-</div></section>
-
-<!-- HOW WE GIVE BACK -->
-<section class="section story"><div class="wrap">
-  <h2 class="shead">How we give back</h2>
-  <div class="grid">
-    <div>
-      <p>We think the impact sector is better served by open, inspectable technology than by vendor lock-in. Where we can, we contribute back to the ecosystems we rely on.</p>
-    </div>
-    <div>
-      <p>That means code and fixes upstream where it makes sense, documentation for the tools we use, and mentoring the developers who extend them. It&#39;s an ongoing commitment, not a one-time claim &mdash; and we&#39;ll keep this page honest as it grows.</p>
-    </div>
-  </div>
-</div></section>
-
-<!-- OPEN SOURCE CONTRIBUTION -->
-<section class="section people" style="background:var(--paper)"><div class="wrap">
-  <h2 class="shead">What we have put back</h2>
-  <p class="lede" style="max-width:70ch;margin-top:8px">The clearest example: the <b>Frappe Mobile Framework</b>, now open source. It did not start as a framework. It started as us solving real, on-ground problems for the social sector &mdash; actual challenges, real users &mdash; and over time it became the thing we used to build Frappe-based mobile apps faster and more simply. It was launched into the open at <b>Frappe Build 2026</b>, and it is no longer limited to one team.</p>
-  <div class="osgrid">
-    <a class="oscard" href="https://github.com/dhwani-ris/frappe-mobile-sdk" target="_blank" rel="noopener">
-      <span class="osk">GitHub</span><b>frappe-mobile-sdk</b><span class="osd">The SDK itself.</span><span class="tlink">Open on GitHub <span class="arw">&#8594;</span></span></a>
-    <a class="oscard" href="https://github.com/dhwani-ris/frappe-mobile-control" target="_blank" rel="noopener">
-      <span class="osk">GitHub</span><b>frappe-mobile-control</b><span class="osd">The control layer that sits with it.</span><span class="tlink">Open on GitHub <span class="arw">&#8594;</span></span></a>
-    <a class="oscard" href="https://pub.dev/packages/frappe_mobile_sdk" target="_blank" rel="noopener">
-      <span class="osk">pub.dev</span><b>frappe_mobile_sdk</b><span class="osd">The Flutter package, installable today.</span><span class="tlink">Open on pub.dev <span class="arw">&#8594;</span></span></a>
-  </div>
-  <p class="lede" style="margin-top:24px;max-width:70ch">If you are building on Frappe, try it. If you can improve it, contribute. The best tools should not stay closed.</p>
-</div></section>
-
-<!-- CTA -->
-<div class="cta"><div class="in wrap">
-  <h2>Want to build on open source, for the impact sector?</h2>
-  <a class="pill pill-primary" href="careers.html">See open roles <span class="arw">&#8594;</span></a>
-</div></div>
+<article class="post">
+  <div class="crumb"><a href="../resources.html#insights">Insights</a> / Article</div>
+  <h1>What I've Learned About Impact, Iteration and Imperfection at Dhwani RIS</h1>
+  <div class="byline">By <a href="https://medium.com/@aashima.takkar" target="_blank" rel="noopener">Aashima Takkar</a> &middot; June 5,2025</div>
+<p>As Dhwani turns 10, I find myself reflecting on a journey that has been far from linear—but rich with lessons on building for impact, embracing iteration, and making peace with imperfection.</p>
+  <img src="https://www.dhwaniris.com/assets/img/blog/1.jpg" alt="" loading="lazy">
+  <p>After spending several years at the intersection of technology, impact, and data, I was looking to go deeper—not just working on the programmatic side, but to understand how technology could be a tool for systemic problem-solving, that’s when I joined Dhwani two years ago.</p>
+  <p>Since then, I’ve had the opportunity to lead one of our largest and longest-standing partnerships with Amazon, a role that has taught me what it truly means to balance quality, timelines, and empathy, while also mentoring a growing team.</p>
+  <p>These past two years have shown me that while impact takes time, iteration is necessary, and perfection isn’t the goal. Here’s what I’ve learned along the way.</p>
+  <h2>Expectations vs. Ground Realities</h2>
+  <p>One of the biggest unlearning moments for me at Dhwani was realizing that technology can solve many programmatic challenges but it doesn’t guarantee that what we expect will fit neatly into ground realities.</p>
+  <img src="https://www.dhwaniris.com/assets/img/blog/2.jpg" alt="" loading="lazy">
+  <p>I saw this firsthand while working on a disaster relief program with Amazon Philanthropy in India. We were entrusted with automating how real-time needs from the ground were captured. In theory, the system worked—it was agile, robust, and connected NGOs, frontline workers, suppliers, warehouses, and program teams.</p>
+  <p>However, we underestimated the sheer complexity of working in disaster-hit zones. A sleek dashboard is unable to address patchy internet, shifting contexts, and emotional and physical toll  on field teams . Despite the “right” system, we went through the drawing board multiple times, and simplified interfaces, localized flows, and refined it for each user, from flood-hit villagers reporting needs to warehouse teams handling logistics.</p>
+  <p>We were building more than a product, a process backed by a Minimum Lovable Product. The impact was gradual and visible once the team started trusting the system, data informed Amazon’s strategy for disaster relief in India was in place.  It taught me that impact is slow, and that’s okay. Because it’s in that slowness that we learn to design better, respond more meaningfully, and build systems that actually work for the people who need them most.</p>
+  <h2>Building, Breaking, Rebuilding—Together</h2>
+  <img src="https://www.dhwaniris.com/assets/img/blog/3.jpg" alt="" loading="lazy">
+  <p>We learnt some of the most valuable lessons at Dhwani in moments of crisis.Iteration is not always a structured process, but it’s where the real work happens.</p>
+  <p>While working on the disaster relief platform for Amazon, we presumed  everything was figured out—sprint demos were strong, workflows were intuitive. However, during a live load test with real users like NGOs, warehouse teams, suppliers, field partners—the system buckled. Different networks, devices, and operating contexts exposed unpredictable issues.</p>
+  <p>When such setbacks discouraged the team, I stepped in as a leader, not to fix the cracks, but to help my team reassess our approach and question if the product is usable and serving its audience, under real conditions. Iteration is about asking better questions, redefining success, and being honest about what a product can and cannot do. It allows us to clearly call out users what to expect, when to use it, and how it can support them best.</p>
+  <p>Rebuilding with empathy, not ego, has become core to how we work. And that’s what makes the product, and the process stronger.</p>
+  <h2>Fall Several Times, But Still Get Up – With the Community</h2>
+  <img src="https://www.dhwaniris.com/assets/img/blog/4.jpg" alt="" loading="lazy">
+  <p>One thing I’ve learned time and again is that setbacks are part of the process. It's better to fail in a demo than crash in the field. But even a successful test doesn't guarantee smooth ground execution. And that's okay. It doesn't mean the product failed. It means we're building for complex, human realities. There’s no perfect one-shot solution.</p>
+  <p>Expecting flawless tech, especially when we’re building for human-centric, high-stakes realities, is not just unrealistic, it’s unfair.</p>
+  <p>We design for extreme realities—emergency relief, health access in rural districts, data for farmer collectives, and not comfort.The goal isn’t to be flawless. The goal is to be useful, usable, and honest about our limitations. These moments are not failures, but invitations—to reflect, reframe, and refine.</p>
+  <p>We don’t work in silos. At Dhwani, the program team is just one layer. The real backbone is our product, data, and tech teams—translating complex problems into solutions that hold up on the ground. We bridge the gap, bringing community needs forward and ensuring the solutions stay rooted in them.</p>
+  <p>Over time, I’ve seen us grow in skills and culture. People who've been here longer than I have often say this has been a journey of learning, unlearning, and deep collaboration. Sure, we move fast. And yes, that sometimes brings friction or delays. But there's space here—to ask questions, give feedback, listen with empathy, and most importantly, stay transparent with each other.</p>
+  <p>We’re still building. We’re not perfect—and we don’t pretend to be. Claiming to have it all figured out often means missing what still needs work. What I value most is the humility in how we work. We understand the problems are complex, and that solutions need more than tech. They need care, constant iteration, and the quiet confidence to keep showing up.</p>
+  <h2>The Real Measure: Problem Identification, Product Uptake, and Impact Strategy</h2>
+  <p>One of the hardest lessons I’ve learned is that low product uptake often comes down to two things: we misidentified the problem, or the solution added complexity instead of removing it. If it doesn't make life easier for users, it won't stick</p>
+  <p>Developing tech for good values is not about instant gratification or flashy launches,  it is about real satisfaction when the tool is used regularly, data flows in steadily, and that data feeds back into a programmatic  strategy that actually drives impact.</p>
+  <p>If any one of these three—usage, data, or strategy—is missing, it signals a need to rethink. Designing technology for human-centered impact demands constant empathy, simplicity, and alignment with real needs. It’s a cycle, not a sprint. This cycle of identifying the problem, building solutions that truly simplify users’ lives, and watching impact grow over time is what keeps me going. Falling, learning, and rising with the community every step of the way.</p>
+  <h2>Looking Ahead: A Decade of Learning, and Many More to Come</h2>
+  <p>As Dhwani marks its 10-year milestone, it’s a realisation that our journey is far from over. What we’ve built so far, through the trials, triumphs, and countless iterations is  a foundation rooted in humility, resilience, and a deep commitment to the communities we serve.</p>
+  <img src="https://www.dhwaniris.com/assets/img/blog/5.jpg" alt="" loading="lazy">
+  <p>As we look ahead, our mission  is clear: build tools and systems that truly serve people, especially in the toughest contexts. The challenges will grow, but so will our commitment to innovate with care, collaborate deeply, and center those often left behind.</p>
+  <p>I’ve learned that real impact takes time, iteration is key, and technology is only as strong as the intent behind it. As Dhwani marks a decade, I’m grateful for the journey and energized for what’s next. We’ll keep listening, breaking silos, and building products people not only use but love. With humility and grit, we’ll keep learning, falling, and rising with communities toward a future where technology empowers and uplifts all.</p>
+  <p>&lt;a href='https://medium.com/@aashima.takkar' target='_blank' style='color:#f58634;'&gt;Read more about Aashima's work here&lt;/a&gt;</p>
+  <a class="tlink backlink" href="../resources.html#insights">&#8592; All insights</a>
+</article>
 
 <!-- FOOTER -->
 <footer><div class="wrap">
   <div class="fgrid">
     <div class="fbrand">
-      <img class="flogo" src="assets/img/dhwani-logo-full-white.png" alt="Dhwani RIS">
+      <img class="flogo" src="../assets/img/dhwani-logo-full-white.png" alt="Dhwani RIS">
       <p class="tag">Technology the impact sector runs on. Built by the sector, for the sector, since 2015.</p>
       <div class="fbadges"><span>ISO 27001</span><span>DPDP</span><span>GDPR</span></div>
-      <div class="fsoc"><a href="https://www.linkedin.com/company/14388289/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/dhwaniris" target="_blank" rel="noopener">Instagram</a><a href="community.html">Community</a></div>
+      <div class="fsoc"><a href="https://www.linkedin.com/company/14388289/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/dhwaniris" target="_blank" rel="noopener">Instagram</a><a href="../community.html">Community</a></div>
     </div>
-    <div><h5>Products</h5><ul><li><a href="mgrant.html">mGrant for Donors</a></li><li><a href="mgrant.html">mGrant for Nonprofits</a></li><li><a href="mform.html">mForm</a></li><li><a href="anumati.html">Anumati (DPDP)</a></li><li><a href="radar.html">Radar</a></li></ul></div>
-    <div><h5>Systems</h5><ul><li><a href="programme-mis.html">Programme MIS</a></li><li><a href="impact-dashboards.html">Impact Dashboards</a></li><li><a href="grant-management.html">Grant Management</a></li><li><a href="donor-management.html">Donor Management</a></li><li><a href="field-data-apps.html">Field Data Apps</a></li><li><a href="back-office-it.html">Back-office IT</a></li><li><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></li></ul></div>
-    <div><h5>Consulting</h5><ul><li><a href="dpdp-act-readiness.html">DPDP Act Readiness</a></li><li><a href="cloud-optimisation.html">Cloud Optimisation</a></li><li><a href="ai-for-impact.html">AI for Impact</a></li><li><a href="digital-transformation.html">Digital Transformation</a></li><li><a href="programme-management.html">Programme Management as a Service</a></li></ul></div>
-    <div><h5>By sector</h5><ul><li><a href="our-work.html?sector=healthcare">Healthcare</a></li><li><a href="our-work.html?sector=agriculture">Agriculture &amp; Livelihoods</a></li><li><a href="our-work.html?sector=education">Education &amp; Skilling</a></li><li><a href="our-work.html?sector=financial-inclusion">Financial Inclusion</a></li><li><a href="our-work.html?sector=governance">Governance</a></li><li><a href="our-work.html">All sectors →</a></li></ul></div>
+    <div><h5>Products</h5><ul><li><a href="../mgrant.html">mGrant for Donors</a></li><li><a href="../mgrant.html">mGrant for Nonprofits</a></li><li><a href="../mform.html">mForm</a></li><li><a href="../anumati.html">Anumati (DPDP)</a></li><li><a href="../radar.html">Radar</a></li></ul></div>
+    <div><h5>Systems</h5><ul><li><a href="../programme-mis.html">Programme MIS</a></li><li><a href="../impact-dashboards.html">Impact Dashboards</a></li><li><a href="../grant-management.html">Grant Management</a></li><li><a href="../donor-management.html">Donor Management</a></li><li><a href="../field-data-apps.html">Field Data Apps</a></li><li><a href="../back-office-it.html">Back-office IT</a></li><li><a href="../monitoring-evaluation.html">Monitoring &amp; Evaluation</a></li></ul></div>
+    <div><h5>Consulting</h5><ul><li><a href="../dpdp-act-readiness.html">DPDP Act Readiness</a></li><li><a href="../cloud-optimisation.html">Cloud Optimisation</a></li><li><a href="../ai-for-impact.html">AI for Impact</a></li><li><a href="../digital-transformation.html">Digital Transformation</a></li><li><a href="../programme-management.html">Programme Management as a Service</a></li></ul></div>
+    <div><h5>By sector</h5><ul><li><a href="../our-work.html?sector=healthcare">Healthcare</a></li><li><a href="../our-work.html?sector=agriculture">Agriculture &amp; Livelihoods</a></li><li><a href="../our-work.html?sector=education">Education &amp; Skilling</a></li><li><a href="../our-work.html?sector=financial-inclusion">Financial Inclusion</a></li><li><a href="../our-work.html?sector=governance">Governance</a></li><li><a href="../our-work.html">All sectors →</a></li></ul></div>
   </div>
   <div class="frow2">
     <div class="fnews">
       <h5>The Dhwani newsletter</h5>
       <p>Practical tech-for-good, once a month. No fluff.</p>
-      <form onsubmit="return false" data-pending="newsletter-provider"><input type="email" placeholder="you@organisation.org"><button class="pill pill-primary" style="padding:11px 18px">Subscribe</button></form>
+      <form onsubmit="return false"><input type="email" placeholder="you@organisation.org"><button class="pill pill-primary" style="padding:11px 18px">Subscribe</button></form>
     </div>
-    <div><h5>Who we serve</h5><ul><li><a href="for-donors.html">Donors &amp; CSRs</a></li><li><a href="for-ngos.html">NGOs</a></li><li><a href="for-government.html">Government</a></li><li><a href="for-academic.html">Academic &amp; Research</a></li></ul></div>
-    <div><h5>Company</h5><ul><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="careers.html">Careers</a></li><li><a href="community.html">Community</a></li><li><a href="technology.html">Technology at Dhwani</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    <div><h5>Resources</h5><ul><li><a href="resources.html#toolkits">Toolkits</a></li><li><a href="resources.html#decks">Decks</a></li><li><a href="resources.html#insights">Insights</a></li></ul><p class="fcontact">Sector 44, Gurugram, Haryana 122002<br><a href="tel:+919574655961">+91 95746 55961</a><br><a href="mailto:partnerships@dhwaniris.com">partnerships@dhwaniris.com</a></p></div>
+    <div><h5>Who we serve</h5><ul><li><a href="../for-donors.html">Donors &amp; CSRs</a></li><li><a href="../for-ngos.html">NGOs</a></li><li><a href="../for-government.html">Government</a></li><li><a href="../for-academic.html">Academic &amp; Research</a></li></ul></div>
+    <div><h5>Company</h5><ul><li><a href="../about.html">About</a></li><li><a href="../team.html">Team</a></li><li><a href="../careers.html">Careers</a></li><li><a href="../community.html">Community</a></li><li><a href="../technology.html">Technology at Dhwani</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+    <div><h5>Resources</h5><ul><li><a href="../resources.html#toolkits">Toolkits</a></li><li><a href="../resources.html#insights">Insights</a></li></ul><p class="fcontact">Sector 44, Gurugram, Haryana 122002<br><a href="../tel:+919574655961">+91 95746 55961</a><br><a href="../mailto:partnerships@dhwaniris.com">partnerships@dhwaniris.com</a></p></div>
   </div>
-  <div class="foot-bot"><span>© 2026 Dhwani Rural Information Systems</span><span><a href="privacy.html">Privacy</a> · <a href="sitemap.html">Sitemap</a></span></div>
+  <div class="foot-bot"><span>© 2026 Dhwani Rural Information Systems</span><span><a href="../privacy.html">Privacy</a> · <a href="../sitemap.html">Sitemap</a></span></div>
 </div></footer>
 
 <script>
 (function(){var nav=document.getElementById('topnav');
-function s(){var h=(document.querySelector('.ahero')||{}).offsetHeight||520;nav.classList.toggle('solid',window.scrollY>h-70);}window.addEventListener('scroll',s,{passive:true});s();
+function s(){var a=document.querySelector('.ahero');if(!a){nav.classList.add('solid');return;}nav.classList.toggle('solid',window.scrollY>a.offsetHeight-70);}window.addEventListener('scroll',s,{passive:true});s();
 var mb=document.getElementById('menuBtn');if(mb){mb.addEventListener('click',function(){nav.classList.toggle('open');});
 nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');});});}
   nav.querySelectorAll('.dd-toggle').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();b.parentElement.classList.toggle('open');});});})();
 </script>
+
+
+
 
 <!-- ===== DHWANI CHAT ASSISTANT ===== -->
 <style>
@@ -413,7 +400,7 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
   var FALLBACK={a:"I don't have a ready answer for that one — the fastest way to get a real one is to book a call or email us directly.", act:true};
   var GREETING="Hi, I'm the Dhwani assistant. Ask me about what we build, who we work with, or how to get in touch &mdash; or pick a question below.";
 
-  var ACTIONS_HTML='<div class="dch-inline-act"><a href="contact.html#book"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Book a call</a><a href="mailto:partnerships@dhwaniris.com"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg> Email us</a></div>';
+  var ACTIONS_HTML='<div class="dch-inline-act"><a href="../contact.html#book"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Book a call</a><a href="../mailto:partnerships@dhwaniris.com"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg> Email us</a></div>';
   function addMsg(text,who,withActions){
     var d=document.createElement('div');
     d.className='dch-msg '+who;
@@ -466,5 +453,23 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
 })();
 </script>
 
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.rtab'));
+  var panels=[].slice.call(document.querySelectorAll('.rgroup'));
+  if(!tabs.length) return;
+  function activate(name){
+    tabs.forEach(function(t){t.classList.toggle('on',t.dataset.tab===name);});
+    panels.forEach(function(p){p.classList.toggle('on',p.id===name);});
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){
+    activate(t.dataset.tab);
+    try{history.replaceState(null,'','resources.html#'+t.dataset.tab);}catch(e){}
+  });});
+  var hash=location.hash.replace('#','');
+  var valid=tabs.some(function(t){return t.dataset.tab===hash;});
+  activate(valid?hash:'toolkits');
+})();
+</script>
 </body>
 </html>
