@@ -75,7 +75,11 @@ em{font-style:italic}
 /* sectors */
 .sectors.section{background:var(--paper)}
 .sec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
-.sec-grid.four{grid-template-columns:repeat(4,1fr)}
+.sec-grid.four{grid-template-columns:repeat(2,1fr);gap:16px}
+.sec-grid.four .scell{padding:30px 32px;border-radius:12px}
+.sec-grid.four .scell b{font-size:1.42rem}
+.sec-grid.four .scell .sic svg{width:28px;height:28px}
+.sec-grid.four .scell .sic{align-self:flex-start}
 .scell{background:var(--beige);border-radius:10px;padding:22px 24px;transition:.2s;display:flex;align-items:center;gap:14px}
 .scell .sic{flex:none;color:#4a423c;display:flex}
 .scell b{flex:1}

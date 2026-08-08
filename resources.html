@@ -160,12 +160,13 @@ button.rcard:hover{background:var(--beige-h)}
 @media(max-width:900px){
       }
 
+.rtabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 34px}
 .rchip{font-size:.92rem;font-weight:500;color:var(--ink);background:var(--beige);border:none;border-radius:999px;padding:11px 20px;cursor:pointer;transition:.15s;font-family:var(--sans)}
 .rchip:hover{background:var(--beige-h)}
 .rchip.on{background:var(--maroon);color:#fff}
 .rgroup{display:none}
 .rgroup.on{display:block}
-.rlede{margin-top:0;margin-bottom:20px;max-width:70ch}
+.rlede{margin-top:0;margin-bottom:30px;max-width:70ch}
 .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .rcard{display:flex;flex-direction:column;background:var(--beige);border-radius:12px;overflow:hidden;transition:.2s}
 .rcard:hover{background:var(--beige-h)}
@@ -188,6 +189,15 @@ button.rcard:hover{background:var(--beige-h)}
 .copy-pending2 p{color:var(--muted);font-size:.98rem;line-height:1.65;margin-bottom:20px}
 @media(max-width:900px){.rgrid{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.rgrid{grid-template-columns:1fr}}
+
+.nlgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.nlyear h4{font-family:var(--serif);font-size:1.3rem;font-weight:500;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.nlrow{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:11px 14px;border-radius:9px;transition:.15s}
+.nlrow:hover{background:var(--beige)}
+.nlrow b{font-weight:600;font-size:.96rem;color:var(--ink)}
+.nlrow span{font-size:.82rem;color:var(--maroon);font-weight:600;white-space:nowrap}
+@media(max-width:900px){.nlgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.nlgrid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -254,6 +264,7 @@ button.rcard:hover{background:var(--beige-h)}
     <button class="rchip on" data-tab="toolkits">Toolkits</button>
     <button class="rchip" data-tab="playbooks">Playbooks</button>
     <button class="rchip" data-tab="insights">Insights</button>
+    <button class="rchip" data-tab="newsletter">Newsletter</button>
   </div>
 
   <div class="rgroup on" id="toolkits">
@@ -300,6 +311,46 @@ button.rcard:hover{background:var(--beige-h)}
     <p class="bnone" id="bnone">Nothing matches that yet.</p>
     <button class="pill pill-dark bmore" id="bmore">Show more</button>
   </div>
+  <div class="rgroup" id="newsletter">
+    <p class="lede rlede">Every issue of the monthly newsletter, back to March 2023. <a class="tlink" href="community.html#newsletter">Subscribe <span class="arw">&#8594;</span></a></p>
+    <div class="nlgrid">
+      <div class="nlyear">
+        <h4>2025</h4>
+        <a class="nlrow" href="https://zcmp.in/X1fg?m=0" target="_blank" rel="noopener"><b>June</b><span>Read the issue <span class="arw">&#8594;</span></span></a>
+        <a class="nlrow" href="https://zcmp.in/zCPi?m=0" target="_blank" rel="noopener"><b>May</b><span>Read the issue <span class="arw">&#8594;</span></span></a>
+        <a class="nlrow" href="https://zcmp.in/O8Vx?m=0" target="_blank" rel="noopener"><b>April</b><span>Read the issue <span class="arw">&#8594;</span></span></a>
+        <a class="nlrow" href="https://zcmp.in/VX5d?m=0" target="_blank" rel="noopener"><b>March</b><span>Read the issue <span class="arw">&#8594;</span></span></a>
+        <a class="nlrow" href="https://zcmp.in/Wf4h?m=0" target="_blank" rel="noopener"><b>February</b><span>Read the issue <span class="arw">&#8594;</span></span></a>
+        <a class="nlrow" href="https://zcmp.in/83BW?m=0" target="_blank" rel="noopener"><b>January</b><span>Read the issue <span class="arw">&#8594;</span></span></a>
+      </div>
+      <div class="nlyear">
+        <h4>2024</h4>
+        <a class="nlrow" href="https://zcmp.in/4YjV?m=0" target="_blank" rel="noopener"><b>December</b><span>Read the issue <span class="arw">&#8594;</span></span></a>
+        <a class="nlrow" href="https://zcmp.in/gDhC?m=0" target="_blank" rel="noopener"><b>November</b><span>Read the issue <span class="arw">&#8594;</span></span></a>
+        <a class="nlrow" href="https://zcmp.in/qSOz?m=0" target="_blank" rel="noopener"><b>October</b><span>Read the issue <span class="arw">&#8594;</span></span></a>
+        <a class="nlrow" href="https://zcmp.in/f4OZ?m=0" target="_blank" rel="noopener"><b>September</b><span>Read the issue <span class="arw">&#8594;</span></span></a>
+        <a class="nlrow" href="https://zcmp.in/jwRO?m=0" target="_blank" rel="noopener"><b>August</b><span>Read the issue <span class="arw">&#8594;</span></span></a>
+        <a class="nlrow" href="https://zcmp.in/7btz?m=0" target="_blank" rel="noopener"><b>July</b><span>Read the issue <span class="arw">&#8594;</span></span></a>
+        <a class="nlrow" href="https://zcmp.in/vvgN?m=0" target="_blank" rel="noopener"><b>June</b><span>Read the issue <span class="arw">&#8594;</span></span></a>
+        <a class="nlrow" href="https://zcmp.in/KFwh?m=0" target="_blank" rel="noopener"><b>May</b><span>Read the issue <span class="arw">&#8594;</span></span></a>
+        <a class="nlrow" href="https://zcmp.in/T2nl?m=0" target="_blank" rel="noopener"><b>April</b><span>Read the issue <span class="arw">&#8594;</span></span></a>
+        <a class="nlrow" href="https://zcmp.in/iYlU?m=0" target="_blank" rel="noopener"><b>March</b><span>Read the issue <span class="arw">&#8594;</span></span></a>
+        <a class="nlrow" href="https://zcmp.in/sRra?m=0" target="_blank" rel="noopener"><b>February</b><span>Read the issue <span class="arw">&#8594;</span></span></a>
+        <a class="nlrow" href="https://zcmp.in/rsdh?m=0" target="_blank" rel="noopener"><b>January</b><span>Read the issue <span class="arw">&#8594;</span></span></a>
+      </div>
+      <div class="nlyear">
+        <h4>2023</h4>
+        <a class="nlrow" href="https://zcmp.in/uINA?m=0" target="_blank" rel="noopener"><b>December</b><span>Read the issue <span class="arw">&#8594;</span></span></a>
+        <a class="nlrow" href="https://zcmp.in/5WVh?m=0" target="_blank" rel="noopener"><b>November</b><span>Read the issue <span class="arw">&#8594;</span></span></a>
+        <a class="nlrow" href="https://zcmp.in/E1PR?m=0" target="_blank" rel="noopener"><b>October</b><span>Read the issue <span class="arw">&#8594;</span></span></a>
+        <a class="nlrow" href="https://zcmp.in/y7N6?m=0" target="_blank" rel="noopener"><b>September</b><span>Read the issue <span class="arw">&#8594;</span></span></a>
+        <a class="nlrow" href="https://zcmp.in/DvJJ?m=0" target="_blank" rel="noopener"><b>June</b><span>Read the issue <span class="arw">&#8594;</span></span></a>
+        <a class="nlrow" href="https://zcmp.in/OaB7?m=0" target="_blank" rel="noopener"><b>May</b><span>Read the issue <span class="arw">&#8594;</span></span></a>
+        <a class="nlrow" href="https://zcmp.in/5wQC?m=0" target="_blank" rel="noopener"><b>April</b><span>Read the issue <span class="arw">&#8594;</span></span></a>
+        <a class="nlrow" href="https://zcmp.in/uOBA?m=0" target="_blank" rel="noopener"><b>March</b><span>Read the issue <span class="arw">&#8594;</span></span></a>
+      </div>
+    </div>
+  </div>
 </div></section>
 
 
@@ -331,7 +382,7 @@ button.rcard:hover{background:var(--beige-h)}
     </div>
     <div><h5>Who we serve</h5><ul><li><a href="for-donors.html">Donors &amp; CSRs</a></li><li><a href="for-ngos.html">NGOs</a></li><li><a href="for-government.html">Government</a></li><li><a href="for-academic.html">Academic &amp; Research</a></li></ul></div>
     <div><h5>Company</h5><ul><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="careers.html">Careers</a></li><li><a href="community.html">Community</a></li><li><a href="technology.html">Technology at Dhwani</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    <div><h5>Resources</h5><ul><li><a href="resources.html#toolkits">Toolkits</a></li><li><a href="resources.html#playbooks">Playbooks</a></li><li><a href="resources.html#insights">Insights</a></li></ul><p class="fcontact">Sector 44, Gurugram, Haryana 122002<br><a href="tel:+919574655961">+91 95746 55961</a><br><a href="mailto:partnerships@dhwaniris.com">partnerships@dhwaniris.com</a></p></div>
+    <div><h5>Resources</h5><ul><li><a href="resources.html#toolkits">Toolkits</a></li><li><a href="resources.html#playbooks">Playbooks</a></li><li><a href="resources.html#newsletter">Newsletter archive</a></li><li><a href="resources.html#insights">Insights</a></li></ul><p class="fcontact">Sector 44, Gurugram, Haryana 122002<br><a href="tel:+919574655961">+91 95746 55961</a><br><a href="mailto:partnerships@dhwaniris.com">partnerships@dhwaniris.com</a></p></div>
   </div>
   <div class="foot-bot"><span>© 2026 Dhwani Rural Information Systems</span><span><a href="privacy.html">Privacy</a> · <a href="sitemap.html">Sitemap</a></span></div>
 </div></footer>
