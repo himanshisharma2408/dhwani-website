@@ -154,6 +154,20 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 @media(max-width:900px){.life-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.life-grid{grid-template-columns:1fr}}
 </style>
+<script>
+/* ── Form delivery ────────────────────────────────────────────────────────────
+   Set FORM_ENDPOINT to a URL that accepts a JSON POST. Recommended: a Zoho Form
+   (it can create the Bigin record and send the email notification natively), or
+   Zoho Flow / Formspree / Basin webhook.
+   Set NEWSLETTER_ACTION to the Zoho Campaigns signup form action URL.
+   While these are empty the forms fall back to the user's mail client, so nothing
+   is lost — but they should be filled in before launch.                        */
+window.DHWANI_FORMS = {
+  FORM_ENDPOINT: '',
+  NEWSLETTER_ACTION: '',
+  NOTIFY_EMAIL: 'partnerships@dhwaniris.com'
+};
+</script>
 </head>
 <body>
 
@@ -216,7 +230,8 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 
 <!-- VALUES -->
 <section class="section people"><div class="wrap">
-  <h2 class="shead">Our values</h2>
+  <h2 class="shead">What it is actually like</h2>
+  <p class="lede" style="max-width:70ch;margin-top:10px;margin-bottom:6px">Most of our work runs somewhere with patchy connectivity and real consequences for getting it wrong. That shapes the job more than any perk does: you will spend time close to the people using what you build, and you will be trusted to make calls without waiting for permission.</p>
   <div class="pgrid">
     <div class="pcard"><div class="av">1</div><h4>Close to the problem</h4><p>We build for real field conditions, not a demo environment &mdash; so we stay close to the people who use what we ship.</p></div>
     <div class="pcard"><div class="av">2</div><h4>Ownership over instructions</h4><p>Small teams, real accountability. You are trusted to make calls, not just follow a spec.</p></div>
@@ -255,15 +270,15 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 
 <!-- AI AND LEARNING -->
 <section class="section story"><div class="wrap">
-  <h2 class="shead">AI-positive, and learning out loud</h2>
+  <h2 class="shead">How we work with AI</h2>
   <div class="grid">
     <div>
-      <p><b>We are AI-positive.</b> The team gets AI tools to use in their actual work &mdash; not a pilot, and not something you have to justify. If it removes an hour of tedium, use it.</p>
-      <p><b>Judgement stays human.</b> Being AI-positive is not the same as being careless. AI drafts; a person decides what goes to a beneficiary, a funder or a government partner.</p>
+      <p>Every person here gets paid AI tooling, on the company, from their first week. You do not raise a ticket for it and you do not justify the spend. If it saves you an afternoon of transcription, schema-writing or first-draft documentation, that is the whole business case.</p>
+      <p>Where it earns its place: turning a hundred pages of field notes into something a programme manager can read, drafting the boring half of a proposal, writing the test cases nobody wants to write, getting a junior engineer unstuck at 11pm without waiting for standup.</p>
     </div>
     <div>
-      <p><b>Learning is part of the job.</b> We would rather you spent a week getting properly good at something than a month working around not knowing it. Sector context, new frameworks, applied AI &mdash; all fair game.</p>
-      <p><b>Backed by benefits.</b> There is budget and time set aside for learning, and internal sessions where people teach the rest of us what they have picked up. Ask about the specifics in your interview &mdash; we will give you the actual policy, not a slogan.</p>
+      <p>Where it does not: anything a beneficiary, a funder or a government partner will read goes past a person first. Not as policy theatre &mdash; because the cost of a confidently wrong number in a district health report is borne by someone who never agreed to be in the dataset.</p>
+      <p>The same goes for learning. If something you need to know would take a week to learn properly, take the week. We would rather carry that than a year of somebody quietly working around a gap. People run internal sessions on what they have picked up, and there is budget behind it &mdash; ask in your interview and you will get the actual policy, not a slogan.</p>
     </div>
   </div>
 </div></section>
@@ -485,5 +500,22 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
 })();
 </script>
 
+<script>
+(function(){
+  var cfg=window.DHWANI_FORMS||{};
+  document.querySelectorAll('form[data-pending="newsletter-provider"]').forEach(function(f){
+    var input=f.querySelector('input[type=email]');
+    if(cfg.NEWSLETTER_ACTION){f.setAttribute('action',cfg.NEWSLETTER_ACTION);f.setAttribute('method','post');f.removeAttribute('onsubmit');return;}
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(!input.value){input.focus();return;}
+      window.location.href='mailto:'+(cfg.NOTIFY_EMAIL||'partnerships@dhwaniris.com')
+        +'?subject='+encodeURIComponent('Newsletter signup')
+        +'&body='+encodeURIComponent('Please add this address to the Dhwani newsletter list: '+input.value);
+      input.value=''; var b=f.querySelector('button'); if(b)b.textContent='Thanks';
+    });
+  });
+})();
+</script>
 </body>
 </html>

@@ -199,6 +199,20 @@ button.rcard:hover{background:var(--beige-h)}
 @media(max-width:900px){.nlgrid{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.nlgrid{grid-template-columns:1fr}}
 </style>
+<script>
+/* ── Form delivery ────────────────────────────────────────────────────────────
+   Set FORM_ENDPOINT to a URL that accepts a JSON POST. Recommended: a Zoho Form
+   (it can create the Bigin record and send the email notification natively), or
+   Zoho Flow / Formspree / Basin webhook.
+   Set NEWSLETTER_ACTION to the Zoho Campaigns signup form action URL.
+   While these are empty the forms fall back to the user's mail client, so nothing
+   is lost — but they should be filled in before launch.                        */
+window.DHWANI_FORMS = {
+  FORM_ENDPOINT: '',
+  NEWSLETTER_ACTION: '',
+  NOTIFY_EMAIL: 'partnerships@dhwaniris.com'
+};
+</script>
 </head>
 <body>
 
@@ -270,6 +284,7 @@ button.rcard:hover{background:var(--beige-h)}
   <div class="rgroup on" id="toolkits">
     <p class="lede rlede">Free tools you can open right now, no form and no call required.</p>
     <div class="rgrid">
+            <a class="rcard" href="https://github.com/dhwani-ris/frappe-mobile-sdk" target="_blank" rel="noopener"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=900&auto=format&fit=crop')"></div><div class="rbd"><div class="kind">Open source</div><h3>Frappe Mobile SDK</h3><p>The framework we built for Frappe-based mobile apps, now open source. Also published on pub.dev as a Flutter package.</p><span class="tlink">Open on GitHub <span class="arw">&#8594;</span></span></div></a>
       <a class="rcard" href="https://x.mgrant.in/" target="_blank" rel="noopener"><div class="ph" style="background-image:url('assets/img/cases/case-municipalfinance.jpg')"></div><div class="rbd"><div class="kind">Toolkit</div><h3>CSR Insights</h3><p>Find CSR grants by state, district, project type and spend. Built on MCA filings: 46,021 companies, 5.89 lakh project records, 728 districts, 30 sectors.</p><span class="tlink">Open the tool <span class="arw">&#8594;</span></span></div></a>
       <a class="rcard" href="https://dpdp.dhwaniris.com/#top" target="_blank" rel="noopener"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=900&auto=format&fit=crop')"></div><div class="rbd"><div class="kind">Toolkit</div><h3>DPDP Readiness Primer</h3><p>A practical primer to start your DPDP Act readiness journey, from mapping what personal data you hold to proving consent.</p><span class="tlink">Open the primer <span class="arw">&#8594;</span></span></div></a>
       <div class="rcard soon"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=900&auto=format&fit=crop')"></div><div class="rbd"><div class="kind">Toolkit</div><h3>AI Toolkit</h3><p>Practical AI tools for the impact sector.</p><span class="tlink" style="color:var(--muted)">Coming soon</span></div></div>
@@ -278,10 +293,10 @@ button.rcard:hover{background:var(--beige-h)}
 
   <div class="rgroup" id="playbooks">
     <p class="lede rlede">Working guides for the decisions that come up again and again.</p>
-    <div class="copy-pending2">
-      <b>On the way</b>
-      <p>Step-by-step guides for the decisions that come up again and again: scoping a programme MIS, moving grant management off spreadsheets, and getting DPDP-ready before May 2027. If one of those is the decision in front of you now, talk to us &mdash; the guidance exists, it just is not written down yet.</p>
-      <a class="pill pill-primary" href="contact.html?topic=brainstorm">Tell us what you need <span class="arw">&#8594;</span></a>
+    <div class="rgrid">
+      <div class="rcard soon"><div class="ph" style="background-image:url('assets/img/cases/case-orgperf.jpg')"></div><div class="rbd"><div class="kind">Playbook</div><h3>Choosing a programme MIS</h3><p>How to scope one, what to ask vendors, and how to avoid buying more than you need.</p><span class="tlink" style="color:var(--muted)">Coming soon</span></div></div>
+      <div class="rcard soon"><div class="ph" style="background-image:url('assets/img/cases/case-csr.jpg')"></div><div class="rbd"><div class="kind">Playbook</div><h3>Moving grants off spreadsheets</h3><p>What to migrate first, and what to leave alone until the team is ready.</p><span class="tlink" style="color:var(--muted)">Coming soon</span></div></div>
+      <div class="rcard soon"><div class="ph" style="background-image:url('assets/img/cases/case-tribalhealth.jpg')"></div><div class="rbd"><div class="kind">Playbook</div><h3>Getting DPDP-ready</h3><p>The five stages, and what each one actually costs you in time.</p><span class="tlink" style="color:var(--muted)">Coming soon</span></div></div>
     </div>
   </div>
 
@@ -588,6 +603,23 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
   more.addEventListener('click',function(){shown+=PAGE;draw();});
   box.addEventListener('input',function(){q=box.value.trim().toLowerCase();shown=PAGE;draw();});
   draw();
+})();
+</script>
+<script>
+(function(){
+  var cfg=window.DHWANI_FORMS||{};
+  document.querySelectorAll('form[data-pending="newsletter-provider"]').forEach(function(f){
+    var input=f.querySelector('input[type=email]');
+    if(cfg.NEWSLETTER_ACTION){f.setAttribute('action',cfg.NEWSLETTER_ACTION);f.setAttribute('method','post');f.removeAttribute('onsubmit');return;}
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(!input.value){input.focus();return;}
+      window.location.href='mailto:'+(cfg.NOTIFY_EMAIL||'partnerships@dhwaniris.com')
+        +'?subject='+encodeURIComponent('Newsletter signup')
+        +'&body='+encodeURIComponent('Please add this address to the Dhwani newsletter list: '+input.value);
+      input.value=''; var b=f.querySelector('button'); if(b)b.textContent='Thanks';
+    });
+  });
 })();
 </script>
 </body>

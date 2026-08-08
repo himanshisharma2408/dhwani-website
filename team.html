@@ -79,6 +79,8 @@ em{font-style:italic}
 .pcard .av svg{width:36%;height:36%}
 .pgrid.lead-grid{grid-template-columns:repeat(2,1fr);max-width:520px}
 .pgrid.exec-grid{grid-template-columns:repeat(5,1fr);max-width:none}
+.pcard.soon{opacity:.55}
+.pcard.soon .av{background:var(--beige-h)}
 .pcard .av .mono{font-family:var(--serif);font-size:2.4rem;font-weight:500;color:var(--muted);letter-spacing:.02em}
 .pcard.hide{display:none}
 .tfilter{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
@@ -179,6 +181,20 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .where .chips span{background:var(--beige);border-radius:999px;padding:12px 22px;font-family:var(--serif);font-size:1.05rem;color:var(--ink)}
 .where .note{margin-top:22px;font-size:.95rem;color:var(--muted)}
 </style>
+<script>
+/* ── Form delivery ────────────────────────────────────────────────────────────
+   Set FORM_ENDPOINT to a URL that accepts a JSON POST. Recommended: a Zoho Form
+   (it can create the Bigin record and send the email notification natively), or
+   Zoho Flow / Formspree / Basin webhook.
+   Set NEWSLETTER_ACTION to the Zoho Campaigns signup form action URL.
+   While these are empty the forms fall back to the user's mail client, so nothing
+   is lost — but they should be filled in before launch.                        */
+window.DHWANI_FORMS = {
+  FORM_ENDPOINT: '',
+  NEWSLETTER_ACTION: '',
+  NOTIFY_EMAIL: 'partnerships@dhwaniris.com'
+};
+</script>
 </head>
 <body>
 
@@ -248,7 +264,12 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
   </div>
 
   <h4 class="tgrp">Advisors</h4>
-  <div class="advisor-placeholder">Our advisory board is being finalised &mdash; details coming soon.</div>
+  <div class="pgrid exec-grid">
+    <div class="pcard soon"><div class="av"><span class="mono">&mdash;</span></div><h4>Advisor</h4><div class="role">To be announced</div></div>
+    <div class="pcard soon"><div class="av"><span class="mono">&mdash;</span></div><h4>Advisor</h4><div class="role">To be announced</div></div>
+    <div class="pcard soon"><div class="av"><span class="mono">&mdash;</span></div><h4>Advisor</h4><div class="role">To be announced</div></div>
+  </div>
+  <p class="lede" style="margin-top:14px;opacity:.7">Our advisory board is being finalised.</p>
 
   <h4 class="tgrp">Executive team</h4>
   <div class="pgrid exec-grid">
@@ -595,6 +616,23 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
     cards.forEach(function(p){var ok=!g||p.dataset.g===g;p.classList.toggle('hide',!ok);if(ok)k++;});
     n.textContent=k;
   });});
+})();
+</script>
+<script>
+(function(){
+  var cfg=window.DHWANI_FORMS||{};
+  document.querySelectorAll('form[data-pending="newsletter-provider"]').forEach(function(f){
+    var input=f.querySelector('input[type=email]');
+    if(cfg.NEWSLETTER_ACTION){f.setAttribute('action',cfg.NEWSLETTER_ACTION);f.setAttribute('method','post');f.removeAttribute('onsubmit');return;}
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(!input.value){input.focus();return;}
+      window.location.href='mailto:'+(cfg.NOTIFY_EMAIL||'partnerships@dhwaniris.com')
+        +'?subject='+encodeURIComponent('Newsletter signup')
+        +'&body='+encodeURIComponent('Please add this address to the Dhwani newsletter list: '+input.value);
+      input.value=''; var b=f.querySelector('button'); if(b)b.textContent='Thanks';
+    });
+  });
 })();
 </script>
 </body>

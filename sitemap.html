@@ -160,6 +160,20 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 @media(max-width:900px){.smgrid{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.smgrid{grid-template-columns:1fr}}
 </style>
+<script>
+/* ── Form delivery ────────────────────────────────────────────────────────────
+   Set FORM_ENDPOINT to a URL that accepts a JSON POST. Recommended: a Zoho Form
+   (it can create the Bigin record and send the email notification natively), or
+   Zoho Flow / Formspree / Basin webhook.
+   Set NEWSLETTER_ACTION to the Zoho Campaigns signup form action URL.
+   While these are empty the forms fall back to the user's mail client, so nothing
+   is lost — but they should be filled in before launch.                        */
+window.DHWANI_FORMS = {
+  FORM_ENDPOINT: '',
+  NEWSLETTER_ACTION: '',
+  NOTIFY_EMAIL: 'partnerships@dhwaniris.com'
+};
+</script>
 </head>
 <body>
 
@@ -324,7 +338,6 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
       </ul>
     </div>
   </div>
-  <p class="lede" style="margin-top:30px;opacity:.7">Team: the internal structure map is at <a class="tlink" href="site-structure.html">site-structure.html</a>.</p>
 </div></section>
 
 <!-- FOOTER -->
@@ -512,5 +525,22 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
 })();
 </script>
 
+<script>
+(function(){
+  var cfg=window.DHWANI_FORMS||{};
+  document.querySelectorAll('form[data-pending="newsletter-provider"]').forEach(function(f){
+    var input=f.querySelector('input[type=email]');
+    if(cfg.NEWSLETTER_ACTION){f.setAttribute('action',cfg.NEWSLETTER_ACTION);f.setAttribute('method','post');f.removeAttribute('onsubmit');return;}
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(!input.value){input.focus();return;}
+      window.location.href='mailto:'+(cfg.NOTIFY_EMAIL||'partnerships@dhwaniris.com')
+        +'?subject='+encodeURIComponent('Newsletter signup')
+        +'&body='+encodeURIComponent('Please add this address to the Dhwani newsletter list: '+input.value);
+      input.value=''; var b=f.querySelector('button'); if(b)b.textContent='Thanks';
+    });
+  });
+})();
+</script>
 </body>
 </html>

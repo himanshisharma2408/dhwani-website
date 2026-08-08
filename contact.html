@@ -172,6 +172,20 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 #topnav .links a.n-active{color:#fff;font-weight:600}
 #topnav.solid .links a.n-active,#topnav.scrolled .links a.n-active{color:var(--maroon)}
 </style>
+<script>
+/* ── Form delivery ────────────────────────────────────────────────────────────
+   Set FORM_ENDPOINT to a URL that accepts a JSON POST. Recommended: a Zoho Form
+   (it can create the Bigin record and send the email notification natively), or
+   Zoho Flow / Formspree / Basin webhook.
+   Set NEWSLETTER_ACTION to the Zoho Campaigns signup form action URL.
+   While these are empty the forms fall back to the user's mail client, so nothing
+   is lost — but they should be filled in before launch.                        */
+window.DHWANI_FORMS = {
+  FORM_ENDPOINT: '',
+  NEWSLETTER_ACTION: '',
+  NOTIFY_EMAIL: 'partnerships@dhwaniris.com'
+};
+</script>
 </head>
 <body>
 
@@ -216,7 +230,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
     </div>
   </div>
   <div class="nav-right">
-    <a href="#book" class="navpill">Book a call</a>
+    
     <button class="menu-btn" id="menuBtn" aria-label="Menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </div>
 </div></header>
@@ -344,6 +358,31 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
   if(topic&&msgs[topic]){var ta=document.getElementById('c-msg');ta.value=msgs[topic];document.getElementById('prefill-note').hidden=false;}
 
   var form=document.getElementById('contact-form'),done=document.getElementById('contact-done');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!form.checkValidity()){form.reportValidity();return;}
+    var cfg=window.DHWANI_FORMS||{};
+    var payload={
+      source:'website-contact',
+      organisation_type:document.getElementById('c-type').value,
+      email:document.getElementById('c-email').value,
+      message:document.getElementById('c-msg').value,
+      page:location.href
+    };
+    var btn=form.querySelector('button[type=submit]'); if(btn)btn.disabled=true;
+    function succeed(){form.style.display='none';done.classList.add('show');window.scrollTo({top:0,behavior:'smooth'});}
+    function fallback(){
+      var body='Organisation type: '+payload.organisation_type+'\nEmail: '+payload.email+'\n\n'+payload.message;
+      window.location.href='mailto:'+(cfg.NOTIFY_EMAIL||'partnerships@dhwaniris.com')
+        +'?subject='+encodeURIComponent('Website enquiry — '+payload.organisation_type)
+        +'&body='+encodeURIComponent(body);
+      succeed();
+    }
+    if(!cfg.FORM_ENDPOINT){fallback();return;}
+    fetch(cfg.FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+      .then(function(r){ if(!r.ok) throw new Error(r.status); succeed(); })
+      .catch(function(){ fallback(); });
+  });
   form.addEventListener('submit',function(e){e.preventDefault();if(!form.checkValidity()){form.reportValidity();return;}form.style.display='none';done.classList.add('show');window.scrollTo({top:0,behavior:'smooth'});});
 
   /* smooth-scroll to book/message (both always visible now, no tabs) */
@@ -507,5 +546,22 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 })();
 </script>
 
+<script>
+(function(){
+  var cfg=window.DHWANI_FORMS||{};
+  document.querySelectorAll('form[data-pending="newsletter-provider"]').forEach(function(f){
+    var input=f.querySelector('input[type=email]');
+    if(cfg.NEWSLETTER_ACTION){f.setAttribute('action',cfg.NEWSLETTER_ACTION);f.setAttribute('method','post');f.removeAttribute('onsubmit');return;}
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(!input.value){input.focus();return;}
+      window.location.href='mailto:'+(cfg.NOTIFY_EMAIL||'partnerships@dhwaniris.com')
+        +'?subject='+encodeURIComponent('Newsletter signup')
+        +'&body='+encodeURIComponent('Please add this address to the Dhwani newsletter list: '+input.value);
+      input.value=''; var b=f.querySelector('button'); if(b)b.textContent='Thanks';
+    });
+  });
+})();
+</script>
 </body>
 </html>

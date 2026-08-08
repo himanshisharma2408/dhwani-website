@@ -254,6 +254,20 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .deck-modal.sent .form-row{display:none}
 .deck-modal.sent .done{display:block}
 </style>
+<script>
+/* ── Form delivery ────────────────────────────────────────────────────────────
+   Set FORM_ENDPOINT to a URL that accepts a JSON POST. Recommended: a Zoho Form
+   (it can create the Bigin record and send the email notification natively), or
+   Zoho Flow / Formspree / Basin webhook.
+   Set NEWSLETTER_ACTION to the Zoho Campaigns signup form action URL.
+   While these are empty the forms fall back to the user's mail client, so nothing
+   is lost — but they should be filled in before launch.                        */
+window.DHWANI_FORMS = {
+  FORM_ENDPOINT: '',
+  NEWSLETTER_ACTION: '',
+  NOTIFY_EMAIL: 'partnerships@dhwaniris.com'
+};
+</script>
 </head>
 <body>
 
@@ -269,7 +283,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
         <div class="dd-col"><h6>Products</h6><a href="mgrant.html">mGrant for Donors</a><a href="mgrant.html">mGrant for Nonprofits</a><a href="mform.html">mForm</a><a href="anumati.html">Anumati</a><a href="radar.html">Radar</a></div>
         <div class="dd-col"><h6>Systems</h6><a href="programme-mis.html">Programme MIS</a><a href="impact-dashboards.html">Impact Dashboards</a><a href="grant-management.html">Grant Management</a><a href="donor-management.html">Donor Management</a><a href="field-data-apps.html">Field Data Apps</a><a href="back-office-it.html">Back-office IT</a><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></div>
         <div class="dd-col"><h6>Consulting</h6><a href="dpdp-act-readiness.html">DPDP Act Readiness</a><a href="cloud-optimisation.html">CloudSahayak</a><a href="ai-for-impact.html">AI for Impact</a><a href="digital-transformation.html">Digital Transformation</a><a href="programme-management.html">PMU as a Service</a></div>
-        <div class="dd-col"><h6>Explore</h6><a class="n-active" href="our-work.html">Browse by sector</a></div>
+        <div class="dd-col"><h6>Explore</h6><a href="our-work.html">Browse by sector</a></div>
       </div>
     </div>
     <div class="has-dd">
@@ -282,7 +296,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
         <a href="for-academic.html">Academic &amp; Research</a>
       </div>
     </div>
-    <a href="our-work.html">Our work</a>
+    <a class="n-active" href="our-work.html">Our work</a>
     <a href="resources.html">Resources</a>
     <div class="has-dd">
       <a href="about.html">Company <span class="caret">&#9662;</span></a>
@@ -1066,6 +1080,23 @@ if(p&&nx){p.onclick=function(){show(i-1);rs();};nx.onclick=function(){show(i+1);
   if(t&&rows){t.addEventListener('click',function(){var open=rows.hasAttribute('hidden');
     if(open){rows.removeAttribute('hidden');}else{rows.setAttribute('hidden','');}
     t.setAttribute('aria-expanded',open?'true':'false');});}
+})();
+</script>
+<script>
+(function(){
+  var cfg=window.DHWANI_FORMS||{};
+  document.querySelectorAll('form[data-pending="newsletter-provider"]').forEach(function(f){
+    var input=f.querySelector('input[type=email]');
+    if(cfg.NEWSLETTER_ACTION){f.setAttribute('action',cfg.NEWSLETTER_ACTION);f.setAttribute('method','post');f.removeAttribute('onsubmit');return;}
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(!input.value){input.focus();return;}
+      window.location.href='mailto:'+(cfg.NOTIFY_EMAIL||'partnerships@dhwaniris.com')
+        +'?subject='+encodeURIComponent('Newsletter signup')
+        +'&body='+encodeURIComponent('Please add this address to the Dhwani newsletter list: '+input.value);
+      input.value=''; var b=f.querySelector('button'); if(b)b.textContent='Thanks';
+    });
+  });
 })();
 </script>
 </body>
