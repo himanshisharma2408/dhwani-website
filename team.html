@@ -78,6 +78,19 @@ em{font-style:italic}
 .pcard .av img{width:100%;height:100%;object-fit:cover}
 .pcard .av svg{width:36%;height:36%}
 .pgrid.lead-grid{grid-template-columns:repeat(2,1fr);max-width:520px}
+.pgrid.exec-grid{grid-template-columns:repeat(5,1fr);max-width:none}
+.pcard .av .mono{font-family:var(--serif);font-size:2.4rem;font-weight:500;color:var(--muted);letter-spacing:.02em}
+.pcard.hide{display:none}
+.tfilter{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.tchip{font-size:.85rem;font-weight:500;color:var(--ink);background:var(--beige);border:none;border-radius:999px;padding:9px 16px;cursor:pointer;transition:.15s;font-family:var(--sans)}
+.tchip:hover{background:var(--beige-h)}
+.tchip.on{background:var(--maroon);color:#fff}
+.tchip .n{opacity:.55;font-size:.78rem;margin-left:5px}
+.tcount{margin-top:18px;font-size:.95rem;color:var(--muted)}
+.tcount b{color:var(--ink);font-family:var(--serif);font-size:1.1rem;font-weight:600}
+@media(max-width:1100px){.pgrid.exec-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){.pgrid.exec-grid{grid-template-columns:1fr 1fr}}
+
 .pcard h4{font-size:1.1rem;font-weight:500;margin:16px 18px 2px}
 .pcard .role{font-size:.83rem;color:var(--maroon);font-weight:600;margin:0 18px 18px}
 .advisor-placeholder{background:var(--beige);border:1px dashed var(--line);border-radius:12px;padding:26px 28px;color:var(--muted);font-size:.95rem}
@@ -227,7 +240,8 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 
 <!-- HERO -->
 <div class="ahero">
-  <div class="bg" style="background-image:url('https://images.unsplash.com/flagged/photo-1577962917302-cd874c4e31d2?q=80&w=2000&auto=format&fit=crop')"></div>
+  <!-- PHOTO PENDING: replace with a real Dhwani team photo (wide crop, ~2000px). Placeholder below. -->
+  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1722573783625-eceb04251036?q=80&w=2000&auto=format&fit=crop')"></div>
   <div class="veil"></div>
   <div class="in">
     <div class="crumb"><a href="about.html">Company</a> / Team</div>
@@ -249,127 +263,108 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
   <div class="advisor-placeholder">Our advisory board is being finalised &mdash; details coming soon.</div>
 
   <h4 class="tgrp">Executive team</h4>
-  <div class="pgrid lead-grid">
-    <div class="pcard"><div class="av"><img src="assets/img/team/siddharth-bhargava.jpg" alt="Siddharth Bhargava"></div><h4>Siddharth Bhargava</h4><div class="role">Chief Operating Officer</div></div>
-    <div class="pcard"><div class="av"><img src="assets/img/team/deepak-batra.jpg" alt="Deepak Batra"></div><h4>Deepak Batra</h4><div class="role">VP, Engineering</div></div>
+  <div class="pgrid exec-grid">
+    <div class="pcard"><div class="av"><img src="assets/img/team/siddharth-bhargava.jpg" alt="Siddharth Bhargava" loading="lazy"></div><h4>Siddharth Bhargava</h4><div class="role">Chief Operating Officer</div></div>
+    <div class="pcard"><div class="av"><img src="assets/img/team/deepak-batra.jpg" alt="Deepak Batra" loading="lazy"></div><h4>Deepak Batra</h4><div class="role">VP, Engineering</div></div>
+    <div class="pcard"><div class="av"><img src="assets/img/team/nidhi-arora.jpg" alt="Nidhi Arora" loading="lazy"></div><h4>Nidhi Arora</h4><div class="role">Process Consultant</div></div>
+    <div class="pcard"><div class="av"><img src="assets/img/team/Abhijit.jpg" alt="Abhijit Nair" loading="lazy"></div><h4>Abhijit Nair</h4><div class="role">Engineering Manager</div></div>
+    <div class="pcard"><div class="av"><span class="mono">KM</span></div><h4>Kajol Mehta</h4><div class="role">HR Manager</div></div>
   </div>
 
-  <h4 class="tgrp" style="margin-top:60px">The wider team</h4>
-  <div class="rlayout">
-    <div class="rrail" role="tablist">
-      <button class="rtab" data-tab="management"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.5a3 3 0 0 1 0 5.5M21 20c0-2.6-1.6-4.9-4-5.8"/></svg><span>Management team</span><span class="rtab-count">42</span></button>
-      <button class="rtab" data-tab="tech"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6 3 12l5 6M16 6l5 6-5 6"/></svg><span>Tech team</span><span class="rtab-count">44</span></button>
-      <button class="rtab" data-tab="support"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 18 0"/><rect x="2" y="12" width="5" height="7" rx="2"/><rect x="17" y="12" width="5" height="7" rx="2"/><path d="M19 19a4 4 0 0 1-4 4h-2"/></svg><span>Support &mdash; HR &amp; Finance</span><span class="rtab-count">7</span></button>
-    </div>
-    <div class="rpanels">
-      <div class="rgroup" id="management">
-        <div class="tlist">
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Aastha Arora</b><span>Sr. Project Manager</span></span></div>
-    <div class="tmember"><span class="tav"><img src="assets/img/team/Abhinav-Tyagi.jpg" alt="Abhinav Tyagi"></span><span class="tinfo"><b>Abhinav Tyagi</b><span>Tech Associate Project Manager</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Aditya Goswami</b><span>Associate Product Manager</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Akshat Verma</b><span>Analyst</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Aman Sharma</b><span>Analyst</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Arpita Jain</b><span>Project Manager</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Arvind Bansode</b><span>Sr. Project Manager</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Aryan Khanna</b><span>Analyst</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Banita Kumari</b><span>Associate Product Manager</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Brahmjyot Singh</b><span>Analyst</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Chitranshi Jain</b><span>Analyst</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Deepak Yadav</b><span>Analyst</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Diksha Hazarika</b><span>Analyst - Intern</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Fahimuddin Sayyed</b><span>Associate Project Manager</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Fathima Nihala</b><span>Associate Product Manager</span></span></div>
-    <div class="tmember"><span class="tav"><img src="assets/img/team/Harshdeep.jpg" alt="Harshdeep Singh Mokha"></span><span class="tinfo"><b>Harshdeep Singh Mokha</b><span>Sr. Project Manager</span></span></div>
-    <div class="tmember"><span class="tav"><img src="assets/img/team/Himanshi-Sharma.jpg" alt="Himanshi Sharma"></span><span class="tinfo"><b>Himanshi Sharma</b><span>Sr. Project Manager</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Kashish Talwani</b><span>Associate Project Manager</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Krishna Maheshwari</b><span>Associate Project Manager</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Mayur Sharma</b><span>Associate Project Manager</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Mohd Afaq</b><span>Associate Program Manager</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Namandeep</b><span>Sr. Analyst</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Nandita Sharma</b><span>Analyst</span></span></div>
-    <div class="tmember"><span class="tav"><img src="assets/img/team/nidhi-arora.jpg" alt="Nidhi Arora"></span><span class="tinfo"><b>Nidhi Arora</b><span>Associate</span></span></div>
-    <div class="tmember"><span class="tav"><img src="assets/img/team/Nihaan-Mohammed.jpg" alt="Nihaan Mohammed"></span><span class="tinfo"><b>Nihaan Mohammed</b><span>Product Manager</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Nitin Jangid</b><span>Analyst - Intern</span></span></div>
-    <div class="tmember"><span class="tav"><img src="assets/img/team/Parul.jpg" alt="Parul Chuchra"></span><span class="tinfo"><b>Parul Chuchra</b><span>Sr. Project Manager</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Pooja Srivastava</b><span>Analyst</span></span></div>
-    <div class="tmember"><span class="tav"><img src="assets/img/team/Prachi.jpg" alt="Prachi Gupta"></span><span class="tinfo"><b>Prachi Gupta</b><span>Project Manager</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Pranati Tiwari</b><span>Associate Project Manager</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Rashika Saini</b><span>Project Manager</span></span></div>
-    <div class="tmember"><span class="tav"><img src="assets/img/team/Ravi-Jangir.jpg" alt="Ravi Jangir"></span><span class="tinfo"><b>Ravi Jangir</b><span>Strategy Manager</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Sachin Malik</b><span>Analyst</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Samarth Paul</b><span>Associate Project Manager</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Samarth Rana</b><span>Associate Project Manager</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Shikhar Shukla</b><span>Analyst</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Shreyash Shrirang Varhadi</b><span>Analyst</span></span></div>
-    <div class="tmember"><span class="tav"><img src="assets/img/team/shweta.jpg" alt="Shweta Singh"></span><span class="tinfo"><b>Shweta Singh</b><span>Sr. Project Manager</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Sunchay Singhal</b><span>Analyst</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Sunita Joshi</b><span>Sr. Analyst</span></span></div>
-    <div class="tmember"><span class="tav"><img src="assets/img/team/Vepasa.jpg" alt="Vepasa"></span><span class="tinfo"><b>Vepasa</b><span>Program Manager</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Vishwa Patel</b><span>Engagement Manager</span></span></div>
-      </div>
-      </div>
-
-      <div class="rgroup" id="tech">
-        <div class="tlist">
-    <div class="tmember"><span class="tav"><img src="assets/img/team/Abhijit.jpg" alt="Abhijit Nair"></span><span class="tinfo"><b>Abhijit Nair</b><span>Engineering Manager</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Abhishek Prajapati</b><span>Flutter Developer - Intern</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Abhishek Yadav</b><span>SDE 1 - Frappe</span></span></div>
-    <div class="tmember"><span class="tav"><img src="assets/img/team/Aditya-Gore.jpg" alt="Aditya Gore"></span><span class="tinfo"><b>Aditya Gore</b><span>Team Lead - Full stack</span></span></div>
-    <div class="tmember"><span class="tav"><img src="assets/img/team/Amandeep-Singh.jpg" alt="Amandeep Singh"></span><span class="tinfo"><b>Amandeep Singh</b><span>Sr. QA Engineer</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Amit Negi</b><span>SDE 1 - PHP</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Ankit</b><span>SDE 3 - Mobile</span></span></div>
-    <div class="tmember"><span class="tav"><img src="assets/img/team/Ankit-Jangir.jpg" alt="Ankit Jangir"></span><span class="tinfo"><b>Ankit Jangir</b><span>DevOps Engineer</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Ankit Yadav</b><span>SDE 1 - PHP</span></span></div>
-    <div class="tmember"><span class="tav"><img src="assets/img/team/Anup.jpg" alt="Anup Kumar Srivastav"></span><span class="tinfo"><b>Anup Kumar Srivastav</b><span>Team Lead - Full stack</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Ayushman Adrien Ghosh</b><span>SDE 1 - Backend</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Bhanu Marwah</b><span>Data Engineer</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Bhanu Prakash</b><span>SDE 1 - Full Stack</span></span></div>
-    <div class="tmember"><span class="tav"><img src="assets/img/team/Bhushan.jpg" alt="Bhushan Anilrao Barbuddhe"></span><span class="tinfo"><b>Bhushan Anilrao Barbuddhe</b><span>Team Lead</span></span></div>
-    <div class="tmember"><span class="tav"><img src="assets/img/team/Dalbeer-Kaur.jpg" alt="Dalbeer Kaur"></span><span class="tinfo"><b>Dalbeer Kaur</b><span>Sr. QA Engineer</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Deepak Bharti</b><span>Data Engineer</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Devang Bhatnagar</b><span>SDE 1 - Frappe</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Harshit Sodhani</b><span>SDE 1 - Full Stack</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Hrushikesh Ramchandra Deodhar</b><span>SDE 1 - PHP</span></span></div>
-    <div class="tmember"><span class="tav"><img src="assets/img/team/KandhiOm.jpg" alt="Kandhi Omprakash"></span><span class="tinfo"><b>Kandhi Omprakash</b><span>SDE 3 - Full Stack</span></span></div>
-    <div class="tmember"><span class="tav"><img src="assets/img/team/Manish-kumar-roy.jpg" alt="Manish Kumar Roy"></span><span class="tinfo"><b>Manish Kumar Roy</b><span>Team Lead - Full stack</span></span></div>
-    <div class="tmember"><span class="tav"><img src="assets/img/team/manju.jpg" alt="Manju Lata Soreng"></span><span class="tinfo"><b>Manju Lata Soreng</b><span>Team Lead - Full stack</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Nadge Sachin Laxi</b><span>SDE 1 - Backend</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Navneet Patteri</b><span>SDE 1 - Frappe</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Pankaj Mishra</b><span>SDE 1 - Frappe</span></span></div>
-    <div class="tmember"><span class="tav"><img src="assets/img/team/pragat.jpg" alt="Pragat Singh"></span><span class="tinfo"><b>Pragat Singh</b><span>Team Lead - Java</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Prakash Rana</b><span>DevOps Engineer</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Rahul Sah</b><span>SDE 1 - Frappe</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Raman Mishra</b><span>SDE 1 -  Mobile Developer</span></span></div>
-    <div class="tmember"><span class="tav"><img src="assets/img/team/rohit-singh.jpg" alt="Rohit Singh"></span><span class="tinfo"><b>Rohit Singh</b><span>Sr. Data Engineer</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Sachin Sharma</b><span>Data Engineer</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Sachin Vinod Rathod</b><span>QA Engineer</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Sarthak Srivastava</b><span>QA Engineer</span></span></div>
-    <div class="tmember"><span class="tav"><img src="assets/img/team/Shrey-Jain.jpg" alt="Shrey Jain"></span><span class="tinfo"><b>Shrey Jain</b><span>Team Lead</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Sparsh Verma</b><span>SDE 1 - Frappe</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Sujeet Yadav</b><span>SDE 1 - Frappe</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Suraj Singh</b><span>SDE 1 - Full Stack</span></span></div>
-    <div class="tmember"><span class="tav"><img src="assets/img/team/Suresh-Mali.jpg" alt="Sureshkumar Mali"></span><span class="tinfo"><b>Sureshkumar Mali</b><span>Team Lead - Full stack</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Sushant Singh</b><span>QA Engineer</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Tabseer Khan</b><span>Data Engineer</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Vanshika Sehgal</b><span>SDE 1 - Full Stack</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Vishwajeet Thakur</b><span>SDE 1 - Frappe</span></span></div>
-    <div class="tmember"><span class="tav"><img src="assets/img/team/Vivek-Singh.jpg" alt="Vivek Kumar Singh"></span><span class="tinfo"><b>Vivek Kumar Singh</b><span>Team Lead - Full stack</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Yatin Berry</b><span>Frappe - Intern</span></span></div>
-      </div>
-      </div>
-
-      <div class="rgroup" id="support">
-        <div class="tlist">
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Archana Sidram Gentyal</b><span>Pre-Sales Associate</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Harshit Pathak</b><span>Pre-Sales Associate</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Hunny Tyagi</b><span>Sr. Accountant</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Kajol Mehta</b><span>HR Manager</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Nikhil Kumar</b><span>Admin Associate</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Shalini Agrahari</b><span>CA - Accounts</span></span></div>
-    <div class="tmember"><span class="tav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span><span class="tinfo"><b>Swati Yadav</b><span>Sr. HR Analyst</span></span></div>
-      </div>
-      </div>
-    </div>
+  <h4 class="tgrp" style="margin-top:60px">Everyone else</h4>
+  <div class="tfilter" id="tFilter"><button class="tchip on" data-g="">Everyone <span class="n">90</span></button><button class="tchip" data-g="management">Management &amp; delivery <span class="n">41</span></button><button class="tchip" data-g="tech">Engineering <span class="n">43</span></button><button class="tchip" data-g="support">HR &amp; Finance <span class="n">6</span></button></div>
+  <div class="tcount"><b id="tN">90</b> people</div>
+  <div class="pgrid" id="tGrid">
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">AA</span></div><h4>Aastha Arora</h4><div class="role">Sr. Project Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><img src="assets/img/team/Abhinav-Tyagi.jpg" alt="Abhinav Tyagi" loading="lazy"></div><h4>Abhinav Tyagi</h4><div class="role">Tech Associate Project Manager</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">AP</span></div><h4>Abhishek Prajapati</h4><div class="role">Flutter Developer - Intern</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">AY</span></div><h4>Abhishek Yadav</h4><div class="role">SDE 1 - Frappe</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/Aditya-Gore.jpg" alt="Aditya Gore" loading="lazy"></div><h4>Aditya Gore</h4><div class="role">Team Lead - Full stack</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">AG</span></div><h4>Aditya Goswami</h4><div class="role">Associate Product Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">AV</span></div><h4>Akshat Verma</h4><div class="role">Analyst</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">AS</span></div><h4>Aman Sharma</h4><div class="role">Analyst</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/Amandeep-Singh.jpg" alt="Amandeep Singh" loading="lazy"></div><h4>Amandeep Singh</h4><div class="role">Sr. QA Engineer</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">AN</span></div><h4>Amit Negi</h4><div class="role">SDE 1 - PHP</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">A</span></div><h4>Ankit</h4><div class="role">SDE 3 - Mobile</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/Ankit-Jangir.jpg" alt="Ankit Jangir" loading="lazy"></div><h4>Ankit Jangir</h4><div class="role">DevOps Engineer</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">AY</span></div><h4>Ankit Yadav</h4><div class="role">SDE 1 - PHP</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/Anup.jpg" alt="Anup Kumar Srivastav" loading="lazy"></div><h4>Anup Kumar Srivastav</h4><div class="role">Team Lead - Full stack</div></div>
+    <div class="pcard" data-g="support"><div class="av"><span class="mono">AG</span></div><h4>Archana Sidram Gentyal</h4><div class="role">Pre-Sales Associate</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">AJ</span></div><h4>Arpita Jain</h4><div class="role">Project Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">AB</span></div><h4>Arvind Bansode</h4><div class="role">Sr. Project Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">AK</span></div><h4>Aryan Khanna</h4><div class="role">Analyst</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">AG</span></div><h4>Ayushman Adrien Ghosh</h4><div class="role">SDE 1 - Backend</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">BK</span></div><h4>Banita Kumari</h4><div class="role">Associate Product Manager</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">BM</span></div><h4>Bhanu Marwah</h4><div class="role">Data Engineer</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">BP</span></div><h4>Bhanu Prakash</h4><div class="role">SDE 1 - Full Stack</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/Bhushan.jpg" alt="Bhushan Anilrao Barbuddhe" loading="lazy"></div><h4>Bhushan Anilrao Barbuddhe</h4><div class="role">Team Lead</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">BS</span></div><h4>Brahmjyot Singh</h4><div class="role">Analyst</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">CJ</span></div><h4>Chitranshi Jain</h4><div class="role">Analyst</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/Dalbeer-Kaur.jpg" alt="Dalbeer Kaur" loading="lazy"></div><h4>Dalbeer Kaur</h4><div class="role">Sr. QA Engineer</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">DB</span></div><h4>Deepak Bharti</h4><div class="role">Data Engineer</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">DY</span></div><h4>Deepak Yadav</h4><div class="role">Analyst</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">DB</span></div><h4>Devang Bhatnagar</h4><div class="role">SDE 1 - Frappe</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">DH</span></div><h4>Diksha Hazarika</h4><div class="role">Analyst - Intern</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">FS</span></div><h4>Fahimuddin Sayyed</h4><div class="role">Associate Project Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">FN</span></div><h4>Fathima Nihala</h4><div class="role">Associate Product Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><img src="assets/img/team/Harshdeep.jpg" alt="Harshdeep Singh Mokha" loading="lazy"></div><h4>Harshdeep Singh Mokha</h4><div class="role">Sr. Project Manager</div></div>
+    <div class="pcard" data-g="support"><div class="av"><span class="mono">HP</span></div><h4>Harshit Pathak</h4><div class="role">Pre-Sales Associate</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">HS</span></div><h4>Harshit Sodhani</h4><div class="role">SDE 1 - Full Stack</div></div>
+    <div class="pcard" data-g="management"><div class="av"><img src="assets/img/team/Himanshi-Sharma.jpg" alt="Himanshi Sharma" loading="lazy"></div><h4>Himanshi Sharma</h4><div class="role">Sr. Project Manager</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">HD</span></div><h4>Hrushikesh Ramchandra Deodhar</h4><div class="role">SDE 1 - PHP</div></div>
+    <div class="pcard" data-g="support"><div class="av"><span class="mono">HT</span></div><h4>Hunny Tyagi</h4><div class="role">Sr. Accountant</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/KandhiOm.jpg" alt="Kandhi Omprakash" loading="lazy"></div><h4>Kandhi Omprakash</h4><div class="role">SDE 3 - Full Stack</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">KT</span></div><h4>Kashish Talwani</h4><div class="role">Associate Project Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">KM</span></div><h4>Krishna Maheshwari</h4><div class="role">Associate Project Manager</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/Manish-kumar-roy.jpg" alt="Manish Kumar Roy" loading="lazy"></div><h4>Manish Kumar Roy</h4><div class="role">Team Lead - Full stack</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/manju.jpg" alt="Manju Lata Soreng" loading="lazy"></div><h4>Manju Lata Soreng</h4><div class="role">Team Lead - Full stack</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">MS</span></div><h4>Mayur Sharma</h4><div class="role">Associate Project Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">MA</span></div><h4>Mohd Afaq</h4><div class="role">Associate Program Manager</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">NL</span></div><h4>Nadge Sachin Laxi</h4><div class="role">SDE 1 - Backend</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">N</span></div><h4>Namandeep</h4><div class="role">Sr. Analyst</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">NS</span></div><h4>Nandita Sharma</h4><div class="role">Analyst</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">NP</span></div><h4>Navneet Patteri</h4><div class="role">SDE 1 - Frappe</div></div>
+    <div class="pcard" data-g="management"><div class="av"><img src="assets/img/team/Nihaan-Mohammed.jpg" alt="Nihaan Mohammed" loading="lazy"></div><h4>Nihaan Mohammed</h4><div class="role">Product Manager</div></div>
+    <div class="pcard" data-g="support"><div class="av"><span class="mono">NK</span></div><h4>Nikhil Kumar</h4><div class="role">Admin Associate</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">NJ</span></div><h4>Nitin Jangid</h4><div class="role">Analyst - Intern</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">PM</span></div><h4>Pankaj Mishra</h4><div class="role">SDE 1 - Frappe</div></div>
+    <div class="pcard" data-g="management"><div class="av"><img src="assets/img/team/Parul.jpg" alt="Parul Chuchra" loading="lazy"></div><h4>Parul Chuchra</h4><div class="role">Sr. Project Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">PS</span></div><h4>Pooja Srivastava</h4><div class="role">Analyst</div></div>
+    <div class="pcard" data-g="management"><div class="av"><img src="assets/img/team/Prachi.jpg" alt="Prachi Gupta" loading="lazy"></div><h4>Prachi Gupta</h4><div class="role">Project Manager</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/pragat.jpg" alt="Pragat Singh" loading="lazy"></div><h4>Pragat Singh</h4><div class="role">Team Lead - Java</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">PR</span></div><h4>Prakash Rana</h4><div class="role">DevOps Engineer</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">PT</span></div><h4>Pranati Tiwari</h4><div class="role">Associate Project Manager</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">RS</span></div><h4>Rahul Sah</h4><div class="role">SDE 1 - Frappe</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">RM</span></div><h4>Raman Mishra</h4><div class="role">SDE 1 -  Mobile Developer</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">RS</span></div><h4>Rashika Saini</h4><div class="role">Project Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><img src="assets/img/team/Ravi-Jangir.jpg" alt="Ravi Jangir" loading="lazy"></div><h4>Ravi Jangir</h4><div class="role">Strategy Manager</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/rohit-singh.jpg" alt="Rohit Singh" loading="lazy"></div><h4>Rohit Singh</h4><div class="role">Sr. Data Engineer</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">SM</span></div><h4>Sachin Malik</h4><div class="role">Analyst</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">SS</span></div><h4>Sachin Sharma</h4><div class="role">Data Engineer</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">SR</span></div><h4>Sachin Vinod Rathod</h4><div class="role">QA Engineer</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">SP</span></div><h4>Samarth Paul</h4><div class="role">Associate Project Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">SR</span></div><h4>Samarth Rana</h4><div class="role">Associate Project Manager</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">SS</span></div><h4>Sarthak Srivastava</h4><div class="role">QA Engineer</div></div>
+    <div class="pcard" data-g="support"><div class="av"><span class="mono">SA</span></div><h4>Shalini Agrahari</h4><div class="role">CA - Accounts</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">SS</span></div><h4>Shikhar Shukla</h4><div class="role">Analyst</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/Shrey-Jain.jpg" alt="Shrey Jain" loading="lazy"></div><h4>Shrey Jain</h4><div class="role">Team Lead</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">SV</span></div><h4>Shreyash Shrirang Varhadi</h4><div class="role">Analyst</div></div>
+    <div class="pcard" data-g="management"><div class="av"><img src="assets/img/team/shweta.jpg" alt="Shweta Singh" loading="lazy"></div><h4>Shweta Singh</h4><div class="role">Sr. Project Manager</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">SV</span></div><h4>Sparsh Verma</h4><div class="role">SDE 1 - Frappe</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">SY</span></div><h4>Sujeet Yadav</h4><div class="role">SDE 1 - Frappe</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">SS</span></div><h4>Sunchay Singhal</h4><div class="role">Analyst</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">SJ</span></div><h4>Sunita Joshi</h4><div class="role">Sr. Analyst</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">SS</span></div><h4>Suraj Singh</h4><div class="role">SDE 1 - Full Stack</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/Suresh-Mali.jpg" alt="Sureshkumar Mali" loading="lazy"></div><h4>Sureshkumar Mali</h4><div class="role">Team Lead - Full stack</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">SS</span></div><h4>Sushant Singh</h4><div class="role">QA Engineer</div></div>
+    <div class="pcard" data-g="support"><div class="av"><span class="mono">SY</span></div><h4>Swati Yadav</h4><div class="role">Sr. HR Analyst</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">TK</span></div><h4>Tabseer Khan</h4><div class="role">Data Engineer</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">VS</span></div><h4>Vanshika Sehgal</h4><div class="role">SDE 1 - Full Stack</div></div>
+    <div class="pcard" data-g="management"><div class="av"><img src="assets/img/team/Vepasa.jpg" alt="Vepasa" loading="lazy"></div><h4>Vepasa</h4><div class="role">Program Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">VP</span></div><h4>Vishwa Patel</h4><div class="role">Engagement Manager</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">VT</span></div><h4>Vishwajeet Thakur</h4><div class="role">SDE 1 - Frappe</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/Vivek-Singh.jpg" alt="Vivek Kumar Singh" loading="lazy"></div><h4>Vivek Kumar Singh</h4><div class="role">Team Lead - Full stack</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">YB</span></div><h4>Yatin Berry</h4><div class="role">Frappe - Intern</div></div>
   </div>
 </div></section>
 
@@ -605,5 +600,19 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
 })();
 </script>
 
+<script>
+(function(){
+  var chips=[].slice.call(document.querySelectorAll('.tchip'));
+  var cards=[].slice.call(document.querySelectorAll('#tGrid .pcard'));
+  var n=document.getElementById('tN');
+  chips.forEach(function(c){c.addEventListener('click',function(){
+    var g=c.dataset.g||'';
+    chips.forEach(function(x){x.classList.toggle('on',(x.dataset.g||'')===g);});
+    var k=0;
+    cards.forEach(function(p){var ok=!g||p.dataset.g===g;p.classList.toggle('hide',!ok);if(ok)k++;});
+    n.textContent=k;
+  });});
+})();
+</script>
 </body>
 </html>

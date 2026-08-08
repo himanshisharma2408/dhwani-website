@@ -70,6 +70,17 @@ em{font-style:italic}
 
 /* people */
 .people.section{background:var(--paper)}
+
+a.pcard{display:flex;flex-direction:column;color:inherit;text-decoration:none;transition:.2s}
+a.pcard:hover{background:var(--beige-h)}
+a.pcard p{flex:1}
+.rolesnow{margin-top:34px;border-top:1px solid var(--line);padding-top:28px}
+.rolesnow h3{font-size:1.2rem;font-weight:500;margin-bottom:14px}
+.rolerow{display:flex;align-items:baseline;justify-content:space-between;gap:16px;background:var(--beige);border-radius:10px;padding:16px 20px;margin-bottom:9px;transition:.2s;flex-wrap:wrap}
+.rolerow:hover{background:var(--beige-h)}
+.rolerow b{font-family:var(--serif);font-size:1.1rem;font-weight:500;color:var(--ink)}
+.rolerow span{font-size:.86rem;color:var(--muted)}
+.rolenote{margin-top:14px;font-size:.9rem;color:var(--muted)}
 .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
 .pcard{background:var(--beige);border-radius:12px;padding:30px 28px}
 .pcard .av{width:88px;height:88px;border-radius:14px;background:var(--tint);color:var(--muted);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
@@ -196,7 +207,8 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 
 <!-- HERO -->
 <div class="ahero">
-  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1578991624414-276ef23a534f?q=80&w=2000&auto=format&fit=crop')"></div>
+  <!-- PHOTO PENDING: Himanshi to supply a real Dhwani careers/office photo (wide, ~2000px) -->
+  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1722573783625-eceb04251036?q=80&w=2000&auto=format&fit=crop')"></div>
   <div class="veil"></div>
   <div class="in">
     <h1>Build technology that <em>matters</em>.</h1>
@@ -225,9 +237,15 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 <section class="section people"><div class="wrap">
   <h2 class="shead">Where you could fit</h2>
   <div class="pgrid">
-    <div class="pcard"><div class="av"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></div><h4>Engineering</h4><div class="role">Web &middot; Mobile &middot; Data</div><p>Build offline-first apps, dashboards and large-scale MIS.</p></div>
-    <div class="pcard"><div class="av"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></div><h4>Product &amp; Design</h4><div class="role">PM &middot; UX</div><p>Shape tools that people with little tech exposure can actually use.</p></div>
-    <div class="pcard"><div class="av"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></div><h4>Delivery &amp; Field</h4><div class="role">PM &middot; Implementation</div><p>Take systems from kickoff to the last-mile team using them.</p></div>
+    <a class="pcard" href="https://people.dhwaniris.com/jobs" target="_blank" rel="noopener"><div class="av"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6 3 12l5 6M16 6l5 6-5 6"/></svg></div><h4>Engineering</h4><div class="role">Web &middot; Mobile &middot; Data</div><p>Build offline-first apps, dashboards and large-scale MIS.</p><span class="tlink" style="margin:0 18px 18px">See open roles <span class="arw">&#8594;</span></span></a>
+    <a class="pcard" href="https://people.dhwaniris.com/jobs" target="_blank" rel="noopener"><div class="av"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><h4>Product &amp; Design</h4><div class="role">PM &middot; UX</div><p>Shape tools that people with little tech exposure can actually use.</p><span class="tlink" style="margin:0 18px 18px">See open roles <span class="arw">&#8594;</span></span></a>
+    <a class="pcard" href="https://people.dhwaniris.com/jobs" target="_blank" rel="noopener"><div class="av"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/></svg></div><h4>Delivery &amp; Field</h4><div class="role">PM &middot; Implementation</div><p>Take systems from kickoff to the last-mile team using them.</p><span class="tlink" style="margin:0 18px 18px">See open roles <span class="arw">&#8594;</span></span></a>
+  </div>
+  <div class="rolesnow">
+    <h3>Open right now</h3>
+    <a class="rolerow" href="https://people.dhwaniris.com/jobs" target="_blank" rel="noopener"><b>Project Manager</b><span>Gujarat &middot; Contract &middot; closes 31 Aug 2026</span></a>
+    <a class="rolerow" href="https://people.dhwaniris.com/jobs" target="_blank" rel="noopener"><b>SDE-1 Frappe</b><span>Gurugram &middot; Full-time</span></a>
+    <p class="rolenote">Live roles are listed on our hiring board. <a class="tlink" href="https://people.dhwaniris.com/jobs" target="_blank" rel="noopener">See all openings <span class="arw">&#8594;</span></a></p>
   </div>
 </div></section>
 

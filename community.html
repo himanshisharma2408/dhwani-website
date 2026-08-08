@@ -70,6 +70,16 @@ em{font-style:italic}
 
 /* people */
 .people.section{background:var(--paper)}
+
+.lifeed{background:var(--beige);border-radius:16px;padding:26px 28px;margin-top:28px}
+.lifeed-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.lifeed-head .liicon{width:40px;height:40px;border-radius:9px;background:#0a66c2;color:#fff;display:flex;align-items:center;justify-content:center;flex:none}
+.lifeed-head>div{flex:1;min-width:200px}
+.lifeed-head b{display:block;font-family:var(--serif);font-size:1.14rem;font-weight:500}
+.lifeed-head span{font-size:.86rem;color:var(--muted)}
+.lifeed-slot{padding:26px 0 4px}
+.lifeed-slot b{display:block;font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:10px}
+.lifeed-slot p{color:var(--muted);font-size:.95rem;line-height:1.65;max-width:74ch}
 .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
 .pcard{background:var(--beige);border-radius:12px;padding:30px 28px}
 .pcard .av{width:88px;height:88px;border-radius:14px;background:var(--tint);color:var(--muted);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
@@ -187,7 +197,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 
 <!-- HERO -->
 <div class="ahero">
-  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=2000&auto=format&fit=crop')"></div>
+  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1722573783625-eceb04251036?q=80&w=2000&auto=format&fit=crop')"></div>
   <div class="veil"></div>
   <div class="in">
     <h1>A community around <em>tech-for-good</em>.</h1>
@@ -197,16 +207,22 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
   </div>
 </div>
 
-<!-- EVENTS & NEWS -->
-<section class="section people"><div class="wrap">
+<!-- EVENTS & NEWS (LinkedIn) -->
+<section class="section people" id="events"><div class="wrap">
   <h2 class="shead">Events &amp; news</h2>
-  <p class="lede">Where we&rsquo;ll be, and what we&rsquo;ve been up to.</p>
-  <div class="pgrid">
-    <div class="pcard"><div class="role" style="margin-bottom:10px">Upcoming</div><h4>Tech for Good meetups</h4><p>Informal sessions with people building for the impact sector. Dates go out on our newsletter and WhatsApp channel.</p></div>
-    <div class="pcard"><div class="role" style="margin-bottom:10px">Recent</div><h4>AWS &times; Dhwani Tech for Good workshop</h4><p>Unleashing social impact through cloud and data, run together with AWS.</p></div>
-    <a class="pcard" href="resources.html"><div class="role" style="margin-bottom:10px">From the blog</div><h4>What we&rsquo;re writing</h4><p>Long-reads on data, DPDP, dashboards and the sector &mdash; read our Insights.</p></a>
+  <p class="lede">What we&rsquo;re doing and where we&rsquo;ll be, straight from our LinkedIn.</p>
+  <div class="lifeed">
+    <div class="lifeed-head">
+      <span class="liicon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM2.4 21h5.16V9.75H2.4V21zM9.9 9.75V21h5.16v-6.2c0-3.27 4.26-3.54 4.26 0V21h5.16v-7.98c0-6.9-7.5-6.64-9.42-3.25V9.75H9.9z"/></svg></span>
+      <div><b>Dhwani RIS on LinkedIn</b><span>Posts, events and announcements as they go out</span></div>
+      <a class="pill pill-primary" href="https://www.linkedin.com/company/14388289/" target="_blank" rel="noopener">Follow on LinkedIn <span class="arw">&#8594;</span></a>
+    </div>
+    <div class="lifeed-slot">
+      <b>LinkedIn feed goes here</b>
+      <p>LinkedIn has no official embed for a company feed &mdash; only single-post embeds and the follow button. To show a live feed here we need either a third-party widget (Taggbox, Elfsight, SociableKIT and similar) or the LinkedIn API with an approved app. Tell us which route you want and this block becomes the live feed; until then it stays empty rather than showing invented posts.</p>
+    </div>
   </div>
-  <p class="lede" style="margin-top:22px"><span style="opacity:.7">[Upcoming event dates to be confirmed.]</span></p>
+  <p class="lede" style="margin-top:22px"><a class="tlink" href="resources.html#insights">Read our long-form Insights <span class="arw">&#8594;</span></a></p>
 </div></section>
 
 <!-- JOIN -->

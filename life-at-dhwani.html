@@ -70,6 +70,13 @@ em{font-style:italic}
 
 /* people */
 .people.section{background:var(--paper)}
+
+.nngrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+.nncard{background:var(--beige);border-radius:12px;padding:24px 24px 26px;border-left:3px solid var(--maroon)}
+.nncard b{display:block;font-family:var(--serif);font-size:1.16rem;font-weight:500;color:var(--ink);margin-bottom:8px;line-height:1.3}
+.nncard p{color:var(--muted);font-size:.92rem;line-height:1.6}
+@media(max-width:900px){.nngrid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.nngrid{grid-template-columns:1fr}}
 .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
 .pcard{background:var(--beige);border-radius:12px;padding:30px 28px}
 .pcard .av{width:88px;height:88px;border-radius:14px;background:var(--tint);color:var(--muted);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
@@ -196,7 +203,8 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 
 <!-- HERO -->
 <div class="ahero">
-  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1578991624414-276ef23a534f?q=80&w=2000&auto=format&fit=crop')"></div>
+  <!-- PHOTO PENDING: real Dhwani office/team photo -->
+  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1761818645915-260598d569a7?q=80&w=2000&auto=format&fit=crop')"></div>
   <div class="veil"></div>
   <div class="in">
     <div class="crumb"><a href="careers.html">Careers</a> / Life at Dhwani</div>
@@ -231,6 +239,35 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
   </div>
 </div></section>
 
+<!-- NON-NEGOTIABLES -->
+<section class="section people" style="background:var(--paper)"><div class="wrap">
+  <h2 class="shead">Our non-negotiables</h2>
+  <p class="lede" style="max-width:64ch;margin-top:8px;margin-bottom:6px">The things we will not trade away to win work or ship faster.</p>
+  <div class="nngrid">
+    <div class="nncard"><b>Social change first</b><p>The problem comes before the product. If software is not the answer yet, we say so &mdash; we have talked organisations out of buying systems they were not ready for.</p></div>
+    <div class="nncard"><b>It has to work in the field</b><p>Offline, on a shared phone, in the user&rsquo;s language. A system the last-mile team cannot actually use has not been delivered, whatever the go-live date said.</p></div>
+    <div class="nncard"><b>No lock-in</b><p>Open source where we can, and your data stays yours. Nobody should be betting a programme on one vendor staying in business, staying interested, or staying affordable.</p></div>
+    <div class="nncard"><b>Beneficiary data is not ours to be careless with</b><p>ISO 27001, DPDP and GDPR are the floor, not the pitch. The people in the database did not choose to be in it.</p></div>
+    <div class="nncard"><b>We stay until it sticks</b><p>Adoption, not go-live, is the finish line. That means training the field team in their language and staying past the launch.</p></div>
+    <div class="nncard"><b>AI drafts, people decide</b><p>We are glad to automate the tedious parts. Nothing reaches a beneficiary or a funder without a person having looked at it.</p></div>
+  </div>
+</div></section>
+
+<!-- AI AND LEARNING -->
+<section class="section story"><div class="wrap">
+  <h2 class="shead">AI-positive, and learning out loud</h2>
+  <div class="grid">
+    <div>
+      <p><b>We are AI-positive.</b> The team gets AI tools to use in their actual work &mdash; not a pilot, and not something you have to justify. If it removes an hour of tedium, use it.</p>
+      <p><b>Judgement stays human.</b> Being AI-positive is not the same as being careless. AI drafts; a person decides what goes to a beneficiary, a funder or a government partner.</p>
+    </div>
+    <div>
+      <p><b>Learning is part of the job.</b> We would rather you spent a week getting properly good at something than a month working around not knowing it. Sector context, new frameworks, applied AI &mdash; all fair game.</p>
+      <p><b>Backed by benefits.</b> There is budget and time set aside for learning, and internal sessions where people teach what they have picked up. <span style="opacity:.65">[Exact learning allowance and policy detail to be confirmed with HR.]</span></p>
+    </div>
+  </div>
+</div></section>
+
 <!-- WHAT TO EXPECT -->
 <section class="section story"><div class="wrap">
   <h2 class="shead">What to expect</h2>
@@ -247,6 +284,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 <!-- GALLERY -->
 <section class="section people"><div class="wrap">
   <h2 class="shead">A few glimpses</h2>
+  <p class="lede" style="margin-top:6px;opacity:.7">[Photos pending &mdash; Himanshi to supply real Dhwani photos for these six cards.]</p>
   <div class="life-grid">
     <div class="life-card"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1703745006226-98d4b948dc41?q=80&w=800&auto=format&fit=crop')"></div><div class="cap"><h4>Our Gurugram office</h4><p>Cross-functional teams sit together by design, in Sector 44.</p></div></div>
     <div class="life-card"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1609252509229-364936a1d1a2?q=80&w=800&auto=format&fit=crop')"></div><div class="cap"><h4>Out in the field</h4><p>Regular visits keep the whole team close to the programmes we build for.</p></div></div>
