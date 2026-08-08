@@ -61,7 +61,7 @@ em{font-style:italic}
 
 /* ===== contact body ===== */
 .form-card{background:var(--beige);border-radius:16px;padding:34px 32px}
-.book-card{text-align:center}
+.book-card{text-align:center;display:flex;flex-direction:column;justify-content:center;height:100%}
 .form-card h2{font-size:1.7rem;margin-bottom:6px}
 .form-card .lede{color:var(--muted);margin-bottom:26px}
 .reach-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:980px;margin:44px auto 0}
@@ -166,7 +166,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .chero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
 .pill.ghost{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.4);color:#fff}
 .pill.ghost:hover{border-color:#fff;background:rgba(255,255,255,.16)}
-.two-cta{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;max-width:980px;margin:0 auto}
+.two-cta{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch;max-width:980px;margin:0 auto}
 @media(max-width:820px){.two-cta,.reach-row{grid-template-columns:1fr}}
 #topnav .links a.n-active{color:#fff;font-weight:600}
 #topnav.solid .links a.n-active,#topnav.scrolled .links a.n-active{color:var(--maroon)}
