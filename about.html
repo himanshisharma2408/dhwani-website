@@ -169,6 +169,19 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .deck-modal .done{display:none;color:#2f6b45;font-size:.92rem}
 .deck-modal.sent .form-row{display:none}
 .deck-modal.sent .done{display:block}
+
+/* where we work map */
+.wmap{background:var(--beige);border-radius:16px;padding:18px;margin-top:28px}
+.wmap svg{width:100%;height:auto;display:block}
+.wmap .dot{fill:var(--maroon)}
+.wmap .halo{fill:var(--maroon);opacity:.16}
+.wmap .pin:hover .halo,.wmap .pin:focus .halo{opacity:.3}
+.wmap .pin{cursor:pointer}
+.wlist{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+.wlist div{border-top:2px solid var(--maroon);padding-top:12px}
+.wlist b{display:block;font-family:var(--serif);font-size:1.15rem;font-weight:500;margin-bottom:3px}
+.wlist span{font-size:.85rem;color:var(--muted);line-height:1.4}
+@media(max-width:760px){.wlist{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
@@ -270,7 +283,21 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 <section class="section where"><div class="wrap">
   <h2 class="shead">Where we work</h2>
   <p class="lede">Delivery across South and South-East Asia, with funders and partners worldwide.</p>
-  <div class="chips"><span>India</span><span>Nepal</span><span>Malaysia</span><span>Indonesia</span></div>
+  <div class="wmap">
+    <svg viewBox="0 0 1000 500" role="img" aria-label="Countries Dhwani delivers in: India, Nepal, Malaysia and Indonesia">
+      <image href="assets/img/world-map.svg" x="0" y="0" width="1000" height="500" opacity=".5"/>
+      <g class="pin" tabindex="0"><circle class="halo" cx="714.1" cy="171.0" r="16"/><circle class="dot" cx="714.1" cy="171.0" r="5.5"/><title>India &mdash; New Delhi &middot; Gurugram HQ</title></g>
+      <g class="pin" tabindex="0"><circle class="halo" cx="737.0" cy="173.0" r="16"/><circle class="dot" cx="737.0" cy="173.0" r="5.5"/><title>Nepal &mdash; Kathmandu</title></g>
+      <g class="pin" tabindex="0"><circle class="halo" cx="782.5" cy="241.3" r="16"/><circle class="dot" cx="782.5" cy="241.3" r="5.5"/><title>Malaysia &mdash; Kuala Lumpur</title></g>
+      <g class="pin" tabindex="0"><circle class="halo" cx="796.8" cy="267.2" r="16"/><circle class="dot" cx="796.8" cy="267.2" r="5.5"/><title>Indonesia &mdash; Jakarta</title></g>
+    </svg>
+  </div>
+  <div class="wlist">
+    <div><b>India</b><span>Gurugram HQ &middot; Agra registered office</span></div>
+    <div><b>Nepal</b><span>Programme delivery</span></div>
+    <div><b>Malaysia</b><span>Programme delivery</span></div>
+    <div><b>Indonesia</b><span>Programme delivery</span></div>
+  </div>
   <p class="note"><span style="opacity:.75">Four of the six confirmed so far; the remaining two are being verified with the team.</span></p>
 </div></section>
 
