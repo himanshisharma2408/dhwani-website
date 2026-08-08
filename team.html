@@ -168,22 +168,10 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 @media(max-width:520px){.tlist{grid-template-columns:1fr}}
 
 /* team sidebar rail */
-.rlayout{display:grid;grid-template-columns:230px 1fr;gap:40px;align-items:start;margin-top:36px}
-.rrail{display:flex;flex-direction:column;gap:3px;position:sticky;top:100px}
-.rtab{font-family:var(--sans);font-size:.95rem;font-weight:500;color:var(--muted);background:none;border:none;cursor:pointer;text-align:left;display:flex;align-items:center;gap:11px;padding:12px 14px;border-radius:10px;width:100%}
-.rtab svg{flex:none;opacity:.8}
-.rtab:hover{background:var(--beige)}
-.rtab.on{background:var(--beige-h);color:var(--ink);font-weight:600}
-.rtab-count{margin-left:auto;font-size:.72rem;font-weight:600;color:var(--muted);background:var(--beige);border-radius:999px;padding:2px 9px}
-.rtab.on .rtab-count{color:#fff;background:var(--maroon)}
-.rpanels{min-width:0;max-height:640px;overflow-y:auto;padding-right:6px}
 .rgroup{display:none;margin-top:0}
 .rgroup.on{display:block}
 @media(max-width:900px){
-  .rlayout{grid-template-columns:1fr}
-  .rrail{position:static;flex-direction:row;overflow-x:auto;gap:8px;-webkit-overflow-scrolling:touch;padding-bottom:4px}
-  .rtab{white-space:nowrap;flex:none;width:auto}
-}
+      }
 
 /* where we work */
 .where.section{background:var(--paper)}
@@ -271,9 +259,8 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
     <div class="pcard"><div class="av"><span class="mono">KM</span></div><h4>Kajol Mehta</h4><div class="role">HR Manager</div></div>
   </div>
 
-  <h4 class="tgrp" style="margin-top:60px">Everyone else</h4>
-  <div class="tfilter" id="tFilter"><button class="tchip on" data-g="">Everyone <span class="n">90</span></button><button class="tchip" data-g="management">Management &amp; delivery <span class="n">41</span></button><button class="tchip" data-g="tech">Engineering <span class="n">43</span></button><button class="tchip" data-g="support">HR &amp; Finance <span class="n">6</span></button></div>
-  <div class="tcount"><b id="tN">90</b> people</div>
+  <h4 class="tgrp" style="margin-top:60px">The team</h4>
+  <div class="tfilter" id="tFilter"><button class="tchip on" data-g="">Everyone</button><button class="tchip" data-g="management">Management &amp; delivery</button><button class="tchip" data-g="tech">Engineering</button><button class="tchip" data-g="support">HR &amp; Finance</button></div>
   <div class="pgrid" id="tGrid">
     <div class="pcard" data-g="management"><div class="av"><span class="mono">AA</span></div><h4>Aastha Arora</h4><div class="role">Sr. Project Manager</div></div>
     <div class="pcard" data-g="management"><div class="av"><img src="assets/img/team/Abhinav-Tyagi.jpg" alt="Abhinav Tyagi" loading="lazy"></div><h4>Abhinav Tyagi</h4><div class="role">Tech Associate Project Manager</div></div>
@@ -583,11 +570,7 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
 
 <script>
 (function(){
-  var tabs=[].slice.call(document.querySelectorAll('.rtab'));
-  var panels=[].slice.call(document.querySelectorAll('.rgroup'));
-  if(!tabs.length) return;
-  function activate(name){
-    tabs.forEach(function(t){t.classList.toggle('on',t.dataset.tab===name);});
+  var tabs=[].slice.call(document.querySelectorAll(');
     panels.forEach(function(p){p.classList.toggle('on',p.id===name);});
   }
   tabs.forEach(function(t){t.addEventListener('click',function(){

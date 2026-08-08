@@ -60,6 +60,14 @@ em{font-style:italic}
 /* resource cards */
 .rgroup{margin-top:44px}
 .rgroup h4{font-size:1.28rem;font-weight:500;color:var(--ink);margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.bsearch{display:flex;align-items:center;gap:9px;background:var(--beige);border-radius:999px;padding:11px 18px;margin-bottom:18px;max-width:380px}
+.bsearch input{border:none;background:none;outline:none;font-family:var(--sans);font-size:.94rem;width:100%;color:var(--ink)}
+.bsearch svg{color:var(--muted);flex:none}
+.bpost.hide{display:none}
+.bnone{display:none;color:var(--muted);padding:18px 0}
+.bnone.show{display:block}
+.bmore{margin-top:20px}
+.bmore[hidden]{display:none}
 .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .rcard{background:var(--beige);border-radius:12px;padding:30px 28px;transition:.2s;display:flex;flex-direction:column}
 .rcard:hover{background:var(--beige-h)}
@@ -165,15 +173,17 @@ button.rcard:hover{background:var(--beige-h)}
   .rtab{white-space:nowrap;flex:none;width:auto}
 }
 
-.post{max-width:760px;margin:0 auto;padding:130px 24px 0}
+.post{max-width:760px;margin:0 auto;padding:126px 24px 0}
 .post .crumb{font-size:.85rem;color:var(--muted);margin-bottom:18px}
 .post .crumb a{color:var(--maroon)}
 .post h1{font-size:clamp(2rem,4.2vw,2.9rem);font-weight:500;line-height:1.15;margin-bottom:16px}
-.post .byline{font-size:.92rem;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:30px}
+.post .byline{font-size:.92rem;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:0}
 .post .byline a{color:var(--maroon);font-weight:600}
+.post .lead-img{width:100%;height:320px;object-fit:cover;border-radius:14px;margin:26px 0 30px}
 .post h2{font-family:var(--serif);font-size:1.5rem;font-weight:500;margin:34px 0 12px;line-height:1.25}
 .post p{font-size:1.06rem;line-height:1.75;margin-bottom:18px;color:var(--ink)}
-.post img{width:100%;height:auto;border-radius:12px;margin:26px 0}
+.post p a{color:var(--maroon);font-weight:600}
+.post img{max-width:100%;height:auto;border-radius:12px;margin:26px 0}
 .post .backlink{display:block;margin:44px 0 0;padding-top:26px;border-top:1px solid var(--line)}
 </style>
 </head>
@@ -227,25 +237,26 @@ button.rcard:hover{background:var(--beige-h)}
   <div class="crumb"><a href="../resources.html#insights">Insights</a> / Article</div>
   <h1>What I've Learned About Impact, Iteration and Imperfection at Dhwani RIS</h1>
   <div class="byline">By <a href="https://medium.com/@aashima.takkar" target="_blank" rel="noopener">Aashima Takkar</a> &middot; June 5,2025</div>
-<p>As Dhwani turns 10, I find myself reflecting on a journey that has been far from linear—but rich with lessons on building for impact, embracing iteration, and making peace with imperfection.</p>
-  <img src="https://www.dhwaniris.com/assets/img/blog/1.jpg" alt="" loading="lazy">
+  <img class="lead-img" src="../assets/img/blog/1.jpg" alt="">
+  <p>As Dhwani turns 10, I find myself reflecting on a journey that has been far from linear—but rich with lessons on building for impact, embracing iteration, and making peace with imperfection.</p>
+  <img src="../assets/img/blog/1.jpg" alt="" loading="lazy">
   <p>After spending several years at the intersection of technology, impact, and data, I was looking to go deeper—not just working on the programmatic side, but to understand how technology could be a tool for systemic problem-solving, that’s when I joined Dhwani two years ago.</p>
   <p>Since then, I’ve had the opportunity to lead one of our largest and longest-standing partnerships with Amazon, a role that has taught me what it truly means to balance quality, timelines, and empathy, while also mentoring a growing team.</p>
   <p>These past two years have shown me that while impact takes time, iteration is necessary, and perfection isn’t the goal. Here’s what I’ve learned along the way.</p>
   <h2>Expectations vs. Ground Realities</h2>
   <p>One of the biggest unlearning moments for me at Dhwani was realizing that technology can solve many programmatic challenges but it doesn’t guarantee that what we expect will fit neatly into ground realities.</p>
-  <img src="https://www.dhwaniris.com/assets/img/blog/2.jpg" alt="" loading="lazy">
+  <img src="../assets/img/blog/2.jpg" alt="" loading="lazy">
   <p>I saw this firsthand while working on a disaster relief program with Amazon Philanthropy in India. We were entrusted with automating how real-time needs from the ground were captured. In theory, the system worked—it was agile, robust, and connected NGOs, frontline workers, suppliers, warehouses, and program teams.</p>
   <p>However, we underestimated the sheer complexity of working in disaster-hit zones. A sleek dashboard is unable to address patchy internet, shifting contexts, and emotional and physical toll  on field teams . Despite the “right” system, we went through the drawing board multiple times, and simplified interfaces, localized flows, and refined it for each user, from flood-hit villagers reporting needs to warehouse teams handling logistics.</p>
   <p>We were building more than a product, a process backed by a Minimum Lovable Product. The impact was gradual and visible once the team started trusting the system, data informed Amazon’s strategy for disaster relief in India was in place.  It taught me that impact is slow, and that’s okay. Because it’s in that slowness that we learn to design better, respond more meaningfully, and build systems that actually work for the people who need them most.</p>
   <h2>Building, Breaking, Rebuilding—Together</h2>
-  <img src="https://www.dhwaniris.com/assets/img/blog/3.jpg" alt="" loading="lazy">
+  <img src="../assets/img/blog/3.jpg" alt="" loading="lazy">
   <p>We learnt some of the most valuable lessons at Dhwani in moments of crisis.Iteration is not always a structured process, but it’s where the real work happens.</p>
   <p>While working on the disaster relief platform for Amazon, we presumed  everything was figured out—sprint demos were strong, workflows were intuitive. However, during a live load test with real users like NGOs, warehouse teams, suppliers, field partners—the system buckled. Different networks, devices, and operating contexts exposed unpredictable issues.</p>
   <p>When such setbacks discouraged the team, I stepped in as a leader, not to fix the cracks, but to help my team reassess our approach and question if the product is usable and serving its audience, under real conditions. Iteration is about asking better questions, redefining success, and being honest about what a product can and cannot do. It allows us to clearly call out users what to expect, when to use it, and how it can support them best.</p>
   <p>Rebuilding with empathy, not ego, has become core to how we work. And that’s what makes the product, and the process stronger.</p>
   <h2>Fall Several Times, But Still Get Up – With the Community</h2>
-  <img src="https://www.dhwaniris.com/assets/img/blog/4.jpg" alt="" loading="lazy">
+  <img src="../assets/img/blog/4.jpg" alt="" loading="lazy">
   <p>One thing I’ve learned time and again is that setbacks are part of the process. It's better to fail in a demo than crash in the field. But even a successful test doesn't guarantee smooth ground execution. And that's okay. It doesn't mean the product failed. It means we're building for complex, human realities. There’s no perfect one-shot solution.</p>
   <p>Expecting flawless tech, especially when we’re building for human-centric, high-stakes realities, is not just unrealistic, it’s unfair.</p>
   <p>We design for extreme realities—emergency relief, health access in rural districts, data for farmer collectives, and not comfort.The goal isn’t to be flawless. The goal is to be useful, usable, and honest about our limitations. These moments are not failures, but invitations—to reflect, reframe, and refine.</p>
@@ -258,10 +269,10 @@ button.rcard:hover{background:var(--beige-h)}
   <p>If any one of these three—usage, data, or strategy—is missing, it signals a need to rethink. Designing technology for human-centered impact demands constant empathy, simplicity, and alignment with real needs. It’s a cycle, not a sprint. This cycle of identifying the problem, building solutions that truly simplify users’ lives, and watching impact grow over time is what keeps me going. Falling, learning, and rising with the community every step of the way.</p>
   <h2>Looking Ahead: A Decade of Learning, and Many More to Come</h2>
   <p>As Dhwani marks its 10-year milestone, it’s a realisation that our journey is far from over. What we’ve built so far, through the trials, triumphs, and countless iterations is  a foundation rooted in humility, resilience, and a deep commitment to the communities we serve.</p>
-  <img src="https://www.dhwaniris.com/assets/img/blog/5.jpg" alt="" loading="lazy">
+  <img src="../assets/img/blog/5.jpg" alt="" loading="lazy">
   <p>As we look ahead, our mission  is clear: build tools and systems that truly serve people, especially in the toughest contexts. The challenges will grow, but so will our commitment to innovate with care, collaborate deeply, and center those often left behind.</p>
   <p>I’ve learned that real impact takes time, iteration is key, and technology is only as strong as the intent behind it. As Dhwani marks a decade, I’m grateful for the journey and energized for what’s next. We’ll keep listening, breaking silos, and building products people not only use but love. With humility and grit, we’ll keep learning, falling, and rising with communities toward a future where technology empowers and uplifts all.</p>
-  <p>&lt;a href='https://medium.com/@aashima.takkar' target='_blank' style='color:#f58634;'&gt;Read more about Aashima's work here&lt;/a&gt;</p>
+  <p><a href='https://medium.com/@aashima.takkar' target='_blank' style='color:#f58634;'>Read more about Aashima's work here</a></p>
   <a class="tlink backlink" href="../resources.html#insights">&#8592; All insights</a>
 </article>
 
@@ -283,7 +294,7 @@ button.rcard:hover{background:var(--beige-h)}
     <div class="fnews">
       <h5>The Dhwani newsletter</h5>
       <p>Practical tech-for-good, once a month. No fluff.</p>
-      <form onsubmit="return false"><input type="email" placeholder="you@organisation.org"><button class="pill pill-primary" style="padding:11px 18px">Subscribe</button></form>
+      <form onsubmit="return false" data-pending="newsletter-provider"><input type="email" placeholder="you@organisation.org"><button class="pill pill-primary" style="padding:11px 18px">Subscribe</button></form>
     </div>
     <div><h5>Who we serve</h5><ul><li><a href="../for-donors.html">Donors &amp; CSRs</a></li><li><a href="../for-ngos.html">NGOs</a></li><li><a href="../for-government.html">Government</a></li><li><a href="../for-academic.html">Academic &amp; Research</a></li></ul></div>
     <div><h5>Company</h5><ul><li><a href="../about.html">About</a></li><li><a href="../team.html">Team</a></li><li><a href="../careers.html">Careers</a></li><li><a href="../community.html">Community</a></li><li><a href="../technology.html">Technology at Dhwani</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
@@ -469,6 +480,24 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
   var hash=location.hash.replace('#','');
   var valid=tabs.some(function(t){return t.dataset.tab===hash;});
   activate(valid?hash:'toolkits');
+})();
+</script>
+<script>
+(function(){
+  var PAGE=9, shown=PAGE, q='';
+  var grid=document.getElementById('bgrid'); if(!grid)return;
+  var posts=[].slice.call(grid.querySelectorAll('.bpost'));
+  var more=document.getElementById('bmore'), none=document.getElementById('bnone'), box=document.getElementById('bq');
+  function draw(){
+    var hits=posts.filter(function(p){return !q||p.dataset.q.indexOf(q)>-1;});
+    posts.forEach(function(p){p.classList.add('hide');});
+    hits.slice(0,shown).forEach(function(p){p.classList.remove('hide');});
+    none.classList.toggle('show',hits.length===0);
+    more.hidden = hits.length<=shown;
+  }
+  more.addEventListener('click',function(){shown+=PAGE;draw();});
+  box.addEventListener('input',function(){q=box.value.trim().toLowerCase();shown=PAGE;draw();});
+  draw();
 })();
 </script>
 </body>

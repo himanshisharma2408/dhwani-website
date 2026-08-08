@@ -60,6 +60,14 @@ em{font-style:italic}
 /* resource cards */
 .rgroup{margin-top:44px}
 .rgroup h4{font-size:1.28rem;font-weight:500;color:var(--ink);margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.bsearch{display:flex;align-items:center;gap:9px;background:var(--beige);border-radius:999px;padding:11px 18px;margin-bottom:18px;max-width:380px}
+.bsearch input{border:none;background:none;outline:none;font-family:var(--sans);font-size:.94rem;width:100%;color:var(--ink)}
+.bsearch svg{color:var(--muted);flex:none}
+.bpost.hide{display:none}
+.bnone{display:none;color:var(--muted);padding:18px 0}
+.bnone.show{display:block}
+.bmore{margin-top:20px}
+.bmore[hidden]{display:none}
 .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .rcard{background:var(--beige);border-radius:12px;padding:30px 28px;transition:.2s;display:flex;flex-direction:column}
 .rcard:hover{background:var(--beige-h)}
@@ -165,15 +173,17 @@ button.rcard:hover{background:var(--beige-h)}
   .rtab{white-space:nowrap;flex:none;width:auto}
 }
 
-.post{max-width:760px;margin:0 auto;padding:130px 24px 0}
+.post{max-width:760px;margin:0 auto;padding:126px 24px 0}
 .post .crumb{font-size:.85rem;color:var(--muted);margin-bottom:18px}
 .post .crumb a{color:var(--maroon)}
 .post h1{font-size:clamp(2rem,4.2vw,2.9rem);font-weight:500;line-height:1.15;margin-bottom:16px}
-.post .byline{font-size:.92rem;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:30px}
+.post .byline{font-size:.92rem;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:0}
 .post .byline a{color:var(--maroon);font-weight:600}
+.post .lead-img{width:100%;height:320px;object-fit:cover;border-radius:14px;margin:26px 0 30px}
 .post h2{font-family:var(--serif);font-size:1.5rem;font-weight:500;margin:34px 0 12px;line-height:1.25}
 .post p{font-size:1.06rem;line-height:1.75;margin-bottom:18px;color:var(--ink)}
-.post img{width:100%;height:auto;border-radius:12px;margin:26px 0}
+.post p a{color:var(--maroon);font-weight:600}
+.post img{max-width:100%;height:auto;border-radius:12px;margin:26px 0}
 .post .backlink{display:block;margin:44px 0 0;padding-top:26px;border-top:1px solid var(--line)}
 </style>
 </head>
@@ -227,7 +237,8 @@ button.rcard:hover{background:var(--beige-h)}
   <div class="crumb"><a href="../resources.html#insights">Insights</a> / Article</div>
   <h1>AWS x Dhwani’s Tech for Good workshop:Unleashing social impact through Technovation </h1>
   <div class="byline">By Priyanshu Pandey &middot; 2024-11-05</div>
-<p>In today’s rapidly evolving digital landscape, as a civic organisation / non-profit organisations staying updated with the latest technology trends is crucial. Amazon Web Services (AWS) India and Dhwani RIS collaborated for the Tech for Good workshop, bringing more than 50 development sector organisation under one roof for knowledge sharing, skill development, and fostering innovation. Passionate individuals from diverse backgrounds took the platform to learn, collaborate, and explore new possibilities. Amazon Web Services and Dhwani highlighted the significance of tech solutions, key elements like data collection tools, CSR grant management applications, uses of dashboards, chatbots and the transformative experiences it offers. </p>
+  <img class="lead-img" src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=900&auto=format&fit=crop" alt="">
+  <p>In today’s rapidly evolving digital landscape, as a civic organisation / non-profit organisations staying updated with the latest technology trends is crucial. Amazon Web Services (AWS) India and Dhwani RIS collaborated for the Tech for Good workshop, bringing more than 50 development sector organisation under one roof for knowledge sharing, skill development, and fostering innovation. Passionate individuals from diverse backgrounds took the platform to learn, collaborate, and explore new possibilities. Amazon Web Services and Dhwani highlighted the significance of tech solutions, key elements like data collection tools, CSR grant management applications, uses of dashboards, chatbots and the transformative experiences it offers. </p>
   <p>The most unique purpose and set of objectives for this workshop were advancing the understanding of the already available free tools in the market and how to utilise them better accordingly. </p>
   <p>Shobhit Mathur, Lead – Partnerships, Dhwani RIS along with Pranjali Khare, Business Development Manager, NPO at AWS India, flagged off the event by setting the tone and discussing the emerging industry trends. Taking into consideration that participants came with different levels of expertise, ranging from beginners to seasoned professionals, the aim was to cater to their needs effectively. Common challenges and pain points for using digital sources were focused on. It was also found that issues mostly arise when the top-to-bottom approach does not work and there is a lack of desire to use technology by the people working in the field. </p>
   <p>The solution to this relies on improving technological acquaintance through gradual guidance, step-by-step training, workshops, introducing linguistic changes, and making the data collection process more lucid and less complicated. </p>
@@ -259,7 +270,7 @@ button.rcard:hover{background:var(--beige-h)}
     <div class="fnews">
       <h5>The Dhwani newsletter</h5>
       <p>Practical tech-for-good, once a month. No fluff.</p>
-      <form onsubmit="return false"><input type="email" placeholder="you@organisation.org"><button class="pill pill-primary" style="padding:11px 18px">Subscribe</button></form>
+      <form onsubmit="return false" data-pending="newsletter-provider"><input type="email" placeholder="you@organisation.org"><button class="pill pill-primary" style="padding:11px 18px">Subscribe</button></form>
     </div>
     <div><h5>Who we serve</h5><ul><li><a href="../for-donors.html">Donors &amp; CSRs</a></li><li><a href="../for-ngos.html">NGOs</a></li><li><a href="../for-government.html">Government</a></li><li><a href="../for-academic.html">Academic &amp; Research</a></li></ul></div>
     <div><h5>Company</h5><ul><li><a href="../about.html">About</a></li><li><a href="../team.html">Team</a></li><li><a href="../careers.html">Careers</a></li><li><a href="../community.html">Community</a></li><li><a href="../technology.html">Technology at Dhwani</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
@@ -445,6 +456,24 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
   var hash=location.hash.replace('#','');
   var valid=tabs.some(function(t){return t.dataset.tab===hash;});
   activate(valid?hash:'toolkits');
+})();
+</script>
+<script>
+(function(){
+  var PAGE=9, shown=PAGE, q='';
+  var grid=document.getElementById('bgrid'); if(!grid)return;
+  var posts=[].slice.call(grid.querySelectorAll('.bpost'));
+  var more=document.getElementById('bmore'), none=document.getElementById('bnone'), box=document.getElementById('bq');
+  function draw(){
+    var hits=posts.filter(function(p){return !q||p.dataset.q.indexOf(q)>-1;});
+    posts.forEach(function(p){p.classList.add('hide');});
+    hits.slice(0,shown).forEach(function(p){p.classList.remove('hide');});
+    none.classList.toggle('show',hits.length===0);
+    more.hidden = hits.length<=shown;
+  }
+  more.addEventListener('click',function(){shown+=PAGE;draw();});
+  box.addEventListener('input',function(){q=box.value.trim().toLowerCase();shown=PAGE;draw();});
+  draw();
 })();
 </script>
 </body>
