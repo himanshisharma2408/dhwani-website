@@ -25,7 +25,7 @@ em{font-style:italic}
 .pill-dark{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.4);color:#fff}.pill-dark:hover{border-color:#fff;background:rgba(255,255,255,.16)}
 .arw{transition:transform .2s}.pill:hover .arw,.tlink:hover .arw{transform:translateX(3px)}
 .tlink{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.9rem;color:var(--maroon)}
-.section{padding:var(--pad) 0}.shead{font-size:clamp(2.1rem,3.9vw,3rem);font-weight:500}
+.section{padding:var(--pad) 0}.shead{font-size:clamp(2.1rem,3.9vw,3rem);font-weight:500;margin-bottom:14px}
 
 /* nav (shared) */
 #topnav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .3s,box-shadow .3s}
@@ -157,10 +157,9 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 
 @media(max-width:760px){}
 
-.prodmast{display:flex;align-items:center;gap:clamp(14px,2vw,22px);margin-bottom:clamp(20px,2.6vw,30px)}
-.prodmast img{height:clamp(30px,3.4vw,42px);width:auto;flex:none}
-.prodmast span{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
-font-weight:600;border-left:1px solid var(--line);padding-left:clamp(14px,2vw,22px)}
+.wyglede{color:var(--muted);font-size:1rem;line-height:1.65;max-width:62ch;margin:14px 0 30px}
+
+.ahero .prodid{display:block;height:clamp(38px,4.4vw,54px);width:auto;margin:14px 0 22px;filter:brightness(0) invert(1);opacity:.96}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -230,6 +229,7 @@ window.DHWANI_FORMS = {
   <div class="veil"></div>
   <div class="in">
     <div class="crumb"><a href="solutions.html">Solutions</a> / mForm</div>
+    <img class="prodid" src="assets/img/products/mform-wordmark.png" alt="mForm logo">
     <h1>Field data that survives <em>the field</em>.</h1>
     <p>A no-code platform for collecting and monitoring programme data &mdash; offline, in 10+ languages, on the cheapest Android in the room. What comes back is clean enough to run a management information system (MIS) on.</p>
     <div class="btns"><a class="pill pill-primary" href="contact.html">Book a call <span class="arw">&#8594;</span></a><a class="pill pill-dark" href="our-work.html">See our work</a></div>
@@ -239,7 +239,6 @@ window.DHWANI_FORMS = {
 
 <!-- WHAT IT DOES -->
 <section class="section wyg"><div class="wrap">
-  <div class="prodmast"><img src="assets/img/products/mform-wordmark.png" alt="mForm logo"><span>mForm</span></div>
   <h2 class="shead">What it does</h2>
   <div class="cgrid">
     <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span><h5>Works offline first</h5><p>Enumerators collect without signal and sync when a network appears. The record is safe on the device until it does.</p></div>

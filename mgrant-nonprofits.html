@@ -25,7 +25,7 @@ em{font-style:italic}
 .pill-dark{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.4);color:#fff}.pill-dark:hover{border-color:#fff;background:rgba(255,255,255,.16)}
 .arw{transition:transform .2s}.pill:hover .arw,.tlink:hover .arw{transform:translateX(3px)}
 .tlink{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.9rem;color:var(--maroon)}
-.section{padding:var(--pad) 0}.shead{font-size:clamp(2.1rem,3.9vw,3rem);font-weight:500}
+.section{padding:var(--pad) 0}.shead{font-size:clamp(2.1rem,3.9vw,3rem);font-weight:500;margin-bottom:14px}
 
 /* nav (shared) */
 #topnav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .3s,box-shadow .3s}
@@ -187,10 +187,8 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .cmodal .cm-p{font-size:.95rem;line-height:1.6;color:var(--muted);margin-bottom:18px}
 @media(max-width:760px){}
 
-.prodmast{display:flex;align-items:center;gap:clamp(14px,2vw,22px);margin-bottom:clamp(20px,2.6vw,30px)}
-.prodmast img{height:clamp(30px,3.4vw,42px);width:auto;flex:none}
-.prodmast span{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
-font-weight:600;border-left:1px solid var(--line);padding-left:clamp(14px,2vw,22px)}
+
+.ahero .prodid{display:block;height:clamp(38px,4.4vw,54px);width:auto;margin:14px 0 22px;filter:brightness(0) invert(1);opacity:.96}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -260,6 +258,7 @@ window.DHWANI_FORMS = {
   <div class="veil"></div>
   <div class="in">
     <div class="crumb"><a href="solutions.html">Solutions</a> / mGrant for Nonprofits</div>
+    <img class="prodid" src="assets/img/products/mgrant-wordmark.png" alt="mGrant logo">
     <h1>Grant management, built for <em>non-profits</em>.</h1>
     <p>One workspace for the grants you receive: fundraising pipeline, project and budget delivery, impact measurement, beneficiary records and Foreign Contribution Regulation Act (FCRA) compliance.</p>
     <div class="btns"><a class="pill pill-primary" href="contact.html?topic=brainstorm">Book a session <span class="arw">&#8594;</span></a><a class="pill pill-dark deck-get" data-deck="mgrant-nonprofits" data-deckname="mGrant for Nonprofits" href="#">Download the deck</a></div>
@@ -273,7 +272,6 @@ window.DHWANI_FORMS = {
 </div></section>
 
 <section class="section wyg"><div class="wrap">
-  <div class="prodmast"><img src="assets/img/products/mgrant-nuo.png" alt="mGrant NUO logo"><span>mGrant NUO</span></div>
   <h2 class="shead">What it does</h2>
   <div class="modgrid"><div class="mod"><h4>Fundraising CRM</h4><p>Track funders, opportunities and submissions in one pipeline, with AI-assisted RFP scouting so fewer calls go unseen.</p></div><div class="mod"><h4>Project &amp; budget delivery</h4><p>Run each funded project against its own budget and milestones, with programme and admin budget templates.</p></div><div class="mod"><h4>LFA impact measurement</h4><p>Activities to outcomes to impact, structured the way funders and evaluators expect to receive it.</p></div><div class="mod"><h4>Compliance &amp; beneficiaries</h4><p>FCRA, FC-4 and 80G receipting on a compliance calendar, plus a beneficiary registry that stays consistent across programmes.</p></div></div>
 </div></section>

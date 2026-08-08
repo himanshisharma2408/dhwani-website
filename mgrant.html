@@ -25,7 +25,7 @@ em{font-style:italic}
 .pill-dark{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.4);color:#fff}.pill-dark:hover{border-color:#fff;background:rgba(255,255,255,.16)}
 .arw{transition:transform .2s}.pill:hover .arw,.tlink:hover .arw{transform:translateX(3px)}
 .tlink{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.9rem;color:var(--maroon)}
-.section{padding:var(--pad) 0}.shead{font-size:clamp(2.1rem,3.9vw,3rem);font-weight:500}
+.section{padding:var(--pad) 0}.shead{font-size:clamp(2.1rem,3.9vw,3rem);font-weight:500;margin-bottom:14px}
 
 /* nav (shared) */
 #topnav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .3s,box-shadow .3s}
@@ -160,10 +160,8 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 
 @media(max-width:760px){}
 
-.prodmast{display:flex;align-items:center;gap:clamp(14px,2vw,22px);margin-bottom:clamp(20px,2.6vw,30px)}
-.prodmast img{height:clamp(30px,3.4vw,42px);width:auto;flex:none}
-.prodmast span{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
-font-weight:600;border-left:1px solid var(--line);padding-left:clamp(14px,2vw,22px)}
+
+.ahero .prodid{display:block;height:clamp(38px,4.4vw,54px);width:auto;margin:14px 0 22px;filter:brightness(0) invert(1);opacity:.96}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -233,6 +231,7 @@ window.DHWANI_FORMS = {
   <div class="veil"></div>
   <div class="in">
     <div class="crumb"><a href="solutions.html">Solutions</a> / mGrant</div>
+    <img class="prodid" src="assets/img/products/mgrant-wordmark.png" alt="mGrant logo">
     <h1>From the first RFP to the last <em>report</em>.</h1>
     <p>mGrant manages the full grant lifecycle, from application to utilisation &mdash; in two editions: mGrant for Donors (funders) and mGrant for Nonprofits (the NGOs who receive grants).</p>
     <div class="btns"><a class="pill pill-primary" href="contact.html">Book a call <span class="arw">&#8594;</span></a><a class="pill pill-dark" href="our-work.html">See our work</a></div>
@@ -242,7 +241,6 @@ window.DHWANI_FORMS = {
 
 <!-- WHAT IT DOES -->
 <section class="section wyg"><div class="wrap">
-  <div class="prodmast"><img src="assets/img/products/mgrant-wordmark.png" alt="mGrant logo"><span>mGrant</span></div>
   <h2 class="shead">What it does</h2>
   <p class="lede" style="margin-top:-8px;margin-bottom:26px">Two editions, because giving a grant and receiving one are different jobs. Nonprofits do not run application rounds, so that edition does not pretend they do.</p>
   <div class="edgrp">
