@@ -268,7 +268,7 @@ button.rcard:hover{background:var(--beige-h)}
   </div>
 
   <div class="rgroup on" id="toolkits">
-    <p class="lede rlede">Things you can pick up and use today &mdash; live tools and primers.</p>
+    <p class="lede rlede">Free tools you can open right now, no form and no call required.</p>
     <div class="rgrid">
       <a class="rcard" href="https://x.mgrant.in/" target="_blank" rel="noopener"><div class="ph" style="background-image:url('assets/img/cases/case-municipalfinance.jpg')"></div><div class="rbd"><div class="kind">Toolkit</div><h3>CSR Insights</h3><p>Find CSR grants by state, district, project type and spend. Built on MCA filings: 46,021 companies, 5.89 lakh project records, 728 districts, 30 sectors.</p><span class="tlink">Open the tool <span class="arw">&#8594;</span></span></div></a>
       <a class="rcard" href="https://dpdp.dhwaniris.com/#top" target="_blank" rel="noopener"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=900&auto=format&fit=crop')"></div><div class="rbd"><div class="kind">Toolkit</div><h3>DPDP Readiness Primer</h3><p>A practical primer to start your DPDP Act readiness journey, from mapping what personal data you hold to proving consent.</p><span class="tlink">Open the primer <span class="arw">&#8594;</span></span></div></a>
@@ -277,16 +277,16 @@ button.rcard:hover{background:var(--beige-h)}
   </div>
 
   <div class="rgroup" id="playbooks">
-    <p class="lede rlede">Step-by-step guides for the decisions that come up again and again: choosing a programme MIS, moving grants off spreadsheets, getting DPDP-ready.</p>
+    <p class="lede rlede">Working guides for the decisions that come up again and again.</p>
     <div class="copy-pending2">
-      <b>Being written</b>
-      <p>We would rather publish three playbooks worth reading than a dozen that restate the obvious. These are in progress. If there is one you want first, tell us and it moves up the list.</p>
+      <b>On the way</b>
+      <p>Step-by-step guides for the decisions that come up again and again: scoping a programme MIS, moving grant management off spreadsheets, and getting DPDP-ready before May 2027. If one of those is the decision in front of you now, talk to us &mdash; the guidance exists, it just is not written down yet.</p>
       <a class="pill pill-primary" href="contact.html?topic=brainstorm">Tell us what you need <span class="arw">&#8594;</span></a>
     </div>
   </div>
 
   <div class="rgroup" id="insights">
-    <p class="lede rlede">Long-reads from the team on data, DPDP, dashboards and the sector.</p>
+    <p class="lede rlede">Longer pieces from the people who build and run these systems.</p>
     <div class="bsearch"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
       <input id="bq" type="search" placeholder="Search insights" aria-label="Search insights"></div>
     <div class="rgrid" id="bgrid">
@@ -312,7 +312,7 @@ button.rcard:hover{background:var(--beige-h)}
     <button class="pill pill-dark bmore" id="bmore">Show more</button>
   </div>
   <div class="rgroup" id="newsletter">
-    <p class="lede rlede">Every issue of the monthly newsletter, back to March 2023. <a class="tlink" href="community.html#newsletter">Subscribe <span class="arw">&#8594;</span></a></p>
+    <p class="lede rlede">One email a month on what is actually working in sector tech &mdash; new tools, DPDP deadlines, what we are seeing in programmes. Every past issue is below. <a class="tlink" href="community.html#newsletter">Subscribe <span class="arw">&#8594;</span></a></p>
     <div class="nlgrid">
       <div class="nlyear">
         <h4>2025</h4>
@@ -574,7 +574,7 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
     history.replaceState(null,'','resources.html#'+c.dataset.tab);});});
   var h=(location.hash||'').replace('#',''); if(h&&document.getElementById(h))show(h);
 
-  var PAGE=9, shown=PAGE, q='';
+  var PAGE=24, shown=PAGE, q='';
   var grid=document.getElementById('bgrid'); if(!grid)return;
   var posts=[].slice.call(grid.querySelectorAll('.bpost'));
   var more=document.getElementById('bmore'), none=document.getElementById('bnone'), box=document.getElementById('bq');
