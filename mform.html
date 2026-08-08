@@ -60,12 +60,12 @@ em{font-style:italic}
 /* what you get (tiles) */
 .wyg h2{margin-bottom:44px}
 .cgrid{display:grid;gap:16px;grid-template-columns:repeat(4,1fr)}
-.ocard{display:flex;flex-direction:column;min-height:clamp(210px,26vw,300px);background:var(--beige);border-radius:8px;padding:clamp(22px,3.4vw,34px);transition:.2s}
+.ocard{display:flex;flex-direction:column;min-height:0;background:var(--beige);border-radius:8px;padding:clamp(22px,3.4vw,34px);transition:.2s}
 .ocard:hover{background:var(--beige-h)}
-.ocard .ic{height:clamp(58px,7.5vw,84px);flex:none;display:flex;align-items:center;justify-content:center;color:#4a423c;margin-bottom:14px}
+.ocard .ic{height:clamp(46px,5.4vw,60px);flex:none;display:flex;align-items:center;justify-content:flex-start;color:#4a423c;margin-bottom:16px}
 .ocard .ic svg{width:clamp(46px,6.8vw,78px);height:clamp(46px,6.8vw,78px);stroke-width:1.05}
 .ocard h5{font-size:clamp(1.2rem,1.9vw,1.34rem);font-weight:500;margin-bottom:9px;color:var(--ink)}
-.ocard p{color:var(--muted);font-size:.92rem;line-height:1.5;max-width:26ch}
+.ocard p{color:var(--muted);font-size:.92rem;line-height:1.5;max-width:30ch;margin-top:2px}
 
 /* proof / case study */
 .proof.section{background:var(--paper)}
@@ -225,8 +225,8 @@ window.DHWANI_FORMS = {
   <div class="veil"></div>
   <div class="in">
     <div class="crumb"><a href="solutions.html">Solutions</a> / mForm</div>
-    <h1>Field data, from the last <em>mile</em>.</h1>
-    <p>mForm is offline-first mobile data collection built for the field &mdash; surveys, supervision and monitoring that sync the moment you reconnect, straight into your MIS.</p>
+    <h1>Field data that survives <em>the field</em>.</h1>
+    <p>A no-code platform for collecting and monitoring programme data &mdash; offline, in 10+ languages, on the cheapest Android in the room. What comes back is clean enough to run a management information system (MIS) on.</p>
     <div class="btns"><a class="pill pill-primary" href="contact.html">Book a call <span class="arw">&#8594;</span></a><a class="pill pill-dark" href="our-work.html">See our work</a></div>
   </div>
 </div>
@@ -239,10 +239,12 @@ window.DHWANI_FORMS = {
 <section class="section wyg"><div class="wrap">
   <h2 class="shead">What it does</h2>
   <div class="cgrid">
-    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span><h5>Offline-first collection</h5><p>Collect anywhere, sync when you reconnect &mdash; no data lost.</p></a>
-    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.5a3 3 0 0 1 0 5.5M21 20c0-2.6-1.6-4.9-4-5.8"/></svg></span><h5>Surveyor management</h5><p>Assign, track and support field teams from one place.</p></a>
-    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 8.5-8 11-4.6-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></span><h5>Clean, consistent data</h5><p>Validation at the point of entry, so errors never reach your MIS.</p></a>
-    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 2 4-6"/></svg></span><h5>Dashboards &amp; M&amp;E</h5><p>Reporting mapped to your own monitoring framework.</p></a>
+    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span><h5>Works offline first</h5><p>Enumerators collect without signal and sync when a network appears. Nothing waits on connectivity, and nothing is lost if it never comes.</p></div>
+    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h10M9 3v2c0 5-2.5 8-5 9"/><path d="M7 11c1.5 3 4 5 6 6M13 21l4-9 4 9M14.5 18h5"/></svg></span><h5>Multi-lingual</h5><p>Forms and prompts in the languages your field team and respondents actually speak, including right-to-left and Indic scripts.</p></div>
+    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="M9 13h6M9 17h4"/></svg></span><h5>No-code form builder</h5><p>Programme staff build and change forms themselves. Skip logic, validation and repeat groups without a developer in the loop.</p></div>
+    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-7-10a7 7 0 0 1 14 0c0 5.6-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg></span><h5>GPS and media capture</h5><p>Location stamps, photographs and signatures attached to the record, so a visit can be verified after the fact.</p></div>
+    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 2 4-6"/></svg></span><h5>Straight into the MIS</h5><p>Submissions land in dashboards and reports as they arrive, rather than in a spreadsheet somebody has to clean.</p></div>
+    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 12l10 5 10-5M2 17l10 5 10-5"/></svg></span><h5>Bulk upload and migration</h5><p>Legacy data comes across in bulk, so the new system starts with the history rather than an empty database.</p></div>
   </div>
 </div></section>
 
@@ -258,6 +260,17 @@ window.DHWANI_FORMS = {
     </div>
   </a>
   <p class="cases-cta" style="margin-top:26px"><a class="tlink" href="our-work.html">See more of our work <span class="arw">&#8594;</span></a></p>
+</div></section>
+
+
+<section class="section" style="background:var(--paper)"><div class="wrap">
+  <h2 class="shead">Health programmes</h2>
+  <p class="wyglede">Where mForm is collecting health data, it is built to hand that data on rather than trap it. Records can be exchanged in Fast Healthcare Interoperability Resources (FHIR) format, and we build to the Ayushman Bharat Digital Mission (ABDM) milestones &mdash; M1, M2 and M3 &mdash; so a programme can integrate with national health infrastructure instead of running beside it.</p>
+  <ul class="cm-list" style="max-width:70ch">
+    <li><b>FHIR-compliant exchange</b> so records move between systems without a custom mapping each time.</li>
+    <li><b>ABDM M1, M2 and M3</b> milestones, for programmes that need to sit inside the national digital health stack.</li>
+    <li><b>Offline-first capture</b> at the point of care, which is where most of this data is actually generated.</li>
+  </ul>
 </div></section>
 
 <!-- CTA -->
