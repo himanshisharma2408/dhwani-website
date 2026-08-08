@@ -176,18 +176,50 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .cat-count{font-size:.95rem;color:var(--muted)}.cat-count b{color:var(--ink);font-weight:600;font-family:var(--serif);font-size:1.1rem}
 .cat-clear{font-size:.85rem;color:var(--maroon);font-weight:600;cursor:pointer;background:none;border:none;font-family:var(--sans);padding:0}
 .wgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.wcard{display:flex;flex-direction:column;background:var(--beige);border-radius:12px;overflow:hidden;transition:.2s}
+.wcard{display:flex;flex-direction:column;background:var(--beige);border-radius:12px;overflow:hidden;transition:.2s;text-align:left;border:none;padding:0;font-family:var(--sans);cursor:pointer;width:100%}
 .wcard:hover{background:var(--beige-h)}
-.wcard .ph{height:150px;background-size:cover;background-position:center}
+.wcard:focus-visible{outline:2px solid var(--maroon);outline-offset:3px}
+.wcard .ph{height:150px;background-size:cover;background-position:center;flex:none}
+.wcard .ph.shot{background-size:cover;background-position:center;background-color:#fff;border-bottom:1px solid var(--line)}
 .wcard .bd{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
 .wcard .sect{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--maroon);font-weight:600;margin-bottom:9px}
-.wcard h4{font-size:1.16rem;font-weight:500;line-height:1.25;margin-bottom:8px;color:var(--ink)}
+.wcard h4{font-size:1.16rem;font-weight:500;line-height:1.25;margin-bottom:6px;color:var(--ink);font-family:var(--serif)}
+.wcard .cl{font-size:.8rem;color:var(--muted);margin-bottom:9px;font-style:italic}
 .wcard p{font-size:.9rem;color:var(--muted);flex:1;margin-bottom:14px}
-.wcard .meta{display:flex;gap:6px;flex-wrap:wrap}
+.wcard .meta{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
 .wcard .meta span{font-size:.7rem;color:var(--muted);background:var(--tint);border-radius:999px;padding:4px 10px}
+.wcard .meta .more{margin-left:auto;color:var(--maroon);font-weight:600;font-size:.78rem;background:none;padding:0}
 .wcard.hide{display:none}
-.cat-empty{display:none;padding:36px 0;color:var(--muted)}
+
+/* case-study detail modal */
+.cmodal{display:none;position:fixed;inset:0;z-index:420;align-items:center;justify-content:center;padding:28px 20px}
+.cmodal.open{display:flex}
+.cmodal .backdrop{position:absolute;inset:0;background:rgba(21,16,15,.55)}
+.cmodal .box{position:relative;background:var(--paper);border-radius:20px;max-width:780px;width:100%;overflow:hidden;max-height:calc(100vh - 56px);display:flex;flex-direction:column}
+.cmodal .close{position:absolute;top:14px;right:14px;z-index:2;background:rgba(250,246,239,.92);border:1px solid var(--line);width:36px;height:36px;border-radius:50%;font-size:1.2rem;color:var(--ink);cursor:pointer;line-height:1}
+.cmodal .cm-shot{display:block;width:100%;height:236px;background:#fff;border-bottom:1px solid var(--line);flex:none;object-fit:cover;object-position:center}
+.cmodal .cm-shot.is-shot{object-fit:contain;object-position:center;background:#fff}
+.cmodal .cm-bd{padding:32px 38px 36px;overflow-y:auto}
+.cmodal .cm-sect{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--maroon);font-weight:600;margin-bottom:10px}
+.cmodal h3{font-size:1.7rem;font-weight:500;line-height:1.2;margin-bottom:8px}
+.cmodal .cm-client{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:1.02rem;margin-bottom:22px}
+.cmodal h5{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:7px;font-family:var(--sans)}
+.cmodal .cm-p{font-size:.96rem;line-height:1.62;color:var(--ink);margin-bottom:20px}
+.cmodal .cm-list{list-style:none;margin:0 0 22px;padding:0}
+.cmodal .cm-list li{position:relative;padding-left:20px;font-size:.94rem;color:var(--ink);line-height:1.55;margin-bottom:7px}
+.cmodal .cm-list li:before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--orange)}
+.cmodal .cm-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;margin-bottom:22px}
+.cmodal .cm-stats b{display:block;font-family:var(--serif);font-size:1.42rem;font-weight:500;color:var(--maroon);line-height:1.15;margin-bottom:4px}
+.cmodal .cm-stats span{font-size:.8rem;color:var(--muted);line-height:1.4}
+.cmodal .cm-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.cmodal .cm-tags{display:flex;gap:6px;flex-wrap:wrap}
+.cmodal .cm-tags span{font-size:.72rem;color:var(--muted);background:var(--beige);border-radius:999px;padding:5px 11px}
+@media(max-width:640px){.cmodal{padding:16px 12px}.cmodal .cm-bd{padding:26px 22px 28px}.cmodal h3{font-size:1.4rem}.cmodal .cm-stats{grid-template-columns:1fr;gap:16px;text-align:left}}
+.cat-empty{display:none;background:var(--beige);border-radius:12px;padding:38px 36px;margin-top:4px}
 .cat-empty.show{display:block}
+.cat-empty h4{font-family:var(--serif);font-size:1.28rem;font-weight:500;margin-bottom:8px}
+.cat-empty p{color:var(--muted);font-size:.95rem;max-width:60ch;margin-bottom:20px}
+.cat-empty .row{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
 @media(max-width:900px){.wgrid{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.wgrid{grid-template-columns:1fr}.frow .flabel{min-width:0;width:100%}}
 #topnav .links a.n-active{color:#fff;font-weight:600}
@@ -278,83 +310,99 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
     <div class="frow"><span class="flabel">For</span><div class="chips2"><button class="fchip" data-dim="audience" data-val="">All</button><button class="fchip" data-dim="audience" data-val="donors">Donors & Funders</button><button class="fchip" data-dim="audience" data-val="ngos">NGOs</button><button class="fchip" data-dim="audience" data-val="government">Government</button></div></div>
     <div class="frow"><span class="flabel">By function</span><div class="chips2"><button class="fchip" data-dim="function" data-val="">All</button><button class="fchip" data-dim="function" data-val="giving">Grants & Giving Office</button><button class="fchip" data-dim="function" data-val="finance">Finance & Compliance</button><button class="fchip" data-dim="function" data-val="people">People & Culture</button><button class="fchip" data-dim="function" data-val="itops">Knowledge & IT Ops</button></div></div>
   </div>
-  <div class="cat-bar"><div class="cat-count"><b id="catCount">18</b> projects</div><button class="cat-clear" id="catClear">Clear filters</button></div>
+  <div class="cat-bar"><div class="cat-count"><b id="catCount">21</b> projects</div><button class="cat-clear" id="catClear">Clear filters</button></div>
   <div class="wgrid">
-    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="healthcare" data-offering="field-data programme-mis" data-audience="ngos" data-function="itops">
-      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1609252509229-364936a1d1a2?q=80&w=800&auto=format&fit=crop')"></div>
-      <div class="bd"><div class="sect">Healthcare</div><h4>Community health-worker app across 12 districts</h4><p>Offline data capture and supervision for frontline health workers, live to a district dashboard.</p><div class="meta"><span>NGO</span><span>Field Data</span></div></div>
-    </a>
-    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="healthcare" data-offering="dashboards programme-mis" data-audience="government" data-function="itops">
-      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1623211269755-569fec0536d2?q=80&w=800&auto=format&fit=crop')"></div>
-      <div class="bd"><div class="sect">Healthcare</div><h4>Real-time immunisation dashboard for a state</h4><p>Coverage and drop-out tracked across facilities, so gaps show up the same week.</p><div class="meta"><span>Government</span><span>Dashboards</span></div></div>
-    </a>
-    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="agriculture" data-offering="programme-mis field-data pmu" data-audience="government" data-function="people">
-      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1707721690544-781fe6ede937?q=80&w=800&auto=format&fit=crop')"></div>
-      <div class="bd"><div class="sect">Agriculture & Livelihoods</div><h4>Livelihoods MIS, from block office to ministry</h4><p>One system for a state livelihoods programme, with field data captured offline.</p><div class="meta"><span>Government</span><span>Programme MIS</span></div></div>
-    </a>
-    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="agriculture" data-offering="field-data monitoring-evaluation" data-audience="ngos" data-function="itops">
-      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1601689892697-b64daa00ff6d?q=80&w=800&auto=format&fit=crop')"></div>
-      <div class="bd"><div class="sect">Agriculture & Livelihoods</div><h4>Farmer &amp; FPO tracking for a livelihoods NGO</h4><p>Household and producer-group data, from enrolment to outcomes.</p><div class="meta"><span>NGO</span><span>Field Data</span></div></div>
-    </a>
-    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="education" data-offering="programme-mis dashboards" data-audience="ngos" data-function="itops">
-      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1597743622436-c6b5661731e0?q=80&w=800&auto=format&fit=crop')"></div>
-      <div class="bd"><div class="sect">Education & Skilling</div><h4>Skilling MIS for 40,000 learners</h4><p>Enrolment, attendance and placement in one place, across centres.</p><div class="meta"><span>NGO</span><span>Programme MIS</span></div></div>
-    </a>
-    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="education" data-offering="grants-donors dashboards" data-audience="donors" data-function="giving">
-      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1601689892697-b64daa00ff6d?q=80&w=800&auto=format&fit=crop')"></div>
-      <div class="bd"><div class="sect">Education & Skilling</div><h4>Grant portal for an education funder</h4><p>Applications, disbursement and utilisation tracked against plan.</p><div class="meta"><span>Donor/Funder</span><span>Grants & Donors</span></div></div>
-    </a>
-    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="financial-inclusion" data-offering="programme-mis field-data" data-audience="ngos" data-function="itops">
-      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1609252509229-364936a1d1a2?q=80&w=800&auto=format&fit=crop')"></div>
-      <div class="bd"><div class="sect">Financial Inclusion</div><h4>Beneficiary MIS for a financial-inclusion programme</h4><p>A single record per beneficiary, from the field to the report.</p><div class="meta"><span>NGO</span><span>Programme MIS</span></div></div>
-    </a>
-    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="financial-inclusion" data-offering="dashboards grants-donors" data-audience="donors" data-function="giving">
-      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1623211269755-569fec0536d2?q=80&w=800&auto=format&fit=crop')"></div>
-      <div class="bd"><div class="sect">Financial Inclusion</div><h4>Portfolio view for a social-impact fund</h4><p>Every investee's spend, reach and results in one live view.</p><div class="meta"><span>Donor/Funder</span><span>Dashboards</span></div></div>
-    </a>
-    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="climate" data-offering="field-data monitoring-evaluation" data-audience="ngos" data-function="itops">
-      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1707721690544-781fe6ede937?q=80&w=800&auto=format&fit=crop')"></div>
-      <div class="bd"><div class="sect">Climate & Environment</div><h4>Field monitoring for a climate-resilience programme</h4><p>Offline surveys and indicators across remote sites.</p><div class="meta"><span>NGO</span><span>Field Data</span></div></div>
-    </a>
-    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="governance" data-offering="programme-mis" data-audience="government" data-function="itops">
-      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1601689892697-b64daa00ff6d?q=80&w=800&auto=format&fit=crop')"></div>
-      <div class="bd"><div class="sect">Governance</div><h4>A city finance portal, live across departments</h4><p>One portal connecting departments and partners, with real data governance.</p><div class="meta"><span>Government</span><span>Programme MIS</span></div></div>
-    </a>
-    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="governance" data-offering="programme-mis dashboards" data-audience="government" data-function="itops">
-      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1597743622436-c6b5661731e0?q=80&w=800&auto=format&fit=crop')"></div>
-      <div class="bd"><div class="sect">Governance</div><h4>Citizen grievance platform for a state</h4><p>Intake, routing and resolution tracked end to end.</p><div class="meta"><span>Government</span><span>Programme MIS</span></div></div>
-    </a>
-    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="mel" data-offering="monitoring-evaluation dashboards" data-audience="ngos" data-function="itops">
-      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1601689892697-b64daa00ff6d?q=80&w=800&auto=format&fit=crop')"></div>
-      <div class="bd"><div class="sect">Programme Mgmt & MEL</div><h4>Outcome tracking for a multi-state programme</h4><p>Indicators rolled up from the field to the funder, in real time.</p><div class="meta"><span>NGO</span><span>M&E</span></div></div>
-    </a>
-    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="digital-ai" data-offering="ai-cloud field-data" data-audience="ngos" data-function="itops">
-      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1609252509229-364936a1d1a2?q=80&w=800&auto=format&fit=crop')"></div>
-      <div class="bd"><div class="sect">Digital & AI</div><h4>AI-assisted data cleaning for a research programme</h4><p>Faster, cleaner datasets, so the team gets to analysis sooner.</p><div class="meta"><span>NGO</span><span>AI & Cloud</span></div></div>
-    </a>
-    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="mel" data-offering="dpdp" data-audience="ngos" data-function="finance">
-      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1623211269755-569fec0536d2?q=80&w=800&auto=format&fit=crop')"></div>
-      <div class="bd"><div class="sect">Programme Mgmt & MEL</div><h4>DPDP readiness for a large NGO's beneficiary data</h4><p>A five-stage adoption path to get compliant before May 2027.</p><div class="meta"><span>NGO</span><span>DPDP Readiness</span></div></div>
-    </a>
-    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="governance" data-offering="dpdp grants-donors" data-audience="donors" data-function="finance">
-      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1707721690544-781fe6ede937?q=80&w=800&auto=format&fit=crop')"></div>
-      <div class="bd"><div class="sect">Governance</div><h4>Consent management rollout for a CSR programme</h4><p>Consent, data residency and audit trails, built in with Anumati.</p><div class="meta"><span>Donor/Funder</span><span>DPDP Readiness</span></div></div>
-    </a>
-    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="financial-inclusion entrepreneurship" data-offering="grants-donors dashboards" data-audience="donors" data-function="giving">
-      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1601689892697-b64daa00ff6d?q=80&w=800&auto=format&fit=crop')"></div>
-      <div class="bd"><div class="sect">Financial Inclusion</div><h4>A global funder's India grant portfolio</h4><p>Grant-making and reporting for dozens of grantees in one system.</p><div class="meta"><span>Donor/Funder</span><span>Grants & Donors</span></div></div>
-    </a>
-    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="digital-ai" data-offering="ai-cloud" data-audience="ngos" data-function="itops">
-      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1597743622436-c6b5661731e0?q=80&w=800&auto=format&fit=crop')"></div>
-      <div class="bd"><div class="sect">Digital & AI</div><h4>Cloud cost optimisation for a data platform</h4><p>Same platform, 30–40% lower cloud bills.</p><div class="meta"><span>NGO</span><span>AI & Cloud</span></div></div>
-    </a>
-    <a class="wcard" href="contact.html?topic=brainstorm" data-sector="mel" data-offering="digital-transformation" data-audience="donors" data-function="people">
-      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1601689892697-b64daa00ff6d?q=80&w=800&auto=format&fit=crop')"></div>
-      <div class="bd"><div class="sect">Programme Mgmt & MEL</div><h4>Digital transformation roadmap for a foundation</h4><p>A practical roadmap, then the build, sequenced to value.</p><div class="meta"><span>Donor/Funder</span><span>Digital Transformation</span></div></div>
-    </a>
+    <button type="button" class="wcard" data-case="amazon" data-sector="mel" data-offering="grants-donors monitoring-evaluation programme-mis" data-audience="donors" data-function="giving">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1722573783625-eceb04251036?q=80&w=900&auto=format&fit=crop')"></div>
+      <div class="bd"><div class="sect">Corporate CSR</div><h4>Amazon India</h4><div class="cl">End-to-end CSR programme management</div><p>Seventeen projects on one platform, from monitoring and evaluation through to partner coordination and reporting.</p><div class="meta"><span>Donor/Funder</span><span>Grants &amp; Donors</span><span class="more">Read &#8594;</span></div></div>
+    </button>
+    <button type="button" class="wcard" data-case="landmark" data-sector="healthcare" data-offering="dashboards field-data monitoring-evaluation" data-audience="donors" data-function="giving">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1601689892697-b64daa00ff6d?q=80&w=900&auto=format&fit=crop')"></div>
+      <div class="bd"><div class="sect">Healthcare</div><h4>Landmark Group</h4><div class="cl">Mobile health units, governed by data</div><p>Twelve mobile health units across six cities, tracked from camp to referral against NFHS-5 district baselines.</p><div class="meta"><span>Donor/Funder</span><span>Dashboards</span><span class="more">Read &#8594;</span></div></div>
+    </button>
+    <button type="button" class="wcard" data-case="mahindra" data-sector="mel" data-offering="grants-donors dashboards field-data digital-transformation" data-audience="donors" data-function="giving">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=900&auto=format&fit=crop')"></div>
+      <div class="bd"><div class="sect">Corporate CSR</div><h4>Mahindra Group</h4><div class="cl">One CSR platform for 53 group companies</div><p>The whole group's CSR portfolio in one system, with a field app used by more than 300 partner NGOs.</p><div class="meta"><span>Donor/Funder</span><span>Grants &amp; Donors</span><span class="more">Read &#8594;</span></div></div>
+    </button>
+    <button type="button" class="wcard" data-case="godrej" data-sector="mel" data-offering="grants-donors programme-mis monitoring-evaluation digital-transformation" data-audience="donors" data-function="giving">
+      <div class="ph shot" style="background-image:url('assets/img/cases/case-csr.jpg')"></div>
+      <div class="bd"><div class="sect">Corporate CSR</div><h4>Godrej Group</h4><div class="cl">CSR management across five group companies</div><p>A unified CSR platform for a 125-year-old conglomerate, tracking 101 partners and reach in one live view.</p><div class="meta"><span>Donor/Funder</span><span>Grants &amp; Donors</span><span class="more">Read &#8594;</span></div></div>
+    </button>
+    <button type="button" class="wcard" data-case="tri" data-sector="agriculture" data-offering="grants-donors programme-mis field-data digital-transformation" data-audience="ngos" data-function="giving">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1609252509229-364936a1d1a2?q=80&w=900&auto=format&fit=crop')"></div>
+      <div class="bd"><div class="sect">Livelihoods</div><h4>Transform Rural India</h4><div class="cl">A technology partnership, 74 engagements deep</div><p>Organisation-wide project and donor management, plus payment-approval digitisation for the UP State Rural Livelihood Mission.</p><div class="meta"><span>NGO</span><span>Programme MIS</span><span class="more">Read &#8594;</span></div></div>
+    </button>
+    <button type="button" class="wcard" data-case="pradan" data-sector="agriculture entrepreneurship" data-offering="programme-mis dashboards monitoring-evaluation" data-audience="ngos" data-function="itops">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1707721690544-781fe6ede937?q=80&w=900&auto=format&fit=crop')"></div>
+      <div class="bd"><div class="sect">Agriculture &amp; Livelihoods</div><h4>PRADAN &amp; NAFPO</h4><div class="cl">The FPO stack: producer groups to market linkages</div><p>Digital rails for India's producer-collective movement: registration, a national FPO database, and performance dashboards.</p><div class="meta"><span>NGO</span><span>Programme MIS</span><span class="more">Read &#8594;</span></div></div>
+    </button>
+    <button type="button" class="wcard" data-case="bigbasket" data-sector="agriculture entrepreneurship" data-offering="programme-mis field-data" data-audience="" data-function="itops">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=900&auto=format&fit=crop')"></div>
+      <div class="bd"><div class="sect">Agriculture &amp; Livelihoods</div><h4>bigbasket</h4><div class="cl">Quality and pricing systems for farm-to-retail</div><p>A quality management system for pulses repackaging, and a portal deriving daily prices across 35 collection centres.</p><div class="meta"><span>Social enterprise</span><span>Field Data</span><span class="more">Read &#8594;</span></div></div>
+    </button>
+    <button type="button" class="wcard" data-case="huf" data-sector="climate agriculture" data-offering="field-data dashboards programme-mis" data-audience="donors" data-function="giving">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=900&auto=format&fit=crop')"></div>
+      <div class="bd"><div class="sect">Climate &amp; Environment</div><h4>Hindustan Unilever Foundation</h4><div class="cl">Water data that twelve NGOs can act on</div><p>A multilingual data system for a water-stewardship portfolio, with twelve partner NGOs collecting farmer data in the field.</p><div class="meta"><span>Donor/Funder</span><span>Field Data</span><span class="more">Read &#8594;</span></div></div>
+    </button>
+    <button type="button" class="wcard" data-case="ciff" data-sector="healthcare" data-offering="grants-donors dashboards pmu" data-audience="donors" data-function="giving">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1578991624414-276ef23a534f?q=80&w=900&auto=format&fit=crop')"></div>
+      <div class="bd"><div class="sect">Philanthropy</div><h4>CIFF &amp; Charities Aid Foundation</h4><div class="cl">Grant infrastructure for international funders</div><p>Programme-management-unit support and an SRHR dashboard for CIFF; lead and grant management on mGrant for CAF.</p><div class="meta"><span>Donor/Funder</span><span>Grants &amp; Donors</span><span class="more">Read &#8594;</span></div></div>
+    </button>
+    <button type="button" class="wcard" data-case="cityfinance" data-sector="governance" data-offering="dashboards grants-donors programme-mis" data-audience="government" data-function="finance">
+      <div class="ph shot" style="background-image:url('assets/img/cases/case-municipalfinance.jpg')"></div>
+      <div class="bd"><div class="sect">Governance</div><h4>City Finance Portal</h4><div class="cl">Municipal finance, made public</div><p>A national portal where 4,000 urban local bodies publish standardised finances, one of India's largest open municipal datasets.</p><div class="meta"><span>Government</span><span>Dashboards</span><span class="more">Read &#8594;</span></div></div>
+    </button>
+    <button type="button" class="wcard" data-case="giz" data-sector="agriculture financial-inclusion" data-offering="programme-mis field-data" data-audience="government" data-function="itops">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1623211269755-569fec0536d2?q=80&w=900&auto=format&fit=crop')"></div>
+      <div class="bd"><div class="sect">Agriculture &amp; Livelihoods</div><h4>QSure &middot; GIZ India</h4><div class="cl">Crop insurance claims, digitised</div><p>A web MIS and mobile app replacing a paper-bound crop-insurance claims process. Awarded a World Bank innovation grant.</p><div class="meta"><span>Multilateral</span><span>Field Data</span><span class="more">Read &#8594;</span></div></div>
+    </button>
+    <button type="button" class="wcard" data-case="tribal" data-sector="healthcare governance" data-offering="dashboards programme-mis" data-audience="government" data-function="itops">
+      <div class="ph shot" style="background-image:url('assets/img/cases/case-tribalhealth.jpg')"></div>
+      <div class="bd"><div class="sect">Healthcare</div><h4>Ministry of Tribal Affairs</h4><div class="cl">Mapping health and nutrition for tribal India</div><p>A national portal presenting tribal health and nutrition indicators across 177 high-priority districts.</p><div class="meta"><span>Government</span><span>Dashboards</span><span class="more">Read &#8594;</span></div></div>
+    </button>
+    <button type="button" class="wcard" data-case="livelihoods" data-sector="agriculture financial-inclusion" data-offering="dashboards monitoring-evaluation" data-audience="government" data-function="itops">
+      <div class="ph shot" style="background-image:url('assets/img/cases/case-livelihoods.jpg')"></div>
+      <div class="bd"><div class="sect">Livelihoods</div><h4>National Rural Livelihoods Dashboard</h4><div class="cl">For the world's largest rural women's livelihoods mission</div><p>Interactive dashboards with national-to-block drill-downs for a mission that has mobilised 100 million rural women.</p><div class="meta"><span>Government</span><span>Dashboards</span><span class="more">Read &#8594;</span></div></div>
+    </button>
+    <button type="button" class="wcard" data-case="skilling" data-sector="education" data-offering="programme-mis monitoring-evaluation" data-audience="donors" data-function="giving">
+      <div class="ph shot" style="background-image:url('assets/img/cases/case-skilling.jpg')"></div>
+      <div class="bd"><div class="sect">Education &amp; Skilling</div><h4>Skilling &amp; Placement MIS</h4><div class="cl">For the philanthropic foundation of India's largest private conglomerate</div><p>The full skilling pipeline in one system: mobilisation, training batches, assessment and verified placement.</p><div class="meta"><span>Donor/Funder</span><span>Programme MIS</span><span class="more">Read &#8594;</span></div></div>
+    </button>
+    <button type="button" class="wcard" data-case="nutrition" data-sector="healthcare" data-offering="dashboards" data-audience="donors" data-function="itops">
+      <div class="ph shot" style="background-image:url('assets/img/cases/case-nutrition.jpg')"></div>
+      <div class="bd"><div class="sect">Healthcare</div><h4>Nutrition &amp; Fortification Data Platform</h4><div class="cl">For India's oldest philanthropy and the national nutrition research institute</div><p>Public dashboards tracking crop production, nutrient demand and supply to district level, plus a policy-simulation tool.</p><div class="meta"><span>Donor/Funder</span><span>Dashboards</span><span class="more">Read &#8594;</span></div></div>
+    </button>
+    <button type="button" class="wcard" data-case="pds" data-sector="governance financial-inclusion" data-offering="dashboards monitoring-evaluation" data-audience="government" data-function="itops">
+      <div class="ph shot" style="background-image:url('assets/img/cases/case-foodsupplies.jpg')"></div>
+      <div class="bd"><div class="sect">Governance</div><h4>Food Supplies (PDS) Dashboard</h4><div class="cl">For a large western state's food &amp; civil supplies department</div><p>Ration distribution tracked month by month and region by region, from procurement to the fair-price shop.</p><div class="meta"><span>Government</span><span>Dashboards</span><span class="more">Read &#8594;</span></div></div>
+    </button>
+    <button type="button" class="wcard" data-case="ultrapoor" data-sector="financial-inclusion" data-offering="dashboards monitoring-evaluation" data-audience="ngos" data-function="itops">
+      <div class="ph shot" style="background-image:url('assets/img/cases/case-ultrapoor.jpg')"></div>
+      <div class="bd"><div class="sect">Financial Inclusion</div><h4>Ultra-Poor Graduation Dashboard</h4><div class="cl">For a leading non-profit aiming to lift 1 million women out of ultra-poverty</div><p>Household-level tracking through the graduation approach, from asset transfer to sustained income.</p><div class="meta"><span>NGO</span><span>M&amp;E</span><span class="more">Read &#8594;</span></div></div>
+    </button>
+    <button type="button" class="wcard" data-case="watershed" data-sector="climate agriculture" data-offering="field-data dashboards monitoring-evaluation" data-audience="ngos" data-function="itops">
+      <div class="ph shot" style="background-image:url('assets/img/cases/case-watershed.jpg')"></div>
+      <div class="bd"><div class="sect">Climate &amp; Environment</div><h4>Mega-Watershed Monitoring Portal</h4><div class="cl">For one of India's largest grassroots NGOs, under a state MGNREGA cell</div><p>Ridge-to-valley works monitoring across 54 blocks, for a programme rejuvenating seven rivers.</p><div class="meta"><span>NGO</span><span>Field Data</span><span class="more">Read &#8594;</span></div></div>
+    </button>
+    <button type="button" class="wcard" data-case="edtech" data-sector="education digital-ai" data-offering="dashboards monitoring-evaluation" data-audience="donors" data-function="giving">
+      <div class="ph shot" style="background-image:url('assets/img/cases/case-edtech.jpg')"></div>
+      <div class="bd"><div class="sect">Education &amp; Skilling</div><h4>EdTech Accelerator Dashboard</h4><div class="cl">For a leading education philanthropy's EdTech accelerator</div><p>One data platform comparing engagement and learning outcomes across an accelerator's whole portfolio.</p><div class="meta"><span>Donor/Funder</span><span>Dashboards</span><span class="more">Read &#8594;</span></div></div>
+    </button>
+    <button type="button" class="wcard" data-case="english" data-sector="education" data-offering="dashboards monitoring-evaluation" data-audience="ngos" data-function="itops">
+      <div class="ph shot" style="background-image:url('assets/img/cases/case-english.jpg')"></div>
+      <div class="bd"><div class="sect">Education &amp; Skilling</div><h4>Spoken-English Program Dashboard</h4><div class="cl">For one of India's oldest public-policy think tanks</div><p>Activation, lessons and curriculum progress across schools, from individual student to programme level.</p><div class="meta"><span>NGO</span><span>Dashboards</span><span class="more">Read &#8594;</span></div></div>
+    </button>
+    <button type="button" class="wcard" data-case="orgperf" data-sector="education mel" data-offering="dashboards" data-audience="ngos" data-function="finance">
+      <div class="ph shot" style="background-image:url('assets/img/cases/case-orgperf.jpg')"></div>
+      <div class="bd"><div class="sect">Programme Mgmt &amp; MEL</div><h4>Organisation Performance Dashboard</h4><div class="cl">For an award-winning girls'-education non-profit working across 20,000+ villages</div><p>Finance, programme progress and impact in one decision view for leadership, instead of three reporting streams.</p><div class="meta"><span>NGO</span><span>Dashboards</span><span class="more">Read &#8594;</span></div></div>
+    </button>
   </div>
-  <p class="cat-empty" id="catEmpty">No projects match those filters yet. <button class="cat-clear" id="catClear2">Clear filters</button></p>
-  <p class="lede" style="margin-top:26px"><span style="opacity:.7">Representative of our delivery across sectors; named, detailed case studies are being added.</span></p>
+  <div class="cat-empty" id="catEmpty">
+    <h4>Nothing written up under that filter yet.</h4>
+    <p>These are the projects we have permission to publish. They are a small share of the 300+ we have delivered, so a gap here usually means the write-up is missing, not the work. Tell us what you are planning and we will send the closest examples we can share.</p>
+    <div class="row"><a class="pill pill-primary" href="contact.html?topic=brainstorm">Book a call <span class="arw">&#8594;</span></a><button class="cat-clear" id="catClear2">Clear filters</button></div>
+  </div>
+  <p class="lede" style="margin-top:26px"><span style="opacity:.7">A selection from 300+ projects. Some clients are named with their permission; others are described without naming them.</span></p>
 </div></section>
 
 <!-- TRUSTED MARQUEE -->
@@ -390,6 +438,30 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
   <div><h3>Want the highlights in one deck?</h3><p>Our reach and results across sectors and geographies, summarised.</p></div>
   <button class="pill pill-primary deck-card" data-deck="Company Overview">Get the deck <span class="arw">&#8594;</span></button>
 </div></section>
+
+<!-- CASE DETAIL MODAL -->
+<div class="cmodal" id="caseModal" role="dialog" aria-modal="true" aria-labelledby="cmTitle">
+  <div class="backdrop" data-cclose></div>
+  <div class="box">
+    <button class="close" data-cclose aria-label="Close">&times;</button>
+    <img class="cm-shot" id="cmShot" alt="">
+    <div class="cm-bd">
+      <div class="cm-sect" id="cmSect"></div>
+      <h3 id="cmTitle"></h3>
+      <p class="cm-client" id="cmClient"></p>
+      <h5>The problem</h5>
+      <p class="cm-p" id="cmProblem"></p>
+      <h5>What we built</h5>
+      <ul class="cm-list" id="cmBuilt"></ul>
+      <div class="cm-stats" id="cmStats"></div>
+      <div class="cm-foot">
+        <div class="cm-tags" id="cmTags"></div>
+        <a class="pill pill-primary" id="cmCta" href="contact.html?topic=brainstorm">Talk to us about work like this <span class="arw">&#8594;</span></a>
+      </div>
+      <p id="cmScale" style="margin:20px 0 0;font-size:.84rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px"></p>
+    </div>
+  </div>
+</div>
 
 <!-- DECK MODAL -->
 <div class="deck-modal" id="deckModal">
@@ -461,6 +533,7 @@ if(p&&nx){p.onclick=function(){show(i-1);rs();};nx.onclick=function(){show(i+1);
   var cards=[].slice.call(document.querySelectorAll('.wcard'));
   var chips=[].slice.call(document.querySelectorAll('.fchip'));
   var state={sector:'',offering:'',audience:'',function:''};
+  var kase=new URLSearchParams(location.search).get('case')||'';
   function has(list,v){return (' '+(list||'')+' ').indexOf(' '+v+' ')>-1;}
   function apply(){
     var n=0;
@@ -475,6 +548,7 @@ if(p&&nx){p.onclick=function(){show(i-1);rs();};nx.onclick=function(){show(i+1);
     var ce=document.getElementById('catEmpty'); if(ce)ce.classList.toggle('show',n===0);
     chips.forEach(function(ch){ch.classList.toggle('on',state[ch.dataset.dim]===ch.dataset.val);});
     var q=[]; ['sector','offering','audience','function'].forEach(function(k){if(state[k])q.push(k+'='+state[k]);});
+    if(kase)q.push('case='+kase);
     try{history.replaceState(null,'','our-work.html'+(q.length?'?'+q.join('&'):''));}catch(e){}
   }
   chips.forEach(function(ch){ch.addEventListener('click',function(){
@@ -485,6 +559,39 @@ if(p&&nx){p.onclick=function(){show(i-1);rs();};nx.onclick=function(){show(i+1);
   var pr=new URLSearchParams(location.search);
   ['sector','offering','audience','function'].forEach(function(k){if(pr.get(k))state[k]=pr.get(k);});
   apply();
+})();
+</script>
+<script>
+(function(){
+  var D={"amazon":{"sect":"Corporate CSR","title":"Amazon India","client":"End-to-end CSR programme management","img":"https://images.unsplash.com/photo-1722573783625-eceb04251036?q=80&w=900&auto=format&fit=crop","shot":false,"problem":"Amazon India's CSR portfolio spanned seventeen separate projects and a wide partner network, each reporting differently. There was no single place to see what was running, what it cost, or what it had changed.","built":["mGrant deployed for the full CSR lifecycle, from partner onboarding to closure reporting","Survey digitisation and impact-assessment analytics feeding back into programme design","A shared monitoring and evaluation framework, plus training, for partner NGOs"],"stats":[["17","projects delivered together"],["Pan-India","programme footprint"],["One","platform across the portfolio"]],"scale":"Pan-India &middot; 17 projects delivered","tags":["Donor/Funder","Grants &amp; Donors"]},"landmark":{"sect":"Healthcare","title":"Landmark Group","client":"Mobile health units, governed by data","img":"https://images.unsplash.com/photo-1601689892697-b64daa00ff6d?q=80&w=900&auto=format&fit=crop","shot":false,"problem":"A preventive-healthcare programme running twelve mobile health units across Tirupur, Kolkata, Ludhiana, Gurugram, Mumbai-Thane and Jaipur needed to show more than attendance counts. Screening data sat with each unit, and nobody could say whether detection rates were better or worse than the districts they worked in.","built":["A governance dashboard following the programme from inputs to outcomes: camps, screenings, NCD detection, referrals and follow-ups","Anaemia, diabetes and hypertension detection benchmarked against NFHS-5 district baselines","Input, output and outcome KPIs with location heat maps"],"stats":[["1,48,320","beneficiaries screened in FY 25-26"],["2,184","camps held"],["12 MHUs","across 6 cities"]],"scale":"12 mobile health units &middot; 6 cities &middot; 1.48 lakh+ beneficiaries","tags":["Donor/Funder","Dashboards"]},"mahindra":{"sect":"Corporate CSR","title":"Mahindra Group","client":"One CSR platform for 53 group companies","img":"https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=900&auto=format&fit=crop","shot":false,"problem":"Fifty-three group companies were each running their own CSR reporting. Consolidating budgets, approvals and partner performance into a group view meant weeks of spreadsheet work every quarter.","built":["Group-wide monitoring, evaluation and budget reporting in a single system","An approvals and permissions workflow engine matching the group's governance","A mobile field-reporting app used by over 300 partner NGOs"],"stats":[["53","group companies on one platform"],["300+","partner NGOs reporting"],["Group-wide","budget &amp; M&amp;E view"]],"scale":"53 companies &middot; 300+ partner NGOs","tags":["Donor/Funder","Grants &amp; Donors"]},"godrej":{"sect":"Corporate CSR","title":"Godrej Group","client":"CSR management across five group companies","img":"assets/img/cases/case-csr.jpg","shot":true,"problem":"CSR teams across five group companies ran grant and project management on spreadsheets. There was no consolidated view of partners, projects or reach, and no shared definition of what counted as a beneficiary.","built":["A unified CSR platform standardising grant management across business units","NGO MIS compliance, with the training and follow-up that makes compliance stick","Geographic reach and beneficiary tracking in one live dashboard"],"stats":[["5","group companies unified"],["101","partner organisations"],["5,08,701","beneficiaries reached"]],"scale":"5 group companies &middot; 101 partners","tags":["Donor/Funder","Grants &amp; Donors"]},"tri":{"sect":"Livelihoods","title":"Transform Rural India","client":"A technology partnership, 74 engagements deep","img":"https://images.unsplash.com/photo-1609252509229-364936a1d1a2?q=80&w=900&auto=format&fit=crop","shot":false,"problem":"Our deepest client relationship. A national organisation working on village-level transformation needed data systems that could keep pace across every programme vertical, and a state livelihoods mission needed its payment approvals off paper.","built":["mGrant deployed across all programme verticals for project and donor management","mForm digitising payment approvals for the UP State Rural Livelihood Mission","Data systems supporting village-level transformation work"],"stats":[["74","engagements and counting"],["Pan-India","organisational footprint"],["All verticals","on one system"]],"scale":"Pan-India &middot; 74 engagements and counting","tags":["NGO","Programme MIS"]},"pradan":{"sect":"Agriculture &amp; Livelihoods","title":"PRADAN &amp; NAFPO","client":"The FPO stack: producer groups to market linkages","img":"https://images.unsplash.com/photo-1707721690544-781fe6ede937?q=80&w=900&auto=format&fit=crop","shot":false,"problem":"India's farmer-producer-organisation movement was growing faster than anyone could track it. Producer groups were graded on paper, registration was manual, and there was no national picture of how collectives were actually performing.","built":["An FPO MIS portal for PRADAN covering producer-group grading, business planning and transactions","FPO registration workflows and a national FPO database for NAFPO","Dashboards tracking enrolment, trainings, financial performance and market linkages"],"stats":[["3,000+","producer groups"],["20+","farmer producer companies"],["National","FPO database"]],"scale":"3,000+ producer groups &middot; 20+ FPCs","tags":["NGO","Programme MIS"]},"bigbasket":{"sect":"Agriculture &amp; Livelihoods","title":"bigbasket","client":"Quality and pricing systems for farm-to-retail","img":"https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=900&auto=format&fit=crop","shot":false,"problem":"Where agriculture meets commerce, quality checks and daily price-setting were running on paper and phone calls across dozens of centres. Slow to reconcile, and impossible to audit.","built":["QSure: a web MIS and mobile app for quality management across 10 pulses repackaging centres","A price derivation portal computing daily collection-centre prices"],"stats":[["10","repackaging centres"],["35","collection centres"],["10 cities","daily price derivation"]],"scale":"10 repackaging centres &middot; 35 collection centres in 10 cities","tags":["Social enterprise","Field Data"]},"huf":{"sect":"Climate &amp; Environment","title":"Hindustan Unilever Foundation","client":"Water data that twelve NGOs can act on","img":"https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=900&auto=format&fit=crop","shot":false,"problem":"HUF's water-stewardship portfolio ran through twelve partner NGOs, each collecting farmer data in a different language and format. Portfolio-level water decisions were being made on partial evidence.","built":["Multilingual farmer data collection across partner geographies","Portfolio-wide monitoring across 12 NGO partners","Decision dashboards for water-resource management and community resilience"],"stats":[["12","partner NGOs on one system"],["Multi-state","portfolio coverage"],["Multilingual","field data collection"]],"scale":"12 partner NGOs &middot; multi-state","tags":["Donor/Funder","Field Data"]},"ciff":{"sect":"Philanthropy","title":"CIFF &amp; Charities Aid Foundation","client":"Grant infrastructure for international funders","img":"https://images.unsplash.com/photo-1578991624414-276ef23a534f?q=80&w=900&auto=format&fit=crop","shot":false,"problem":"International philanthropies running India portfolios face a recurring problem: grant systems built for headquarters don't fit Indian grantees, reporting cycles or compliance requirements.","built":["Programme-management-unit support and portfolio dashboards for the Children's Investment Fund Foundation","An SRHR programme dashboard for CIFF's India portfolio","Lead and grant management on mGrant for Charities Aid Foundation"],"stats":[["2","international funders"],["PMU + platform","support model"],["India portfolio","end to end"]],"scale":"Also serving Aga Khan Foundation, Terre des hommes, Azim Premji Philanthropic Initiatives, Wadhwani Foundation and Dasra","tags":["Donor/Funder","Grants &amp; Donors"]},"cityfinance":{"sect":"Governance","title":"City Finance Portal","client":"Municipal finance, made public","img":"assets/img/cases/case-municipalfinance.jpg","shot":true,"problem":"India's 4,000+ urban local bodies had no standardised, comparable financial data. That made grant allocation slow, fiscal accountability opaque, and citizen scrutiny effectively impossible.","built":["A standardised financial data model for urban local bodies","A public national portal hosting budgets, audited accounts and credit ratings","The online grant-management system for national finance-commission grants to ULBs"],"stats":[["4,000+","cities' financial data"],["8,400+","audited accounts published"],["Public","dashboards &amp; downloadable data"]],"scale":"4,000 urban local bodies &middot; Pan-India","tags":["Government","Dashboards"]},"giz":{"sect":"Agriculture &amp; Livelihoods","title":"QSure &middot; GIZ India","client":"Crop insurance claims, digitised","img":"https://images.unsplash.com/photo-1623211269755-569fec0536d2?q=80&w=900&auto=format&fit=crop","shot":false,"problem":"Crop-insurance claim settlement ran on paper. Farmers waited, assessors duplicated work, and there was no verifiable record of what had been claimed or paid.","built":["An integrated claim intake-to-settlement workflow","A web MIS and mobile app for field assessment","Verifiable digital claims replacing the paper trail"],"stats":[["World Bank","innovation grant recipient"],["Karnataka","pilot geography"],["Claim to settlement","fully digital"]],"scale":"Karnataka pilot &middot; World Bank innovation grant","tags":["Multilateral","Field Data"]},"tribal":{"sect":"Healthcare","title":"Ministry of Tribal Affairs","client":"Mapping health and nutrition for tribal India","img":"assets/img/cases/case-tribalhealth.jpg","shot":true,"problem":"Health and nutrition data on India's tribal population sat scattered across sources. Evidence-based policy for high-priority tribal districts was close to impossible to do well.","built":["A public national e-portal with a data-upload panel and dashboards","Vulnerability mapping across nutrition and health indicators","A knowledge repository giving policymakers and researchers a shared evidence base"],"stats":[["177","tribal districts covered"],["10-year","collaborative horizon"],["Public","policy &amp; research access"]],"scale":"Pan-India &middot; backed by two Union ministries and a global health funder","tags":["Government","Dashboards"]},"livelihoods":{"sect":"Livelihoods","title":"National Rural Livelihoods Dashboard","client":"For the world's largest rural women's livelihoods mission","img":"assets/img/cases/case-livelihoods.jpg","shot":true,"problem":"A mission that has mobilised more than 100 million rural women into nine million self-help groups was steering itself with static tabular reports.","built":["Interactive livelihood dashboards with national-to-block drill-downs","Views for farm livelihoods, producer groups and community resource persons","Piloted across producer collectives in three states"],"stats":[["100M+","women mobilised by the mission"],["~9M","self-help groups"],["3 states","pilot: UP, MP, Jharkhand"]],"scale":"National &middot; pilot across 3 states","tags":["Government","Dashboards"]},"skilling":{"sect":"Education &amp; Skilling","title":"Skilling &amp; Placement MIS","client":"For the philanthropic foundation of India's largest private conglomerate","img":"assets/img/cases/case-skilling.jpg","shot":true,"problem":"The foundation and its training partners had no efficient way to follow a candidate from mobilisation through training to a placement anyone had actually verified.","built":["A skilling MIS covering enrolment, training batches and assessments","Placement verification workflows across a large partner network","Partner-level performance reporting"],"stats":[["6,820","youth trained"],["89.16%","placement rate"],["88","active partners"]],"scale":"Multi-partner &middot; national programme","tags":["Donor/Funder","Programme MIS"]},"nutrition":{"sect":"Healthcare","title":"Nutrition &amp; Fortification Data Platform","client":"For India's oldest philanthropy and the national nutrition research institute","img":"assets/img/cases/case-nutrition.jpg","shot":true,"problem":"India's nutrition and food-fortification statistics existed in silos. Policymakers had no unified public evidence base to model fortification decisions against.","built":["Public dashboards tracking crop production, nutrient demand and supply down to district level","A policy-simulation tool modelling fortification scenarios","An open evidence base for researchers and policymakers"],"stats":[["61","crops tracked"],["151 foods","across 14 nutrients"],["90+","indicators, national to district"]],"scale":"National &middot; district-level granularity","tags":["Donor/Funder","Dashboards"]},"pds":{"sect":"Governance","title":"Food Supplies (PDS) Dashboard","client":"For a large western state's food &amp; civil supplies department","img":"assets/img/cases/case-foodsupplies.jpg","shot":true,"problem":"The state needed to track ration distribution to tens of millions of cardholders, and to see where allocation and actual delivery diverged, while the month was still running.","built":["A ration-distribution dashboard tracking month-wise, region-wise performance against allocations","Procurement-to-fair-price-shop visibility in one view","Gap analysis between allocated and distributed stock"],"stats":[["State-wide","PDS monitoring"],["Monthly","region-level tracking"],["Tens of millions","of beneficiaries in system"]],"scale":"State-wide &middot; one of India's larger states","tags":["Government","Dashboards"]},"ultrapoor":{"sect":"Financial Inclusion","title":"Ultra-Poor Graduation Dashboard","client":"For a leading non-profit aiming to lift 1 million women out of ultra-poverty","img":"assets/img/cases/case-ultrapoor.jpg","shot":true,"problem":"A graduation-approach programme helping the poorest rural women build livelihoods had to track every participant's journey (assets, savings, enterprise milestones) without losing anyone between stages.","built":["A programme dashboard tracking household-level progress through the graduation approach","Asset transfer, savings and enterprise milestones in one record per household","Cohort progression views across states"],"stats":[["1M women","programme ambition"],["4 states","and growing"],["Household-level","progress data"]],"scale":"4 states &middot; household-level tracking","tags":["NGO","M&amp;E"]},"watershed":{"sect":"Climate &amp; Environment","title":"Mega-Watershed Monitoring Portal","client":"For one of India's largest grassroots NGOs, under a state MGNREGA cell","img":"assets/img/cases/case-watershed.jpg","shot":true,"problem":"A rain-fed region faced chronic water scarcity. A mega-watershed programme rejuvenating seven rivers needed ridge-to-valley planning and works monitoring at a scale paper could not carry.","built":["A watershed portal monitoring soil and water conservation works","Area treated, structures built and household participation tracked across the programme geography","MGNREGA-aligned works planning and reporting"],"stats":[["7 rivers","being rejuvenated"],["54 blocks","across 6 districts"],["14+ lakh","households in programme area"]],"scale":"54 blocks &middot; 6 districts","tags":["NGO","Field Data"]},"edtech":{"sect":"Education &amp; Skilling","title":"EdTech Accelerator Dashboard","client":"For a leading education philanthropy's EdTech accelerator","img":"assets/img/cases/case-edtech.jpg","shot":true,"problem":"An accelerator supporting EdTech products for low-income learners had a portfolio of tools reporting in incompatible formats. Comparing them, the whole point of an accelerator, took manual work every cycle.","built":["A data management and analysis platform aggregating usage, retention and learning metrics","Cohort-level comparison across the accelerator portfolio","Monthly and quarterly engagement views for scale decisions"],"stats":[["Portfolio-wide","analytics"],["Monthly &amp; quarterly","engagement views"],["Evidence","for scale decisions"]],"scale":"Portfolio-wide &middot; multi-cohort","tags":["Donor/Funder","Dashboards"]},"english":{"sect":"Education &amp; Skilling","title":"Spoken-English Program Dashboard","client":"For one of India's oldest public-policy think tanks","img":"assets/img/cases/case-english.jpg","shot":true,"problem":"A programme giving low-income schoolchildren free access to spoken-English apps had no single view of who had actually activated, who was progressing, and which schools needed support.","built":["An aggregation dashboard for teachers and programme managers","Activation, engagement and completion tracked from student to programme level","School-to-programme roll-up reporting"],"stats":[["Multi-state","programme coverage"],["School-to-programme","roll-up"],["Teacher &amp; student","level tracking"]],"scale":"Multi-state &middot; school-level detail","tags":["NGO","Dashboards"]},"orgperf":{"sect":"Programme Mgmt &amp; MEL","title":"Organisation Performance Dashboard","client":"For an award-winning girls'-education non-profit working across 20,000+ villages","img":"assets/img/cases/case-orgperf.jpg","shot":true,"problem":"Leadership wanted one comprehensive view spanning financial performance, programme progress and impact. What they had was three separate reporting streams that never quite reconciled.","built":["An integrated performance dashboard bringing finance, operations and impact together","Org-wide KPIs in a single leadership decision view","Drill-down from organisation to geography"],"stats":[["20,000+","villages of operation"],["Finance + impact","in one view"],["Org-wide","leadership KPIs"]],"scale":"20,000+ villages &middot; organisation-wide","tags":["NGO","Dashboards"]}};
+  var m=document.getElementById('caseModal'); if(!m)return;
+  function el(id){return document.getElementById(id);}
+  function open(id){
+    var c=D[id]; if(!c)return;
+    el('cmSect').textContent=c.sect.replace(/&amp;/g,'&');
+    el('cmTitle').innerHTML=c.title;
+    el('cmClient').innerHTML=c.client;
+    var s=el('cmShot');
+    if(c.img){s.src=c.img;s.alt=c.shot?'A screen from the system we built':'';s.style.display='block';s.classList.toggle('is-shot',!!c.shot);}
+    else{s.style.display='none';}
+    el('cmProblem').textContent=c.problem;
+    el('cmBuilt').innerHTML=c.built.map(function(b){return '<li>'+b+'</li>';}).join('');
+    el('cmStats').innerHTML=c.stats.map(function(t){return '<div><b>'+t[0]+'</b><span>'+t[1]+'</span></div>';}).join('');
+    el('cmTags').innerHTML=c.tags.map(function(t){return '<span>'+t+'</span>';}).join('');
+    el('cmScale').innerHTML='<b style="color:var(--ink);font-weight:600">Scale:</b> '+c.scale;
+    el('cmCta').href='contact.html?topic=brainstorm&ref='+id;
+    m.classList.add('open'); document.body.style.overflow='hidden';
+    m.querySelector('.close').focus();
+  }
+  function close(){m.classList.remove('open');document.body.style.overflow='';}
+  Array.prototype.forEach.call(document.querySelectorAll('.wcard'),function(c){
+    c.addEventListener('click',function(){open(c.getAttribute('data-case'));});
+  });
+  Array.prototype.forEach.call(m.querySelectorAll('[data-cclose]'),function(b){b.addEventListener('click',close);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.classList.contains('open'))close();});
+  /* deep-link: our-work.html?case=godrej opens that case directly */
+  var qc=new URLSearchParams(location.search).get('case');
+  if(qc&&D[qc])open(qc);
 })();
 </script>
 
