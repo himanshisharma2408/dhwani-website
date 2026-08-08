@@ -68,7 +68,6 @@ em{font-style:italic}
 .ocard .ic{height:clamp(58px,7.5vw,84px);flex:none;display:flex;align-items:center;justify-content:center;color:#4a423c;margin-bottom:14px}
 .ocard .ic svg{width:clamp(46px,6.8vw,78px);height:clamp(46px,6.8vw,78px);stroke-width:1.05}
 .ocard h5{font-size:clamp(1.2rem,1.9vw,1.34rem);font-weight:500;margin-bottom:9px;color:var(--ink)}
-.ocard h5{min-height:2.6em;display:flex;align-items:flex-start}
 .ocard p{color:var(--muted);font-size:.92rem;line-height:1.5;max-width:26ch}
 
 /* proof / case study */
@@ -186,7 +185,9 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .cmodal .cm-bd{padding:32px 34px 30px;overflow-y:auto}
 .cmodal .cm-sect{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--maroon);font-weight:600;margin-bottom:10px}
 .cmodal h3{font-size:1.5rem;font-weight:500;line-height:1.2;margin-bottom:8px}
-.cmodal .cm-p{font-size:.95rem;line-height:1.6;color:var(--muted);margin-bottom:18px}</style>
+.cmodal .cm-p{font-size:.95rem;line-height:1.6;color:var(--muted);margin-bottom:18px}.prodband{padding:34px 0 0}
+.prodlockup{height:clamp(46px,6vw,68px);width:auto;display:block}
+</style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
    Set FORM_ENDPOINT to a URL that accepts a JSON POST. Recommended: a Zoho Form
@@ -254,12 +255,15 @@ window.DHWANI_FORMS = {
   <div class="veil"></div>
   <div class="in">
     <div class="crumb"><a href="solutions.html">Solutions</a> / mGrant for Nonprofits</div>
-    <img class="prodmark" src="assets/img/products/mgrant-nuo.png" alt="mGrant for Nonprofits logo">
-    <h1>Grant management, built for Indian <em>non-profits</em>.</h1>
+    <h1>Grant management, built for <em>non-profits</em>.</h1>
     <p>One workspace for the grants you receive: fundraising pipeline, project and budget delivery, impact measurement, beneficiary records and FCRA compliance.</p>
     <div class="btns"><a class="pill pill-primary" href="contact.html?topic=brainstorm">Book a session <span class="arw">&#8594;</span></a><a class="pill pill-dark deck-get" data-deck="mgrant-nonprofits" data-deckname="mGrant for Nonprofits" href="#">Download the deck</a></div>
   </div>
 </div>
+
+<section class="prodband"><div class="wrap">
+  <img class="prodlockup" src="assets/img/products/mgrant-nuo.png" alt="mGrant NUO logo">
+</div></section>
 
 <section class="section"><div class="wrap">
   <div class="statrow"><div><b>10+</b><span>Non-profits</span></div><div><b>200+</b><span>Projects</span></div><div><b>&#8377;500 Cr+</b><span>Portfolio managed</span></div></div>

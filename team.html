@@ -93,6 +93,9 @@ em{font-style:italic}
 @media(max-width:1100px){.pgrid.exec-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:760px){.pgrid.exec-grid{grid-template-columns:1fr 1fr}}
 
+.pcard h4 .lilink{display:inline-flex;align-items:center;margin-left:7px;color:#0a66c2;vertical-align:middle;opacity:.85}
+.pcard h4 .lilink:hover{opacity:1}
+.pcard .cred{font-size:.72rem;font-weight:600;color:var(--muted);margin-left:6px;letter-spacing:.04em}
 .pcard h4{font-size:1.1rem;font-weight:500;margin:16px 18px 2px}
 .pcard .role{font-size:.83rem;color:var(--maroon);font-weight:600;margin:0 18px 18px}
 .advisor-placeholder{background:var(--beige);border:1px dashed var(--line);border-radius:12px;padding:26px 28px;color:var(--muted);font-size:.95rem}
@@ -318,7 +321,7 @@ window.DHWANI_FORMS = {
     <div class="pcard" data-g="management"><div class="av"><img src="assets/img/team/Harshdeep.jpg" alt="Harshdeep Singh Mokha" loading="lazy"></div><h4>Harshdeep Singh Mokha</h4><div class="role">Sr. Project Manager</div></div>
     <div class="pcard" data-g="support"><div class="av"><span class="mono">HP</span></div><h4>Harshit Pathak</h4><div class="role">Pre-Sales Associate</div></div>
     <div class="pcard" data-g="tech"><div class="av"><span class="mono">HS</span></div><h4>Harshit Sodhani</h4><div class="role">SDE 1 - Full Stack</div></div>
-    <div class="pcard" data-g="management"><div class="av"><img src="assets/img/team/Himanshi-Sharma.jpg" alt="Himanshi Sharma" loading="lazy"></div><h4>Himanshi Sharma</h4><div class="role">Sr. Project Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><img src="assets/img/team/Himanshi-Sharma.jpg" alt="Himanshi Sharma" loading="lazy"></div><h4>Himanshi Sharma<span class="cred">PMP</span></h4><div class="role">Sr. Project Manager</div></div>
     <div class="pcard" data-g="tech"><div class="av"><span class="mono">HD</span></div><h4>Hrushikesh Ramchandra Deodhar</h4><div class="role">SDE 1 - PHP</div></div>
     <div class="pcard" data-g="support"><div class="av"><span class="mono">HT</span></div><h4>Hunny Tyagi</h4><div class="role">Sr. Accountant</div></div>
     <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/KandhiOm.jpg" alt="Kandhi Omprakash" loading="lazy"></div><h4>Kandhi Omprakash</h4><div class="role">SDE 3 - Full Stack</div></div>
@@ -632,6 +635,24 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
         +'&body='+encodeURIComponent('Please add this address to the Dhwani newsletter list: '+input.value);
       input.value=''; var b=f.querySelector('button'); if(b)b.textContent='Thanks';
     });
+  });
+})();
+</script>
+<script>
+/* LinkedIn profiles — add "Full Name": "https://www.linkedin.com/in/..." as they are collected.
+   A name with no entry simply shows no icon. */
+window.DHWANI_LINKEDIN = {
+};
+(function(){
+  var map=window.DHWANI_LINKEDIN||{};
+  var svg='<svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM2.4 21h5.16V9.75H2.4V21zM9.9 9.75V21h5.16v-6.2c0-3.27 4.26-3.54 4.26 0V21h5.16v-7.98c0-6.9-7.5-6.64-9.42-3.25V9.75H9.9z"/></svg>';
+  document.querySelectorAll('.pcard h4').forEach(function(h){
+    var url=map[h.textContent.trim()];
+    if(!url)return;
+    var a=document.createElement('a');
+    a.className='lilink'; a.href=url; a.target='_blank'; a.rel='noopener';
+    a.setAttribute('aria-label','LinkedIn profile'); a.innerHTML=svg;
+    h.appendChild(a);
   });
 })();
 </script>

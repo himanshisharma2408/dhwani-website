@@ -71,6 +71,9 @@ em{font-style:italic}
 /* people */
 .people.section{background:var(--paper)}
 
+
+.ngroup{margin-top:32px}
+.ngroup h3{font-family:var(--serif);font-size:1.34rem;font-weight:500;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
 .nngrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
 .nncard{background:var(--beige);border-radius:12px;padding:24px 24px 26px;border-left:3px solid var(--maroon)}
 .nncard b{display:block;font-family:var(--serif);font-size:1.16rem;font-weight:500;color:var(--ink);margin-bottom:8px;line-height:1.3}
@@ -245,7 +248,7 @@ window.DHWANI_FORMS = {
   <div class="grid">
     <div>
       <p><b>Health &amp; leave.</b> Health insurance and a standard leave policy, shared in full during the hiring process.</p>
-      <p><b>Learning.</b> Exposure to real engineering and delivery problems, with senior team members close by &mdash; our tech team alone runs 40+ people across Frappe, full-stack and mobile.</p>
+      <p><b>Learning.</b> Exposure to real engineering and delivery problems, with senior people close by. We use AI in our work, and provide subscriptions where a role needs them &mdash; and always for learning. Data confidentiality policies apply to that as they do to everything else.</p>
     </div>
     <div>
       <p><b>Flexibility.</b> Field-facing roles need time in the field; where a role allows it, we&#39;re flexible about where the work happens.</p>
@@ -256,31 +259,50 @@ window.DHWANI_FORMS = {
 
 <!-- NON-NEGOTIABLES -->
 <section class="section people" style="background:var(--paper)"><div class="wrap">
-  <h2 class="shead">Our non-negotiables</h2>
-  <p class="lede" style="max-width:64ch;margin-top:8px;margin-bottom:6px">The things we will not trade away to win work or ship faster.</p>
-  <div class="nngrid">
-    <div class="nncard"><b>Social change first</b><p>The problem comes before the product. If software is not the answer yet, we say so &mdash; we have talked organisations out of buying systems they were not ready for.</p></div>
-    <div class="nncard"><b>It has to work in the field</b><p>Offline, on a shared phone, in the user&rsquo;s language. A system the last-mile team cannot actually use has not been delivered, whatever the go-live date said.</p></div>
-    <div class="nncard"><b>No lock-in</b><p>Open source where we can, and your data stays yours. Nobody should be betting a programme on one vendor staying in business, staying interested, or staying affordable.</p></div>
-    <div class="nncard"><b>Beneficiary data is not ours to be careless with</b><p>ISO 27001, DPDP and GDPR are the floor, not the pitch. The people in the database did not choose to be in it.</p></div>
-    <div class="nncard"><b>We stay until it sticks</b><p>Adoption, not go-live, is the finish line. That means training the field team in their language and staying past the launch.</p></div>
-    <div class="nncard"><b>AI drafts, people decide</b><p>We are glad to automate the tedious parts. Nothing reaches a beneficiary or a funder without a person having looked at it.</p></div>
-  </div>
-</div></section>
-
-<!-- AI AND LEARNING -->
-<section class="section story"><div class="wrap">
-  <h2 class="shead">How we work with AI</h2>
-  <div class="grid">
-    <div>
-      <p>Every person here gets paid AI tooling, on the company, from their first week. You do not raise a ticket for it and you do not justify the spend. If it saves you an afternoon of transcription, schema-writing or first-draft documentation, that is the whole business case.</p>
-      <p>Where it earns its place: turning a hundred pages of field notes into something a programme manager can read, drafting the boring half of a proposal, writing the test cases nobody wants to write, getting a junior engineer unstuck at 11pm without waiting for standup.</p>
+  <h2 class="shead">The Dhwani Charter</h2>
+  <p class="lede" style="max-width:72ch;margin-top:8px;margin-bottom:10px">Our non-negotiables. We use these when we hire, when we disagree, and when we are deciding whether something is ready to ship.</p>
+    <div class="ngroup">
+      <h3>Software quality</h3>
+      <div class="nngrid">
+        <div class="nncard"><b>0% regressive bugs</b><p>If an error is found it gets documented and added to the automated test suite. The same mistake does not happen twice.</p></div>
+        <div class="nncard"><b>Pixel-perfect UI</b><p>The interface is how we show respect for the user. We do not ship clunky or messy. If the UI is broken, trust is broken.</p></div>
+        <div class="nncard"><b>Rural-robust design</b><p>Performance is a feature. It has to work on a low-end device at 2G. If it is unusable in a village, it is not Dhwani quality.</p></div>
+        <div class="nncard"><b>Predictability through governance</b><p>Quality is not accidental. Process tracking and code review on every release.</p></div>
+      </div>
     </div>
-    <div>
-      <p>Where it does not: anything a beneficiary, a funder or a government partner will read goes past a person first. Not as policy theatre &mdash; because the cost of a confidently wrong number in a district health report is borne by someone who never agreed to be in the dataset.</p>
-      <p>The same goes for learning. If something you need to know would take a week to learn properly, take the week. We would rather carry that than a year of somebody quietly working around a gap. People run internal sessions on what they have picked up, and there is budget behind it &mdash; ask in your interview and you will get the actual policy, not a slogan.</p>
+    <div class="ngroup">
+      <h3>High-trust communication</h3>
+      <div class="nngrid">
+        <div class="nncard"><b>Radical candor</b><p>Escalations, internal or with a partner, are how problems get solved. They are not a sign that someone failed.</p></div>
+        <div class="nncard"><b>Tough on problems, kind on people</b><p>We argue hard so the best idea wins, and give feedback to help someone grow rather than to be right.</p></div>
+      </div>
     </div>
-  </div>
+    <div class="ngroup">
+      <h3>Professionalism &amp; reliability</h3>
+      <div class="nngrid">
+        <div class="nncard"><b>The word-to-action ratio</b><p>If you commit to a date or a fix, it is done. If something blocks it, you flag it the moment you know &mdash; not on the delivery date.</p></div>
+        <div class="nncard"><b>Punctuality is a boundary</b><p>Meetings start and end on time. Respecting someone&rsquo;s time is the plainest professional courtesy there is.</p></div>
+        <div class="nncard"><b>Preparedness</b><p>We do not wing it. Field visit or internal sync, you show up prepared.</p></div>
+        <div class="nncard"><b>Professional ethics</b><p>We are stewards of the resources and the trust our partners hand us.</p></div>
+      </div>
+    </div>
+    <div class="ngroup">
+      <h3>Respect for time and energy</h3>
+      <div class="nngrid">
+        <div class="nncard"><b>Deep work is protected</b><p>Check the calendar before you ping. Do Not Disturb means it. Engineering needs uninterrupted hours.</p></div>
+        <div class="nncard"><b>The right to disconnect</b><p>Log-off times and weekends hold unless something is genuinely down. Steady output beats heroics that need recovering from.</p></div>
+        <div class="nncard"><b>Meeting hygiene</b><p>No meeting without a why. Every invite carries an objective, and you are free to decline one you are not needed in.</p></div>
+      </div>
+    </div>
+    <div class="ngroup">
+      <h3>Ethical stewardship</h3>
+      <div class="nngrid">
+        <div class="nncard"><b>Customer centricity</b><p>We do not build for partners, we build with them. Success is how well the tech fits into their system.</p></div>
+        <div class="nncard"><b>Data sanctity</b><p>Beneficiary and client data is handled with real diligence. Their privacy is an absolute right, not a setting.</p></div>
+        <div class="nncard"><b>Financial sustainability</b><p>Every project has to contribute to the firm&rsquo;s long-term health. That stability is what lets the mission exist.</p></div>
+      </div>
+    </div>
+  <p class="lede" style="margin-top:26px;max-width:72ch">When we disagree, we come back to the Charter: is this decision getting us to zero bugs? Are we being kind to the person while being tough on the code?</p>
 </div></section>
 
 <!-- WHAT TO EXPECT -->
