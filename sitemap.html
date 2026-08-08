@@ -137,6 +137,28 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 }
 #topnav .links a.n-active{color:#fff;font-weight:600}
 #topnav.solid .links a.n-active,#topnav.scrolled .links a.n-active{color:var(--maroon)}
+
+/* detailed sitemap */
+.smap-summary{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:.95rem}
+.smap-summary b{color:var(--ink)}
+.smap-key{display:flex;align-items:center;gap:6px;font-size:.82rem}
+.smgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px 24px;margin-top:30px}
+.smgroup{background:var(--beige);border-radius:14px;padding:26px 26px 22px}
+.smgroup h4{font-family:var(--serif);font-size:1.08rem;font-weight:500;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.smgroup ul{list-style:none}
+.smgroup li{margin-bottom:15px}
+.smgroup li:last-child{margin-bottom:0}
+.smrow{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.smrow a{font-weight:600;font-size:.96rem;color:var(--ink)}
+.smrow a:hover{color:var(--maroon)}
+.smdesc{display:block;font-size:.83rem;color:var(--muted);margin-top:3px;line-height:1.42}
+.smbadge{flex:none;font-size:.64rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:#8a5a1f;background:#f3e2c2;border-radius:999px;padding:3px 9px;white-space:nowrap;margin-top:1px}
+.smsub{list-style:none;margin:9px 0 0;padding-left:14px;border-left:1.5px solid var(--line)}
+.smsub li{margin-bottom:6px;font-size:.86rem}
+.smsub a{color:var(--muted);font-weight:500}
+.smsub a:hover{color:var(--maroon)}
+@media(max-width:900px){.smgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.smgrid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -191,35 +213,119 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
   <div class="veil"></div>
   <div class="in">
     <h1>Site<em>map</em>.</h1>
-    <p>Every page on dhwaniris.com, in one place.</p>
+    <p>All 34 pages on dhwaniris.com, what's on each one, and what's still a placeholder.</p>
   </div>
 </div>
 
-<style>.smap{max-width:900px;columns:2;column-gap:60px}.smap h4{font-family:var(--serif);font-size:1.1rem;font-weight:500;margin:26px 0 10px;break-after:avoid}.smap h4:first-child{margin-top:0}.smap ul{list-style:none;margin-bottom:4px}.smap li{margin-bottom:8px;break-inside:avoid}.smap a{color:var(--muted);font-size:.95rem}.smap a:hover{color:var(--maroon)}@media(max-width:640px){.smap{columns:1}}</style>
-<section class="section"><div class="wrap smap">
-  <h4>Main</h4>
-  <ul><li><a href="index.html">Home</a></li><li><a href="solutions.html">Solutions</a></li><li><a href="who-we-serve.html">Who we serve</a></li><li><a href="our-work.html">Our work</a></li><li><a href="resources.html">Resources</a></li></ul>
+<section class="section"><div class="wrap">
+  <div class="smap-summary">
+    <span><b>34</b> pages</span>
+    <span>·</span>
+    <span><b>5</b> flagged for content</span>
+    <span class="smap-key"><span class="smbadge">Needs input</span> = has placeholder copy, marked below and in the page itself</span>
+  </div>
 
-  <h4>Products</h4>
-  <ul><li><a href="mgrant.html">mGrant (for Donors &amp; Nonprofits)</a></li><li><a href="mform.html">mForm</a></li><li><a href="anumati.html">Anumati</a></li><li><a href="radar.html">Radar</a></li></ul>
+  <div class="smgrid">
+    <div class="smgroup">
+      <h4>Main</h4>
+      <ul>
+        <li><div class="smrow"><a href="index.html">Home</a></div><span class="smdesc">Hero, who we serve, what we build, case studies, latest insights.</span></li>
+        <li><div class="smrow"><a href="solutions.html">Solutions</a><span class="smbadge" title="Exact sector-catalogue count to be confirmed.">Needs input</span></div><span class="smdesc">Products, systems and consulting, tabbed, plus browse-by-sector and browse-by-function.</span>
+          <ul class="smsub">
+            <li><a href="solutions.html#products">Products</a></li>
+            <li><a href="solutions.html#systems">Systems we build</a></li>
+            <li><a href="solutions.html#consulting">Consulting &amp; advisory</a></li>
+            <li><a href="solutions.html#sectors">Browse by sector</a></li>
+            <li><a href="solutions.html#functions">Browse by function</a></li>
+          </ul>
+        </li>
+        <li><div class="smrow"><a href="who-we-serve.html">Who we serve</a></div><span class="smdesc">Pick the door that fits you — see exactly what you get, by audience.</span></li>
+        <li><div class="smrow"><a href="our-work.html">Our work</a></div><span class="smdesc">Case studies and project write-ups, filterable by sector and audience.</span></li>
+        <li><div class="smrow"><a href="resources.html">Resources</a></div><span class="smdesc">Toolkits, playbooks, decks and insights, tabbed.</span>
+          <ul class="smsub">
+            <li><a href="resources.html#toolkits">Toolkits</a></li>
+            <li><a href="resources.html#playbooks">Playbooks</a></li>
+            <li><a href="resources.html#decks">Decks</a></li>
+            <li><a href="resources.html#insights">Insights</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
 
-  <h4>Systems we build</h4>
-  <ul><li><a href="programme-mis.html">Programme MIS</a></li><li><a href="impact-dashboards.html">Impact Dashboards</a></li><li><a href="grant-management.html">Grant Management</a></li><li><a href="donor-management.html">Donor Management</a></li><li><a href="field-data-apps.html">Field Data Apps</a></li><li><a href="back-office-it.html">Back-office IT</a></li><li><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></li></ul>
+    <div class="smgroup">
+      <h4>Products</h4>
+      <ul>
+        <li><div class="smrow"><a href="mgrant.html">mGrant</a></div><span class="smdesc">Grant management, for Donors and for Nonprofits, from disbursement to utilisation.</span></li>
+        <li><div class="smrow"><a href="mform.html">mForm</a></div><span class="smdesc">Offline-first field data collection that flows straight into your MIS.</span></li>
+        <li><div class="smrow"><a href="anumati.html">Anumati</a></div><span class="smdesc">DPDP consent management for beneficiary personal data.</span></li>
+        <li><div class="smrow"><a href="radar.html">Radar</a></div><span class="smdesc">AI-driven due diligence and risk intelligence.</span></li>
+      </ul>
+    </div>
 
-  <h4>Consulting &amp; advisory</h4>
-  <ul><li><a href="dpdp-act-readiness.html">DPDP Act Readiness</a></li><li><a href="cloud-optimisation.html">Cloud Optimisation</a></li><li><a href="ai-for-impact.html">AI for Impact</a></li><li><a href="digital-transformation.html">Digital Transformation</a></li><li><a href="programme-management.html">Programme Management as a Service</a></li></ul>
+    <div class="smgroup">
+      <h4>Systems we build</h4>
+      <ul>
+        <li><div class="smrow"><a href="programme-mis.html">Programme MIS</a></div><span class="smdesc">Run your whole programme in one system.</span></li>
+        <li><div class="smrow"><a href="impact-dashboards.html">Impact Dashboards</a></div><span class="smdesc">Live results for funders and boards.</span></li>
+        <li><div class="smrow"><a href="grant-management.html">Grant Management</a></div><span class="smdesc">From disbursement to utilisation.</span></li>
+        <li><div class="smrow"><a href="donor-management.html">Donor Management</a></div><span class="smdesc">Track every donor, grant and report.</span></li>
+        <li><div class="smrow"><a href="field-data-apps.html">Field Data Apps</a></div><span class="smdesc">Offline-first data from the field.</span></li>
+        <li><div class="smrow"><a href="back-office-it.html">Back-office IT</a></div><span class="smdesc">Finance, HR and IT, connected.</span></li>
+        <li><div class="smrow"><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></div><span class="smdesc">Track indicators and outcomes in real time.</span></li>
+      </ul>
+    </div>
 
-  <h4>Who we serve</h4>
-  <ul><li><a href="for-donors.html">For Donors &amp; CSRs</a></li><li><a href="for-ngos.html">For NGOs</a></li><li><a href="for-government.html">For Government &amp; Multilaterals</a></li><li><a href="for-academic.html">For Academic &amp; Research</a></li></ul>
+    <div class="smgroup">
+      <h4>Consulting &amp; advisory</h4>
+      <ul>
+        <li><div class="smrow"><a href="dpdp-act-readiness.html">DPDP Act Readiness</a></div><span class="smdesc">Get compliant before May 2027.</span></li>
+        <li><div class="smrow"><a href="cloud-optimisation.html">Cloud Optimisation</a></div><span class="smdesc">Cut cloud bills 30–40%.</span></li>
+        <li><div class="smrow"><a href="ai-for-impact.html">AI for Impact</a></div><span class="smdesc">AI where it saves real time.</span></li>
+        <li><div class="smrow"><a href="digital-transformation.html">Digital Transformation</a></div><span class="smdesc">A roadmap, then the build.</span></li>
+        <li><div class="smrow"><a href="programme-management.html">Programme Management as a Service</a></div><span class="smdesc">Embedded PMU capacity for your programme.</span></li>
+      </ul>
+    </div>
 
-  <h4>Company</h4>
-  <ul><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="careers.html">Careers</a></li><li><a href="life-at-dhwani.html">Life at Dhwani</a></li><li><a href="community.html">Community</a></li><li><a href="technology.html">Technology at Dhwani</a></li></ul>
+    <div class="smgroup">
+      <h4>Who we serve</h4>
+      <ul>
+        <li><div class="smrow"><a href="for-donors.html">For Donors &amp; CSRs</a></div><span class="smdesc">Live visibility across every grantee — spend, reach and results in one place.</span></li>
+        <li><div class="smrow"><a href="for-ngos.html">For NGOs</a></div><span class="smdesc">Offline-first field apps and a programme MIS your team can run end to end.</span></li>
+        <li><div class="smrow"><a href="for-government.html">For Government &amp; Multilaterals</a></div><span class="smdesc">Large-scale MIS with the interoperability and governance public programmes need.</span></li>
+        <li><div class="smrow"><a href="for-academic.html">For Academic &amp; Research</a></div><span class="smdesc">Clean, ethical, well-governed data at scale for research programmes.</span></li>
+      </ul>
+    </div>
 
-  <h4>Resources</h4>
-  <ul><li><a href="resources.html#toolkits">Toolkits</a></li><li><a href="resources.html#playbooks">Playbooks</a></li><li><a href="resources.html#decks">Decks</a></li><li><a href="resources.html#insights">Insights</a></li></ul>
+    <div class="smgroup">
+      <h4>Company</h4>
+      <ul>
+        <li><div class="smrow"><a href="about.html">About</a><span class="smbadge" title="Exact country list to be confirmed with the team.">Needs input</span></div><span class="smdesc">Our story since 2015, from Gurugram — who we are and where we work.</span></li>
+        <li><div class="smrow"><a href="team.html">Team</a><span class="smbadge" title="3 advisor bios to be confirmed.">Needs input</span></div><span class="smdesc">Everyone, by team — leadership through support, tabbed.</span>
+          <ul class="smsub">
+            <li><a href="team.html#leadership">Leadership</a></li>
+            <li><a href="team.html#advisors">Advisors</a></li>
+            <li><a href="team.html#executive">Executive team</a></li>
+            <li><a href="team.html#management">Management team</a></li>
+            <li><a href="team.html#tech">Tech team</a></li>
+            <li><a href="team.html#support">Support — HR &amp; Finance</a></li>
+          </ul>
+        </li>
+        <li><div class="smrow"><a href="careers.html">Careers</a></div><span class="smdesc">Open roles and how we hire.</span></li>
+        <li><div class="smrow"><a href="life-at-dhwani.html">Life at Dhwani</a></div><span class="smdesc">Culture, office and field life.</span></li>
+        <li><div class="smrow"><a href="community.html">Community</a><span class="smbadge" title="Upcoming event dates to be confirmed.">Needs input</span></div><span class="smdesc">Practitioner community, events and channels.</span></li>
+        <li><div class="smrow"><a href="technology.html">Technology at Dhwani</a></div><span class="smdesc">Our open-source approach and stack.</span></li>
+      </ul>
+    </div>
 
-  <h4>Other</h4>
-  <ul><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="sitemap.html">Sitemap</a></li></ul>
+    <div class="smgroup">
+      <h4>Other</h4>
+      <ul>
+        <li><div class="smrow"><a href="contact.html">Contact</a><span class="smbadge" title="Calendar booking link to be connected.">Needs input</span></div><span class="smdesc">Book a call or send a message, plus WhatsApp/email/phone and the office map.</span></li>
+        <li><div class="smrow"><a href="privacy.html">Privacy Policy</a></div><span class="smdesc">How we collect, use and protect information on this site.</span></li>
+        <li><div class="smrow"><a href="sitemap.html">Sitemap</a></div><span class="smdesc">This page.</span></li>
+      </ul>
+    </div>
+  </div>
 </div></section>
 
 <!-- FOOTER -->
@@ -329,7 +435,7 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
     {kw:['radar','due diligence','risk intelligence'],
      a:"Radar is our AI-driven due-diligence and risk-intelligence platform for donors and CSR teams. <a href=\"radar.html\">See Radar &#8594;</a>"},
     {kw:['team','who works','employee','leadership','founder'],
-     a:"Dhwani was founded by Sunandan Madan and Swapnil Agarwal, and is now a team of 97 across leadership, delivery, engineering and support. <a href=\"team.html\">Meet the team &#8594;</a>"},
+     a:"Dhwani was founded by Sunandan Madan and Swapnil Agarwal, and is now a team of 100 across leadership, delivery, engineering and support. <a href=\"team.html\">Meet the team &#8594;</a>"},
     {kw:['life at dhwani','culture','office','what is it like'],
      a:"Gurugram-based, with regular field visits and Tech for Good sessions. <a href=\"life-at-dhwani.html\">See Life at Dhwani &#8594;</a>"},
     {kw:['blog','insight','article','case stud'],

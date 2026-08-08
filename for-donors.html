@@ -59,11 +59,11 @@ em{font-style:italic}
 /* what you get (tiles) */
 .wyg h2{margin-bottom:44px}
 .cgrid{display:grid;gap:16px;grid-template-columns:repeat(4,1fr)}
-.ocard{display:flex;flex-direction:column;min-height:300px;background:var(--beige);border-radius:8px;padding:34px 30px 30px;transition:.2s}
+.ocard{display:flex;flex-direction:column;min-height:clamp(210px,26vw,300px);background:var(--beige);border-radius:8px;padding:clamp(22px,3.4vw,34px);transition:.2s}
 .ocard:hover{background:var(--beige-h)}
 .ocard .ic{flex:1;display:flex;align-items:center;justify-content:center;color:#4a423c}
-.ocard .ic svg{width:78px;height:78px;stroke-width:1.05}
-.ocard h5{font-size:1.34rem;font-weight:500;margin-bottom:9px;color:var(--ink)}
+.ocard .ic svg{width:clamp(46px,6.8vw,78px);height:clamp(46px,6.8vw,78px);stroke-width:1.05}
+.ocard h5{font-size:clamp(1.2rem,1.9vw,1.34rem);font-weight:500;margin-bottom:9px;color:var(--ink)}
 .ocard p{color:var(--muted);font-size:.92rem;line-height:1.5;max-width:26ch}
 
 /* proof / case study */
@@ -366,7 +366,7 @@ build('row1',logos.slice(0,15));build('row2',logos.slice(15));})();
     {kw:['radar','due diligence','risk intelligence'],
      a:"Radar is our AI-driven due-diligence and risk-intelligence platform for donors and CSR teams. <a href=\"radar.html\">See Radar &#8594;</a>"},
     {kw:['team','who works','employee','leadership','founder'],
-     a:"Dhwani was founded by Sunandan Madan and Swapnil Agarwal, and is now a team of 97 across leadership, delivery, engineering and support. <a href=\"team.html\">Meet the team &#8594;</a>"},
+     a:"Dhwani was founded by Sunandan Madan and Swapnil Agarwal, and is now a team of 100 across leadership, delivery, engineering and support. <a href=\"team.html\">Meet the team &#8594;</a>"},
     {kw:['life at dhwani','culture','office','what is it like'],
      a:"Gurugram-based, with regular field visits and Tech for Good sessions. <a href=\"life-at-dhwani.html\">See Life at Dhwani &#8594;</a>"},
     {kw:['blog','insight','article','case stud'],

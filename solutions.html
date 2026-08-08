@@ -62,12 +62,11 @@ em{font-style:italic}
 .grp{margin-top:44px}
 .grp h4{font-size:1.28rem;font-weight:500;color:var(--ink);margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--line)}
 .cgrid{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
-.cgrid.four{grid-template-columns:repeat(4,1fr)}
-.ocard{display:flex;flex-direction:column;min-height:300px;background:var(--beige);border-radius:8px;padding:34px 30px 30px;transition:.2s}
+.ocard{display:flex;flex-direction:column;min-height:clamp(210px,26vw,300px);background:var(--beige);border-radius:8px;padding:clamp(22px,3.4vw,34px);transition:.2s}
 .ocard:hover{background:var(--beige-h)}
 .ocard .ic{flex:1;display:flex;align-items:center;justify-content:center;color:#4a423c}
-.ocard .ic svg{width:78px;height:78px;stroke-width:1.05}
-.ocard h5{font-size:1.34rem;font-weight:500;margin-bottom:9px;color:var(--ink)}
+.ocard .ic svg{width:clamp(46px,6.8vw,78px);height:clamp(46px,6.8vw,78px);stroke-width:1.05}
+.ocard h5{font-size:clamp(1.2rem,1.9vw,1.34rem);font-weight:500;margin-bottom:9px;color:var(--ink)}
 .ocard p{color:var(--muted);font-size:.92rem;line-height:1.5;max-width:26ch}
 .ocard.fill{background:var(--maroon)}.ocard.fill:hover{background:var(--maroon-2)}
 .ocard.fill .ic{color:#fff}.ocard.fill h5{color:#fff}.ocard.fill p{color:rgba(255,255,255,.82)}
@@ -76,6 +75,7 @@ em{font-style:italic}
 /* sectors */
 .sectors.section{background:var(--paper)}
 .sec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
+.sec-grid.four{grid-template-columns:repeat(4,1fr)}
 .scell{background:var(--beige);border-radius:10px;padding:24px 26px;transition:.2s;display:flex;align-items:center;justify-content:space-between;gap:14px}
 .scell:hover{background:var(--beige-h)}
 .scell b{font-family:var(--serif);font-size:1.18rem;font-weight:500;color:var(--ink)}
@@ -102,10 +102,10 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .fcontact{font-size:.88rem;color:var(--muted-d);line-height:1.9;margin-top:12px}.fcontact a{color:var(--orange-soft);font-weight:500}
 .foot-bot{border-top:1px solid var(--line-d);margin-top:52px;padding-top:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.82rem;color:rgba(255,255,255,.45)}
 
-@media(max-width:900px){.cgrid,.cgrid.four,.sec-grid{grid-template-columns:1fr 1fr}.ocard.span2{grid-column:auto}.fgrid,.frow2{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){.cgrid,.sec-grid,.sec-grid.four{grid-template-columns:1fr 1fr}.ocard.span2{grid-column:auto}.fgrid,.frow2{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.wrap{padding:0 22px}#topnav .nav-in{padding:22px 22px}#topnav .logo{height:50px}
   .ahero{margin:10px;border-radius:20px;padding:130px 24px 48px}.section{padding:58px 0}
-  .cgrid,.cgrid.four,.sec-grid{grid-template-columns:1fr}
+  .cgrid,.sec-grid,.sec-grid.four{grid-template-columns:1fr}
   .cta,footer{margin:10px;border-radius:20px}.fgrid,.frow2{grid-template-columns:1fr}.fnews{grid-column:auto}}
 
 /* ===== nav dropdowns ===== */
@@ -164,9 +164,27 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .deck-modal.sent .form-row{display:none}
 .deck-modal.sent .done{display:block}
 
-.ocard .ic.prod-ic{background:var(--tint);border-radius:14px;width:72px;height:72px;margin:0 auto;flex:0 0 auto}
-.ocard .ic.prod-ic img{width:44px;height:44px;object-fit:contain}
-.ocard .ic.prod-ic .wordmark{font-family:var(--serif);font-weight:600;font-size:1.9rem;color:var(--maroon)}
+.ocard .ic.prod-ic{background:var(--tint);border-radius:14px;width:clamp(50px,7vw,72px);height:clamp(50px,7vw,72px);margin:0 auto;flex:0 0 auto}
+.ocard .ic.prod-ic img{width:clamp(30px,4.2vw,44px);object-fit:contain}
+.ocard .ic.prod-ic .wordmark{font-family:var(--serif);font-weight:600;font-size:clamp(1.3rem,3vw,1.9rem);color:var(--maroon);line-height:1}
+
+/* solutions sidebar rail */
+.rlayout{display:grid;grid-template-columns:230px 1fr;gap:40px;align-items:start}
+.rrail{display:flex;flex-direction:column;gap:3px;position:sticky;top:100px}
+.rtab{font-family:var(--sans);font-size:.95rem;font-weight:500;color:var(--muted);background:none;border:none;cursor:pointer;text-align:left;display:flex;align-items:center;gap:11px;padding:12px 14px;border-radius:10px;width:100%}
+.rtab svg{flex:none;opacity:.8}
+.rtab:hover{background:var(--beige)}
+.rtab.on{background:var(--beige-h);color:var(--ink);font-weight:600}
+.rtab-count{margin-left:auto;font-size:.72rem;font-weight:600;color:var(--muted);background:var(--beige);border-radius:999px;padding:2px 9px}
+.rtab.on .rtab-count{color:#fff;background:var(--maroon)}
+.rpanels{min-width:0}
+.rgroup{display:none;margin-top:0}
+.rgroup.on{display:block}
+@media(max-width:900px){
+  .rlayout{grid-template-columns:1fr}
+  .rrail{position:static;flex-direction:row;overflow-x:auto;gap:8px;-webkit-overflow-scrolling:touch;padding-bottom:4px}
+  .rtab{white-space:nowrap;flex:none;width:auto}
+}
 </style>
 </head>
 <body>
@@ -227,80 +245,85 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
   </div>
 </div>
 
-<!-- PRODUCTS -->
-<section class="section wwd" id="products"><div class="wrap">
-  <h2 class="shead">Our products</h2>
-  <p class="lede">Five products the sector runs on, from grants to field data, consent and due diligence.</p>
-  <div class="grp">
-    <div class="cgrid four">
-<a class="ocard" href="mgrant.html"><span class="ic prod-ic"><img src="assets/img/products/mgrant-logo.png" alt="mGrant logo"></span><h5>mGrant for Donors</h5><p>Grant management for funders, from disbursement to utilisation.</p></a>
-<a class="ocard" href="mgrant.html"><span class="ic prod-ic"><img src="assets/img/products/mgrant-logo.png" alt="mGrant logo"></span><h5>mGrant for Nonprofits</h5><p>Grant management for NGOs, built around the grants you receive.</p></a>
-<a class="ocard" href="mform.html"><span class="ic prod-ic"><img src="assets/img/products/mform-logo.png" alt="mForm logo"></span><h5>mForm</h5><p>Offline-first field data collection that flows straight into your MIS.</p></a>
-<a class="ocard" href="anumati.html"><span class="ic prod-ic"><span class="wordmark">&#2309;</span></span><h5>Anumati</h5><p>DPDP consent management — अनुमति — for beneficiary personal data.</p></a>
-    <a class="ocard" href="radar.html"><span class="ic prod-ic"><span class="wordmark">R</span></span><h5>Radar</h5><p>AI-driven due diligence and risk intelligence.</p></a>
-  </div>
-  </div>
-</div></section>
-
-<!-- SYSTEMS + CONSULTING -->
-<section class="section wwd" id="systems"><div class="wrap">
-  <h2 class="shead">What we build</h2>
-  <p class="lede">The systems we build, and the consulting that gets you there.</p>
-
-  <div class="grp">
-    <h4>Systems we build</h4>
-    <div class="cgrid">
-      <a class="ocard" href="programme-mis.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span><div class="txt"><h5>Programme MIS</h5><p>Run your whole programme in one system.</p></div></a>
-      <a class="ocard" href="impact-dashboards.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 2 4-6"/></svg></span><div class="txt"><h5>Impact Dashboards</h5><p>Live results for funders and boards.</p></div></a>
-      <a class="ocard" href="grant-management.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="M9 13h6M9 17h4"/></svg></span><div class="txt"><h5>Grant Management</h5><p>From disbursement to utilisation.</p></div></a>
-      <a class="ocard" href="donor-management.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.5a3 3 0 0 1 0 5.5M21 20c0-2.6-1.6-4.9-4-5.8"/></svg></span><div class="txt"><h5>Donor Management</h5><p>Track every donor, grant and report.</p></div></a>
-      <a class="ocard" href="field-data-apps.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span><div class="txt"><h5>Field Data Apps</h5><p>Offline-first data from the field.</p></div></a>
-      <a class="ocard" href="back-office-it.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="6" rx="1.5"/><rect x="2" y="14" width="20" height="6" rx="1.5"/><path d="M6 7h.01M6 17h.01"/></svg></span><div class="txt"><h5>Back-office IT</h5><p>Finance, HR and IT, connected.</p></div></a>
-      <a class="ocard" href="monitoring-evaluation.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><path d="M12 11.5v1"/></svg></span><div class="txt"><h5>Monitoring &amp; Evaluation</h5><p>Track indicators and outcomes in real time.</p></div></a>
-      <a class="ocard fill span2" href="our-work.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><div class="txt"><h5>Explore our work</h5><p>Case studies &amp; solutions →</p></div></a>
+<!-- SOLUTIONS EXPLORER (tabbed rail) -->
+<section class="section wwd" id="explore"><div class="wrap">
+  <h2 class="shead">Everything we offer</h2>
+  <p class="lede">Products, systems, consulting and the full solutions catalogue — one place to find the fit for your programme.</p>
+  <div class="rlayout">
+    <div class="rrail" role="tablist">
+      <button class="rtab" data-tab="products"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7z"/><path d="M3 7l9 5 9-5M12 22V12"/></svg><span>Products</span><span class="rtab-count">5</span></button>
+      <button class="rtab" data-tab="systems"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg><span>Systems we build</span><span class="rtab-count">7</span></button>
+      <button class="rtab" data-tab="consulting"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 8.5-8 11-4.6-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg><span>Consulting &amp; advisory</span><span class="rtab-count">5</span></button>
+      <button class="rtab" data-tab="sectors"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 12l10 5 10-5M2 17l10 5 10-5"/></svg><span>Browse by sector</span><span class="rtab-count">9</span></button>
+      <button class="rtab" data-tab="functions"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="6" rx="1.5"/><rect x="2" y="14" width="20" height="6" rx="1.5"/><path d="M6 7h.01M6 17h.01"/></svg><span>Browse by function</span><span class="rtab-count">4</span></button>
     </div>
-  </div>
+    <div class="rpanels">
 
-  <div class="grp" id="consulting">
-    <h4>Consulting &amp; advisory</h4>
-    <div class="cgrid">
-      <a class="ocard" href="dpdp-act-readiness.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 8.5-8 11-4.6-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></span><div class="txt"><h5>DPDP Act Readiness</h5><p>Get compliant before May 2027.</p></div></a>
-      <a class="ocard" href="cloud-optimisation.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 17a4 4 0 0 1 0-8 5.5 5.5 0 0 1 10.6-1.5A3.8 3.8 0 0 1 18 17z"/><path d="M12 12v5M9.5 14.5L12 12l2.5 2.5"/></svg></span><div class="txt"><h5>Cloud Optimisation</h5><p>Cut cloud bills 30–40%.</p></div></a>
-      <a class="ocard" href="ai-for-impact.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l1.8 4.4L18 8l-4.2 1.6L12 14l-1.8-4.4L6 8l4.2-1.6z"/><path d="M18 15l.9 2.1L21 18l-2.1.9L18 21l-.9-2.1L15 18l2.1-.9z"/></svg></span><div class="txt"><h5>AI for Impact</h5><p>AI where it saves real time.</p></div></a>
-      <a class="ocard" href="digital-transformation.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20L20 4M9 4h11v11"/></svg></span><div class="txt"><h5>Digital Transformation</h5><p>A roadmap, then the build.</p></div></a>
-          <a class="ocard" href="programme-management.html"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span><h5>Programme Management as a Service</h5><p>Embedded PMU capacity for your programme.</p></a>
-      <a class="ocard fill span2" href="our-work.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><div class="txt"><h5>Explore our work</h5><p>Case studies &amp; solutions →</p></div></a>
+      <div class="rgroup" id="products">
+        <p class="lede" style="margin-top:-8px;margin-bottom:18px">Five products the sector runs on, from grants to field data, consent and due diligence.</p>
+        <div class="cgrid">
+          <a class="ocard" href="mgrant.html"><span class="ic prod-ic"><img src="assets/img/products/mgrant-logo.png" alt="mGrant logo"></span><h5>mGrant for Donors</h5><p>Grant management for funders, from disbursement to utilisation.</p></a>
+          <a class="ocard" href="mgrant.html"><span class="ic prod-ic"><img src="assets/img/products/mgrant-logo.png" alt="mGrant logo"></span><h5>mGrant for Nonprofits</h5><p>Grant management for NGOs, built around the grants you receive.</p></a>
+          <a class="ocard" href="mform.html"><span class="ic prod-ic"><img src="assets/img/products/mform-logo.png" alt="mForm logo"></span><h5>mForm</h5><p>Offline-first field data collection that flows straight into your MIS.</p></a>
+          <a class="ocard" href="anumati.html"><span class="ic prod-ic"><span class="wordmark">&#2309;</span></span><h5>Anumati</h5><p>DPDP consent management — अनुमति — for beneficiary personal data.</p></a>
+          <a class="ocard" href="radar.html"><span class="ic prod-ic"><span class="wordmark">R</span></span><h5>Radar</h5><p>AI-driven due diligence and risk intelligence.</p></a>
+          <a class="ocard fill" href="contact.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><h5>Talk to our product team</h5><p>Find the right fit for your programme.</p></a>
+        </div>
+      </div>
+
+      <div class="rgroup" id="systems">
+        <p class="lede" style="margin-top:-8px;margin-bottom:18px">The systems that run day-to-day operations, end to end.</p>
+        <div class="cgrid">
+          <a class="ocard" href="programme-mis.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span><div class="txt"><h5>Programme MIS</h5><p>Run your whole programme in one system.</p></div></a>
+          <a class="ocard" href="impact-dashboards.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 2 4-6"/></svg></span><div class="txt"><h5>Impact Dashboards</h5><p>Live results for funders and boards.</p></div></a>
+          <a class="ocard" href="grant-management.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="M9 13h6M9 17h4"/></svg></span><div class="txt"><h5>Grant Management</h5><p>From disbursement to utilisation.</p></div></a>
+          <a class="ocard" href="donor-management.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.5a3 3 0 0 1 0 5.5M21 20c0-2.6-1.6-4.9-4-5.8"/></svg></span><div class="txt"><h5>Donor Management</h5><p>Track every donor, grant and report.</p></div></a>
+          <a class="ocard" href="field-data-apps.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span><div class="txt"><h5>Field Data Apps</h5><p>Offline-first data from the field.</p></div></a>
+          <a class="ocard" href="back-office-it.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="6" rx="1.5"/><rect x="2" y="14" width="20" height="6" rx="1.5"/><path d="M6 7h.01M6 17h.01"/></svg></span><div class="txt"><h5>Back-office IT</h5><p>Finance, HR and IT, connected.</p></div></a>
+          <a class="ocard" href="monitoring-evaluation.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><path d="M12 11.5v1"/></svg></span><div class="txt"><h5>Monitoring &amp; Evaluation</h5><p>Track indicators and outcomes in real time.</p></div></a>
+          <a class="ocard fill span2" href="our-work.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><div class="txt"><h5>Explore our work</h5><p>Case studies &amp; solutions →</p></div></a>
+        </div>
+      </div>
+
+      <div class="rgroup" id="consulting">
+        <p class="lede" style="margin-top:-8px;margin-bottom:18px">Get compliant, cut costs, and put AI to work — with the people who'll implement it.</p>
+        <div class="cgrid">
+          <a class="ocard" href="dpdp-act-readiness.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 8.5-8 11-4.6-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></span><div class="txt"><h5>DPDP Act Readiness</h5><p>Get compliant before May 2027.</p></div></a>
+          <a class="ocard" href="cloud-optimisation.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 17a4 4 0 0 1 0-8 5.5 5.5 0 0 1 10.6-1.5A3.8 3.8 0 0 1 18 17z"/><path d="M12 12v5M9.5 14.5L12 12l2.5 2.5"/></svg></span><div class="txt"><h5>Cloud Optimisation</h5><p>Cut cloud bills 30–40%.</p></div></a>
+          <a class="ocard" href="ai-for-impact.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l1.8 4.4L18 8l-4.2 1.6L12 14l-1.8-4.4L6 8l4.2-1.6z"/><path d="M18 15l.9 2.1L21 18l-2.1.9L18 21l-.9-2.1L15 18l2.1-.9z"/></svg></span><div class="txt"><h5>AI for Impact</h5><p>AI where it saves real time.</p></div></a>
+          <a class="ocard" href="digital-transformation.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20L20 4M9 4h11v11"/></svg></span><div class="txt"><h5>Digital Transformation</h5><p>A roadmap, then the build.</p></div></a>
+          <a class="ocard" href="programme-management.html"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span><div class="txt"><h5>Programme Management as a Service</h5><p>Embedded PMU capacity for your programme.</p></div></a>
+          <a class="ocard fill span2" href="our-work.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><div class="txt"><h5>Explore our work</h5><p>Case studies &amp; solutions →</p></div></a>
+        </div>
+      </div>
+
+      <div class="rgroup" id="sectors">
+        <p class="lede" style="margin-top:-8px;margin-bottom:18px">Our full solutions catalogue, filterable by the sector you work in.</p>
+        <div class="sec-grid">
+          <a class="scell" href="our-work.html?sector=healthcare"><b>Healthcare</b><span class="arw">→</span></a>
+          <a class="scell" href="our-work.html?sector=agriculture"><b>Agriculture &amp; Livelihoods</b><span class="arw">→</span></a>
+          <a class="scell" href="our-work.html?sector=education"><b>Education &amp; Skilling</b><span class="arw">→</span></a>
+          <a class="scell" href="our-work.html?sector=financial-inclusion"><b>Social Protection &amp; Financial Inclusion</b><span class="arw">→</span></a>
+          <a class="scell" href="our-work.html?sector=climate"><b>Climate &amp; Environment</b><span class="arw">→</span></a>
+          <a class="scell" href="our-work.html?sector=governance"><b>Good Governance</b><span class="arw">→</span></a>
+          <a class="scell" href="our-work.html?sector=entrepreneurship"><b>Entrepreneurship</b><span class="arw">→</span></a>
+          <a class="scell" href="our-work.html?sector=mel"><b>Programme Management &amp; MEL</b><span class="arw">→</span></a>
+          <a class="scell" href="our-work.html?sector=digital-ai"><b>Digital Channels &amp; AI</b><span class="arw">→</span></a>
+        </div>
+        <p class="sec-note">70+ solutions across these sectors. <span style="opacity:.7">[Exact count and full filterable catalogue to be confirmed.]</span></p>
+      </div>
+
+      <div class="rgroup" id="functions">
+        <p class="lede" style="margin-top:-8px;margin-bottom:18px">Or find solutions by the team that owns them.</p>
+        <div class="sec-grid four">
+          <a class="scell" href="our-work.html?function=giving"><b>Grants &amp; Giving Office</b><span class="arw">→</span></a>
+          <a class="scell" href="our-work.html?function=finance"><b>Finance &amp; Compliance</b><span class="arw">→</span></a>
+          <a class="scell" href="our-work.html?function=people"><b>People &amp; Culture</b><span class="arw">→</span></a>
+          <a class="scell" href="our-work.html?function=itops"><b>Knowledge &amp; IT Ops</b><span class="arw">→</span></a>
+        </div>
+      </div>
+
     </div>
-  </div>
-</div></section>
-
-<!-- BROWSE BY SECTOR -->
-<section class="section sectors" id="sectors"><div class="wrap">
-  <h2 class="shead">Browse by sector</h2>
-  <p class="lede">Our full solutions catalogue, filterable by the sector you work in.</p>
-  <div class="sec-grid">
-    <a class="scell" href="our-work.html?sector=healthcare"><b>Healthcare</b><span class="arw">→</span></a>
-    <a class="scell" href="our-work.html?sector=agriculture"><b>Agriculture &amp; Livelihoods</b><span class="arw">→</span></a>
-    <a class="scell" href="our-work.html?sector=education"><b>Education &amp; Skilling</b><span class="arw">→</span></a>
-    <a class="scell" href="our-work.html?sector=financial-inclusion"><b>Social Protection &amp; Financial Inclusion</b><span class="arw">→</span></a>
-    <a class="scell" href="our-work.html?sector=climate"><b>Climate &amp; Environment</b><span class="arw">→</span></a>
-    <a class="scell" href="our-work.html?sector=governance"><b>Good Governance</b><span class="arw">→</span></a>
-    <a class="scell" href="our-work.html?sector=entrepreneurship"><b>Entrepreneurship</b><span class="arw">→</span></a>
-    <a class="scell" href="our-work.html?sector=mel"><b>Programme Management &amp; MEL</b><span class="arw">→</span></a>
-    <a class="scell" href="our-work.html?sector=digital-ai"><b>Digital Channels &amp; AI</b><span class="arw">→</span></a>
-  </div>
-  <p class="sec-note">70+ solutions across these sectors. <span style="opacity:.7">[Exact count and full filterable catalogue to be confirmed.]</span></p>
-</div></section>
-
-<!-- BROWSE BY FUNCTION -->
-<section class="section sectors" style="background:var(--paper)"><div class="wrap">
-  <h2 class="shead">Browse by function</h2>
-  <p class="lede">Or find solutions by the team that owns them.</p>
-  <div class="sec-grid">
-    <a class="scell" href="our-work.html?function=giving"><b>Grants &amp; Giving Office</b><span class="arw">→</span></a>
-    <a class="scell" href="our-work.html?function=finance"><b>Finance &amp; Compliance</b><span class="arw">→</span></a>
-    <a class="scell" href="our-work.html?function=people"><b>People &amp; Culture</b><span class="arw">→</span></a>
-    <a class="scell" href="our-work.html?function=itops"><b>Knowledge &amp; IT Ops</b><span class="arw">→</span></a>
   </div>
 </div></section>
 
@@ -452,7 +475,7 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
     {kw:['radar','due diligence','risk intelligence'],
      a:"Radar is our AI-driven due-diligence and risk-intelligence platform for donors and CSR teams. <a href=\"radar.html\">See Radar &#8594;</a>"},
     {kw:['team','who works','employee','leadership','founder'],
-     a:"Dhwani was founded by Sunandan Madan and Swapnil Agarwal, and is now a team of 97 across leadership, delivery, engineering and support. <a href=\"team.html\">Meet the team &#8594;</a>"},
+     a:"Dhwani was founded by Sunandan Madan and Swapnil Agarwal, and is now a team of 100 across leadership, delivery, engineering and support. <a href=\"team.html\">Meet the team &#8594;</a>"},
     {kw:['life at dhwani','culture','office','what is it like'],
      a:"Gurugram-based, with regular field visits and Tech for Good sessions. <a href=\"life-at-dhwani.html\">See Life at Dhwani &#8594;</a>"},
     {kw:['blog','insight','article','case stud'],
@@ -548,6 +571,25 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
     e.preventDefault();
     modal.classList.add('sent');
   });
+})();
+</script>
+
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.rtab'));
+  var panels=[].slice.call(document.querySelectorAll('.rgroup'));
+  if(!tabs.length) return;
+  function activate(name){
+    tabs.forEach(function(t){t.classList.toggle('on',t.dataset.tab===name);});
+    panels.forEach(function(p){p.classList.toggle('on',p.id===name);});
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){
+    activate(t.dataset.tab);
+    try{history.replaceState(null,'','solutions.html#'+t.dataset.tab);}catch(e){}
+  });});
+  var hash=location.hash.replace('#','');
+  var valid=tabs.some(function(t){return t.dataset.tab===hash;});
+  activate(valid?hash:'products');
 })();
 </script>
 </body>

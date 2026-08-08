@@ -60,11 +60,8 @@ em{font-style:italic}
 .chero p{color:rgba(255,255,255,.82);font-size:1.08rem}
 
 /* ===== contact body ===== */
-.cstack{max-width:640px;margin:0 auto}
-.form-card{background:var(--beige);border-radius:16px;padding:38px 36px}
+.form-card{background:var(--beige);border-radius:16px;padding:34px 32px}
 .book-card{text-align:center}
-.c-or{display:flex;align-items:center;gap:14px;margin:28px 0;color:var(--muted);font-size:.85rem;text-transform:uppercase;letter-spacing:.1em}
-.c-or::before,.c-or::after{content:"";flex:1;height:1px;background:var(--line)}
 .form-card h2{font-size:1.7rem;margin-bottom:6px}
 .form-card .lede{color:var(--muted);margin-bottom:26px}
 .reach-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:980px;margin:44px auto 0}
@@ -129,7 +126,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .fcontact{font-size:.88rem;color:var(--muted-d);line-height:1.9;margin-top:12px}.fcontact a{color:var(--orange-soft);font-weight:500}
 .foot-bot{border-top:1px solid var(--line-d);margin-top:52px;padding-top:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.82rem;color:rgba(255,255,255,.45)}
 
-@media(max-width:900px){.contact-grid{grid-template-columns:1fr;gap:24px}.fgrid,.frow2{grid-template-columns:1fr 1fr}.fnews{grid-column:span 2}}
+@media(max-width:900px){.fgrid,.frow2{grid-template-columns:1fr 1fr}.fnews{grid-column:span 2}}
 @media(max-width:640px){
   .wrap{padding:0 22px}#topnav .nav-in{padding:14px 22px}#topnav .links{padding:4px 22px 16px}#topnav .logo{height:50px}
   .chero{margin:10px;border-radius:20px;padding:120px 24px 48px}
@@ -169,7 +166,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .chero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
 .pill.ghost{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.4);color:#fff}
 .pill.ghost:hover{border-color:#fff;background:rgba(255,255,255,.16)}
-.two-cta{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.two-cta{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;max-width:980px;margin:0 auto}
 @media(max-width:820px){.two-cta,.reach-row{grid-template-columns:1fr}}
 #topnav .links a.n-active{color:#fff;font-weight:600}
 #topnav.solid .links a.n-active,#topnav.scrolled .links a.n-active{color:var(--maroon)}
@@ -230,17 +227,15 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
   <div class="chero-btns"><a class="pill pill-primary" href="#book">Book a call <span class="arw">&#8594;</span></a><a class="pill ghost" href="#message">Send a message</a></div>
 </div></div>
 
-<!-- ===== MAIN: book + message, stacked ===== -->
+<!-- ===== MAIN: book + message, side by side ===== -->
 <section class="wrap" style="padding-top:var(--pad);padding-bottom:52px">
-  <div class="cstack">
+  <div class="two-cta">
     <div class="form-card book-card" id="book">
       <h2>Book a call</h2>
       <p class="lede">Pick a time that suits you and talk to a real person about what your programme needs.</p>
       <a class="pill pill-primary" href="#">Pick a slot <span class="arw">&#8594;</span></a>
       <p class="form-note"><span style="opacity:.7">[Calendar booking link to be connected.]</span></p>
     </div>
-
-    <div class="c-or"><span>or</span></div>
 
     <div id="message">
       <form class="form-card" id="contact-form" novalidate>
@@ -433,7 +428,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
     {kw:['radar','due diligence','risk intelligence'],
      a:"Radar is our AI-driven due-diligence and risk-intelligence platform for donors and CSR teams. <a href=\"radar.html\">See Radar &#8594;</a>"},
     {kw:['team','who works','employee','leadership','founder'],
-     a:"Dhwani was founded by Sunandan Madan and Swapnil Agarwal, and is now a team of 97 across leadership, delivery, engineering and support. <a href=\"team.html\">Meet the team &#8594;</a>"},
+     a:"Dhwani was founded by Sunandan Madan and Swapnil Agarwal, and is now a team of 100 across leadership, delivery, engineering and support. <a href=\"team.html\">Meet the team &#8594;</a>"},
     {kw:['life at dhwani','culture','office','what is it like'],
      a:"Gurugram-based, with regular field visits and Tech for Good sessions. <a href=\"life-at-dhwani.html\">See Life at Dhwani &#8594;</a>"},
     {kw:['blog','insight','article','case stud'],
