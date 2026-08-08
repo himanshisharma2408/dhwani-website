@@ -72,14 +72,15 @@ em{font-style:italic}
 
 /* people */
 .people.section{background:var(--paper)}
-.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
-.pcard{background:var(--beige);border-radius:12px;padding:30px 28px}
-.pcard .av{width:56px;height:56px;border-radius:50%;background:var(--tint);color:var(--muted);display:flex;align-items:center;justify-content:center;margin-bottom:18px;overflow:hidden}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px}
+.pcard{background:var(--beige);border-radius:12px;overflow:hidden}
+.pcard .av{width:100%;aspect-ratio:1/1;border-radius:0;background:var(--tint);color:var(--muted);display:flex;align-items:center;justify-content:center;margin-bottom:0}
 .pcard .av img{width:100%;height:100%;object-fit:cover}
-.pgrid.lead-grid{grid-template-columns:1fr 1fr;max-width:660px}
-.pcard h4{font-size:1.25rem;font-weight:500;margin-bottom:4px}
-.pcard .role{font-size:.85rem;color:var(--maroon);font-weight:600;margin-bottom:12px}
-.pcard p{color:var(--muted);font-size:.92rem}
+.pcard .av svg{width:36%;height:36%}
+.pgrid.lead-grid{grid-template-columns:repeat(2,1fr);max-width:520px}
+.pcard h4{font-size:1.1rem;font-weight:500;margin:16px 18px 2px}
+.pcard .role{font-size:.83rem;color:var(--maroon);font-weight:600;margin:0 18px 18px}
+.advisor-placeholder{background:var(--beige);border:1px dashed var(--line);border-radius:12px;padding:26px 28px;color:var(--muted);font-size:.95rem}
 
 /* two-up (careers / community) */
 .twoup{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
@@ -238,28 +239,19 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 
 <!-- TEAM -->
 <section class="section people" id="team"><div class="wrap">
-  <h2 class="shead">Everyone, by team</h2>
   <h4 class="tgrp" style="margin-top:0">Leadership</h4>
   <div class="pgrid lead-grid">
-    <div class="pcard"><div class="av"><img src="assets/img/team/sunandan-madan.png" alt="Sunandan Madan"></div><h4>Sunandan Madan</h4><div class="role">Co-founder</div><p>Started Dhwani after seeing how hard it was for grassroots organisations to use technology.</p></div>
-    <div class="pcard"><div class="av"><img src="assets/img/team/swapnil-agarwal.png" alt="Swapnil Agarwal"></div><h4>Swapnil Agarwal</h4><div class="role">Co-founder</div><p>Co-founded Dhwani to build technology the impact sector could actually run on.</p></div>
+    <div class="pcard"><div class="av"><img src="assets/img/team/sunandan-madan.png" alt="Sunandan Madan"></div><h4>Sunandan Madan</h4><div class="role">Co-founder</div></div>
+    <div class="pcard"><div class="av"><img src="assets/img/team/swapnil-agarwal.png" alt="Swapnil Agarwal"></div><h4>Swapnil Agarwal</h4><div class="role">Co-founder</div></div>
   </div>
 
   <h4 class="tgrp">Advisors</h4>
-  <div class="pgrid">
-    <div class="pcard"><div class="av"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></div><h4>Lobo</h4><div class="role">Advisor</div><p>[Advisor bio to be confirmed.]</p></div>
-    <div class="pcard"><div class="av"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></div><h4>Sharad Heda</h4><div class="role">Advisor</div><p>[Advisor bio to be confirmed.]</p></div>
-    <div class="pcard"><div class="av"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></div><h4>Sharad Agarwal</h4><div class="role">Advisor</div><p>[Advisor bio to be confirmed.]</p></div>
-  </div>
+  <div class="advisor-placeholder">Our advisory board is being finalised &mdash; details coming soon.</div>
 
   <h4 class="tgrp">Executive team</h4>
   <div class="pgrid lead-grid">
-    <div class="pcard"><div class="av"><img src="assets/img/team/siddharth-bhargava.jpg" alt="Siddharth Bhargava"></div><h4>Siddharth Bhargava</h4><div class="role">Chief Operating Officer</div><p>Leads operations across delivery, people and process.</p></div>
-    <div class="pcard"><div class="av"><img src="assets/img/team/Rajeev-Bhardwaj.jpg" alt="Rajeev Bhardwaj"></div><h4>Rajeev Bhardwaj</h4><div class="role">Chief Technology Officer</div><p>Owns the technology strategy behind Dhwani&rsquo;s products and platforms.</p></div>
-    <div class="pcard"><div class="av"><img src="assets/img/team/seema.jpg" alt="Seema Bhardwaj"></div><h4>Seema Bhardwaj</h4><div class="role">Chief Delivery Officer</div><p>Leads programme delivery across Dhwani&rsquo;s client engagements.</p></div>
-    <div class="pcard"><div class="av"><img src="assets/img/team/deepak-batra.jpg" alt="Deepak Batra"></div><h4>Deepak Batra</h4><div class="role">VP, Engineering</div><p>Leads the engineering organisation building Dhwani&rsquo;s products and platforms.</p></div>
-    <div class="pcard"><div class="av"><img src="assets/img/team/sahjad-ansari.jpg" alt="Sahjad Ansari"></div><h4>Sahjad Ansari</h4><div class="role">AVP, Products</div><p>Shapes the product roadmap across Dhwani&rsquo;s platforms.</p></div>
-    <div class="pcard"><div class="av"><img src="assets/img/team/shobhit-mathur.jpg" alt="Shobhit Mathur"></div><h4>Shobhit Mathur</h4><div class="role">Director, Partnerships</div><p>Builds and manages Dhwani&rsquo;s partner and client relationships.</p></div>
+    <div class="pcard"><div class="av"><img src="assets/img/team/siddharth-bhargava.jpg" alt="Siddharth Bhargava"></div><h4>Siddharth Bhargava</h4><div class="role">Chief Operating Officer</div></div>
+    <div class="pcard"><div class="av"><img src="assets/img/team/deepak-batra.jpg" alt="Deepak Batra"></div><h4>Deepak Batra</h4><div class="role">VP, Engineering</div></div>
   </div>
 
   <h4 class="tgrp" style="margin-top:60px">The wider team</h4>

@@ -85,7 +85,8 @@ em{font-style:italic}
 .mtrack.l{animation:scrollx 48s linear infinite}
 .mtrack.r{animation:scrollx 54s linear infinite reverse;margin-top:26px}
 @keyframes scrollx{to{transform:translateX(-50%)}}
-.mtrack img{height:30px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.5}
+.mtrack img{height:30px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.5;transition:filter .25s,opacity .25s}
+.mtrack img:hover{filter:grayscale(0);opacity:1}
 
 /* cta */
 .cta{position:relative;border-radius:28px;margin:0 16px;text-align:center;overflow:hidden;color:#fff;background:linear-gradient(rgba(18,12,11,.84),rgba(18,12,11,.9)),url('https://images.unsplash.com/photo-1707721690544-781fe6ede937?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat,var(--ink)}
