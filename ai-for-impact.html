@@ -59,6 +59,17 @@ em{font-style:italic}
 /* what you get (tiles) */
 .wyg h2{margin-bottom:44px}
 .cgrid{display:grid;gap:16px;grid-template-columns:repeat(4,1fr)}
+/* solution page: what-it-does tiles on the left, proof on the right */
+.sol2{display:grid;grid-template-columns:1.6fr 1fr;gap:46px;align-items:start}
+.sol2 .cgrid{grid-template-columns:1fr 1fr}
+.sol2 h3{font-size:1.32rem;font-weight:500;margin-bottom:4px}
+.sol2 .rlede{color:var(--muted);font-size:.9rem;margin-bottom:18px}
+.minicase{display:block;background:var(--beige);border-radius:10px;padding:16px 18px;margin-bottom:10px;transition:.2s}
+.minicase:hover{background:var(--beige-h)}
+.minicase b{display:block;font-family:var(--serif);font-size:1.05rem;font-weight:500;color:var(--ink);margin-bottom:3px}
+.minicase span{font-size:.85rem;color:var(--muted);line-height:1.45}
+@media(max-width:900px){.sol2{grid-template-columns:1fr;gap:34px}}
+
 .ocard{display:flex;flex-direction:column;min-height:clamp(210px,26vw,300px);background:var(--beige);border-radius:8px;padding:clamp(22px,3.4vw,34px);transition:.2s}
 .ocard:hover{background:var(--beige-h)}
 .ocard .ic{flex:1;display:flex;align-items:center;justify-content:center;color:#4a423c}
@@ -216,12 +227,12 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 
 <!-- WHAT IT DOES -->
 <section class="section wyg"><div class="wrap">
-  <h2 class="shead">What it does</h2>
+  <h2 class="shead">What we do</h2>
   <div class="cgrid">
-    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l1.8 4.4L18 8l-4.2 1.6L12 14l-1.8-4.4L6 8l4.2-1.6z"/><path d="M18 15l.9 2.1L21 18l-2.1.9L18 21l-.9-2.1L15 18l2.1-.9z"/></svg></span><h5>Data cleaning</h5><p>Faster, cleaner datasets to work from.</p></a>
-    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="12" y="7" width="3" height="10"/><rect x="17" y="4" width="3" height="13"/></svg></span><h5>Classification</h5><p>Sort and tag data at scale.</p></a>
-    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.5a3 3 0 0 1 0 5.5M21 20c0-2.6-1.6-4.9-4-5.8"/></svg></span><h5>Assistants</h5><p>Support tools your team can actually use.</p></a>
-    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 8.5-8 11-4.6-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></span><h5>Responsible AI</h5><p>Careful, transparent, human-in-the-loop.</p></a>
+    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l1.8 4.4L18 8l-4.2 1.6L12 14l-1.8-4.4L6 8l4.2-1.6z"/><path d="M18 15l.9 2.1L21 18l-2.1.9L18 21l-.9-2.1L15 18l2.1-.9z"/></svg></span><h5>Data cleaning</h5><p>Faster, cleaner datasets to work from.</p></div>
+    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="12" y="7" width="3" height="10"/><rect x="17" y="4" width="3" height="13"/></svg></span><h5>Classification</h5><p>Sort and tag data at scale.</p></div>
+    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.5a3 3 0 0 1 0 5.5M21 20c0-2.6-1.6-4.9-4-5.8"/></svg></span><h5>Assistants</h5><p>Support tools your team can actually use.</p></div>
+    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 8.5-8 11-4.6-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></span><h5>Responsible AI</h5><p>Careful, transparent, human-in-the-loop.</p></div>
   </div>
 </div></section>
 

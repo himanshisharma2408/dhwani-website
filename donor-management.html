@@ -59,6 +59,17 @@ em{font-style:italic}
 /* what you get (tiles) */
 .wyg h2{margin-bottom:44px}
 .cgrid{display:grid;gap:16px;grid-template-columns:repeat(4,1fr)}
+/* solution page: what-it-does tiles on the left, proof on the right */
+.sol2{display:grid;grid-template-columns:1.6fr 1fr;gap:46px;align-items:start}
+.sol2 .cgrid{grid-template-columns:1fr 1fr}
+.sol2 h3{font-size:1.32rem;font-weight:500;margin-bottom:4px}
+.sol2 .rlede{color:var(--muted);font-size:.9rem;margin-bottom:18px}
+.minicase{display:block;background:var(--beige);border-radius:10px;padding:16px 18px;margin-bottom:10px;transition:.2s}
+.minicase:hover{background:var(--beige-h)}
+.minicase b{display:block;font-family:var(--serif);font-size:1.05rem;font-weight:500;color:var(--ink);margin-bottom:3px}
+.minicase span{font-size:.85rem;color:var(--muted);line-height:1.45}
+@media(max-width:900px){.sol2{grid-template-columns:1fr;gap:34px}}
+
 .ocard{display:flex;flex-direction:column;min-height:clamp(210px,26vw,300px);background:var(--beige);border-radius:8px;padding:clamp(22px,3.4vw,34px);transition:.2s}
 .ocard:hover{background:var(--beige-h)}
 .ocard .ic{flex:1;display:flex;align-items:center;justify-content:center;color:#4a423c}
@@ -216,21 +227,27 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 
 <!-- WHAT IT DOES -->
 <section class="section wyg"><div class="wrap">
-  <h2 class="shead">What it does</h2>
-  <div class="cgrid">
-    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.5a3 3 0 0 1 0 5.5M21 20c0-2.6-1.6-4.9-4-5.8"/></svg></span><h5>Donor records</h5><p>Every funder and relationship in one system.</p></a>
-    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7"/><path d="M12 3v12M8 7l4-4 4 4"/></svg></span><h5>Grants received</h5><p>Terms, tranches and conditions, tracked.</p></a>
-    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg></span><h5>Reporting calendar</h5><p>Never miss a funder deadline again.</p></a>
-    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 2 4-6"/></svg></span><h5>Renewals</h5><p>See what is due and what is at risk.</p></a>
+  <div class="sol2">
+    <div>
+    <h2 class="shead">What it does</h2>
+    <div class="cgrid">
+    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.5a3 3 0 0 1 0 5.5M21 20c0-2.6-1.6-4.9-4-5.8"/></svg></span><h5>Donor records</h5><p>Every funder and relationship in one system.</p></div>
+    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7"/><path d="M12 3v12M8 7l4-4 4 4"/></svg></span><h5>Grants received</h5><p>Terms, tranches and conditions, tracked.</p></div>
+    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg></span><h5>Reporting calendar</h5><p>Never miss a funder deadline again.</p></div>
+    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 2 4-6"/></svg></span><h5>Renewals</h5><p>See what is due and what is at risk.</p></div>
+  </div>
+    </div>
+    <aside>
+      <h3>See it in our work</h3>
+      <p class="rlede">Programmes running on this today.</p>
+      <a class="minicase" href="our-work.html?case=mahindra"><b>Mahindra Group</b><span>One CSR platform for 53 group companies</span></a>
+      <a class="minicase" href="our-work.html?case=ciff"><b>CIFF &amp; Charities Aid Foundation</b><span>Grant infrastructure for international funders</span></a>
+      <a class="minicase" href="our-work.html?case=tri"><b>Transform Rural India</b><span>A technology partnership, 74 engagements deep</span></a>
+      <p style="margin-top:14px"><a class="tlink" href="our-work.html">Browse all our work <span class="arw">&#8594;</span></a></p>
+    </aside>
   </div>
 </div></section>
 
-<!-- PROOF -->
-<section class="section proof"><div class="wrap">
-  <h2 class="shead">See it in our work</h2>
-  <p class="lede">Programmes running on Donor Management across the sectors we work in.</p>
-  <p class="cases-cta" style="margin-top:22px"><a class="tlink" href="our-work.html?offering=grants-donors">Browse Donor Management projects <span class="arw">&#8594;</span></a></p>
-</div></section>
 
 <!-- CTA -->
 <div class="cta"><div class="in wrap">

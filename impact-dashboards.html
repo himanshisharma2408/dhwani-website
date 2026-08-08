@@ -59,6 +59,17 @@ em{font-style:italic}
 /* what you get (tiles) */
 .wyg h2{margin-bottom:44px}
 .cgrid{display:grid;gap:16px;grid-template-columns:repeat(4,1fr)}
+/* solution page: what-it-does tiles on the left, proof on the right */
+.sol2{display:grid;grid-template-columns:1.6fr 1fr;gap:46px;align-items:start}
+.sol2 .cgrid{grid-template-columns:1fr 1fr}
+.sol2 h3{font-size:1.32rem;font-weight:500;margin-bottom:4px}
+.sol2 .rlede{color:var(--muted);font-size:.9rem;margin-bottom:18px}
+.minicase{display:block;background:var(--beige);border-radius:10px;padding:16px 18px;margin-bottom:10px;transition:.2s}
+.minicase:hover{background:var(--beige-h)}
+.minicase b{display:block;font-family:var(--serif);font-size:1.05rem;font-weight:500;color:var(--ink);margin-bottom:3px}
+.minicase span{font-size:.85rem;color:var(--muted);line-height:1.45}
+@media(max-width:900px){.sol2{grid-template-columns:1fr;gap:34px}}
+
 .ocard{display:flex;flex-direction:column;min-height:clamp(210px,26vw,300px);background:var(--beige);border-radius:8px;padding:clamp(22px,3.4vw,34px);transition:.2s}
 .ocard:hover{background:var(--beige-h)}
 .ocard .ic{flex:1;display:flex;align-items:center;justify-content:center;color:#4a423c}
@@ -208,29 +219,35 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
   <div class="veil"></div>
   <div class="in">
     <div class="crumb"><a href="solutions.html">Solutions</a> / Impact Dashboards</div>
-    <h1>Results your board can <em>see</em>.</h1>
-    <p>Live dashboards that turn programme data into decisions, for funders and leadership.</p>
+    <h1>Results everyone can <em>see</em>.</h1>
+    <p>Live dashboards that turn programme data into decisions &mdash; for funders, governments and the teams running the programme.</p>
     <div class="btns"><a class="pill pill-primary" href="contact.html">Book a call <span class="arw">&#8594;</span></a><a class="pill pill-dark" href="our-work.html?offering=dashboards">See it in our work</a></div>
   </div>
 </div>
 
 <!-- WHAT IT DOES -->
 <section class="section wyg"><div class="wrap">
-  <h2 class="shead">What it does</h2>
-  <div class="cgrid">
-    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 2 4-6"/></svg></span><h5>One live view</h5><p>Spend, reach and results in a single place.</p></a>
-    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="12" y="7" width="3" height="10"/><rect x="17" y="4" width="3" height="13"/></svg></span><h5>Drill down</h5><p>From the headline number to the field record.</p></a>
-    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span><h5>Automated updates</h5><p>Always current, no manual spreadsheets.</p></a>
-    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="M9 13h6M9 17h4"/></svg></span><h5>Export &amp; share</h5><p>Board-ready views and downloads.</p></a>
+  <div class="sol2">
+    <div>
+    <h2 class="shead">What it does</h2>
+    <div class="cgrid">
+    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 2 4-6"/></svg></span><h5>One live view</h5><p>Spend, reach and results in a single place.</p></div>
+    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="12" y="7" width="3" height="10"/><rect x="17" y="4" width="3" height="13"/></svg></span><h5>Drill down</h5><p>From the headline number to the field record.</p></div>
+    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span><h5>Automated updates</h5><p>Always current, no manual spreadsheets.</p></div>
+    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="M9 13h6M9 17h4"/></svg></span><h5>Export &amp; share</h5><p>Board-ready views and downloads.</p></div>
+  </div>
+    </div>
+    <aside>
+      <h3>See it in our work</h3>
+      <p class="rlede">Programmes running on this today.</p>
+      <a class="minicase" href="our-work.html?case=orgperf"><b>Organisation Performance Dashboard</b><span>For an award-winning girls'-education non-profit working across 20,000+ villages</span></a>
+      <a class="minicase" href="our-work.html?case=livelihoods"><b>National Rural Livelihoods Dashboard</b><span>For the world's largest rural women's livelihoods mission</span></a>
+      <a class="minicase" href="our-work.html?case=edtech"><b>EdTech Accelerator Dashboard</b><span>For a leading education philanthropy's EdTech accelerator</span></a>
+      <p style="margin-top:14px"><a class="tlink" href="our-work.html">Browse all our work <span class="arw">&#8594;</span></a></p>
+    </aside>
   </div>
 </div></section>
 
-<!-- PROOF -->
-<section class="section proof"><div class="wrap">
-  <h2 class="shead">See it in our work</h2>
-  <p class="lede">Programmes running on Impact Dashboards across the sectors we work in.</p>
-  <p class="cases-cta" style="margin-top:22px"><a class="tlink" href="our-work.html?offering=dashboards">Browse Impact Dashboards projects <span class="arw">&#8594;</span></a></p>
-</div></section>
 
 <!-- CTA -->
 <div class="cta"><div class="in wrap">

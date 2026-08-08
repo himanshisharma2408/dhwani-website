@@ -50,6 +50,7 @@ em{font-style:italic}
 .ahero .bg{position:absolute;inset:0;background-size:cover;background-position:center 30%}
 .ahero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,12,11,.66) 0%,rgba(18,12,11,.42) 40%,rgba(18,12,11,.9) 100%)}
 .ahero .in{position:relative;z-index:2;max-width:680px}
+.prodmark{height:52px;width:auto;display:block;margin-bottom:18px;background:rgba(255,255,255,.94);border-radius:10px;padding:8px 14px}
 .ahero h1{font-size:clamp(2.7rem,5.2vw,4.4rem);margin-bottom:20px}
 .ahero h1 em{color:var(--orange-soft)}
 .ahero p{color:rgba(255,255,255,.88);font-size:1.08rem;max-width:560px;margin-bottom:28px}
@@ -59,6 +60,9 @@ em{font-style:italic}
 /* what you get (tiles) */
 .wyg h2{margin-bottom:44px}
 .cgrid{display:grid;gap:16px;grid-template-columns:repeat(4,1fr)}
+.edgrp{margin-bottom:34px}
+.edgrp h4{font-family:var(--serif);font-size:1.5rem;font-weight:500;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.edgrp h4 span{font-family:var(--sans);font-size:.82rem;color:var(--muted);font-weight:400;margin-left:10px}
 .ocard{display:flex;flex-direction:column;min-height:clamp(210px,26vw,300px);background:var(--beige);border-radius:8px;padding:clamp(22px,3.4vw,34px);transition:.2s}
 .ocard:hover{background:var(--beige-h)}
 .ocard .ic{flex:1;display:flex;align-items:center;justify-content:center;color:#4a423c}
@@ -208,6 +212,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
   <div class="veil"></div>
   <div class="in">
     <div class="crumb"><a href="solutions.html">Solutions</a> / mGrant</div>
+    <img class="prodmark" src="assets/img/products/mgrant-logo.png" alt="mGrant logo">
     <h1>Grant-making, end to <em>end</em>.</h1>
     <p>mGrant manages the full grant lifecycle, from application to utilisation &mdash; in two editions: mGrant for Donors (funders) and mGrant for Nonprofits (the NGOs who receive grants).</p>
     <div class="btns"><a class="pill pill-primary" href="contact.html">Book a call <span class="arw">&#8594;</span></a><a class="pill pill-dark" href="our-work.html">See our work</a></div>
@@ -217,12 +222,24 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 <!-- WHAT IT DOES -->
 <section class="section wyg"><div class="wrap">
   <h2 class="shead">What it does</h2>
-  <p class="lede" style="margin-top:-8px;margin-bottom:8px">Two editions: <b>mGrant for Donors</b> for funders and CSR, and <b>mGrant for Nonprofits</b> for NGOs managing the grants they receive.</p>
-  <div class="cgrid">
-    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="M9 13h6M9 17h4"/></svg></span><h5>Applications &amp; selection</h5><p>Intake, scoring and approvals in one workflow.</p></a>
-    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7"/><path d="M12 3v12M8 7l4-4 4 4"/></svg></span><h5>Disbursement &amp; tranches</h5><p>Release funds against milestones, with a clear trail.</p></a>
-    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 8.5-8 11-4.6-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></span><h5>Utilisation &amp; compliance</h5><p>Track spend against plan, flag issues early.</p></a>
-    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 2 4-6"/></svg></span><h5>Reporting &amp; dashboards</h5><p>A live portfolio view for funders and grantees alike.</p></a>
+  <p class="lede" style="margin-top:-8px;margin-bottom:26px">Two editions, because giving a grant and receiving one are different jobs. Nonprofits do not run application rounds, so that edition does not pretend they do.</p>
+  <div class="edgrp">
+    <h4>mGrant for Donors <span>funders, CSR teams and foundations</span></h4>
+    <div class="cgrid">
+      <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="M9 13h6M9 17h4"/></svg></span><h5>Applications &amp; selection</h5><p>Run a call for proposals: intake, scoring and approvals in one workflow.</p></div>
+      <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7"/><path d="M12 3v12M8 7l4-4 4 4"/></svg></span><h5>Disbursement &amp; tranches</h5><p>Release funds against milestones, with a clear trail.</p></div>
+      <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 8.5-8 11-4.6-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></span><h5>Utilisation &amp; compliance</h5><p>Track every grantee&rsquo;s spend against plan and flag issues early.</p></div>
+      <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 2 4-6"/></svg></span><h5>Portfolio dashboards</h5><p>One live view across every grantee and programme.</p></div>
+    </div>
+  </div>
+  <div class="edgrp">
+    <h4>mGrant NUO <span>nonprofits managing the grants they receive</span></h4>
+    <div class="cgrid">
+      <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.5a3 3 0 0 1 0 5.5M21 20c0-2.6-1.6-4.9-4-5.8"/></svg></span><h5>Donor &amp; proposal pipeline</h5><p>Track funders, opportunities and submissions in one place.</p></div>
+      <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M16 12h3"/></svg></span><h5>Project &amp; budget management</h5><p>Run each funded project against its own budget and milestones.</p></div>
+      <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 2 4-6"/></svg></span><h5>Donor reporting</h5><p>Report back to every funder in the format each one asks for.</p></div>
+      <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 8.5-8 11-4.6-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></span><h5>Compliance &amp; documents</h5><p>Statutory records, utilisation certificates and an audit trail.</p></div>
+    </div>
   </div>
 </div></section>
 

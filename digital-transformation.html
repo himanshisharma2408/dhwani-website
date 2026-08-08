@@ -59,6 +59,33 @@ em{font-style:italic}
 /* what you get (tiles) */
 .wyg h2{margin-bottom:44px}
 .cgrid{display:grid;gap:16px;grid-template-columns:repeat(4,1fr)}
+/* the non-profit journey */
+.jrn{border-top:1px solid var(--line)}
+.jstage{display:grid;grid-template-columns:64px 1fr 1fr;gap:30px;padding:34px 0;border-bottom:1px solid var(--line)}
+.jnum{font-family:var(--serif);font-size:1.6rem;color:var(--orange);line-height:1}
+.jband{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:8px}
+.jstage h3{font-family:var(--serif);font-size:1.6rem;font-weight:500;line-height:1.2;margin-bottom:10px}
+.jstage .jlede{color:var(--muted);font-size:.95rem;line-height:1.6}
+.jcol h6{font-family:var(--sans);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:0 0 10px}
+.jcol+.jcol{margin-top:22px}
+.jlist{list-style:none;margin:0;padding:0}
+.jlist li{position:relative;padding-left:18px;font-size:.92rem;line-height:1.55;margin-bottom:7px;color:var(--ink)}
+.jlist li:before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--line)}
+.jlist.fit li:before{background:var(--orange)}
+.jnote{margin-top:12px;font-family:var(--serif);font-style:italic;color:var(--maroon);font-size:.95rem}
+@media(max-width:900px){.jstage{grid-template-columns:44px 1fr;gap:18px}.jstage .jright{grid-column:2}}
+
+/* solution page: what-it-does tiles on the left, proof on the right */
+.sol2{display:grid;grid-template-columns:1.6fr 1fr;gap:46px;align-items:start}
+.sol2 .cgrid{grid-template-columns:1fr 1fr}
+.sol2 h3{font-size:1.32rem;font-weight:500;margin-bottom:4px}
+.sol2 .rlede{color:var(--muted);font-size:.9rem;margin-bottom:18px}
+.minicase{display:block;background:var(--beige);border-radius:10px;padding:16px 18px;margin-bottom:10px;transition:.2s}
+.minicase:hover{background:var(--beige-h)}
+.minicase b{display:block;font-family:var(--serif);font-size:1.05rem;font-weight:500;color:var(--ink);margin-bottom:3px}
+.minicase span{font-size:.85rem;color:var(--muted);line-height:1.45}
+@media(max-width:900px){.sol2{grid-template-columns:1fr;gap:34px}}
+
 .ocard{display:flex;flex-direction:column;min-height:clamp(210px,26vw,300px);background:var(--beige);border-radius:8px;padding:clamp(22px,3.4vw,34px);transition:.2s}
 .ocard:hover{background:var(--beige-h)}
 .ocard .ic{flex:1;display:flex;align-items:center;justify-content:center;color:#4a423c}
@@ -204,33 +231,67 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 
 <!-- HERO -->
 <div class="ahero">
-  <div class="bg" style="background-image:url('https://images.unsplash.com/flagged/photo-1576485436509-a7d286952b65?q=80&w=2000&auto=format&fit=crop')"></div>
+  <div class="bg" style="background-image:url('https://images.unsplash.com/flagged/photo-1577962917302-cd874c4e31d2?q=80&w=2000&auto=format&fit=crop')"></div>
   <div class="veil"></div>
   <div class="in">
     <div class="crumb"><a href="solutions.html">Solutions</a> / Digital Transformation</div>
-    <h1>A roadmap, then the <em>build</em>.</h1>
+    <h1>From the pen-and-paper years to <em>proving outcomes</em>.</h1>
     <p>From strategy to systems, sequenced to value.</p>
     <div class="btns"><a class="pill pill-primary" href="contact.html">Book a call <span class="arw">&#8594;</span></a><a class="pill pill-dark" href="our-work.html?offering=digital-transformation">See it in our work</a></div>
   </div>
 </div>
 
-<!-- WHAT IT DOES -->
+<!-- THE JOURNEY -->
 <section class="section wyg"><div class="wrap">
-  <h2 class="shead">What it does</h2>
-  <div class="cgrid">
-    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="M9 13h6M9 17h4"/></svg></span><h5>Assessment</h5><p>Understand where you are today.</p></a>
-    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20L20 4M9 4h11v11"/></svg></span><h5>Roadmap</h5><p>A plan you can actually follow.</p></a>
-    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span><h5>Build</h5><p>Systems delivered in the right order.</p></a>
-    <a class="ocard" href="contact.html?topic=brainstorm"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.5a3 3 0 0 1 0 5.5M21 20c0-2.6-1.6-4.9-4-5.8"/></svg></span><h5>Adoption</h5><p>So your team actually uses what we build.</p></a>
+  <h2 class="shead">Where technology fits, stage by stage</h2>
+  <p class="lede" style="margin-top:-4px;margin-bottom:8px">Every organisation walks a version of the same road. Here is that road: what starts breaking, what you actually need, and what you don&rsquo;t need yet.</p>
+  <div class="jrn">
+    <div class="jstage">
+      <div class="jnum">01</div>
+      <div><div class="jband">Getting started &middot; first grants</div><h3>The pen-and-paper years</h3><p class="jlede">Two founders, one cause, a first grant or two. Beneficiary lists live in notebooks, budgets in a single spreadsheet. Honestly, that is fine. At this stage process matters more than software.</p><p class="jnote">Mostly we will tell you: don&rsquo;t buy software yet. Build clean processes first.</p></div>
+      <div class="jright">
+        <div class="jcol"><h6>What starts to pinch</h6><ul class="jlist"><li>Funders ask for reports the notebook cannot produce</li><li>No credible digital presence when a donor looks you up</li><li>Every data request means a weekend of retyping</li></ul></div>
+        <div class="jcol"><h6>Where Dhwani fits</h6><ul class="jlist fit"><li><b>Honest advice, free</b> &mdash; an hour on what to digitise now and what to leave alone</li><li><b>Simple data collection</b> on mForm, structured records without an IT team</li></ul></div>
+      </div>
+    </div>
+    <div class="jstage">
+      <div class="jnum">02</div>
+      <div><div class="jband">&#8377;1&ndash;10 crore &middot; first repeat funders</div><h3>Excel starts to crack</h3><p class="jlede">Two or three programmes, the first fundraising hire, a small field team. Each funder wants a different report format, and versions of the truth multiply: the field&rsquo;s Excel, the office&rsquo;s Excel, the auditor&rsquo;s Excel.</p></div>
+      <div class="jright">
+        <div class="jcol"><h6>What starts to pinch</h6><ul class="jlist"><li>Field data arrives late, incomplete, or twice</li><li>The donor pipeline lives in the founder&rsquo;s head</li><li>Reporting eats the team&rsquo;s programme time</li></ul></div>
+        <div class="jcol"><h6>Where Dhwani fits</h6><ul class="jlist fit"><li><b>mForm as your programme MIS</b> &mdash; offline field collection, one source of truth</li><li><b>mGrant NUO</b> &mdash; grant and donor management sized for implementing NGOs</li><li><b>Adoption support</b> &mdash; we train the field team in their language, and stay until it sticks</li></ul></div>
+      </div>
+    </div>
+    <div class="jstage">
+      <div class="jnum">03</div>
+      <div><div class="jband">&#8377;10&ndash;50 crore &middot; multi-state scale</div><h3>The organisation becomes a system</h3><p class="jlede">Multiple states, a dozen funders, a real HR function, statutory audits, and a board that wants dashboards. The question shifts from &ldquo;how do we collect data?&rdquo; to &ldquo;how does the whole organisation run on data?&rdquo; &mdash; and compliance now has teeth.</p></div>
+      <div class="jright">
+        <div class="jcol"><h6>What starts to pinch</h6><ul class="jlist"><li>Programme, finance and HR systems do not talk to each other</li><li>Every funder audit is a fire drill</li><li>Cloud bills grow quietly; beneficiary data sits unprotected</li></ul></div>
+        <div class="jcol"><h6>Where Dhwani fits</h6><ul class="jlist fit"><li><b>Back office on open-source ERP</b> (ERPNext/Frappe) &mdash; finance, HR and procurement without licence lock-in</li><li><b>Dashboard as a Service</b> &mdash; board-ready impact and financial reporting</li><li><b>CloudSahayak + DPDP readiness</b> &mdash; 30&ndash;40% lower cloud costs, audit-ready data protection</li></ul></div>
+      </div>
+    </div>
+    <div class="jstage">
+      <div class="jnum">04</div>
+      <div><div class="jband">&#8377;50&ndash;100+ crore &middot; institutional scale</div><h3>From running programmes to proving outcomes</h3><p class="jlede">Government partnerships, international funders, federated structures. The bar moves again: not &ldquo;did we deliver?&rdquo; but &ldquo;what changed, and can you show it?&rdquo; Data becomes the organisation&rsquo;s backbone, and its credibility.</p></div>
+      <div class="jright">
+        <div class="jcol"><h6>What starts to pinch</h6><ul class="jlist"><li>Evidence demands outgrow M&amp;E spreadsheets</li><li>Custom needs that no off-the-shelf product covers</li><li>Your data could serve the whole sector, but has no vehicle</li></ul></div>
+        <div class="jcol"><h6>Where Dhwani fits</h6><ul class="jlist fit"><li><b>Custom platforms and applied AI</b> &mdash; outcome measurement, voice assessments, chat with your own programme evidence</li><li><b>Ecosystem infrastructure</b> &mdash; public data portals, like the City Finance Portal&rsquo;s 4,000 municipalities</li><li><b>Thought partnership</b> &mdash; a decade of sector pattern-recognition at the leadership table</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <div class="sol2" style="margin-top:40px">
+    <div></div>
+    <aside>
+      <h3>See it in our work</h3>
+      <p class="rlede">Programmes running on this today.</p>
+      <a class="minicase" href="our-work.html?case=tri"><b>Transform Rural India</b><span>A technology partnership, 74 engagements deep</span></a>
+      <a class="minicase" href="our-work.html?case=mahindra"><b>Mahindra Group</b><span>One CSR platform for 53 group companies</span></a>
+      <a class="minicase" href="our-work.html?case=godrej"><b>Godrej Group</b><span>CSR management across five group companies</span></a>
+      <p style="margin-top:14px"><a class="tlink" href="our-work.html">Browse all our work <span class="arw">&#8594;</span></a></p>
+    </aside>
   </div>
 </div></section>
 
-<!-- PROOF -->
-<section class="section proof"><div class="wrap">
-  <h2 class="shead">See it in our work</h2>
-  <p class="lede">Programmes running on Digital Transformation across the sectors we work in.</p>
-  <p class="cases-cta" style="margin-top:22px"><a class="tlink" href="our-work.html?offering=digital-transformation">Browse Digital Transformation projects <span class="arw">&#8594;</span></a></p>
-</div></section>
 
 <!-- CTA -->
 <div class="cta"><div class="in wrap">
