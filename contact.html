@@ -367,6 +367,7 @@ window.DHWANI_FORMS = {
       organisation_type:document.getElementById('c-type').value,
       email:document.getElementById('c-email').value,
       message:document.getElementById('c-msg').value,
+      copy_to_sender:true,
       page:location.href
     };
     var btn=form.querySelector('button[type=submit]'); if(btn)btn.disabled=true;
@@ -374,7 +375,8 @@ window.DHWANI_FORMS = {
     function fallback(){
       var body='Organisation type: '+payload.organisation_type+'\nEmail: '+payload.email+'\n\n'+payload.message;
       window.location.href='mailto:'+(cfg.NOTIFY_EMAIL||'partnerships@dhwaniris.com')
-        +'?subject='+encodeURIComponent('Website enquiry — '+payload.organisation_type)
+        +'?cc='+encodeURIComponent(payload.email)
+        +'&subject='+encodeURIComponent('Website enquiry — '+payload.organisation_type)
         +'&body='+encodeURIComponent(body);
       succeed();
     }
@@ -556,7 +558,8 @@ window.DHWANI_FORMS = {
       e.preventDefault();
       if(!input.value){input.focus();return;}
       window.location.href='mailto:'+(cfg.NOTIFY_EMAIL||'partnerships@dhwaniris.com')
-        +'?subject='+encodeURIComponent('Newsletter signup')
+        +'?cc='+encodeURIComponent(payload.email)
+        +'&subject='+encodeURIComponent('Newsletter signup')
         +'&body='+encodeURIComponent('Please add this address to the Dhwani newsletter list: '+input.value);
       input.value=''; var b=f.querySelector('button'); if(b)b.textContent='Thanks';
     });

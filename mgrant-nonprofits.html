@@ -310,9 +310,6 @@ window.DHWANI_FORMS = {
           <input id="dgEmail" type="email" required placeholder="you@organisation.org"
             style="width:100%;border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;font-family:var(--sans);font-size:.95rem">
         </label>
-        <label style="display:flex;gap:9px;align-items:flex-start;font-size:.86rem;color:var(--muted);margin-bottom:18px">
-          <input id="dgCopy" type="checkbox" checked style="margin-top:3px"> Send me a copy of this request
-        </label>
         <button type="submit" class="pill pill-primary">Get the download <span class="arw">&#8594;</span></button>
       </form>
       <p class="cm-p" id="dgDone" style="display:none;margin-top:16px">Thanks &mdash; your download should have started.</p>
@@ -553,15 +550,15 @@ build('row1',logos.slice(0,15));build('row2',logos.slice(15));})();
     e.preventDefault();
     var f=e.target; if(!f.checkValidity()){f.reportValidity();return;}
     var email=document.getElementById('dgEmail').value;
-    var copy=document.getElementById('dgCopy').checked;
+    var copy=false;
     var cfg=window.DHWANI_FORMS||{};
-    var payload={source:'deck-download',deck:cur.name,email:email,copy_requested:copy,page:location.href};
+    var payload={source:'deck-download',deck:cur.name,email:email,page:location.href};
     if(cfg.FORM_ENDPOINT){
       fetch(cfg.FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).catch(function(){});
     }else{
       /* no endpoint yet: send it via the user's mail client, cc'ing them so they keep a copy */
       var to=cfg.NOTIFY_EMAIL||'partnerships@dhwaniris.com';
-      var url='mailto:'+to+(copy?('?cc='+encodeURIComponent(email)):'?')
+      var url='mailto:'+to+'?'
         +'&subject='+encodeURIComponent('Deck request \u2014 '+cur.name)
         +'&body='+encodeURIComponent('Please send me the '+cur.name+' deck.\n\nEmail: '+email);
       var w=window.open(url,'_blank'); if(!w)window.location.href=url;
