@@ -185,14 +185,12 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .cmodal .cm-sect{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--maroon);font-weight:600;margin-bottom:10px}
 .cmodal h3{font-size:1.5rem;font-weight:500;line-height:1.2;margin-bottom:8px}
 .cmodal .cm-p{font-size:.95rem;line-height:1.6;color:var(--muted);margin-bottom:18px}
-.prodbar{display:flex;align-items:center;gap:clamp(18px,3vw,38px);background:var(--beige);border-radius:16px;
-padding:clamp(20px,2.6vw,30px) clamp(24px,3.2vw,36px);margin:0 0 8px;flex-wrap:wrap}
-.prodbar img{height:clamp(34px,3.8vw,46px);width:auto;flex:none}
-.prodbar .pbline{font-family:var(--serif);font-size:clamp(1.02rem,1.5vw,1.2rem);color:var(--ink);
-border-left:1px solid var(--line);padding-left:clamp(18px,3vw,38px);flex:1;min-width:220px}
-.prodbar .pbfacts{display:flex;gap:8px;flex-wrap:wrap}
-.prodbar .pbfacts span{font-size:.78rem;color:var(--muted);background:var(--paper);border-radius:999px;padding:6px 13px}
-@media(max-width:760px){.prodbar .pbline{border-left:none;padding-left:0}}
+@media(max-width:760px){}
+
+.prodmast{display:flex;align-items:center;gap:clamp(14px,2vw,22px);margin-bottom:clamp(20px,2.6vw,30px)}
+.prodmast img{height:clamp(30px,3.4vw,42px);width:auto;flex:none}
+.prodmast span{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+font-weight:600;border-left:1px solid var(--line);padding-left:clamp(14px,2vw,22px)}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -204,6 +202,7 @@ border-left:1px solid var(--line);padding-left:clamp(18px,3vw,38px);flex:1;min-w
    is lost — but they should be filled in before launch.                        */
 window.DHWANI_FORMS = {
   FORM_ENDPOINT: '',
+  FORM_ENCODING: 'json',   /* 'form' for FormSubmit / Formspree / Zoho Forms */
   NEWSLETTER_ACTION: '',
   NOTIFY_EMAIL: 'partnerships@dhwaniris.com'
 };
@@ -264,16 +263,9 @@ window.DHWANI_FORMS = {
     <h1>Grant management, built for <em>funders</em>.</h1>
     <p>For funders of every kind &mdash; corporate CSR, foundations, philanthropies and multilateral programmes. Find partners, run due diligence, sanction and disburse, track impact, and meet every Ministry of Corporate Affairs (MCA) obligation on the way.</p>
     <div class="btns"><a class="pill pill-primary" href="contact.html?topic=brainstorm">Book a session <span class="arw">&#8594;</span></a><a class="pill pill-dark deck-get" data-deck="mgrant-donors" data-deckname="mGrant for Donors" href="#">Download the deck</a></div>
+    <div class="hcreds">40+ donor organisations &middot; &#8377;5,000 Cr+ governed &middot; 1,500+ grantees</div>
   </div>
 </div>
-
-<section class="section" style="padding-top:38px;padding-bottom:0"><div class="wrap">
-  <div class="prodbar">
-    <img src="assets/img/products/mgrant-wordmark.png" alt="mGrant logo">
-    <div class="pbline">Grant management for funders</div>
-    <div class="pbfacts"><span>40+ donor organisations</span><span>&#8377;5,000 Cr+ governed</span><span>1,500+ grantees</span></div>
-  </div>
-</div></section>
 
 <section class="section"><div class="wrap">
   <div class="statrow"><div><b>40+</b><span>Donor organisations</span></div><div><b>&#8377;5,000 Cr+</b><span>Grants governed</span></div><div><b>1,500+</b><span>NGO grantees</span></div></div>
@@ -281,6 +273,7 @@ window.DHWANI_FORMS = {
 </div></section>
 
 <section class="section wyg"><div class="wrap">
+  <div class="prodmast"><img src="assets/img/products/mgrant-wordmark.png" alt="mGrant logo"><span>mGrant</span></div>
   <h2 class="shead">What it does</h2>
   <div class="modgrid"><div class="mod"><h4>Discovery &amp; due diligence</h4><p>Search 3,000+ pre-vetted NGOs with 12A, 80G and Foreign Contribution Regulation Act (FCRA) checks already done, then run your own diligence workflow on top.</p></div><div class="mod"><h4>Sanction &amp; disbursement</h4><p>Approve grants against milestones and tranches, with enterprise resource planning (ERP)-integrated fund flow into SAP, Tally or Oracle.</p></div><div class="mod"><h4>Utilisation &amp; impact</h4><p>Track spend against plan and outcomes against your own M&amp;E framework, with the evidence attached to the grant.</p></div><div class="mod"><h4>MCA compliance, built in</h4><p>CSR-2, the Annual Action Plan, asset geo-tagging and a complete audit trail, generated as you work rather than assembled at year end.</p></div></div>
 </div></section>

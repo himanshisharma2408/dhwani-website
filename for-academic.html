@@ -165,6 +165,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
    is lost — but they should be filled in before launch.                        */
 window.DHWANI_FORMS = {
   FORM_ENDPOINT: '',
+  FORM_ENCODING: 'json',   /* 'form' for FormSubmit / Formspree / Zoho Forms */
   NEWSLETTER_ACTION: '',
   NOTIFY_EMAIL: 'partnerships@dhwaniris.com'
 };
@@ -252,6 +253,11 @@ window.DHWANI_FORMS = {
     </div>
   </a>
   <p class="cases-cta" style="margin-top:26px"><a class="tlink" href="our-work.html">See more of our work <span class="arw">&#8594;</span></a></p>
+  <div class="mq-wrap">
+    <p class="mq-lbl">Universities, think tanks and research partners we work with</p>
+    <div class="marquee"><div class="mtrack l" id="row1"></div></div>
+    <div class="marquee"><div class="mtrack r" id="row2"></div></div>
+  </div>
 </div></section>
 
 <!-- CTA -->

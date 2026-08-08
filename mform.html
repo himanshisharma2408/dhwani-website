@@ -155,14 +155,12 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 #topnav .links a.n-active{color:#fff;font-weight:600}
 #topnav.solid .links a.n-active,#topnav.scrolled .links a.n-active{color:var(--maroon)}
 
-.prodbar{display:flex;align-items:center;gap:clamp(18px,3vw,38px);background:var(--beige);border-radius:16px;
-padding:clamp(20px,2.6vw,30px) clamp(24px,3.2vw,36px);margin:0 0 8px;flex-wrap:wrap}
-.prodbar img{height:clamp(34px,3.8vw,46px);width:auto;flex:none}
-.prodbar .pbline{font-family:var(--serif);font-size:clamp(1.02rem,1.5vw,1.2rem);color:var(--ink);
-border-left:1px solid var(--line);padding-left:clamp(18px,3vw,38px);flex:1;min-width:220px}
-.prodbar .pbfacts{display:flex;gap:8px;flex-wrap:wrap}
-.prodbar .pbfacts span{font-size:.78rem;color:var(--muted);background:var(--paper);border-radius:999px;padding:6px 13px}
-@media(max-width:760px){.prodbar .pbline{border-left:none;padding-left:0}}
+@media(max-width:760px){}
+
+.prodmast{display:flex;align-items:center;gap:clamp(14px,2vw,22px);margin-bottom:clamp(20px,2.6vw,30px)}
+.prodmast img{height:clamp(30px,3.4vw,42px);width:auto;flex:none}
+.prodmast span{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+font-weight:600;border-left:1px solid var(--line);padding-left:clamp(14px,2vw,22px)}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -174,6 +172,7 @@ border-left:1px solid var(--line);padding-left:clamp(18px,3vw,38px);flex:1;min-w
    is lost — but they should be filled in before launch.                        */
 window.DHWANI_FORMS = {
   FORM_ENDPOINT: '',
+  FORM_ENCODING: 'json',   /* 'form' for FormSubmit / Formspree / Zoho Forms */
   NEWSLETTER_ACTION: '',
   NOTIFY_EMAIL: 'partnerships@dhwaniris.com'
 };
@@ -234,23 +233,17 @@ window.DHWANI_FORMS = {
     <h1>Field data that survives <em>the field</em>.</h1>
     <p>A no-code platform for collecting and monitoring programme data &mdash; offline, in 10+ languages, on the cheapest Android in the room. What comes back is clean enough to run a management information system (MIS) on.</p>
     <div class="btns"><a class="pill pill-primary" href="contact.html">Book a call <span class="arw">&#8594;</span></a><a class="pill pill-dark" href="our-work.html">See our work</a></div>
+    <div class="hcreds">10+ languages &middot; Works offline &middot; Android, low-end</div>
   </div>
 </div>
 
 <!-- WHAT IT DOES -->
-<section class="section" style="padding-top:38px;padding-bottom:0"><div class="wrap">
-  <div class="prodbar">
-    <img src="assets/img/products/mform-wordmark.png" alt="mForm logo">
-    <div class="pbline">Offline-first field data collection</div>
-    <div class="pbfacts"><span>10+ languages</span><span>Android, low-end</span><span>Syncs when it can</span></div>
-  </div>
-</div></section>
-
 <section class="section wyg"><div class="wrap">
+  <div class="prodmast"><img src="assets/img/products/mform-wordmark.png" alt="mForm logo"><span>mForm</span></div>
   <h2 class="shead">What it does</h2>
   <div class="cgrid">
     <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span><h5>Works offline first</h5><p>Enumerators collect without signal and sync when a network appears. The record is safe on the device until it does.</p></div>
-    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><text x="2.5" y="16" font-family="serif" font-size="13" fill="currentColor" stroke="none">&#2309;</text><path d="M13 8.5h8M17 8.5v2.5c0 3.5-1.6 5.6-3.6 6.6"/><path d="M15 14.5c1 2 2.6 3.2 4.2 4"/></svg></span><h5>Multi-lingual</h5><p>Forms and prompts in the languages your field team and respondents actually speak, including right-to-left and Indic scripts.</p></div>
+    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><text x="0.5" y="16.5" font-family="serif" font-size="14" fill="currentColor" stroke="none">&#2309;</text><text x="13.5" y="16.5" font-family="serif" font-size="13" fill="currentColor" stroke="none">A</text><path d="M11.6 19.5h.01" stroke-width="0"/></svg></span><h5>Multi-lingual</h5><p>Forms and prompts in the languages your field team and respondents actually speak, including right-to-left and Indic scripts.</p></div>
     <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="M9 13h6M9 17h4"/></svg></span><h5>No-code form builder</h5><p>Programme staff build and change forms themselves, with skip logic, validation and repeat groups.</p></div>
     <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-7-10a7 7 0 0 1 14 0c0 5.6-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg></span><h5>GPS and media capture</h5><p>Location stamps, photographs and signatures attached to the record, so a visit can be verified after the fact.</p></div>
     <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 2 4-6"/></svg></span><h5>Straight into the MIS</h5><p>Submissions land in dashboards and reports as they arrive, ready to read.</p></div>
