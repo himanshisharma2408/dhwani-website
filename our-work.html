@@ -139,7 +139,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 /* ===== nav dropdowns ===== */
 .has-dd{position:relative;display:flex;align-items:center}
 .has-dd>a{display:inline-flex;align-items:center;gap:5px}
-.caret{font-size:.6rem;line-height:1;opacity:.75;transition:transform .2s;position:relative;top:1px}
+.caret{font-size:.82rem;line-height:1;opacity:.85;transition:transform .2s;position:relative;top:1px}
 .has-dd:hover .caret{transform:rotate(180deg)}
 .dd-toggle{display:none;background:none;border:none;color:inherit;cursor:pointer;font-size:.85rem;padding:8px 4px;transition:transform .2s}
 .dd{position:absolute;top:100%;left:50%;margin-top:12px;transform:translateX(-50%);min-width:238px;background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:0 16px 40px rgba(21,16,15,.16);padding:12px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s ease;z-index:220}
@@ -280,7 +280,7 @@ window.DHWANI_FORMS = {
       <a href="solutions.html">Solutions <span class="caret">&#9662;</span></a>
       <button class="dd-toggle" aria-label="Toggle Solutions submenu">&#9662;</button>
       <div class="dd dd-mega">
-        <div class="dd-col"><h6>Products</h6><a href="mgrant.html">mGrant for Donors</a><a href="mgrant.html">mGrant for Nonprofits</a><a href="mform.html">mForm</a><a href="anumati.html">Anumati</a><a href="radar.html">Radar</a></div>
+        <div class="dd-col"><h6>Products</h6><a href="mgrant-donors.html">mGrant for Donors</a><a href="mgrant-nonprofits.html">mGrant for Nonprofits</a><a href="mform.html">mForm</a><a href="anumati.html">Anumati</a><a href="radar.html">Radar</a></div>
         <div class="dd-col"><h6>Systems</h6><a href="programme-mis.html">Programme MIS</a><a href="impact-dashboards.html">Impact Dashboards</a><a href="grant-management.html">Grant Management</a><a href="donor-management.html">Donor Management</a><a href="field-data-apps.html">Field Data Apps</a><a href="back-office-it.html">Back-office IT</a><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></div>
         <div class="dd-col"><h6>Consulting</h6><a href="dpdp-act-readiness.html">DPDP Act Readiness</a><a href="cloud-optimisation.html">CloudSahayak</a><a href="ai-for-impact.html">AI for Impact</a><a href="digital-transformation.html">Digital Transformation</a><a href="programme-management.html">PMU as a Service</a></div>
         <div class="dd-col"><h6>Explore</h6><a href="our-work.html">Browse by sector</a></div>
@@ -753,7 +753,7 @@ window.DHWANI_FORMS = {
 <!-- DECK PROMO -->
 <section class="wrap"><div class="deck-promo">
   <div><h3>Want it all in one place?</h3><p>Our organisation profile &mdash; who we are, what we build and the sectors we work in. 34 pages, PDF.</p></div>
-  <a class="pill pill-primary" href="assets/docs/dhwani-ris-organization-profile.pdf" target="_blank" rel="noopener">Download the profile <span class="arw">&#8594;</span></a>
+  <a class="pill pill-primary deck-get" data-deck="company-profile" href="#">Download the profile <span class="arw">&#8594;</span></a>
 </div></section>
 
 <!-- CASE DETAIL MODAL -->
@@ -787,6 +787,31 @@ window.DHWANI_FORMS = {
   <a class="pill pill-primary" href="contact.html?topic=brainstorm">Book a call <span class="arw">→</span></a>
 </div></div>
 
+<!-- DECK GATE -->
+<div class="cmodal" id="deckGate" role="dialog" aria-modal="true" aria-labelledby="dgTitle">
+  <div class="backdrop" data-dgclose></div>
+  <div class="box" style="max-width:460px">
+    <button class="close" data-dgclose aria-label="Close">&times;</button>
+    <div class="cm-bd">
+      <div class="cm-sect">Download</div>
+      <h3 id="dgTitle">Where should we send it?</h3>
+      <p class="cm-p" id="dgWhat"></p>
+      <form id="dgForm" novalidate>
+        <label class="field" style="display:block;margin-bottom:14px">
+          <span style="display:block;font-size:.86rem;font-weight:600;margin-bottom:6px">Work email <span style="color:var(--maroon)">*</span></span>
+          <input id="dgEmail" type="email" required placeholder="you@organisation.org"
+            style="width:100%;border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;font-family:var(--sans);font-size:.95rem">
+        </label>
+        <label style="display:flex;gap:9px;align-items:flex-start;font-size:.86rem;color:var(--muted);margin-bottom:18px">
+          <input id="dgCopy" type="checkbox" checked style="margin-top:3px"> Send me a copy of this request
+        </label>
+        <button type="submit" class="pill pill-primary">Get the download <span class="arw">&#8594;</span></button>
+      </form>
+      <p class="cm-p" id="dgDone" style="display:none;margin-top:16px">Thanks &mdash; your download should have started.</p>
+    </div>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer><div class="wrap">
   <div class="fgrid">
@@ -796,7 +821,7 @@ window.DHWANI_FORMS = {
       <div class="fbadges"><span>ISO 27001</span><span>DPDP</span><span>GDPR</span></div>
       <div class="fsoc"><a href="https://www.linkedin.com/company/14388289/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/dhwaniris" target="_blank" rel="noopener">Instagram</a><a href="community.html">Community</a></div>
     </div>
-    <div><h5>Products</h5><ul><li><a href="mgrant.html">mGrant for Donors</a></li><li><a href="mgrant.html">mGrant for Nonprofits</a></li><li><a href="mform.html">mForm</a></li><li><a href="anumati.html">Anumati (DPDP)</a></li><li><a href="radar.html">Radar</a></li></ul></div>
+    <div><h5>Products</h5><ul><li><a href="mgrant-donors.html">mGrant for Donors</a></li><li><a href="mgrant-nonprofits.html">mGrant for Nonprofits</a></li><li><a href="mform.html">mForm</a></li><li><a href="anumati.html">Anumati (DPDP)</a></li><li><a href="radar.html">Radar</a></li></ul></div>
     <div><h5>Systems</h5><ul><li><a href="programme-mis.html">Programme MIS</a></li><li><a href="impact-dashboards.html">Impact Dashboards</a></li><li><a href="grant-management.html">Grant Management</a></li><li><a href="donor-management.html">Donor Management</a></li><li><a href="field-data-apps.html">Field Data Apps</a></li><li><a href="back-office-it.html">Back-office IT</a></li><li><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></li></ul></div>
     <div><h5>Consulting</h5><ul><li><a href="dpdp-act-readiness.html">DPDP Act Readiness</a></li><li><a href="cloud-optimisation.html">CloudSahayak</a></li><li><a href="ai-for-impact.html">AI for Impact</a></li><li><a href="digital-transformation.html">Digital Transformation</a></li><li><a href="programme-management.html">PMU as a Service</a></li></ul></div>
     <div><h5>By sector</h5><ul><li><a href="our-work.html?sector=healthcare">Healthcare</a></li><li><a href="our-work.html?sector=agriculture">Agriculture &amp; Livelihoods</a></li><li><a href="our-work.html?sector=education">Education &amp; Skilling</a></li><li><a href="our-work.html?sector=financial-inclusion">Financial Inclusion</a></li><li><a href="our-work.html?sector=governance">Governance</a></li><li><a href="our-work.html">All sectors →</a></li></ul></div>
@@ -1096,6 +1121,53 @@ if(p&&nx){p.onclick=function(){show(i-1);rs();};nx.onclick=function(){show(i+1);
         +'&body='+encodeURIComponent('Please add this address to the Dhwani newsletter list: '+input.value);
       input.value=''; var b=f.querySelector('button'); if(b)b.textContent='Thanks';
     });
+  });
+})();
+</script>
+<script>
+(function(){
+  var DECKS={
+    'company-profile':{name:'Organisation Profile',file:'assets/docs/dhwani-ris-organization-profile.pdf'},
+    'mgrant-donors':{name:'mGrant for Donors',file:'assets/docs/dhwani-ris-organization-profile.pdf'},
+    'mgrant-nonprofits':{name:'mGrant for Nonprofits',file:'assets/docs/dhwani-ris-organization-profile.pdf'}
+  };
+  var gate=document.getElementById('deckGate'); if(!gate)return;
+  var cur=null;
+  function open(id,label){
+    cur=DECKS[id]||{name:label||'this deck',file:DECKS['company-profile'].file};
+    document.getElementById('dgWhat').textContent=cur.name+' \u2014 PDF. We will email you the link as well.';
+    document.getElementById('dgForm').style.display='block';
+    document.getElementById('dgDone').style.display='none';
+    gate.classList.add('open'); document.body.style.overflow='hidden';
+    setTimeout(function(){document.getElementById('dgEmail').focus();},60);
+  }
+  function close(){gate.classList.remove('open');document.body.style.overflow='';}
+  document.querySelectorAll('.deck-get').forEach(function(b){
+    b.addEventListener('click',function(e){e.preventDefault();open(b.dataset.deck,b.dataset.deckname);});
+  });
+  gate.querySelectorAll('[data-dgclose]').forEach(function(b){b.addEventListener('click',close);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&gate.classList.contains('open'))close();});
+  document.getElementById('dgForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var f=e.target; if(!f.checkValidity()){f.reportValidity();return;}
+    var email=document.getElementById('dgEmail').value;
+    var copy=document.getElementById('dgCopy').checked;
+    var cfg=window.DHWANI_FORMS||{};
+    var payload={source:'deck-download',deck:cur.name,email:email,copy_requested:copy,page:location.href};
+    if(cfg.FORM_ENDPOINT){
+      fetch(cfg.FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).catch(function(){});
+    }else{
+      /* no endpoint yet: send it via the user's mail client, cc'ing them so they keep a copy */
+      var to=cfg.NOTIFY_EMAIL||'partnerships@dhwaniris.com';
+      var url='mailto:'+to+(copy?('?cc='+encodeURIComponent(email)):'?')
+        +'&subject='+encodeURIComponent('Deck request \u2014 '+cur.name)
+        +'&body='+encodeURIComponent('Please send me the '+cur.name+' deck.\n\nEmail: '+email);
+      var w=window.open(url,'_blank'); if(!w)window.location.href=url;
+    }
+    f.style.display='none';
+    document.getElementById('dgDone').style.display='block';
+    var a=document.createElement('a'); a.href=cur.file; a.download=''; a.target='_blank';
+    document.body.appendChild(a); a.click(); a.remove();
   });
 })();
 </script>

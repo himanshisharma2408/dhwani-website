@@ -66,6 +66,7 @@ em{font-style:italic}
 .ocard:hover{background:var(--beige-h)}
 .ocard .ic{height:clamp(58px,7.5vw,84px);flex:none;display:flex;align-items:center;justify-content:center;color:#4a423c;margin-bottom:14px}
 .ocard .ic svg{width:clamp(46px,6.8vw,78px);height:clamp(46px,6.8vw,78px);stroke-width:1.05}
+.soonpill{display:inline-block;font-family:var(--sans);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--muted);background:var(--paper);border-radius:999px;padding:3px 8px;margin-left:8px;vertical-align:middle}
 .ocard h5{font-size:clamp(1.2rem,1.9vw,1.34rem);font-weight:500;margin-bottom:9px;color:var(--ink)}
 .ocard h5{min-height:2.6em;display:flex;align-items:flex-start}
 .ocard p{color:var(--muted);font-size:.92rem;line-height:1.5;max-width:26ch}
@@ -114,7 +115,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 /* ===== nav dropdowns ===== */
 .has-dd{position:relative;display:flex;align-items:center}
 .has-dd>a{display:inline-flex;align-items:center;gap:5px}
-.caret{font-size:.6rem;line-height:1;opacity:.75;transition:transform .2s;position:relative;top:1px}
+.caret{font-size:.82rem;line-height:1;opacity:.85;transition:transform .2s;position:relative;top:1px}
 .has-dd:hover .caret{transform:rotate(180deg)}
 .dd-toggle{display:none;background:none;border:none;color:inherit;cursor:pointer;font-size:.85rem;padding:8px 4px;transition:transform .2s}
 .dd{position:absolute;top:100%;left:50%;margin-top:12px;transform:translateX(-50%);min-width:238px;background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:0 16px 40px rgba(21,16,15,.16);padding:12px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s ease;z-index:220}
@@ -167,8 +168,8 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .deck-modal.sent .form-row{display:none}
 .deck-modal.sent .done{display:block}
 
-.ocard .prod-badge{background:none;border-radius:0;width:clamp(50px,7vw,72px);height:clamp(50px,7vw,72px);flex:none;display:flex;align-items:center;justify-content:center}
-.ocard .prod-badge img{width:clamp(30px,4.2vw,44px);object-fit:contain}
+.ocard .prod-badge{background:none;border-radius:0;height:clamp(38px,4.6vw,50px);flex:none;display:flex;align-items:center;justify-content:center}
+.ocard .prod-badge img{height:clamp(28px,3.4vw,38px);width:auto;max-width:100%;object-fit:contain}
 
 /* solutions sidebar rail */
 .rlayout{display:grid;grid-template-columns:230px 1fr;gap:40px;align-items:start;margin-top:36px}
@@ -212,7 +213,7 @@ window.DHWANI_FORMS = {
       <a class="n-active" href="solutions.html">Solutions <span class="caret">&#9662;</span></a>
       <button class="dd-toggle" aria-label="Toggle Solutions submenu">&#9662;</button>
       <div class="dd dd-mega">
-        <div class="dd-col"><h6>Products</h6><a href="mgrant.html">mGrant for Donors</a><a href="mgrant.html">mGrant for Nonprofits</a><a href="mform.html">mForm</a><a href="anumati.html">Anumati</a><a href="radar.html">Radar</a></div>
+        <div class="dd-col"><h6>Products</h6><a href="mgrant-donors.html">mGrant for Donors</a><a href="mgrant-nonprofits.html">mGrant for Nonprofits</a><a href="mform.html">mForm</a><a href="anumati.html">Anumati</a><a href="radar.html">Radar</a></div>
         <div class="dd-col"><h6>Systems</h6><a href="programme-mis.html">Programme MIS</a><a href="impact-dashboards.html">Impact Dashboards</a><a href="grant-management.html">Grant Management</a><a href="donor-management.html">Donor Management</a><a href="field-data-apps.html">Field Data Apps</a><a href="back-office-it.html">Back-office IT</a><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></div>
         <div class="dd-col"><h6>Consulting</h6><a href="dpdp-act-readiness.html">DPDP Act Readiness</a><a href="cloud-optimisation.html">CloudSahayak</a><a href="ai-for-impact.html">AI for Impact</a><a href="digital-transformation.html">Digital Transformation</a><a href="programme-management.html">PMU as a Service</a></div>
         <div class="dd-col"><h6>Explore</h6><a href="our-work.html">Browse by sector</a></div>
@@ -276,11 +277,11 @@ window.DHWANI_FORMS = {
       <div class="rgroup" id="products">
                 <p class="lede" style="margin-top:0;margin-bottom:18px">Platforms that already exist and are already running across the sector. You configure them to your programme rather than build from scratch.</p>
         <div class="cgrid">
-          <a class="ocard" href="mgrant.html"><span class="ic"><span class="prod-badge"><img src="assets/img/products/mgrant-logo.png" alt="mGrant logo"></span></span><h5>mGrant for Donors</h5><p>The whole grant life, from RFP to utilisation.</p></a>
-          <a class="ocard" href="mgrant.html"><span class="ic"><span class="prod-badge"><img src="assets/img/products/mgrant-logo.png" alt="mGrant logo"></span></span><h5>mGrant for Nonprofits</h5><p>Grant and donor management for the grants you receive.</p></a>
-          <a class="ocard" href="mform.html"><span class="ic"><span class="prod-badge"><img src="assets/img/products/mform-logo.png" alt="mForm logo"></span></span><h5>mForm</h5><p>Offline-first field data, straight into your MIS.</p></a>
+          <a class="ocard" href="mgrant-donors.html"><span class="ic"><span class="prod-badge"><img src="assets/img/products/mgrant-wordmark.png" alt="mGrant logo"></span></span><h5>mGrant for Donors</h5><p>The whole grant life, from RFP to utilisation.</p></a>
+          <a class="ocard" href="mgrant-nonprofits.html"><span class="ic"><span class="prod-badge"><img src="assets/img/products/mgrant-nuo.png" alt="mGrant NUO logo"></span></span><h5>mGrant for Nonprofits</h5><p>Grant and donor management for the grants you receive.</p></a>
+          <a class="ocard" href="mform.html"><span class="ic"><span class="prod-badge"><img src="assets/img/products/mform-wordmark.png" alt="mForm logo"></span></span><h5>mForm</h5><p>Offline-first field data, straight into your MIS.</p></a>
           <a class="ocard" href="anumati.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14.5v2"/></svg></span><h5>Anumati</h5><p>DPDP consent management for beneficiary data.</p></a>
-          <a class="ocard" href="radar.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><path d="M12 12l6.4-4.2"/><circle cx="15.5" cy="8.5" r="1.2" fill="currentColor" stroke="none"/></svg></span><h5>Radar</h5><p>Due diligence and risk intelligence on partners.</p></a>
+          <a class="ocard" href="radar.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><path d="M12 12l6.4-4.2"/><circle cx="15.5" cy="8.5" r="1.2" fill="currentColor" stroke="none"/></svg></span><h5>Radar <span class="soonpill">Coming soon</span></h5><p>Due diligence and risk intelligence on partners.</p></a>
         </div>
       </div>
 
@@ -376,7 +377,7 @@ window.DHWANI_FORMS = {
       <div class="fbadges"><span>ISO 27001</span><span>DPDP</span><span>GDPR</span></div>
       <div class="fsoc"><a href="https://www.linkedin.com/company/14388289/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/dhwaniris" target="_blank" rel="noopener">Instagram</a><a href="community.html">Community</a></div>
     </div>
-    <div><h5>Products</h5><ul><li><a href="mgrant.html">mGrant for Donors</a></li><li><a href="mgrant.html">mGrant for Nonprofits</a></li><li><a href="mform.html">mForm</a></li><li><a href="anumati.html">Anumati (DPDP)</a></li><li><a href="radar.html">Radar</a></li></ul></div>
+    <div><h5>Products</h5><ul><li><a href="mgrant-donors.html">mGrant for Donors</a></li><li><a href="mgrant-nonprofits.html">mGrant for Nonprofits</a></li><li><a href="mform.html">mForm</a></li><li><a href="anumati.html">Anumati (DPDP)</a></li><li><a href="radar.html">Radar</a></li></ul></div>
     <div><h5>Systems</h5><ul><li><a href="programme-mis.html">Programme MIS</a></li><li><a href="impact-dashboards.html">Impact Dashboards</a></li><li><a href="grant-management.html">Grant Management</a></li><li><a href="donor-management.html">Donor Management</a></li><li><a href="field-data-apps.html">Field Data Apps</a></li><li><a href="back-office-it.html">Back-office IT</a></li><li><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></li></ul></div>
     <div><h5>Consulting</h5><ul><li><a href="dpdp-act-readiness.html">DPDP Act Readiness</a></li><li><a href="cloud-optimisation.html">CloudSahayak</a></li><li><a href="ai-for-impact.html">AI for Impact</a></li><li><a href="digital-transformation.html">Digital Transformation</a></li><li><a href="programme-management.html">PMU as a Service</a></li></ul></div>
     <div><h5>By sector</h5><ul><li><a href="our-work.html?sector=healthcare">Healthcare</a></li><li><a href="our-work.html?sector=agriculture">Agriculture &amp; Livelihoods</a></li><li><a href="our-work.html?sector=education">Education &amp; Skilling</a></li><li><a href="our-work.html?sector=financial-inclusion">Financial Inclusion</a></li><li><a href="our-work.html?sector=governance">Governance</a></li><li><a href="our-work.html">All sectors →</a></li></ul></div>

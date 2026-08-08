@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>For Academic &amp; Research — Dhwani RIS</title>
+<title>mGrant for Donors &mdash; Dhwani RIS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
@@ -50,6 +50,7 @@ em{font-style:italic}
 .ahero .bg{position:absolute;inset:0;background-size:cover;background-position:center 30%}
 .ahero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,12,11,.66) 0%,rgba(18,12,11,.42) 40%,rgba(18,12,11,.9) 100%)}
 .ahero .in{position:relative;z-index:2;max-width:680px}
+.prodmark{height:52px;width:auto;display:block;margin-bottom:18px;background:rgba(255,255,255,.94);border-radius:10px;padding:8px 14px}
 .ahero h1{font-size:clamp(2.7rem,5.2vw,4.4rem);margin-bottom:20px}
 .ahero h1 em{color:var(--orange-soft)}
 .ahero p{color:rgba(255,255,255,.88);font-size:1.08rem;max-width:560px;margin-bottom:28px}
@@ -59,6 +60,9 @@ em{font-style:italic}
 /* what you get (tiles) */
 .wyg h2{margin-bottom:44px}
 .cgrid{display:grid;gap:16px;grid-template-columns:repeat(4,1fr)}
+.edgrp{margin-bottom:34px}
+.edgrp h4{font-family:var(--serif);font-size:1.5rem;font-weight:500;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.edgrp h4 span{font-family:var(--sans);font-size:.82rem;color:var(--muted);font-weight:400;margin-left:10px}
 .ocard{display:flex;flex-direction:column;min-height:clamp(210px,26vw,300px);background:var(--beige);border-radius:8px;padding:clamp(22px,3.4vw,34px);transition:.2s}
 .ocard:hover{background:var(--beige-h)}
 .ocard .ic{height:clamp(58px,7.5vw,84px);flex:none;display:flex;align-items:center;justify-content:center;color:#4a423c;margin-bottom:14px}
@@ -155,7 +159,34 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 @media(max-width:900px){.cases3{grid-template-columns:1fr}}
 #topnav .links a.n-active{color:#fff;font-weight:600}
 #topnav.solid .links a.n-active,#topnav.scrolled .links a.n-active{color:var(--maroon)}
-</style>
+
+.statrow{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:30px 0 0}
+.statrow div{background:var(--beige);border-radius:12px;padding:24px 26px}
+.statrow b{display:block;font-family:var(--serif);font-size:2rem;font-weight:500;color:var(--maroon);line-height:1.1;margin-bottom:4px}
+.statrow span{font-size:.88rem;color:var(--muted)}
+.modgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:28px}
+.mod{background:var(--beige);border-radius:12px;padding:26px 28px}
+.mod h4{font-family:var(--serif);font-size:1.2rem;font-weight:500;margin-bottom:8px}
+.mod p{font-size:.93rem;color:var(--muted);line-height:1.6}
+.trust{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.trust span{font-size:.8rem;background:var(--beige);border-radius:999px;padding:8px 15px;color:var(--muted)}
+.trust b{color:var(--ink);font-weight:600}
+.deckbar{background:var(--beige);border-radius:16px;padding:30px 34px;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap;margin-top:34px}
+.deckbar h3{font-size:1.24rem;font-weight:500;margin-bottom:5px}
+.deckbar p{color:var(--muted);font-size:.92rem;max-width:52ch}
+@media(max-width:900px){.statrow,.modgrid{grid-template-columns:1fr}}
+.feats{list-style:none;margin:26px 0 0;padding:0;columns:2;column-gap:40px}
+.feats li{position:relative;padding-left:22px;font-size:.98rem;line-height:1.6;margin-bottom:11px;break-inside:avoid}
+.feats li:before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--orange)}
+@media(max-width:760px){.feats{columns:1}}.cmodal{display:none;position:fixed;inset:0;z-index:420;align-items:center;justify-content:center;padding:28px 20px}
+.cmodal.open{display:flex}
+.cmodal .backdrop{position:absolute;inset:0;background:rgba(21,16,15,.55)}
+.cmodal .box{position:relative;background:var(--paper);border-radius:20px;max-width:780px;width:100%;overflow:hidden;max-height:calc(100vh - 56px);display:flex;flex-direction:column}
+.cmodal .close{position:absolute;top:14px;right:14px;z-index:2;background:var(--beige);border:none;width:36px;height:36px;border-radius:50%;font-size:1.2rem;color:var(--ink);cursor:pointer;line-height:1}
+.cmodal .cm-bd{padding:32px 34px 30px;overflow-y:auto}
+.cmodal .cm-sect{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--maroon);font-weight:600;margin-bottom:10px}
+.cmodal h3{font-size:1.5rem;font-weight:500;line-height:1.2;margin-bottom:8px}
+.cmodal .cm-p{font-size:.95rem;line-height:1.6;color:var(--muted);margin-bottom:18px}</style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
    Set FORM_ENDPOINT to a URL that accepts a JSON POST. Recommended: a Zoho Form
@@ -179,7 +210,7 @@ window.DHWANI_FORMS = {
   <div class="links">
     <a href="index.html">Home</a>
     <div class="has-dd">
-      <a href="solutions.html">Solutions <span class="caret">&#9662;</span></a>
+      <a class="n-active" href="solutions.html">Solutions <span class="caret">&#9662;</span></a>
       <button class="dd-toggle" aria-label="Toggle Solutions submenu">&#9662;</button>
       <div class="dd dd-mega">
         <div class="dd-col"><h6>Products</h6><a href="mgrant-donors.html">mGrant for Donors</a><a href="mgrant-nonprofits.html">mGrant for Nonprofits</a><a href="mform.html">mForm</a><a href="anumati.html">Anumati</a><a href="radar.html">Radar</a></div>
@@ -189,7 +220,7 @@ window.DHWANI_FORMS = {
       </div>
     </div>
     <div class="has-dd">
-      <a class="n-active" href="who-we-serve.html">Who we serve <span class="caret">&#9662;</span></a>
+      <a href="who-we-serve.html">Who we serve <span class="caret">&#9662;</span></a>
       <button class="dd-toggle" aria-label="Toggle Who we serve submenu">&#9662;</button>
       <div class="dd">
         <a href="for-donors.html">For Donors &amp; CSRs</a>
@@ -222,44 +253,68 @@ window.DHWANI_FORMS = {
   <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1722573783625-eceb04251036?q=80&w=2000&auto=format&fit=crop')"></div>
   <div class="veil"></div>
   <div class="in">
-    <div class="crumb"><a href="who-we-serve.html">Who we serve</a> / For Academic &amp; Research</div>
-    <h1>Data your research can <em>trust</em>.</h1>
-    <p>Clean, ethical, well-governed data at scale for research programmes &mdash; from collection to analysis, with consent and privacy built in.</p>
-    <div class="btns"><a class="pill pill-primary" href="contact.html?topic=brainstorm">Book a call <span class="arw">&#8594;</span></a><a class="pill pill-dark" href="our-work.html">See our work</a></div>
-    <div class="hcreds">Trusted by 200+ organisations across 6 countries</div>
+    <div class="crumb"><a href="solutions.html">Solutions</a> / mGrant for Donors</div>
+    <img class="prodmark" src="assets/img/products/mgrant-wordmark.png" alt="mGrant for Donors logo">
+    <h1>Grant management, built for Indian <em>CSR</em>.</h1>
+    <p>For corporate CSR teams, foundations and grant-makers. Find partners, run due diligence, sanction and disburse, track impact, and meet every MCA obligation on the way.</p>
+    <div class="btns"><a class="pill pill-primary" href="contact.html?topic=brainstorm">Book a session <span class="arw">&#8594;</span></a><a class="pill pill-dark deck-get" data-deck="mgrant-donors" data-deckname="mGrant for Donors" href="#">Download the deck</a></div>
   </div>
 </div>
 
-<!-- WHAT WE BUILD -->
+<section class="section"><div class="wrap">
+  <div class="statrow"><div><b>40+</b><span>Donor organisations</span></div><div><b>&#8377;5,000 Cr+</b><span>Grants governed</span></div><div><b>1,500+</b><span>NGO grantees</span></div></div>
+  <div class="trust"><span><b>ISO 27001:2013</b> certified</span><span><b>VAPT</b> cleared, third party</span><span>Aligned to the <b>DPDP Act 2023</b></span><span>Hosted on <b>AWS Mumbai</b>, multi-AZ</span></div>
+</div></section>
+
 <section class="section wyg"><div class="wrap">
-  <h2 class="shead">What we build for you</h2>
-  <div class="cgrid">
-    <a class="ocard" href="mform.html"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span><h5>Field &amp; survey data</h5><p>Structured, offline-first collection for large research samples.</p></a>
-    <a class="ocard" href="anumati.html"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 8.5-8 11-4.6-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></span><h5>Governance &amp; ethics</h5><p>Consent, anonymisation and access controls, built in.</p></a>
-    <a class="ocard" href="impact-dashboards.html"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 2 4-6"/></svg></span><h5>Dashboards &amp; analysis</h5><p>Decision-ready data, ready to export for deeper analysis.</p></a>
-    <a class="ocard" href="anumati.html"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="12" y="7" width="3" height="10"/><rect x="17" y="4" width="3" height="13"/></svg></span><h5>DPDP readiness</h5><p>Keep sensitive personal data compliant and auditable.</p></a>
+  <h2 class="shead">What it does</h2>
+  <div class="modgrid"><div class="mod"><h4>Discovery &amp; due diligence</h4><p>Search 3,000+ pre-vetted NGOs with 12A, 80G and FCRA checks already done, then run your own diligence workflow on top.</p></div><div class="mod"><h4>Sanction &amp; disbursement</h4><p>Approve grants against milestones and tranches, with ERP-integrated fund flow into SAP, Tally or Oracle.</p></div><div class="mod"><h4>Utilisation &amp; impact</h4><p>Track spend against plan and outcomes against your own M&amp;E framework, with the evidence attached to the grant.</p></div><div class="mod"><h4>MCA compliance, built in</h4><p>CSR-2, the Annual Action Plan, asset geo-tagging and a complete audit trail, generated as you work rather than assembled at year end.</p></div></div>
+</div></section>
+
+<section class="section" style="background:var(--paper)"><div class="wrap">
+  <h2 class="shead">What you get</h2>
+  <ul class="cm-list feats"><li>End-to-end CSR grant lifecycle, from discovery to closure</li><li>3,000+ pre-vetted NGOs with 12A / 80G and FCRA checks</li><li>ERP-integrated fund flow &mdash; SAP, Tally, Oracle</li><li>CSR-2, Annual Action Plan and asset geo-tagging</li><li>Complete MCA audit trail</li><li>Partner scoring and multi-stage approvals</li><li>Portfolio dashboards across every business unit</li><li>Field reporting from partner NGOs</li></ul>
+  <div class="deckbar">
+    <div><h3>mGrant for Donors</h3><p>The full walkthrough &mdash; modules, compliance rails and how it is rolled out.</p></div>
+    <a class="pill pill-primary deck-get" data-deck="mgrant-donors" data-deckname="mGrant for Donors" href="#">Download the deck <span class="arw">&#8594;</span></a>
   </div>
 </div></section>
 
-<!-- PROOF -->
-<section class="section proof"><div class="wrap">
-  <h2 class="shead">Case studies</h2>
-  <a class="cs-card" href="our-work.html?case=nutrition">
-    <div class="ph" style="background-image:url('assets/img/cases/case-nutrition.jpg');background-size:cover;background-position:center;background-color:#fff"></div>
-    <div class="body">
-      <h3>61 crops, 151 foods, 14 nutrients</h3>
-      <p class="res">Public dashboards tracking crop production, nutrient demand and supply down to district level for India&rsquo;s oldest philanthropy and the national nutrition research institute &mdash; plus a policy-simulation tool for modelling fortification scenarios.</p>
-      <div class="quote">&ldquo;They have been exceptional in the quality of their work, the responsiveness to support queries, and the commitment to our shared vision.&rdquo;<span>Manohar Sreekanth, Partner &amp; CTO</span></div>
-    </div>
-  </a>
-  <p class="cases-cta" style="margin-top:26px"><a class="tlink" href="our-work.html">See more of our work <span class="arw">&#8594;</span></a></p>
+<section class="section"><div class="wrap">
+  <h2 class="shead">The other edition</h2>
+  <p class="lede" style="max-width:66ch;margin-top:6px">Receiving grants rather than giving them? mGrant for Nonprofits is the same family, built the other way round &mdash; fundraising pipeline, project delivery and donor reporting.</p>
+  <p style="margin-top:16px"><a class="tlink" href="mgrant-nonprofits.html">See mGrant for Nonprofits <span class="arw">&#8594;</span></a></p>
 </div></section>
 
-<!-- CTA -->
 <div class="cta"><div class="in wrap">
-  <h2>Running a research programme that needs clean, ethical data?</h2>
-  <a class="pill pill-primary" href="contact.html?topic=brainstorm">Book a call <span class="arw">&#8594;</span></a>
+  <h2>Ready to run your CSR portfolio on one system?</h2>
+  <a class="pill pill-primary" href="contact.html?topic=brainstorm">Book a session <span class="arw">&#8594;</span></a>
 </div></div>
+
+<!-- DECK GATE -->
+<div class="cmodal" id="deckGate" role="dialog" aria-modal="true" aria-labelledby="dgTitle">
+  <div class="backdrop" data-dgclose></div>
+  <div class="box" style="max-width:460px">
+    <button class="close" data-dgclose aria-label="Close">&times;</button>
+    <div class="cm-bd">
+      <div class="cm-sect">Download</div>
+      <h3 id="dgTitle">Where should we send it?</h3>
+      <p class="cm-p" id="dgWhat"></p>
+      <form id="dgForm" novalidate>
+        <label class="field" style="display:block;margin-bottom:14px">
+          <span style="display:block;font-size:.86rem;font-weight:600;margin-bottom:6px">Work email <span style="color:var(--maroon)">*</span></span>
+          <input id="dgEmail" type="email" required placeholder="you@organisation.org"
+            style="width:100%;border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;font-family:var(--sans);font-size:.95rem">
+        </label>
+        <label style="display:flex;gap:9px;align-items:flex-start;font-size:.86rem;color:var(--muted);margin-bottom:18px">
+          <input id="dgCopy" type="checkbox" checked style="margin-top:3px"> Send me a copy of this request
+        </label>
+        <button type="submit" class="pill pill-primary">Get the download <span class="arw">&#8594;</span></button>
+      </form>
+      <p class="cm-p" id="dgDone" style="display:none;margin-top:16px">Thanks &mdash; your download should have started.</p>
+    </div>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer><div class="wrap">
@@ -294,10 +349,10 @@ function s(){var h=(document.querySelector('.ahero')||{}).offsetHeight||520;nav.
 var mb=document.getElementById('menuBtn');if(mb){mb.addEventListener('click',function(){nav.classList.toggle('open');});
 nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');});});}
   nav.querySelectorAll('.dd-toggle').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();b.parentElement.classList.toggle('open');});});
-var logos=['ashoka-university','azim-premji-university','irma','isdm','ifmr','centre-for-civil-society','microsave-consulting','world-resources-institute','sattva','dasra','bridgespan','cms-social-impact','intellecap','nielsen','wadhwani-ai'];
+var logos=['world-bank','unicef','who','undp','unesco','gates-foundation.svg','tata-trusts','tata-steel','mahindra','hdfc-bank','axis-bank-foundation','bajaj-finserv','reliance-foundation','godrej','sun-pharma','pratham','educate-girls','pradan','smile-foundation','save-the-children','helpage-india','azim-premji-philanthropic-initiatives','omidyar-network-india','dasra','give','nudge','central-square-foundation','transform-rural-india','jindal-stainless','lupin'];
 var LOGOH={"access-development-services.png":33.4,"adani-foundation.png":29.6,"akrsp.png":32.4,"amazon.png":25.0,"arvind.png":24.9,"ashoka-university.png":26.2,"axis-bank-foundation.png":21.8,"azim-premji-philanthropic-initiatives.png":27.2,"azim-premji-university.png":27.8,"bajaj-finserv.png":31.6,"bajaj.png":34.5,"bigbasket.png":36.8,"breakthrough.png":31.6,"bridgespan.png":28.5,"bright-future.png":26.2,"cams.svg":25.4,"central-square-foundation.png":23.0,"centre-for-civil-society.png":26.8,"chintu-gudiya-foundation.png":23.4,"ciff.png":22.3,"cms-social-impact.png":23.7,"crisil-foundation.png":27.9,"danone-nutricia.png":32.0,"dasra.png":34.0,"dell.png":34.0,"deloitte.png":21.7,"educate-girls.png":33.5,"ey.png":34.5,"forbes-marshall.png":22.6,"gates-foundation.svg":22.4,"gdi.png":28.4,"give.png":29.2,"giz.png":23.9,"godrej.png":27.4,"google.png":24.7,"hdfc-bank.png":35.3,"heifer-international.svg":24.4,"helpage-india.png":29.3,"icici-foundation.png":22.3,"idh.png":26.3,"ifmr.png":26.6,"indus-action.png":22.3,"intellecap.png":25.2,"irma.png":30.2,"isdm.png":26.8,"jan-sahas.png":34.0,"janaagraha.png":21.7,"jindal-stainless.png":22.9,"kotak-education-foundation.png":23.6,"kpmg.png":26.1,"kyndryl.png":34.0,"language-and-learning-foundation.png":34.0,"learning-links-foundation.png":31.4,"lic-hfl.png":27.6,"lupin.png":36.2,"mahindra.png":27.5,"microsave-consulting.png":28.8,"nafpo.png":22.4,"nasscom-foundation.png":25.9,"nielsen.png":24.8,"nrlm.png":35.0,"nudge.png":30.5,"omidyar-network-india.png":23.6,"onestage.png":34.0,"piramal-foundation.png":27.4,"pradan.png":25.3,"pratham.png":34.0,"pwc.png":31.4,"raintree-foundation.png":33.8,"reliance-foundation.png":25.2,"renew.png":24.5,"sattva.png":28.7,"save-the-children.png":31.7,"sehgal-foundation.png":23.5,"shiv-nadar-foundation.png":22.1,"smile-foundation.png":31.6,"sun-pharma.png":31.4,"swasti.png":22.9,"tata-steel.png":18.4,"tata-strive.png":22.6,"tata-trusts.png":19.9,"tech-mahindra-foundation.png":26.8,"terre-des-hommes.png":20.2,"transform-rural-india.png":23.5,"udyogini.png":34.2,"undp.png":42.1,"unesco.png":30.5,"unicef.png":31.6,"unilever.png":35.0,"unitus-capital.png":20.1,"vedanta-foundation.png":25.9,"vijayavahini-charitable-foundation.png":23.7,"villgro.png":27.6,"vrutti.png":27.8,"wadhwani-ai.png":25.0,"water-for-people.png":36.1,"welspun-foundation.svg":32.8,"who.png":34.2,"world-bank.png":22.3,"world-resources-institute.png":25.0,"yash-johar-foundation.png":23.4,"yuwaah.png":33.8};
 function build(id,a){var el=document.getElementById(id);if(!el)return;el.innerHTML=a.concat(a).map(function(n){var f=n.indexOf('.')>-1?n:n+'.png';var h=LOGOH[f]||32;return '<img src="assets/img/clients/'+f+'" alt="" style="height:'+h+'px">';}).join('');}
-build('row1',logos.slice(0,8));build('row2',logos.slice(8));})();
+build('row1',logos.slice(0,15));build('row2',logos.slice(15));})();
 </script>
 
 <!-- ===== DHWANI CHAT ASSISTANT ===== -->
@@ -464,6 +519,53 @@ build('row1',logos.slice(0,8));build('row2',logos.slice(8));})();
         +'&body='+encodeURIComponent('Please add this address to the Dhwani newsletter list: '+input.value);
       input.value=''; var b=f.querySelector('button'); if(b)b.textContent='Thanks';
     });
+  });
+})();
+</script>
+<script>
+(function(){
+  var DECKS={
+    'company-profile':{name:'Organisation Profile',file:'assets/docs/dhwani-ris-organization-profile.pdf'},
+    'mgrant-donors':{name:'mGrant for Donors',file:'assets/docs/dhwani-ris-organization-profile.pdf'},
+    'mgrant-nonprofits':{name:'mGrant for Nonprofits',file:'assets/docs/dhwani-ris-organization-profile.pdf'}
+  };
+  var gate=document.getElementById('deckGate'); if(!gate)return;
+  var cur=null;
+  function open(id,label){
+    cur=DECKS[id]||{name:label||'this deck',file:DECKS['company-profile'].file};
+    document.getElementById('dgWhat').textContent=cur.name+' \u2014 PDF. We will email you the link as well.';
+    document.getElementById('dgForm').style.display='block';
+    document.getElementById('dgDone').style.display='none';
+    gate.classList.add('open'); document.body.style.overflow='hidden';
+    setTimeout(function(){document.getElementById('dgEmail').focus();},60);
+  }
+  function close(){gate.classList.remove('open');document.body.style.overflow='';}
+  document.querySelectorAll('.deck-get').forEach(function(b){
+    b.addEventListener('click',function(e){e.preventDefault();open(b.dataset.deck,b.dataset.deckname);});
+  });
+  gate.querySelectorAll('[data-dgclose]').forEach(function(b){b.addEventListener('click',close);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&gate.classList.contains('open'))close();});
+  document.getElementById('dgForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var f=e.target; if(!f.checkValidity()){f.reportValidity();return;}
+    var email=document.getElementById('dgEmail').value;
+    var copy=document.getElementById('dgCopy').checked;
+    var cfg=window.DHWANI_FORMS||{};
+    var payload={source:'deck-download',deck:cur.name,email:email,copy_requested:copy,page:location.href};
+    if(cfg.FORM_ENDPOINT){
+      fetch(cfg.FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).catch(function(){});
+    }else{
+      /* no endpoint yet: send it via the user's mail client, cc'ing them so they keep a copy */
+      var to=cfg.NOTIFY_EMAIL||'partnerships@dhwaniris.com';
+      var url='mailto:'+to+(copy?('?cc='+encodeURIComponent(email)):'?')
+        +'&subject='+encodeURIComponent('Deck request \u2014 '+cur.name)
+        +'&body='+encodeURIComponent('Please send me the '+cur.name+' deck.\n\nEmail: '+email);
+      var w=window.open(url,'_blank'); if(!w)window.location.href=url;
+    }
+    f.style.display='none';
+    document.getElementById('dgDone').style.display='block';
+    var a=document.createElement('a'); a.href=cur.file; a.download=''; a.target='_blank';
+    document.body.appendChild(a); a.click(); a.remove();
   });
 })();
 </script>
