@@ -90,7 +90,7 @@ em{font-style:italic}
 .mtrack.l{animation:scrollx 48s linear infinite}
 .mtrack.r{animation:scrollx 54s linear infinite reverse;margin-top:26px}
 @keyframes scrollx{to{transform:translateX(-50%)}}
-.mtrack img{width:auto;max-width:150px;object-fit:contain;filter:grayscale(1);opacity:.55;transition:filter .25s,opacity .25s}
+.mtrack img{height:54px;width:150px;object-fit:contain;filter:grayscale(1);opacity:.72;transition:filter .25s,opacity .25s}
 .mtrack img:hover{filter:grayscale(0);opacity:1}
 
 /* testimonials */
@@ -255,6 +255,9 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .deck-modal.sent .done{display:block}
 
 .wcard .ph.noimg{height:6px;min-height:0;background:var(--orange);border:none}
+
+.tm-slide .who img.tmlogo{display:block;height:34px;width:auto;max-width:150px;object-fit:contain;
+margin:0 auto 14px;filter:grayscale(1);opacity:.7}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -743,23 +746,23 @@ window.DHWANI_FORMS = {
     <div class="tm-arrows"><button id="tmPrev" aria-label="Previous">←</button><button id="tmNext" aria-label="Next">→</button></div>
     <div class="tm-slide on">
       <p class="q">I appreciated how they first took the time to thoroughly understand all the challenges we faced in <em>managing our data</em>.</p>
-      <div class="who"><b>Rubina Aziz</b><span>Specialist, Research, Policy Analysis &amp; Communication &middot; Azad Foundation</span></div>
+      <div class="who"><img class="tmlogo" src="assets/img/testimonials/azad-foundation.svg" alt="Azad Foundation"><b>Rubina Aziz</b><span>Specialist, Research, Policy Analysis &amp; Communication &middot; Azad Foundation</span></div>
     </div>
     <div class="tm-slide">
       <p class="q">Dhwani&rsquo;s <em>social change first</em> approach, coupled with user-friendly tech solutions and an accessible team, makes them a valuable partner.</p>
-      <div class="who"><b>Rutuja Chaphekar</b><span>Manager, Corporate Social Responsibility</span></div>
+      <div class="who"><img class="tmlogo" src="assets/img/testimonials/forbes-marshall.jpg" alt="Forbes Marshall"><b>Rutuja Chaphekar</b><span>Manager, Corporate Social Responsibility &middot; Forbes Marshall</span></div>
     </div>
     <div class="tm-slide">
       <p class="q">They have been exceptional in the quality of their work, the responsiveness to support queries, and the <em>commitment to our shared vision</em>.</p>
-      <div class="who"><b>Manohar Sreekanth</b><span>Partner &amp; CTO</span></div>
+      <div class="who"><img class="tmlogo" src="assets/img/testimonials/sattva-consulting.svg" alt="Sattva Consulting"><b>Manohar Sreekanth</b><span>Partner &amp; CTO &middot; Sattva Consulting</span></div>
     </div>
     <div class="tm-slide">
       <p class="q">They took the time to thoroughly grasp our challenges, resulting in a system that <em>closely matched our goals</em>.</p>
-      <div class="who"><b>Rajneesh Jain</b><span>Technology Head, Social Innovation for Youth</span></div>
+      <div class="who"><img class="tmlogo" src="assets/img/testimonials/nasscom-foundation.svg" alt="NASSCOM Foundation"><b>Rajneesh Jain</b><span>Technology Head, Social Innovation for Youth &middot; NASSCOM Foundation</span></div>
     </div>
     <div class="tm-slide">
       <p class="q">Their team has <em>consistently been available</em> whenever we needed support, providing prompt, and effective solutions.</p>
-      <div class="who"><b>Kapil Shah</b><span>Director, Technology</span></div>
+      <div class="who"><img class="tmlogo" src="assets/img/testimonials/migrants-resilience-collaborative.png" alt="Migrants Resilience Collaborative"><b>Kapil Shah</b><span>Director, Technology &middot; Migrants Resilience Collaborative</span></div>
     </div>
   </div>
   
@@ -767,7 +770,7 @@ window.DHWANI_FORMS = {
 
 <!-- DECK PROMO -->
 <section class="wrap"><div class="deck-promo">
-  <div><h3>Want it all in one place?</h3><p>Our organisation profile &mdash; who we are, what we build and the sectors we work in. 34 pages, PDF.</p></div>
+  <div><h3>Organisation profile</h3><p>What we build, the sectors we work in, and the organisations we have built it for. One PDF.</p></div>
   <a class="pill pill-primary deck-get" data-deck="company-profile" href="#">Download the profile <span class="arw">&#8594;</span></a>
 </div></section>
 
@@ -836,7 +839,7 @@ window.DHWANI_FORMS = {
     <div><h5>Products</h5><ul><li><a href="mgrant-donors.html">mGrant for Donors</a></li><li><a href="mgrant-nonprofits.html">mGrant for Nonprofits</a></li><li><a href="mform.html">mForm</a></li><li><a href="anumati.html">Anumati (DPDP)</a></li><li><a href="radar.html">Radar</a></li></ul></div>
     <div><h5>Systems</h5><ul><li><a href="programme-mis.html">Programme MIS</a></li><li><a href="impact-dashboards.html">Impact Dashboards</a></li><li><a href="grant-management.html">Grant Management</a></li><li><a href="donor-management.html">Donor Management</a></li><li><a href="field-data-apps.html">Field Data Apps</a></li><li><a href="back-office-it.html">Back-office IT</a></li><li><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></li></ul></div>
     <div><h5>Consulting</h5><ul><li><a href="dpdp-act-readiness.html">DPDP Act Readiness</a></li><li><a href="cloud-optimisation.html">CloudSahayak</a></li><li><a href="ai-for-impact.html">AI for Impact</a></li><li><a href="digital-transformation.html">Digital Transformation</a></li><li><a href="programme-management.html">PMU as a Service</a></li></ul></div>
-    <div><h5>By sector</h5><ul><li><a href="our-work.html?sector=healthcare">Healthcare</a></li><li><a href="our-work.html?sector=agriculture">Agriculture &amp; Livelihoods</a></li><li><a href="our-work.html?sector=education">Education &amp; Skilling</a></li><li><a href="our-work.html?sector=financial-inclusion">Financial Inclusion</a></li><li><a href="our-work.html?sector=governance">Governance</a></li><li><a href="our-work.html">All sectors →</a></li></ul></div>
+    <div><h5>By sector</h5><ul><li><a href="our-work.html?sector=healthcare">Healthcare</a></li><li><a href="our-work.html?sector=agriculture">Agriculture &amp; Livelihoods</a></li><li><a href="our-work.html?sector=education">Education &amp; Skilling</a></li><li><a href="our-work.html?sector=financial-inclusion">Financial Inclusion</a></li><li><a href="our-work.html?sector=governance">Governance</a></li><li><a href="our-work.html?sector=climate">Climate &amp; Environment</a></li><li><a href="our-work.html?sector=entrepreneurship">Entrepreneurship</a></li><li><a href="our-work.html?sector=mel">Programme Mgmt &amp; MEL</a></li><li><a href="our-work.html?sector=digital-ai">Digital &amp; AI</a></li><li><a href="our-work.html">All sectors →</a></li></ul></div>
   </div>
   <div class="frow2">
     <div class="fnews">
@@ -845,8 +848,8 @@ window.DHWANI_FORMS = {
       <form onsubmit="return false" data-pending="newsletter-provider"><input type="email" placeholder="you@organisation.org"><button class="pill pill-primary" style="padding:11px 18px">Subscribe</button></form>
     </div>
     <div><h5>Who we serve</h5><ul><li><a href="for-donors.html">Donors &amp; CSRs</a></li><li><a href="for-ngos.html">NGOs</a></li><li><a href="for-government.html">Government</a></li><li><a href="for-academic.html">Academic &amp; Research</a></li></ul></div>
-    <div><h5>Company</h5><ul><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="careers.html">Careers</a></li><li><a href="community.html">Community</a></li><li><a href="technology.html">Technology at Dhwani</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    <div><h5>Resources</h5><ul><li><a href="resources.html#toolkits">Toolkits</a></li><li><a href="resources.html#decks">Decks</a></li><li><a href="resources.html#insights">Insights</a></li></ul><p class="fcontact">Sector 44, Gurugram, Haryana 122002<br><a href="tel:+919574655961">+91 95746 55961</a><br><a href="mailto:partnerships@dhwaniris.com">partnerships@dhwaniris.com</a></p></div>
+    <div><h5>Company</h5><ul><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="careers.html">Careers</a></li><li><a href="life-at-dhwani.html">Life at Dhwani</a></li><li><a href="community.html">Community</a></li><li><a href="technology.html">Technology at Dhwani</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h5>Resources</h5><ul><li><a href="our-work.html">Our work</a></li><li><a href="solutions.html">Solutions</a></li><li><a href="resources.html#toolkits">Toolkits</a></li><li><a href="resources.html#decks">Decks</a></li><li><a href="resources.html#insights">Insights</a></li></ul><p class="fcontact">Sector 44, Gurugram, Haryana 122002<br><a href="tel:+919574655961">+91 95746 55961</a><br><a href="mailto:partnerships@dhwaniris.com">partnerships@dhwaniris.com</a></p></div>
   </div>
   <div class="foot-bot"><span>© 2026 Dhwani Rural Information Systems</span><span><a href="privacy.html">Privacy</a> · <a href="sitemap.html">Sitemap</a></span></div>
 </div></footer>
@@ -1021,7 +1024,7 @@ if(p&&nx){p.onclick=function(){show(i-1);rs();};nx.onclick=function(){show(i+1);
 
   var FAQ=[
     {kw:['deck','overview','one-pager','brochure','pdf','presentation'],
-     a:"Our organisation profile covers who we are, what we build and the sectors we work in. <a href=\"assets/docs/dhwani-ris-organization-profile.pdf\">Download the profile &#8594;</a>"},
+     a:"Our organisation profile covers what we build, the sectors we work in, and who we have built it for. <a href=\"assets/docs/dhwani-ris-organization-profile.pdf\">Download the profile &#8594;</a>"},
     {kw:['open source','frappe','erpnext'],
      a:"Much of what we build sits on Frappe, the open-source framework behind ERPNext, and we try to give back where we can. <a href=\"technology.html\">Read about our open-source approach &#8594;</a>"},
     {kw:['radar','due diligence','risk intelligence'],
@@ -1140,6 +1143,8 @@ if(p&&nx){p.onclick=function(){show(i-1);rs();};nx.onclick=function(){show(i+1);
 (function(){
   var DECKS={
     'company-profile':{name:'Organisation Profile',file:'assets/docs/dhwani-ris-organization-profile.pdf'},
+    'dpdp-approach':{name:'DPDP Approach',file:'assets/docs/dhwani-dpdp-approach.pptx'},
+    'cloudsahayak':{name:'CloudSahayak overview',file:'assets/docs/cloudsahayak-cloud-devops-overview.pdf'},
     'mgrant-donors':{name:'mGrant for Donors',file:'assets/docs/dhwani-ris-organization-profile.pdf'},
     'mgrant-nonprofits':{name:'mGrant for Nonprofits',file:'assets/docs/dhwani-ris-organization-profile.pdf'}
   };
