@@ -65,12 +65,6 @@ em{font-style:italic}
 .sol2 .cgrid{grid-template-columns:1fr 1fr}
 .sol2 h3{font-size:1.32rem;font-weight:500;margin-bottom:4px}
 .sol2 .rlede{color:var(--muted);font-size:.9rem;margin-bottom:18px}
-.minicase{display:block;background:var(--beige);border-radius:10px;padding:16px 18px;margin-bottom:10px;transition:.2s}
-.minicase:hover{background:var(--beige-h)}
-.mckeys{display:flex;gap:5px;flex-wrap:wrap;margin-top:9px}
-.mckeys span{font-size:.7rem;color:var(--muted);background:var(--paper);border-radius:999px;padding:3px 9px}
-.minicase b{display:block;font-family:var(--serif);font-size:1.05rem;font-weight:500;color:var(--ink);margin-bottom:3px}
-.minicase span{font-size:.85rem;color:var(--muted);line-height:1.45}
 @media(max-width:900px){.sol2{grid-template-columns:1fr;gap:34px}}
 
 .ocard{display:flex;flex-direction:column;min-height:0;background:var(--beige);border-radius:8px;padding:clamp(22px,3.4vw,34px);transition:.2s}
@@ -168,6 +162,24 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 @media(max-width:900px){.cases3{grid-template-columns:1fr}}
 #topnav .links a.n-active{color:#fff;font-weight:600}
 #topnav.solid .links a.n-active,#topnav.scrolled .links a.n-active{color:var(--maroon)}
+
+/* proof panel */
+.proofpanel{position:sticky;top:96px}
+.proofpanel h3{font-size:1.2rem;font-weight:500;margin-bottom:3px}
+.proofpanel .rlede{color:var(--muted);font-size:.88rem;margin-bottom:16px}
+.minicase{display:block;background:var(--beige);border-radius:12px;overflow:hidden;margin-bottom:12px;transition:.2s;position:relative}
+.minicase:hover{background:var(--beige-h)}
+.minicase:hover .mcph{filter:grayscale(0)}
+.mcph{height:104px;background-size:cover;background-position:center;filter:grayscale(.35);transition:filter .3s;border-bottom:1px solid var(--line)}
+.mcbd{padding:15px 17px 16px}
+.minicase b{display:block;font-family:var(--serif);font-size:1.06rem;font-weight:500;color:var(--ink);line-height:1.25;margin-bottom:3px}
+.minicase .mcsub{display:block;font-size:.82rem;color:var(--muted);line-height:1.4}
+.mcstat{display:flex;align-items:baseline;gap:8px;margin:11px 0 0;padding-top:11px;border-top:1px solid var(--line)}
+.mcstat b{font-family:var(--serif);font-size:1.32rem;font-weight:500;color:var(--maroon);margin:0;line-height:1}
+.mcstat span{font-size:.76rem;color:var(--muted);line-height:1.3}
+.mckeys{display:flex;gap:5px;flex-wrap:wrap;margin-top:11px}
+.mckeys span{font-size:.7rem;color:var(--muted);background:var(--paper);border-radius:999px;padding:3px 9px}
+@media(max-width:900px){.proofpanel{position:static}}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -256,12 +268,30 @@ window.DHWANI_FORMS = {
     <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 2 4-6"/></svg></span><h5>Renewals</h5><p>See what is due and what is at risk.</p></div>
   </div>
     </div>
-    <aside>
-      <h3>See it in our work</h3>
+    <aside class="proofpanel">
+      <h3>Proof</h3>
       <p class="rlede">Programmes running on this today.</p>
-      <a class="minicase" href="our-work.html?case=mahindra"><b>Mahindra Group</b><span>One CSR platform for 53 group companies</span><span class="mckeys"><span>53 group companies</span><span>300+ NGO partners</span><span>Approval workflows</span></span></a>
-      <a class="minicase" href="our-work.html?case=ciff"><b>CIFF &amp; Charities Aid Foundation</b><span>Grant infrastructure for international funders</span><span class="mckeys"><span>programme management unit (PMU) support</span><span>sexual and reproductive health and rights (SRHR) dashboard</span><span>Portfolio dashboards</span></span></a>
-      <a class="minicase" href="our-work.html?case=tri"><b>Transform Rural India</b><span>A technology partnership, 74 engagements deep</span><span class="mckeys"><span>74 engagements</span><span>UP SRLM payments</span><span>Every vertical on mGrant</span></span></a>
+      <a class="minicase" href="our-work.html?case=mahindra">
+        <div class="mcph" style="background-image:url('https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=900&auto=format&fit=crop')"></div>
+        <div class="mcbd"><b>Mahindra Group</b><span class="mcsub">One CSR platform for 53 group companies</span>
+          <div class="mcstat"><b>300+</b><span>partner NGOs reporting</span></div>
+          <div class="mckeys"><span>53 group companies</span><span>300+ NGO partners</span></div>
+        </div>
+      </a>
+      <a class="minicase" href="our-work.html?case=ciff">
+        <div class="mcph" style="background-image:url('https://images.unsplash.com/photo-1578991624414-276ef23a534f?q=80&w=900&auto=format&fit=crop')"></div>
+        <div class="mcbd"><b>CIFF &amp; Charities Aid Foundation</b><span class="mcsub">Grant infrastructure for international funders</span>
+          <div class="mcstat"><b>PMU + platform</b><span>support model</span></div>
+          <div class="mckeys"><span>programme management unit (PMU) support</span><span>SRHR dashboard</span></div>
+        </div>
+      </a>
+      <a class="minicase" href="our-work.html?case=tri">
+        <div class="mcph" style="background-image:url('https://images.unsplash.com/photo-1609252509229-364936a1d1a2?q=80&w=900&auto=format&fit=crop')"></div>
+        <div class="mcbd"><b>Transform Rural India</b><span class="mcsub">A technology partnership, 74 engagements deep</span>
+          <div class="mcstat"><b>74</b><span>engagements and counting</span></div>
+          <div class="mckeys"><span>74 engagements</span><span>UP SRLM payments</span></div>
+        </div>
+      </a>
       <p style="margin-top:14px"><a class="tlink" href="our-work.html">Browse all our work <span class="arw">&#8594;</span></a></p>
     </aside>
   </div>

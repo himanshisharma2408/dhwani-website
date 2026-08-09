@@ -65,12 +65,6 @@ em{font-style:italic}
 .sol2 .cgrid{grid-template-columns:1fr 1fr}
 .sol2 h3{font-size:1.32rem;font-weight:500;margin-bottom:4px}
 .sol2 .rlede{color:var(--muted);font-size:.9rem;margin-bottom:18px}
-.minicase{display:block;background:var(--beige);border-radius:10px;padding:16px 18px;margin-bottom:10px;transition:.2s}
-.minicase:hover{background:var(--beige-h)}
-.mckeys{display:flex;gap:5px;flex-wrap:wrap;margin-top:9px}
-.mckeys span{font-size:.7rem;color:var(--muted);background:var(--paper);border-radius:999px;padding:3px 9px}
-.minicase b{display:block;font-family:var(--serif);font-size:1.05rem;font-weight:500;color:var(--ink);margin-bottom:3px}
-.minicase span{font-size:.85rem;color:var(--muted);line-height:1.45}
 @media(max-width:900px){.sol2{grid-template-columns:1fr;gap:34px}}
 
 .ocard{display:flex;flex-direction:column;min-height:0;background:var(--beige);border-radius:8px;padding:clamp(22px,3.4vw,34px);transition:.2s}
@@ -168,6 +162,24 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 @media(max-width:900px){.cases3{grid-template-columns:1fr}}
 #topnav .links a.n-active{color:#fff;font-weight:600}
 #topnav.solid .links a.n-active,#topnav.scrolled .links a.n-active{color:var(--maroon)}
+
+/* proof panel */
+.proofpanel{position:sticky;top:96px}
+.proofpanel h3{font-size:1.2rem;font-weight:500;margin-bottom:3px}
+.proofpanel .rlede{color:var(--muted);font-size:.88rem;margin-bottom:16px}
+.minicase{display:block;background:var(--beige);border-radius:12px;overflow:hidden;margin-bottom:12px;transition:.2s;position:relative}
+.minicase:hover{background:var(--beige-h)}
+.minicase:hover .mcph{filter:grayscale(0)}
+.mcph{height:104px;background-size:cover;background-position:center;filter:grayscale(.35);transition:filter .3s;border-bottom:1px solid var(--line)}
+.mcbd{padding:15px 17px 16px}
+.minicase b{display:block;font-family:var(--serif);font-size:1.06rem;font-weight:500;color:var(--ink);line-height:1.25;margin-bottom:3px}
+.minicase .mcsub{display:block;font-size:.82rem;color:var(--muted);line-height:1.4}
+.mcstat{display:flex;align-items:baseline;gap:8px;margin:11px 0 0;padding-top:11px;border-top:1px solid var(--line)}
+.mcstat b{font-family:var(--serif);font-size:1.32rem;font-weight:500;color:var(--maroon);margin:0;line-height:1}
+.mcstat span{font-size:.76rem;color:var(--muted);line-height:1.3}
+.mckeys{display:flex;gap:5px;flex-wrap:wrap;margin-top:11px}
+.mckeys span{font-size:.7rem;color:var(--muted);background:var(--paper);border-radius:999px;padding:3px 9px}
+@media(max-width:900px){.proofpanel{position:static}}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -257,12 +269,30 @@ window.DHWANI_FORMS = {
     <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4"/></svg></span><h5>Voice input</h5><p>Voice-enabled capture and assessments in Indian languages, for enumerators and low-literacy respondents.</p></div>
   </div>
     </div>
-    <aside>
-      <h3>See it in our work</h3>
+    <aside class="proofpanel">
+      <h3>Proof</h3>
       <p class="rlede">Programmes running on this today.</p>
-      <a class="minicase" href="our-work.html?case=huf"><b>Hindustan Unilever Foundation</b><span>Water data that twelve NGOs can act on</span><span class="mckeys"><span>12 NGO partners</span><span>Multilingual field data</span><span>Water stewardship</span></span></a>
-      <a class="minicase" href="our-work.html?case=giz"><b>QSure &middot; GIZ India</b><span>Crop insurance claims, digitised</span><span class="mckeys"><span>World Bank innovation grant</span><span>Crop insurance claims</span><span>Paper to digital</span></span></a>
-      <a class="minicase" href="our-work.html?case=watershed"><b>Mega-Watershed Monitoring Portal</b><span>For one of India's largest grassroots NGOs, under a state MGNREGA cell</span><span class="mckeys"><span>7 rivers rejuvenated</span><span>54 blocks</span><span>14+ lakh households</span></span></a>
+      <a class="minicase" href="our-work.html?case=huf">
+        <div class="mcph" style="background-image:url('https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=900&auto=format&fit=crop')"></div>
+        <div class="mcbd"><b>Hindustan Unilever Foundation</b><span class="mcsub">Water data that twelve NGOs can act on</span>
+          <div class="mcstat"><b>12</b><span>partner NGOs on one system</span></div>
+          <div class="mckeys"><span>12 NGO partners</span><span>Multilingual field data</span></div>
+        </div>
+      </a>
+      <a class="minicase" href="our-work.html?case=giz">
+        <div class="mcph" style="background-image:url('https://images.unsplash.com/photo-1623211269755-569fec0536d2?q=80&w=900&auto=format&fit=crop')"></div>
+        <div class="mcbd"><b>QSure &middot; GIZ India</b><span class="mcsub">Crop insurance claims, digitised</span>
+          <div class="mcstat"><b>World Bank</b><span>innovation grant recipient</span></div>
+          <div class="mckeys"><span>World Bank innovation grant</span><span>Crop insurance claims</span></div>
+        </div>
+      </a>
+      <a class="minicase" href="our-work.html?case=watershed">
+        <div class="mcph" style="background-image:url('assets/img/cases/case-watershed.jpg')"></div>
+        <div class="mcbd"><b>Mega-Watershed Monitoring Portal</b><span class="mcsub">For one of India's largest grassroots NGOs, under a state MGNREGA cell</span>
+          <div class="mcstat"><b>14+ lakh</b><span>households in programme area</span></div>
+          <div class="mckeys"><span>7 rivers rejuvenated</span><span>54 blocks</span></div>
+        </div>
+      </a>
       <p style="margin-top:14px"><a class="tlink" href="our-work.html">Browse all our work <span class="arw">&#8594;</span></a></p>
     </aside>
   </div>
