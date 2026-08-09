@@ -216,13 +216,6 @@ grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
 .cmodal .cm-tags span{font-size:.72rem;color:var(--muted);background:var(--beige);border-radius:999px;padding:5px 11px}
 
 /* what you end up with */
-.getlist{display:grid;grid-template-columns:1fr 1fr;gap:13px 40px;margin-top:30px;list-style:none;padding:0}
-.getlist li{position:relative;padding-left:31px;font-size:.97rem;line-height:1.58;color:var(--ink);list-style:none}
-.getlist li:before{content:"";position:absolute;left:0;top:3px;width:19px;height:19px;border-radius:50%;
-background:var(--maroon)}
-.getlist li:after{content:"";position:absolute;left:6px;top:9px;width:7px;height:4px;
-border-left:1.8px solid #fff;border-bottom:1.8px solid #fff;transform:rotate(-45deg)}
-.getlist li b{font-weight:600}
 /* a figure row, for pressure or track record */
 .figrow{display:flex;gap:clamp(30px,5vw,64px);flex-wrap:wrap;margin-top:30px;padding:26px 0;
 border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -230,7 +223,7 @@ border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .figrow b{display:block;font-family:var(--serif);font-size:clamp(1.7rem,3vw,2.2rem);font-weight:500;
 color:var(--maroon);line-height:1.05;margin-bottom:5px}
 .figrow span{font-size:.88rem;color:var(--muted);line-height:1.45}
-@media(max-width:760px){.getlist{grid-template-columns:1fr}}
+@media(max-width:760px){}
 
 .creds{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:18px;margin-top:32px}
 .cred{border-left:2px solid var(--orange);padding:4px 0 4px 18px}
@@ -327,13 +320,12 @@ window.DHWANI_FORMS = {
 <!-- WHAT IT DOES -->
 <section class="section"><div class="wrap">
   <h2 class="shead">Why organisations bring in a PMU</h2>
-  <ul class="getlist">
-    <li>A programme is <b>funded and needs to start</b> before a hiring round can finish</li>
-    <li>A portfolio has grown past what the <b>existing team can coordinate</b></li>
-    <li>Partners each report <b>differently</b>, and nobody holds the whole picture</li>
-    <li>A funder expects <b>governance and reporting rhythms</b> the organisation has never run</li>
-    <li>The organisation wants the capability <b>in-house eventually</b>, and someone to build it first</li>
-  </ul>
+  <div class="cgrid">
+    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span><h5>Funded, but not staffed</h5><p>The programme has to start before a hiring round can finish.</p></div>
+    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l3-6 4 4 4-8"/></svg></span><h5>The portfolio outgrew the team</h5><p>More partners and projects than anyone can hold at once.</p></div>
+    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg></span><h5>Every partner reports differently</h5><p>Nobody holds the whole picture in one place.</p></div>
+    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12h6M12 9v6"/></svg></span><h5>Governance you have not run before</h5><p>A funder expects review rhythms and board packs the organisation has never produced.</p></div>
+  </div>
 </div></section>
 
 <section class="section wyg" style="background:var(--paper)"><div class="wrap">
