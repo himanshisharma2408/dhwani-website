@@ -61,11 +61,9 @@ em{font-style:italic}
 .wyglede{color:var(--muted);font-size:1rem;line-height:1.65;max-width:62ch;margin:10px 0 26px}
 .cgrid{display:grid;gap:16px;grid-template-columns:repeat(4,1fr)}
 /* solution page: what-it-does tiles on the left, proof on the right */
-.sol2{display:grid;grid-template-columns:1.6fr 1fr;gap:46px;align-items:start}
-.sol2 .cgrid{grid-template-columns:1fr 1fr}
 .sol2 h3{font-size:1.32rem;font-weight:500;margin-bottom:4px}
 .sol2 .rlede{color:var(--muted);font-size:.9rem;margin-bottom:18px}
-@media(max-width:900px){.sol2{grid-template-columns:1fr;gap:34px}}
+@media(max-width:900px){}
 
 .ocard{display:flex;flex-direction:column;min-height:0;background:var(--beige);border-radius:8px;padding:clamp(22px,3.4vw,34px);transition:.2s}
 .ocard:hover{background:var(--beige-h)}
@@ -164,22 +162,59 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 #topnav.solid .links a.n-active,#topnav.scrolled .links a.n-active{color:var(--maroon)}
 
 /* proof panel */
-.proofpanel{position:sticky;top:96px}
-.proofpanel h3{font-size:1.2rem;font-weight:500;margin-bottom:3px}
-.proofpanel .rlede{color:var(--muted);font-size:.88rem;margin-bottom:16px}
-.minicase{display:block;background:var(--beige);border-radius:12px;overflow:hidden;margin-bottom:12px;transition:.2s;position:relative}
-.minicase:hover{background:var(--beige-h)}
-.minicase:hover .mcph{filter:grayscale(0)}
-.mcph{height:104px;background-size:cover;background-position:center;filter:grayscale(.35);transition:filter .3s;border-bottom:1px solid var(--line)}
-.mcbd{padding:15px 17px 16px}
-.minicase b{display:block;font-family:var(--serif);font-size:1.06rem;font-weight:500;color:var(--ink);line-height:1.25;margin-bottom:3px}
-.minicase .mcsub{display:block;font-size:.82rem;color:var(--muted);line-height:1.4}
-.mcstat{display:flex;align-items:baseline;gap:8px;margin:11px 0 0;padding-top:11px;border-top:1px solid var(--line)}
-.mcstat b{font-family:var(--serif);font-size:1.32rem;font-weight:500;color:var(--maroon);margin:0;line-height:1}
-.mcstat span{font-size:.76rem;color:var(--muted);line-height:1.3}
-.mckeys{display:flex;gap:5px;flex-wrap:wrap;margin-top:11px}
-.mckeys span{font-size:.7rem;color:var(--muted);background:var(--paper);border-radius:999px;padding:3px 9px}
-@media(max-width:900px){.proofpanel{position:static}}
+.minicase:hover @media(max-width:900px){}
+
+/* case studies, full width, under the explanation */
+.casesec{background:var(--paper)}
+.ccards{display:grid;gap:20px;margin-top:30px;
+grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
+.ccards.one{grid-template-columns:1fr}
+.ccard{text-align:left;border:none;padding:0;font:inherit;cursor:pointer;width:100%;display:flex;flex-direction:column;background:var(--beige);border-radius:12px;overflow:hidden;transition:.2s}
+.ccard:hover{background:var(--beige-h);transform:translateY(-2px)}
+.ccard:hover .ccph{filter:grayscale(0)}
+.ccph{height:172px;background-size:cover;background-position:center;filter:grayscale(.35);transition:filter .35s;flex:none}
+.ccbd{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+.ccard h3{font-family:var(--serif);font-size:1.24rem;font-weight:500;line-height:1.25;color:var(--ink);margin-bottom:5px}
+.cccl{font-size:.86rem;color:var(--muted);line-height:1.45;margin:0}
+.ccstat{display:flex;align-items:baseline;gap:9px;margin:auto 0 0;padding-top:14px;border-top:1px solid var(--line)}
+.ccstat b{font-family:var(--serif);font-size:1.6rem;font-weight:500;color:var(--maroon);line-height:1}
+.ccstat span{font-size:.78rem;color:var(--muted);line-height:1.3}
+.cckeys{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+.cckeys span{font-size:.72rem;color:var(--muted);background:var(--paper);border-radius:999px;padding:4px 11px}
+.ccmore{margin-top:auto;padding-top:18px;font-size:.86rem;font-weight:600;color:var(--maroon)}
+.ccard:hover .ccmore .arw{transform:translateX(4px)}
+.ccmore .arw{display:inline-block;transition:transform .2s}
+@media(min-width:760px){.ccards.one .ccard{flex-direction:row}
+.ccards.one .ccph{height:auto;width:38%;min-height:230px}
+.ccards.one .ccbd{padding:30px 34px}}
+
+.cmodal .cm-badge{display:inline-block;font-family:var(--sans);font-style:normal;font-size:.72rem;font-weight:600;letter-spacing:.04em;border-radius:999px;padding:5px 12px;background:var(--beige);color:var(--muted)}
+.cmodal .cm-proof{background:var(--beige);border-radius:12px;padding:16px 18px;margin-bottom:22px;font-size:.92rem}
+.cmodal .cm-proof b{color:var(--maroon)}
+
+/* case-study detail modal */
+.cmodal{display:none;position:fixed;inset:0;z-index:420;align-items:center;justify-content:center;padding:28px 20px}
+.cmodal.open{display:flex}
+.cmodal .backdrop{position:absolute;inset:0;background:rgba(21,16,15,.55)}
+.cmodal .box{position:relative;background:var(--paper);border-radius:20px;max-width:780px;width:100%;overflow:hidden;max-height:calc(100vh - 56px);display:flex;flex-direction:column}
+.cmodal .close{position:absolute;top:14px;right:14px;z-index:2;background:rgba(250,246,239,.92);border:1px solid var(--line);width:36px;height:36px;border-radius:50%;font-size:1.2rem;color:var(--ink);cursor:pointer;line-height:1}
+.cmodal .cm-shot{display:block;width:100%;height:236px;background:#fff;border-bottom:1px solid var(--line);flex:none;object-fit:cover;object-position:center}
+.cmodal .cm-shot.is-shot{object-fit:contain;object-position:center;background:#fff}
+.cmodal .cm-bd{padding:32px 38px 36px;overflow-y:auto}
+.cmodal .cm-sect{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--maroon);font-weight:600;margin-bottom:10px}
+.cmodal h3{font-size:1.7rem;font-weight:500;line-height:1.2;margin-bottom:8px}
+.cmodal .cm-client{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:1.02rem;margin-bottom:22px}
+.cmodal h5{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:7px;font-family:var(--sans)}
+.cmodal .cm-p{font-size:.96rem;line-height:1.62;color:var(--ink);margin-bottom:20px}
+.cmodal .cm-list{list-style:none;margin:0 0 22px;padding:0}
+.cmodal .cm-list li{position:relative;padding-left:20px;font-size:.94rem;color:var(--ink);line-height:1.55;margin-bottom:7px}
+.cmodal .cm-list li:before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--orange)}
+.cmodal .cm-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;margin-bottom:22px}
+.cmodal .cm-stats b{display:block;font-family:var(--serif);font-size:1.42rem;font-weight:500;color:var(--maroon);line-height:1.15;margin-bottom:4px}
+.cmodal .cm-stats span{font-size:.8rem;color:var(--muted);line-height:1.4}
+.cmodal .cm-foot{display:flex;align-items:center;justify-content:flex-start;gap:16px;flex-wrap:wrap}
+.cmodal .cm-tags{display:flex;gap:6px;flex-wrap:wrap}
+.cmodal .cm-tags span{font-size:.72rem;color:var(--muted);background:var(--beige);border-radius:999px;padding:5px 11px}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -257,10 +292,8 @@ window.DHWANI_FORMS = {
 
 <!-- WHAT IT DOES -->
 <section class="section wyg"><div class="wrap">
-  <div class="sol2">
-    <div>
-    <h2 class="shead">What it does</h2>
-    <p class="wyglede">M&amp;E is where indicators, targets and evidence live. We build the plumbing that gets outcome data out of the field and into a form a funder, a board or an evaluator can actually interrogate.</p>
+  <h2 class="shead">What it does</h2>
+    <p class="wyglede">M&amp;E is where indicators, targets, and evidence live. We build the plumbing that gets outcome data out of the field and into a form a funder, a board or an evaluator can actually interrogate.</p>
     <div class="cgrid">
     <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><path d="M12 11.5v1"/></svg></span><h5>Indicator framework</h5><p>Your logframe, built into the system.</p></div>
     <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 2 4-6"/></svg></span><h5>Real-time tracking</h5><p>See progress as it happens, not months later.</p></div>
@@ -268,34 +301,44 @@ window.DHWANI_FORMS = {
     <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="M9 13h6M9 17h4"/></svg></span><h5>Reports</h5><p>Funder-ready outputs at a click.</p></div>
     <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l1.8 4.4L18 8l-4.2 1.6L12 14l-1.8-4.4L6 8l4.2-1.6z"/><path d="M18 15l.9 2.1L21 18l-2.1.9L18 21l-.9-2.1L15 18l2.1-.9z"/></svg></span><h5>AI-assisted summaries</h5><p>Long-form field reports and qualitative notes summarised for review, with the source always one click away.</p></div>
   </div>
-    </div>
-    <aside class="proofpanel">
-      <h3>Proof</h3>
-      <p class="rlede">Programmes running on this today.</p>
-      <a class="minicase" href="our-work.html?case=amazon">
-        <div class="mcph" style="background-image:url('https://images.unsplash.com/photo-1722573783625-eceb04251036?q=80&w=900&auto=format&fit=crop')"></div>
-        <div class="mcbd"><b>Amazon India</b><span class="mcsub">CSR programme management across seventeen projects</span>
-          <div class="mcstat"><b>17</b><span>projects delivered together</span></div>
-          <div class="mckeys"><span>17 CSR projects</span><span>Partner M&amp;E framework</span></div>
+</div></section>
+
+<section class="section casesec"><div class="wrap">
+  <h2 class="shead">Case studies</h2>
+  <p class="lede">Programmes running on this today. Each one opens in full.</p>
+  <div class="ccards">
+      <button type="button" class="ccard" data-case="ultrapoor">
+        <div class="ccph" style="background-image:url('assets/img/cases/case-ultrapoor.jpg')"></div>
+        <div class="ccbd">
+          <h3>Ultra-Poor Graduation Dashboard</h3>
+          <p class="cccl">For a leading non-profit aiming to lift 1 million women out of ultra-poverty</p>
+          <div class="ccstat"><b>1M women</b><span>programme ambition</span></div>
+          <div class="cckeys"><span>1M women target</span><span>Household-level tracking</span><span>4 states</span></div>
+          <span class="ccmore">Read the case study <span class="arw">&#8594;</span></span>
         </div>
-      </a>
-      <a class="minicase" href="our-work.html?case=landmark">
-        <div class="mcph" style="background-image:url('https://images.unsplash.com/photo-1601689892697-b64daa00ff6d?q=80&w=900&auto=format&fit=crop')"></div>
-        <div class="mcbd"><b>Landmark Group</b><span class="mcsub">Mobile health units, governed by data</span>
-          <div class="mcstat"><b>1,48,320</b><span>beneficiaries screened in FY 25-26</span></div>
-          <div class="mckeys"><span>1,48,320 screened</span><span>2,184 camps</span></div>
+      </button>
+      <button type="button" class="ccard" data-case="pds">
+        <div class="ccph" style="background-image:url('assets/img/cases/case-foodsupplies.jpg')"></div>
+        <div class="ccbd">
+          <h3>Food Supplies (PDS) Dashboard</h3>
+          <p class="cccl">For a large western state's food &amp; civil supplies department</p>
+          <div class="ccstat"><b>State-wide</b><span>PDS monitoring</span></div>
+          <div class="cckeys"><span>State-wide PDS</span><span>Month-wise tracking</span><span>Allocation vs delivery</span></div>
+          <span class="ccmore">Read the case study <span class="arw">&#8594;</span></span>
         </div>
-      </a>
-      <a class="minicase" href="our-work.html?case=ultrapoor">
-        <div class="mcph" style="background-image:url('assets/img/cases/case-ultrapoor.jpg')"></div>
-        <div class="mcbd"><b>Ultra-Poor Graduation Dashboard</b><span class="mcsub">For a leading non-profit aiming to lift 1 million women out of ultra-poverty</span>
-          <div class="mcstat"><b>1M women</b><span>programme ambition</span></div>
-          <div class="mckeys"><span>1M women target</span><span>Household-level tracking</span></div>
+      </button>
+      <button type="button" class="ccard" data-case="english">
+        <div class="ccph" style="background-image:url('assets/img/cases/case-english.jpg')"></div>
+        <div class="ccbd">
+          <h3>Spoken-English Program Dashboard</h3>
+          <p class="cccl">For one of India's oldest public-policy think tanks</p>
+          <div class="ccstat"><b>Multi-state</b><span>programme coverage</span></div>
+          <div class="cckeys"><span>School-to-programme roll-up</span><span>Activation tracking</span><span>Multi-state</span></div>
+          <span class="ccmore">Read the case study <span class="arw">&#8594;</span></span>
         </div>
-      </a>
-      <p style="margin-top:14px"><a class="tlink" href="our-work.html">Browse all our work <span class="arw">&#8594;</span></a></p>
-    </aside>
+      </button>
   </div>
+  <p style="margin-top:26px"><a class="tlink" href="our-work.html?offering=mel">See all our work <span class="arw">&#8594;</span></a></p>
 </div></section>
 
 
@@ -304,6 +347,79 @@ window.DHWANI_FORMS = {
   <h2>Want M&amp;E that keeps up with your programme?</h2>
   <a class="pill pill-primary" href="contact.html">Book a call <span class="arw">&#8594;</span></a>
 </div></div>
+
+<!-- CASE DETAIL -->
+<div class="cmodal" id="caseModal" role="dialog" aria-modal="true" aria-labelledby="cmTitle">
+  <div class="backdrop" data-cclose></div>
+  <div class="box">
+    <button class="close" data-cclose aria-label="Close">&times;</button>
+    <img class="cm-shot" id="cmShot" alt="">
+    <div class="cm-bd">
+      <div class="cm-sect" id="cmSect"></div>
+      <h3 id="cmTitle"></h3>
+      <p class="cm-client" id="cmClient"></p>
+      <h5 id="cmProblemH">The problem</h5>
+      <p class="cm-p" id="cmProblem"></p>
+      <h5 id="cmBuiltH">What we built</h5>
+      <ul class="cm-list" id="cmBuilt"></ul>
+      <div class="cm-stats" id="cmStats"></div>
+      <div class="cm-proof" id="cmProof"></div>
+      <div class="cm-foot">
+        <a class="pill pill-primary" id="cmCta" href="contact.html?topic=brainstorm">Talk to us about work like this <span class="arw">&#8594;</span></a>
+      </div>
+      <p id="cmScale" style="margin:20px 0 0;font-size:.84rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var D={"ultrapoor": {"sect": "Financial Inclusion", "title": "Ultra-Poor Graduation Dashboard", "client": "For a leading non-profit aiming to lift 1 million women out of ultra-poverty", "img": "assets/img/cases/case-ultrapoor.jpg", "shot": true, "problem": "A graduation-approach programme helping the poorest rural women build livelihoods had to track every participant's journey (assets, savings, enterprise milestones) without losing anyone between stages.", "built": ["A programme dashboard tracking household-level progress through the graduation approach", "Asset transfer, savings and enterprise milestones in one record per household", "Cohort progression views across states"], "stats": [["1M women", "programme ambition"], ["4 states", "and growing"], ["Household-level", "progress data"]], "scale": "4 states &middot; household-level tracking", "tags": ["1M women target", "Household-level tracking", "4 states"], "type": "case"}, "pds": {"sect": "Governance", "title": "Food Supplies (PDS) Dashboard", "client": "For a large western state's food &amp; civil supplies department", "img": "assets/img/cases/case-foodsupplies.jpg", "shot": true, "problem": "The state needed to track ration distribution to tens of millions of cardholders, and to see where allocation and actual delivery diverged, while the month was still running.", "built": ["A ration-distribution dashboard tracking month-wise, region-wise performance against allocations", "Procurement-to-fair-price-shop visibility in one view", "Gap analysis between allocated and distributed stock"], "stats": [["State-wide", "PDS monitoring"], ["Monthly", "region-level tracking"], ["Tens of millions", "of beneficiaries in system"]], "scale": "State-wide &middot; one of India's larger states", "tags": ["State-wide PDS", "Month-wise tracking", "Allocation vs delivery"], "type": "case"}, "english": {"sect": "Education &amp; Skilling", "title": "Spoken-English Program Dashboard", "client": "For one of India's oldest public-policy think tanks", "img": "assets/img/cases/case-english.jpg", "shot": true, "problem": "A programme giving low-income schoolchildren free access to spoken-English apps had no single view of who had actually activated, who was progressing, and which schools needed support.", "built": ["An aggregation dashboard for teachers and programme managers", "Activation, engagement and completion tracked from student to programme level", "School-to-programme roll-up reporting"], "stats": [["Multi-state", "programme coverage"], ["School-to-programme", "roll-up"], ["Teacher &amp; student", "level tracking"]], "scale": "Multi-state &middot; school-level detail", "tags": ["School-to-programme roll-up", "Activation tracking", "Multi-state"], "type": "case"}};
+  var m=document.getElementById('caseModal'); if(!m)return;
+  function el(id){return document.getElementById(id);}
+  function open(id){
+    var c=D[id]; if(!c)return;
+    var sol=c.type==='solution';
+    el('cmSect').textContent=(c.sect||'').replace(/&amp;/g,'&');
+    el('cmTitle').innerHTML=c.title;
+    var s2=el('cmShot');
+    if(c.img){s2.src=c.img;s2.alt=c.shot?'A screen from the system we built':'';s2.style.display='block';s2.classList.toggle('is-shot',!!c.shot);}
+    else{s2.style.display='none';}
+    el('cmClient').innerHTML=sol?('<span class="cm-badge">'+c.client+'</span>'):c.client;
+    el('cmProblemH').textContent=sol?'What it does':'The problem';
+    el('cmProblem').innerHTML=sol?c.full:c.problem;
+    var bh=el('cmBuiltH'), bl=el('cmBuilt');
+    if(sol){
+      bh.style.display=c.chips.length?'block':'none'; bh.textContent='What you get';
+      bl.innerHTML=c.chips.map(function(b){return '<li>'+b+'</li>';}).join('');
+    }else{
+      bh.style.display='block'; bh.textContent='What we built';
+      bl.innerHTML=c.built.map(function(b){return '<li>'+b+'</li>';}).join('');
+    }
+    var st=el('cmStats');
+    if(sol){st.style.display='none';}
+    else{st.style.display='grid';st.innerHTML=c.stats.map(function(t){return '<div><b>'+t[0]+'</b><span>'+t[1]+'</span></div>';}).join('');}
+    var pf=el('cmProof'), bits=[];
+    if(sol){
+      if(c.proofstat)bits.push('<b>Running today:</b> '+c.proofstat);
+      if(c.proof)bits.push('<b>Proven in:</b> <a class="tlink" href="our-work.html?case='+c.proof[0]+'">'+c.proof[1]+' &#8594;</a>');
+      if(c.url)bits.push('<a class="tlink" href="'+c.url+'" target="_blank" rel="noopener">Visit the product site &#8594;</a>');
+    }
+    pf.innerHTML=bits.join('<br>'); pf.style.display=bits.length?'block':'none';
+    el('cmScale').innerHTML=sol?'':('<b style="color:var(--ink);font-weight:600">Scale:</b> '+c.scale);
+    el('cmScale').style.display=sol?'none':'block';
+    el('cmCta').href='contact.html?topic=brainstorm&ref='+id;
+    m.classList.add('open'); document.body.style.overflow='hidden';
+    m.querySelector('.close').focus();
+  }
+  function close(){m.classList.remove('open');document.body.style.overflow='';}
+  Array.prototype.forEach.call(document.querySelectorAll('.ccard'),function(c){
+    c.addEventListener('click',function(){open(c.getAttribute('data-case'));});
+  });
+  Array.prototype.forEach.call(m.querySelectorAll('[data-cclose]'),function(b){b.addEventListener('click',close);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.classList.contains('open'))close();});
+})();
+</script>
 
 <!-- FOOTER -->
 <footer><div class="wrap">

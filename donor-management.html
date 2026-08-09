@@ -61,11 +61,9 @@ em{font-style:italic}
 .wyglede{color:var(--muted);font-size:1rem;line-height:1.65;max-width:62ch;margin:10px 0 26px}
 .cgrid{display:grid;gap:16px;grid-template-columns:repeat(4,1fr)}
 /* solution page: what-it-does tiles on the left, proof on the right */
-.sol2{display:grid;grid-template-columns:1.6fr 1fr;gap:46px;align-items:start}
-.sol2 .cgrid{grid-template-columns:1fr 1fr}
 .sol2 h3{font-size:1.32rem;font-weight:500;margin-bottom:4px}
 .sol2 .rlede{color:var(--muted);font-size:.9rem;margin-bottom:18px}
-@media(max-width:900px){.sol2{grid-template-columns:1fr;gap:34px}}
+@media(max-width:900px){}
 
 .ocard{display:flex;flex-direction:column;min-height:0;background:var(--beige);border-radius:8px;padding:clamp(22px,3.4vw,34px);transition:.2s}
 .ocard:hover{background:var(--beige-h)}
@@ -164,22 +162,59 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 #topnav.solid .links a.n-active,#topnav.scrolled .links a.n-active{color:var(--maroon)}
 
 /* proof panel */
-.proofpanel{position:sticky;top:96px}
-.proofpanel h3{font-size:1.2rem;font-weight:500;margin-bottom:3px}
-.proofpanel .rlede{color:var(--muted);font-size:.88rem;margin-bottom:16px}
-.minicase{display:block;background:var(--beige);border-radius:12px;overflow:hidden;margin-bottom:12px;transition:.2s;position:relative}
-.minicase:hover{background:var(--beige-h)}
-.minicase:hover .mcph{filter:grayscale(0)}
-.mcph{height:104px;background-size:cover;background-position:center;filter:grayscale(.35);transition:filter .3s;border-bottom:1px solid var(--line)}
-.mcbd{padding:15px 17px 16px}
-.minicase b{display:block;font-family:var(--serif);font-size:1.06rem;font-weight:500;color:var(--ink);line-height:1.25;margin-bottom:3px}
-.minicase .mcsub{display:block;font-size:.82rem;color:var(--muted);line-height:1.4}
-.mcstat{display:flex;align-items:baseline;gap:8px;margin:11px 0 0;padding-top:11px;border-top:1px solid var(--line)}
-.mcstat b{font-family:var(--serif);font-size:1.32rem;font-weight:500;color:var(--maroon);margin:0;line-height:1}
-.mcstat span{font-size:.76rem;color:var(--muted);line-height:1.3}
-.mckeys{display:flex;gap:5px;flex-wrap:wrap;margin-top:11px}
-.mckeys span{font-size:.7rem;color:var(--muted);background:var(--paper);border-radius:999px;padding:3px 9px}
-@media(max-width:900px){.proofpanel{position:static}}
+.minicase:hover @media(max-width:900px){}
+
+/* case studies, full width, under the explanation */
+.casesec{background:var(--paper)}
+.ccards{display:grid;gap:20px;margin-top:30px;
+grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
+.ccards.one{grid-template-columns:1fr}
+.ccard{text-align:left;border:none;padding:0;font:inherit;cursor:pointer;width:100%;display:flex;flex-direction:column;background:var(--beige);border-radius:12px;overflow:hidden;transition:.2s}
+.ccard:hover{background:var(--beige-h);transform:translateY(-2px)}
+.ccard:hover .ccph{filter:grayscale(0)}
+.ccph{height:172px;background-size:cover;background-position:center;filter:grayscale(.35);transition:filter .35s;flex:none}
+.ccbd{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+.ccard h3{font-family:var(--serif);font-size:1.24rem;font-weight:500;line-height:1.25;color:var(--ink);margin-bottom:5px}
+.cccl{font-size:.86rem;color:var(--muted);line-height:1.45;margin:0}
+.ccstat{display:flex;align-items:baseline;gap:9px;margin:auto 0 0;padding-top:14px;border-top:1px solid var(--line)}
+.ccstat b{font-family:var(--serif);font-size:1.6rem;font-weight:500;color:var(--maroon);line-height:1}
+.ccstat span{font-size:.78rem;color:var(--muted);line-height:1.3}
+.cckeys{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+.cckeys span{font-size:.72rem;color:var(--muted);background:var(--paper);border-radius:999px;padding:4px 11px}
+.ccmore{margin-top:auto;padding-top:18px;font-size:.86rem;font-weight:600;color:var(--maroon)}
+.ccard:hover .ccmore .arw{transform:translateX(4px)}
+.ccmore .arw{display:inline-block;transition:transform .2s}
+@media(min-width:760px){.ccards.one .ccard{flex-direction:row}
+.ccards.one .ccph{height:auto;width:38%;min-height:230px}
+.ccards.one .ccbd{padding:30px 34px}}
+
+.cmodal .cm-badge{display:inline-block;font-family:var(--sans);font-style:normal;font-size:.72rem;font-weight:600;letter-spacing:.04em;border-radius:999px;padding:5px 12px;background:var(--beige);color:var(--muted)}
+.cmodal .cm-proof{background:var(--beige);border-radius:12px;padding:16px 18px;margin-bottom:22px;font-size:.92rem}
+.cmodal .cm-proof b{color:var(--maroon)}
+
+/* case-study detail modal */
+.cmodal{display:none;position:fixed;inset:0;z-index:420;align-items:center;justify-content:center;padding:28px 20px}
+.cmodal.open{display:flex}
+.cmodal .backdrop{position:absolute;inset:0;background:rgba(21,16,15,.55)}
+.cmodal .box{position:relative;background:var(--paper);border-radius:20px;max-width:780px;width:100%;overflow:hidden;max-height:calc(100vh - 56px);display:flex;flex-direction:column}
+.cmodal .close{position:absolute;top:14px;right:14px;z-index:2;background:rgba(250,246,239,.92);border:1px solid var(--line);width:36px;height:36px;border-radius:50%;font-size:1.2rem;color:var(--ink);cursor:pointer;line-height:1}
+.cmodal .cm-shot{display:block;width:100%;height:236px;background:#fff;border-bottom:1px solid var(--line);flex:none;object-fit:cover;object-position:center}
+.cmodal .cm-shot.is-shot{object-fit:contain;object-position:center;background:#fff}
+.cmodal .cm-bd{padding:32px 38px 36px;overflow-y:auto}
+.cmodal .cm-sect{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--maroon);font-weight:600;margin-bottom:10px}
+.cmodal h3{font-size:1.7rem;font-weight:500;line-height:1.2;margin-bottom:8px}
+.cmodal .cm-client{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:1.02rem;margin-bottom:22px}
+.cmodal h5{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:7px;font-family:var(--sans)}
+.cmodal .cm-p{font-size:.96rem;line-height:1.62;color:var(--ink);margin-bottom:20px}
+.cmodal .cm-list{list-style:none;margin:0 0 22px;padding:0}
+.cmodal .cm-list li{position:relative;padding-left:20px;font-size:.94rem;color:var(--ink);line-height:1.55;margin-bottom:7px}
+.cmodal .cm-list li:before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--orange)}
+.cmodal .cm-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;margin-bottom:22px}
+.cmodal .cm-stats b{display:block;font-family:var(--serif);font-size:1.42rem;font-weight:500;color:var(--maroon);line-height:1.15;margin-bottom:4px}
+.cmodal .cm-stats span{font-size:.8rem;color:var(--muted);line-height:1.4}
+.cmodal .cm-foot{display:flex;align-items:center;justify-content:flex-start;gap:16px;flex-wrap:wrap}
+.cmodal .cm-tags{display:flex;gap:6px;flex-wrap:wrap}
+.cmodal .cm-tags span{font-size:.72rem;color:var(--muted);background:var(--beige);border-radius:999px;padding:5px 11px}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -257,44 +292,43 @@ window.DHWANI_FORMS = {
 
 <!-- WHAT IT DOES -->
 <section class="section wyg"><div class="wrap">
-  <div class="sol2">
-    <div>
-    <h2 class="shead">What it does</h2>
+  <h2 class="shead">What it does</h2>
     <p class="wyglede">Donor management is the other side of the same coin: every funder, commitment, condition and report date in one place, so nothing is tracked in a founder&rsquo;s inbox and no renewal is missed.</p>
     <div class="cgrid">
     <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.5a3 3 0 0 1 0 5.5M21 20c0-2.6-1.6-4.9-4-5.8"/></svg></span><h5>Donor records</h5><p>Every funder and relationship in one system.</p></div>
     <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7"/><path d="M12 3v12M8 7l4-4 4 4"/></svg></span><h5>Grants received</h5><p>Terms, tranches and conditions, tracked.</p></div>
     <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg></span><h5>Reporting calendar</h5><p>Never miss a funder deadline again.</p></div>
+    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a4.6 4.6 0 0 0-6.5 0L12 7.9 9.7 5.6a4.6 4.6 0 1 0-6.5 6.5l8.8 8.8 8.8-8.8a4.6 4.6 0 0 0 0-6.5z"/></svg></span><h5>Donor stewardship</h5><p>Acknowledgements, updates and touchpoints, logged against every funder.</p></div>
     <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 2 4-6"/></svg></span><h5>Renewals</h5><p>See what is due and what is at risk.</p></div>
   </div>
-    </div>
-    <aside class="proofpanel">
-      <h3>Proof</h3>
-      <p class="rlede">Programmes running on this today.</p>
-      <a class="minicase" href="our-work.html?case=mahindra">
-        <div class="mcph" style="background-image:url('https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=900&auto=format&fit=crop')"></div>
-        <div class="mcbd"><b>Mahindra Group</b><span class="mcsub">One CSR platform for 53 group companies</span>
-          <div class="mcstat"><b>300+</b><span>partner NGOs reporting</span></div>
-          <div class="mckeys"><span>53 group companies</span><span>300+ NGO partners</span></div>
+</div></section>
+
+<section class="section casesec"><div class="wrap">
+  <h2 class="shead">Case studies</h2>
+  <p class="lede">Programmes running on this today. Each one opens in full.</p>
+  <div class="ccards">
+      <button type="button" class="ccard" data-case="tri">
+        <div class="ccph" style="background-image:url('https://images.unsplash.com/photo-1609252509229-364936a1d1a2?q=80&w=900&auto=format&fit=crop')"></div>
+        <div class="ccbd">
+          <h3>Transform Rural India</h3>
+          <p class="cccl">A technology partnership, 74 engagements deep</p>
+          <div class="ccstat"><b>74</b><span>engagements and counting</span></div>
+          <div class="cckeys"><span>74 engagements</span><span>UP SRLM payments</span><span>Every vertical on mGrant</span></div>
+          <span class="ccmore">Read the case study <span class="arw">&#8594;</span></span>
         </div>
-      </a>
-      <a class="minicase" href="our-work.html?case=ciff">
-        <div class="mcph" style="background-image:url('https://images.unsplash.com/photo-1578991624414-276ef23a534f?q=80&w=900&auto=format&fit=crop')"></div>
-        <div class="mcbd"><b>CIFF &amp; Charities Aid Foundation</b><span class="mcsub">Grant infrastructure for international funders</span>
-          <div class="mcstat"><b>PMU + platform</b><span>support model</span></div>
-          <div class="mckeys"><span>programme management unit (PMU) support</span><span>SRHR dashboard</span></div>
+      </button>
+      <button type="button" class="ccard" data-case="orgperf">
+        <div class="ccph" style="background-image:url('assets/img/cases/case-orgperf.jpg')"></div>
+        <div class="ccbd">
+          <h3>Organisation Performance Dashboard</h3>
+          <p class="cccl">For an award-winning girls'-education non-profit working across 20,000+ villages</p>
+          <div class="ccstat"><b>20,000+</b><span>villages of operation</span></div>
+          <div class="cckeys"><span>20,000+ villages</span><span>Finance + impact in one view</span><span>Leadership KPIs</span></div>
+          <span class="ccmore">Read the case study <span class="arw">&#8594;</span></span>
         </div>
-      </a>
-      <a class="minicase" href="our-work.html?case=tri">
-        <div class="mcph" style="background-image:url('https://images.unsplash.com/photo-1609252509229-364936a1d1a2?q=80&w=900&auto=format&fit=crop')"></div>
-        <div class="mcbd"><b>Transform Rural India</b><span class="mcsub">A technology partnership, 74 engagements deep</span>
-          <div class="mcstat"><b>74</b><span>engagements and counting</span></div>
-          <div class="mckeys"><span>74 engagements</span><span>UP SRLM payments</span></div>
-        </div>
-      </a>
-      <p style="margin-top:14px"><a class="tlink" href="our-work.html">Browse all our work <span class="arw">&#8594;</span></a></p>
-    </aside>
+      </button>
   </div>
+  <p style="margin-top:26px"><a class="tlink" href="our-work.html?offering=donor">See all our work <span class="arw">&#8594;</span></a></p>
 </div></section>
 
 
@@ -303,6 +337,79 @@ window.DHWANI_FORMS = {
   <h2>Ready to keep every donor and report on track?</h2>
   <a class="pill pill-primary" href="contact.html">Book a call <span class="arw">&#8594;</span></a>
 </div></div>
+
+<!-- CASE DETAIL -->
+<div class="cmodal" id="caseModal" role="dialog" aria-modal="true" aria-labelledby="cmTitle">
+  <div class="backdrop" data-cclose></div>
+  <div class="box">
+    <button class="close" data-cclose aria-label="Close">&times;</button>
+    <img class="cm-shot" id="cmShot" alt="">
+    <div class="cm-bd">
+      <div class="cm-sect" id="cmSect"></div>
+      <h3 id="cmTitle"></h3>
+      <p class="cm-client" id="cmClient"></p>
+      <h5 id="cmProblemH">The problem</h5>
+      <p class="cm-p" id="cmProblem"></p>
+      <h5 id="cmBuiltH">What we built</h5>
+      <ul class="cm-list" id="cmBuilt"></ul>
+      <div class="cm-stats" id="cmStats"></div>
+      <div class="cm-proof" id="cmProof"></div>
+      <div class="cm-foot">
+        <a class="pill pill-primary" id="cmCta" href="contact.html?topic=brainstorm">Talk to us about work like this <span class="arw">&#8594;</span></a>
+      </div>
+      <p id="cmScale" style="margin:20px 0 0;font-size:.84rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var D={"tri": {"sect": "Livelihoods", "title": "Transform Rural India", "client": "A technology partnership, 74 engagements deep", "img": "https://images.unsplash.com/photo-1609252509229-364936a1d1a2?q=80&w=900&auto=format&fit=crop", "shot": false, "problem": "Our deepest client relationship. A national organisation working on village-level transformation needed data systems that could keep pace across every programme vertical, and a state livelihoods mission needed its payment approvals off paper.", "built": ["mGrant deployed across all programme verticals for project and donor management", "mForm digitising payment approvals for the UP State Rural Livelihood Mission", "Data systems supporting village-level transformation work"], "stats": [["74", "engagements and counting"], ["Pan-India", "organisational footprint"], ["All verticals", "on one system"]], "scale": "Pan-India &middot; 74 engagements and counting", "tags": ["74 engagements", "UP SRLM payments", "Every vertical on mGrant"], "type": "case"}, "orgperf": {"sect": "Programme Mgmt &amp; MEL", "title": "Organisation Performance Dashboard", "client": "For an award-winning girls'-education non-profit working across 20,000+ villages", "img": "assets/img/cases/case-orgperf.jpg", "shot": true, "problem": "Leadership wanted one comprehensive view spanning financial performance, programme progress and impact. What they had was three separate reporting streams that never quite reconciled.", "built": ["An integrated performance dashboard bringing finance, operations and impact together", "Org-wide KPIs in a single leadership decision view", "Drill-down from organisation to geography"], "stats": [["20,000+", "villages of operation"], ["Finance + impact", "in one view"], ["Org-wide", "leadership KPIs"]], "scale": "20,000+ villages &middot; organisation-wide", "tags": ["20,000+ villages", "Finance + impact in one view", "Leadership KPIs"], "type": "case"}};
+  var m=document.getElementById('caseModal'); if(!m)return;
+  function el(id){return document.getElementById(id);}
+  function open(id){
+    var c=D[id]; if(!c)return;
+    var sol=c.type==='solution';
+    el('cmSect').textContent=(c.sect||'').replace(/&amp;/g,'&');
+    el('cmTitle').innerHTML=c.title;
+    var s2=el('cmShot');
+    if(c.img){s2.src=c.img;s2.alt=c.shot?'A screen from the system we built':'';s2.style.display='block';s2.classList.toggle('is-shot',!!c.shot);}
+    else{s2.style.display='none';}
+    el('cmClient').innerHTML=sol?('<span class="cm-badge">'+c.client+'</span>'):c.client;
+    el('cmProblemH').textContent=sol?'What it does':'The problem';
+    el('cmProblem').innerHTML=sol?c.full:c.problem;
+    var bh=el('cmBuiltH'), bl=el('cmBuilt');
+    if(sol){
+      bh.style.display=c.chips.length?'block':'none'; bh.textContent='What you get';
+      bl.innerHTML=c.chips.map(function(b){return '<li>'+b+'</li>';}).join('');
+    }else{
+      bh.style.display='block'; bh.textContent='What we built';
+      bl.innerHTML=c.built.map(function(b){return '<li>'+b+'</li>';}).join('');
+    }
+    var st=el('cmStats');
+    if(sol){st.style.display='none';}
+    else{st.style.display='grid';st.innerHTML=c.stats.map(function(t){return '<div><b>'+t[0]+'</b><span>'+t[1]+'</span></div>';}).join('');}
+    var pf=el('cmProof'), bits=[];
+    if(sol){
+      if(c.proofstat)bits.push('<b>Running today:</b> '+c.proofstat);
+      if(c.proof)bits.push('<b>Proven in:</b> <a class="tlink" href="our-work.html?case='+c.proof[0]+'">'+c.proof[1]+' &#8594;</a>');
+      if(c.url)bits.push('<a class="tlink" href="'+c.url+'" target="_blank" rel="noopener">Visit the product site &#8594;</a>');
+    }
+    pf.innerHTML=bits.join('<br>'); pf.style.display=bits.length?'block':'none';
+    el('cmScale').innerHTML=sol?'':('<b style="color:var(--ink);font-weight:600">Scale:</b> '+c.scale);
+    el('cmScale').style.display=sol?'none':'block';
+    el('cmCta').href='contact.html?topic=brainstorm&ref='+id;
+    m.classList.add('open'); document.body.style.overflow='hidden';
+    m.querySelector('.close').focus();
+  }
+  function close(){m.classList.remove('open');document.body.style.overflow='';}
+  Array.prototype.forEach.call(document.querySelectorAll('.ccard'),function(c){
+    c.addEventListener('click',function(){open(c.getAttribute('data-case'));});
+  });
+  Array.prototype.forEach.call(m.querySelectorAll('[data-cclose]'),function(b){b.addEventListener('click',close);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.classList.contains('open'))close();});
+})();
+</script>
 
 <!-- FOOTER -->
 <footer><div class="wrap">

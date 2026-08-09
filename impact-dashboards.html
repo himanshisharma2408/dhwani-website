@@ -61,11 +61,9 @@ em{font-style:italic}
 .wyglede{color:var(--muted);font-size:1rem;line-height:1.65;max-width:62ch;margin:10px 0 26px}
 .cgrid{display:grid;gap:16px;grid-template-columns:repeat(4,1fr)}
 /* solution page: what-it-does tiles on the left, proof on the right */
-.sol2{display:grid;grid-template-columns:1.6fr 1fr;gap:46px;align-items:start}
-.sol2 .cgrid{grid-template-columns:1fr 1fr}
 .sol2 h3{font-size:1.32rem;font-weight:500;margin-bottom:4px}
 .sol2 .rlede{color:var(--muted);font-size:.9rem;margin-bottom:18px}
-@media(max-width:900px){.sol2{grid-template-columns:1fr;gap:34px}}
+@media(max-width:900px){}
 
 .ocard{display:flex;flex-direction:column;min-height:0;background:var(--beige);border-radius:8px;padding:clamp(22px,3.4vw,34px);transition:.2s}
 .ocard:hover{background:var(--beige-h)}
@@ -164,22 +162,59 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 #topnav.solid .links a.n-active,#topnav.scrolled .links a.n-active{color:var(--maroon)}
 
 /* proof panel */
-.proofpanel{position:sticky;top:96px}
-.proofpanel h3{font-size:1.2rem;font-weight:500;margin-bottom:3px}
-.proofpanel .rlede{color:var(--muted);font-size:.88rem;margin-bottom:16px}
-.minicase{display:block;background:var(--beige);border-radius:12px;overflow:hidden;margin-bottom:12px;transition:.2s;position:relative}
-.minicase:hover{background:var(--beige-h)}
-.minicase:hover .mcph{filter:grayscale(0)}
-.mcph{height:104px;background-size:cover;background-position:center;filter:grayscale(.35);transition:filter .3s;border-bottom:1px solid var(--line)}
-.mcbd{padding:15px 17px 16px}
-.minicase b{display:block;font-family:var(--serif);font-size:1.06rem;font-weight:500;color:var(--ink);line-height:1.25;margin-bottom:3px}
-.minicase .mcsub{display:block;font-size:.82rem;color:var(--muted);line-height:1.4}
-.mcstat{display:flex;align-items:baseline;gap:8px;margin:11px 0 0;padding-top:11px;border-top:1px solid var(--line)}
-.mcstat b{font-family:var(--serif);font-size:1.32rem;font-weight:500;color:var(--maroon);margin:0;line-height:1}
-.mcstat span{font-size:.76rem;color:var(--muted);line-height:1.3}
-.mckeys{display:flex;gap:5px;flex-wrap:wrap;margin-top:11px}
-.mckeys span{font-size:.7rem;color:var(--muted);background:var(--paper);border-radius:999px;padding:3px 9px}
-@media(max-width:900px){.proofpanel{position:static}}
+.minicase:hover @media(max-width:900px){}
+
+/* case studies, full width, under the explanation */
+.casesec{background:var(--paper)}
+.ccards{display:grid;gap:20px;margin-top:30px;
+grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
+.ccards.one{grid-template-columns:1fr}
+.ccard{text-align:left;border:none;padding:0;font:inherit;cursor:pointer;width:100%;display:flex;flex-direction:column;background:var(--beige);border-radius:12px;overflow:hidden;transition:.2s}
+.ccard:hover{background:var(--beige-h);transform:translateY(-2px)}
+.ccard:hover .ccph{filter:grayscale(0)}
+.ccph{height:172px;background-size:cover;background-position:center;filter:grayscale(.35);transition:filter .35s;flex:none}
+.ccbd{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+.ccard h3{font-family:var(--serif);font-size:1.24rem;font-weight:500;line-height:1.25;color:var(--ink);margin-bottom:5px}
+.cccl{font-size:.86rem;color:var(--muted);line-height:1.45;margin:0}
+.ccstat{display:flex;align-items:baseline;gap:9px;margin:auto 0 0;padding-top:14px;border-top:1px solid var(--line)}
+.ccstat b{font-family:var(--serif);font-size:1.6rem;font-weight:500;color:var(--maroon);line-height:1}
+.ccstat span{font-size:.78rem;color:var(--muted);line-height:1.3}
+.cckeys{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+.cckeys span{font-size:.72rem;color:var(--muted);background:var(--paper);border-radius:999px;padding:4px 11px}
+.ccmore{margin-top:auto;padding-top:18px;font-size:.86rem;font-weight:600;color:var(--maroon)}
+.ccard:hover .ccmore .arw{transform:translateX(4px)}
+.ccmore .arw{display:inline-block;transition:transform .2s}
+@media(min-width:760px){.ccards.one .ccard{flex-direction:row}
+.ccards.one .ccph{height:auto;width:38%;min-height:230px}
+.ccards.one .ccbd{padding:30px 34px}}
+
+.cmodal .cm-badge{display:inline-block;font-family:var(--sans);font-style:normal;font-size:.72rem;font-weight:600;letter-spacing:.04em;border-radius:999px;padding:5px 12px;background:var(--beige);color:var(--muted)}
+.cmodal .cm-proof{background:var(--beige);border-radius:12px;padding:16px 18px;margin-bottom:22px;font-size:.92rem}
+.cmodal .cm-proof b{color:var(--maroon)}
+
+/* case-study detail modal */
+.cmodal{display:none;position:fixed;inset:0;z-index:420;align-items:center;justify-content:center;padding:28px 20px}
+.cmodal.open{display:flex}
+.cmodal .backdrop{position:absolute;inset:0;background:rgba(21,16,15,.55)}
+.cmodal .box{position:relative;background:var(--paper);border-radius:20px;max-width:780px;width:100%;overflow:hidden;max-height:calc(100vh - 56px);display:flex;flex-direction:column}
+.cmodal .close{position:absolute;top:14px;right:14px;z-index:2;background:rgba(250,246,239,.92);border:1px solid var(--line);width:36px;height:36px;border-radius:50%;font-size:1.2rem;color:var(--ink);cursor:pointer;line-height:1}
+.cmodal .cm-shot{display:block;width:100%;height:236px;background:#fff;border-bottom:1px solid var(--line);flex:none;object-fit:cover;object-position:center}
+.cmodal .cm-shot.is-shot{object-fit:contain;object-position:center;background:#fff}
+.cmodal .cm-bd{padding:32px 38px 36px;overflow-y:auto}
+.cmodal .cm-sect{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--maroon);font-weight:600;margin-bottom:10px}
+.cmodal h3{font-size:1.7rem;font-weight:500;line-height:1.2;margin-bottom:8px}
+.cmodal .cm-client{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:1.02rem;margin-bottom:22px}
+.cmodal h5{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:7px;font-family:var(--sans)}
+.cmodal .cm-p{font-size:.96rem;line-height:1.62;color:var(--ink);margin-bottom:20px}
+.cmodal .cm-list{list-style:none;margin:0 0 22px;padding:0}
+.cmodal .cm-list li{position:relative;padding-left:20px;font-size:.94rem;color:var(--ink);line-height:1.55;margin-bottom:7px}
+.cmodal .cm-list li:before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--orange)}
+.cmodal .cm-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;margin-bottom:22px}
+.cmodal .cm-stats b{display:block;font-family:var(--serif);font-size:1.42rem;font-weight:500;color:var(--maroon);line-height:1.15;margin-bottom:4px}
+.cmodal .cm-stats span{font-size:.8rem;color:var(--muted);line-height:1.4}
+.cmodal .cm-foot{display:flex;align-items:center;justify-content:flex-start;gap:16px;flex-wrap:wrap}
+.cmodal .cm-tags{display:flex;gap:6px;flex-wrap:wrap}
+.cmodal .cm-tags span{font-size:.72rem;color:var(--muted);background:var(--beige);border-radius:999px;padding:5px 11px}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -250,52 +285,70 @@ window.DHWANI_FORMS = {
   <div class="in">
     <div class="crumb"><a href="solutions.html">Solutions</a> / Impact Dashboards</div>
     <h1>Results everyone can <em>see</em>.</h1>
-    <p>Live dashboards that turn programme data into decisions &mdash; for funders, governments and the teams running the programme.</p>
+    <p>Live dashboards that turn programme data into decisions &mdash; for funders, governments, and the teams running the programme.</p>
     <div class="btns"><a class="pill pill-primary" href="contact.html">Book a call <span class="arw">&#8594;</span></a><a class="pill pill-dark" href="our-work.html?offering=dashboards">See it in our work</a></div>
   </div>
 </div>
 
 <!-- WHAT IT DOES -->
 <section class="section wyg"><div class="wrap">
-  <div class="sol2">
-    <div>
-    <h2 class="shead">What it does</h2>
+  <h2 class="shead">What it does</h2>
     <p class="wyglede">Dashboards are only worth building when someone acts on them. We start from the decisions you need to make each month, then build the smallest view that answers them, drawing from the systems you already run.</p>
     <div class="cgrid">
-    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 2 4-6"/></svg></span><h5>One live view</h5><p>Spend, reach and results in a single place.</p></div>
+    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 2 4-6"/></svg></span><h5>One live view</h5><p>Spend, reach, and results in a single place.</p></div>
     <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="12" y="7" width="3" height="10"/><rect x="17" y="4" width="3" height="13"/></svg></span><h5>Drill down</h5><p>From the headline number to the field record.</p></div>
     <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span><h5>Automated updates</h5><p>Always current, no manual spreadsheets.</p></div>
     <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="M9 13h6M9 17h4"/></svg></span><h5>Export &amp; share</h5><p>Board-ready views and downloads.</p></div>
     <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/><path d="M11 8v3l2 1.5"/></svg></span><h5>Ask your data</h5><p>Put a plain-language question to the dashboard and get the number, instead of filing a request.</p></div>
   </div>
-    </div>
-    <aside class="proofpanel">
-      <h3>Proof</h3>
-      <p class="rlede">Programmes running on this today.</p>
-      <a class="minicase" href="our-work.html?case=orgperf">
-        <div class="mcph" style="background-image:url('assets/img/cases/case-orgperf.jpg')"></div>
-        <div class="mcbd"><b>Organisation Performance Dashboard</b><span class="mcsub">For an award-winning girls'-education non-profit working across 20,000+ villages</span>
-          <div class="mcstat"><b>20,000+</b><span>villages of operation</span></div>
-          <div class="mckeys"><span>20,000+ villages</span><span>Finance + impact in one view</span></div>
+</div></section>
+
+<section class="section casesec"><div class="wrap">
+  <h2 class="shead">Case studies</h2>
+  <p class="lede">Programmes running on this today. Each one opens in full.</p>
+  <div class="ccards">
+      <button type="button" class="ccard" data-case="livelihoods">
+        <div class="ccph" style="background-image:url('assets/img/cases/case-livelihoods.jpg')"></div>
+        <div class="ccbd">
+          <h3>National Rural Livelihoods Dashboard</h3>
+          <p class="cccl">For the world's largest rural women's livelihoods mission</p>
+          <div class="ccstat"><b>100M+</b><span>women mobilised by the mission</span></div>
+          <div class="cckeys"><span>100M+ women</span><span>9M self-help groups</span><span>Block-level drill-down</span></div>
+          <span class="ccmore">Read the case study <span class="arw">&#8594;</span></span>
         </div>
-      </a>
-      <a class="minicase" href="our-work.html?case=livelihoods">
-        <div class="mcph" style="background-image:url('assets/img/cases/case-livelihoods.jpg')"></div>
-        <div class="mcbd"><b>National Rural Livelihoods Dashboard</b><span class="mcsub">For the world's largest rural women's livelihoods mission</span>
-          <div class="mcstat"><b>100M+</b><span>women mobilised by the mission</span></div>
-          <div class="mckeys"><span>100M+ women</span><span>9M self-help groups</span></div>
+      </button>
+      <button type="button" class="ccard" data-case="tribal">
+        <div class="ccph" style="background-image:url('assets/img/cases/case-tribalhealth.jpg')"></div>
+        <div class="ccbd">
+          <h3>Ministry of Tribal Affairs</h3>
+          <p class="cccl">Mapping health and nutrition for tribal India</p>
+          <div class="ccstat"><b>177</b><span>tribal districts covered</span></div>
+          <div class="cckeys"><span>177 tribal districts</span><span>Vulnerability mapping</span><span>Public data portal</span></div>
+          <span class="ccmore">Read the case study <span class="arw">&#8594;</span></span>
         </div>
-      </a>
-      <a class="minicase" href="our-work.html?case=edtech">
-        <div class="mcph" style="background-image:url('assets/img/cases/case-edtech.jpg')"></div>
-        <div class="mcbd"><b>EdTech Accelerator Dashboard</b><span class="mcsub">For a leading education philanthropy's EdTech accelerator</span>
-          <div class="mcstat"><b>Portfolio-wide</b><span>analytics</span></div>
-          <div class="mckeys"><span>Portfolio analytics</span><span>Cohort comparison</span></div>
+      </button>
+      <button type="button" class="ccard" data-case="nutrition">
+        <div class="ccph" style="background-image:url('assets/img/cases/case-nutrition.jpg')"></div>
+        <div class="ccbd">
+          <h3>Nutrition &amp; Fortification Data Platform</h3>
+          <p class="cccl">For India's oldest philanthropy and the national nutrition research institute</p>
+          <div class="ccstat"><b>90+</b><span>indicators, national to district</span></div>
+          <div class="cckeys"><span>61 crops tracked</span><span>151 foods &middot; 14 nutrients</span><span>Policy simulation</span></div>
+          <span class="ccmore">Read the case study <span class="arw">&#8594;</span></span>
         </div>
-      </a>
-      <p style="margin-top:14px"><a class="tlink" href="our-work.html">Browse all our work <span class="arw">&#8594;</span></a></p>
-    </aside>
+      </button>
+      <button type="button" class="ccard" data-case="edtech">
+        <div class="ccph" style="background-image:url('assets/img/cases/case-edtech.jpg')"></div>
+        <div class="ccbd">
+          <h3>EdTech Accelerator Dashboard</h3>
+          <p class="cccl">For a leading education philanthropy's EdTech accelerator</p>
+          <div class="ccstat"><b>Portfolio-wide</b><span>analytics</span></div>
+          <div class="cckeys"><span>Portfolio analytics</span><span>Cohort comparison</span><span>Retention &amp; learning metrics</span></div>
+          <span class="ccmore">Read the case study <span class="arw">&#8594;</span></span>
+        </div>
+      </button>
   </div>
+  <p style="margin-top:26px"><a class="tlink" href="our-work.html?offering=dashboards">See all our work <span class="arw">&#8594;</span></a></p>
 </div></section>
 
 
@@ -304,6 +357,79 @@ window.DHWANI_FORMS = {
   <h2>Want dashboards your funders actually use?</h2>
   <a class="pill pill-primary" href="contact.html">Book a call <span class="arw">&#8594;</span></a>
 </div></div>
+
+<!-- CASE DETAIL -->
+<div class="cmodal" id="caseModal" role="dialog" aria-modal="true" aria-labelledby="cmTitle">
+  <div class="backdrop" data-cclose></div>
+  <div class="box">
+    <button class="close" data-cclose aria-label="Close">&times;</button>
+    <img class="cm-shot" id="cmShot" alt="">
+    <div class="cm-bd">
+      <div class="cm-sect" id="cmSect"></div>
+      <h3 id="cmTitle"></h3>
+      <p class="cm-client" id="cmClient"></p>
+      <h5 id="cmProblemH">The problem</h5>
+      <p class="cm-p" id="cmProblem"></p>
+      <h5 id="cmBuiltH">What we built</h5>
+      <ul class="cm-list" id="cmBuilt"></ul>
+      <div class="cm-stats" id="cmStats"></div>
+      <div class="cm-proof" id="cmProof"></div>
+      <div class="cm-foot">
+        <a class="pill pill-primary" id="cmCta" href="contact.html?topic=brainstorm">Talk to us about work like this <span class="arw">&#8594;</span></a>
+      </div>
+      <p id="cmScale" style="margin:20px 0 0;font-size:.84rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var D={"livelihoods": {"sect": "Livelihoods", "title": "National Rural Livelihoods Dashboard", "client": "For the world's largest rural women's livelihoods mission", "img": "assets/img/cases/case-livelihoods.jpg", "shot": true, "problem": "A mission that has mobilised more than 100 million rural women into nine million self-help groups was steering itself with static tabular reports.", "built": ["Interactive livelihood dashboards with national-to-block drill-downs", "Views for farm livelihoods, producer groups and community resource persons", "Piloted across producer collectives in three states"], "stats": [["100M+", "women mobilised by the mission"], ["~9M", "self-help groups"], ["3 states", "pilot: UP, MP, Jharkhand"]], "scale": "National &middot; pilot across 3 states", "tags": ["100M+ women", "9M self-help groups", "Block-level drill-down"], "type": "case"}, "tribal": {"sect": "Healthcare", "title": "Ministry of Tribal Affairs", "client": "Mapping health and nutrition for tribal India", "img": "assets/img/cases/case-tribalhealth.jpg", "shot": true, "problem": "Health and nutrition data on India's tribal population sat scattered across sources. Evidence-based policy for high-priority tribal districts was close to impossible to do well.", "built": ["A public national e-portal with a data-upload panel and dashboards", "Vulnerability mapping across nutrition and health indicators", "A knowledge repository giving policymakers and researchers a shared evidence base"], "stats": [["177", "tribal districts covered"], ["10-year", "collaborative horizon"], ["Public", "policy &amp; research access"]], "scale": "Pan-India &middot; backed by two Union ministries and a global health funder", "tags": ["177 tribal districts", "Vulnerability mapping", "Public data portal"], "type": "case"}, "nutrition": {"sect": "Healthcare", "title": "Nutrition &amp; Fortification Data Platform", "client": "For India's oldest philanthropy and the national nutrition research institute", "img": "assets/img/cases/case-nutrition.jpg", "shot": true, "problem": "India's nutrition and food-fortification statistics existed in silos. Policymakers had no unified public evidence base to model fortification decisions against.", "built": ["Public dashboards tracking crop production, nutrient demand and supply down to district level", "A policy-simulation tool modelling fortification scenarios", "An open evidence base for researchers and policymakers"], "stats": [["61", "crops tracked"], ["151 foods", "across 14 nutrients"], ["90+", "indicators, national to district"]], "scale": "National &middot; district-level granularity", "tags": ["61 crops tracked", "151 foods &middot; 14 nutrients", "Policy simulation"], "type": "case"}, "edtech": {"sect": "Education &amp; Skilling", "title": "EdTech Accelerator Dashboard", "client": "For a leading education philanthropy's EdTech accelerator", "img": "assets/img/cases/case-edtech.jpg", "shot": true, "problem": "An accelerator supporting EdTech products for low-income learners had a portfolio of tools reporting in incompatible formats. Comparing them, the whole point of an accelerator, took manual work every cycle.", "built": ["A data management and analysis platform aggregating usage, retention and learning metrics", "Cohort-level comparison across the accelerator portfolio", "Monthly and quarterly engagement views for scale decisions"], "stats": [["Portfolio-wide", "analytics"], ["Monthly &amp; quarterly", "engagement views"], ["Evidence", "for scale decisions"]], "scale": "Portfolio-wide &middot; multi-cohort", "tags": ["Portfolio analytics", "Cohort comparison", "Retention &amp; learning metrics"], "type": "case"}};
+  var m=document.getElementById('caseModal'); if(!m)return;
+  function el(id){return document.getElementById(id);}
+  function open(id){
+    var c=D[id]; if(!c)return;
+    var sol=c.type==='solution';
+    el('cmSect').textContent=(c.sect||'').replace(/&amp;/g,'&');
+    el('cmTitle').innerHTML=c.title;
+    var s2=el('cmShot');
+    if(c.img){s2.src=c.img;s2.alt=c.shot?'A screen from the system we built':'';s2.style.display='block';s2.classList.toggle('is-shot',!!c.shot);}
+    else{s2.style.display='none';}
+    el('cmClient').innerHTML=sol?('<span class="cm-badge">'+c.client+'</span>'):c.client;
+    el('cmProblemH').textContent=sol?'What it does':'The problem';
+    el('cmProblem').innerHTML=sol?c.full:c.problem;
+    var bh=el('cmBuiltH'), bl=el('cmBuilt');
+    if(sol){
+      bh.style.display=c.chips.length?'block':'none'; bh.textContent='What you get';
+      bl.innerHTML=c.chips.map(function(b){return '<li>'+b+'</li>';}).join('');
+    }else{
+      bh.style.display='block'; bh.textContent='What we built';
+      bl.innerHTML=c.built.map(function(b){return '<li>'+b+'</li>';}).join('');
+    }
+    var st=el('cmStats');
+    if(sol){st.style.display='none';}
+    else{st.style.display='grid';st.innerHTML=c.stats.map(function(t){return '<div><b>'+t[0]+'</b><span>'+t[1]+'</span></div>';}).join('');}
+    var pf=el('cmProof'), bits=[];
+    if(sol){
+      if(c.proofstat)bits.push('<b>Running today:</b> '+c.proofstat);
+      if(c.proof)bits.push('<b>Proven in:</b> <a class="tlink" href="our-work.html?case='+c.proof[0]+'">'+c.proof[1]+' &#8594;</a>');
+      if(c.url)bits.push('<a class="tlink" href="'+c.url+'" target="_blank" rel="noopener">Visit the product site &#8594;</a>');
+    }
+    pf.innerHTML=bits.join('<br>'); pf.style.display=bits.length?'block':'none';
+    el('cmScale').innerHTML=sol?'':('<b style="color:var(--ink);font-weight:600">Scale:</b> '+c.scale);
+    el('cmScale').style.display=sol?'none':'block';
+    el('cmCta').href='contact.html?topic=brainstorm&ref='+id;
+    m.classList.add('open'); document.body.style.overflow='hidden';
+    m.querySelector('.close').focus();
+  }
+  function close(){m.classList.remove('open');document.body.style.overflow='';}
+  Array.prototype.forEach.call(document.querySelectorAll('.ccard'),function(c){
+    c.addEventListener('click',function(){open(c.getAttribute('data-case'));});
+  });
+  Array.prototype.forEach.call(m.querySelectorAll('[data-cclose]'),function(b){b.addEventListener('click',close);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.classList.contains('open'))close();});
+})();
+</script>
 
 <!-- FOOTER -->
 <footer><div class="wrap">

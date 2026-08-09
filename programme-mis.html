@@ -61,11 +61,9 @@ em{font-style:italic}
 .wyglede{color:var(--muted);font-size:1rem;line-height:1.65;max-width:62ch;margin:10px 0 26px}
 .cgrid{display:grid;gap:16px;grid-template-columns:repeat(4,1fr)}
 /* solution page: what-it-does tiles on the left, proof on the right */
-.sol2{display:grid;grid-template-columns:1.6fr 1fr;gap:46px;align-items:start}
-.sol2 .cgrid{grid-template-columns:1fr 1fr}
 .sol2 h3{font-size:1.32rem;font-weight:500;margin-bottom:4px}
 .sol2 .rlede{color:var(--muted);font-size:.9rem;margin-bottom:18px}
-@media(max-width:900px){.sol2{grid-template-columns:1fr;gap:34px}}
+@media(max-width:900px){}
 
 .ocard{display:flex;flex-direction:column;min-height:0;background:var(--beige);border-radius:8px;padding:clamp(22px,3.4vw,34px);transition:.2s}
 .ocard:hover{background:var(--beige-h)}
@@ -164,22 +162,59 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 #topnav.solid .links a.n-active,#topnav.scrolled .links a.n-active{color:var(--maroon)}
 
 /* proof panel */
-.proofpanel{position:sticky;top:96px}
-.proofpanel h3{font-size:1.2rem;font-weight:500;margin-bottom:3px}
-.proofpanel .rlede{color:var(--muted);font-size:.88rem;margin-bottom:16px}
-.minicase{display:block;background:var(--beige);border-radius:12px;overflow:hidden;margin-bottom:12px;transition:.2s;position:relative}
-.minicase:hover{background:var(--beige-h)}
-.minicase:hover .mcph{filter:grayscale(0)}
-.mcph{height:104px;background-size:cover;background-position:center;filter:grayscale(.35);transition:filter .3s;border-bottom:1px solid var(--line)}
-.mcbd{padding:15px 17px 16px}
-.minicase b{display:block;font-family:var(--serif);font-size:1.06rem;font-weight:500;color:var(--ink);line-height:1.25;margin-bottom:3px}
-.minicase .mcsub{display:block;font-size:.82rem;color:var(--muted);line-height:1.4}
-.mcstat{display:flex;align-items:baseline;gap:8px;margin:11px 0 0;padding-top:11px;border-top:1px solid var(--line)}
-.mcstat b{font-family:var(--serif);font-size:1.32rem;font-weight:500;color:var(--maroon);margin:0;line-height:1}
-.mcstat span{font-size:.76rem;color:var(--muted);line-height:1.3}
-.mckeys{display:flex;gap:5px;flex-wrap:wrap;margin-top:11px}
-.mckeys span{font-size:.7rem;color:var(--muted);background:var(--paper);border-radius:999px;padding:3px 9px}
-@media(max-width:900px){.proofpanel{position:static}}
+.minicase:hover @media(max-width:900px){}
+
+/* case studies, full width, under the explanation */
+.casesec{background:var(--paper)}
+.ccards{display:grid;gap:20px;margin-top:30px;
+grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
+.ccards.one{grid-template-columns:1fr}
+.ccard{text-align:left;border:none;padding:0;font:inherit;cursor:pointer;width:100%;display:flex;flex-direction:column;background:var(--beige);border-radius:12px;overflow:hidden;transition:.2s}
+.ccard:hover{background:var(--beige-h);transform:translateY(-2px)}
+.ccard:hover .ccph{filter:grayscale(0)}
+.ccph{height:172px;background-size:cover;background-position:center;filter:grayscale(.35);transition:filter .35s;flex:none}
+.ccbd{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+.ccard h3{font-family:var(--serif);font-size:1.24rem;font-weight:500;line-height:1.25;color:var(--ink);margin-bottom:5px}
+.cccl{font-size:.86rem;color:var(--muted);line-height:1.45;margin:0}
+.ccstat{display:flex;align-items:baseline;gap:9px;margin:auto 0 0;padding-top:14px;border-top:1px solid var(--line)}
+.ccstat b{font-family:var(--serif);font-size:1.6rem;font-weight:500;color:var(--maroon);line-height:1}
+.ccstat span{font-size:.78rem;color:var(--muted);line-height:1.3}
+.cckeys{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+.cckeys span{font-size:.72rem;color:var(--muted);background:var(--paper);border-radius:999px;padding:4px 11px}
+.ccmore{margin-top:auto;padding-top:18px;font-size:.86rem;font-weight:600;color:var(--maroon)}
+.ccard:hover .ccmore .arw{transform:translateX(4px)}
+.ccmore .arw{display:inline-block;transition:transform .2s}
+@media(min-width:760px){.ccards.one .ccard{flex-direction:row}
+.ccards.one .ccph{height:auto;width:38%;min-height:230px}
+.ccards.one .ccbd{padding:30px 34px}}
+
+.cmodal .cm-badge{display:inline-block;font-family:var(--sans);font-style:normal;font-size:.72rem;font-weight:600;letter-spacing:.04em;border-radius:999px;padding:5px 12px;background:var(--beige);color:var(--muted)}
+.cmodal .cm-proof{background:var(--beige);border-radius:12px;padding:16px 18px;margin-bottom:22px;font-size:.92rem}
+.cmodal .cm-proof b{color:var(--maroon)}
+
+/* case-study detail modal */
+.cmodal{display:none;position:fixed;inset:0;z-index:420;align-items:center;justify-content:center;padding:28px 20px}
+.cmodal.open{display:flex}
+.cmodal .backdrop{position:absolute;inset:0;background:rgba(21,16,15,.55)}
+.cmodal .box{position:relative;background:var(--paper);border-radius:20px;max-width:780px;width:100%;overflow:hidden;max-height:calc(100vh - 56px);display:flex;flex-direction:column}
+.cmodal .close{position:absolute;top:14px;right:14px;z-index:2;background:rgba(250,246,239,.92);border:1px solid var(--line);width:36px;height:36px;border-radius:50%;font-size:1.2rem;color:var(--ink);cursor:pointer;line-height:1}
+.cmodal .cm-shot{display:block;width:100%;height:236px;background:#fff;border-bottom:1px solid var(--line);flex:none;object-fit:cover;object-position:center}
+.cmodal .cm-shot.is-shot{object-fit:contain;object-position:center;background:#fff}
+.cmodal .cm-bd{padding:32px 38px 36px;overflow-y:auto}
+.cmodal .cm-sect{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--maroon);font-weight:600;margin-bottom:10px}
+.cmodal h3{font-size:1.7rem;font-weight:500;line-height:1.2;margin-bottom:8px}
+.cmodal .cm-client{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:1.02rem;margin-bottom:22px}
+.cmodal h5{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:7px;font-family:var(--sans)}
+.cmodal .cm-p{font-size:.96rem;line-height:1.62;color:var(--ink);margin-bottom:20px}
+.cmodal .cm-list{list-style:none;margin:0 0 22px;padding:0}
+.cmodal .cm-list li{position:relative;padding-left:20px;font-size:.94rem;color:var(--ink);line-height:1.55;margin-bottom:7px}
+.cmodal .cm-list li:before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--orange)}
+.cmodal .cm-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;margin-bottom:22px}
+.cmodal .cm-stats b{display:block;font-family:var(--serif);font-size:1.42rem;font-weight:500;color:var(--maroon);line-height:1.15;margin-bottom:4px}
+.cmodal .cm-stats span{font-size:.8rem;color:var(--muted);line-height:1.4}
+.cmodal .cm-foot{display:flex;align-items:center;justify-content:flex-start;gap:16px;flex-wrap:wrap}
+.cmodal .cm-tags{display:flex;gap:6px;flex-wrap:wrap}
+.cmodal .cm-tags span{font-size:.72rem;color:var(--muted);background:var(--beige);border-radius:999px;padding:5px 11px}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -250,51 +285,59 @@ window.DHWANI_FORMS = {
   <div class="in">
     <div class="crumb"><a href="solutions.html">Solutions</a> / Programme MIS</div>
     <h1>Your whole programme, one <em>system</em>.</h1>
-    <p>A single MIS your team runs &mdash; beneficiaries, activities, targets and results in one place.</p>
+    <p>A single MIS your team runs &mdash; beneficiaries, activities, targets, and results in one place.</p>
     <div class="btns"><a class="pill pill-primary" href="contact.html">Book a call <span class="arw">&#8594;</span></a><a class="pill pill-dark" href="our-work.html?offering=programme-mis">See it in our work</a></div>
   </div>
 </div>
 
 <!-- WHAT IT DOES -->
 <section class="section wyg"><div class="wrap">
-  <div class="sol2">
-    <div>
-    <h2 class="shead">What it does</h2>
+  <h2 class="shead">What it does</h2>
     <p class="wyglede">A programme MIS is the single system your whole programme runs on: one record per beneficiary, one place where field data lands, and one set of numbers everyone reports from. It replaces the spreadsheets that quietly disagree with each other.</p>
     <div class="cgrid">
     <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.5a3 3 0 0 1 0 5.5M21 20c0-2.6-1.6-4.9-4-5.8"/></svg></span><h5>One record per beneficiary</h5><p>From enrolment to outcome, in one profile.</p></div>
-    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span><h5>Activities &amp; targets</h5><p>Plan, assign and track against your logframe.</p></div>
+    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span><h5>Activities &amp; targets</h5><p>Plan, assign, and track against your logframe.</p></div>
     <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="6" rx="1.5"/><rect x="2" y="14" width="20" height="6" rx="1.5"/><path d="M6 7h.01M6 17h.01"/></svg></span><h5>Roles &amp; workflows</h5><p>The right access and steps for every team.</p></div>
     <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 2 4-6"/></svg></span><h5>Live reporting</h5><p>Roll up from the field to the funder in real time.</p></div>
   </div>
-    </div>
-    <aside class="proofpanel">
-      <h3>Proof</h3>
-      <p class="rlede">Programmes running on this today.</p>
-      <a class="minicase" href="our-work.html?case=tri">
-        <div class="mcph" style="background-image:url('https://images.unsplash.com/photo-1609252509229-364936a1d1a2?q=80&w=900&auto=format&fit=crop')"></div>
-        <div class="mcbd"><b>Transform Rural India</b><span class="mcsub">A technology partnership, 74 engagements deep</span>
-          <div class="mcstat"><b>74</b><span>engagements and counting</span></div>
-          <div class="mckeys"><span>74 engagements</span><span>UP SRLM payments</span></div>
+</div></section>
+
+<section class="section casesec"><div class="wrap">
+  <h2 class="shead">Case studies</h2>
+  <p class="lede">Programmes running on this today. Each one opens in full.</p>
+  <div class="ccards">
+      <button type="button" class="ccard" data-case="skilling">
+        <div class="ccph" style="background-image:url('assets/img/cases/case-skilling.jpg')"></div>
+        <div class="ccbd">
+          <h3>Skilling &amp; Placement MIS</h3>
+          <p class="cccl">For the philanthropic foundation of India's largest private conglomerate</p>
+          <div class="ccstat"><b>6,820</b><span>youth trained</span></div>
+          <div class="cckeys"><span>6,820 youth trained</span><span>89.16% placement</span><span>88 active partners</span></div>
+          <span class="ccmore">Read the case study <span class="arw">&#8594;</span></span>
         </div>
-      </a>
-      <a class="minicase" href="our-work.html?case=skilling">
-        <div class="mcph" style="background-image:url('assets/img/cases/case-skilling.jpg')"></div>
-        <div class="mcbd"><b>Skilling &amp; Placement MIS</b><span class="mcsub">For the philanthropic foundation of India's largest private conglomerate</span>
-          <div class="mcstat"><b>6,820</b><span>youth trained</span></div>
-          <div class="mckeys"><span>6,820 youth trained</span><span>89.16% placement</span></div>
+      </button>
+      <button type="button" class="ccard" data-case="huf">
+        <div class="ccph" style="background-image:url('https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=900&auto=format&fit=crop')"></div>
+        <div class="ccbd">
+          <h3>Hindustan Unilever Foundation</h3>
+          <p class="cccl">Water data that twelve NGOs can act on</p>
+          <div class="ccstat"><b>12</b><span>partner NGOs on one system</span></div>
+          <div class="cckeys"><span>12 NGO partners</span><span>Multilingual field data</span><span>Water stewardship</span></div>
+          <span class="ccmore">Read the case study <span class="arw">&#8594;</span></span>
         </div>
-      </a>
-      <a class="minicase" href="our-work.html?case=huf">
-        <div class="mcph" style="background-image:url('https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=900&auto=format&fit=crop')"></div>
-        <div class="mcbd"><b>Hindustan Unilever Foundation</b><span class="mcsub">Water data that twelve NGOs can act on</span>
-          <div class="mcstat"><b>12</b><span>partner NGOs on one system</span></div>
-          <div class="mckeys"><span>12 NGO partners</span><span>Multilingual field data</span></div>
+      </button>
+      <button type="button" class="ccard" data-case="pradan">
+        <div class="ccph" style="background-image:url('https://images.unsplash.com/photo-1707721690544-781fe6ede937?q=80&w=900&auto=format&fit=crop')"></div>
+        <div class="ccbd">
+          <h3>PRADAN &amp; NAFPO</h3>
+          <p class="cccl">The FPO stack: producer groups to market linkages</p>
+          <div class="ccstat"><b>3,000+</b><span>producer groups</span></div>
+          <div class="cckeys"><span>3,000+ producer groups</span><span>National FPO database</span><span>Market-linkage dashboards</span></div>
+          <span class="ccmore">Read the case study <span class="arw">&#8594;</span></span>
         </div>
-      </a>
-      <p style="margin-top:14px"><a class="tlink" href="our-work.html">Browse all our work <span class="arw">&#8594;</span></a></p>
-    </aside>
+      </button>
   </div>
+  <p style="margin-top:26px"><a class="tlink" href="our-work.html?offering=mis">See all our work <span class="arw">&#8594;</span></a></p>
 </div></section>
 
 
@@ -303,6 +346,79 @@ window.DHWANI_FORMS = {
   <h2>Ready to run your programme on one system?</h2>
   <a class="pill pill-primary" href="contact.html">Book a call <span class="arw">&#8594;</span></a>
 </div></div>
+
+<!-- CASE DETAIL -->
+<div class="cmodal" id="caseModal" role="dialog" aria-modal="true" aria-labelledby="cmTitle">
+  <div class="backdrop" data-cclose></div>
+  <div class="box">
+    <button class="close" data-cclose aria-label="Close">&times;</button>
+    <img class="cm-shot" id="cmShot" alt="">
+    <div class="cm-bd">
+      <div class="cm-sect" id="cmSect"></div>
+      <h3 id="cmTitle"></h3>
+      <p class="cm-client" id="cmClient"></p>
+      <h5 id="cmProblemH">The problem</h5>
+      <p class="cm-p" id="cmProblem"></p>
+      <h5 id="cmBuiltH">What we built</h5>
+      <ul class="cm-list" id="cmBuilt"></ul>
+      <div class="cm-stats" id="cmStats"></div>
+      <div class="cm-proof" id="cmProof"></div>
+      <div class="cm-foot">
+        <a class="pill pill-primary" id="cmCta" href="contact.html?topic=brainstorm">Talk to us about work like this <span class="arw">&#8594;</span></a>
+      </div>
+      <p id="cmScale" style="margin:20px 0 0;font-size:.84rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var D={"skilling": {"sect": "Education &amp; Skilling", "title": "Skilling &amp; Placement MIS", "client": "For the philanthropic foundation of India's largest private conglomerate", "img": "assets/img/cases/case-skilling.jpg", "shot": true, "problem": "The foundation and its training partners had no efficient way to follow a candidate from mobilisation through training to a placement anyone had actually verified.", "built": ["A skilling MIS covering enrolment, training batches and assessments", "Placement verification workflows across a large partner network", "Partner-level performance reporting"], "stats": [["6,820", "youth trained"], ["89.16%", "placement rate"], ["88", "active partners"]], "scale": "Multi-partner &middot; national programme", "tags": ["6,820 youth trained", "89.16% placement", "88 active partners"], "type": "case"}, "huf": {"sect": "Climate &amp; Environment", "title": "Hindustan Unilever Foundation", "client": "Water data that twelve NGOs can act on", "img": "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=900&auto=format&fit=crop", "shot": false, "problem": "HUF's water-stewardship portfolio ran through twelve partner NGOs, each collecting farmer data in a different language and format. Portfolio-level water decisions were being made on partial evidence.", "built": ["Multilingual farmer data collection across partner geographies", "Portfolio-wide monitoring across 12 NGO partners", "Decision dashboards for water-resource management and community resilience"], "stats": [["12", "partner NGOs on one system"], ["Multi-state", "portfolio coverage"], ["Multilingual", "field data collection"]], "scale": "12 partner NGOs &middot; multi-state", "tags": ["12 NGO partners", "Multilingual field data", "Water stewardship"], "type": "case"}, "pradan": {"sect": "Agriculture &amp; Livelihoods", "title": "PRADAN &amp; NAFPO", "client": "The FPO stack: producer groups to market linkages", "img": "https://images.unsplash.com/photo-1707721690544-781fe6ede937?q=80&w=900&auto=format&fit=crop", "shot": false, "problem": "India's farmer-producer-organisation movement was growing faster than anyone could track it. Producer groups were graded on paper, registration was manual, and there was no national picture of how collectives were actually performing.", "built": ["An FPO MIS portal for PRADAN covering producer-group grading, business planning and transactions", "FPO registration workflows and a national FPO database for NAFPO", "Dashboards tracking enrolment, trainings, financial performance and market linkages"], "stats": [["3,000+", "producer groups"], ["20+", "farmer producer companies"], ["National", "FPO database"]], "scale": "3,000+ producer groups &middot; 20+ FPCs", "tags": ["3,000+ producer groups", "National FPO database", "Market-linkage dashboards"], "type": "case"}};
+  var m=document.getElementById('caseModal'); if(!m)return;
+  function el(id){return document.getElementById(id);}
+  function open(id){
+    var c=D[id]; if(!c)return;
+    var sol=c.type==='solution';
+    el('cmSect').textContent=(c.sect||'').replace(/&amp;/g,'&');
+    el('cmTitle').innerHTML=c.title;
+    var s2=el('cmShot');
+    if(c.img){s2.src=c.img;s2.alt=c.shot?'A screen from the system we built':'';s2.style.display='block';s2.classList.toggle('is-shot',!!c.shot);}
+    else{s2.style.display='none';}
+    el('cmClient').innerHTML=sol?('<span class="cm-badge">'+c.client+'</span>'):c.client;
+    el('cmProblemH').textContent=sol?'What it does':'The problem';
+    el('cmProblem').innerHTML=sol?c.full:c.problem;
+    var bh=el('cmBuiltH'), bl=el('cmBuilt');
+    if(sol){
+      bh.style.display=c.chips.length?'block':'none'; bh.textContent='What you get';
+      bl.innerHTML=c.chips.map(function(b){return '<li>'+b+'</li>';}).join('');
+    }else{
+      bh.style.display='block'; bh.textContent='What we built';
+      bl.innerHTML=c.built.map(function(b){return '<li>'+b+'</li>';}).join('');
+    }
+    var st=el('cmStats');
+    if(sol){st.style.display='none';}
+    else{st.style.display='grid';st.innerHTML=c.stats.map(function(t){return '<div><b>'+t[0]+'</b><span>'+t[1]+'</span></div>';}).join('');}
+    var pf=el('cmProof'), bits=[];
+    if(sol){
+      if(c.proofstat)bits.push('<b>Running today:</b> '+c.proofstat);
+      if(c.proof)bits.push('<b>Proven in:</b> <a class="tlink" href="our-work.html?case='+c.proof[0]+'">'+c.proof[1]+' &#8594;</a>');
+      if(c.url)bits.push('<a class="tlink" href="'+c.url+'" target="_blank" rel="noopener">Visit the product site &#8594;</a>');
+    }
+    pf.innerHTML=bits.join('<br>'); pf.style.display=bits.length?'block':'none';
+    el('cmScale').innerHTML=sol?'':('<b style="color:var(--ink);font-weight:600">Scale:</b> '+c.scale);
+    el('cmScale').style.display=sol?'none':'block';
+    el('cmCta').href='contact.html?topic=brainstorm&ref='+id;
+    m.classList.add('open'); document.body.style.overflow='hidden';
+    m.querySelector('.close').focus();
+  }
+  function close(){m.classList.remove('open');document.body.style.overflow='';}
+  Array.prototype.forEach.call(document.querySelectorAll('.ccard'),function(c){
+    c.addEventListener('click',function(){open(c.getAttribute('data-case'));});
+  });
+  Array.prototype.forEach.call(m.querySelectorAll('[data-cclose]'),function(b){b.addEventListener('click',close);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.classList.contains('open'))close();});
+})();
+</script>
 
 <!-- FOOTER -->
 <footer><div class="wrap">

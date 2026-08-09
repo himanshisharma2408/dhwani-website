@@ -142,35 +142,42 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .smap-summary{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:.95rem}
 .smap-summary b{color:var(--ink)}
 .smap-key{display:flex;align-items:center;gap:6px;font-size:.82rem}
-.smgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px 24px;margin-top:30px}
 .smgroup{background:var(--beige);border-radius:14px;padding:26px 26px 22px}
 .smgroup h4{font-family:var(--serif);font-size:1.08rem;font-weight:500;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--line)}
 .smgroup ul{list-style:none}
 .smgroup li{margin-bottom:15px}
 .smgroup li:last-child{margin-bottom:0}
-.smrow{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
 .smrow a{font-weight:600;font-size:.96rem;color:var(--ink)}
 .smrow a:hover{color:var(--maroon)}
-.smdesc{display:block;font-size:.83rem;color:var(--muted);margin-top:3px;line-height:1.42}
 .smbadge{flex:none;font-size:.64rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:#8a5a1f;background:#f3e2c2;border-radius:999px;padding:3px 9px;white-space:nowrap;margin-top:1px}
 .smsub{list-style:none;margin:9px 0 0;padding-left:14px;border-left:1.5px solid var(--line)}
 .smsub li{margin-bottom:6px;font-size:.86rem}
 .smsub a{color:var(--muted);font-weight:500}
 .smsub a:hover{color:var(--maroon)}
-@media(max-width:900px){.smgrid{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){.smgrid{grid-template-columns:1fr}}
+@media(max-width:900px){}
+@media(max-width:640px){}
 
-section .smgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:34px;align-items:start}
-.smcol{background:var(--beige);border-radius:14px;padding:26px 28px}
-.smcol.smwide{grid-column:1 / -1}
-.smcol h4{font-family:var(--serif);font-size:1.22rem;font-weight:500;margin-bottom:14px;padding-bottom:11px;border-bottom:1px solid var(--line)}
-.smcol ul,.smcol ul li{list-style:none!important;margin:0;padding:0}
-.smcol li{padding:8px 0;border-bottom:1px solid rgba(0,0,0,.05)}
 .smcol li:last-child{border-bottom:none}
-.smtwo{columns:2;column-gap:34px}
-.smtwo li{break-inside:avoid}
-@media(max-width:900px){.smgrid{grid-template-columns:1fr 1fr}.smtwo{columns:1}}
-@media(max-width:620px){.smgrid{grid-template-columns:1fr}}
+@media(max-width:900px){}
+@media(max-width:620px){}
+
+@media(max-width:900px){}
+@media(max-width:620px){}
+
+section .smgrid{columns:3;column-gap:52px;margin-top:40px}
+.smcol{break-inside:avoid;margin-bottom:40px}
+.smcol.smlong{break-inside:auto}
+.smcol.smlong li{break-inside:avoid}
+.smcol h4{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--maroon);font-weight:600;
+margin-bottom:13px;padding-bottom:11px;border-bottom:1px solid var(--line)}
+.smcol ul,.smcol ul li{list-style:none!important;margin:0;padding:0}
+.smcol li{padding:6px 0}
+.smcol li a{font-size:.98rem;color:var(--ink);line-height:1.45;text-decoration:none;border-bottom:1px solid transparent}
+.smcol li a:hover{color:var(--maroon);border-bottom-color:var(--maroon)}
+.intbadge{display:inline-block;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;
+color:#b4560f;background:#fbe7d2;border-radius:999px;padding:5px 13px;margin-bottom:14px}
+@media(max-width:900px){section .smgrid{columns:2;column-gap:38px}}
+@media(max-width:620px){section .smgrid{columns:1}}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -236,100 +243,98 @@ window.DHWANI_FORMS = {
 
 <section class="section" style="padding-top:130px"><div class="wrap">
   <h1 class="shead">Sitemap</h1>
-  <p class="lede" style="max-width:70ch">Every page on the site.</p>
-  <p class="lede" style="margin-top:8px"><b>53 pages</b></p>
   <div class="smgrid">
     <div class="smcol">
       <h4>Main</h4>
       <ul>
-        <li><div class="smrow"><a href="index.html">Home</a></div><span class="smdesc">Hero, DPDP strip, what we do, who we serve, clients, testimonials.</span></li>
+        <li><a href="index.html">Home</a></li>
       </ul>
     </div>
     <div class="smcol">
       <h4>Products</h4>
       <ul>
-        <li><div class="smrow"><a href="mgrant-donors.html">mGrant for Donors</a></div><span class="smdesc">The grant lifecycle for funders: discovery, sanction, disbursement, MCA compliance.</span></li>
-        <li><div class="smrow"><a href="mgrant-nonprofits.html">mGrant for Nonprofits</a></div><span class="smdesc">The NUO edition: fundraising pipeline, project delivery, LFA impact, FCRA.</span></li>
-        <li><div class="smrow"><a href="mgrant.html">mGrant (overview)</a></div><span class="smdesc">Overview of both mGrant editions.</span></li>
-        <li><div class="smrow"><a href="mform.html">mForm</a></div><span class="smdesc">Offline-first field data collection, 10+ languages, FHIR and ABDM for health.</span></li>
-        <li><div class="smrow"><a href="anumati.html">Anumati</a></div><span class="smdesc">DPDP consent management: 22 languages, tamper-evident trail, one integration.</span></li>
-        <li><div class="smrow"><a href="radar.html">Radar</a></div><span class="smdesc">Due diligence and risk intelligence on partners and grantees.</span></li>
+        <li><a href="mgrant-donors.html">mGrant for Donors</a></li>
+        <li><a href="mgrant-nonprofits.html">mGrant for Nonprofits</a></li>
+        <li><a href="mgrant.html">mGrant (overview)</a></li>
+        <li><a href="mform.html">mForm</a></li>
+        <li><a href="anumati.html">Anumati</a></li>
+        <li><a href="radar.html">Radar</a></li>
       </ul>
     </div>
     <div class="smcol">
       <h4>Systems we build</h4>
       <ul>
-        <li><div class="smrow"><a href="programme-mis.html">Programme MIS</a></div><span class="smdesc">One system for a whole programme.</span></li>
-        <li><div class="smrow"><a href="impact-dashboards.html">Impact Dashboards</a></div><span class="smdesc">Live results for funders, boards and programme teams.</span></li>
-        <li><div class="smrow"><a href="grant-management.html">Grant Management</a></div><span class="smdesc">From the first RFP through to utilisation.</span></li>
-        <li><div class="smrow"><a href="donor-management.html">Donor Management</a></div><span class="smdesc">Every funder, commitment and report date in one place.</span></li>
-        <li><div class="smrow"><a href="field-data-apps.html">Field Data Apps</a></div><span class="smdesc">Offline-first capture built for real field conditions.</span></li>
-        <li><div class="smrow"><a href="back-office-it.html">Back-office IT</a></div><span class="smdesc">Finance, HR, fundraising and your website, connected.</span></li>
-        <li><div class="smrow"><a href="monitoring-evaluation.html">Monitoring & Evaluation</a></div><span class="smdesc">Indicators and outcomes, from the field to the funder.</span></li>
+        <li><a href="programme-mis.html">Programme MIS</a></li>
+        <li><a href="impact-dashboards.html">Impact Dashboards</a></li>
+        <li><a href="grant-management.html">Grant Management</a></li>
+        <li><a href="donor-management.html">Donor Management</a></li>
+        <li><a href="field-data-apps.html">Field Data Apps</a></li>
+        <li><a href="back-office-it.html">Back-office IT</a></li>
+        <li><a href="monitoring-evaluation.html">Monitoring & Evaluation</a></li>
       </ul>
     </div>
     <div class="smcol">
       <h4>Consulting &amp; advisory</h4>
       <ul>
-        <li><div class="smrow"><a href="dpdp-act-readiness.html">DPDP Act Readiness</a></div><span class="smdesc">Readiness for the DPDP Act, stage by stage.</span></li>
-        <li><div class="smrow"><a href="cloud-optimisation.html">CloudSahayak</a></div><span class="smdesc">CloudSahayak: cloud cost, migration and security.</span></li>
-        <li><div class="smrow"><a href="ai-for-impact.html">AI for Impact</a></div><span class="smdesc">AI applied where it removes real work.</span></li>
-        <li><div class="smrow"><a href="digital-transformation.html">Digital Transformation</a></div><span class="smdesc">The four stages, from pen-and-paper to proving outcomes.</span></li>
-        <li><div class="smrow"><a href="programme-management.html">PMU as a Service</a></div><span class="smdesc">An embedded PMU for a programme or a portfolio.</span></li>
+        <li><a href="dpdp-act-readiness.html">DPDP Act Readiness</a></li>
+        <li><a href="cloud-optimisation.html">CloudSahayak</a></li>
+        <li><a href="ai-for-impact.html">AI for Impact</a></li>
+        <li><a href="digital-transformation.html">Digital Transformation</a></li>
+        <li><a href="programme-management.html">PMU as a Service</a></li>
       </ul>
     </div>
     <div class="smcol">
       <h4>Who we serve</h4>
       <ul>
-        <li><div class="smrow"><a href="who-we-serve.html">Who we serve</a></div><span class="smdesc">Four kinds of organisation, and what each usually needs first.</span></li>
-        <li><div class="smrow"><a href="for-donors.html">For Donors & CSRs</a></div><span class="smdesc">Grants, portfolio dashboards and the outcome data underneath.</span></li>
-        <li><div class="smrow"><a href="for-ngos.html">For NGOs</a></div><span class="smdesc">Programme MIS, donor management and offline field apps.</span></li>
-        <li><div class="smrow"><a href="for-government.html">For Government & Multilaterals</a></div><span class="smdesc">Digital public infrastructure and goods, at population scale.</span></li>
-        <li><div class="smrow"><a href="for-academic.html">For Academic & Research</a></div><span class="smdesc">Clean, well-governed data for research programmes.</span></li>
+        <li><a href="who-we-serve.html">Who we serve</a></li>
+        <li><a href="for-donors.html">For Donors & CSRs</a></li>
+        <li><a href="for-ngos.html">For NGOs</a></li>
+        <li><a href="for-government.html">For Government & Multilaterals</a></li>
+        <li><a href="for-academic.html">For Academic & Research</a></li>
       </ul>
     </div>
     <div class="smcol">
       <h4>Work &amp; resources</h4>
       <ul>
-        <li><div class="smrow"><a href="our-work.html">Our work</a></div><span class="smdesc">91 case studies. Search, four filters, a detail popup per case.</span></li>
-        <li><div class="smrow"><a href="solutions.html">Solutions</a></div><span class="smdesc">Products, systems and consulting, plus browse by sector and by function.</span></li>
-        <li><div class="smrow"><a href="resources.html">Resources</a></div><span class="smdesc">Toolkits, playbooks, insights and the newsletter archive.</span></li>
+        <li><a href="our-work.html">Our work</a></li>
+        <li><a href="solutions.html">Solutions</a></li>
+        <li><a href="resources.html">Resources</a></li>
       </ul>
     </div>
     <div class="smcol">
       <h4>Company</h4>
       <ul>
-        <li><div class="smrow"><a href="about.html">About</a></div><span class="smdesc">Story, stats, open source, where we work, the team.</span></li>
-        <li><div class="smrow"><a href="team.html">Team</a></div><span class="smdesc">Leadership, advisors, executive and the wider team.</span></li>
-        <li><div class="smrow"><a href="careers.html">Careers</a></div><span class="smdesc">How we hire and the roles open now.</span></li>
-        <li><div class="smrow"><a href="life-at-dhwani.html">Life at Dhwani</a></div><span class="smdesc">What the work is like, the Charter, benefits.</span></li>
-        <li><div class="smrow"><a href="community.html">Community</a></div><span class="smdesc">Newsletter, WhatsApp and what we post on LinkedIn.</span></li>
-        <li><div class="smrow"><a href="technology.html">Technology at Dhwani</a></div><span class="smdesc">Open source, and the Frappe Mobile Framework we released.</span></li>
-        <li><div class="smrow"><a href="contact.html">Contact</a></div><span class="smdesc">Book a session, send a message, find the office.</span></li>
-        <li><div class="smrow"><a href="privacy.html">Privacy policy</a></div><span class="smdesc">Privacy policy.</span></li>
-        <li><div class="smrow"><a href="sitemap.html">Sitemap</a></div><span class="smdesc">This page.</span></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="life-at-dhwani.html">Life at Dhwani</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="technology.html">Technology at Dhwani</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy.html">Privacy policy</a></li>
+        <li><a href="sitemap.html">Sitemap</a></li>
       </ul>
     </div>
-    <div class="smcol smwide">
-      <h4>Insights &mdash; 17 articles</h4>
-      <ul class="smtwo">
-        <li><div class="smrow"><a href="insights/application-of-tech4good-in-livelihoods.html">Application of Tech4Good in Livelihoods</a></div></li>
-        <li><div class="smrow"><a href="insights/aws-x-dhwani-s-tech-for-good-workshop-unleashing-social-impact-through.html">AWS x Dhwani’s Tech for Good workshop:Unleashing social impact through Technovation</a></div></li>
-        <li><div class="smrow"><a href="insights/chatbots-make-conversations-about-change-easy.html">Chatbots Make Conversations About Change Easy!</a></div></li>
-        <li><div class="smrow"><a href="insights/data-overwhelming-in-the-indian-social-sector-part-i-data-journey.html">Data Overwhelming in the Indian Social Sector – Part I – Data Journey</a></div></li>
-        <li><div class="smrow"><a href="insights/data-overwhelming-in-the-indian-social-sector-part-ii-data-journey.html">Data Overwhelming in the Indian Social Sector – Part II – Data Journey</a></div></li>
-        <li><div class="smrow"><a href="insights/data-privacy-what-it-means-and-how-to-safeguard-data-in-the-social-sec.html">Data Privacy- What It Means and How to Safeguard Data in the Social Sector</a></div></li>
-        <li><div class="smrow"><a href="insights/data-scraping-using-python.html">Data Scraping Using Python</a></div></li>
-        <li><div class="smrow"><a href="insights/disaster-relief-in-india-how-can-corporates-contribute.html">Disaster Relief in India: How Can Corporates Contribute?</a></div></li>
-        <li><div class="smrow"><a href="insights/exploring-business-intelligence.html">Exploring Business Intelligence</a></div></li>
-        <li><div class="smrow"><a href="insights/from-paper-to-progress-how-mform-is-streamlining-data-collection.html">From Paper to Progress: How mForm is Streamlining Data Collection</a></div></li>
-        <li><div class="smrow"><a href="insights/low-code-no-code-new-change-catalysts.html">Low Code &amp; No code: New Change Catalysts</a></div></li>
-        <li><div class="smrow"><a href="insights/mgrant-streamlining-grant-making-and-project-management-for-social-sec.html">mGrant: Streamlining Grant-Making and Project Management for Social Sector Pioneers</a></div></li>
-        <li><div class="smrow"><a href="insights/navigating-the-intersection-of-usability-and-accessibility-crafting-in.html">Navigating the Intersection of Usability and Accessibility: Crafting Inclusive Digital Experiences</a></div></li>
-        <li><div class="smrow"><a href="insights/relevance-of-ui-ux-for-non-profits-and-social-impact-sector-in-india.html">Relevance of UI/UX for Non Profits and Social Impact sector in India</a></div></li>
-        <li><div class="smrow"><a href="insights/the-value-of-a-chief-of-staff-in-social-sector-organizations-insights-.html">The Value of a Chief of Staff in Social Sector Organizations: Insights from a One-Year Journey</a></div></li>
-        <li><div class="smrow"><a href="insights/using-technology-to-simplify-data-analysis-a-case-study-on-how-it-save.html">Using Technology to Simplify Data Analysis: A Case Study on How it Saves Time and Effort</a></div></li>
-        <li><div class="smrow"><a href="insights/what-i-ve-learned-about-impact-iteration-and-imperfection-at-dhwani-ri.html">What I've Learned About Impact, Iteration and Imperfection at Dhwani RIS</a></div></li>
+    <div class="smcol smlong">
+      <h4>Insights</h4>
+      <ul>
+        <li><a href="insights/application-of-tech4good-in-livelihoods.html">Application of Tech4Good in Livelihoods</a></li>
+        <li><a href="insights/aws-x-dhwani-s-tech-for-good-workshop-unleashing-social-impact-through.html">AWS x Dhwani’s Tech for Good workshop:Unleashing social impact through Technovation</a></li>
+        <li><a href="insights/chatbots-make-conversations-about-change-easy.html">Chatbots Make Conversations About Change Easy!</a></li>
+        <li><a href="insights/data-overwhelming-in-the-indian-social-sector-part-i-data-journey.html">Data Overwhelming in the Indian Social Sector – Part I – Data Journey</a></li>
+        <li><a href="insights/data-overwhelming-in-the-indian-social-sector-part-ii-data-journey.html">Data Overwhelming in the Indian Social Sector – Part II – Data Journey</a></li>
+        <li><a href="insights/data-privacy-what-it-means-and-how-to-safeguard-data-in-the-social-sec.html">Data Privacy- What It Means and How to Safeguard Data in the Social Sector</a></li>
+        <li><a href="insights/data-scraping-using-python.html">Data Scraping Using Python</a></li>
+        <li><a href="insights/disaster-relief-in-india-how-can-corporates-contribute.html">Disaster Relief in India: How Can Corporates Contribute?</a></li>
+        <li><a href="insights/exploring-business-intelligence.html">Exploring Business Intelligence</a></li>
+        <li><a href="insights/from-paper-to-progress-how-mform-is-streamlining-data-collection.html">From Paper to Progress: How mForm is Streamlining Data Collection</a></li>
+        <li><a href="insights/low-code-no-code-new-change-catalysts.html">Low Code &amp; No code: New Change Catalysts</a></li>
+        <li><a href="insights/mgrant-streamlining-grant-making-and-project-management-for-social-sec.html">mGrant: Streamlining Grant-Making and Project Management for Social Sector Pioneers</a></li>
+        <li><a href="insights/navigating-the-intersection-of-usability-and-accessibility-crafting-in.html">Navigating the Intersection of Usability and Accessibility: Crafting Inclusive Digital Experiences</a></li>
+        <li><a href="insights/relevance-of-ui-ux-for-non-profits-and-social-impact-sector-in-india.html">Relevance of UI/UX for Non Profits and Social Impact sector in India</a></li>
+        <li><a href="insights/the-value-of-a-chief-of-staff-in-social-sector-organizations-insights-.html">The Value of a Chief of Staff in Social Sector Organizations: Insights from a One-Year Journey</a></li>
+        <li><a href="insights/using-technology-to-simplify-data-analysis-a-case-study-on-how-it-save.html">Using Technology to Simplify Data Analysis: A Case Study on How it Saves Time and Effort</a></li>
+        <li><a href="insights/what-i-ve-learned-about-impact-iteration-and-imperfection-at-dhwani-ri.html">What I've Learned About Impact, Iteration and Imperfection at Dhwani RIS</a></li>
       </ul>
     </div>
   </div>
