@@ -95,7 +95,7 @@ em{font-style:italic}
 .mtrack.l{animation:scrollx 48s linear infinite}
 .mtrack.r{animation:scrollx 54s linear infinite reverse;margin-top:26px}
 @keyframes scrollx{to{transform:translateX(-50%)}}
-.mtrack img{height:54px;width:150px;object-fit:contain;filter:grayscale(1);opacity:.72;transition:filter .25s,opacity .25s}
+.mtrack img{height:56px;width:auto;max-width:none;object-fit:contain;filter:grayscale(1);opacity:.95;transition:filter .25s,opacity .25s}
 .mtrack img:hover{filter:grayscale(0);opacity:1}
 
 /* cta */
@@ -221,9 +221,6 @@ grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
 .cmodal .cm-tags span{font-size:.72rem;color:var(--muted);background:var(--beige);border-radius:999px;padding:5px 11px}
 
 /* the arc, before the detail */
-.jrail{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:14px 0 0;padding:0;
-counter-reset:none}
-.jrail li{list-style:none;margin:0}
 .jrail .rn{display:block;font-family:var(--serif);font-size:1.05rem;color:var(--maroon);line-height:1;margin-bottom:9px}
 .jrail .rb{display:block;font-size:.66rem;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);
 font-weight:600;margin-bottom:5px}
@@ -256,13 +253,6 @@ a.jfit:hover .arw{transform:translateX(3px)}
 @media(max-width:560px){.jrail{grid-template-columns:1fr}}
 
 /* what you end up with */
-.getlist{display:grid;grid-template-columns:1fr 1fr;gap:13px 40px;margin-top:30px;list-style:none;padding:0}
-.getlist li{position:relative;padding-left:31px;font-size:.97rem;line-height:1.58;color:var(--ink);list-style:none}
-.getlist li:before{content:"";position:absolute;left:0;top:3px;width:19px;height:19px;border-radius:50%;
-background:var(--maroon)}
-.getlist li:after{content:"";position:absolute;left:6px;top:9px;width:7px;height:4px;
-border-left:1.8px solid #fff;border-bottom:1.8px solid #fff;transform:rotate(-45deg)}
-.getlist li b{font-weight:600}
 /* a figure row, for pressure or track record */
 .figrow{display:flex;gap:clamp(30px,5vw,64px);flex-wrap:wrap;margin-top:30px;padding:26px 0;
 border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -270,7 +260,7 @@ border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .figrow b{display:block;font-family:var(--serif);font-size:clamp(1.7rem,3vw,2.2rem);font-weight:500;
 color:var(--maroon);line-height:1.05;margin-bottom:5px}
 .figrow span{font-size:.88rem;color:var(--muted);line-height:1.45}
-@media(max-width:760px){.getlist{grid-template-columns:1fr}}
+@media(max-width:760px){}
 
 .steps{margin-top:34px;border-top:1px solid var(--line)}
 .step{display:grid;grid-template-columns:58px 1fr;gap:24px;padding:26px 0;border-bottom:1px solid var(--line);align-items:start}
@@ -279,15 +269,26 @@ color:var(--maroon);line-height:1.05;margin-bottom:5px}
 .step p{color:var(--muted);font-size:.95rem;line-height:1.62;max-width:76ch}
 @media(max-width:820px){.step{grid-template-columns:42px 1fr;gap:16px}}
 
-.jrail button{display:block;width:100%;text-align:left;background:none;border:none;font:inherit;cursor:pointer;
-padding:16px 0 0;border-top:3px solid var(--line);transition:border-color .2s}
-.jrail button:hover{border-top-color:var(--beige-h)}
-.jrail button.on{border-top-color:var(--maroon)}
-.jrail button.on .rt{color:var(--maroon)}
+.jrail{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:14px 0 0;padding:0}
+.jrail li{list-style:none;margin:0}
+.jrail button{display:block;width:100%;height:100%;text-align:left;font:inherit;cursor:pointer;
+background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px 18px 17px;
+position:relative;transition:background .18s,border-color .18s,box-shadow .18s}
+.jrail button:hover{background:var(--beige);border-color:var(--beige-h)}
+.jrail button.on{background:var(--beige);border-color:var(--maroon);box-shadow:0 1px 0 0 var(--maroon)}
+.jrail button.on:after{content:"";position:absolute;left:50%;bottom:-9px;width:16px;height:16px;
+background:var(--beige);border-right:1px solid var(--maroon);border-bottom:1px solid var(--maroon);
+transform:translateX(-50%) rotate(45deg);z-index:2}
+.jrail .rn{display:block;font-family:var(--serif);font-size:1.05rem;color:var(--maroon);line-height:1;
+margin-bottom:9px;opacity:.55;transition:opacity .18s}
 .jrail button.on .rn{opacity:1}
-.jrail .rn{opacity:.5;transition:opacity .2s}
+.jrail .rb{display:block;font-size:.64rem;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);
+font-weight:600;margin-bottom:6px;min-height:2.1em;line-height:1.35}
+.jrail .rt{display:block;font-family:var(--serif);font-size:1.02rem;font-weight:500;color:var(--ink);
+line-height:1.3;transition:color .18s}
+.jrail button.on .rt{color:var(--maroon)}
 .jstage.off{display:none}
-.jrn{margin-top:26px}
+.jrn{margin-top:22px}
 
 .railcue{font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;font-weight:600;color:var(--muted);margin-top:34px}
 .jrail{margin-top:14px}
@@ -376,12 +377,12 @@ window.DHWANI_FORMS = {
 <section class="section wyg"><div class="wrap">
   <h2 class="shead">Where technology fits, stage by stage</h2>
   <p class="lede" style="max-width:74ch">Every organisation walks a version of the same road. Here is that road: what starts breaking, what you actually need, and what you don&rsquo;t need yet.</p>
-  <p class="railcue">Pick the stage you are at</p>
-  <ol class="jrail" id="jrail">
-    <li><button type="button" class="rtab on" data-stage="01"><span class="rn">01</span><span class="rb">Getting started &middot; first grants</span><span class="rt">The pen-and-paper years</span></button></li>
-    <li><button type="button" class="rtab" data-stage="02"><span class="rn">02</span><span class="rb">&#8377;1&ndash;10 crore &middot; first repeat funders</span><span class="rt">Excel starts to crack</span></button></li>
-    <li><button type="button" class="rtab" data-stage="03"><span class="rn">03</span><span class="rb">&#8377;10&ndash;50 crore &middot; multi-state scale</span><span class="rt">The organisation becomes a system</span></button></li>
-    <li><button type="button" class="rtab" data-stage="04"><span class="rn">04</span><span class="rb">&#8377;50&ndash;100+ crore &middot; institutional scale</span><span class="rt">From running programmes to proving outcomes</span></button></li>
+  <p class="railcue">Which stage are you at? Pick one to see what fits</p>
+  <ol class="jrail" id="jrail" role="tablist">
+    <li><button type="button" class="rtab on" role="tab" aria-selected="true" aria-controls="stage-01" data-stage="01"><span class="rn">01</span><span class="rb">Getting started &middot; first grants</span><span class="rt">The pen-and-paper years</span></button></li>
+    <li><button type="button" class="rtab" role="tab" aria-selected="false" aria-controls="stage-02" data-stage="02"><span class="rn">02</span><span class="rb">&#8377;1&ndash;10 crore &middot; first repeat funders</span><span class="rt">Excel starts to crack</span></button></li>
+    <li><button type="button" class="rtab" role="tab" aria-selected="false" aria-controls="stage-03" data-stage="03"><span class="rn">03</span><span class="rb">&#8377;10&ndash;50 crore &middot; multi-state scale</span><span class="rt">The organisation becomes a system</span></button></li>
+    <li><button type="button" class="rtab" role="tab" aria-selected="false" aria-controls="stage-04" data-stage="04"><span class="rn">04</span><span class="rb">&#8377;50&ndash;100+ crore &middot; institutional scale</span><span class="rt">From running programmes to proving outcomes</span></button></li>
   </ol>
   <div class="jrn">
     <article class="jstage" id="stage-01">
@@ -410,7 +411,7 @@ window.DHWANI_FORMS = {
           <h6>Where Dhwani fits</h6>
           <a class="jfit" href="mform.html"><b>mForm as your programme MIS</b><span>offline field collection, one source of truth</span><span class="arw">&#8594;</span></a>
           <a class="jfit" href="mgrant-nonprofits.html"><b>mGrant for Nonprofits</b><span>grant and donor management sized for implementing NGOs</span><span class="arw">&#8594;</span></a>
-          <div class="jfit plain"><b>Adoption support</b><span>we train the field team in their language, and stay until it sticks</span></div>
+          <a class="jfit" href="contact.html?topic=adoption"><b>Adoption support</b><span>we train the people who have to use it, and stay until it sticks</span><span class="arw">&#8594;</span></a>
         </div>
       </div>
     </article>
@@ -423,8 +424,8 @@ window.DHWANI_FORMS = {
         </div>
         <div class="jfits">
           <h6>Where Dhwani fits</h6>
-          <div class="jfit plain"><b>Back office on open-source ERP</b><span>(ERPNext/Frappe) — finance, HR, and procurement without licence lock-in</span></div>
-          <a class="jfit" href="impact-dashboards.html"><b>Dashboard as a Service</b><span>board-ready impact and financial reporting</span><span class="arw">&#8594;</span></a>
+          <a class="jfit" href="back-office-it.html"><b>Back office on open-source ERP</b><span>(ERPNext/Frappe) — finance, HR, and procurement without licence lock-in</span><span class="arw">&#8594;</span></a>
+          <a class="jfit" href="impact-dashboards.html"><b>Impact dashboards, run for you</b><span>board-ready impact and financial reporting</span><span class="arw">&#8594;</span></a>
           <a class="jfit" href="cloud-optimisation.html"><b>CloudSahayak and DPDP readiness</b><span>30&ndash;40% lower cloud costs, audit-ready data protection</span><span class="arw">&#8594;</span></a>
         </div>
       </div>
@@ -453,21 +454,21 @@ window.DHWANI_FORMS = {
   <div class="steps">
     <div class="step"><div class="sn">01</div><div><h3>Diagnostic</h3><p>A read of what you run today, what breaks, and which stage you are actually at. Often this ends with us telling you to buy less than you expected.</p></div></div>
     <div class="step"><div class="sn">02</div><div><h3>Roadmap</h3><p>What to build in what order, sequenced so each stage pays for the next.</p></div></div>
-    <div class="step"><div class="sn">03</div><div><h3>Build and roll out</h3><p>Systems configured or built, then adoption support: we train the teams who have to use it, in their own language.</p></div></div>
+    <div class="step"><div class="sn">03</div><div><h3>Build and roll out</h3><p>Systems configured or built, then adoption support: we train the teams who have to use it.</p></div></div>
     <div class="step"><div class="sn">04</div><div><h3>Run</h3><p>Support, iteration, and the next stage when you reach it.</p></div></div>
   </div>
 </div></section>
 
 <section class="section"><div class="wrap">
   <h2 class="shead">What you end up with</h2>
-  <ul class="getlist">
-    <li><b>One source of truth</b> instead of the field&rsquo;s Excel, the office&rsquo;s Excel, and the auditor&rsquo;s Excel</li>
-    <li>Reporting your team can produce <b>without a weekend of retyping</b></li>
-    <li>A <b>funder-ready view</b> of what you spent and what changed</li>
-    <li>Back-office systems that <b>talk to each other</b></li>
-    <li><b>Adoption</b>, not just a login: the field team using it after we leave</li>
-    <li>A <b>roadmap for the next stage</b>, so the next build is not a fresh start</li>
-  </ul>
+  <div class="cgrid">
+    <div class="ocard"><path d="M4 7v10c0 1.7 3.6 3 8 3s8-1.3 8-3V7"/><ellipse cx="12" cy="7" rx="8" ry="3"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/><h5>One source of truth</h5><p>Instead of the field&rsquo;s Excel, the office&rsquo;s Excel, and the auditor&rsquo;s Excel.</p></div>
+    <div class="ocard"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/><h5>Reporting without retyping</h5><p>What funders ask for, produced from the system rather than a weekend of copying.</p></div>
+    <div class="ocard"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/><h5>A funder-ready view</h5><p>What you spent and what changed, in one place.</p></div>
+    <div class="ocard"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 0 1 0 10h-2"/><path d="M8 12h8"/><h5>A connected back office</h5><p>Finance, HR, and procurement systems that talk to each other.</p></div>
+    <div class="ocard"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><h5>Adoption, not just a login</h5><p>The team still using it after we leave.</p></div>
+    <div class="ocard"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/><h5>A roadmap for the next stage</h5><p>So the next build starts from where this one finished.</p></div>
+  </div>
 </div></section>
 
 <section class="section casesec"><div class="wrap">
@@ -602,7 +603,7 @@ window.DHWANI_FORMS = {
   Array.prototype.forEach.call(tabs,function(t){
     t.addEventListener('click',function(){
       var n=t.getAttribute('data-stage');
-      Array.prototype.forEach.call(tabs,function(x){x.classList.toggle('on',x===t);});
+      Array.prototype.forEach.call(tabs,function(x){var on=x===t;x.classList.toggle('on',on);x.setAttribute('aria-selected',on?'true':'false');});
       Array.prototype.forEach.call(document.querySelectorAll('.jstage'),function(a){
         a.classList.toggle('off',a.id!=='stage-'+n);});
     });
@@ -715,7 +716,7 @@ var mb=document.getElementById('menuBtn');if(mb){mb.addEventListener('click',fun
 nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');});});}
   nav.querySelectorAll('.dd-toggle').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();b.parentElement.classList.toggle('open');});});
 var logos=['world-bank','unicef','who','undp','unesco','gates-foundation.svg','tata-trusts','tata-steel','mahindra','hdfc-bank','axis-bank-foundation','bajaj-finserv','reliance-foundation','godrej','sun-pharma','pratham','educate-girls','pradan','smile-foundation','save-the-children','helpage-india','azim-premji-philanthropic-initiatives','omidyar-network-india','dasra','give','nudge','central-square-foundation','transform-rural-india','jindal-stainless','lupin'];
-var LOGOH={"access-development-services.png":33.4,"adani-foundation.png":29.6,"akrsp.png":32.4,"amazon.png":25.0,"arvind.png":24.9,"ashoka-university.png":26.2,"axis-bank-foundation.png":21.8,"azim-premji-philanthropic-initiatives.png":27.2,"azim-premji-university.png":27.8,"bajaj-finserv.png":31.6,"bajaj.png":34.5,"bigbasket.png":36.8,"breakthrough.png":31.6,"bridgespan.png":28.5,"bright-future.png":26.2,"cams.svg":25.4,"central-square-foundation.png":23.0,"centre-for-civil-society.png":26.8,"chintu-gudiya-foundation.png":23.4,"ciff.png":22.3,"cms-social-impact.png":23.7,"crisil-foundation.png":27.9,"danone-nutricia.png":32.0,"dasra.png":34.0,"dell.png":34.0,"deloitte.png":21.7,"educate-girls.png":33.5,"ey.png":34.5,"forbes-marshall.png":22.6,"gates-foundation.svg":22.4,"gdi.png":28.4,"give.png":29.2,"giz.png":23.9,"godrej.png":27.4,"google.png":24.7,"hdfc-bank.png":35.3,"heifer-international.svg":24.4,"helpage-india.png":29.3,"icici-foundation.png":22.3,"idh.png":26.3,"ifmr.png":26.6,"indus-action.png":22.3,"intellecap.png":25.2,"irma.png":30.2,"isdm.png":26.8,"jan-sahas.png":34.0,"janaagraha.png":21.7,"jindal-stainless.png":22.9,"kotak-education-foundation.png":23.6,"kpmg.png":26.1,"kyndryl.png":34.0,"language-and-learning-foundation.png":34.0,"learning-links-foundation.png":31.4,"lic-hfl.png":27.6,"lupin.png":36.2,"mahindra.png":27.5,"microsave-consulting.png":28.8,"nafpo.png":22.4,"nasscom-foundation.png":25.9,"nielsen.png":24.8,"nrlm.png":35.0,"nudge.png":30.5,"omidyar-network-india.png":23.6,"onestage.png":34.0,"piramal-foundation.png":27.4,"pradan.png":25.3,"pratham.png":34.0,"pwc.png":31.4,"raintree-foundation.png":33.8,"reliance-foundation.png":25.2,"renew.png":24.5,"sattva.png":28.7,"save-the-children.png":31.7,"sehgal-foundation.png":23.5,"shiv-nadar-foundation.png":22.1,"smile-foundation.png":31.6,"sun-pharma.png":31.4,"swasti.png":22.9,"tata-steel.png":18.4,"tata-strive.png":22.6,"tata-trusts.png":19.9,"tech-mahindra-foundation.png":26.8,"terre-des-hommes.png":20.2,"transform-rural-india.png":23.5,"udyogini.png":34.2,"undp.png":42.1,"unesco.png":30.5,"unicef.png":31.6,"unilever.png":35.0,"unitus-capital.png":20.1,"vedanta-foundation.png":25.9,"vijayavahini-charitable-foundation.png":23.7,"villgro.png":27.6,"vrutti.png":27.8,"wadhwani-ai.png":25.0,"water-for-people.png":36.1,"welspun-foundation.svg":32.8,"who.png":34.2,"world-bank.png":22.3,"world-resources-institute.png":25.0,"yash-johar-foundation.png":23.4,"yuwaah.png":33.8};
+var LOGOH={"access-development-services.png": 72.0, "adani-foundation.png": 60.5, "akrsp.png": 70.1, "amazon.png": 44.2, "arvind.png": 45.1, "ashoka-university.png": 49.2, "axis-bank-foundation.png": 36.2, "azim-premji-philanthropic-initiatives.png": 52.4, "azim-premji-university.png": 54.3, "bajaj-finserv.png": 67.2, "bajaj.png": 72.0, "bigbasket.png": 72.0, "breakthrough.png": 67.5, "bridgespan.png": 56.7, "bright-future.png": 49.2, "central-square-foundation.png": 39.6, "centre-for-civil-society.png": 51.0, "chintu-gudiya-foundation.png": 38.8, "ciff.png": 37.7, "cms-social-impact.png": 39.7, "crisil-foundation.png": 53.4, "danone-nutricia.png": 70.2, "dasra.png": 72.0, "dell.png": 72.0, "deloitte.png": 33.7, "educate-girls.png": 72.0, "ey.png": 72.0, "forbes-marshall.png": 38.5, "gdi.png": 54.4, "give.png": 58.9, "giz.png": 40.6, "godrej.png": 53.0, "google.png": 44.5, "hdfc-bank.png": 72.0, "helpage-india.png": 56.0, "icici-foundation.png": 35.9, "idh.png": 48.1, "ifmr.png": 50.3, "indus-action.png": 36.3, "intellecap.png": 46.3, "irma.png": 62.3, "isdm.png": 49.4, "jan-sahas.png": 72.0, "janaagraha.png": 35.9, "jindal-stainless.png": 39.5, "kotak-education-foundation.png": 39.9, "kpmg.png": 48.4, "kyndryl.png": 72.0, "language-and-learning-foundation.png": 72.0, "learning-links-foundation.png": 66.5, "lic-hfl.png": 53.6, "lupin.png": 72.0, "mahindra.png": 53.5, "microsave-consulting.png": 57.5, "nafpo.png": 37.8, "nasscom-foundation.png": 48.1, "nielsen.png": 44.7, "nrlm.png": 72.0, "nudge.png": 63.6, "omidyar-network-india.png": 39.5, "onestage.png": 72.0, "piramal-foundation.png": 51.9, "pradan.png": 45.0, "pratham.png": 72.0, "pwc.png": 66.7, "raintree-foundation.png": 72.0, "reliance-foundation.png": 46.2, "renew.png": 44.1, "sattva.png": 57.5, "save-the-children.png": 67.7, "sehgal-foundation.png": 40.0, "shiv-nadar-foundation.png": 37.2, "smile-foundation.png": 67.4, "sun-pharma.png": 66.4, "swasti.png": 39.3, "tata-steel.png": 31.0, "tata-strive.png": 38.5, "tata-trusts.png": 31.0, "tech-mahindra-foundation.png": 49.9, "terre-des-hommes.png": 31.9, "transform-rural-india.png": 41.0, "udyogini.png": 72.0, "undp.png": 72.0, "unesco.png": 64.3, "unicef.png": 69.2, "unilever.png": 72.0, "unitus-capital.png": 31.8, "vedanta-foundation.png": 47.0, "vijayavahini-charitable-foundation.png": 40.6, "villgro.png": 52.5, "vrutti.png": 53.5, "wadhwani-ai.png": 45.6, "water-for-people.png": 72.0, "who.png": 72.0, "world-bank.png": 36.3, "world-resources-institute.png": 45.6, "yash-johar-foundation.png": 40.8, "yuwaah.png": 72.0};
 function build(id,a){var el=document.getElementById(id);if(!el)return;el.innerHTML=a.concat(a).map(function(n){var f=n.indexOf('.')>-1?n:n+'.png';var h=LOGOH[f]||32;return '<img src="assets/img/clients/'+f+'" alt="" style="height:'+h+'px">';}).join('');}
 build('row1',logos.slice(0,15));build('row2',logos.slice(15));})();
 </script>
