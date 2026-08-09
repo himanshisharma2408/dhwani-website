@@ -160,22 +160,18 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 @media(max-width:900px){.smgrid{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.smgrid{grid-template-columns:1fr}}
 
-.tsec{border-top:1px solid var(--line);padding:26px 0}
-.troot a{font-family:var(--serif);font-size:1.4rem;font-weight:500;color:var(--ink)}
-.troot a:hover{color:var(--maroon)}
-.troot .tdesc{display:block;font-size:.9rem;color:var(--muted);margin-top:5px;max-width:80ch}
-.tkids{list-style:none;margin:18px 0 0;padding:0 0 0 22px;position:relative}
-.tkids:before{content:"";position:absolute;left:0;top:0;bottom:14px;width:1px;background:var(--line)}
-.tnode{position:relative;padding:7px 0 7px 20px}
-.tnode:before{content:"";position:absolute;left:0;top:18px;width:14px;height:1px;background:var(--line)}
-.tnode a{font-weight:600;font-size:.98rem;color:var(--ink)}
-.tnode a:hover{color:var(--maroon)}
-.tnode .tdesc{display:block;font-size:.85rem;color:var(--muted);margin-top:2px}
-.intbadge{display:inline-block;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:#fff;background:var(--maroon);border-radius:999px;padding:5px 12px;margin-bottom:14px}
-.intnote{background:var(--beige);border-left:3px solid var(--orange);border-radius:10px;padding:18px 20px;margin:0 0 30px;max-width:78ch}
-.intnote p{font-size:.94rem;color:var(--muted);line-height:1.6}
+section .smgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:34px;align-items:start}
+.smcol{background:var(--beige);border-radius:14px;padding:26px 28px}
+.smcol.smwide{grid-column:1 / -1}
+.smcol h4{font-family:var(--serif);font-size:1.22rem;font-weight:500;margin-bottom:14px;padding-bottom:11px;border-bottom:1px solid var(--line)}
+.smcol ul,.smcol ul li{list-style:none!important;margin:0;padding:0}
+.smcol li{padding:8px 0;border-bottom:1px solid rgba(0,0,0,.05)}
+.smcol li:last-child{border-bottom:none}
+.smtwo{columns:2;column-gap:34px}
+.smtwo li{break-inside:avoid}
+@media(max-width:900px){.smgrid{grid-template-columns:1fr 1fr}.smtwo{columns:1}}
+@media(max-width:620px){.smgrid{grid-template-columns:1fr}}
 </style>
-<meta name="robots" content="noindex,nofollow">
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
    Set FORM_ENDPOINT to a URL that accepts a JSON POST. Recommended: a Zoho Form
@@ -191,6 +187,7 @@ window.DHWANI_FORMS = {
   NOTIFY_EMAIL: 'partnerships@dhwaniris.com'
 };
 </script>
+<meta name="robots" content="noindex,nofollow">
 </head>
 <body>
 
@@ -241,63 +238,109 @@ window.DHWANI_FORMS = {
 <section class="section" style="padding-top:130px"><div class="wrap">
   <span class="intbadge">Internal</span>
   <h1 class="shead">Site structure</h1>
-  <div class="intnote"><p>Working map of how the site fits together &mdash; every page, how it nests, and the deep links that exist. This page is <b>noindex</b> and is not linked from the footer. The public-facing version is <a class="tlink" href="sitemap.html">sitemap.html</a>.</p></div>
-    <div class="tsec">
-      <div class="troot"><a href="index.html">Home</a><span class="tdesc">Hero, DPDP strip, what we do, who we serve, clients, testimonials, CTA.</span></div>
-    </div>
-    <div class="tsec">
-      <div class="troot"><a href="solutions.html">Solutions</a><span class="tdesc">Products, systems and consulting, plus browse by sector and by function.</span></div>
-      <ul class="tkids">
-        <li class="tnode"><a href="mgrant-donors.html">mGrant for Donors</a><span class="tdesc">Built from mgrant.in. Email-gated deck.</span></li>
-        <li class="tnode"><a href="mgrant-nonprofits.html">mGrant for Nonprofits</a><span class="tdesc">The NUO edition. Email-gated deck.</span></li>
-        <li class="tnode"><a href="mform.html">mForm</a><span class="tdesc">Offline-first field data collection.</span></li>
-        <li class="tnode"><a href="anumati.html">Anumati</a><span class="tdesc">DPDP consent management.</span></li>
-        <li class="tnode"><a href="radar.html">Radar</a><span class="tdesc">Due diligence and risk intelligence. Copy pending.</span></li>
-        <li class="tnode"><a href="programme-mis.html">Programme MIS</a></li>
-        <li class="tnode"><a href="impact-dashboards.html">Impact Dashboards</a></li>
-        <li class="tnode"><a href="grant-management.html">Grant Management</a></li>
-        <li class="tnode"><a href="donor-management.html">Donor Management</a></li>
-        <li class="tnode"><a href="field-data-apps.html">Field Data Apps</a></li>
-        <li class="tnode"><a href="back-office-it.html">Back-office IT</a></li>
-        <li class="tnode"><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></li>
-        <li class="tnode"><a href="dpdp-act-readiness.html">DPDP Act Readiness</a></li>
-        <li class="tnode"><a href="cloud-optimisation.html">CloudSahayak</a><span class="tdesc">Cloud &amp; cost optimisation.</span></li>
-        <li class="tnode"><a href="ai-for-impact.html">AI for Impact</a></li>
-        <li class="tnode"><a href="digital-transformation.html">Digital Transformation</a><span class="tdesc">The four stages, from pen-and-paper to proving outcomes.</span></li>
-        <li class="tnode last"><a href="programme-management.html">PMU as a Service</a></li>
+  <p class="lede" style="max-width:70ch">Every page on the site, to the lowest level. This map is noindex and is not linked from the footer.</p>
+  <p class="lede" style="margin-top:8px"><b>54 pages</b></p>
+  <div class="smgrid">
+    <div class="smcol">
+      <h4>Main</h4>
+      <ul>
+        <li><div class="smrow"><a href="index.html">Home</a></div><span class="smdesc">Hero, DPDP strip, what we do, who we serve, clients, testimonials.</span></li>
       </ul>
     </div>
-    <div class="tsec">
-      <div class="troot"><a href="who-we-serve.html">Who we serve</a><span class="tdesc">Four kinds of organisation, each with its own page.</span></div>
-      <ul class="tkids">
-        <li class="tnode"><a href="for-donors.html">For Donors &amp; CSRs</a></li>
-        <li class="tnode"><a href="for-ngos.html">For NGOs</a></li>
-        <li class="tnode"><a href="for-government.html">For Government &amp; Multilaterals</a></li>
-        <li class="tnode last"><a href="for-academic.html">For Academic &amp; Research</a></li>
+    <div class="smcol">
+      <h4>Products</h4>
+      <ul>
+        <li><div class="smrow"><a href="mgrant-donors.html">mGrant for Donors</a></div><span class="smdesc">The grant lifecycle for funders: discovery, sanction, disbursement, MCA compliance.</span></li>
+        <li><div class="smrow"><a href="mgrant-nonprofits.html">mGrant for Nonprofits</a></div><span class="smdesc">The NUO edition: fundraising pipeline, project delivery, LFA impact, FCRA.</span></li>
+        <li><div class="smrow"><a href="mgrant.html">mGrant (overview)</a></div><span class="smdesc">Overview of both mGrant editions.</span></li>
+        <li><div class="smrow"><a href="mform.html">mForm</a></div><span class="smdesc">Offline-first field data collection, 10+ languages, FHIR and ABDM for health.</span></li>
+        <li><div class="smrow"><a href="anumati.html">Anumati</a></div><span class="smdesc">DPDP consent management: 22 languages, tamper-evident trail, one API call.</span></li>
+        <li><div class="smrow"><a href="radar.html">Radar</a></div><span class="smdesc">Due diligence and risk intelligence on partners and grantees.</span></li>
       </ul>
     </div>
-    <div class="tsec">
-      <div class="troot"><a href="our-work.html">Our work</a><span class="tdesc">91 case studies. Search, four filter dimensions, detail popup per case. Deep links: ?case=&lt;id&gt;, ?sector=, ?offering=, ?audience=, ?function=.</span></div>
-    </div>
-    <div class="tsec">
-      <div class="troot"><a href="resources.html">Resources</a><span class="tdesc">Three tabs: Toolkits, Playbooks (being written), Insights.</span></div>
-      <ul class="tkids">
-        <li class="tnode last"><a href="insights/">Insights &mdash; 17 article pages</a><span class="tdesc">Built from the live site&rsquo;s data.json. Search and show-more on the index.</span></li>
+    <div class="smcol">
+      <h4>Systems we build</h4>
+      <ul>
+        <li><div class="smrow"><a href="programme-mis.html">Programme MIS</a></div><span class="smdesc">One system for a whole programme.</span></li>
+        <li><div class="smrow"><a href="impact-dashboards.html">Impact Dashboards</a></div><span class="smdesc">Live results for funders, boards and programme teams.</span></li>
+        <li><div class="smrow"><a href="grant-management.html">Grant Management</a></div><span class="smdesc">From the first RFP through to utilisation.</span></li>
+        <li><div class="smrow"><a href="donor-management.html">Donor Management</a></div><span class="smdesc">Every funder, commitment and report date in one place.</span></li>
+        <li><div class="smrow"><a href="field-data-apps.html">Field Data Apps</a></div><span class="smdesc">Offline-first capture built for real field conditions.</span></li>
+        <li><div class="smrow"><a href="back-office-it.html">Back-office IT</a></div><span class="smdesc">Finance, HR, fundraising and your website, connected.</span></li>
+        <li><div class="smrow"><a href="monitoring-evaluation.html">Monitoring & Evaluation</a></div><span class="smdesc">Indicators and outcomes, from the field to the funder.</span></li>
       </ul>
     </div>
-    <div class="tsec">
-      <div class="troot"><a href="about.html">Company &rarr; About</a><span class="tdesc">Story, stats, open source, where we work map, team CTA.</span></div>
-      <ul class="tkids">
-        <li class="tnode"><a href="team.html">Team</a><span class="tdesc">97 people. Leadership, advisors, executive, then the team with top filters.</span></li>
-        <li class="tnode"><a href="careers.html">Careers</a><span class="tdesc">Links out to people.dhwaniris.com/jobs.</span></li>
-        <li class="tnode"><a href="life-at-dhwani.html">Life at Dhwani</a><span class="tdesc">Values, non-negotiables, AI &amp; learning, benefits, gallery.</span></li>
-        <li class="tnode"><a href="community.html">Community</a><span class="tdesc">Newsletter, WhatsApp, LinkedIn feed slot.</span></li>
-        <li class="tnode"><a href="technology.html">Technology at Dhwani</a><span class="tdesc">Open source, and the Frappe Mobile Framework contribution.</span></li>
-        <li class="tnode"><a href="contact.html">Contact</a><span class="tdesc">Book a call, message form, office map.</span></li>
-        <li class="tnode"><a href="privacy.html">Privacy</a></li>
-        <li class="tnode last"><a href="sitemap.html">Sitemap</a><span class="tdesc">This page.</span></li>
+    <div class="smcol">
+      <h4>Consulting &amp; advisory</h4>
+      <ul>
+        <li><div class="smrow"><a href="dpdp-act-readiness.html">DPDP Act Readiness</a></div><span class="smdesc">Readiness for the DPDP Act, stage by stage.</span></li>
+        <li><div class="smrow"><a href="cloud-optimisation.html">CloudSahayak</a></div><span class="smdesc">CloudSahayak: cloud cost, migration and security.</span></li>
+        <li><div class="smrow"><a href="ai-for-impact.html">AI for Impact</a></div><span class="smdesc">AI applied where it removes real work.</span></li>
+        <li><div class="smrow"><a href="digital-transformation.html">Digital Transformation</a></div><span class="smdesc">The four stages, from pen-and-paper to proving outcomes.</span></li>
+        <li><div class="smrow"><a href="programme-management.html">PMU as a Service</a></div><span class="smdesc">An embedded PMU for a programme or a portfolio.</span></li>
       </ul>
     </div>
+    <div class="smcol">
+      <h4>Who we serve</h4>
+      <ul>
+        <li><div class="smrow"><a href="who-we-serve.html">Who we serve</a></div><span class="smdesc">Four kinds of organisation, and what each usually needs first.</span></li>
+        <li><div class="smrow"><a href="for-donors.html">For Donors & CSRs</a></div><span class="smdesc">Grants, portfolio dashboards and the outcome data underneath.</span></li>
+        <li><div class="smrow"><a href="for-ngos.html">For NGOs</a></div><span class="smdesc">Programme MIS, donor management and offline field apps.</span></li>
+        <li><div class="smrow"><a href="for-government.html">For Government & Multilaterals</a></div><span class="smdesc">Digital public infrastructure and goods, at population scale.</span></li>
+        <li><div class="smrow"><a href="for-academic.html">For Academic & Research</a></div><span class="smdesc">Clean, well-governed data for research programmes.</span></li>
+      </ul>
+    </div>
+    <div class="smcol">
+      <h4>Work &amp; resources</h4>
+      <ul>
+        <li><div class="smrow"><a href="our-work.html">Our work</a></div><span class="smdesc">91 case studies. Search, four filters, a detail popup per case.</span></li>
+        <li><div class="smrow"><a href="solutions.html">Solutions</a></div><span class="smdesc">Products, systems and consulting, plus browse by sector and by function.</span></li>
+        <li><div class="smrow"><a href="resources.html">Resources</a></div><span class="smdesc">Toolkits, playbooks, insights and the newsletter archive.</span></li>
+      </ul>
+    </div>
+    <div class="smcol">
+      <h4>Company</h4>
+      <ul>
+        <li><div class="smrow"><a href="about.html">About</a></div><span class="smdesc">Story, stats, open source, where we work, the team.</span></li>
+        <li><div class="smrow"><a href="team.html">Team</a></div><span class="smdesc">Leadership, advisors, executive and the wider team.</span></li>
+        <li><div class="smrow"><a href="careers.html">Careers</a></div><span class="smdesc">How we hire and the roles open now.</span></li>
+        <li><div class="smrow"><a href="life-at-dhwani.html">Life at Dhwani</a></div><span class="smdesc">What the work is like, the Charter, benefits.</span></li>
+        <li><div class="smrow"><a href="community.html">Community</a></div><span class="smdesc">Newsletter, WhatsApp and what we post on LinkedIn.</span></li>
+        <li><div class="smrow"><a href="technology.html">Technology at Dhwani</a></div><span class="smdesc">Open source, and the Frappe Mobile Framework we released.</span></li>
+        <li><div class="smrow"><a href="contact.html">Contact</a></div><span class="smdesc">Book a session, send a message, find the office.</span></li>
+        <li><div class="smrow"><a href="privacy.html">Privacy policy</a></div><span class="smdesc">Privacy policy.</span></li>
+        <li><div class="smrow"><a href="sitemap.html">Sitemap</a></div><span class="smdesc">This page.</span></li>
+      </ul>
+    </div>
+    <div class="smcol smwide">
+      <h4>Insights &mdash; 17 articles</h4>
+      <ul class="smtwo">
+        <li><div class="smrow"><a href="insights/application-of-tech4good-in-livelihoods.html">Application of Tech4Good in Livelihoods</a></div></li>
+        <li><div class="smrow"><a href="insights/aws-x-dhwani-s-tech-for-good-workshop-unleashing-social-impact-through.html">AWS x Dhwani’s Tech for Good workshop:Unleashing social impact through Technovation</a></div></li>
+        <li><div class="smrow"><a href="insights/chatbots-make-conversations-about-change-easy.html">Chatbots Make Conversations About Change Easy!</a></div></li>
+        <li><div class="smrow"><a href="insights/data-overwhelming-in-the-indian-social-sector-part-i-data-journey.html">Data Overwhelming in the Indian Social Sector – Part I – Data Journey</a></div></li>
+        <li><div class="smrow"><a href="insights/data-overwhelming-in-the-indian-social-sector-part-ii-data-journey.html">Data Overwhelming in the Indian Social Sector – Part II – Data Journey</a></div></li>
+        <li><div class="smrow"><a href="insights/data-privacy-what-it-means-and-how-to-safeguard-data-in-the-social-sec.html">Data Privacy- What It Means and How to Safeguard Data in the Social Sector</a></div></li>
+        <li><div class="smrow"><a href="insights/data-scraping-using-python.html">Data Scraping Using Python</a></div></li>
+        <li><div class="smrow"><a href="insights/disaster-relief-in-india-how-can-corporates-contribute.html">Disaster Relief in India: How Can Corporates Contribute?</a></div></li>
+        <li><div class="smrow"><a href="insights/exploring-business-intelligence.html">Exploring Business Intelligence</a></div></li>
+        <li><div class="smrow"><a href="insights/from-paper-to-progress-how-mform-is-streamlining-data-collection.html">From Paper to Progress: How mForm is Streamlining Data Collection</a></div></li>
+        <li><div class="smrow"><a href="insights/low-code-no-code-new-change-catalysts.html">Low Code &amp; No code: New Change Catalysts</a></div></li>
+        <li><div class="smrow"><a href="insights/mgrant-streamlining-grant-making-and-project-management-for-social-sec.html">mGrant: Streamlining Grant-Making and Project Management for Social Sector Pioneers</a></div></li>
+        <li><div class="smrow"><a href="insights/navigating-the-intersection-of-usability-and-accessibility-crafting-in.html">Navigating the Intersection of Usability and Accessibility: Crafting Inclusive Digital Experiences</a></div></li>
+        <li><div class="smrow"><a href="insights/relevance-of-ui-ux-for-non-profits-and-social-impact-sector-in-india.html">Relevance of UI/UX for Non Profits and Social Impact sector in India</a></div></li>
+        <li><div class="smrow"><a href="insights/the-value-of-a-chief-of-staff-in-social-sector-organizations-insights-.html">The Value of a Chief of Staff in Social Sector Organizations: Insights from a One-Year Journey</a></div></li>
+        <li><div class="smrow"><a href="insights/using-technology-to-simplify-data-analysis-a-case-study-on-how-it-save.html">Using Technology to Simplify Data Analysis: A Case Study on How it Saves Time and Effort</a></div></li>
+        <li><div class="smrow"><a href="insights/what-i-ve-learned-about-impact-iteration-and-imperfection-at-dhwani-ri.html">What I've Learned About Impact, Iteration and Imperfection at Dhwani RIS</a></div></li>
+      </ul>
+    </div>
+    <div class="smcol">
+      <h4>Internal</h4>
+      <ul>
+        <li><div class="smrow"><a href="site-structure.html">Site structure (internal)</a></div><span class="smdesc">Internal structure map. noindex.</span></li>
+      </ul>
+    </div>
+  </div>
 </div></section>
 
 <!-- FOOTER -->
