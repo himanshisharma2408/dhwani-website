@@ -239,16 +239,6 @@ a.ocard.fill:after{color:#fff}
 a.ocard:hover .ic{transform:none}
 a.ocard:after{transform:none}}
 
-/* a real product surface */
-.surface{background:var(--beige);border-radius:20px;padding:clamp(26px,3.4vw,44px);margin-top:clamp(30px,4vw,48px)}
-.surface .shot{border-radius:10px;overflow:hidden;background:#fff;border:1px solid var(--line);
-box-shadow:0 18px 44px -26px rgba(21,16,15,.5)}
-.surface .shot img{display:block;width:100%;height:auto}
-.surface .cap{display:flex;align-items:baseline;justify-content:space-between;gap:22px;flex-wrap:wrap;margin-top:20px}
-.surface .cap p{color:var(--muted);font-size:.94rem;line-height:1.55;max-width:64ch;margin:0}
-.surface .cap .tlink{white-space:nowrap;font-size:.9rem}
-.surface .eyebrow{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--maroon);
-font-weight:600;margin-bottom:14px}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -289,7 +279,7 @@ window.DHWANI_FORMS = {
       <button class="dd-toggle" aria-label="Toggle Who we serve submenu">&#9662;</button>
       <div class="dd">
         <a href="for-donors.html">For Donors &amp; CSRs</a>
-        <a href="for-ngos.html">For Nonprofits</a>
+        <a href="for-nonprofits.html">For Nonprofits</a>
         <a href="for-government.html">For Government &amp; Multilaterals</a>
         <a href="for-academic.html">Academic &amp; Research</a>
       </div>
@@ -335,17 +325,6 @@ window.DHWANI_FORMS = {
     <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span><h5>Automated updates</h5><p>Always current, no manual spreadsheets.</p></div>
     <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="M9 13h6M9 17h4"/></svg></span><h5>Export &amp; share</h5><p>Board-ready views and downloads.</p></div>
     <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/><path d="M11 8v3l2 1.5"/></svg></span><h5>Ask your data</h5><p>Put a plain-language question to the dashboard and get the number, instead of filing a request.</p></div>
-  </div>
-</div></section>
-
-<section class="section" style="padding-top:0"><div class="wrap">
-  <div class="surface">
-    <div class="eyebrow">From our work</div>
-    <div class="shot"><img src="assets/img/cases/case-livelihoods.jpg" alt="National Rural Livelihoods Dashboard" loading="lazy"></div>
-    <div class="cap">
-      <p>A national livelihoods dashboard, drilling from state down to a single self-help group.</p>
-      <a class="tlink" href="our-work.html?case=livelihoods">National Rural Livelihoods Dashboard <span class="arw">&#8594;</span></a>
-    </div>
   </div>
 </div></section>
 
@@ -497,7 +476,7 @@ window.DHWANI_FORMS = {
       <p>Practical tech-for-good, once a month. No fluff.</p>
       <form onsubmit="return false" data-pending="newsletter-provider"><input type="email" placeholder="you@organisation.org"><button class="pill pill-primary" style="padding:11px 18px">Subscribe</button></form>
     </div>
-    <div><h5>Who we serve</h5><ul><li><a href="for-donors.html">Donors &amp; CSRs</a></li><li><a href="for-ngos.html">nonprofits</a></li><li><a href="for-government.html">Government</a></li><li><a href="for-academic.html">Academic &amp; Research</a></li></ul></div>
+    <div><h5>Who we serve</h5><ul><li><a href="for-donors.html">Donors &amp; CSRs</a></li><li><a href="for-nonprofits.html">nonprofits</a></li><li><a href="for-government.html">Government</a></li><li><a href="for-academic.html">Academic &amp; Research</a></li></ul></div>
     <div><h5>Company</h5><ul><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="careers.html">Careers</a></li><li><a href="life-at-dhwani.html">Life at Dhwani</a></li><li><a href="community.html">Community</a></li><li><a href="technology.html">Technology at Dhwani</a></li><li><a href="contact.html">Contact</a></li></ul></div>
     <div><h5>Resources</h5><ul><li><a href="our-work.html">Our work</a></li><li><a href="solutions.html">Solutions</a></li><li><a href="resources.html#toolkits">Toolkits</a></li><li><a href="resources.html#decks">Decks</a></li><li><a href="resources.html#insights">Insights</a></li></ul><p class="fcontact"><a href="https://maps.google.com/?q=Building+94,+Sector+44,+Gurugram,+Haryana+122002" target="_blank" rel="noopener" class="faddr">Building 94, Sector 44,<br>Gurugram, Haryana 122002</a><br><a href="tel:+919574655961">+91 95746 55961</a><br><a href="mailto:partnerships@dhwaniris.com">partnerships@dhwaniris.com</a></p></div>
   </div>
