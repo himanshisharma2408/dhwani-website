@@ -236,6 +236,8 @@ a.rcard:hover .tlink .arw{transform:translateX(5px)}
 .pcard:hover .av img,.scard:hover .tlink .arw,.wcard:hover .meta .more,
 a.rcard:hover .tlink .arw{transform:none}}
 /* ------------------------------------------------------------------------- */
+
+.tnote{color:var(--muted);font-size:.93rem;margin:-6px 0 18px;max-width:62ch}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -331,110 +333,115 @@ window.DHWANI_FORMS = {
     </div>
   </div>
 
-  <h4 class="tgrp">Executive team</h4>
+  <h4 class="tgrp">Leadership</h4>
+  <p class="tnote">Accountable for how the company runs.</p>
   <div class="pgrid exec-grid">
     <div class="pcard"><div class="av"><img src="assets/img/team/siddharth-bhargava.jpg" alt="Siddharth Bhargava" loading="lazy"></div><h4>Siddharth Bhargava</h4><div class="role">Chief Operating Officer</div></div>
     <div class="pcard"><div class="av"><img src="assets/img/team/deepak-batra.jpg" alt="Deepak Batra" loading="lazy"></div><h4>Deepak Batra</h4><div class="role">VP, Engineering</div></div>
     <div class="pcard"><div class="av"><img src="assets/img/team/nidhi-arora.jpg" alt="Nidhi Arora" loading="lazy"></div><h4>Nidhi Arora</h4><div class="role">Process Consultant</div></div>
+  </div>
+  <h4 class="tgrp">Managers and leads</h4>
+  <p class="tnote">Who runs your programme, and who leads the engineering behind it.</p>
+  <div class="pgrid exec-grid">
     <div class="pcard"><div class="av"><img src="assets/img/team/Abhijit.jpg" alt="Abhijit Nair" loading="lazy"></div><h4>Abhijit Nair</h4><div class="role">Engineering Manager</div></div>
     <div class="pcard"><div class="av"><span class="mono">KM</span></div><h4>Kajol Mehta</h4><div class="role">HR Manager</div></div>
-  </div>
-
-  <h4 class="tgrp" style="margin-top:60px">The team</h4>
-  <div class="tfilter" id="tFilter"><button class="tchip on" data-g="">Everyone</button><button class="tchip" data-g="management">Management &amp; delivery</button><button class="tchip" data-g="tech">Engineering</button><button class="tchip" data-g="support">HR &amp; Finance</button></div>
-  <div class="pgrid" id="tGrid">
+    <div class="pcard" data-g="management"><div class="av"><img src="assets/img/team/Ravi-Jangir.jpg" alt="Ravi Jangir" loading="lazy"></div><h4>Ravi Jangir</h4><div class="role">Strategy Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><img src="assets/img/team/Vepasa.jpg" alt="Vepasa" loading="lazy"></div><h4>Vepasa</h4><div class="role">Program Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">VP</span></div><h4>Vishwa Patel</h4><div class="role">Engagement Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><img src="assets/img/team/Nihaan-Mohammed.jpg" alt="Nihaan Mohammed" loading="lazy"></div><h4>Nihaan Mohammed</h4><div class="role">Product Manager</div></div>
     <div class="pcard" data-g="management"><div class="av"><span class="mono">AA</span></div><h4>Aastha Arora</h4><div class="role">Sr. Project Manager</div></div>
-    <div class="pcard" data-g="management"><div class="av"><img src="assets/img/team/Abhinav-Tyagi.jpg" alt="Abhinav Tyagi" loading="lazy"></div><h4>Abhinav Tyagi</h4><div class="role">Tech Associate Project Manager</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><span class="mono">AP</span></div><h4>Abhishek Prajapati</h4><div class="role">Flutter Developer - Intern</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><span class="mono">AY</span></div><h4>Abhishek Yadav</h4><div class="role">SDE 1 - Frappe</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/Aditya-Gore.jpg" alt="Aditya Gore" loading="lazy"></div><h4>Aditya Gore</h4><div class="role">Team Lead - Full stack</div></div>
-    <div class="pcard" data-g="management"><div class="av"><span class="mono">AG</span></div><h4>Aditya Goswami</h4><div class="role">Associate Product Manager</div></div>
-    <div class="pcard" data-g="management"><div class="av"><span class="mono">AV</span></div><h4>Akshat Verma</h4><div class="role">Analyst</div></div>
-    <div class="pcard" data-g="management"><div class="av"><span class="mono">AS</span></div><h4>Aman Sharma</h4><div class="role">Analyst</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/Amandeep-Singh.jpg" alt="Amandeep Singh" loading="lazy"></div><h4>Amandeep Singh</h4><div class="role">Sr. QA Engineer</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><span class="mono">AN</span></div><h4>Amit Negi</h4><div class="role">SDE 1 - PHP</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><span class="mono">A</span></div><h4>Ankit</h4><div class="role">SDE 3 - Mobile</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/Ankit-Jangir.jpg" alt="Ankit Jangir" loading="lazy"></div><h4>Ankit Jangir</h4><div class="role">DevOps Engineer</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><span class="mono">AY</span></div><h4>Ankit Yadav</h4><div class="role">SDE 1 - PHP</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/Anup.jpg" alt="Anup Kumar Srivastav" loading="lazy"></div><h4>Anup Kumar Srivastav</h4><div class="role">Team Lead - Full stack</div></div>
-    <div class="pcard" data-g="support"><div class="av"><span class="mono">AG</span></div><h4>Archana Sidram Gentyal</h4><div class="role">Pre-Sales Associate</div></div>
-    <div class="pcard" data-g="management"><div class="av"><span class="mono">AJ</span></div><h4>Arpita Jain</h4><div class="role">Project Manager</div></div>
     <div class="pcard" data-g="management"><div class="av"><span class="mono">AB</span></div><h4>Arvind Bansode</h4><div class="role">Sr. Project Manager</div></div>
-    <div class="pcard" data-g="management"><div class="av"><span class="mono">AK</span></div><h4>Aryan Khanna</h4><div class="role">Analyst</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><span class="mono">AG</span></div><h4>Ayushman Adrien Ghosh</h4><div class="role">SDE 1 - Backend</div></div>
-    <div class="pcard" data-g="management"><div class="av"><span class="mono">BK</span></div><h4>Banita Kumari</h4><div class="role">Associate Product Manager</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><span class="mono">BM</span></div><h4>Bhanu Marwah</h4><div class="role">Data Engineer</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><span class="mono">BP</span></div><h4>Bhanu Prakash</h4><div class="role">SDE 1 - Full Stack</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/Bhushan.jpg" alt="Bhushan Anilrao Barbuddhe" loading="lazy"></div><h4>Bhushan Anilrao Barbuddhe</h4><div class="role">Team Lead</div></div>
-    <div class="pcard" data-g="management"><div class="av"><span class="mono">BS</span></div><h4>Brahmjyot Singh</h4><div class="role">Analyst</div></div>
-    <div class="pcard" data-g="management"><div class="av"><span class="mono">CJ</span></div><h4>Chitranshi Jain</h4><div class="role">Analyst</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/Dalbeer-Kaur.jpg" alt="Dalbeer Kaur" loading="lazy"></div><h4>Dalbeer Kaur</h4><div class="role">Sr. QA Engineer</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><span class="mono">DB</span></div><h4>Deepak Bharti</h4><div class="role">Data Engineer</div></div>
-    <div class="pcard" data-g="management"><div class="av"><span class="mono">DY</span></div><h4>Deepak Yadav</h4><div class="role">Analyst</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><span class="mono">DB</span></div><h4>Devang Bhatnagar</h4><div class="role">SDE 1 - Frappe</div></div>
-    <div class="pcard" data-g="management"><div class="av"><span class="mono">DH</span></div><h4>Diksha Hazarika</h4><div class="role">Analyst - Intern</div></div>
-    <div class="pcard" data-g="management"><div class="av"><span class="mono">FS</span></div><h4>Fahimuddin Sayyed</h4><div class="role">Associate Project Manager</div></div>
-    <div class="pcard" data-g="management"><div class="av"><span class="mono">FN</span></div><h4>Fathima Nihala</h4><div class="role">Associate Product Manager</div></div>
     <div class="pcard" data-g="management"><div class="av"><img src="assets/img/team/Harshdeep.jpg" alt="Harshdeep Singh Mokha" loading="lazy"></div><h4>Harshdeep Singh Mokha</h4><div class="role">Sr. Project Manager</div></div>
-    <div class="pcard" data-g="support"><div class="av"><span class="mono">HP</span></div><h4>Harshit Pathak</h4><div class="role">Pre-Sales Associate</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><span class="mono">HS</span></div><h4>Harshit Sodhani</h4><div class="role">SDE 1 - Full Stack</div></div>
     <div class="pcard" data-g="management"><div class="av"><img src="assets/img/team/Himanshi-Sharma.jpg" alt="Himanshi Sharma" loading="lazy"></div><h4>Himanshi Sharma<span class="cred">PMP</span></h4><div class="role">Sr. Project Manager</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><span class="mono">HD</span></div><h4>Hrushikesh Ramchandra Deodhar</h4><div class="role">SDE 1 - PHP</div></div>
-    <div class="pcard" data-g="support"><div class="av"><span class="mono">HT</span></div><h4>Hunny Tyagi</h4><div class="role">Sr. Accountant</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/KandhiOm.jpg" alt="Kandhi Omprakash" loading="lazy"></div><h4>Kandhi Omprakash</h4><div class="role">SDE 3 - Full Stack</div></div>
-    <div class="pcard" data-g="management"><div class="av"><span class="mono">KT</span></div><h4>Kashish Talwani</h4><div class="role">Associate Project Manager</div></div>
-    <div class="pcard" data-g="management"><div class="av"><span class="mono">KM</span></div><h4>Krishna Maheshwari</h4><div class="role">Associate Project Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><img src="assets/img/team/Parul.jpg" alt="Parul Chuchra" loading="lazy"></div><h4>Parul Chuchra</h4><div class="role">Sr. Project Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><img src="assets/img/team/shweta.jpg" alt="Shweta Singh" loading="lazy"></div><h4>Shweta Singh</h4><div class="role">Sr. Project Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">AJ</span></div><h4>Arpita Jain</h4><div class="role">Project Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><img src="assets/img/team/Prachi.jpg" alt="Prachi Gupta" loading="lazy"></div><h4>Prachi Gupta</h4><div class="role">Project Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">RS</span></div><h4>Rashika Saini</h4><div class="role">Project Manager</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/Aditya-Gore.jpg" alt="Aditya Gore" loading="lazy"></div><h4>Aditya Gore</h4><div class="role">Team Lead - Full stack</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/Anup.jpg" alt="Anup Kumar Srivastav" loading="lazy"></div><h4>Anup Kumar Srivastav</h4><div class="role">Team Lead - Full stack</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/Bhushan.jpg" alt="Bhushan Anilrao Barbuddhe" loading="lazy"></div><h4>Bhushan Anilrao Barbuddhe</h4><div class="role">Team Lead</div></div>
     <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/Manish-kumar-roy.jpg" alt="Manish Kumar Roy" loading="lazy"></div><h4>Manish Kumar Roy</h4><div class="role">Team Lead - Full stack</div></div>
     <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/manju.jpg" alt="Manju Lata Soreng" loading="lazy"></div><h4>Manju Lata Soreng</h4><div class="role">Team Lead - Full stack</div></div>
-    <div class="pcard" data-g="management"><div class="av"><span class="mono">MS</span></div><h4>Mayur Sharma</h4><div class="role">Associate Project Manager</div></div>
-    <div class="pcard" data-g="management"><div class="av"><span class="mono">MA</span></div><h4>Mohd Afaq</h4><div class="role">Associate Program Manager</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><span class="mono">NL</span></div><h4>Nadge Sachin Laxi</h4><div class="role">SDE 1 - Backend</div></div>
-    <div class="pcard" data-g="management"><div class="av"><span class="mono">N</span></div><h4>Namandeep</h4><div class="role">Sr. Analyst</div></div>
-    <div class="pcard" data-g="management"><div class="av"><span class="mono">NS</span></div><h4>Nandita Sharma</h4><div class="role">Analyst</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><span class="mono">NP</span></div><h4>Navneet Patteri</h4><div class="role">SDE 1 - Frappe</div></div>
-    <div class="pcard" data-g="management"><div class="av"><img src="assets/img/team/Nihaan-Mohammed.jpg" alt="Nihaan Mohammed" loading="lazy"></div><h4>Nihaan Mohammed</h4><div class="role">Product Manager</div></div>
-    <div class="pcard" data-g="support"><div class="av"><span class="mono">NK</span></div><h4>Nikhil Kumar</h4><div class="role">Admin Associate</div></div>
-    <div class="pcard" data-g="management"><div class="av"><span class="mono">NJ</span></div><h4>Nitin Jangid</h4><div class="role">Analyst - Intern</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><span class="mono">PM</span></div><h4>Pankaj Mishra</h4><div class="role">SDE 1 - Frappe</div></div>
-    <div class="pcard" data-g="management"><div class="av"><img src="assets/img/team/Parul.jpg" alt="Parul Chuchra" loading="lazy"></div><h4>Parul Chuchra</h4><div class="role">Sr. Project Manager</div></div>
-    <div class="pcard" data-g="management"><div class="av"><span class="mono">PS</span></div><h4>Pooja Srivastava</h4><div class="role">Analyst</div></div>
-    <div class="pcard" data-g="management"><div class="av"><img src="assets/img/team/Prachi.jpg" alt="Prachi Gupta" loading="lazy"></div><h4>Prachi Gupta</h4><div class="role">Project Manager</div></div>
     <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/pragat.jpg" alt="Pragat Singh" loading="lazy"></div><h4>Pragat Singh</h4><div class="role">Team Lead - Java</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><span class="mono">PR</span></div><h4>Prakash Rana</h4><div class="role">DevOps Engineer</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/Shrey-Jain.jpg" alt="Shrey Jain" loading="lazy"></div><h4>Shrey Jain</h4><div class="role">Team Lead</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/Suresh-Mali.jpg" alt="Sureshkumar Mali" loading="lazy"></div><h4>Sureshkumar Mali</h4><div class="role">Team Lead - Full stack</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/Vivek-Singh.jpg" alt="Vivek Kumar Singh" loading="lazy"></div><h4>Vivek Kumar Singh</h4><div class="role">Team Lead - Full stack</div></div>
+  </div>
+  <h4 class="tgrp">The wider team</h4>
+  <p class="tnote">Engineering, delivery, data, quality and operations.</p>
+  <div class="pgrid exec-grid">
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">MA</span></div><h4>Mohd Afaq</h4><div class="role">Associate Program Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">AG</span></div><h4>Aditya Goswami</h4><div class="role">Associate Product Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">BK</span></div><h4>Banita Kumari</h4><div class="role">Associate Product Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">FN</span></div><h4>Fathima Nihala</h4><div class="role">Associate Product Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><img src="assets/img/team/Abhinav-Tyagi.jpg" alt="Abhinav Tyagi" loading="lazy"></div><h4>Abhinav Tyagi</h4><div class="role">Tech Associate Project Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">FS</span></div><h4>Fahimuddin Sayyed</h4><div class="role">Associate Project Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">KT</span></div><h4>Kashish Talwani</h4><div class="role">Associate Project Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">KM</span></div><h4>Krishna Maheshwari</h4><div class="role">Associate Project Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">MS</span></div><h4>Mayur Sharma</h4><div class="role">Associate Project Manager</div></div>
     <div class="pcard" data-g="management"><div class="av"><span class="mono">PT</span></div><h4>Pranati Tiwari</h4><div class="role">Associate Project Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">SP</span></div><h4>Samarth Paul</h4><div class="role">Associate Project Manager</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">SR</span></div><h4>Samarth Rana</h4><div class="role">Associate Project Manager</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/Amandeep-Singh.jpg" alt="Amandeep Singh" loading="lazy"></div><h4>Amandeep Singh</h4><div class="role">Sr. QA Engineer</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/Dalbeer-Kaur.jpg" alt="Dalbeer Kaur" loading="lazy"></div><h4>Dalbeer Kaur</h4><div class="role">Sr. QA Engineer</div></div>
+    <div class="pcard" data-g="support"><div class="av"><span class="mono">HT</span></div><h4>Hunny Tyagi</h4><div class="role">Sr. Accountant</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">N</span></div><h4>Namandeep</h4><div class="role">Sr. Analyst</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/rohit-singh.jpg" alt="Rohit Singh" loading="lazy"></div><h4>Rohit Singh</h4><div class="role">Sr. Data Engineer</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">SJ</span></div><h4>Sunita Joshi</h4><div class="role">Sr. Analyst</div></div>
+    <div class="pcard" data-g="support"><div class="av"><span class="mono">SY</span></div><h4>Swati Yadav</h4><div class="role">Sr. HR Analyst</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">A</span></div><h4>Ankit</h4><div class="role">SDE 3 - Mobile</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/KandhiOm.jpg" alt="Kandhi Omprakash" loading="lazy"></div><h4>Kandhi Omprakash</h4><div class="role">SDE 3 - Full Stack</div></div>
+    <div class="pcard" data-g="support"><div class="av"><span class="mono">AG</span></div><h4>Archana Sidram Gentyal</h4><div class="role">Pre-Sales Associate</div></div>
+    <div class="pcard" data-g="support"><div class="av"><span class="mono">HP</span></div><h4>Harshit Pathak</h4><div class="role">Pre-Sales Associate</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">AY</span></div><h4>Abhishek Yadav</h4><div class="role">SDE 1 - Frappe</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">AN</span></div><h4>Amit Negi</h4><div class="role">SDE 1 - PHP</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">AY</span></div><h4>Ankit Yadav</h4><div class="role">SDE 1 - PHP</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">AG</span></div><h4>Ayushman Adrien Ghosh</h4><div class="role">SDE 1 - Backend</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">BP</span></div><h4>Bhanu Prakash</h4><div class="role">SDE 1 - Full Stack</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">DB</span></div><h4>Devang Bhatnagar</h4><div class="role">SDE 1 - Frappe</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">HS</span></div><h4>Harshit Sodhani</h4><div class="role">SDE 1 - Full Stack</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">HD</span></div><h4>Hrushikesh Ramchandra Deodhar</h4><div class="role">SDE 1 - PHP</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">NL</span></div><h4>Nadge Sachin Laxi</h4><div class="role">SDE 1 - Backend</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">NP</span></div><h4>Navneet Patteri</h4><div class="role">SDE 1 - Frappe</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">PM</span></div><h4>Pankaj Mishra</h4><div class="role">SDE 1 - Frappe</div></div>
     <div class="pcard" data-g="tech"><div class="av"><span class="mono">RS</span></div><h4>Rahul Sah</h4><div class="role">SDE 1 - Frappe</div></div>
     <div class="pcard" data-g="tech"><div class="av"><span class="mono">RM</span></div><h4>Raman Mishra</h4><div class="role">SDE 1 -  Mobile Developer</div></div>
-    <div class="pcard" data-g="management"><div class="av"><span class="mono">RS</span></div><h4>Rashika Saini</h4><div class="role">Project Manager</div></div>
-    <div class="pcard" data-g="management"><div class="av"><img src="assets/img/team/Ravi-Jangir.jpg" alt="Ravi Jangir" loading="lazy"></div><h4>Ravi Jangir</h4><div class="role">Strategy Manager</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/rohit-singh.jpg" alt="Rohit Singh" loading="lazy"></div><h4>Rohit Singh</h4><div class="role">Sr. Data Engineer</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">SV</span></div><h4>Sparsh Verma</h4><div class="role">SDE 1 - Frappe</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">SY</span></div><h4>Sujeet Yadav</h4><div class="role">SDE 1 - Frappe</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">SS</span></div><h4>Suraj Singh</h4><div class="role">SDE 1 - Full Stack</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">VS</span></div><h4>Vanshika Sehgal</h4><div class="role">SDE 1 - Full Stack</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">VT</span></div><h4>Vishwajeet Thakur</h4><div class="role">SDE 1 - Frappe</div></div>
+    <div class="pcard" data-g="support"><div class="av"><span class="mono">SA</span></div><h4>Shalini Agrahari</h4><div class="role">CA - Accounts</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">AV</span></div><h4>Akshat Verma</h4><div class="role">Analyst</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">AS</span></div><h4>Aman Sharma</h4><div class="role">Analyst</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/Ankit-Jangir.jpg" alt="Ankit Jangir" loading="lazy"></div><h4>Ankit Jangir</h4><div class="role">DevOps Engineer</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">AK</span></div><h4>Aryan Khanna</h4><div class="role">Analyst</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">BM</span></div><h4>Bhanu Marwah</h4><div class="role">Data Engineer</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">BS</span></div><h4>Brahmjyot Singh</h4><div class="role">Analyst</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">CJ</span></div><h4>Chitranshi Jain</h4><div class="role">Analyst</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">DB</span></div><h4>Deepak Bharti</h4><div class="role">Data Engineer</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">DY</span></div><h4>Deepak Yadav</h4><div class="role">Analyst</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">DH</span></div><h4>Diksha Hazarika</h4><div class="role">Analyst - Intern</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">NS</span></div><h4>Nandita Sharma</h4><div class="role">Analyst</div></div>
+    <div class="pcard" data-g="support"><div class="av"><span class="mono">NK</span></div><h4>Nikhil Kumar</h4><div class="role">Admin Associate</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">NJ</span></div><h4>Nitin Jangid</h4><div class="role">Analyst - Intern</div></div>
+    <div class="pcard" data-g="management"><div class="av"><span class="mono">PS</span></div><h4>Pooja Srivastava</h4><div class="role">Analyst</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">PR</span></div><h4>Prakash Rana</h4><div class="role">DevOps Engineer</div></div>
     <div class="pcard" data-g="management"><div class="av"><span class="mono">SM</span></div><h4>Sachin Malik</h4><div class="role">Analyst</div></div>
     <div class="pcard" data-g="tech"><div class="av"><span class="mono">SS</span></div><h4>Sachin Sharma</h4><div class="role">Data Engineer</div></div>
     <div class="pcard" data-g="tech"><div class="av"><span class="mono">SR</span></div><h4>Sachin Vinod Rathod</h4><div class="role">QA Engineer</div></div>
-    <div class="pcard" data-g="management"><div class="av"><span class="mono">SP</span></div><h4>Samarth Paul</h4><div class="role">Associate Project Manager</div></div>
-    <div class="pcard" data-g="management"><div class="av"><span class="mono">SR</span></div><h4>Samarth Rana</h4><div class="role">Associate Project Manager</div></div>
     <div class="pcard" data-g="tech"><div class="av"><span class="mono">SS</span></div><h4>Sarthak Srivastava</h4><div class="role">QA Engineer</div></div>
-    <div class="pcard" data-g="support"><div class="av"><span class="mono">SA</span></div><h4>Shalini Agrahari</h4><div class="role">CA - Accounts</div></div>
     <div class="pcard" data-g="management"><div class="av"><span class="mono">SS</span></div><h4>Shikhar Shukla</h4><div class="role">Analyst</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/Shrey-Jain.jpg" alt="Shrey Jain" loading="lazy"></div><h4>Shrey Jain</h4><div class="role">Team Lead</div></div>
     <div class="pcard" data-g="management"><div class="av"><span class="mono">SV</span></div><h4>Shreyash Shrirang Varhadi</h4><div class="role">Analyst</div></div>
-    <div class="pcard" data-g="management"><div class="av"><img src="assets/img/team/shweta.jpg" alt="Shweta Singh" loading="lazy"></div><h4>Shweta Singh</h4><div class="role">Sr. Project Manager</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><span class="mono">SV</span></div><h4>Sparsh Verma</h4><div class="role">SDE 1 - Frappe</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><span class="mono">SY</span></div><h4>Sujeet Yadav</h4><div class="role">SDE 1 - Frappe</div></div>
     <div class="pcard" data-g="management"><div class="av"><span class="mono">SS</span></div><h4>Sunchay Singhal</h4><div class="role">Analyst</div></div>
-    <div class="pcard" data-g="management"><div class="av"><span class="mono">SJ</span></div><h4>Sunita Joshi</h4><div class="role">Sr. Analyst</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><span class="mono">SS</span></div><h4>Suraj Singh</h4><div class="role">SDE 1 - Full Stack</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/Suresh-Mali.jpg" alt="Sureshkumar Mali" loading="lazy"></div><h4>Sureshkumar Mali</h4><div class="role">Team Lead - Full stack</div></div>
     <div class="pcard" data-g="tech"><div class="av"><span class="mono">SS</span></div><h4>Sushant Singh</h4><div class="role">QA Engineer</div></div>
-    <div class="pcard" data-g="support"><div class="av"><span class="mono">SY</span></div><h4>Swati Yadav</h4><div class="role">Sr. HR Analyst</div></div>
     <div class="pcard" data-g="tech"><div class="av"><span class="mono">TK</span></div><h4>Tabseer Khan</h4><div class="role">Data Engineer</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><span class="mono">VS</span></div><h4>Vanshika Sehgal</h4><div class="role">SDE 1 - Full Stack</div></div>
-    <div class="pcard" data-g="management"><div class="av"><img src="assets/img/team/Vepasa.jpg" alt="Vepasa" loading="lazy"></div><h4>Vepasa</h4><div class="role">Program Manager</div></div>
-    <div class="pcard" data-g="management"><div class="av"><span class="mono">VP</span></div><h4>Vishwa Patel</h4><div class="role">Engagement Manager</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><span class="mono">VT</span></div><h4>Vishwajeet Thakur</h4><div class="role">SDE 1 - Frappe</div></div>
-    <div class="pcard" data-g="tech"><div class="av"><img src="assets/img/team/Vivek-Singh.jpg" alt="Vivek Kumar Singh" loading="lazy"></div><h4>Vivek Kumar Singh</h4><div class="role">Team Lead - Full stack</div></div>
+    <div class="pcard" data-g="tech"><div class="av"><span class="mono">AP</span></div><h4>Abhishek Prajapati</h4><div class="role">Flutter Developer - Intern</div></div>
     <div class="pcard" data-g="tech"><div class="av"><span class="mono">YB</span></div><h4>Yatin Berry</h4><div class="role">Frappe - Intern</div></div>
   </div>
-</div></section>
+  </div>
+</section>
 
 <!-- JOIN -->
 <section class="section"><div class="wrap">
