@@ -189,6 +189,24 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .fgrid .fsectors li{break-inside:avoid}
 .fcontact .faddr{color:var(--muted-d);font-weight:400;display:inline-block;line-height:1.55;margin-bottom:6px}
 .fcontact .faddr:hover{color:var(--orange-soft)}
+
+/* tile interaction */
+.ocard{position:relative;transition:background .2s,transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s}
+.ocard .ic{transition:color .22s,transform .22s cubic-bezier(.2,.7,.3,1)}
+.ocard:hover{transform:translateY(-3px)}
+a.ocard:hover{box-shadow:0 10px 26px -14px rgba(21,16,15,.42)}
+a.ocard:hover .ic{color:var(--maroon);transform:translateY(-2px)}
+a.ocard:after{content:"\2192";position:absolute;right:clamp(18px,2.4vw,26px);bottom:clamp(18px,2.4vw,26px);
+font-size:1.02rem;color:var(--maroon);opacity:0;transform:translateX(-7px);
+transition:opacity .22s,transform .22s cubic-bezier(.2,.7,.3,1)}
+a.ocard:hover:after{opacity:1;transform:translateX(0)}
+a.ocard.fill:hover .ic{color:#fff}
+a.ocard.fill:after{color:#fff}
+@media(prefers-reduced-motion:reduce){
+.ocard,.ocard .ic,a.ocard:after{transition:none}
+.ocard:hover{transform:none}
+a.ocard:hover .ic{transform:none}
+a.ocard:after{transform:none}}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────

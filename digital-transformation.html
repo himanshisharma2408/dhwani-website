@@ -307,6 +307,35 @@ background:var(--muted);opacity:.45}
 .fgrid .fsectors li{break-inside:avoid}
 .fcontact .faddr{color:var(--muted-d);font-weight:400;display:inline-block;line-height:1.55;margin-bottom:6px}
 .fcontact .faddr:hover{color:var(--orange-soft)}
+
+/* tile interaction */
+.ocard{position:relative;transition:background .2s,transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s}
+.ocard .ic{transition:color .22s,transform .22s cubic-bezier(.2,.7,.3,1)}
+.ocard:hover{transform:translateY(-3px)}
+a.ocard:hover{box-shadow:0 10px 26px -14px rgba(21,16,15,.42)}
+a.ocard:hover .ic{color:var(--maroon);transform:translateY(-2px)}
+a.ocard:after{content:"\2192";position:absolute;right:clamp(18px,2.4vw,26px);bottom:clamp(18px,2.4vw,26px);
+font-size:1.02rem;color:var(--maroon);opacity:0;transform:translateX(-7px);
+transition:opacity .22s,transform .22s cubic-bezier(.2,.7,.3,1)}
+a.ocard:hover:after{opacity:1;transform:translateX(0)}
+a.ocard.fill:hover .ic{color:#fff}
+a.ocard.fill:after{color:#fff}
+@media(prefers-reduced-motion:reduce){
+.ocard,.ocard .ic,a.ocard:after{transition:none}
+.ocard:hover{transform:none}
+a.ocard:hover .ic{transform:none}
+a.ocard:after{transform:none}}
+
+/* a real product surface */
+.surface{background:var(--beige);border-radius:20px;padding:clamp(26px,3.4vw,44px);margin-top:clamp(30px,4vw,48px)}
+.surface .shot{border-radius:10px;overflow:hidden;background:#fff;border:1px solid var(--line);
+box-shadow:0 18px 44px -26px rgba(21,16,15,.5)}
+.surface .shot img{display:block;width:100%;height:auto}
+.surface .cap{display:flex;align-items:baseline;justify-content:space-between;gap:22px;flex-wrap:wrap;margin-top:20px}
+.surface .cap p{color:var(--muted);font-size:.94rem;line-height:1.55;max-width:64ch;margin:0}
+.surface .cap .tlink{white-space:nowrap;font-size:.9rem}
+.surface .eyebrow{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--maroon);
+font-weight:600;margin-bottom:14px}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -468,6 +497,17 @@ window.DHWANI_FORMS = {
     <div class="ocard"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 0 1 0 10h-2"/><path d="M8 12h8"/><h5>A connected back office</h5><p>Finance, HR, and procurement systems that talk to each other.</p></div>
     <div class="ocard"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><h5>Adoption, not just a login</h5><p>The team still using it after we leave.</p></div>
     <div class="ocard"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/><h5>A roadmap for the next stage</h5><p>So the next build starts from where this one finished.</p></div>
+  </div>
+</div></section>
+
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="surface">
+    <div class="eyebrow">From our work</div>
+    <div class="shot"><img src="assets/img/cases/case-tribalhealth.jpg" alt="Ministry of Tribal Affairs" loading="lazy"></div>
+    <div class="cap">
+      <p>A national health and nutrition portal, reporting across 177 districts.</p>
+      <a class="tlink" href="our-work.html?case=tribal">Ministry of Tribal Affairs <span class="arw">&#8594;</span></a>
+    </div>
   </div>
 </div></section>
 

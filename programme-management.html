@@ -242,6 +242,35 @@ background:var(--beige);border-radius:16px;padding:clamp(24px,3vw,34px) clamp(26
 .fgrid .fsectors li{break-inside:avoid}
 .fcontact .faddr{color:var(--muted-d);font-weight:400;display:inline-block;line-height:1.55;margin-bottom:6px}
 .fcontact .faddr:hover{color:var(--orange-soft)}
+
+/* tile interaction */
+.ocard{position:relative;transition:background .2s,transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s}
+.ocard .ic{transition:color .22s,transform .22s cubic-bezier(.2,.7,.3,1)}
+.ocard:hover{transform:translateY(-3px)}
+a.ocard:hover{box-shadow:0 10px 26px -14px rgba(21,16,15,.42)}
+a.ocard:hover .ic{color:var(--maroon);transform:translateY(-2px)}
+a.ocard:after{content:"\2192";position:absolute;right:clamp(18px,2.4vw,26px);bottom:clamp(18px,2.4vw,26px);
+font-size:1.02rem;color:var(--maroon);opacity:0;transform:translateX(-7px);
+transition:opacity .22s,transform .22s cubic-bezier(.2,.7,.3,1)}
+a.ocard:hover:after{opacity:1;transform:translateX(0)}
+a.ocard.fill:hover .ic{color:#fff}
+a.ocard.fill:after{color:#fff}
+@media(prefers-reduced-motion:reduce){
+.ocard,.ocard .ic,a.ocard:after{transition:none}
+.ocard:hover{transform:none}
+a.ocard:hover .ic{transform:none}
+a.ocard:after{transform:none}}
+
+/* a real product surface */
+.surface{background:var(--beige);border-radius:20px;padding:clamp(26px,3.4vw,44px);margin-top:clamp(30px,4vw,48px)}
+.surface .shot{border-radius:10px;overflow:hidden;background:#fff;border:1px solid var(--line);
+box-shadow:0 18px 44px -26px rgba(21,16,15,.5)}
+.surface .shot img{display:block;width:100%;height:auto}
+.surface .cap{display:flex;align-items:baseline;justify-content:space-between;gap:22px;flex-wrap:wrap;margin-top:20px}
+.surface .cap p{color:var(--muted);font-size:.94rem;line-height:1.55;max-width:64ch;margin:0}
+.surface .cap .tlink{white-space:nowrap;font-size:.9rem}
+.surface .eyebrow{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--maroon);
+font-weight:600;margin-bottom:14px}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -351,6 +380,17 @@ window.DHWANI_FORMS = {
     <div><b>17</b><span>Projects run together for one funder</span></div>
     <div><b>2</b><span>International funders on a PMU-plus-platform model</span></div>
     <div><b>200+</b><span>Organisations we have delivered for</span></div>
+  </div>
+</div></section>
+
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="surface">
+    <div class="eyebrow">From our work</div>
+    <div class="shot"><img src="assets/img/cases/case-edtech.jpg" alt="EdTech Accelerator Dashboard" loading="lazy"></div>
+    <div class="cap">
+      <p>Portfolio analytics across an education accelerator&rsquo;s cohort.</p>
+      <a class="tlink" href="our-work.html?case=edtech">EdTech Accelerator Dashboard <span class="arw">&#8594;</span></a>
+    </div>
   </div>
 </div></section>
 
