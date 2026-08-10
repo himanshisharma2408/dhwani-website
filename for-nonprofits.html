@@ -177,6 +177,57 @@ a.ocard.fill:after{color:#fff}
 .ocard:hover{transform:none}
 a.ocard:hover .ic{transform:none}
 a.ocard:after{transform:none}}
+
+/* ---- card interaction ---------------------------------------------------- */
+/* buyer group cards */
+.scard{transition:background .2s,transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s}
+.scard .ic{transition:color .22s,transform .22s cubic-bezier(.2,.7,.3,1)}
+.scard .tlink .arw{display:inline-block;transition:transform .22s cubic-bezier(.2,.7,.3,1)}
+.scard:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(21,16,15,.42)}
+.scard:hover .ic{color:var(--maroon);transform:translateY(-2px)}
+.scard:hover .tlink .arw{transform:translateX(5px)}
+.scard .tags span{transition:background .22s,color .22s}
+.scard:hover .tags span{background:#fff}
+.scard:focus-visible{outline:2px solid var(--maroon);outline-offset:3px}
+
+/* work cards */
+.wcard{transition:background .2s,transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s}
+.wcard .ph{transition:filter .35s,transform .5s cubic-bezier(.2,.7,.3,1)}
+.wcard .meta .more{transition:transform .22s cubic-bezier(.2,.7,.3,1)}
+.wcard:hover{transform:translateY(-3px);box-shadow:0 14px 32px -18px rgba(21,16,15,.45)}
+.wcard:hover .ph{transform:scale(1.03)}
+.wcard:hover .meta .more{transform:translateX(4px)}
+
+/* resource cards */
+.rcard{transition:background .2s,transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s}
+.rcard .ph{transition:filter .35s,transform .5s cubic-bezier(.2,.7,.3,1)}
+.rcard .tlink .arw{display:inline-block;transition:transform .22s cubic-bezier(.2,.7,.3,1)}
+a.rcard:hover{transform:translateY(-3px);box-shadow:0 14px 32px -18px rgba(21,16,15,.45)}
+a.rcard:hover .ph{transform:scale(1.03)}
+a.rcard:hover .tlink .arw{transform:translateX(5px)}
+.rcard.soon:hover{transform:none;box-shadow:none}
+
+/* case cards, the older variant */
+.ccard{transition:background .2s,transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s}
+.ccard .ph{transition:transform .5s cubic-bezier(.2,.7,.3,1)}
+.ccard:hover{transform:translateY(-3px);box-shadow:0 14px 32px -18px rgba(21,16,15,.45)}
+.ccard:hover .ph{transform:scale(1.03)}
+
+/* team cards are not links, so they stay quiet */
+.pcard{transition:transform .22s cubic-bezier(.2,.7,.3,1)}
+.pcard .av img{transition:filter .3s,transform .5s cubic-bezier(.2,.7,.3,1)}
+.pcard:hover{transform:translateY(-2px)}
+.pcard:hover .av img{transform:scale(1.04)}
+
+@media(prefers-reduced-motion:reduce){
+.scard,.wcard,.rcard,.ccard,.pcard,
+.scard .ic,.scard .tlink .arw,.wcard .ph,.wcard .meta .more,
+.rcard .ph,.rcard .tlink .arw,.ccard .ph,.pcard .av img{transition:none}
+.scard:hover,.wcard:hover,a.rcard:hover,.ccard:hover,.pcard:hover{transform:none}
+.scard:hover .ic,.wcard:hover .ph,a.rcard:hover .ph,.ccard:hover .ph,
+.pcard:hover .av img,.scard:hover .tlink .arw,.wcard:hover .meta .more,
+a.rcard:hover .tlink .arw{transform:none}}
+/* ------------------------------------------------------------------------- */
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
