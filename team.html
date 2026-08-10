@@ -79,8 +79,6 @@ em{font-style:italic}
 .pcard .av svg{width:36%;height:36%}
 .pgrid.lead-grid{grid-template-columns:repeat(2,1fr);max-width:520px}
 .pgrid.exec-grid{grid-template-columns:repeat(5,1fr);max-width:none}
-.pcard.soon{opacity:.55}
-.pcard.soon .av{background:var(--beige-h)}
 .pcard .av .mono{font-family:var(--serif);font-size:2.4rem;font-weight:500;color:var(--muted);letter-spacing:.02em}
 .pcard.hide{display:none}
 .tfilter{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
@@ -98,7 +96,6 @@ em{font-style:italic}
 .pcard .cred{font-size:.72rem;font-weight:600;color:var(--muted);margin-left:6px;letter-spacing:.04em}
 .pcard h4{font-size:1.1rem;font-weight:500;margin:16px 18px 2px}
 .pcard .role{font-size:.83rem;color:var(--maroon);font-weight:600;margin:0 18px 18px}
-.advisor-placeholder{background:var(--beige);border:1px dashed var(--line);border-radius:12px;padding:26px 28px;color:var(--muted);font-size:.95rem}
 
 /* two-up (careers / community) */
 .twoup{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
@@ -275,11 +272,12 @@ window.DHWANI_FORMS = {
 
   <h4 class="tgrp">Advisors</h4>
   <div class="pgrid exec-grid">
-    <div class="pcard soon"><div class="av"><span class="mono">&mdash;</span></div><h4>Advisor</h4><div class="role">To be announced</div></div>
-    <div class="pcard soon"><div class="av"><span class="mono">&mdash;</span></div><h4>Advisor</h4><div class="role">To be announced</div></div>
-    <div class="pcard soon"><div class="av"><span class="mono">&mdash;</span></div><h4>Advisor</h4><div class="role">To be announced</div></div>
+    <div class="pcard">
+      <div class="av"><img src="assets/img/team/sharad-heda.jpg" alt="Sharad Heda" loading="lazy"></div>
+      <h4>Sharad Heda</h4>
+      <div class="role">Advisor</div>
+    </div>
   </div>
-  <p class="lede" style="margin-top:14px;opacity:.7">Our advisory board is being finalised.</p>
 
   <h4 class="tgrp">Executive team</h4>
   <div class="pgrid exec-grid">
