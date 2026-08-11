@@ -137,14 +137,8 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 #topnav .links a.n-active{color:#fff;font-weight:600}
 #topnav.solid .links a.n-active,#topnav.scrolled .links a.n-active{color:var(--maroon)}
 
-.life-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
-.life-card{border-radius:12px;overflow:hidden;background:var(--beige)}
-.life-card .ph{height:190px;background-size:cover;background-position:center}
-.life-card .cap{padding:20px 22px}
-.life-card h4{font-size:1.1rem;font-weight:500;margin-bottom:6px}
-.life-card p{font-size:.88rem;color:var(--muted)}
-@media(max-width:900px){.life-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){.life-grid{grid-template-columns:1fr}}
+@media(max-width:900px){}
+@media(max-width:640px){}
 
 .scard .ic{transition:color .22s,transform .22s cubic-bezier(.2,.7,.3,1)}
 .scard .tlink .arw{display:inline-block;transition:transform .22s cubic-bezier(.2,.7,.3,1)}
@@ -257,6 +251,36 @@ border:1px solid var(--line-d);border-radius:6px;padding:4px 8px}
 .fsoc a:hover{color:#fff;border-bottom-color:rgba(255,255,255,.4)}
 .foot-bot .flegal a{color:rgba(255,255,255,.55);border-bottom:1px solid transparent}
 .foot-bot .flegal a:hover{color:#fff;border-bottom-color:rgba(255,255,255,.4)}
+
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(178px,auto);gap:16px;margin-top:34px}
+.bt{position:relative;border-radius:16px;overflow:hidden;background:var(--beige);
+display:flex;flex-direction:column;justify-content:center;padding:22px 24px;transition:.22s}
+.bt.w2{grid-column:span 2}
+.bt.w3{grid-column:span 3}
+.bt.h2{grid-row:span 2}
+.bt.img{padding:0;justify-content:flex-end}
+.bt.img .bph{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .6s cubic-bezier(.2,.7,.3,1)}
+.bt.img .bcap{position:relative;z-index:2;padding:22px 24px;color:#fff;
+background:linear-gradient(transparent,rgba(18,12,11,.82) 42%)}
+.bt.img .bcap b{display:block;font-family:var(--serif);font-size:1.14rem;font-weight:500;margin-bottom:3px;line-height:1.3}
+.bt.img .bcap span{font-size:.85rem;color:rgba(255,255,255,.82);line-height:1.5}
+.bt.img:hover .bph{transform:scale(1.05)}
+.bt .bfig{font-family:var(--serif);font-size:clamp(1.6rem,2.4vw,2.1rem);font-weight:500;color:var(--maroon);
+line-height:1;margin-bottom:8px}
+.bt h4{font-family:var(--serif);font-size:1.1rem;font-weight:500;color:var(--ink);margin-bottom:7px;line-height:1.3}
+.bt p{color:var(--muted);font-size:.875rem;line-height:1.5;margin:0}
+.bt.fill{background:var(--maroon)}
+.bt.fill h4,.bt.fill .bfig{color:#fff}
+.bt.fill p{color:rgba(255,255,255,.84)}
+.bt.tint{background:var(--tint)}
+.bt .btag{position:absolute;top:18px;left:20px;z-index:2;font-size:.68rem;letter-spacing:.12em;
+text-transform:uppercase;font-weight:600;color:#fff;background:rgba(255,255,255,.18);
+border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:5px 12px;backdrop-filter:blur(4px)}
+a.bt:hover{transform:translateY(-3px);box-shadow:0 14px 32px -18px rgba(21,16,15,.45)}
+@media(max-width:980px){.bento{grid-template-columns:repeat(2,1fr)}.bt.w3{grid-column:span 2}}
+@media(max-width:600px){.bento{grid-template-columns:1fr;grid-auto-rows:auto}
+.bt,.bt.w2,.bt.w3,.bt.h2{grid-column:auto;grid-row:auto;min-height:170px}}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -340,7 +364,7 @@ window.DHWANI_FORMS = {
 <!-- VALUES -->
 <section class="section people"><div class="wrap">
   <h2 class="shead">What it is actually like</h2>
-  <p class="lede" style="max-width:70ch;margin-top:10px;margin-bottom:6px">Most of our work runs somewhere with patchy connectivity and real consequences for getting it wrong. That shapes the job more than any perk does: you will get to see the people using what you build, and you will be trusted to decide without waiting for permission.</p>
+  <p class="lede" style="max-width:70ch;margin-top:10px;margin-bottom:6px">Our software runs where it matters most: in programmes serving people who have few alternatives. That shapes the job more than any perk does. You will meet the people using what you build, and you will be trusted to make the call rather than wait for permission.</p>
   <div class="pgrid">
     <div class="pcard"><div class="av"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-7-10a7 7 0 0 1 14 0c0 5.6-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg></div><h4>Close to the problem</h4><p>We build for real field conditions, not a demo environment, so we stay close to the people who use what we ship.</p></div>
     <div class="pcard"><div class="av"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l2 2 4-4"/><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4"/></svg></div><h4>Ownership over instructions</h4><p>Small teams, real accountability. You are trusted to make the call.</p></div>
@@ -366,24 +390,15 @@ window.DHWANI_FORMS = {
 <!-- NON-NEGOTIABLES -->
 <section class="section people" style="background:var(--paper)"><div class="wrap">
   <h2 class="shead">The Dhwani Charter</h2>
-  <p class="lede" style="max-width:72ch;margin-top:8px;margin-bottom:10px">The commitments that decide whether something is ready to leave the building. The full Charter covers how we work with each other too; these are the parts a partner sees.</p>
-        <div class="ngroup">
-      <h3>What we ship</h3>
-      <div class="nngrid">
-        <div class="nncard"><b>0% regressive bugs</b><p>If an error is found it gets documented and added to the automated test suite. The same mistake does not happen twice.</p></div>
-        <div class="nncard"><b>Pixel-perfect UI</b><p>The interface is how we show respect for the user. We do not ship clunky or messy. If the UI is broken, trust is broken.</p></div>
-        <div class="nncard"><b>Rural-robust design</b><p>Performance is a feature. It has to work on a low-end device at 2G. If it is unusable in a village, it is not Dhwani quality.</p></div>
-      </div>
-    </div>
-    <div class="ngroup">
-      <h3>How we work with partners</h3>
-      <div class="nngrid">
-        <div class="nncard"><b>Customer centricity</b><p>We do not build for partners, we build with them. Success is how well the tech fits into their system.</p></div>
-        <div class="nncard"><b>The word-to-action ratio</b><p>If we commit to a date or a fix, it is done. If something blocks it, you hear it the moment we know, not on the delivery date.</p></div>
-        <div class="nncard"><b>Data sanctity</b><p>Beneficiary and client data is handled with real diligence. Their privacy is an absolute right, not a setting.</p></div>
-      </div>
-    </div>
-
+  <p class="lede" style="max-width:74ch">Six commitments that decide whether something is ready to leave the building, and how we behave while getting it there.</p>
+  <div class="nngrid">
+    <div class="nncard"><b>Customer centricity</b><p>We start from the partner&rsquo;s problem, not our product. Success is how well the technology fits the way they already work, not how elegant it looks to us.</p></div>
+    <div class="nncard"><b>Quality is not negotiable</b><p>Zero regressive bugs: an error found once is documented and added to the automated tests, so it cannot happen twice. And a pixel-perfect interface, because the UI is how we show respect for the person using it.</p></div>
+    <div class="nncard"><b>Bias for action</b><p>Most decisions are reversible. We make them and move, rather than waiting for certainty that is not coming. A week spent deciding is a week the programme did not have.</p></div>
+    <div class="nncard"><b>Results, not activity</b><p>We are measured by what changed for the programme. Hours logged, tickets closed and slides produced are not the same thing as a result.</p></div>
+    <div class="nncard"><b>The highest standard in the room</b><p>Our bar sits above the brief. We do not ship something we would not be willing to run ourselves, and we say so when a shortcut is being proposed.</p></div>
+    <div class="nncard"><b>Earn trust</b><p>We say what we know and what we do not. Problems are flagged the moment we see them, not on the delivery date. Beneficiary and client data is handled as if it were our own.</p></div>
+  </div>
 </div></section>
 
 <!-- WHAT TO EXPECT -->
@@ -399,16 +414,17 @@ window.DHWANI_FORMS = {
   </div>
 </div></section>
 
-<!-- GALLERY -->
 <section class="section people"><div class="wrap">
-  <h2 class="shead">A few glimpses</h2>
-  <div class="life-grid">
-    <div class="life-card"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1703745006226-98d4b948dc41?q=80&w=800&auto=format&fit=crop')"></div><div class="cap"><h4>Our Gurugram office</h4><p>Cross-functional teams sit together by design, in Sector 44.</p></div></div>
-    <div class="life-card"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1609252509229-364936a1d1a2?q=80&w=800&auto=format&fit=crop')"></div><div class="cap"><h4>Out in the field</h4><p>Visits to the programmes we build for, so the work does not stay abstract.</p></div></div>
-    <div class="life-card"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1722573783625-eceb04251036?q=80&w=800&auto=format&fit=crop')"></div><div class="cap"><h4>Tech for Good sessions</h4><p>Workshops and meetups, like our AWS &times; Dhwani Tech for Good session.</p></div></div>
-    <div class="life-card"><div class="ph" style="background-image:url('https://images.unsplash.com/flagged/photo-1577962917302-cd874c4e31d2?q=80&w=800&auto=format&fit=crop')"></div><div class="cap"><h4>Learning on the job</h4><p>A large engineering team means someone senior is close by.</p></div></div>
-    <div class="life-card"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=800&auto=format&fit=crop')"></div><div class="cap"><h4>Team time</h4><p>Lunches, celebrations and the odd bit of chaos, in between the deep work.</p></div></div>
-    <div class="life-card"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1761818645915-260598d569a7?q=80&w=800&auto=format&fit=crop')"></div><div class="cap"><h4>Nearly 100 people</h4><p>Engineering, delivery, product, HR, finance and pre-sales, under one roof.</p></div></div>
+  <h2 class="shead">Around the place</h2>
+  <p class="lede" style="max-width:70ch">Gurugram, the programmes we build for, and the sessions we run in between.</p>
+  <div class="bento">
+    <div class="bt img w2 h2"><div class="bph" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1000&auto=format&fit=crop')"></div><div class="bcap"><b>The Gurugram office</b><span>Sector 44. Cross-functional teams sit together by design.</span></div></div>
+    <div class="bt img "><div class="bph" style="background-image:url('https://images.unsplash.com/photo-1609252509229-364936a1d1a2?q=80&w=800&auto=format&fit=crop')"></div><div class="bcap"><b>Out with the programme</b><span>So the work does not stay abstract.</span></div></div>
+    <div class="bt tint"><div class="bfig">100</div><h4>people</h4><p>Engineering, delivery, data, quality and operations.</p></div>
+    <div class="bt img "><div class="bph" style="background-image:url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop')"></div><div class="bcap"><b>Tech for Good sessions</b><span>Workshops and meetups, like AWS &times; Dhwani.</span></div></div>
+    <div class="bt fill"><div class="bfig">Since 2015</div><h4>building for the sector</h4><p>Long enough to have learned most of this the hard way.</p></div>
+    <div class="bt img w2"><div class="bph" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1000&auto=format&fit=crop')"></div><div class="bcap"><b>How the work actually happens</b><span>Small teams, short feedback loops, and the person who will use it in the room.</span></div></div>
+    <a class="bt " href="careers.html"><h4>A hybrid week</h4><p>Out of Gurugram, and flexible about the days where a role allows it.</p></a>
   </div>
 </div></section>
 
