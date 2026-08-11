@@ -72,8 +72,7 @@ em{font-style:italic}
 .hbody h1{color:#fff;font-size:clamp(2.9rem,5.8vw,4.9rem);font-weight:500;margin-top:18px;line-height:1.02}
 .hbody h1 em{color:var(--orange-soft)}
 .hside p{color:rgba(255,255,255,.86);font-size:1.03rem;margin-bottom:24px}
-.hside .btns{display:flex;gap:12px;flex-wrap:wrap}
-.hcreds{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.14);margin:0 42px;padding:18px 0 24px;font-size:.82rem;letter-spacing:.03em;color:rgba(255,255,255,.6)}
+.hside .hcreds{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.14);margin:0 42px;padding:18px 0 24px;font-size:.82rem;letter-spacing:.03em;color:rgba(255,255,255,.6)}
 
 /* ============ DPDP STRIP ============ */
 .dpdp{margin:38px 16px 0}
@@ -344,38 +343,8 @@ border:1px solid var(--line-d);border-radius:6px;padding:4px 8px}
 .foot-bot .flegal a{color:rgba(255,255,255,.55);border-bottom:1px solid transparent}
 .foot-bot .flegal a:hover{color:#fff;border-bottom-color:rgba(255,255,255,.4)}
 
-/* bento */
-.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(178px,auto);gap:16px;margin-top:34px}
-.bt{position:relative;border-radius:16px;overflow:hidden;background:var(--beige);
-display:flex;flex-direction:column;justify-content:center;padding:22px 24px;transition:.22s}
-.bt.w2{grid-column:span 2}
-.bt.w3{grid-column:span 3}
-.bt.h2{grid-row:span 2}
-.bt.img{padding:0;justify-content:flex-end}
-.bt.img .bph{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .6s cubic-bezier(.2,.7,.3,1)}
-.bt.img .bcap{position:relative;z-index:2;padding:22px 24px;color:#fff;
-background:linear-gradient(transparent,rgba(18,12,11,.82) 42%)}
-.bt.img .bcap b{display:block;font-family:var(--serif);font-size:1.14rem;font-weight:500;margin-bottom:3px;line-height:1.3}
-.bt.img .bcap span{font-size:.85rem;color:rgba(255,255,255,.82);line-height:1.5}
-.bt.img:hover .bph{transform:scale(1.05)}
-.bt .bfig{font-family:var(--serif);font-size:clamp(1.6rem,2.4vw,2.1rem);font-weight:500;color:var(--maroon);
-line-height:1;margin-bottom:8px}
-.bt h4{font-family:var(--serif);font-size:1.1rem;font-weight:500;color:var(--ink);margin-bottom:7px;line-height:1.3}
-.bt p{color:var(--muted);font-size:.875rem;line-height:1.5;margin:0}
-.bt.fill{background:var(--maroon)}
-.bt.fill h4,.bt.fill .bfig{color:#fff}
-.bt.fill p{color:rgba(255,255,255,.84)}
-.bt.tint{background:var(--tint)}
-.bt .btag{position:absolute;top:18px;left:20px;z-index:2;font-size:.68rem;letter-spacing:.12em;
-text-transform:uppercase;font-weight:600;color:#fff;background:rgba(255,255,255,.18);
-border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:5px 12px;backdrop-filter:blur(4px)}
-a.bt:hover{transform:translateY(-3px);box-shadow:0 14px 32px -18px rgba(21,16,15,.45)}
-@media(max-width:980px){.bento{grid-template-columns:repeat(2,1fr)}.bt.w3{grid-column:span 2}}
-@media(max-width:600px){.bento{grid-template-columns:1fr;grid-auto-rows:auto}
-.bt,.bt.w2,.bt.w3,.bt.h2{grid-column:auto;grid-row:auto;min-height:170px}}
-.bt.quote{background:var(--tint)}
-.bt .bq{font-family:var(--serif);font-style:italic;font-size:.98rem;line-height:1.5;color:var(--ink);margin:0 0 10px}
-.bt .bqw{font-size:.78rem;color:var(--muted);font-weight:500}
+a@media(max-width:980px){}
+@media(max-width:600px){}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -540,21 +509,6 @@ window.DHWANI_FORMS = {
       <div class="tags"><span>Producer data</span><span>Procurement</span><span>Traceability</span></div>
       <span class="tlink">For Inclusive Businesses <span class="arw">&#8594;</span></span>
     </a>
-  </div>
-</div></section>
-
-<section class="section"><div class="wrap">
-  <h2 class="shead">What that looks like in practice</h2>
-  <p class="lede" style="max-width:72ch">A sample of the work, the scale it runs at, and the standards underneath it.</p>
-  <div class="bento">
-    <a class="bt img w2 h2" href="our-work.html"><div class="bph" style="background-image:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1000&auto=format&fit=crop')"></div><span class="btag">Our work</span><div class="bcap"><b>Programme data, in one place</b><span>Systems that hold a whole programme, from the field to the funder report.</span></div></a>
-    <a class="bt " href="resources.html"><div class="bfig">5,89,305</div><h4>CSR projects, searchable</h4><p>Our public CSR grants explorer, built on Ministry of Corporate Affairs filings.</p></a>
-    <a class="bt tint" href="about.html"><div class="bfig">10</div><h4>countries</h4><p>Delivery from India, programmes across Asia, Africa, Europe and the Americas.</p></a>
-    <a class="bt img " href="about.html"><div class="bph" style="background-image:url('https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop')"></div><div class="bcap"><b>Built to be handed over</b><span>Your team runs it after we leave.</span></div></a>
-    <a class="bt fill" href="mgrant-donors.html"><div class="bfig">&#8377;5,000 Cr</div><h4>governed through mGrant</h4><p>Across 40+ donor organisations and 1,500+ grantees.</p></a>
-    <a class="bt img w2" href="mform.html"><div class="bph" style="background-image:url('https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1000&auto=format&fit=crop')"></div><div class="bcap"><b>Offline-first, by default</b><span>Field apps that work on a low-end Android with no signal for days.</span></div></a>
-    <a class="bt " href="dpdp-act-readiness.html"><h4>DPDP, before 2027</h4><p>Full enforcement lands on 13 May 2027. We take organisations through it in five stages, ending in an independent audit.</p></a>
-    <div class="bt quote"><p class="bq">&ldquo;Exceptional in the quality of their work, the responsiveness to support queries, and the commitment to our shared vision.&rdquo;</p><span class="bqw">Manohar Sreekanth &middot; Sattva Consulting</span></div>
   </div>
 </div></section>
 
