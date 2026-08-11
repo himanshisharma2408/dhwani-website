@@ -193,6 +193,14 @@ backdrop-filter:blur(6px)}
 .ahero .crumb a:hover{color:#fff;text-decoration:underline}
 .ahero .crumb .sep{opacity:.55}
 .ahero .crumb .here{color:#fff}
+
+.sect-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.sect-chip{font-size:.95rem;font-weight:500;color:var(--ink);background:var(--beige);border:1px solid transparent;
+border-radius:999px;padding:11px 20px;text-decoration:none;transition:background .18s,border-color .18s,transform .18s}
+.sect-chip:hover{background:var(--beige-h);border-color:var(--line);transform:translateY(-2px)}
+.standards{margin-top:26px;padding-left:16px;border-left:2px solid var(--orange);color:var(--muted);
+font-size:.94rem;line-height:1.65;max-width:76ch}
+.standards b{color:var(--ink);font-weight:600}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -301,13 +309,12 @@ window.DHWANI_FORMS = {
 
 
 <section class="section" style="background:var(--paper)"><div class="wrap">
-  <h2 class="shead">Health programmes</h2>
-  <p class="wyglede">Where mForm collects health data, it is built to hand that data on.</p>
-  <div class="cgrid">
-    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h4l2-5 4 10 2-5h4"/></svg></span><h5>FHIR-compliant exchange</h5><p>Records move between systems in a standard format that receiving systems already understand.</p></div>
-    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 8.5-8 11-4.6-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></span><h5>ABDM M1, M2, and M3</h5><p>For programmes that need to sit inside the national digital health stack.</p></div>
-    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span><h5>Offline at the point of care</h5><p>A sub-centre, a home visit, a camp, where most health data is generated.</p></div>
+  <h2 class="shead">Where mForm is used</h2>
+  <p class="wyglede">The same platform, across almost every sector we work in. Programme teams build and change their own forms, so the tool follows the work rather than the other way round.</p>
+  <div class="sect-chips">
+    <a class="sect-chip" href="our-work.html?sector=healthcare">Healthcare</a><a class="sect-chip" href="our-work.html?sector=agriculture">Agriculture &amp; livelihoods</a><a class="sect-chip" href="our-work.html?sector=education">Education &amp; skilling</a><a class="sect-chip" href="our-work.html?sector=financial-inclusion">Financial inclusion</a><a class="sect-chip" href="our-work.html?sector=climate">Climate &amp; environment</a><a class="sect-chip" href="our-work.html?sector=governance">Governance</a><a class="sect-chip" href="our-work.html?sector=entrepreneurship">Entrepreneurship</a><a class="sect-chip" href="our-work.html?sector=mel">Monitoring &amp; evaluation</a><a class="sect-chip" href="our-work.html?sector=digital-ai">Digital channels &amp; AI</a>
   </div>
+  <p class="standards">In health programmes mForm also speaks the national standards: records exchange over <b>FHIR</b>, and it supports <b>ABDM M1, M2 and M3</b> for programmes that need to sit inside the national digital health stack.</p>
 </div></section>
 
 <!-- CTA -->
