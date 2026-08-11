@@ -342,6 +342,12 @@ window.DHWANI_FORMS = {
     <div class="pcard"><div class="av"><span class="mono">KM</span></div><h4>Kajol Mehta</h4><div class="role">HR Manager</div></div>
     <div class="pcard"><div class="av"><img src="assets/img/team/nidhi-arora.jpg" alt="Nidhi Arora" loading="lazy"></div><h4>Nidhi Arora</h4><div class="role">Process Consultant</div></div>
   </div>
+    <div class="tfilter" id="tfilter" role="group" aria-label="Filter the team by function">
+    <button type="button" class="tchip on" data-g="">Everyone <span class="tn">90</span></button>
+    <button type="button" class="tchip" data-g="tech">Engineering <span class="tn">43</span></button>
+    <button type="button" class="tchip" data-g="management">Delivery &amp; programme <span class="tn">41</span></button>
+    <button type="button" class="tchip" data-g="support">HR &amp; operations <span class="tn">6</span></button>
+  </div>
   <h4 class="tgrp">Managers and leads</h4>
   <p class="tnote">Who runs your programme, and who leads the engineering behind it.</p>
   <div class="pgrid exec-grid">
@@ -470,6 +476,34 @@ window.DHWANI_FORMS = {
   <h2>Want to build something with us?</h2>
   <a class="pill pill-primary" href="contact.html">Book a call <span class="arw">&#8594;</span></a>
 </div></div>
+
+<script>
+(function(){
+  var bar=document.getElementById('tfilter'); if(!bar)return;
+  var chips=bar.querySelectorAll('.tchip');
+  var cards=document.querySelectorAll('.pcard[data-g]');
+  function apply(g){
+    Array.prototype.forEach.call(cards,function(c){
+      c.classList.toggle('hide', !!g && c.getAttribute('data-g')!==g);
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('.pgrid'),function(grid){
+      if(!grid.querySelector('.pcard[data-g]')) return;      /* leave the fixed tiers alone */
+      var vis=grid.querySelectorAll('.pcard:not(.hide)').length;
+      grid.classList.toggle('empty',vis===0);
+      var p=grid.previousElementSibling;
+      while(p&&(p.classList.contains('tnote')||p.classList.contains('tgrp'))){
+        p.classList.toggle('empty',vis===0); p=p.previousElementSibling;
+      }
+    });
+  }
+  Array.prototype.forEach.call(chips,function(c){
+    c.addEventListener('click',function(){
+      Array.prototype.forEach.call(chips,function(x){x.classList.toggle('on',x===c);});
+      apply(c.getAttribute('data-g'));
+    });
+  });
+})();
+</script>
 
 <!-- FOOTER -->
 <footer><div class="wrap">
@@ -653,21 +687,6 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
     var v=input.value.trim(); if(!v) return;
     ask(v); input.value='';
   });
-})();
-</script>
-
-<script>
-(function(){
-  var tabs=[].slice.call(document.querySelectorAll(');
-    panels.forEach(function(p){p.classList.toggle('on',p.id===name);});
-  }
-  tabs.forEach(function(t){t.addEventListener('click',function(){
-    activate(t.dataset.tab);
-    try{history.replaceState(null,'','team.html#'+t.dataset.tab);}catch(e){}
-  });});
-  var hash=location.hash.replace('#','');
-  var valid=tabs.some(function(t){return t.dataset.tab===hash;});
-  activate(valid?hash:'management');
 })();
 </script>
 
