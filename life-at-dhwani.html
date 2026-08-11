@@ -132,7 +132,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .has-dd:hover>.dd{opacity:1;visibility:visible;pointer-events:auto}
 #topnav .dd a{display:block;color:var(--ink)!important;font-size:.9rem;font-weight:450;letter-spacing:0;padding:9px 12px;border-radius:8px;white-space:nowrap}
 #topnav .dd a:hover{background:var(--beige)}
-.dd-mega{left:0;margin-top:12px;transform:none;min-width:0;display:grid;grid-template-columns:repeat(4,minmax(150px,1fr));gap:2px 14px;padding:20px 22px}
+.dd-mega{left:0;margin-top:12px;transform:none;min-width:0;display:grid;grid-template-columns:repeat(4,max-content);gap:2px 18px;padding:20px 22px}
 .dd-col h6{font-family:var(--sans);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--maroon);font-weight:600;padding:6px 12px 4px}
 @media(max-width:960px){
   .has-dd{flex-wrap:wrap;justify-content:space-between;border-bottom:1px solid var(--line)}
@@ -250,12 +250,9 @@ color:var(--muted);background:none;border:0;padding:0;margin:0;backdrop-filter:n
 .crumbbar .crumb .sep{opacity:.5;color:var(--muted)}
 .crumbbar .crumb .here{color:var(--ink);font-weight:600}
 
-.fsectors{margin-top:20px;padding-top:14px;border-top:1px solid var(--line-d)}
-.fsectors h5{margin-bottom:8px;letter-spacing:.13em}
-.fsecrow{display:flex;flex-wrap:wrap;gap:6px 7px}
-.fsecrow a{font-size:.79rem;background:rgba(255,255,255,.06);border-radius:999px;padding:4px 11px;
-border:1px solid transparent;transition:background .18s,border-color .18s}
-.fsecrow a:hover{background:rgba(255,255,255,.13);border-color:var(--line-d)}
+
+
+
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -449,10 +446,9 @@ window.DHWANI_FORMS = {
         <a href="tel:+919574655961">+91 95746 55961</a><br>
         <a href="mailto:partnerships@dhwaniris.com">partnerships@dhwaniris.com</a>
       </p>
-    </div>
+    <div class="fcol"><h5>By sector</h5><ul><li><a href="our-work.html?sector=healthcare">Healthcare</a></li><li><a href="our-work.html?sector=agriculture">Agriculture &amp; Livelihoods</a></li><li><a href="our-work.html?sector=education">Education &amp; Skilling</a></li><li><a href="our-work.html?sector=financial-inclusion">Financial Inclusion</a></li><li><a href="our-work.html?sector=governance">Governance</a></li><li><a href="our-work.html?sector=climate">Climate &amp; Environment</a></li><li><a href="our-work.html?sector=entrepreneurship">Entrepreneurship</a></li><li><a href="our-work.html?sector=mel">Programme Mgmt &amp; MEL</a></li><li><a href="our-work.html?sector=digital-ai">Digital &amp; AI</a></li><li><a href="our-work.html">All sectors &#8594;</a></li></ul></div></div>
   </div>
   </div>
-  <div class="fsectors"><h5>By sector</h5><div class="fsecrow"><a href="our-work.html?sector=healthcare">Healthcare</a><a href="our-work.html?sector=agriculture">Agriculture &amp; Livelihoods</a><a href="our-work.html?sector=education">Education &amp; Skilling</a><a href="our-work.html?sector=financial-inclusion">Financial Inclusion</a><a href="our-work.html?sector=governance">Governance</a><a href="our-work.html?sector=climate">Climate &amp; Environment</a><a href="our-work.html?sector=entrepreneurship">Entrepreneurship</a><a href="our-work.html?sector=mel">Programme Mgmt &amp; MEL</a><a href="our-work.html?sector=digital-ai">Digital &amp; AI</a><a href="our-work.html">All sectors &#8594;</a></div></div>
   
   <div class="foot-bot"><span>© 2026 Dhwani Rural Information Systems</span><span><a href="privacy.html">Privacy</a> · <a href="sitemap.html">Sitemap</a></span></div>
 </div></footer>

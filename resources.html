@@ -120,7 +120,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .has-dd:hover>.dd{opacity:1;visibility:visible;pointer-events:auto}
 #topnav .dd a{display:block;color:var(--ink)!important;font-size:.9rem;font-weight:450;letter-spacing:0;padding:9px 12px;border-radius:8px;white-space:nowrap}
 #topnav .dd a:hover{background:var(--beige)}
-.dd-mega{left:0;margin-top:12px;transform:none;min-width:0;display:grid;grid-template-columns:repeat(4,minmax(150px,1fr));gap:2px 14px;padding:20px 22px}
+.dd-mega{left:0;margin-top:12px;transform:none;min-width:0;display:grid;grid-template-columns:repeat(4,max-content);gap:2px 18px;padding:20px 22px}
 .dd-col h6{font-family:var(--sans);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--maroon);font-weight:600;padding:6px 12px 4px}
 @media(max-width:960px){
   .has-dd{flex-wrap:wrap;justify-content:space-between;border-bottom:1px solid var(--line)}
@@ -280,12 +280,37 @@ font-family:var(--sans);font-size:.83rem;background:rgba(255,255,255,.05);color:
 @media(max-width:720px){.fnav{columns:2}}
 @media(max-width:480px){.fnav{columns:1}}
 
-.fsectors{margin-top:20px;padding-top:14px;border-top:1px solid var(--line-d)}
-.fsectors h5{margin-bottom:8px;letter-spacing:.13em}
-.fsecrow{display:flex;flex-wrap:wrap;gap:6px 7px}
-.fsecrow a{font-size:.79rem;background:rgba(255,255,255,.06);border-radius:999px;padding:4px 11px;
-border:1px solid transparent;transition:background .18s,border-color .18s}
-.fsecrow a:hover{background:rgba(255,255,255,.13);border-color:var(--line-d)}
+
+
+
+
+.cmodal .cm-badge{display:inline-block;font-family:var(--sans);font-style:normal;font-size:.72rem;font-weight:600;letter-spacing:.04em;border-radius:999px;padding:5px 12px;background:var(--beige);color:var(--muted)}
+.cmodal .cm-proof{background:var(--beige);border-radius:12px;padding:16px 18px;margin-bottom:22px;font-size:.92rem}
+.cmodal .cm-proof b{color:var(--maroon)}
+
+/* case-study detail modal */
+.cmodal{display:none;position:fixed;inset:0;z-index:420;align-items:center;justify-content:center;padding:28px 20px}
+.cmodal.open{display:flex}
+.cmodal .backdrop{position:absolute;inset:0;background:rgba(21,16,15,.55)}
+.cmodal .box{position:relative;background:var(--paper);border-radius:20px;max-width:780px;width:100%;overflow:hidden;max-height:calc(100vh - 56px);display:flex;flex-direction:column}
+.cmodal .close{position:absolute;top:14px;right:14px;z-index:2;background:rgba(250,246,239,.92);border:1px solid var(--line);width:36px;height:36px;border-radius:50%;font-size:1.2rem;color:var(--ink);cursor:pointer;line-height:1}
+.cmodal .cm-shot{display:block;width:100%;height:236px;background:#fff;border-bottom:1px solid var(--line);flex:none;object-fit:cover;object-position:center}
+.cmodal .cm-shot.is-shot{object-fit:contain;object-position:center;background:#fff}
+.cmodal .cm-bd{padding:32px 38px 36px;overflow-y:auto}
+.cmodal .cm-sect{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--maroon);font-weight:600;margin-bottom:10px}
+.cmodal h3{font-size:1.7rem;font-weight:500;line-height:1.2;margin-bottom:8px}
+.cmodal .cm-client{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:1.02rem;margin-bottom:22px}
+.cmodal h5{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:7px;font-family:var(--sans)}
+.cmodal .cm-p{font-size:.96rem;line-height:1.62;color:var(--ink);margin-bottom:20px}
+.cmodal .cm-list{list-style:none;margin:0 0 22px;padding:0}
+.cmodal .cm-list li{position:relative;padding-left:20px;font-size:.94rem;color:var(--ink);line-height:1.55;margin-bottom:7px}
+.cmodal .cm-list li:before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--orange)}
+.cmodal .cm-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;margin-bottom:22px}
+.cmodal .cm-stats b{display:block;font-family:var(--serif);font-size:1.42rem;font-weight:500;color:var(--maroon);line-height:1.15;margin-bottom:4px}
+.cmodal .cm-stats span{font-size:.8rem;color:var(--muted);line-height:1.4}
+.cmodal .cm-foot{display:flex;align-items:center;justify-content:flex-start;gap:16px;flex-wrap:wrap}
+.cmodal .cm-tags{display:flex;gap:6px;flex-wrap:wrap}
+.cmodal .cm-tags span{font-size:.72rem;color:var(--muted);background:var(--beige);border-radius:999px;padding:5px 11px}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -579,10 +604,9 @@ window.DHWANI_FORMS = {
         <a href="tel:+919574655961">+91 95746 55961</a><br>
         <a href="mailto:partnerships@dhwaniris.com">partnerships@dhwaniris.com</a>
       </p>
-    </div>
+    <div class="fcol"><h5>By sector</h5><ul><li><a href="our-work.html?sector=healthcare">Healthcare</a></li><li><a href="our-work.html?sector=agriculture">Agriculture &amp; Livelihoods</a></li><li><a href="our-work.html?sector=education">Education &amp; Skilling</a></li><li><a href="our-work.html?sector=financial-inclusion">Financial Inclusion</a></li><li><a href="our-work.html?sector=governance">Governance</a></li><li><a href="our-work.html?sector=climate">Climate &amp; Environment</a></li><li><a href="our-work.html?sector=entrepreneurship">Entrepreneurship</a></li><li><a href="our-work.html?sector=mel">Programme Mgmt &amp; MEL</a></li><li><a href="our-work.html?sector=digital-ai">Digital &amp; AI</a></li><li><a href="our-work.html">All sectors &#8594;</a></li></ul></div></div>
   </div>
   </div>
-  <div class="fsectors"><h5>By sector</h5><div class="fsecrow"><a href="our-work.html?sector=healthcare">Healthcare</a><a href="our-work.html?sector=agriculture">Agriculture &amp; Livelihoods</a><a href="our-work.html?sector=education">Education &amp; Skilling</a><a href="our-work.html?sector=financial-inclusion">Financial Inclusion</a><a href="our-work.html?sector=governance">Governance</a><a href="our-work.html?sector=climate">Climate &amp; Environment</a><a href="our-work.html?sector=entrepreneurship">Entrepreneurship</a><a href="our-work.html?sector=mel">Programme Mgmt &amp; MEL</a><a href="our-work.html?sector=digital-ai">Digital &amp; AI</a><a href="our-work.html">All sectors &#8594;</a></div></div>
   
   <div class="foot-bot"><span>© 2026 Dhwani Rural Information Systems</span><span><a href="privacy.html">Privacy</a> · <a href="sitemap.html">Sitemap</a></span></div>
 </div></footer>

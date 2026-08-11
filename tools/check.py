@@ -94,6 +94,22 @@ def structural():
                     if v and v not in valid:
                         faults.append(('our-work.html',
                                        '%s: %s="%s" has no filter chip' % (cid.group(1), d, v)))
+
+    # a component used without its stylesheet renders raw in the page flow
+    COMPONENTS = {
+        'ccph': '.ccph{', 'ccbd': '.ccbd{', 'ccstat': '.ccstat{', 'cckeys': '.cckeys{',
+        'ccmore': '.ccmore{', 'ccards': '.ccards{', 'cmodal': '.cmodal{', 'handover': '.handover{',
+        'steps': '.steps{', 'sitelink': '.sitelink{', 'deckbar': '.deckbar{', 'prodsite': '.prodsite{',
+        'crumbbar': '.crumbbar{', 'fnav': '.fnav{', 'tchip': '.tchip{', 'tnote': '.tnote{',
+        'getlist': '.getlist{', 'figrow': '.figrow{', 'creds': '.creds{', 'callout': '.callout{',
+        'sect-chip': '.sect-chip{', 'jfit': '.jfit{', 'minicase': '.minicase{',
+    }
+    for f in sorted(glob.glob(os.path.join(ROOT, '*.html'))):
+        name = os.path.basename(f)
+        s = io.open(f, encoding='utf-8').read()
+        for cls, rule in COMPONENTS.items():
+            if 'class="%s' % cls in s and rule not in s:
+                faults.append((name, 'uses .%s but has no styles for it' % cls))
     return faults
 
 
