@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Donor Management | Dhwani RIS</title>
+<title>For Inclusive Businesses | Dhwani RIS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
@@ -58,13 +58,7 @@ em{font-style:italic}
 
 /* what you get (tiles) */
 .wyg h2{margin-bottom:44px}
-.wyglede{color:var(--muted);font-size:1rem;line-height:1.65;max-width:62ch;margin:10px 0 26px}
 .cgrid{display:grid;gap:16px;grid-template-columns:repeat(4,1fr)}
-/* solution page: what-it-does tiles on the left, proof on the right */
-.sol2 h3{font-size:1.32rem;font-weight:500;margin-bottom:4px}
-.sol2 .rlede{color:var(--muted);font-size:.9rem;margin-bottom:18px}
-@media(max-width:900px){}
-
 .ocard{display:flex;flex-direction:column;min-height:0;background:var(--beige);border-radius:8px;padding:clamp(22px,3.4vw,34px);transition:.2s}
 .ocard:hover{background:var(--beige-h)}
 .ocard .ic{height:clamp(46px,5.4vw,60px);flex:none;display:flex;align-items:center;justify-content:flex-start;color:#4a423c;margin-bottom:16px}
@@ -161,61 +155,6 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 #topnav .links a.n-active{color:#fff;font-weight:600}
 #topnav.solid .links a.n-active,#topnav.scrolled .links a.n-active{color:var(--maroon)}
 
-/* proof panel */
-.minicase:hover @media(max-width:900px){}
-
-/* case studies, full width, under the explanation */
-.casesec{background:var(--paper)}
-.ccards{display:grid;gap:20px;margin-top:30px;
-grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
-.ccards.one{grid-template-columns:1fr}
-.ccard{text-align:left;border:none;padding:0;font:inherit;cursor:pointer;width:100%;display:flex;flex-direction:column;background:var(--beige);border-radius:12px;overflow:hidden;transition:.2s}
-.ccard:hover{background:var(--beige-h);transform:translateY(-2px)}
-.ccard:hover .ccph{filter:grayscale(0)}
-.ccph{height:172px;background-size:cover;background-position:center;filter:grayscale(.35);transition:filter .35s;flex:none}
-.ccbd{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
-.ccard h3{font-family:var(--serif);font-size:1.24rem;font-weight:500;line-height:1.25;color:var(--ink);margin-bottom:5px}
-.cccl{font-size:.86rem;color:var(--muted);line-height:1.45;margin:0}
-.ccstat{display:flex;align-items:baseline;gap:9px;margin:auto 0 0;padding-top:14px;border-top:1px solid var(--line)}
-.ccstat b{font-family:var(--serif);font-size:1.6rem;font-weight:500;color:var(--maroon);line-height:1}
-.ccstat span{font-size:.78rem;color:var(--muted);line-height:1.3}
-.cckeys{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
-.cckeys span{font-size:.72rem;color:var(--muted);background:var(--paper);border-radius:999px;padding:4px 11px}
-.ccmore{margin-top:auto;padding-top:18px;font-size:.86rem;font-weight:600;color:var(--maroon)}
-.ccard:hover .ccmore .arw{transform:translateX(4px)}
-.ccmore .arw{display:inline-block;transition:transform .2s}
-@media(min-width:760px){.ccards.one .ccard{flex-direction:row}
-.ccards.one .ccph{height:auto;width:38%;min-height:230px}
-.ccards.one .ccbd{padding:30px 34px}}
-
-.cmodal .cm-badge{display:inline-block;font-family:var(--sans);font-style:normal;font-size:.72rem;font-weight:600;letter-spacing:.04em;border-radius:999px;padding:5px 12px;background:var(--beige);color:var(--muted)}
-.cmodal .cm-proof{background:var(--beige);border-radius:12px;padding:16px 18px;margin-bottom:22px;font-size:.92rem}
-.cmodal .cm-proof b{color:var(--maroon)}
-
-/* case-study detail modal */
-.cmodal{display:none;position:fixed;inset:0;z-index:420;align-items:center;justify-content:center;padding:28px 20px}
-.cmodal.open{display:flex}
-.cmodal .backdrop{position:absolute;inset:0;background:rgba(21,16,15,.55)}
-.cmodal .box{position:relative;background:var(--paper);border-radius:20px;max-width:780px;width:100%;overflow:hidden;max-height:calc(100vh - 56px);display:flex;flex-direction:column}
-.cmodal .close{position:absolute;top:14px;right:14px;z-index:2;background:rgba(250,246,239,.92);border:1px solid var(--line);width:36px;height:36px;border-radius:50%;font-size:1.2rem;color:var(--ink);cursor:pointer;line-height:1}
-.cmodal .cm-shot{display:block;width:100%;height:236px;background:#fff;border-bottom:1px solid var(--line);flex:none;object-fit:cover;object-position:center}
-.cmodal .cm-shot.is-shot{object-fit:contain;object-position:center;background:#fff}
-.cmodal .cm-bd{padding:32px 38px 36px;overflow-y:auto}
-.cmodal .cm-sect{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--maroon);font-weight:600;margin-bottom:10px}
-.cmodal h3{font-size:1.7rem;font-weight:500;line-height:1.2;margin-bottom:8px}
-.cmodal .cm-client{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:1.02rem;margin-bottom:22px}
-.cmodal h5{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:7px;font-family:var(--sans)}
-.cmodal .cm-p{font-size:.96rem;line-height:1.62;color:var(--ink);margin-bottom:20px}
-.cmodal .cm-list{list-style:none;margin:0 0 22px;padding:0}
-.cmodal .cm-list li{position:relative;padding-left:20px;font-size:.94rem;color:var(--ink);line-height:1.55;margin-bottom:7px}
-.cmodal .cm-list li:before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--orange)}
-.cmodal .cm-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;margin-bottom:22px}
-.cmodal .cm-stats b{display:block;font-family:var(--serif);font-size:1.42rem;font-weight:500;color:var(--maroon);line-height:1.15;margin-bottom:4px}
-.cmodal .cm-stats span{font-size:.8rem;color:var(--muted);line-height:1.4}
-.cmodal .cm-foot{display:flex;align-items:center;justify-content:flex-start;gap:16px;flex-wrap:wrap}
-.cmodal .cm-tags{display:flex;gap:6px;flex-wrap:wrap}
-.cmodal .cm-tags span{font-size:.72rem;color:var(--muted);background:var(--beige);border-radius:999px;padding:5px 11px}
-
 .fgrid .fsectors{columns:2;column-gap:22px}
 .fgrid .fsectors li{break-inside:avoid}
 .fcontact .faddr{color:var(--muted-d);font-weight:400;display:inline-block;line-height:1.55;margin-bottom:6px}
@@ -238,7 +177,6 @@ a.ocard.fill:after{color:#fff}
 .ocard:hover{transform:none}
 a.ocard:hover .ic{transform:none}
 a.ocard:after{transform:none}}
-
 
 /* ---- card interaction ---------------------------------------------------- */
 /* buyer group cards */
@@ -351,23 +289,23 @@ window.DHWANI_FORMS = {
   <div class="links">
     <a href="index.html">Home</a>
     <div class="has-dd">
-      <a class="n-active" href="solutions.html">Solutions <span class="caret">&#9662;</span></a>
+      <a href="solutions.html">Solutions <span class="caret">&#9662;</span></a>
       <button class="dd-toggle" aria-label="Toggle Solutions submenu">&#9662;</button>
       <div class="dd dd-mega">
         <div class="dd-col"><h6>Products</h6><a href="mgrant-donors.html">mGrant for Donors</a><a href="mgrant-nonprofits.html">mGrant for Nonprofits</a><a href="mform.html">mForm</a><a href="anumati.html">Anumati</a><a href="radar.html">Radar</a></div>
-        <div class="dd-col"><h6>Systems</h6><a href="programme-mis.html">Programme MIS</a><a href="impact-dashboards.html">Impact Dashboards</a><a href="grant-management.html">Grant Management</a><a href="donor-management.html">Donor Management</a><a href="field-data-apps.html">Field Data Apps</a><a href="back-office-it.html">Back-office IT</a><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></div>
+        <div class="dd-col"><h6>Systems</h6><a href="programme-mis.html">Programme MIS</a><a href="impact-dashboards.html">Impact Dashboards</a><a href="mgrant-donors.html">Grant Management</a><a href="mgrant-nonprofits.html">Donor Management</a><a href="mform.html">Field Data Apps</a><a href="back-office-it.html">Back-office IT</a><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></div>
         <div class="dd-col"><h6>Consulting</h6><a href="dpdp-act-readiness.html">DPDP Act Readiness</a><a href="cloud-optimisation.html">CloudSahayak</a><a href="ai-for-impact.html">AI for Impact</a><a href="digital-transformation.html">Digital Transformation</a><a href="programme-management.html">Programme Management Support</a></div>
         <div class="dd-col"><h6>Explore</h6><a href="our-work.html">Browse by sector</a></div>
       </div>
     </div>
     <div class="has-dd">
-      <a href="who-we-serve.html">Who we serve <span class="caret">&#9662;</span></a>
+      <a class="n-active" href="who-we-serve.html">Who we serve <span class="caret">&#9662;</span></a>
       <button class="dd-toggle" aria-label="Toggle Who we serve submenu">&#9662;</button>
       <div class="dd">
         <a href="for-donors.html">For Donors &amp; CSRs</a>
         <a href="for-nonprofits.html">For Nonprofits</a>
         <a href="for-government.html">For Government &amp; Multilaterals</a>
-        <a href="for-think-tanks.html">Think Tanks &amp; Consultancies</a>
+        <a href="for-think-tanks.html">Think Tanks &amp; Consultancies</a><a href="for-inclusive-businesses.html">Inclusive Businesses</a>
       </div>
     </div>
     <a href="our-work.html">Our work</a>
@@ -391,27 +329,54 @@ window.DHWANI_FORMS = {
 
 <!-- HERO -->
 <div class="ahero">
-  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1623211269755-569fec0536d2?q=80&w=2000&auto=format&fit=crop')"></div>
+  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1707721690544-781fe6ede937?q=80&w=2000&auto=format&fit=crop')"></div>
   <div class="veil"></div>
   <div class="in">
-    <h1>Every donor, in one <em>place</em>.</h1>
-    <p>Track donors, grants received and reporting commitments, so nothing slips.</p>
-    <div class="btns"><a class="pill pill-primary" href="contact.html">Book a call <span class="arw">&#8594;</span></a><a class="pill pill-dark" href="our-work.html?offering=grants-donors">See it in our work</a></div>
+    <h1>Inclusion that runs through the <em>business</em>.</h1>
+    <p>For companies whose supply chain runs through smallholders, artisans and informal workers. The systems that make that chain work are the same ones that prove it works.</p>
+    <div class="btns"><a class="pill pill-primary" href="contact.html?topic=field-data">Book a call <span class="arw">→</span></a><a class="pill pill-dark" href="our-work.html">See our work</a></div>
+    <div class="hcreds">Producer data &middot; Procurement &amp; payments &middot; Traceability</div>
   </div>
 </div>
 
-<div class="crumbbar"><div class="wrap"><div class="crumb"><a href="solutions.html">Solutions</a><span class="sep">/</span><span class="here">Donor Management</span></div></div></div>
+<div class="crumbbar"><div class="wrap"><div class="crumb"><a href="who-we-serve.html">Who we serve</a><span class="sep">/</span><span class="here">For Inclusive Businesses</span></div></div></div>
 
-<!-- WHAT IT DOES -->
+<!-- WHAT YOU GET -->
 <section class="section wyg"><div class="wrap">
-  <h2 class="shead">What it does</h2>
-    <p class="wyglede">Donor management is the other side of the same coin: every funder, commitment, condition and report date in one place, so nothing is tracked in a founder&rsquo;s inbox and no renewal is missed.</p>
-    <div class="cgrid">
-    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.5a3 3 0 0 1 0 5.5M21 20c0-2.6-1.6-4.9-4-5.8"/></svg></span><h5>Donor records</h5><p>Every funder and relationship in one system.</p></div>
-    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7"/><path d="M12 3v12M8 7l4-4 4 4"/></svg></span><h5>Grants received</h5><p>Terms, tranches and conditions, tracked.</p></div>
-    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg></span><h5>Reporting calendar</h5><p>Never miss a funder deadline again.</p></div>
-    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a4.6 4.6 0 0 0-6.5 0L12 7.9 9.7 5.6a4.6 4.6 0 1 0-6.5 6.5l8.8 8.8 8.8-8.8a4.6 4.6 0 0 0 0-6.5z"/></svg></span><h5>Donor stewardship</h5><p>Acknowledgements, updates and touchpoints, logged against every funder.</p></div>
-    <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 2 4-6"/></svg></span><h5>Renewals</h5><p>See what is due and what is at risk.</p></div>
+  <h2 class="shead">What we build for you</h2>
+  <p class="wyglede">This is not CSR and it is not philanthropy. It is the operating chain of the business, and the people at the far end of it are smallholders, artisans, micro-entrepreneurs or informal workers. Getting that chain to run properly is commercial work that happens to be social work.</p>
+  <div class="cgrid">
+    <div class="ocard"><path d="M7 20h10"/><path d="M12 20V9"/><path d="M12 9C12 5 9 3 5 3c0 4 3 6 7 6z"/><path d="M12 12c0-3 2.5-5 6-5 0 3.5-2.5 5-6 5z"/><h5>Producer and supplier data</h5><p>One record per farmer, artisan or vendor in your chain, with what they supplied and what they were paid.</p></div>
+    <div class="ocard"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/><h5>Capture at the collection point</h5><p>Offline-first apps for weighment, quality checks and procurement, on the handset a field officer already carries.</p></div>
+    <div class="ocard"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5h4a1.8 1.8 0 0 1 0 3.6h-3a1.8 1.8 0 0 0 0 3.6h4"/><h5>Payments and reconciliation</h5><p>Payment runs against deliveries, reconciled, so a producer can be told exactly what they are owed and when.</p></div>
+    <div class="ocard"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/><h5>Quality and traceability</h5><p>Grading, lot-level traceability and quality parameters, from collection centre to retail.</p></div>
+    <div class="ocard"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 2 4-6"/><h5>Reporting that satisfies both sides</h5><p>The commercial numbers your board wants and the inclusion numbers a funder or a regulator asks for, from one system.</p></div>
+    <div class="ocard"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 0 1 0 10h-2"/><path d="M8 12h8"/><h5>Into your existing stack</h5><p>ERP, accounting and commerce systems, so the inclusive part of the chain is not a spreadsheet on the side.</p></div>
+  </div>
+</div></section>
+
+<!-- PROOF -->
+<section class="section proof"><div class="wrap">
+  <h2 class="shead">Case studies</h2>
+  <div class="cases3">
+    <a class="ccard" href="our-work.html?case=tri">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1609252509229-364936a1d1a2?q=80&w=800&auto=format&fit=crop')"></div>
+      <div class="bd"><h3>74 engagements, one partnership</h3><p>Project and donor management across every programme vertical.</p><div class="org">Transform Rural India</div></div>
+    </a>
+    <a class="ccard" href="our-work.html?case=pradan">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1707721690544-781fe6ede937?q=80&w=800&auto=format&fit=crop')"></div>
+      <div class="bd"><h3>Digital rails for 3,000+ producer groups</h3><p>Registration, a national FPO database, and performance dashboards.</p><div class="org">PRADAN &amp; NAFPO</div></div>
+    </a>
+    <a class="ccard" href="our-work.html?case=watershed">
+      <div class="ph" style="background-image:url('assets/img/cases/case-watershed.jpg')"></div>
+      <div class="bd"><h3>Seven rivers, 54 blocks, one portal</h3><p>Soil and water conservation works monitored ridge to valley.</p><div class="org">A grassroots nonprofit, under a state MGNREGA cell</div></div>
+    </a>
+  </div>
+  <p class="cases-cta"><a class="tlink" href="our-work.html?audience=ngos">See more of our work <span class="arw">&#8594;</span></a></p>
+  <div class="mq-wrap">
+    <p class="mq-lbl">nonprofits and social enterprises we work with</p>
+    <div class="marquee"><div class="mtrack l" id="row1"></div></div>
+    <div class="marquee"><div class="mtrack r" id="row2"></div></div>
   </div>
 </div></section>
 
@@ -419,109 +384,45 @@ window.DHWANI_FORMS = {
   <h2 class="shead">Case studies</h2>
   <p class="lede">Programmes running on this today.</p>
   <div class="ccards">
-      <button type="button" class="ccard" data-case="tri">
-        <div class="ccph" style="background-image:url('https://images.unsplash.com/photo-1609252509229-364936a1d1a2?q=80&w=900&auto=format&fit=crop')"></div>
+      <button type="button" class="ccard" data-case="bigbasket">
+        <div class="ccph" style="background-image:url('https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=900&auto=format&fit=crop')"></div>
         <div class="ccbd">
-          <h3>Transform Rural India</h3>
-          <p class="cccl">A technology partnership, 74 engagements deep</p>
-          <div class="ccstat"><b>74</b><span>engagements and counting</span></div>
-          <div class="cckeys"><span>74 engagements</span><span>UP SRLM payments</span><span>Every vertical on mGrant</span></div>
+          <h3>bigbasket</h3>
+          <p class="cccl">Quality and pricing systems for farm-to-retail</p>
+          <div class="ccstat"><b>10</b><span>repackaging centres</span></div>
+          <div class="cckeys"><span>10 repackaging centres</span><span>Daily price derivation</span><span>Mobile quality MIS</span></div>
           <span class="ccmore">Read the case study <span class="arw">&#8594;</span></span>
         </div>
       </button>
-      <button type="button" class="ccard" data-case="orgperf">
-        <div class="ccph" style="background-image:url('assets/img/cases/case-orgperf.jpg')"></div>
+      <button type="button" class="ccard" data-case="pradan">
+        <div class="ccph" style="background-image:url('https://images.unsplash.com/photo-1707721690544-781fe6ede937?q=80&w=900&auto=format&fit=crop')"></div>
         <div class="ccbd">
-          <h3>Organisation Performance Dashboard</h3>
-          <p class="cccl">For an award-winning girls'-education non-profit working across 20,000+ villages</p>
-          <div class="ccstat"><b>20,000+</b><span>villages of operation</span></div>
-          <div class="cckeys"><span>20,000+ villages</span><span>Finance + impact in one view</span><span>Leadership KPIs</span></div>
+          <h3>PRADAN &amp; NAFPO</h3>
+          <p class="cccl">The FPO stack: producer groups to market linkages</p>
+          <div class="ccstat"><b>3,000+</b><span>producer groups</span></div>
+          <div class="cckeys"><span>3,000+ producer groups</span><span>National FPO database</span><span>Market-linkage dashboards</span></div>
+          <span class="ccmore">Read the case study <span class="arw">&#8594;</span></span>
+        </div>
+      </button>
+      <button type="button" class="ccard" data-case="giz">
+        <div class="ccph" style="background-image:url('https://images.unsplash.com/photo-1623211269755-569fec0536d2?q=80&w=900&auto=format&fit=crop')"></div>
+        <div class="ccbd">
+          <h3>QSure &middot; GIZ India</h3>
+          <p class="cccl">Crop insurance claims, digitised</p>
+          <div class="ccstat"><b>World Bank</b><span>innovation grant recipient</span></div>
+          <div class="cckeys"><span>World Bank innovation grant</span><span>Crop insurance claims</span><span>Paper to digital</span></div>
           <span class="ccmore">Read the case study <span class="arw">&#8594;</span></span>
         </div>
       </button>
   </div>
-  <p style="margin-top:26px"><a class="tlink" href="our-work.html?offering=donor">See all our work <span class="arw">&#8594;</span></a></p>
+  <p style="margin-top:26px"><a class="tlink" href="our-work.html">See all our work <span class="arw">&#8594;</span></a></p>
 </div></section>
-
 
 <!-- CTA -->
 <div class="cta"><div class="in wrap">
-  <h2>Ready to keep every donor and report on track?</h2>
-  <a class="pill pill-primary" href="contact.html">Book a call <span class="arw">&#8594;</span></a>
+  <h2>Ready to run your programme on systems built for the field?</h2>
+  <a class="pill pill-primary" href="contact.html?topic=field-data">Book a call <span class="arw">→</span></a>
 </div></div>
-
-<!-- CASE DETAIL -->
-<div class="cmodal" id="caseModal" role="dialog" aria-modal="true" aria-labelledby="cmTitle">
-  <div class="backdrop" data-cclose></div>
-  <div class="box">
-    <button class="close" data-cclose aria-label="Close">&times;</button>
-    <img class="cm-shot" id="cmShot" alt="">
-    <div class="cm-bd">
-      <div class="cm-sect" id="cmSect"></div>
-      <h3 id="cmTitle"></h3>
-      <p class="cm-client" id="cmClient"></p>
-      <h5 id="cmProblemH">The problem</h5>
-      <p class="cm-p" id="cmProblem"></p>
-      <h5 id="cmBuiltH">What we built</h5>
-      <ul class="cm-list" id="cmBuilt"></ul>
-      <div class="cm-stats" id="cmStats"></div>
-      <div class="cm-proof" id="cmProof"></div>
-      <div class="cm-foot">
-        <a class="pill pill-primary" id="cmCta" href="contact.html?topic=brainstorm">Talk to us about work like this <span class="arw">&#8594;</span></a>
-      </div>
-      <p id="cmScale" style="margin:20px 0 0;font-size:.84rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px"></p>
-    </div>
-  </div>
-</div>
-
-<script>
-(function(){
-  var D={"tri": {"sect": "Livelihoods", "title": "Transform Rural India", "client": "A technology partnership, 74 engagements deep", "img": "https://images.unsplash.com/photo-1609252509229-364936a1d1a2?q=80&w=900&auto=format&fit=crop", "shot": false, "problem": "Our deepest client relationship. A national organisation working on village-level transformation needed data systems that could keep pace across every programme vertical, and a state livelihoods mission needed its payment approvals off paper.", "built": ["mGrant deployed across all programme verticals for project and donor management", "mForm digitising payment approvals for the UP State Rural Livelihood Mission", "Data systems supporting village-level transformation work"], "stats": [["74", "engagements and counting"], ["Pan-India", "organisational footprint"], ["All verticals", "on one system"]], "scale": "Pan-India &middot; 74 engagements and counting", "tags": ["74 engagements", "UP SRLM payments", "Every vertical on mGrant"], "type": "case"}, "orgperf": {"sect": "Programme Mgmt &amp; MEL", "title": "Organisation Performance Dashboard", "client": "For an award-winning girls'-education non-profit working across 20,000+ villages", "img": "assets/img/cases/case-orgperf.jpg", "shot": true, "problem": "Leadership wanted one comprehensive view spanning financial performance, programme progress and impact. What they had was three separate reporting streams that never quite reconciled.", "built": ["An integrated performance dashboard bringing finance, operations and impact together", "Org-wide KPIs in a single leadership decision view", "Drill-down from organisation to geography"], "stats": [["20,000+", "villages of operation"], ["Finance + impact", "in one view"], ["Org-wide", "leadership KPIs"]], "scale": "20,000+ villages &middot; organisation-wide", "tags": ["20,000+ villages", "Finance + impact in one view", "Leadership KPIs"], "type": "case"}};
-  var m=document.getElementById('caseModal'); if(!m)return;
-  function el(id){return document.getElementById(id);}
-  function open(id){
-    var c=D[id]; if(!c)return;
-    var sol=c.type==='solution';
-    el('cmSect').textContent=(c.sect||'').replace(/&amp;/g,'&');
-    el('cmTitle').innerHTML=c.title;
-    var s2=el('cmShot');
-    if(c.img){s2.src=c.img;s2.alt=c.shot?'A screen from the system we built':'';s2.style.display='block';s2.classList.toggle('is-shot',!!c.shot);}
-    else{s2.style.display='none';}
-    el('cmClient').innerHTML=sol?('<span class="cm-badge">'+c.client+'</span>'):c.client;
-    el('cmProblemH').textContent=sol?'What it does':'The problem';
-    el('cmProblem').innerHTML=sol?c.full:c.problem;
-    var bh=el('cmBuiltH'), bl=el('cmBuilt');
-    if(sol){
-      bh.style.display=c.chips.length?'block':'none'; bh.textContent='What you get';
-      bl.innerHTML=c.chips.map(function(b){return '<li>'+b+'</li>';}).join('');
-    }else{
-      bh.style.display='block'; bh.textContent='What we built';
-      bl.innerHTML=c.built.map(function(b){return '<li>'+b+'</li>';}).join('');
-    }
-    var st=el('cmStats');
-    if(sol){st.style.display='none';}
-    else{st.style.display='grid';st.innerHTML=c.stats.map(function(t){return '<div><b>'+t[0]+'</b><span>'+t[1]+'</span></div>';}).join('');}
-    var pf=el('cmProof'), bits=[];
-    if(sol){
-      if(c.proofstat)bits.push('<b>Running today:</b> '+c.proofstat);
-      if(c.proof)bits.push('<b>Proven in:</b> <a class="tlink" href="our-work.html?case='+c.proof[0]+'">'+c.proof[1]+' &#8594;</a>');
-      if(c.url)bits.push('<a class="tlink" href="'+c.url+'" target="_blank" rel="noopener">Visit the product site &#8594;</a>');
-    }
-    pf.innerHTML=bits.join('<br>'); pf.style.display=bits.length?'block':'none';
-    el('cmScale').innerHTML=sol?'':('<b style="color:var(--ink);font-weight:600">Scale:</b> '+c.scale);
-    el('cmScale').style.display=sol?'none':'block';
-    el('cmCta').href='contact.html?topic=brainstorm&ref='+id;
-    m.classList.add('open'); document.body.style.overflow='hidden';
-    m.querySelector('.close').focus();
-  }
-  function close(){m.classList.remove('open');document.body.style.overflow='';}
-  Array.prototype.forEach.call(document.querySelectorAll('.ccard'),function(c){
-    c.addEventListener('click',function(){open(c.getAttribute('data-case'));});
-  });
-  Array.prototype.forEach.call(m.querySelectorAll('[data-cclose]'),function(b){b.addEventListener('click',close);});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.classList.contains('open'))close();});
-})();
-</script>
 
 <!-- FOOTER -->
 <footer><div class="wrap">
@@ -543,8 +444,8 @@ window.DHWANI_FORMS = {
         <a href="community.html">Community</a>
       </div>
     </div>
-    <div class="fcol"><h5>Products</h5><ul><li><a href="mgrant-donors.html">mGrant for Donors</a></li><li><a href="mgrant-nonprofits.html">mGrant for Nonprofits</a></li><li><a href="mform.html">mForm</a></li><li><a href="anumati.html">Anumati (DPDP)</a></li><li><a href="radar.html">Radar</a></li></ul><h5>Who we serve</h5><ul><li><a href="for-donors.html">Donors &amp; CSRs</a></li><li><a href="for-nonprofits.html">Nonprofits</a></li><li><a href="for-government.html">Government</a></li><li><a href="for-think-tanks.html">Think Tanks &amp; Consultancies</a></li></ul></div>
-    <div class="fcol"><h5>Systems</h5><ul><li><a href="programme-mis.html">Programme MIS</a></li><li><a href="impact-dashboards.html">Impact Dashboards</a></li><li><a href="grant-management.html">Grant Management</a></li><li><a href="donor-management.html">Donor Management</a></li><li><a href="field-data-apps.html">Field Data Apps</a></li><li><a href="back-office-it.html">Back-office IT</a></li><li><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></li></ul></div>
+    <div class="fcol"><h5>Products</h5><ul><li><a href="mgrant-donors.html">mGrant for Donors</a></li><li><a href="mgrant-nonprofits.html">mGrant for Nonprofits</a></li><li><a href="mform.html">mForm</a></li><li><a href="anumati.html">Anumati (DPDP)</a></li><li><a href="radar.html">Radar</a></li></ul><h5>Who we serve</h5><ul><li><a href="for-donors.html">Donors &amp; CSRs</a></li><li><a href="for-nonprofits.html">Nonprofits</a></li><li><a href="for-government.html">Government</a></li><li><a href="for-think-tanks.html">Think Tanks &amp; Consultancies</a><a href="for-inclusive-businesses.html">Inclusive Businesses</a></li></ul></div>
+    <div class="fcol"><h5>Systems</h5><ul><li><a href="programme-mis.html">Programme MIS</a></li><li><a href="impact-dashboards.html">Impact Dashboards</a></li><li><a href="mgrant-donors.html">Grant Management</a></li><li><a href="mgrant-nonprofits.html">Donor Management</a></li><li><a href="mform.html">Field Data Apps</a></li><li><a href="back-office-it.html">Back-office IT</a></li><li><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></li></ul></div>
     <div class="fcol"><h5>Consulting</h5><ul><li><a href="dpdp-act-readiness.html">DPDP Act Readiness</a></li><li><a href="cloud-optimisation.html">CloudSahayak</a></li><li><a href="ai-for-impact.html">AI for Impact</a></li><li><a href="digital-transformation.html">Digital Transformation</a></li><li><a href="programme-management.html">Programme Management Support</a></li></ul><h5>Resources</h5><ul><li><a href="our-work.html">Our work</a></li><li><a href="solutions.html">Solutions</a></li><li><a href="resources.html#toolkits">Toolkits</a></li><li><a href="resources.html#insights">Insights</a></li><li><a href="resources.html#newsletter">Newsletters</a></li></ul></div>
     <div class="fcol"><h5>By sector</h5><ul class="fsectors"><li><a href="our-work.html?sector=healthcare">Healthcare</a></li><li><a href="our-work.html?sector=agriculture">Agriculture &amp; Livelihoods</a></li><li><a href="our-work.html?sector=education">Education &amp; Skilling</a></li><li><a href="our-work.html?sector=financial-inclusion">Financial Inclusion</a></li><li><a href="our-work.html?sector=governance">Governance</a></li><li><a href="our-work.html?sector=climate">Climate &amp; Environment</a></li><li><a href="our-work.html?sector=entrepreneurship">Entrepreneurship</a></li><li><a href="our-work.html?sector=mel">Programme Mgmt &amp; MEL</a></li><li><a href="our-work.html?sector=digital-ai">Digital &amp; AI</a></li><li><a href="our-work.html">All sectors &#8594;</a></li></ul></div>
     <div class="fcol"><h5>About us</h5><ul><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="careers.html">Careers</a></li><li><a href="life-at-dhwani.html">Life at Dhwani</a></li><li><a href="community.html">Community</a></li><li><a href="technology.html">Technology at Dhwani</a></li><li><a href="contact.html">Contact</a></li></ul></div>
@@ -566,10 +467,10 @@ function s(){var h=(document.querySelector('.ahero')||{}).offsetHeight||520;nav.
 var mb=document.getElementById('menuBtn');if(mb){mb.addEventListener('click',function(){nav.classList.toggle('open');});
 nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');});});}
   nav.querySelectorAll('.dd-toggle').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();b.parentElement.classList.toggle('open');});});
-var logos=['world-bank','unicef','who','undp','unesco','gates-foundation.svg','tata-trusts','tata-steel','mahindra','hdfc-bank','axis-bank-foundation','bajaj-finserv','reliance-foundation','godrej','sun-pharma','pratham','educate-girls','pradan','smile-foundation','save-the-children','helpage-india','azim-premji-philanthropic-initiatives','omidyar-network-india','dasra','give','nudge','central-square-foundation','transform-rural-india','jindal-stainless','lupin'];
+var logos=['pradan','pratham','educate-girls','smile-foundation','save-the-children','helpage-india','transform-rural-india','jan-sahas','akrsp','breakthrough','indus-action','villgro','swasti','vrutti','udyogini','bright-future','learning-links-foundation','language-and-learning-foundation','heifer-international','water-for-people','nafpo','access-development-services','janaagraha','centre-for-civil-society'];
 var LOGOH={"access-development-services.png": 68.7, "adani-foundation.png": 56.3, "akrsp.png": 65.2, "amazon.png": 41.1, "arvind.png": 41.9, "ashoka-university.png": 45.8, "axis-bank-foundation.png": 33.6, "azim-premji-philanthropic-initiatives.png": 48.8, "azim-premji-university.png": 50.5, "bajaj-finserv.png": 62.5, "bajaj.png": 73.6, "bigbasket.png": 78.0, "breakthrough.png": 62.8, "bridgespan.png": 52.8, "bright-future.png": 45.8, "cams.svg": 43.5, "central-square-foundation.png": 36.8, "centre-for-civil-society.png": 47.5, "chintu-gudiya-foundation.png": 36.1, "ciff.png": 35.1, "cms-social-impact.png": 36.9, "crisil-foundation.png": 49.7, "danone-nutricia.png": 65.3, "dasra.png": 70.7, "dell.png": 70.7, "deloitte.png": 31.3, "educate-girls.png": 69.2, "ey.png": 72.5, "forbes-marshall.png": 35.8, "gates-foundation.svg": 35.4, "gdi.png": 50.6, "give.png": 54.8, "giz.png": 37.8, "godrej.png": 49.3, "google.png": 41.4, "hdfc-bank.png": 76.2, "heifer-international.svg": 40.6, "helpage-india.png": 52.1, "icici-foundation.png": 33.4, "idh.png": 44.7, "ifmr.png": 46.8, "indus-action.png": 33.8, "intellecap.png": 43.0, "irma.png": 57.9, "isdm.png": 46.0, "jan-sahas.png": 70.7, "janaagraha.png": 33.4, "jindal-stainless.png": 36.7, "kotak-education-foundation.png": 37.2, "kpmg.png": 45.0, "kyndryl.png": 70.7, "language-and-learning-foundation.png": 70.7, "learning-links-foundation.png": 61.9, "lic-hfl.png": 49.9, "lupin.png": 78.0, "mahindra.png": 49.8, "microsave-consulting.png": 53.5, "nafpo.png": 35.2, "nasscom-foundation.png": 44.8, "nielsen.png": 41.6, "nrlm.png": 74.0, "nudge.png": 59.2, "omidyar-network-india.png": 36.7, "onestage.png": 70.7, "piramal-foundation.png": 48.3, "pradan.png": 41.9, "pratham.png": 70.7, "pwc.png": 62.1, "raintree-foundation.png": 69.9, "reliance-foundation.png": 43.0, "renew.png": 41.0, "sattva.png": 53.5, "save-the-children.png": 63.0, "sehgal-foundation.png": 37.2, "shiv-nadar-foundation.png": 34.6, "smile-foundation.png": 62.7, "sun-pharma.png": 61.8, "swasti.png": 36.6, "tata-steel.png": 26.0, "tata-strive.png": 35.8, "tata-trusts.png": 26.8, "tech-mahindra-foundation.png": 46.4, "terre-des-hommes.png": 29.7, "transform-rural-india.png": 38.2, "udyogini.png": 73.6, "undp.png": 78.0, "unesco.png": 59.8, "unicef.png": 64.4, "unilever.png": 74.1, "unitus-capital.png": 29.6, "vedanta-foundation.png": 43.8, "vijayavahini-charitable-foundation.png": 37.7, "villgro.png": 48.9, "vrutti.png": 49.8, "wadhwani-ai.png": 42.4, "water-for-people.png": 78.0, "welspun-foundation.svg": 66.6, "who.png": 71.6, "world-bank.png": 33.8, "world-resources-institute.png": 42.4, "yash-johar-foundation.png": 38.0, "yuwaah.png": 69.9};
 function build(id,a){var el=document.getElementById(id);if(!el)return;el.innerHTML=a.concat(a).map(function(n){var f=n.indexOf('.')>-1?n:n+'.png';var h=LOGOH[f]||32;return '<img src="assets/img/clients/'+f+'" alt="" style="height:'+h+'px">';}).join('');}
-build('row1',logos.slice(0,15));build('row2',logos.slice(15));})();
+build('row1',logos.slice(0,12));build('row2',logos.slice(12));})();
 </script>
 
 <!-- ===== DHWANI CHAT ASSISTANT ===== -->
@@ -650,7 +551,7 @@ build('row1',logos.slice(0,15));build('row2',logos.slice(15));})();
     {kw:['blog','insight','article','case stud'],
      a:"Our Insights section has real articles from the team, and Our Work has real project write-ups. <a href=\"resources.html#insights\">Read our Insights &#8594;</a>"},
     {kw:['build','system','offer','offering','what do you do','services'],
-     a:"We build systems (Programme MIS, Impact Dashboards, Grant &amp; Donor Management, Field Data Apps, Back-office IT, Monitoring &amp; Evaluation) and offer consulting (DPDP Act Readiness, CloudSahayak, AI for Impact, Digital Transformation, Programme Management Support). <a href=\"solutions.html\">See all solutions &#8594;</a>"},
+     a:"We build systems (Programme MIS, Impact Dashboards, Grant &amp; Donor Management, Field Data Apps, Back-office IT, Monitoring &amp; Evaluation) and offer consulting (DPDP Act Readiness, CloudSahayak, AI for Impact, Digital Transformation, programme management support). <a href=\"solutions.html\">See all solutions &#8594;</a>"},
     {kw:['who do you','serve','audience','donor','csr','ngo','government','multilateral','academic','research'],
      a:"We work with Donors &amp; CSRs, nonprofits, Government &amp; Multilaterals, and Think Tanks &amp; Consultancies teams. <a href=\"who-we-serve.html\">See who we serve &#8594;</a>"},
     {kw:['dpdp','consent','privacy law','2027','anumati'],
