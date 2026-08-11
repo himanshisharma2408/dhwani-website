@@ -95,13 +95,9 @@ em{font-style:italic}
 
 /* footer (shared) */
 
-.fbadges span{font-size:.66rem;font-weight:600;letter-spacing:.05em;color:var(--orange-soft);border:1px solid var(--line-d);border-radius:6px;padding:5px 9px}
-.fsoc a:hover{color:#fff}
 footer h5{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--orange-soft);margin-bottom:16px;font-weight:600;font-family:var(--sans)}
 footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88rem;color:var(--muted-d)}footer li a:hover{color:#fff}
 .frow2{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;gap:36px;margin-top:48px}
-
-.fnews p{font-size:.86rem;color:var(--muted-d);margin-bottom:14px}
 
 @media(max-width:900px){.cgrid{grid-template-columns:1fr 1fr}.cs-card{grid-template-columns:1fr}.cs-card .ph{min-height:240px}.fgrid,.frow2{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.wrap{padding:0 22px}#topnav .nav-in{padding:22px 22px}#topnav .logo{height:50px}
@@ -150,8 +146,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 #topnav .links a.n-active{color:#fff;font-weight:600}
 #topnav.solid .links a.n-active,#topnav.scrolled .links a.n-active{color:var(--maroon)}
 
-.fgrid .fgrid .fcontact .faddr{color:var(--muted-d);font-weight:400;display:inline-block;line-height:1.55;margin-bottom:6px}
-.fcontact .faddr:hover{color:var(--orange-soft)}
+.fgrid .fgrid 
 
 /* tile interaction */
 .ocard{position:relative;transition:background .2s,transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s}
@@ -220,7 +215,6 @@ a.rcard:hover .tlink .arw{transform:translateX(5px)}
 .scard:hover .ic,.wcard:hover .ph,a.rcard:hover .ph,.ccard:hover .ph,
 .pcard:hover .av img,.scard:hover .tlink .arw,.wcard:hover .meta .more,
 a.rcard:hover .tlink .arw{transform:none}}
-/* ------------------------------------------------------------------------- */
 
 /* footer, one row */
 
@@ -268,39 +262,45 @@ font-family:var(--sans);font-size:.83rem;background:rgba(255,255,255,.05);color:
 @media(max-width:520px){}
 
 /* ---- footer, defined once ---------------------------------------------- */
-footer{background:var(--ink);color:var(--muted-d);border-radius:28px;margin:16px;padding:40px 0 18px}
+
+@media(max-width:1080px){}
+@media(max-width:760px){}
+@media(max-width:520px){}
+
+/* ---- footer, defined once ---------------------------------------------- */
+footer{background:var(--ink);color:var(--muted-d);border-radius:28px;margin:16px;padding:28px 0 14px}
 footer .wrap{max-width:none;padding:0 24px}
-.fgrid{display:grid;grid-template-columns:1.35fr 1fr 1fr 1.05fr .95fr;gap:30px;align-items:start}
+.fstrip{display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap;
+padding-bottom:18px;margin-bottom:22px;border-bottom:1px solid var(--line-d)}
+.fstrip .fst h5{margin-bottom:4px}
+.fstrip .fst p{font-size:.84rem;margin:0;color:var(--muted-d)}
+.fsform{display:flex;gap:8px;flex-wrap:wrap}
+.fsform input{width:260px;border:1px solid var(--line-d);border-radius:9px;padding:10px 13px;
+font-family:var(--sans);font-size:.84rem;background:rgba(255,255,255,.05);color:#fff}
+.fsform input::placeholder{color:rgba(255,255,255,.4)}
+.fsform .pill{padding:10px 18px;font-size:.84rem}
+.fgrid{display:grid;grid-template-columns:1.15fr 1fr 1fr 1.05fr .92fr .82fr;gap:28px;align-items:start}
 .fgrid ul,.fgrid li{list-style:none;margin:0;padding:0}
-.fgrid li{margin-bottom:5px;line-height:1.35}
+.fgrid li{margin-bottom:4px;line-height:1.32}
 .fgrid li a{font-size:.84rem}
 .fcol h5{margin-bottom:9px;letter-spacing:.13em}
-.fcol h5+ul+h5{margin-top:26px}
-
-@media(max-width:1080px){.fgrid{grid-template-columns:1.2fr 1fr 1fr}}
-@media(max-width:760px){.fgrid{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.fgrid{grid-template-columns:1fr}}
-/* ------------------------------------------------------------------------ */
-
-.fbrand{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
-.fbrand .flogo{height:32px;width:auto;margin:0}
-.fbrand .tag{font-size:.84rem;max-width:265px;margin:0;line-height:1.6}
-.fnews{margin:0;background:none;border:0;padding:0}
-.fnews h5{margin-bottom:9px}
-.fnews form{display:flex;gap:7px;flex-wrap:wrap}
-.fnews input{flex:1;min-width:150px;border:1px solid var(--line-d);border-radius:9px;padding:9px 12px;
-font-family:var(--sans);font-size:.83rem;background:rgba(255,255,255,.05);color:#fff}
-.fnews input::placeholder{color:rgba(255,255,255,.4)}
-.fnews .pill{padding:9px 15px;font-size:.83rem}
-.fcontact{font-size:.83rem;line-height:1.85;margin:0;color:var(--muted-d)}
+.fcol h5+ul+h5{margin-top:22px}
+.fbrand .flogo{height:32px;width:auto;margin:0 0 12px}
+.fbrand .tag{font-size:.84rem;max-width:230px;margin:0;line-height:1.6}
+.fcontact{font-size:.83rem;line-height:1.8;margin:0;color:var(--muted-d)}
 .fcontact a{color:var(--muted-d);border-bottom:1px solid transparent}
 .fcontact a:hover{color:#fff;border-bottom-color:rgba(255,255,255,.4)}
-.fsoc{display:flex;gap:18px;margin:0}
-.fsoc a{font-size:.83rem}
-.foot-bot{border-top:1px solid var(--line-d);margin-top:30px;padding-top:16px;display:flex;
-align-items:center;gap:18px;flex-wrap:wrap;font-size:.8rem;color:rgba(255,255,255,.45)}
+.fsoc{display:flex;gap:16px}
+.fsoc a{font-size:.8rem}
+.foot-bot{border-top:1px solid var(--line-d);margin-top:22px;padding-top:13px;display:flex;
+align-items:center;gap:20px;flex-wrap:wrap;font-size:.8rem;color:rgba(255,255,255,.45)}
 .foot-bot .fcopy{margin-right:auto}
 .foot-bot .fbadges{margin:0;display:flex;gap:7px}
+@media(max-width:1180px){.fgrid{grid-template-columns:1fr 1fr 1fr 1fr}}
+@media(max-width:760px){.fgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.fgrid{grid-template-columns:1fr}.fstrip{align-items:flex-start}}
+/* ------------------------------------------------------------------------ */
+.fbadges span{font-size:.63rem;font-weight:600;letter-spacing:.05em;color:var(--orange-soft);border:1px solid var(--line-d);border-radius:6px;padding:4px 8px}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -441,24 +441,27 @@ window.DHWANI_FORMS = {
 
 <!-- FOOTER -->
 <footer><div class="wrap">
+  <div class="fstrip">
+    <div class="fst"><h5>The Dhwani newsletter</h5><p>Practical tech-for-good, once a month.</p></div>
+    <form class="fsform" onsubmit="return false" data-pending="newsletter-provider">
+      <input type="email" placeholder="you@organisation.org" aria-label="Your work email">
+      <button class="pill pill-primary" type="submit">Subscribe</button>
+    </form>
+  </div>
   <div class="fgrid">
     <div class="fbrand">
       <img class="flogo" src="assets/img/dhwani-logo-all-white.png" alt="Dhwani RIS">
       <p class="tag">Technology the impact sector runs on. Built by the sector, for the sector, since 2015.</p>
-      <div class="fnews"><h5>The Dhwani newsletter</h5>
-        <form onsubmit="return false" data-pending="newsletter-provider">
-          <input type="email" placeholder="you@organisation.org" aria-label="Your work email">
-          <button class="pill pill-primary" type="submit">Subscribe</button>
-        </form></div>
-      <p class="fcontact"><a class="faddr" href="https://maps.google.com/?q=Building+94,+Sector+44,+Gurugram,+Haryana+122002" target="_blank" rel="noopener">Building 94, Sector 44, Gurugram 122002</a><br><a href="tel:+919574655961">+91 95746 55961</a><br><a href="mailto:partnerships@dhwaniris.com">partnerships@dhwaniris.com</a></p>
-      <div class="fsoc"><a href="https://www.linkedin.com/company/14388289/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/dhwaniris" target="_blank" rel="noopener">Instagram</a><a href="community.html">Community</a></div>
     </div>
     <div class="fcol"><h5>Products</h5><ul><li><a href="mgrant-donors.html">mGrant for Donors</a></li><li><a href="mgrant-nonprofits.html">mGrant for Nonprofits</a></li><li><a href="mform.html">mForm</a></li><li><a href="anumati.html">Anumati (DPDP)</a></li><li><a href="radar.html">Radar</a></li></ul><h5>Who we serve</h5><ul><li><a href="for-donors.html">Donors &amp; CSRs</a></li><li><a href="for-nonprofits.html">Nonprofits</a></li><li><a href="for-government.html">Government</a></li><li><a href="for-think-tanks.html">Think Tanks &amp; Consultancies</a></li><li><a href="for-inclusive-businesses.html">Inclusive Businesses</a></li></ul></div>
     <div class="fcol"><h5>Systems</h5><ul><li><a href="programme-mis.html">Programme MIS</a></li><li><a href="impact-dashboards.html">Impact Dashboards</a></li><li><a href="mgrant-donors.html">Grant Management</a></li><li><a href="mgrant-nonprofits.html">Donor Management</a></li><li><a href="mform.html">Field Data Apps</a></li><li><a href="back-office-it.html">Back-office IT</a></li><li><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></li></ul><h5>Resources</h5><ul><li><a href="our-work.html">Our work</a></li><li><a href="solutions.html">Solutions</a></li><li><a href="resources.html#toolkits">Toolkits</a></li><li><a href="resources.html#insights">Insights</a></li><li><a href="resources.html#newsletter">Newsletters</a></li></ul></div>
     <div class="fcol"><h5>Consulting</h5><ul><li><a href="dpdp-act-readiness.html">DPDP Act Readiness</a></li><li><a href="cloud-optimisation.html">CloudSahayak</a></li><li><a href="ai-for-impact.html">AI for Impact</a></li><li><a href="digital-transformation.html">Digital Transformation</a></li><li><a href="programme-management.html">Programme Management Support</a></li></ul><h5>About us</h5><ul><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="careers.html">Careers</a></li><li><a href="life-at-dhwani.html">Life at Dhwani</a></li><li><a href="community.html">Community</a></li><li><a href="technology.html">Technology at Dhwani</a></li><li><a href="contact.html">Contact</a></li></ul></div>
     <div class="fcol"><h5>By sector</h5><ul><li><a href="our-work.html?sector=healthcare">Healthcare</a></li><li><a href="our-work.html?sector=agriculture">Agriculture &amp; Livelihoods</a></li><li><a href="our-work.html?sector=education">Education &amp; Skilling</a></li><li><a href="our-work.html?sector=financial-inclusion">Financial Inclusion</a></li><li><a href="our-work.html?sector=governance">Governance</a></li><li><a href="our-work.html?sector=climate">Climate &amp; Environment</a></li><li><a href="our-work.html?sector=entrepreneurship">Entrepreneurship</a></li><li><a href="our-work.html?sector=mel">Programme Mgmt &amp; MEL</a></li><li><a href="our-work.html?sector=digital-ai">Digital &amp; AI</a></li><li><a href="our-work.html">All sectors &#8594;</a></li></ul></div>
+    <div class="fcol"><h5>Contact</h5>
+      <p class="fcontact"><a class="faddr" href="https://maps.google.com/?q=Building+94,+Sector+44,+Gurugram,+Haryana+122002" target="_blank" rel="noopener">Building 94, Sector 44,<br>Gurugram 122002</a><br><a href="tel:+919574655961">+91 95746 55961</a><br><a href="mailto:partnerships@dhwaniris.com">partnerships@dhwaniris.com</a></p>
+    </div>
   </div>
-  <div class="foot-bot"><div class="fbadges"><span>ISO 27001</span><span>DPDP</span><span>GDPR</span></div><span class="fcopy">&copy; 2026 Dhwani Rural Information Systems</span><span><a href="privacy.html">Privacy</a> &middot; <a href="sitemap.html">Sitemap</a></span></div>
+  <div class="foot-bot"><div class="fbadges"><span>ISO 27001</span><span>DPDP</span><span>GDPR</span></div><span class="fcopy">&copy; 2026 Dhwani Rural Information Systems</span><div class="fsoc"><a href="https://www.linkedin.com/company/14388289/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/dhwaniris" target="_blank" rel="noopener">Instagram</a><a href="community.html">Community</a></div><span><a href="privacy.html">Privacy</a> &middot; <a href="sitemap.html">Sitemap</a></span></div>
 </div></footer>
 
 <script>
