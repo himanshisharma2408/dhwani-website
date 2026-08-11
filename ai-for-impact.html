@@ -97,7 +97,7 @@ em{font-style:italic}
 
 /* cta */
 .cta{position:relative;border-radius:28px;margin:0 16px;text-align:center;overflow:hidden;color:#fff;background:linear-gradient(rgba(18,12,11,.84),rgba(18,12,11,.9)),url('https://images.unsplash.com/photo-1707721690544-781fe6ede937?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat,var(--ink)}
-.cta .in{position:relative;z-index:2;padding:62px 0}
+.cta .in{position:relative;z-index:2;padding:44px 0}
 .cta h2{font-size:clamp(2.1rem,4.2vw,3.1rem);color:#fff;margin-bottom:26px;max-width:18ch;margin-inline:auto}
 
 /* footer (shared) */
@@ -289,27 +289,29 @@ a.ocard:after{transform:none}}
 
 
 /* footer, one row */
-footer{background:var(--ink);color:var(--muted-d);border-radius:28px;margin:16px;padding:40px 0 22px}
-.fgrid{display:grid;grid-template-columns:1.45fr repeat(5,1fr) .95fr;gap:18px 22px;align-items:start}
-.fcol h5{margin-bottom:8px}
-.fcol h5:not(:first-child){margin-top:18px}
+footer{background:var(--ink);color:var(--muted-d);border-radius:28px;margin:16px;padding:32px 0 16px}
+.fgrid{display:grid;grid-template-columns:1.15fr 2.85fr;gap:32px;align-items:start}
+.fnav{columns:4;column-gap:24px}
+.fcol{break-inside:avoid;margin-bottom:13px}
+.fcol h5{margin-bottom:7px;letter-spacing:.13em}
+.fcol h5:not(:first-child){margin-top:14px}
 .fgrid ul,.fgrid li{list-style:none;margin:0;padding:0}
-.fgrid li{margin-bottom:4px;line-height:1.3}
-.fgrid li a{font-size:.83rem}
+.fgrid li{margin-bottom:3px;line-height:1.28}
+.fgrid li a{font-size:.82rem}
 .fgrid .fsectors{columns:1;column-gap:0}
-.fbrand .flogo{height:34px;margin-bottom:12px}
-.fbrand .tag{font-size:.84rem;max-width:250px;margin-bottom:11px}
-.fnews{margin:14px 0 12px;background:none;border:0;padding:0}
+.fbrand .flogo{height:30px;margin-bottom:9px}
+.fbrand .tag{font-size:.82rem;max-width:250px;margin-bottom:9px;line-height:1.5}
+.fnews{margin:10px 0 9px;background:none;border:0;padding:0}
 .fnews h5{margin-bottom:8px}
 .fnews form{display:flex;gap:7px;flex-wrap:wrap}
 .fnews input{flex:1;min-width:150px;border:1px solid var(--line-d);border-radius:9px;padding:9px 11px;
 font-family:var(--sans);font-size:.83rem;background:rgba(255,255,255,.05);color:#fff}
 .fnews .pill{padding:9px 15px;font-size:.83rem}
 .fcontact{font-size:.84rem;line-height:1.6;margin-top:0}
-.foot-bot{border-top:1px solid var(--line-d);margin-top:24px;padding-top:15px}
-@media(max-width:1080px){.fgrid{grid-template-columns:1.4fr 1fr 1fr 1fr}}
-@media(max-width:720px){.fgrid{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.fgrid{grid-template-columns:1fr}}
+.foot-bot{border-top:1px solid var(--line-d);margin-top:18px;padding-top:12px;font-size:.79rem}
+@media(max-width:1080px){.fgrid{grid-template-columns:1fr}.fnav{columns:3}}
+@media(max-width:720px){.fnav{columns:2}}
+@media(max-width:480px){.fnav{columns:1}}
 
 /* breadcrumb, below the hero */
 .crumbbar{background:var(--cream)}
@@ -320,6 +322,13 @@ color:var(--muted);background:none;border:0;padding:0;margin:0;backdrop-filter:n
 .crumbbar .crumb a:hover{border-bottom-color:var(--maroon)}
 .crumbbar .crumb .sep{opacity:.5;color:var(--muted)}
 .crumbbar .crumb .here{color:var(--ink);font-weight:600}
+
+.fsectors{margin-top:20px;padding-top:14px;border-top:1px solid var(--line-d)}
+.fsectors h5{margin-bottom:8px;letter-spacing:.13em}
+.fsecrow{display:flex;flex-wrap:wrap;gap:6px 7px}
+.fsecrow a{font-size:.79rem;background:rgba(255,255,255,.06);border-radius:999px;padding:4px 11px;
+border:1px solid transparent;transition:background .18s,border-color .18s}
+.fsecrow a:hover{background:rgba(255,255,255,.13);border-color:var(--line-d)}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -583,10 +592,10 @@ window.DHWANI_FORMS = {
         <a href="community.html">Community</a>
       </div>
     </div>
-    <div class="fcol"><h5>Products</h5><ul><li><a href="mgrant-donors.html">mGrant for Donors</a></li><li><a href="mgrant-nonprofits.html">mGrant for Nonprofits</a></li><li><a href="mform.html">mForm</a></li><li><a href="anumati.html">Anumati (DPDP)</a></li><li><a href="radar.html">Radar</a></li></ul><h5>Who we serve</h5><ul><li><a href="for-donors.html">Donors &amp; CSRs</a></li><li><a href="for-nonprofits.html">Nonprofits</a></li><li><a href="for-government.html">Government</a></li><li><a href="for-think-tanks.html">Think Tanks &amp; Consultancies</a><a href="for-inclusive-businesses.html">Inclusive Businesses</a></li></ul></div>
+    <div class="fnav"><div class="fcol"><h5>Products</h5><ul><li><a href="mgrant-donors.html">mGrant for Donors</a></li><li><a href="mgrant-nonprofits.html">mGrant for Nonprofits</a></li><li><a href="mform.html">mForm</a></li><li><a href="anumati.html">Anumati (DPDP)</a></li><li><a href="radar.html">Radar</a></li></ul><h5>Who we serve</h5><ul><li><a href="for-donors.html">Donors &amp; CSRs</a></li><li><a href="for-nonprofits.html">Nonprofits</a></li><li><a href="for-government.html">Government</a></li><li><a href="for-think-tanks.html">Think Tanks &amp; Consultancies</a></li><li><a href="for-inclusive-businesses.html">Inclusive Businesses</a></li></ul></div>
     <div class="fcol"><h5>Systems</h5><ul><li><a href="programme-mis.html">Programme MIS</a></li><li><a href="impact-dashboards.html">Impact Dashboards</a></li><li><a href="mgrant-donors.html">Grant Management</a></li><li><a href="mgrant-nonprofits.html">Donor Management</a></li><li><a href="mform.html">Field Data Apps</a></li><li><a href="back-office-it.html">Back-office IT</a></li><li><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></li></ul></div>
     <div class="fcol"><h5>Consulting</h5><ul><li><a href="dpdp-act-readiness.html">DPDP Act Readiness</a></li><li><a href="cloud-optimisation.html">CloudSahayak</a></li><li><a href="ai-for-impact.html">AI for Impact</a></li><li><a href="digital-transformation.html">Digital Transformation</a></li><li><a href="programme-management.html">Programme Management Support</a></li></ul><h5>Resources</h5><ul><li><a href="our-work.html">Our work</a></li><li><a href="solutions.html">Solutions</a></li><li><a href="resources.html#toolkits">Toolkits</a></li><li><a href="resources.html#insights">Insights</a></li><li><a href="resources.html#newsletter">Newsletters</a></li></ul></div>
-    <div class="fcol"><h5>By sector</h5><ul class="fsectors"><li><a href="our-work.html?sector=healthcare">Healthcare</a></li><li><a href="our-work.html?sector=agriculture">Agriculture &amp; Livelihoods</a></li><li><a href="our-work.html?sector=education">Education &amp; Skilling</a></li><li><a href="our-work.html?sector=financial-inclusion">Financial Inclusion</a></li><li><a href="our-work.html?sector=governance">Governance</a></li><li><a href="our-work.html?sector=climate">Climate &amp; Environment</a></li><li><a href="our-work.html?sector=entrepreneurship">Entrepreneurship</a></li><li><a href="our-work.html?sector=mel">Programme Mgmt &amp; MEL</a></li><li><a href="our-work.html?sector=digital-ai">Digital &amp; AI</a></li><li><a href="our-work.html">All sectors &#8594;</a></li></ul></div>
+    
     <div class="fcol"><h5>About us</h5><ul><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="careers.html">Careers</a></li><li><a href="life-at-dhwani.html">Life at Dhwani</a></li><li><a href="community.html">Community</a></li><li><a href="technology.html">Technology at Dhwani</a></li><li><a href="contact.html">Contact</a></li></ul></div>
     <div class="fcol">
       <h5>Contact</h5>
@@ -597,6 +606,9 @@ window.DHWANI_FORMS = {
       </p>
     </div>
   </div>
+  </div>
+  <div class="fsectors"><h5>By sector</h5><div class="fsecrow"><a href="our-work.html?sector=healthcare">Healthcare</a><a href="our-work.html?sector=agriculture">Agriculture &amp; Livelihoods</a><a href="our-work.html?sector=education">Education &amp; Skilling</a><a href="our-work.html?sector=financial-inclusion">Financial Inclusion</a><a href="our-work.html?sector=governance">Governance</a><a href="our-work.html?sector=climate">Climate &amp; Environment</a><a href="our-work.html?sector=entrepreneurship">Entrepreneurship</a><a href="our-work.html?sector=mel">Programme Mgmt &amp; MEL</a><a href="our-work.html?sector=digital-ai">Digital &amp; AI</a><a href="our-work.html">All sectors &#8594;</a></div></div>
+  
   <div class="foot-bot"><span>© 2026 Dhwani Rural Information Systems</span><span><a href="privacy.html">Privacy</a> · <a href="sitemap.html">Sitemap</a></span></div>
 </div></footer>
 
