@@ -216,6 +216,7 @@ window.DHWANI_FORMS = {
   FORM_ENDPOINT: '',
   FORM_ENCODING: 'json',   /* 'form' for FormSubmit / Formspree / Zoho Forms */
   NEWSLETTER_ACTION: '',
+  NEWSLETTER_ARCHIVE: '',   /* Zoho Campaigns public archive, so new issues appear on their own */
   NOTIFY_EMAIL: 'partnerships@dhwaniris.com'
 };
 </script>
@@ -302,7 +303,7 @@ window.DHWANI_FORMS = {
   <div class="rolesnow">
     <a class="rolerow" href="https://people.dhwaniris.com/jobs" target="_blank" rel="noopener"><b>Project Manager</b><span>Gujarat &middot; Contract &middot; closes 31 Aug 2026</span></a>
     <a class="rolerow" href="https://people.dhwaniris.com/jobs" target="_blank" rel="noopener"><b>SDE-1 Frappe</b><span>Gurugram &middot; Full-time</span></a>
-    <p class="rolenote">Live roles are listed on our hiring board. <a class="tlink" href="https://people.dhwaniris.com/jobs" target="_blank" rel="noopener">See all openings <span class="arw">&#8594;</span></a></p>
+    <p class="rolenote">Roles are pulled from our hiring board. <a class="tlink" href="https://people.dhwaniris.com/jobs" target="_blank" rel="noopener">See all openings <span class="arw">&#8594;</span></a></p>
   </div>
 </div></section>
 
@@ -345,6 +346,35 @@ window.DHWANI_FORMS = {
   <h2>Want to build with us?</h2>
   <a class="pill pill-primary" href="mailto:careers@dhwaniris.com">Write to us <span class="arw">&#8594;</span></a>
 </div></div>
+
+<script>
+/* Live roles from the Frappe hiring board.
+   Needs guest read on the Job Opening doctype; until then the listed roles stand. */
+(function(){
+  var box=document.querySelector('.rolesnow'); if(!box)return;
+  var BOARD='https://people.dhwaniris.com';
+  var url=BOARD+'/api/resource/Job%20Opening?limit_page_length=20'
+        +'&filters=[["status","=","Open"]]'
+        +'&fields=["name","job_title","location","employment_type","closes_on","route"]';
+  fetch(url,{headers:{'Accept':'application/json'}})
+    .then(function(r){ if(!r.ok) throw 0; return r.json(); })
+    .then(function(d){
+      var rows=(d&&d.data)||[]; if(!rows.length) throw 0;
+      var html=rows.map(function(j){
+        var bits=[j.location,j.employment_type].filter(Boolean);
+        if(j.closes_on) bits.push('closes '+j.closes_on);
+        var href=BOARD+(j.route?'/'+j.route:'/jobs');
+        return '<a class="rolerow" href="'+href+'" target="_blank" rel="noopener">'
+             + '<b>'+(j.job_title||j.name)+'</b>'
+             + '<span>'+bits.join(' \u00b7 ')+'</span></a>';
+      }).join('');
+      box.querySelectorAll('.rolerow').forEach(function(el){el.remove();});
+      box.insertAdjacentHTML('afterbegin',html);
+      box.setAttribute('data-source','live');
+    })
+    .catch(function(){ box.setAttribute('data-source','listed'); });
+})();
+</script>
 
 <!-- FOOTER -->
 <footer><div class="wrap">

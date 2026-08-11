@@ -317,6 +317,15 @@ border:1px solid var(--line-d);border-radius:6px;padding:4px 8px}
 .fsoc a:hover{color:#fff;border-bottom-color:rgba(255,255,255,.4)}
 .foot-bot .flegal a{color:rgba(255,255,255,.55);border-bottom:1px solid transparent}
 .foot-bot .flegal a:hover{color:#fff;border-bottom-color:rgba(255,255,255,.4)}
+
+.nlsignup{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+background:var(--beige);border-radius:14px;padding:20px 24px;margin:26px 0 4px}
+.nlsignup .nlst{flex:1;min-width:250px}
+.nlsignup b{display:block;font-family:var(--serif);font-size:1.1rem;font-weight:500;margin-bottom:3px}
+.nlsignup span{font-size:.88rem;color:var(--muted);line-height:1.5}
+.nlsignup .fsform{margin:0;max-width:330px}
+.nlsignup input{border:1px solid var(--line);background:#fff;color:var(--ink)}
+.nlsignup input::placeholder{color:var(--muted)}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -332,6 +341,7 @@ window.DHWANI_FORMS = {
   FORM_ENDPOINT: '',
   FORM_ENCODING: 'json',   /* 'form' for FormSubmit / Formspree / Zoho Forms */
   NEWSLETTER_ACTION: '',
+  NEWSLETTER_ARCHIVE: '',   /* Zoho Campaigns public archive, so new issues appear on their own */
   NOTIFY_EMAIL: 'partnerships@dhwaniris.com'
 };
 </script>
@@ -460,6 +470,14 @@ window.DHWANI_FORMS = {
   </div>
   <div class="rgroup" id="newsletter">
     <p class="lede rlede">One email a month on what is actually working in sector tech: new tools, DPDP deadlines, what we are seeing in programmes. Every past issue is below. <a class="tlink" href="community.html#newsletter">Subscribe <span class="arw">&#8594;</span></a></p>
+  <div class="nlsignup">
+    <div class="nlst"><b>Get it in your inbox</b><span>Practical tech-for-good, once a month. Unsubscribe whenever.</span></div>
+    <form class="fsform" onsubmit="return false" data-pending="newsletter-provider">
+      <input type="email" placeholder="Your work email" aria-label="Your work email">
+      <button class="pill pill-primary" type="submit">Subscribe</button>
+    </form>
+  </div>
+
     <div class="nlgrid">
       <div class="nlyear">
         <h4>2025</h4>
