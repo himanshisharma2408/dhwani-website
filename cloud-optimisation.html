@@ -368,6 +368,13 @@ color:var(--muted);background:none;border:0;padding:0;margin:0;backdrop-filter:n
 .crumbbar .crumb a:hover{border-bottom-color:var(--maroon)}
 .crumbbar .crumb .sep{opacity:.5;color:var(--muted)}
 .crumbbar .crumb .here{color:var(--ink);font-weight:600}
+
+.sitelink{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+background:var(--beige);border-radius:16px;padding:clamp(22px,2.8vw,30px) clamp(24px,3.2vw,34px);margin-top:34px}
+.sitelink .slt{flex:1;min-width:260px}
+.sitelink h3{font-family:var(--serif);font-size:1.34rem;font-weight:500;margin-bottom:6px;line-height:1.25}
+.sitelink p{color:var(--muted);font-size:.94rem;line-height:1.55;margin:0}
+.sitelink .dom{font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -611,6 +618,14 @@ window.DHWANI_FORMS = {
   <div class="dlband">
     <div class="dlt"><h3>CloudSahayak overview</h3><p>The cloud and DevOps practice in full: services, the engagements behind the numbers on this page, and how we work.</p></div>
     <a class="pill pill-primary deck-get" data-deck="cloudsahayak" data-deckname="CloudSahayak overview" href="#">Get the deck <span class="arw">&#8594;</span></a>
+  </div>
+</div></section>
+
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="sitelink">
+    <div class="slt"><h3>Visit the CloudSahayak site</h3>
+      <p>The product site has the full detail: modules, screens and how a rollout runs. <span class="dom">cloudsahayak.dhwaniris.com</span></p></div>
+    <a class="pill pill-primary" href="https://cloudsahayak.dhwaniris.com" target="_blank" rel="noopener">Visit the CloudSahayak site <span class="arw">&#8594;</span></a>
   </div>
 </div></section>
 

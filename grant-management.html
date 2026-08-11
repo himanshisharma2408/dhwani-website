@@ -324,6 +324,21 @@ color:var(--muted);background:none;border:0;padding:0;margin:0;backdrop-filter:n
 .crumbbar .crumb a:hover{border-bottom-color:var(--maroon)}
 .crumbbar .crumb .sep{opacity:.5;color:var(--muted)}
 .crumbbar .crumb .here{color:var(--ink);font-weight:600}
+
+.handover{background:var(--beige);border-radius:18px;padding:clamp(26px,3.4vw,38px)}
+.handover h3{font-family:var(--serif);font-size:clamp(1.4rem,2.2vw,1.8rem);font-weight:500;margin-bottom:10px;line-height:1.25}
+.handover p{color:var(--muted);font-size:.98rem;line-height:1.65;max-width:78ch;margin-bottom:22px}
+.handover .hoa{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+
+.steps{margin-top:34px;border-top:1px solid var(--line)}
+.step{display:grid;grid-template-columns:58px 1fr;gap:24px;padding:26px 0;border-bottom:1px solid var(--line);align-items:start}
+.step .sn{font-family:var(--serif);font-size:1.5rem;font-weight:500;color:var(--maroon);line-height:1}
+.step h3{font-family:var(--serif);font-size:1.34rem;font-weight:500;line-height:1.25;margin-bottom:7px}
+.step p{color:var(--muted);font-size:.95rem;line-height:1.62;max-width:76ch}
+@media(max-width:820px){.step{grid-template-columns:42px 1fr;gap:16px}}
+
+.pill-outline{background:transparent;border:1.5px solid var(--ink);color:var(--ink)}
+.pill-outline:hover{background:var(--ink);color:#fff}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -411,6 +426,35 @@ window.DHWANI_FORMS = {
     <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7"/><path d="M12 3v12M8 7l4-4 4 4"/></svg></span><h5>Disbursement</h5><p>Release funds against milestones and tranches.</p></div>
     <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 8.5-8 11-4.6-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></span><h5>Utilisation</h5><p>Track spend against plan, flag issues early.</p></div>
     <div class="ocard"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 2 4-6"/></svg></span><h5>Reporting</h5><p>A live portfolio view for everyone involved.</p></div>
+  </div>
+</div></section>
+
+<section class="section" style="background:var(--paper)"><div class="wrap">
+  <h2 class="shead">What you get</h2>
+  <div class="cgrid">
+    <div class="ocard"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5h4a1.8 1.8 0 0 1 0 3.6h-3a1.8 1.8 0 0 0 0 3.6h4"/><h5>A call for proposals, run properly</h5><p>Intake forms, eligibility rules, scoring panels and an approval trail, so a decision can be explained months later.</p></div>
+    <div class="ocard"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/><h5>Sanction and disbursement</h5><p>Tranches against milestones, with the paperwork generated rather than assembled by hand.</p></div>
+    <div class="ocard"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/><h5>Statutory compliance</h5><p>CSR-2, annual action plans and asset geo-tagging for funders. FCRA, FC-4 and 80G receipts for grantees.</p></div>
+    <div class="ocard"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 2 4-6"/><h5>Utilisation you can see</h5><p>Spend against budget across the portfolio, before the audit rather than during it.</p></div>
+    <div class="ocard"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><h5>The grantee side too</h5><p>Partners submit reports in the same system, so nobody is emailing spreadsheets back and forth.</p></div>
+    <div class="ocard"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 0 1 0 10h-2"/><path d="M8 12h8"/><h5>Into your finance stack</h5><p>Tally, SAP, VOLAC and Oracle, so grant data and accounts agree.</p></div>
+  </div>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <h2 class="shead">How a rollout runs</h2>
+  <div class="steps">
+    <div class="step"><div class="sn">01</div><div><h3>Scope the lifecycle</h3><p>Which stages you actually run, who approves what, and which compliance regime applies.</p></div></div>
+    <div class="step"><div class="sn">02</div><div><h3>Configure, do not build</h3><p>mGrant is configured to your workflow. There is no bespoke system to maintain afterwards.</p></div></div>
+    <div class="step"><div class="sn">03</div><div><h3>Migrate what exists</h3><p>Live grants, partner records and history come across, so the system starts complete.</p></div></div>
+    <div class="step"><div class="sn">04</div><div><h3>Train and hand over</h3><p>Your team and your partners, on the parts each of them touches.</p></div></div>
+  </div>
+</div></section>
+
+<section class="section" style="background:var(--paper);padding-top:0"><div class="wrap">
+  <div class="handover">
+    <div class="hot"><h3>Grant management is mGrant</h3><p>We do not build a bespoke grant system for each organisation, because we do not need to. mGrant already runs the full lifecycle for over forty donor organisations and fifteen hundred grantees, and it comes in two editions: one for the funder giving the money, one for the nonprofit receiving it.</p></div>
+    <div class="hoa"><a class="pill pill-primary" href="mgrant-donors.html">mGrant for Donors <span class="arw">&#8594;</span></a><a class="pill pill-outline" href="mgrant-nonprofits.html">mGrant for Nonprofits</a><a class="tlink" href="https://mgrant.in" target="_blank" rel="noopener">mgrant.in <span class="arw">&#8594;</span></a></div>
   </div>
 </div></section>
 

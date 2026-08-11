@@ -246,6 +246,13 @@ color:var(--muted);background:none;border:0;padding:0;margin:0;backdrop-filter:n
 .crumbbar .crumb a:hover{border-bottom-color:var(--maroon)}
 .crumbbar .crumb .sep{opacity:.5;color:var(--muted)}
 .crumbbar .crumb .here{color:var(--ink);font-weight:600}
+
+.sitelink{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+background:var(--beige);border-radius:16px;padding:clamp(22px,2.8vw,30px) clamp(24px,3.2vw,34px);margin-top:34px}
+.sitelink .slt{flex:1;min-width:260px}
+.sitelink h3{font-family:var(--serif);font-size:1.34rem;font-weight:500;margin-bottom:6px;line-height:1.25}
+.sitelink p{color:var(--muted);font-size:.94rem;line-height:1.55;margin:0}
+.sitelink .dom{font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -319,7 +326,7 @@ window.DHWANI_FORMS = {
     <img class="prodid" src="assets/img/products/mgrant-wordmark-white.png" alt="mGrant logo">
     <h1>Grant management, built for <em>funders</em>.</h1>
     <p>For funders of every kind: corporate CSR, foundations, philanthropies, and multilateral programmes. Find partners, run due diligence, sanction and disburse, track impact, and meet every Ministry of Corporate Affairs (MCA) obligation on the way.</p>
-    <div class="btns"><a class="pill pill-primary" href="contact.html?topic=brainstorm">Book a session <span class="arw">&#8594;</span></a><a class="pill pill-dark deck-get" data-deck="mgrant-donors" data-deckname="mGrant for Donors" href="#">Download the deck</a></div>
+    <div class="btns"><a class="pill pill-primary" href="contact.html?topic=brainstorm">Book a session <span class="arw">&#8594;</span></a></div>
     <div class="hcreds">40+ donor organisations &middot; &#8377;5,000 Cr+ governed &middot; 1,500+ grantees</div>
   </div>
 </div>
@@ -341,7 +348,6 @@ window.DHWANI_FORMS = {
   <ul class="cm-list feats"><li>The full grant lifecycle, from discovery to closure</li><li>3,000+ pre-vetted nonprofits with 12A / 80G and FCRA checks</li><li>ERP-integrated fund flow: SAP, Tally, Oracle</li><li>CSR-2, Annual Action Plan, and asset geo-tagging</li><li>Complete MCA audit trail</li><li>Partner scoring and multi-stage approvals</li><li>Portfolio dashboards across every business unit</li><li>Field reporting from partner NGOs</li></ul>
   <div class="deckbar">
     <div><h3>mGrant for Donors</h3><p>The full walkthrough: modules, compliance rails and how it is rolled out.</p></div>
-    <a class="pill pill-primary deck-get" data-deck="mgrant-donors" data-deckname="mGrant for Donors" href="#">Download the deck <span class="arw">&#8594;</span></a>
   </div>
 </div></section>
 
