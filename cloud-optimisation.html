@@ -375,8 +375,8 @@ font-family:var(--sans);font-size:.83rem;background:rgba(255,255,255,.05);color:
 .foot-bot{border-top:1px solid var(--line-d);margin-top:22px;padding-top:13px;display:flex;
 align-items:center;gap:22px;flex-wrap:wrap;font-size:.8rem;color:rgba(255,255,255,.45)}
 .foot-bot .fbadges{margin:0;display:flex;gap:7px}
-.foot-bot .fsoc{display:flex;gap:16px;margin-left:auto}
-.foot-bot .fsoc a{font-size:.8rem}
+
+
 .fbadges span{font-size:.63rem;font-weight:600;letter-spacing:.05em;color:var(--orange-soft);
 border:1px solid var(--line-d);border-radius:6px;padding:4px 8px}
 @media(max-width:1180px){.fgrid{grid-template-columns:1.3fr 1fr 1fr}}
@@ -384,6 +384,9 @@ border:1px solid var(--line-d);border-radius:6px;padding:4px 8px}
 @media(max-width:520px){.fgrid{grid-template-columns:1fr}}
 .fbrand h5{margin-bottom:3px}
 .fnl{font-size:.8rem;margin:0 0 9px;color:var(--muted-d)}
+.fsoc{display:flex;gap:16px;margin:0 0 15px}
+.fsoc a{font-size:.82rem}
+.foot-bot .flegal{margin-left:auto}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -770,13 +773,14 @@ window.DHWANI_FORMS = {
     <div class="fbrand">
       <img class="flogo" src="assets/img/dhwani-logo-all-white.png" alt="Dhwani RIS">
       <p class="tag">Technology the impact sector runs on. Built by the sector, for the sector, since 2015.</p>
+      <div class="fsoc"><a href="https://www.linkedin.com/company/14388289/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/dhwaniris" target="_blank" rel="noopener">Instagram</a><a href="community.html">Community</a></div>
       <h5>Get the newsletter</h5>
       <p class="fnl">Practical tech-for-good, once a month.</p>
       <form class="fsform" onsubmit="return false" data-pending="newsletter-provider">
         <input type="email" placeholder="Your work email" aria-label="Your work email">
         <button class="pill pill-primary" type="submit">Subscribe</button>
       </form>
-      <p class="fcontact"><a href="tel:+919574655961">+91 95746 55961</a> &middot; <a href="mailto:partnerships@dhwaniris.com">partnerships@dhwaniris.com</a><br><a class="faddr" href="https://maps.google.com/?q=Building+94,+Sector+44,+Gurugram,+Haryana+122002" target="_blank" rel="noopener">Building 94, Sector 44, Gurugram 122002</a></p>
+      <p class="fcontact"><a href="tel:+919574655961">+91 95746 55961</a><br><a href="mailto:partnerships@dhwaniris.com">partnerships@dhwaniris.com</a><br><a class="faddr" href="https://maps.google.com/?q=Building+94,+Sector+44,+Gurugram,+Haryana+122002" target="_blank" rel="noopener">Building 94, Sector 44, Gurugram 122002</a></p>
     </div>
         
     <div class="fcol"><h5>Products</h5><ul><li><a href="mgrant-donors.html">mGrant for Donors</a></li><li><a href="mgrant-nonprofits.html">mGrant for Nonprofits</a></li><li><a href="mform.html">mForm</a></li><li><a href="anumati.html">Anumati (DPDP)</a></li><li><a href="radar.html">Radar</a></li></ul><h5>Who we serve</h5><ul><li><a href="for-donors.html">Donors &amp; CSRs</a></li><li><a href="for-nonprofits.html">Nonprofits</a></li><li><a href="for-government.html">Government</a></li><li><a href="for-think-tanks.html">Think Tanks &amp; Consultancies</a></li><li><a href="for-inclusive-businesses.html">Inclusive Businesses</a></li></ul></div>
@@ -784,7 +788,7 @@ window.DHWANI_FORMS = {
     <div class="fcol"><h5>Consulting</h5><ul><li><a href="dpdp-act-readiness.html">DPDP Act Readiness</a></li><li><a href="cloud-optimisation.html">CloudSahayak</a></li><li><a href="ai-for-impact.html">AI for Impact</a></li><li><a href="digital-transformation.html">Digital Transformation</a></li><li><a href="programme-management.html">Programme Management Support</a></li></ul><h5>By sector</h5><ul><li><a href="our-work.html?sector=agriculture">Agriculture &amp; Livelihoods</a></li><li><a href="our-work.html?sector=education">Education &amp; Skilling</a></li><li><a href="our-work.html?sector=healthcare">Healthcare</a></li><li><a href="our-work.html?sector=governance">Governance</a></li><li><a href="our-work.html?sector=financial-inclusion">Financial Inclusion</a></li><li><a href="our-work.html">All sectors &#8594;</a></li></ul></div>
     <div class="fcol"><h5>Company</h5><ul><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="careers.html">Careers</a></li><li><a href="life-at-dhwani.html">Life at Dhwani</a></li><li><a href="community.html">Community</a></li><li><a href="technology.html">Technology at Dhwani</a></li><li><a href="contact.html">Contact</a></li></ul></div>
   </div>
-  <div class="foot-bot"><span class="fcopy">&copy; 2026 Dhwani Rural Information Systems</span><div class="fbadges"><span>ISO 27001</span><span>DPDP</span><span>GDPR</span></div><div class="fsoc"><a href="https://www.linkedin.com/company/14388289/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/dhwaniris" target="_blank" rel="noopener">Instagram</a></div><span><a href="privacy.html">Privacy</a> &middot; <a href="sitemap.html">Sitemap</a></span></div>
+  <div class="foot-bot"><span class="fcopy">&copy; 2026 Dhwani Rural Information Systems</span><div class="fbadges"><span>ISO 27001</span><span>DPDP</span><span>GDPR</span></div><span class="flegal"><a href="privacy.html">Privacy</a> &middot; <a href="sitemap.html">Sitemap</a></span></div>
 </div></footer>
 
 <script>
