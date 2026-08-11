@@ -188,7 +188,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 @media(max-width:760px){}
 
 
-.ahero .prodid{display:block;height:clamp(38px,4.4vw,54px);width:auto;margin:14px 0 22px;filter:brightness(0) invert(1);opacity:.96}
+.ahero .prodid{display:block;height:clamp(38px,4.4vw,54px);width:auto;margin:14px 0 22px;opacity:.96}
 
 .fgrid .fsectors{columns:2;column-gap:22px}
 .fgrid .fsectors li{break-inside:avoid}
@@ -212,6 +212,16 @@ a.ocard.fill:after{color:#fff}
 .ocard:hover{transform:none}
 a.ocard:hover .ic{transform:none}
 a.ocard:after{transform:none}}
+
+/* breadcrumb, made findable */
+.ahero .crumb{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;letter-spacing:.02em;
+font-weight:500;color:rgba(255,255,255,.9);background:rgba(255,255,255,.12);
+border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:7px 15px;margin-bottom:20px;
+backdrop-filter:blur(6px)}
+.ahero .crumb a{color:rgba(255,255,255,.78);text-decoration:none}
+.ahero .crumb a:hover{color:#fff;text-decoration:underline}
+.ahero .crumb .sep{opacity:.55}
+.ahero .crumb .here{color:#fff}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -255,18 +265,18 @@ window.DHWANI_FORMS = {
         <a href="for-donors.html">For Donors &amp; CSRs</a>
         <a href="for-nonprofits.html">For Nonprofits</a>
         <a href="for-government.html">For Government &amp; Multilaterals</a>
-        <a href="for-academic.html">Academic &amp; Research</a>
+        <a href="for-think-tanks.html">Think Tanks &amp; Consultancies</a>
       </div>
     </div>
     <a href="our-work.html">Our work</a>
     <a href="resources.html">Resources</a>
-    <div class="has-dd">
-      <a href="about.html">Company <span class="caret">&#9662;</span></a>
-      <button class="dd-toggle" aria-label="Toggle Company submenu">&#9662;</button>
+    <a href="careers.html">Careers</a><div class="has-dd">
+      <a href="about.html">About us <span class="caret">&#9662;</span></a>
+      <button class="dd-toggle" aria-label="Toggle About us submenu">&#9662;</button>
       <div class="dd">
         <a href="about.html">About</a>
         <a href="team.html">Team</a>
-        <a href="careers.html">Careers</a>
+        
         <a href="community.html">Community</a>
         <a href="technology.html">Technology at Dhwani</a>
         <a href="contact.html">Contact</a>
@@ -282,8 +292,8 @@ window.DHWANI_FORMS = {
   <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1722573783625-eceb04251036?q=80&w=2000&auto=format&fit=crop')"></div>
   <div class="veil"></div>
   <div class="in">
-    <div class="crumb"><a href="solutions.html">Solutions</a> / mGrant for Donors</div>
-    <img class="prodid" src="assets/img/products/mgrant-wordmark.png" alt="mGrant logo">
+    <div class="crumb"><a href="solutions.html">Solutions</a><span class="sep">/</span><span class="here">mGrant for Donors</span></div>
+    <img class="prodid" src="assets/img/products/mgrant-wordmark-white.png" alt="mGrant logo">
     <h1>Grant management, built for <em>funders</em>.</h1>
     <p>For funders of every kind: corporate CSR, foundations, philanthropies, and multilateral programmes. Find partners, run due diligence, sanction and disburse, track impact, and meet every Ministry of Corporate Affairs (MCA) obligation on the way.</p>
     <div class="btns"><a class="pill pill-primary" href="contact.html?topic=brainstorm">Book a session <span class="arw">&#8594;</span></a><a class="pill pill-dark deck-get" data-deck="mgrant-donors" data-deckname="mGrant for Donors" href="#">Download the deck</a></div>
@@ -363,7 +373,7 @@ window.DHWANI_FORMS = {
       <p>Practical tech-for-good, once a month. No fluff.</p>
       <form onsubmit="return false" data-pending="newsletter-provider"><input type="email" placeholder="you@organisation.org"><button class="pill pill-primary" style="padding:11px 18px">Subscribe</button></form>
     </div>
-    <div><h5>Who we serve</h5><ul><li><a href="for-donors.html">Donors &amp; CSRs</a></li><li><a href="for-nonprofits.html">nonprofits</a></li><li><a href="for-government.html">Government</a></li><li><a href="for-academic.html">Academic &amp; Research</a></li></ul></div>
+    <div><h5>Who we serve</h5><ul><li><a href="for-donors.html">Donors &amp; CSRs</a></li><li><a href="for-nonprofits.html">nonprofits</a></li><li><a href="for-government.html">Government</a></li><li><a href="for-think-tanks.html">Think Tanks &amp; Consultancies</a></li></ul></div>
     <div><h5>Company</h5><ul><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="careers.html">Careers</a></li><li><a href="life-at-dhwani.html">Life at Dhwani</a></li><li><a href="community.html">Community</a></li><li><a href="technology.html">Technology at Dhwani</a></li><li><a href="contact.html">Contact</a></li></ul></div>
     <div><h5>Resources</h5><ul><li><a href="our-work.html">Our work</a></li><li><a href="solutions.html">Solutions</a></li><li><a href="resources.html#toolkits">Toolkits</a></li><li><a href="resources.html#decks">Decks</a></li><li><a href="resources.html#insights">Insights</a></li></ul><p class="fcontact"><a href="https://maps.google.com/?q=Building+94,+Sector+44,+Gurugram,+Haryana+122002" target="_blank" rel="noopener" class="faddr">Building 94, Sector 44,<br>Gurugram, Haryana 122002</a><br><a href="tel:+919574655961">+91 95746 55961</a><br><a href="mailto:partnerships@dhwaniris.com">partnerships@dhwaniris.com</a></p></div>
   </div>
@@ -462,7 +472,7 @@ build('row1',logos.slice(0,15));build('row2',logos.slice(15));})();
     {kw:['build','system','offer','offering','what do you do','services'],
      a:"We build systems (Programme MIS, Impact Dashboards, Grant &amp; Donor Management, Field Data Apps, Back-office IT, Monitoring &amp; Evaluation) and offer consulting (DPDP Act Readiness, CloudSahayak, AI for Impact, Digital Transformation, programme management support). <a href=\"solutions.html\">See all solutions &#8594;</a>"},
     {kw:['who do you','serve','audience','donor','csr','ngo','government','multilateral','academic','research'],
-     a:"We work with Donors &amp; CSRs, nonprofits, Government &amp; Multilaterals, and Academic &amp; Research teams. <a href=\"who-we-serve.html\">See who we serve &#8594;</a>"},
+     a:"We work with Donors &amp; CSRs, nonprofits, Government &amp; Multilaterals, and Think Tanks &amp; Consultancies teams. <a href=\"who-we-serve.html\">See who we serve &#8594;</a>"},
     {kw:['dpdp','consent','privacy law','2027','anumati'],
      a:"India's DPDP Act is fully enforced from 13 May 2027. We help organisations get ready in five stages, and our product Anumati handles consent management. <a href=\"dpdp-act-readiness.html\">Learn about DPDP Act Readiness &#8594;</a>"},
     {kw:['product','mgrant','mform','radar'],
