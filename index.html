@@ -343,9 +343,9 @@ a@media(max-width:980px){}
 @media(max-width:600px){}
 
 /* bento tiles */
-.cgrid{display:grid;gap:14px;grid-template-columns:repeat(3,1fr);
+.cgrid{display:grid;gap:14px;grid-template-columns:repeat(3,minmax(0,1fr));
 grid-auto-rows:minmax(198px,auto);grid-auto-flow:row dense}
-.ocard{display:flex;flex-direction:column;justify-content:flex-end;min-height:0;
+.ocard{display:flex;flex-direction:column;justify-content:flex-end;min-height:0;min-width:0;
 background:linear-gradient(152deg,#efe7db 0%,#ded0bd 100%);
 border-radius:16px;padding:clamp(22px,3vw,30px);transition:background .28s,transform .22s;
 position:relative;overflow:hidden;isolation:isolate}
@@ -372,51 +372,54 @@ a.ocard:hover>.pw{opacity:1;transform:translateY(-1px)}
 .cgrid>.ocard.fill:last-child:nth-child(11){grid-column:span 2}
 /* the Systems group has a wide tile, so its CTA needs only one column */
 .cgrid>.ocard.wide~.ocard.fill:last-child{grid-column:span 1}
-.ocard.fill,.cgrid>.ocard.fill{background:linear-gradient(145deg,#9c1826 0%,var(--maroon) 42%,#660e18 100%)}
+.ocard.fill,.cgrid>.ocard.fill{background:var(--maroon)}
 .ocard.fill .ic{background:rgba(255,255,255,.15);color:#fff}
 .ocard.fill h5{color:#fff}
 .ocard.fill p{color:rgba(255,255,255,.84)}
 .ocard.fill em{color:var(--orange-soft)}
 
 /* one tile in ink, where it holds a chart. Wide for the same reason. */
-.ocard.wide{grid-column:span 2;--ac:#eab588;
-background:linear-gradient(150deg,#241d1a 0%,#15100f 100%)}
-.ocard.wide h5{color:#fff}
-.ocard.wide em{color:var(--orange-soft)}
-.ocard.wide p{color:rgba(255,255,255,.72)}
-.ocard.wide .ic{background:rgba(255,255,255,.13);color:#fff}
+.ocard.wide{grid-column:span 2}
+/* .ink is the colour, .wide is only the span, so a focal tile need not be wide */
+.ocard.ink{background:linear-gradient(150deg,#241d1a 0%,#15100f 100%)}
+.ocard.ink h5{color:#fff}
+.ocard.ink em{color:rgba(255,255,255,.9)}
+.ocard.ink .fignum{color:#fff}
+.ocard.ink .figlbl{color:rgba(255,255,255,.6)}
+.ocard.ink p{color:rgba(255,255,255,.72)}
+.ocard.ink .ic{background:rgba(255,255,255,.13);color:#fff}
 .ocard.wide .txt{max-width:46%}
 .chart{position:absolute;right:0;bottom:0;left:34%;height:52%;z-index:1;pointer-events:none;
 -webkit-mask-image:linear-gradient(100deg,transparent 0,#000 22%);mask-image:linear-gradient(100deg,transparent 0,#000 22%)}
 .chart svg{width:100%;height:100%}
-.chart .ln{fill:none;stroke:var(--ac,var(--maroon));stroke-width:2;stroke-linecap:round;
+.chart .ln{fill:none;stroke:rgba(255,255,255,.5);stroke-width:2;stroke-linecap:round;
 stroke-dasharray:620;stroke-dashoffset:620;transition:stroke-dashoffset 1.5s cubic-bezier(.3,.8,.3,1)}
 .ocard.seen .chart .ln{stroke-dashoffset:0}
 .chart .gr{stroke:rgba(255,255,255,.13);stroke-width:1}
 /* a real aggregate, stated plainly */
-.fignum{font-family:var(--serif);font-size:clamp(1.9rem,3.4vw,2.6rem);font-weight:500;line-height:1;
+.fignum{overflow-wrap:break-word;font-family:var(--serif);font-size:clamp(1.9rem,3.4vw,2.6rem);font-weight:500;line-height:1;
 color:var(--ink);margin-bottom:4px;display:block}
+.ocard.ink:not(.wide) .fignum{font-size:clamp(1.5rem,2.4vw,1.9rem)}
 .figlbl{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);
 font-weight:600;display:block;margin-bottom:14px}
 .bars{position:absolute;left:52%;right:0;bottom:0;height:40%;z-index:1;display:flex;align-items:flex-end;
 gap:4px;padding:0 clamp(18px,2.4vw,24px) 0 0;pointer-events:none;opacity:.5}
-.bars i{flex:1;background:linear-gradient(180deg,var(--maroon),rgba(138,20,32,0));
-border-radius:3px 3px 0 0;opacity:.5}
+.bars i{flex:1;background:rgba(21,16,15,.13);border-radius:3px 3px 0 0}
 
 /* hover. The ink tile is excluded, so it can never repaint light under white text. */
-.ocard:not(.fill):not(.wide):hover{background:linear-gradient(152deg,#eae1d3 0%,#d5c5af 100%);transform:translateY(-3px)}
-.ocard.wide:hover{background:linear-gradient(150deg,#2e2521 0%,#1b1513 100%);transform:translateY(-3px)}
-.ocard.fill:hover{background:linear-gradient(145deg,#8d1522 0%,var(--maroon-2) 45%,#5a0c15 100%);transform:translateY(-3px)}
+.ocard:not(.fill):not(.ink):hover{background:linear-gradient(152deg,#eae1d3 0%,#d5c5af 100%);transform:translateY(-3px)}
+.ocard.ink:hover{background:linear-gradient(150deg,#2e2521 0%,#1b1513 100%);transform:translateY(-3px)}
+.ocard.fill:hover{background:var(--maroon-2);transform:translateY(-3px)}
 a.ocard:hover{box-shadow:0 12px 28px -16px rgba(21,16,15,.42)}
 a.ocard:hover .ic{background:rgba(138,20,32,.10);color:var(--maroon)}
-a.ocard.wide:hover .ic{background:rgba(255,255,255,.2);color:#fff}
+a.ocard.ink:hover .ic{background:rgba(255,255,255,.2);color:#fff}
 a.ocard.fill:hover .ic{background:rgba(255,255,255,.22);color:#fff}
 a.ocard:after{content:"\2192";position:absolute;right:clamp(18px,2.4vw,22px);bottom:clamp(18px,2.4vw,20px);
 z-index:3;font-size:1.02rem;color:var(--maroon);opacity:0;transform:translateX(-7px);
 transition:opacity .22s,transform .22s cubic-bezier(.2,.7,.3,1)}
 a.ocard:hover:after{opacity:1;transform:translateX(0)}
-a.ocard.fill:after,a.ocard.wide:after{color:#fff}
-@media(max-width:900px){.cgrid{grid-template-columns:1fr 1fr;grid-auto-rows:minmax(180px,auto)}
+a.ocard.fill:after,a.ocard.ink:after{color:#fff}
+@media(max-width:900px){.cgrid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:minmax(180px,auto)}
 .cgrid>.ocard.fill:last-child:nth-child(n){grid-column:auto}
 /* the CTA spans both columns when the tiles before it come to an even number */
 .cgrid>.ocard.fill:last-child:nth-child(5),
@@ -424,7 +427,10 @@ a.ocard.fill:after,a.ocard.wide:after{color:#fff}
 .cgrid>.ocard.wide~.ocard.fill:last-child{grid-column:span 2}
 .ocard.wide{grid-column:span 2}
 .ocard.wide .txt{max-width:70%}}
-@media(max-width:560px){.cgrid{grid-template-columns:1fr;grid-auto-rows:auto;gap:12px}
+@media(max-width:560px){.cgrid{grid-template-columns:minmax(0,1fr);grid-auto-rows:auto;gap:12px}
+/* the tablet rule below carries six class-level selectors, so the reset repeats it
+   rather than relying on a shorter one that would lose on specificity */
+.cgrid>.ocard.wide~.ocard.fill:last-child,
 .cgrid>.ocard.fill:last-child:nth-child(n),.ocard.wide{grid-column:auto}
 .ocard{min-height:0;padding:20px 22px}
 .ocard .ic{width:44px;height:44px;border-radius:11px;margin:0 0 12px}
@@ -548,7 +554,7 @@ window.DHWANI_FORMS = {
     <h4>Systems we build</h4>
     <div class="cgrid">
       <a class="ocard" href="programme-mis.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span><div class="txt"><h5>Programme MIS</h5><p>Run your <em>whole</em> programme in one system.</p></div></a>
-      <a class="ocard wide" href="impact-dashboards.html"><div class="chart"><svg viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true"><line class="gr" x1="0" y1="30" x2="400" y2="30"/><line class="gr" x1="0" y1="60" x2="400" y2="60"/><line class="gr" x1="0" y1="90" x2="400" y2="90"/><path class="ln" d="M0 96 L50 88 L100 72 L150 78 L200 54 L250 44 L300 50 L350 26 L400 18"/></svg></div><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 2 4-6"/></svg></span><div class="txt"><h5>Impact Dashboards</h5><p>Live results for funders and boards, from <em>national</em> to district.</p></div></a>
+      <a class="ocard ink wide" href="impact-dashboards.html"><div class="chart"><svg viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true"><line class="gr" x1="0" y1="30" x2="400" y2="30"/><line class="gr" x1="0" y1="60" x2="400" y2="60"/><line class="gr" x1="0" y1="90" x2="400" y2="90"/><path class="ln" d="M0 96 L50 88 L100 72 L150 78 L200 54 L250 44 L300 50 L350 26 L400 18"/></svg></div><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 2 4-6"/></svg></span><div class="txt"><h5>Impact Dashboards</h5><p>Live results for funders and boards, from <em>national</em> to district.</p></div></a>
       <a class="ocard" href="mgrant-donors.html"><div class="bars"><i style="height:22%"></i><i style="height:34%"></i><i style="height:28%"></i><i style="height:46%"></i><i style="height:40%"></i><i style="height:58%"></i><i style="height:52%"></i><i style="height:70%"></i><i style="height:64%"></i><i style="height:82%"></i><i style="height:76%"></i><i style="height:92%"></i></div><img class="pw" src="assets/img/products/mgrant-wordmark.png" alt="Runs on mGrant"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="M9 13h6M9 17h4"/></svg></span><div class="txt"><span class="fignum">&#8377;5,000 Cr+</span><span class="figlbl">Grants governed through mGrant</span><h5>Grant Management</h5><p>From the first RFP through to utilisation.</p></div></a>
       <a class="ocard" href="mgrant-nonprofits.html"><img class="pw" src="assets/img/products/mgrant-wordmark.png" alt="Runs on mGrant"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.5a3 3 0 0 1 0 5.5M21 20c0-2.6-1.6-4.9-4-5.8"/></svg></span><div class="txt"><h5>Donor Management</h5><p>Track every funder and commitment.</p></div></a>
       <a class="ocard" href="mform.html"><img class="pw" src="assets/img/products/mform-wordmark.png" alt="Runs on mForm"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span><div class="txt"><h5>Field Data Apps</h5><p><em>Offline-first</em> data from the field.</p></div></a>
@@ -561,7 +567,7 @@ window.DHWANI_FORMS = {
   <div class="grp">
     <h4>Consulting &amp; advisory</h4>
     <div class="cgrid">
-      <a class="ocard" href="dpdp-act-readiness.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 8.5-8 11-4.6-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></span><div class="txt"><h5>DPDP Act Readiness</h5><p>Readiness for the DPDP Act, stage by stage.</p></div></a>
+      <a class="ocard ink" href="dpdp-act-readiness.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 8.5-8 11-4.6-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></span><div class="txt"><span class="fignum">13 May 2027</span><span class="figlbl">DPDP Act, full enforcement</span><h5>DPDP Act Readiness</h5><p>Readiness for the DPDP Act, stage by stage.</p></div></a>
       <a class="ocard" href="cloud-optimisation.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 17a4 4 0 0 1 0-8 5.5 5.5 0 0 1 10.6-1.5A3.8 3.8 0 0 1 18 17z"/><path d="M12 12v5M9.5 14.5L12 12l2.5 2.5"/></svg></span><div class="txt"><h5>CloudSahayak</h5><p>Cloud cost, migration and security, on non-profit budgets.</p></div></a>
       <a class="ocard" href="ai-for-impact.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l1.8 4.4L18 8l-4.2 1.6L12 14l-1.8-4.4L6 8l4.2-1.6z"/><path d="M18 15l.9 2.1L21 18l-2.1.9L18 21l-.9-2.1L15 18l2.1-.9z"/></svg></span><div class="txt"><h5>AI for Impact</h5><p>AI applied where it removes real work.</p></div></a>
       <a class="ocard" href="digital-transformation.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20L20 4M9 4h11v11"/></svg></span><div class="txt"><h5>Digital Transformation</h5><p>A roadmap, then the build.</p></div></a>
