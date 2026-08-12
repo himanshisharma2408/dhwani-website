@@ -1,2 +1,5 @@
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /site-structure.html
+
+Sitemap: https://www.dhwaniris.com/sitemap.xml

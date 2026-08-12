@@ -4,6 +4,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Site structure (internal) | Dhwani RIS</title>
+<meta name="description" content="Internal index of every page on the site.">
+<link rel="canonical" href="https://www.dhwaniris.com/site-structure.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dhwani RIS">
+<meta property="og:title" content="Site structure (internal) | Dhwani RIS">
+<meta property="og:description" content="Internal index of every page on the site.">
+<meta property="og:url" content="https://www.dhwaniris.com/site-structure.html">
+<meta property="og:image" content="https://www.dhwaniris.com/assets/img/og-cover.png">
+<meta property="og:image:alt" content="Dhwani RIS, technology the impact sector runs on">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Site structure (internal) | Dhwani RIS">
+<meta name="twitter:description" content="Internal index of every page on the site.">
+<meta name="twitter:image" content="https://www.dhwaniris.com/assets/img/og-cover.png">
+<meta name="theme-color" content="#15100f">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
@@ -237,6 +253,7 @@ window.DHWANI_FORMS = {
   FORM_ENDPOINT: '',
   FORM_ENCODING: 'json',   /* 'form' for FormSubmit / Formspree / Zoho Forms */
   NEWSLETTER_ACTION: '',
+  NEWSLETTER_FIELD: 'CONTACT_EMAIL',   /* must match the field name on the Zoho Campaigns form */
   NEWSLETTER_ARCHIVE: '',   /* Zoho Campaigns public archive, so new issues appear on their own */
   NOTIFY_EMAIL: 'partnerships@dhwaniris.com'
 };
@@ -406,7 +423,7 @@ window.DHWANI_FORMS = {
       <h5>Get the newsletter</h5>
       <p class="fnl">Practical tech-for-good, once a month.</p>
       <form class="fsform" onsubmit="return false" data-pending="newsletter-provider">
-        <input type="email" placeholder="Your work email" aria-label="Your work email">
+        <input type="email" name="CONTACT_EMAIL" required placeholder="Your work email" aria-label="Your work email">
         <button class="pill pill-primary" type="submit">Subscribe</button>
       </form>
       <p class="fcontact"><a href="tel:+919574655961">+91 95746 55961</a><br><a href="mailto:partnerships@dhwaniris.com">partnerships@dhwaniris.com</a><br><a class="faddr" href="https://www.google.com/maps/search/?api=1&amp;query=Dhwani+Rural+Information+Systems+Pvt.+Ltd.&amp;query_place_id=ChIJwd2BnNQfDTkRn-sT_EWOT8o" target="_blank" rel="noopener">Building 94, Sector 44, Gurugram 122002</a></p>
@@ -583,7 +600,10 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
   var cfg=window.DHWANI_FORMS||{};
   document.querySelectorAll('form[data-pending="newsletter-provider"]').forEach(function(f){
     var input=f.querySelector('input[type=email]');
-    if(cfg.NEWSLETTER_ACTION){f.setAttribute('action',cfg.NEWSLETTER_ACTION);f.setAttribute('method','post');f.removeAttribute('onsubmit');return;}
+    if(cfg.NEWSLETTER_ACTION){
+      if(input&&cfg.NEWSLETTER_FIELD) input.setAttribute('name',cfg.NEWSLETTER_FIELD);
+      f.setAttribute('action',cfg.NEWSLETTER_ACTION);f.setAttribute('method','post');
+      f.removeAttribute('onsubmit');return;}
     f.addEventListener('submit',function(e){
       e.preventDefault();
       if(!input.value){input.focus();return;}
