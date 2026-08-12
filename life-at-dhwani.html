@@ -249,18 +249,17 @@ border:1px solid var(--line-d);border-radius:6px;padding:4px 8px}
 .foot-bot .flegal a:hover{color:#fff;border-bottom-color:rgba(255,255,255,.4)}
 
 /* bento */
-.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(178px,auto);gap:16px;margin-top:34px}
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(212px,auto);gap:16px;margin-top:34px}
 .bt{position:relative;border-radius:16px;overflow:hidden;background:var(--beige);
 display:flex;flex-direction:column;justify-content:center;padding:22px 24px;transition:.22s}
 .bt.w2{grid-column:span 2}
 .bt.w3{grid-column:span 3}
 .bt.h2{grid-row:span 2}
-.bt.img{padding:0;justify-content:flex-end}
-.bt.img .bph{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .6s cubic-bezier(.2,.7,.3,1)}
-.bt.img .bcap{position:relative;z-index:2;padding:22px 24px;color:#fff;
-background:linear-gradient(transparent,rgba(18,12,11,.82) 42%)}
-.bt.img .bcap b{display:block;font-family:var(--serif);font-size:1.14rem;font-weight:500;margin-bottom:3px;line-height:1.3}
-.bt.img .bcap span{font-size:.85rem;color:rgba(255,255,255,.82);line-height:1.5}
+.bt.img{padding:0;display:flex;flex-direction:column;overflow:hidden}
+.bt.img .bph{position:relative;inset:auto;flex:1 1 auto;min-height:0;background-size:cover;background-position:center;transition:transform .6s cubic-bezier(.2,.7,.3,1)}
+.bt.img .bcap{position:relative;z-index:2;flex:0 0 auto;padding:11px 15px 13px;background:linear-gradient(152deg,#efe7db 0%,#ded0bd 100%)}
+.bt.img .bcap b{display:block;font-family:var(--serif);font-size:1.04rem;font-weight:500;margin-bottom:2px;line-height:1.25;color:var(--ink)}
+.bt.img .bcap span{font-size:.82rem;color:var(--muted);line-height:1.45;display:block}
 .bt.img:hover .bph{transform:scale(1.05)}
 .bt .bfig{font-family:var(--serif);font-size:clamp(1.6rem,2.4vw,2.1rem);font-weight:500;color:var(--maroon);
 line-height:1;margin-bottom:8px}
@@ -417,11 +416,11 @@ window.DHWANI_FORMS = {
   <p class="lede" style="max-width:70ch">Gurugram, the programmes we build for, and the sessions we run in between.</p>
   <div class="bento">
     <div class="bt img w2 h2"><div class="bph" style="background-image:url('assets/img/life/office.jpg')"></div><div class="bcap"><b>The Gurugram office</b><span>Sector 44. Cross-functional teams sit together by design.</span></div></div>
-    <div class="bt img "><div class="bph" style="background-image:url('assets/img/life/field.jpg')"></div><div class="bcap"><b>Out with a mobile health unit</b><span>Where the data we build for actually gets collected.</span></div></div>
+    <div class="bt img "><div class="bph" style="background-image:url('assets/img/life/field.jpg')"></div><div class="bcap"><b>A mobile health unit</b><span>Where the data actually gets collected.</span></div></div>
     <div class="bt tint"><div class="bfig">100</div><h4>people</h4><p>Engineering, delivery, data, quality and operations.</p></div>
-    <div class="bt img "><div class="bph" style="background-image:url('assets/img/life/workshop.jpg')"></div><div class="bcap"><b>Together4Good</b><span>The partners meet and workshop, March 2026.</span></div></div>
+    <div class="bt img "><div class="bph" style="background-image:url('assets/img/life/workshop.jpg')"></div><div class="bcap"><b>Together4Good</b><span>The partners workshop, March 2026.</span></div></div>
     <div class="bt fill"><div class="bfig">Since 2015</div><h4>building for the sector</h4><p>Long enough to have learned most of this the hard way.</p></div>
-    <div class="bt img w2"><div class="bph" style="background-image:url('assets/img/life/skoch.jpg')"></div><div class="bcap"><b>Recognised at the Skoch Awards</b><span>For work delivered with our partners.</span></div></div>
+    <div class="bt img w2"><div class="bph" style="background-image:url('assets/img/life/skoch.jpg')"></div><div class="bcap"><b>The Skoch Awards</b><span>For work delivered with our partners.</span></div></div>
     <a class="bt " href="careers.html"><h4>A hybrid week</h4><p>Out of Gurugram, and flexible about the days where a role allows it.</p></a>
   </div>
 </div></section>
