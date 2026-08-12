@@ -107,25 +107,48 @@ em{font-style:italic}
 .cta .in{position:relative;z-index:2;padding:94px 0}
 .cta h2{font-size:clamp(2.1rem,4.2vw,3.1rem);color:#fff;margin-bottom:26px;max-width:20ch;margin-inline:auto}
 
-/* footer (shared) */
-footer{background:var(--ink);color:var(--muted-d);border-radius:28px;margin:16px;padding:76px 0 40px}
-.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;gap:36px}
-.fbrand .flogo{height:40px;margin-bottom:18px}.fbrand .tag{font-size:.92rem;max-width:250px;color:var(--muted-d)}
-.fbadges{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}.fbadges span{font-size:.66rem;font-weight:600;letter-spacing:.05em;color:var(--orange-soft);border:1px solid var(--line-d);border-radius:6px;padding:5px 9px}
-.fsoc{display:flex;gap:16px;margin-top:20px}.fsoc a{font-size:.82rem;color:var(--muted-d);font-weight:500}.fsoc a:hover{color:#fff}
-footer h5{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--orange-soft);margin-bottom:16px;font-weight:600;font-family:var(--sans)}
-footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88rem;color:var(--muted-d)}footer li a:hover{color:#fff}
-.frow2{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;gap:36px;margin-top:48px}
-.fnews{grid-column:span 2;background:rgba(255,255,255,.04);border:1px solid var(--line-d);border-radius:16px;padding:24px}
-.fnews h5{margin-bottom:8px}.fnews p{font-size:.86rem;color:var(--muted-d);margin-bottom:14px}
-.fnews form{display:flex;gap:8px}.fnews input{flex:1;border:1px solid var(--line-d);border-radius:10px;padding:11px 13px;font-family:var(--sans);font-size:.88rem;background:rgba(255,255,255,.05);color:#fff}
-.fcontact{font-size:.88rem;color:var(--muted-d);line-height:1.9;margin-top:12px}.fcontact a{color:var(--orange-soft);font-weight:500}
-.foot-bot{border-top:1px solid var(--line-d);margin-top:52px;padding-top:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.82rem;color:rgba(255,255,255,.45)}
+/* footer */
+footer{background:var(--ink);color:var(--muted-d);border-radius:28px;margin:16px;padding:30px 0 14px}
+footer .wrap{max-width:none;padding:0 24px}
+.fgrid{display:grid;grid-template-columns:1.45fr 1.05fr 1.15fr 1.05fr 1fr;gap:30px;align-items:start}
+.fgrid ul,.fgrid li{list-style:none;margin:0;padding:0}
+.fgrid li{margin-bottom:3px;line-height:1.3}
+.fgrid li a{font-size:.825rem}
+.fcol h5{margin-bottom:7px;letter-spacing:.13em}
+.fcol h5+ul+h5{margin-top:18px}
+.fbrand .flogo{height:30px;width:auto;margin:0 0 11px}
+.fbrand .tag{font-size:.825rem;max-width:290px;margin:0 0 16px;line-height:1.55}
+.fsform{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 15px;max-width:330px}
+.fsform input{flex:1;min-width:165px;border:1px solid var(--line-d);border-radius:9px;padding:9px 12px;
+font-family:var(--sans);font-size:.83rem;background:rgba(255,255,255,.05);color:#fff}
+.fsform input::placeholder{color:rgba(255,255,255,.4)}
+.fsform .pill{padding:9px 15px;font-size:.82rem}
+.fcontact{font-size:.82rem;line-height:1.65;margin:0;color:var(--muted-d)}
+.fcontact a{color:var(--muted-d);border-bottom:1px solid transparent}
+.fcontact a:hover{color:#fff;border-bottom-color:rgba(255,255,255,.4)}
+.foot-bot{border-top:1px solid var(--line-d);margin-top:22px;padding-top:13px;display:flex;
+align-items:center;gap:22px;flex-wrap:wrap;font-size:.8rem;color:rgba(255,255,255,.45)}
+.foot-bot .fbadges{margin:0;display:flex;gap:7px}
 
-@media(max-width:900px){.rgrid{grid-template-columns:1fr 1fr}.nl-card{grid-template-columns:1fr}.fgrid,.frow2{grid-template-columns:1fr 1fr}}
+.fbadges span{font-size:.63rem;font-weight:600;letter-spacing:.05em;color:var(--orange-soft);
+border:1px solid var(--line-d);border-radius:6px;padding:4px 8px}
+@media(max-width:1180px){.fgrid{grid-template-columns:1.3fr 1fr 1fr}}
+@media(max-width:760px){.fgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.fgrid{grid-template-columns:1fr}}
+.fbrand h5{margin-bottom:3px}
+.fnl{font-size:.8rem;margin:0 0 9px;color:var(--muted-d)}
+.fsoc{display:flex;gap:16px;margin:0 0 15px}
+.fsoc a{font-size:.82rem}
+.foot-bot .flegal{margin-left:auto}
+.fsoc a{color:var(--muted-d);border-bottom:1px solid transparent}
+.fsoc a:hover{color:#fff;border-bottom-color:rgba(255,255,255,.4)}
+.foot-bot .flegal a{color:rgba(255,255,255,.55);border-bottom:1px solid transparent}
+.foot-bot .flegal a:hover{color:#fff;border-bottom-color:rgba(255,255,255,.4)}
+
+@media(max-width:900px){.rgrid{grid-template-columns:1fr 1fr}.nl-card{grid-template-columns:1fr}}
 @media(max-width:640px){.wrap{padding:0 22px}#topnav .nav-in{padding:22px 22px}#topnav .logo{height:50px}
   .ahero{margin:10px;border-radius:20px;padding:130px 24px 48px}.section{padding:58px 0}.rgrid{grid-template-columns:1fr}.nl-card{padding:36px 26px}
-  .cta,footer{margin:10px;border-radius:20px}.fgrid,.frow2{grid-template-columns:1fr}.fnews{grid-column:auto}}
+  .cta,footer{margin:10px;border-radius:20px}}
 
 /* ===== nav dropdowns ===== */
 .has-dd{position:relative;display:flex;align-items:center}
@@ -138,7 +161,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .has-dd:hover>.dd{opacity:1;visibility:visible;pointer-events:auto}
 #topnav .dd a{display:block;color:var(--ink)!important;font-size:.9rem;font-weight:450;letter-spacing:0;padding:9px 12px;border-radius:8px;white-space:nowrap}
 #topnav .dd a:hover{background:var(--beige)}
-.dd-mega{left:0;margin-top:12px;transform:none;min-width:0;display:grid;grid-template-columns:repeat(4,minmax(150px,1fr));gap:2px 14px;padding:20px 22px}
+.dd-mega{left:0;margin-top:12px;transform:none;min-width:0;display:grid;grid-template-columns:repeat(4,max-content);gap:2px 18px;padding:20px 22px}
 .dd-col h6{font-family:var(--sans);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--maroon);font-weight:600;padding:6px 12px 4px}
 @media(max-width:960px){
   .has-dd{flex-wrap:wrap;justify-content:space-between;border-bottom:1px solid var(--line)}
@@ -204,12 +227,31 @@ button.rcard:hover{background:var(--beige-h)}
 .post img{max-width:100%;height:auto;border-radius:12px;margin:26px 0}
 .post .backlink{display:block;margin:44px 0 0;padding-top:26px;border-top:1px solid var(--line)}
 </style>
+<script>
+/* ── Form delivery ────────────────────────────────────────────────────────────
+   Set FORM_ENDPOINT to a URL that accepts a JSON POST. Recommended: a Zoho Form
+   (it can create the Bigin record and send the email notification natively), or
+   Zoho Flow / Formspree / Basin webhook.
+   Set NEWSLETTER_ACTION to the Zoho Campaigns signup form action URL.
+   While these are empty the forms fall back to the user's mail client, so nothing
+   is lost, but they should be filled in before launch.                        */
+window.DHWANI_FORMS = {
+  WHATSAPP_URL: 'https://chat.whatsapp.com/IbqORwF9YTvCwQ4pCfE5m9?s=sw&p=a&ilr=0',
+  BOOKING_URL: 'https://bookings.cloud.microsoft/bookwithme/user/78cb7b204ceb41f3bec0a1761c62573b%40dhwaniris.com/meetingtype/-rbCWiRu4kOmTYHFlO5AEA2?anonymous&isanonymous=true&ismsaljsauthenabled=true',
+  FORM_ENDPOINT: '',
+  FORM_ENCODING: 'json',   /* 'form' for FormSubmit / Formspree / Zoho Forms */
+  NEWSLETTER_ACTION: '',
+  NEWSLETTER_FIELD: 'CONTACT_EMAIL',   /* must match the field name on the Zoho Campaigns form */
+  NEWSLETTER_ARCHIVE: '',   /* Zoho Campaigns public archive, so new issues appear on their own */
+  NOTIFY_EMAIL: 'partnerships@dhwaniris.com'
+};
+</script>
 </head>
 <body>
 
 <!-- NAV -->
-<header id="topnav" class="solid"><div class="nav-in">
-  <a href="../index.html" style="display:flex"><img class="logo logo-white" src="../assets/img/dhwani-logo-full-white.png" alt="Dhwani RIS"><img class="logo logo-dark" src="../assets/img/dhwani-logo-full.png" alt="Dhwani RIS"></a>
+<header id="topnav"><div class="nav-in">
+  <a href="../index.html" style="display:flex"><img class="logo logo-white" src="../assets/img/dhwani-logo-all-white.png" alt="Dhwani RIS"><img class="logo logo-dark" src="../assets/img/dhwani-logo-full.png" alt="Dhwani RIS"></a>
   <div class="links">
     <a href="../index.html">Home</a>
     <div class="has-dd">
@@ -218,7 +260,7 @@ button.rcard:hover{background:var(--beige-h)}
       <div class="dd dd-mega">
         <div class="dd-col"><h6>Products</h6><a href="../mgrant-donors.html">mGrant for Donors</a><a href="../mgrant-nonprofits.html">mGrant for Nonprofits</a><a href="../mform.html">mForm</a><a href="../anumati.html">Anumati</a><a href="../radar.html">Radar</a></div>
         <div class="dd-col"><h6>Systems</h6><a href="../programme-mis.html">Programme MIS</a><a href="../impact-dashboards.html">Impact Dashboards</a><a href="../mgrant-donors.html">Grant Management</a><a href="../mgrant-nonprofits.html">Donor Management</a><a href="../mform.html">Field Data Apps</a><a href="../back-office-it.html">Back-office IT</a><a href="../monitoring-evaluation.html">Monitoring &amp; Evaluation</a></div>
-        <div class="dd-col"><h6>Consulting</h6><a href="../dpdp-act-readiness.html">DPDP Act Readiness</a><a href="../cloud-optimisation.html">CloudSahayak</a><a href="../ai-for-impact.html">AI for Impact</a><a href="../digital-transformation.html">Digital Transformation</a><a href="../programme-management.html">PMU as a Service</a></div>
+        <div class="dd-col"><h6>Consulting</h6><a href="../dpdp-act-readiness.html">DPDP Act Readiness</a><a href="../cloud-optimisation.html">CloudSahayak</a><a href="../ai-for-impact.html">AI for Impact</a><a href="../digital-transformation.html">Digital Transformation</a><a href="../programme-management.html">Programme Management Support</a></div>
         <div class="dd-col"><h6>Explore</h6><a href="../our-work.html">Browse by sector</a></div>
       </div>
     </div>
@@ -229,18 +271,19 @@ button.rcard:hover{background:var(--beige-h)}
         <a href="../for-donors.html">For Donors &amp; CSRs</a>
         <a href="../for-nonprofits.html">For Nonprofits</a>
         <a href="../for-government.html">For Government &amp; Multilaterals</a>
-        <a href="../for-think-tanks.html">Academic &amp; Research</a>
+        <a href="../for-think-tanks.html">Think Tanks &amp; Consultancies</a><a href="../for-inclusive-businesses.html">Inclusive Businesses</a>
       </div>
     </div>
     <a href="../our-work.html">Our work</a>
     <a class="n-active" href="../resources.html">Resources</a>
+    <a href="../careers.html">Careers</a>
     <div class="has-dd">
-      <a href="../about.html">Company <span class="caret">&#9662;</span></a>
-      <button class="dd-toggle" aria-label="Toggle Company submenu">&#9662;</button>
+      <a href="../about.html">About us <span class="caret">&#9662;</span></a>
+      <button class="dd-toggle" aria-label="Toggle About us submenu">&#9662;</button>
       <div class="dd">
         <a href="../about.html">About</a>
         <a href="../team.html">Team</a>
-        <a href="../careers.html">Careers</a>
+        
         <a href="../community.html">Community</a>
         <a href="../technology.html">Technology at Dhwani</a>
         <a href="../contact.html">Contact</a>
@@ -274,27 +317,24 @@ button.rcard:hover{background:var(--beige-h)}
 <footer><div class="wrap">
   <div class="fgrid">
     <div class="fbrand">
-      <img class="flogo" src="../assets/img/dhwani-logo-full-white.png" alt="Dhwani RIS">
+      <img class="flogo" src="../assets/img/dhwani-logo-all-white.png" alt="Dhwani RIS">
       <p class="tag">Technology the impact sector runs on. Built by the sector, for the sector, since 2015.</p>
-      <div class="fbadges"><span>ISO 27001</span><span>DPDP</span><span>GDPR</span></div>
       <div class="fsoc"><a href="https://www.linkedin.com/company/14388289/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/dhwaniris" target="_blank" rel="noopener">Instagram</a><a href="../community.html">Community</a></div>
+      <h5>Get the newsletter</h5>
+      <p class="fnl">Practical tech-for-good, once a month.</p>
+      <form class="fsform" onsubmit="return false" data-pending="newsletter-provider">
+        <input type="email" name="CONTACT_EMAIL" required placeholder="Your work email" aria-label="Your work email">
+        <button class="pill pill-primary" type="submit">Subscribe</button>
+      </form>
+      <p class="fcontact"><a href="tel:+919574655961">+91 95746 55961</a><br><a href="mailto:partnerships@dhwaniris.com">partnerships@dhwaniris.com</a><br><a class="faddr" href="https://www.google.com/maps/search/?api=1&amp;query=Dhwani+Rural+Information+Systems+Pvt.+Ltd.&amp;query_place_id=ChIJwd2BnNQfDTkRn-sT_EWOT8o" target="_blank" rel="noopener">Building 94, Sector 44, Gurugram 122002</a></p>
     </div>
-    <div><h5>Products</h5><ul><li><a href="../mgrant-donors.html">mGrant for Donors</a></li><li><a href="../mgrant-nonprofits.html">mGrant for Nonprofits</a></li><li><a href="../mform.html">mForm</a></li><li><a href="../anumati.html">Anumati (DPDP)</a></li><li><a href="../radar.html">Radar</a></li></ul></div>
-    <div><h5>Systems</h5><ul><li><a href="../programme-mis.html">Programme MIS</a></li><li><a href="../impact-dashboards.html">Impact Dashboards</a></li><li><a href="../mgrant-donors.html">Grant Management</a></li><li><a href="../mgrant-nonprofits.html">Donor Management</a></li><li><a href="../mform.html">Field Data Apps</a></li><li><a href="../back-office-it.html">Back-office IT</a></li><li><a href="../monitoring-evaluation.html">Monitoring &amp; Evaluation</a></li></ul></div>
-    <div><h5>Consulting</h5><ul><li><a href="../dpdp-act-readiness.html">DPDP Act Readiness</a></li><li><a href="../cloud-optimisation.html">CloudSahayak</a></li><li><a href="../ai-for-impact.html">AI for Impact</a></li><li><a href="../digital-transformation.html">Digital Transformation</a></li><li><a href="../programme-management.html">PMU as a Service</a></li></ul></div>
-    <div><h5>By sector</h5><ul><li><a href="../our-work.html?sector=healthcare">Healthcare</a></li><li><a href="../our-work.html?sector=agriculture">Agriculture &amp; Livelihoods</a></li><li><a href="../our-work.html?sector=education">Education &amp; Skilling</a></li><li><a href="../our-work.html?sector=financial-inclusion">Financial Inclusion</a></li><li><a href="../our-work.html?sector=governance">Governance</a></li><li><a href="../our-work.html">All sectors →</a></li></ul></div>
+        
+    <div class="fcol"><h5>Products</h5><ul><li><a href="../mgrant-donors.html">mGrant for Donors</a></li><li><a href="../mgrant-nonprofits.html">mGrant for Nonprofits</a></li><li><a href="../mform.html">mForm</a></li><li><a href="../anumati.html">Anumati (DPDP)</a></li><li><a href="../radar.html">Radar</a></li></ul><h5>Who we serve</h5><ul><li><a href="../for-donors.html">Donors &amp; CSRs</a></li><li><a href="../for-nonprofits.html">Nonprofits</a></li><li><a href="../for-government.html">Government</a></li><li><a href="../for-think-tanks.html">Think Tanks &amp; Consultancies</a></li><li><a href="../for-inclusive-businesses.html">Inclusive Businesses</a></li></ul></div>
+    <div class="fcol"><h5>Systems</h5><ul><li><a href="../programme-mis.html">Programme MIS</a></li><li><a href="../impact-dashboards.html">Impact Dashboards</a></li><li><a href="../mgrant-donors.html">Grant Management</a></li><li><a href="../mgrant-nonprofits.html">Donor Management</a></li><li><a href="../mform.html">Field Data Apps</a></li><li><a href="../back-office-it.html">Back-office IT</a></li><li><a href="../monitoring-evaluation.html">Monitoring &amp; Evaluation</a></li></ul><h5>Resources</h5><ul><li><a href="../our-work.html">Our work</a></li><li><a href="../solutions.html">Solutions</a></li><li><a href="../resources.html#toolkits">Toolkits</a></li><li><a href="../resources.html#insights">Insights</a></li><li><a href="../resources.html#newsletter">Newsletters</a></li></ul></div>
+    <div class="fcol"><h5>Consulting</h5><ul><li><a href="../dpdp-act-readiness.html">DPDP Act Readiness</a></li><li><a href="../cloud-optimisation.html">CloudSahayak</a></li><li><a href="../ai-for-impact.html">AI for Impact</a></li><li><a href="../digital-transformation.html">Digital Transformation</a></li><li><a href="../programme-management.html">Programme Management Support</a></li></ul><h5>By sector</h5><ul><li><a href="../our-work.html?sector=agriculture">Agriculture &amp; Livelihoods</a></li><li><a href="../our-work.html?sector=education">Education &amp; Skilling</a></li><li><a href="../our-work.html?sector=healthcare">Healthcare</a></li><li><a href="../our-work.html?sector=governance">Governance</a></li><li><a href="../our-work.html?sector=financial-inclusion">Financial Inclusion</a></li><li><a href="../our-work.html">All sectors &#8594;</a></li></ul></div>
+    <div class="fcol"><h5>Company</h5><ul><li><a href="../about.html">About</a></li><li><a href="../team.html">Team</a></li><li><a href="../careers.html">Careers</a></li><li><a href="../life-at-dhwani.html">Life at Dhwani</a></li><li><a href="../community.html">Community</a></li><li><a href="../technology.html">Technology at Dhwani</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
   </div>
-  <div class="frow2">
-    <div class="fnews">
-      <h5>The Dhwani newsletter</h5>
-      <p>Practical tech-for-good, once a month. No fluff.</p>
-      <form onsubmit="return false" data-pending="newsletter-provider"><input type="email" name="CONTACT_EMAIL" required placeholder="you@organisation.org"><button class="pill pill-primary" style="padding:11px 18px">Subscribe</button></form>
-    </div>
-    <div><h5>Who we serve</h5><ul><li><a href="../for-donors.html">Donors &amp; CSRs</a></li><li><a href="../for-nonprofits.html">nonprofits</a></li><li><a href="../for-government.html">Government</a></li><li><a href="../for-think-tanks.html">Academic &amp; Research</a></li></ul></div>
-    <div><h5>Company</h5><ul><li><a href="../about.html">About</a></li><li><a href="../team.html">Team</a></li><li><a href="../careers.html">Careers</a></li><li><a href="../community.html">Community</a></li><li><a href="../technology.html">Technology at Dhwani</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
-    <div><h5>Resources</h5><ul><li><a href="../resources.html#toolkits">Toolkits</a></li><li><a href="../resources.html#insights">Insights</a></li></ul><p class="fcontact">Sector 44, Gurugram, Haryana 122002<br><a href="tel:+919574655961">+91 95746 55961</a><br><a href="mailto:partnerships@dhwaniris.com">partnerships@dhwaniris.com</a></p></div>
-  </div>
-  <div class="foot-bot"><span>© 2026 Dhwani Rural Information Systems</span><span><a href="../privacy.html">Privacy</a> · <a href="../sitemap.html">Sitemap</a></span></div>
+  <div class="foot-bot"><span class="fcopy">&copy; 2026 Dhwani Rural Information Systems</span><div class="fbadges"><span>ISO 27001</span><span>DPDP</span><span>GDPR</span></div><span class="flegal"><a href="../privacy.html">Privacy</a> &middot; <a href="../sitemap.html">Sitemap</a></span></div>
 </div></footer>
 
 <script>
@@ -374,7 +414,7 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
 
   var FAQ=[
     {kw:['deck','overview','one-pager','brochure','pdf','presentation'],
-     a:"Our organisation profile covers who we are, what we build and the sectors we work in. <a href=\"assets/docs/dhwani-ris-organization-profile.pdf\">Download the profile &#8594;</a>"},
+     a:"Our organisation profile covers what we build, the sectors we work in, and who we have built it for. <a href=\"assets/docs/dhwani-ris-organization-profile.pdf\">Download the profile &#8594;</a>"},
     {kw:['open source','frappe','erpnext'],
      a:"Much of what we build sits on Frappe, the open-source framework behind ERPNext, and we try to give back where we can. <a href=\"technology.html\">Read about our open-source approach &#8594;</a>"},
     {kw:['radar','due diligence','risk intelligence'],
@@ -386,9 +426,9 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
     {kw:['blog','insight','article','case stud'],
      a:"Our Insights section has real articles from the team, and Our Work has real project write-ups. <a href=\"resources.html#insights\">Read our Insights &#8594;</a>"},
     {kw:['build','system','offer','offering','what do you do','services'],
-     a:"We build systems (Programme MIS, Impact Dashboards, Grant &amp; Donor Management, Field Data Apps, Back-office IT, Monitoring &amp; Evaluation) and offer consulting (DPDP Act Readiness, CloudSahayak, AI for Impact, Digital Transformation, PMU as a Service). <a href=\"solutions.html\">See all solutions &#8594;</a>"},
+     a:"We build systems (Programme MIS, Impact Dashboards, Grant &amp; Donor Management, Field Data Apps, Back-office IT, Monitoring &amp; Evaluation) and offer consulting (DPDP Act Readiness, CloudSahayak, AI for Impact, Digital Transformation, programme management support). <a href=\"solutions.html\">See all solutions &#8594;</a>"},
     {kw:['who do you','serve','audience','donor','csr','ngo','government','multilateral','academic','research'],
-     a:"We work with Donors &amp; CSRs, nonprofits, Government &amp; Multilaterals, and Academic &amp; Research teams. <a href=\"who-we-serve.html\">See who we serve &#8594;</a>"},
+     a:"We work with Donors &amp; CSRs, nonprofits, Government &amp; Multilaterals, and Think Tanks &amp; Consultancies teams. <a href=\"who-we-serve.html\">See who we serve &#8594;</a>"},
     {kw:['dpdp','consent','privacy law','2027','anumati'],
      a:"India's DPDP Act is fully enforced from 13 May 2027. We help organisations get ready in five stages, and our product Anumati handles consent management. <a href=\"dpdp-act-readiness.html\">Learn about DPDP Act Readiness &#8594;</a>"},
     {kw:['product','mgrant','mform','radar'],
@@ -400,10 +440,10 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
     {kw:['contact','call','talk','reach','email','phone','whatsapp','book'],
      a:"The fastest way is to book a call or send a message.", act:true},
     {kw:['price','cost','pricing','how much','budget'],
-     a:"Pricing depends on your programme's scope — the fastest way to get a number is to talk to us directly.", act:true},
+     a:"Pricing depends on your programme's scope, the fastest way to get a number is to talk to us directly.", act:true},
   ];
-  var FALLBACK={a:"I don't have a ready answer for that one — the fastest way to get a real one is to book a call or email us directly.", act:true};
-  var GREETING="Hi, I'm the Dhwani assistant. Ask me about what we build, who we work with, or how to get in touch &mdash; or pick a question below.";
+  var FALLBACK={a:"I don't have a ready answer for that one, the fastest way to get a real one is to book a call or email us directly.", act:true};
+  var GREETING="Hi, I'm the Dhwani assistant. Ask me about what we build, who we work with, or how to get in touch, or pick a question below.";
 
   var ACTIONS_HTML='<div class="dch-inline-act"><a href="../contact.html#book"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Book a call</a><a href="mailto:partnerships@dhwaniris.com"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg> Email us</a></div>';
   function addMsg(text,who,withActions){
@@ -460,38 +500,22 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
 
 <script>
 (function(){
-  var tabs=[].slice.call(document.querySelectorAll('.rtab'));
-  var panels=[].slice.call(document.querySelectorAll('.rgroup'));
-  if(!tabs.length) return;
-  function activate(name){
-    tabs.forEach(function(t){t.classList.toggle('on',t.dataset.tab===name);});
-    panels.forEach(function(p){p.classList.toggle('on',p.id===name);});
-  }
-  tabs.forEach(function(t){t.addEventListener('click',function(){
-    activate(t.dataset.tab);
-    try{history.replaceState(null,'','resources.html#'+t.dataset.tab);}catch(e){}
-  });});
-  var hash=location.hash.replace('#','');
-  var valid=tabs.some(function(t){return t.dataset.tab===hash;});
-  activate(valid?hash:'toolkits');
-})();
-</script>
-<script>
-(function(){
-  var PAGE=9, shown=PAGE, q='';
-  var grid=document.getElementById('bgrid'); if(!grid)return;
-  var posts=[].slice.call(grid.querySelectorAll('.bpost'));
-  var more=document.getElementById('bmore'), none=document.getElementById('bnone'), box=document.getElementById('bq');
-  function draw(){
-    var hits=posts.filter(function(p){return !q||p.dataset.q.indexOf(q)>-1;});
-    posts.forEach(function(p){p.classList.add('hide');});
-    hits.slice(0,shown).forEach(function(p){p.classList.remove('hide');});
-    none.classList.toggle('show',hits.length===0);
-    more.hidden = hits.length<=shown;
-  }
-  more.addEventListener('click',function(){shown+=PAGE;draw();});
-  box.addEventListener('input',function(){q=box.value.trim().toLowerCase();shown=PAGE;draw();});
-  draw();
+  var cfg=window.DHWANI_FORMS||{};
+  document.querySelectorAll('form[data-pending="newsletter-provider"]').forEach(function(f){
+    var input=f.querySelector('input[type=email]');
+    if(cfg.NEWSLETTER_ACTION){
+      if(input&&cfg.NEWSLETTER_FIELD) input.setAttribute('name',cfg.NEWSLETTER_FIELD);
+      f.setAttribute('action',cfg.NEWSLETTER_ACTION);f.setAttribute('method','post');
+      f.removeAttribute('onsubmit');return;}
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(!input.value){input.focus();return;}
+      window.location.href='mailto:'+(cfg.NOTIFY_EMAIL||'partnerships@dhwaniris.com')
+        +'?subject='+encodeURIComponent('Newsletter signup')
+        +'&body='+encodeURIComponent('Please add this address to the Dhwani newsletter list: '+input.value);
+      input.value=''; var b=f.querySelector('button'); if(b)b.textContent='Thanks';
+    });
+  });
 })();
 </script>
 </body>
