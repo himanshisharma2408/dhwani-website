@@ -231,51 +231,58 @@ border:1px solid var(--line-d);border-radius:6px;padding:4px 8px}
 .cgrid{display:grid;gap:14px;grid-template-columns:repeat(3,1fr);
 grid-auto-rows:minmax(198px,auto);grid-auto-flow:row dense}
 .ocard{display:flex;flex-direction:column;justify-content:flex-end;min-height:0;
-background:var(--beige);border-radius:16px;padding:clamp(22px,3vw,30px);transition:.22s;position:relative}
+background:linear-gradient(148deg,#f1ebe1 0%,#e7e0d3 100%);
+border-radius:16px;padding:clamp(22px,3vw,30px);transition:background .28s,transform .22s;
+position:relative;overflow:hidden;isolation:isolate}
+.ocard>*{position:relative;z-index:2}
+/* the sheen: a light source at the top-left, so the surface has a direction */
+.ocard:before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+background:radial-gradient(125% 95% at 10% -5%,rgba(255,255,255,.62),rgba(255,255,255,0) 58%)}
+/* the tile icon again, oversized and almost invisible, bleeding off the corner */
+.ocard .wm{position:absolute;right:-54px;bottom:-62px;z-index:1;pointer-events:none;
+color:#4a423c;opacity:.055;transition:opacity .35s,transform .55s cubic-bezier(.2,.7,.3,1)}
+.ocard .wm svg{width:196px;height:196px;stroke-width:.6}
+.ocard:hover .wm{opacity:.09;transform:translate(-12px,-14px)}
 .ocard .ic{height:auto;flex:none;display:flex;align-items:center;justify-content:flex-start;
 color:#4a423c;margin:0 0 auto;padding-bottom:16px;transition:color .22s,transform .22s cubic-bezier(.2,.7,.3,1)}
 .ocard .ic svg{width:clamp(40px,4.6vw,54px);height:clamp(40px,4.6vw,54px);stroke-width:1.15}
 .ocard h5{font-size:clamp(1.14rem,1.7vw,1.28rem);font-weight:500;margin-bottom:7px;color:var(--ink);line-height:1.28}
 .ocard p{color:var(--muted);font-size:.9rem;line-height:1.5;max-width:34ch;margin-top:0}
 
-/* the rhythm: a wide opener, a tall one further in, and a gentle tint alternation */
-.cgrid>.ocard:first-child{grid-column:span 2}
-.cgrid>.ocard:first-child h5{font-size:clamp(1.3rem,2.1vw,1.62rem)}
-.cgrid>.ocard:first-child .ic svg{width:clamp(46px,5.4vw,64px);height:clamp(46px,5.4vw,64px)}
-/* spans chosen per tile count, so every group divides evenly by three */
-.cgrid>.ocard:nth-child(4):last-child,
-.cgrid>.ocard:nth-child(6):last-child,
-.cgrid>.ocard:nth-child(7):last-child{grid-column:span 2}
-.cgrid>.ocard:nth-child(5):nth-last-child(2){grid-row:span 2}
-.cgrid>.ocard:nth-child(5):nth-last-child(2) .ic svg{width:clamp(46px,5.4vw,64px);height:clamp(46px,5.4vw,64px)}
-.cgrid>.ocard:nth-child(5):nth-last-child(2) h5{font-size:clamp(1.22rem,1.9vw,1.42rem)}
-.cgrid>.ocard:nth-child(4n+3){background:var(--tint)}
-.cgrid>.ocard:nth-child(4n+3):hover{background:#f1e2cf}
-.ocard.fill,.cgrid>.ocard.fill:nth-child(4n+3){background:var(--maroon)}
-.ocard.fill:hover,.cgrid>.ocard.fill:nth-child(4n+3):hover{background:var(--maroon-2)}
+/* Every offering in a group is a peer, so every tile is the same size. The only
+   tile that differs is the CTA, and it differs because it spans whatever is left
+   of its last row so the block ends flush, not because it outranks anything. */
+.cgrid>.ocard.fill:last-child:nth-child(4),
+.cgrid>.ocard.fill:last-child:nth-child(7),
+.cgrid>.ocard.fill:last-child:nth-child(10){grid-column:span 3}
+.cgrid>.ocard.fill:last-child:nth-child(5),
+.cgrid>.ocard.fill:last-child:nth-child(8),
+.cgrid>.ocard.fill:last-child:nth-child(11){grid-column:span 2}
+.cgrid>.ocard:nth-child(4n+3){background:linear-gradient(148deg,#fbf3e8 0%,#f2e5d4 100%)}
+.cgrid>.ocard:nth-child(4n+3):hover{background:linear-gradient(148deg,#f8ecdc 0%,#eeddc7 100%)}
+.ocard.fill,.cgrid>.ocard.fill:nth-child(4n+3){
+background:linear-gradient(145deg,#9c1826 0%,var(--maroon) 42%,#660e18 100%)}
+.ocard.fill:before{background:radial-gradient(120% 90% at 8% -8%,rgba(255,255,255,.16),rgba(255,255,255,0) 55%)}
+.ocard.fill .wm{color:#fff;opacity:.13}
+.ocard.fill:hover .wm{opacity:.19}
+.ocard.fill:hover,.cgrid>.ocard.fill:nth-child(4n+3):hover{
+background:linear-gradient(145deg,#8d1522 0%,var(--maroon-2) 45%,#5a0c15 100%)}
 .ocard.fill .ic{color:#fff}
 .ocard.fill h5{color:#fff}
 .ocard.fill p{color:rgba(255,255,255,.84)}
-.ocard.span2{grid-column:span 2}
-.ocard.span-all{grid-column:1/-1;padding:30px;align-items:center;text-align:center;justify-content:center}
-.ocard.span-all .ic{flex:0 0 auto;margin:0 0 14px;padding:0}
-.ocard.span-all .ic svg{width:38px;height:38px}
-.ocard.span-all p{max-width:none}
 @media(max-width:900px){.cgrid{grid-template-columns:1fr 1fr;grid-auto-rows:minmax(180px,auto)}
-.cgrid>.ocard:first-child,.ocard.span2{grid-column:span 2}
-.cgrid>.ocard:nth-child(4):last-child,.cgrid>.ocard:nth-child(6):last-child,
-.cgrid>.ocard:nth-child(7):last-child{grid-column:auto}
-.cgrid>.ocard:nth-child(5):nth-last-child(2){grid-row:auto}}
+/* at two columns every count already lands flush, so the CTA needs no span.
+   :nth-child(n) matches everything and levels the specificity of the rule above. */
+.cgrid>.ocard.fill:last-child:nth-child(n){grid-column:auto}}
 @media(max-width:560px){.cgrid{grid-template-columns:1fr;grid-auto-rows:auto;gap:12px}
-.cgrid>.ocard:first-child,.ocard.span2{grid-column:auto}
+.cgrid>.ocard.fill:last-child:nth-child(n){grid-column:auto}
 .ocard{min-height:0;padding:20px 22px}
 .ocard .ic{margin:0 0 12px;padding-bottom:0}
-.ocard .ic svg,.cgrid>.ocard:first-child .ic svg,
-.cgrid>.ocard:nth-child(5):nth-last-child(2) .ic svg{width:34px;height:34px}
-.cgrid>.ocard:first-child h5,
-.cgrid>.ocard:nth-child(5):nth-last-child(2) h5{font-size:1.14rem}}
+.ocard .ic svg{width:34px;height:34px}
+.ocard .wm svg{width:124px;height:124px}
+.ocard .wm{right:-36px;bottom:-42px}}
 
-.ocard:hover{background:var(--beige-h);transform:translateY(-3px)}
+.ocard:hover{background:linear-gradient(148deg,#ece5da 0%,#ded6c7 100%);transform:translateY(-3px)}
 a.ocard:hover{box-shadow:0 12px 28px -16px rgba(21,16,15,.42)}
 a.ocard:hover .ic{color:var(--maroon);transform:translateY(-2px)}
 a.ocard:after{content:"\2192";position:absolute;right:clamp(18px,2.4vw,24px);bottom:clamp(18px,2.4vw,24px);
@@ -284,7 +291,8 @@ transition:opacity .22s,transform .22s cubic-bezier(.2,.7,.3,1)}
 a.ocard:hover:after{opacity:1;transform:translateX(0)}
 a.ocard.fill:hover .ic{color:#fff}
 a.ocard.fill:after{color:#fff}
-@media(prefers-reduced-motion:reduce){.ocard,.ocard .ic,a.ocard:after{transition:none}
+@media(prefers-reduced-motion:reduce){.ocard,.ocard .ic,.ocard .wm,a.ocard:after{transition:none}
+.ocard:hover .wm{transform:none}
 .ocard:hover{transform:none}a.ocard:hover .ic{transform:none}a.ocard:after{transform:none}}
 </style>
 <script>
@@ -594,6 +602,23 @@ build('row1',logos.slice(0,15));build('row2',logos.slice(15));})();
         +'&body='+encodeURIComponent('Please add this address to the Dhwani newsletter list: '+input.value);
       input.value=''; var b=f.querySelector('button'); if(b)b.textContent='Thanks';
     });
+  });
+})();
+</script>
+<script>
+/* The oversized watermark is the tile's own icon, cloned at load rather than
+   duplicated in the markup. Purely decorative, so tiles without an inline icon
+   (product wordmarks, for instance) are simply left alone. */
+(function(){
+  document.querySelectorAll('.cgrid > .ocard').forEach(function(card){
+    if (card.querySelector('.wm')) return;
+    var icon = card.querySelector('.ic > svg');
+    if (!icon) return;
+    var wm = document.createElement('span');
+    wm.className = 'wm';
+    wm.setAttribute('aria-hidden', 'true');
+    wm.innerHTML = icon.outerHTML;
+    card.appendChild(wm);
   });
 })();
 </script>
