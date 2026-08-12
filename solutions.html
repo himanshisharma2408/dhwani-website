@@ -132,8 +132,8 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 
 /* case grid */
 .cases3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
-.ccard{background:var(--beige);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:.2s}
-.ccard:hover{background:var(--beige-h)}
+.ccard{background:linear-gradient(152deg,#efe7db 0%,#ded0bd 100%);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:.2s}
+.ccard:hover{background:linear-gradient(152deg,#eae1d3 0%,#d5c5af 100%)}
 .ccard .ph{height:150px;background-size:cover;background-position:center}
 .ccard .bd{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
 .ccard h3{font-size:1.18rem;font-weight:500;line-height:1.25;margin-bottom:8px}
@@ -195,7 +195,7 @@ a.ocard:after{transform:none}}
 
 /* ---- card interaction ---------------------------------------------------- */
 /* buyer group cards */
-.scard{transition:background .2s,transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s}
+.scard{background:linear-gradient(152deg,#efe7db 0%,#ded0bd 100%);transition:background .2s,transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s;border-radius:16px}
 .scard .ic{transition:color .22s,transform .22s cubic-bezier(.2,.7,.3,1)}
 .scard .tlink .arw{display:inline-block;transition:transform .22s cubic-bezier(.2,.7,.3,1)}
 .scard:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(21,16,15,.42)}
@@ -206,7 +206,7 @@ a.ocard:after{transform:none}}
 .scard:focus-visible{outline:2px solid var(--maroon);outline-offset:3px}
 
 /* work cards */
-.wcard{transition:background .2s,transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s}
+.wcard{background:linear-gradient(152deg,#efe7db 0%,#ded0bd 100%);transition:background .2s,transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s;border-radius:16px}
 .wcard .ph{transition:filter .35s,transform .5s cubic-bezier(.2,.7,.3,1)}
 .wcard .meta .more{transition:transform .22s cubic-bezier(.2,.7,.3,1)}
 .wcard:hover{transform:translateY(-3px);box-shadow:0 14px 32px -18px rgba(21,16,15,.45)}
@@ -214,7 +214,7 @@ a.ocard:after{transform:none}}
 .wcard:hover .meta .more{transform:translateX(4px)}
 
 /* resource cards */
-.rcard{transition:background .2s,transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s}
+.rcard{background:linear-gradient(152deg,#efe7db 0%,#ded0bd 100%);transition:background .2s,transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s;border-radius:16px;overflow:hidden}
 .rcard .ph{transition:filter .35s,transform .5s cubic-bezier(.2,.7,.3,1)}
 .rcard .tlink .arw{display:inline-block;transition:transform .22s cubic-bezier(.2,.7,.3,1)}
 a.rcard:hover{transform:translateY(-3px);box-shadow:0 14px 32px -18px rgba(21,16,15,.45)}
@@ -223,13 +223,13 @@ a.rcard:hover .tlink .arw{transform:translateX(5px)}
 .rcard.soon:hover{transform:none;box-shadow:none}
 
 /* case cards, the older variant */
-.ccard{transition:background .2s,transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s}
+.ccard{background:linear-gradient(152deg,#efe7db 0%,#ded0bd 100%);transition:background .2s,transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s;border-radius:16px}
 .ccard .ph{transition:transform .5s cubic-bezier(.2,.7,.3,1)}
 .ccard:hover{transform:translateY(-3px);box-shadow:0 14px 32px -18px rgba(21,16,15,.45)}
 .ccard:hover .ph{transform:scale(1.03)}
 
 /* team cards are not links, so they stay quiet */
-.pcard{transition:transform .22s cubic-bezier(.2,.7,.3,1)}
+.pcard{background:linear-gradient(152deg,#efe7db 0%,#ded0bd 100%);transition:transform .22s cubic-bezier(.2,.7,.3,1);border-radius:16px}
 .pcard .av img{transition:filter .3s,transform .5s cubic-bezier(.2,.7,.3,1)}
 .pcard:hover{transform:translateY(-2px)}
 .pcard:hover .av img{transform:scale(1.04)}

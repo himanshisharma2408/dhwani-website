@@ -77,10 +77,10 @@ em{font-style:italic}
 .serve h2{margin-bottom:8px}
 .serve-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
 a.scard{color:inherit;text-decoration:none}
-.scard{background:var(--beige);border-radius:10px;padding:32px 30px;transition:.2s;display:flex;flex-direction:column}
+.scard{background:linear-gradient(152deg,#efe7db 0%,#ded0bd 100%);border-radius:16px;padding:32px 30px;transition:.2s;display:flex;flex-direction:column}
 .scard-alt{background:none;border:1.5px dashed var(--line)}
 .scard-alt:hover{background:var(--beige);border-style:solid}
-.scard:hover{background:var(--beige-h)}
+.scard:hover{background:linear-gradient(152deg,#eae1d3 0%,#d5c5af 100%)}
 .scard .ic{color:var(--ink);margin-bottom:24px}
 .scard h3{font-size:1.5rem;font-weight:500;margin-bottom:10px}
 .scard p{color:var(--muted);font-size:.97rem;flex:1;margin-bottom:18px}
@@ -139,7 +139,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .scard:focus-visible{outline:2px solid var(--maroon);outline-offset:3px}
 
 /* work cards */
-.wcard{transition:background .2s,transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s}
+.wcard{background:linear-gradient(152deg,#efe7db 0%,#ded0bd 100%);transition:background .2s,transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s;border-radius:16px}
 .wcard .ph{transition:filter .35s,transform .5s cubic-bezier(.2,.7,.3,1)}
 .wcard .meta .more{transition:transform .22s cubic-bezier(.2,.7,.3,1)}
 .wcard:hover{transform:translateY(-3px);box-shadow:0 14px 32px -18px rgba(21,16,15,.45)}
@@ -147,7 +147,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .wcard:hover .meta .more{transform:translateX(4px)}
 
 /* resource cards */
-.rcard{transition:background .2s,transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s}
+.rcard{background:linear-gradient(152deg,#efe7db 0%,#ded0bd 100%);transition:background .2s,transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s;border-radius:16px;overflow:hidden}
 .rcard .ph{transition:filter .35s,transform .5s cubic-bezier(.2,.7,.3,1)}
 .rcard .tlink .arw{display:inline-block;transition:transform .22s cubic-bezier(.2,.7,.3,1)}
 a.rcard:hover{transform:translateY(-3px);box-shadow:0 14px 32px -18px rgba(21,16,15,.45)}
@@ -156,13 +156,13 @@ a.rcard:hover .tlink .arw{transform:translateX(5px)}
 .rcard.soon:hover{transform:none;box-shadow:none}
 
 /* case cards, the older variant */
-.ccard{transition:background .2s,transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s}
+.ccard{background:linear-gradient(152deg,#efe7db 0%,#ded0bd 100%);transition:background .2s,transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s;border-radius:16px}
 .ccard .ph{transition:transform .5s cubic-bezier(.2,.7,.3,1)}
 .ccard:hover{transform:translateY(-3px);box-shadow:0 14px 32px -18px rgba(21,16,15,.45)}
 .ccard:hover .ph{transform:scale(1.03)}
 
 /* team cards are not links, so they stay quiet */
-.pcard{transition:transform .22s cubic-bezier(.2,.7,.3,1)}
+.pcard{background:linear-gradient(152deg,#efe7db 0%,#ded0bd 100%);transition:transform .22s cubic-bezier(.2,.7,.3,1);border-radius:16px}
 .pcard .av img{transition:filter .3s,transform .5s cubic-bezier(.2,.7,.3,1)}
 .pcard:hover{transform:translateY(-2px)}
 .pcard:hover .av img{transform:scale(1.04)}
@@ -312,7 +312,7 @@ window.DHWANI_FORMS = {
 <!-- WHO WE SERVE -->
 <section class="section serve"><div class="wrap">
   <h2 class="shead">Who we serve</h2>
-  <p class="lede">Four kinds of organisation we build for, and what each usually needs first.</p>
+  <p class="lede">Five kinds of organisation we build for, and what each usually needs first.</p>
   <div class="serve-grid">
     <a class="scard" href="for-donors.html">
       <span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17"/><path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 16 6 6"/><circle cx="16" cy="9" r="2.9"/><circle cx="6" cy="5" r="3"/></svg></span>

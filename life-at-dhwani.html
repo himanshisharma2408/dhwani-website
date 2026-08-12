@@ -90,13 +90,13 @@ em{font-style:italic}
 .ngroup{margin-top:32px}
 .ngroup h3{font-family:var(--serif);font-size:1.34rem;font-weight:500;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
 .nngrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
-.nncard{background:var(--beige);border-radius:12px;padding:24px 24px 26px;border-left:3px solid var(--maroon)}
+.nncard{background:linear-gradient(152deg,#efe7db 0%,#ded0bd 100%);border-radius:16px;padding:24px 24px 26px;border-left:3px solid var(--maroon)}
 .nncard b{display:block;font-family:var(--serif);font-size:1.16rem;font-weight:500;color:var(--ink);margin-bottom:8px;line-height:1.3}
 .nncard p{color:var(--muted);font-size:.92rem;line-height:1.6}
 @media(max-width:900px){.nngrid{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.nngrid{grid-template-columns:1fr}}
 .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
-.pcard{background:var(--beige);border-radius:12px;padding:30px 28px}
+.pcard{background:linear-gradient(152deg,#efe7db 0%,#ded0bd 100%);border-radius:16px;padding:30px 28px}
 .pcard .av svg{width:26px;height:26px;color:#4a423c}
 .pcard .av{width:88px;height:88px;border-radius:14px;background:var(--tint);color:var(--muted);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
 .pgrid.lead-grid{grid-template-columns:1fr 1fr;max-width:660px}
@@ -106,7 +106,7 @@ em{font-style:italic}
 
 /* two-up (careers / community) */
 .twoup{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
-.upcard{background:var(--beige);border-radius:14px;padding:40px 38px}
+.upcard{background:linear-gradient(152deg,#efe7db 0%,#ded0bd 100%);border-radius:16px;padding:40px 38px}
 .upcard h3{font-size:1.6rem;margin-bottom:10px}
 .upcard p{color:var(--muted);margin-bottom:20px}
 .upcard .links{display:flex;flex-direction:column;gap:10px}
@@ -166,7 +166,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .scard:focus-visible{outline:2px solid var(--maroon);outline-offset:3px}
 
 /* work cards */
-.wcard{transition:background .2s,transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s}
+.wcard{background:linear-gradient(152deg,#efe7db 0%,#ded0bd 100%);transition:background .2s,transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s;border-radius:16px}
 .wcard .ph{transition:filter .35s,transform .5s cubic-bezier(.2,.7,.3,1)}
 .wcard .meta .more{transition:transform .22s cubic-bezier(.2,.7,.3,1)}
 .wcard:hover{transform:translateY(-3px);box-shadow:0 14px 32px -18px rgba(21,16,15,.45)}
@@ -174,7 +174,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .wcard:hover .meta .more{transform:translateX(4px)}
 
 /* resource cards */
-.rcard{transition:background .2s,transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s}
+.rcard{background:linear-gradient(152deg,#efe7db 0%,#ded0bd 100%);transition:background .2s,transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s;border-radius:16px;overflow:hidden}
 .rcard .ph{transition:filter .35s,transform .5s cubic-bezier(.2,.7,.3,1)}
 .rcard .tlink .arw{display:inline-block;transition:transform .22s cubic-bezier(.2,.7,.3,1)}
 a.rcard:hover{transform:translateY(-3px);box-shadow:0 14px 32px -18px rgba(21,16,15,.45)}
@@ -183,13 +183,13 @@ a.rcard:hover .tlink .arw{transform:translateX(5px)}
 .rcard.soon:hover{transform:none;box-shadow:none}
 
 /* case cards, the older variant */
-.ccard{transition:background .2s,transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s}
+.ccard{background:linear-gradient(152deg,#efe7db 0%,#ded0bd 100%);transition:background .2s,transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s;border-radius:16px}
 .ccard .ph{transition:transform .5s cubic-bezier(.2,.7,.3,1)}
 .ccard:hover{transform:translateY(-3px);box-shadow:0 14px 32px -18px rgba(21,16,15,.45)}
 .ccard:hover .ph{transform:scale(1.03)}
 
 /* team cards are not links, so they stay quiet */
-.pcard{transition:transform .22s cubic-bezier(.2,.7,.3,1)}
+.pcard{background:linear-gradient(152deg,#efe7db 0%,#ded0bd 100%);transition:transform .22s cubic-bezier(.2,.7,.3,1);border-radius:16px}
 .pcard .av img{transition:filter .3s,transform .5s cubic-bezier(.2,.7,.3,1)}
 .pcard:hover{transform:translateY(-2px)}
 .pcard:hover .av img{transform:scale(1.04)}
