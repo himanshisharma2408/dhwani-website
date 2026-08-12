@@ -119,15 +119,15 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .has-dd{position:relative;display:flex;align-items:center}
 .has-dd>a{display:inline-flex;align-items:center;gap:5px}
 .caret{font-size:.82rem;line-height:1;opacity:.85;transition:transform .2s;position:relative;top:1px}
-.has-dd:hover .caret{transform:rotate(180deg)}
+.has-dd:hover .caret,.has-dd:focus-within .caret{transform:rotate(180deg)}
 .dd-toggle{display:none;background:none;border:none;color:inherit;cursor:pointer;font-size:.85rem;padding:8px 4px;transition:transform .2s}
 .dd{position:absolute;top:100%;left:50%;margin-top:12px;transform:translateX(-50%);min-width:238px;background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:0 16px 40px rgba(21,16,15,.16);padding:12px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s ease;z-index:220}
 .dd::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px}
-.has-dd:hover>.dd{opacity:1;visibility:visible;pointer-events:auto}
+.has-dd:hover>.dd,.has-dd:focus-within>.dd{opacity:1;visibility:visible;pointer-events:auto}
 #topnav .dd a{display:block;color:var(--ink)!important;font-size:.9rem;font-weight:450;letter-spacing:0;padding:9px 12px;border-radius:8px;white-space:nowrap}
 #topnav .dd a:hover{background:var(--beige)}
 .dd-mega{left:0;margin-top:12px;transform:none;min-width:0;display:grid;grid-template-columns:repeat(4,max-content);gap:2px 18px;padding:20px 22px}
-.dd-col h6{font-family:var(--sans);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--maroon);font-weight:600;padding:6px 12px 4px}
+.dd-col .dd-lbl{font-family:var(--sans);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--maroon);font-weight:600;padding:6px 12px 4px;margin:0}
 @media(max-width:960px){
   .has-dd{flex-wrap:wrap;justify-content:space-between;border-bottom:1px solid var(--line)}
   #topnav .links .has-dd>a{flex:1;border-bottom:none!important}
@@ -138,7 +138,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
   .dd::before{display:none}
   .has-dd.open>.dd{display:block}
   #topnav .dd a{color:var(--muted)!important;padding:11px 12px}
-  .dd-col h6{padding:12px 12px 4px}
+  .dd-col .dd-lbl{padding:12px 12px 4px}
 }
 #topnav .links a.n-active{color:#fff;font-weight:600}
 #topnav.solid .links a.n-active,#topnav.scrolled .links a.n-active{color:var(--maroon)}
@@ -236,6 +236,7 @@ window.DHWANI_FORMS = {
 </script>
 </head>
 <body>
+<a href="#main-content" style="position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;font-family:Inter,system-ui,sans-serif" onfocus="this.style.cssText='position:fixed;top:12px;left:12px;z-index:500;width:auto;height:auto;overflow:visible;background:#8a1420;color:#fff;padding:12px 20px;border-radius:8px;font-family:Inter,system-ui,sans-serif;font-size:.9rem;font-weight:600'" onblur="this.style.cssText='position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;font-family:Inter,system-ui,sans-serif'">Skip to main content</a>
 
 <!-- NAV -->
 <header id="topnav" class="solid"><div class="nav-in">
@@ -244,17 +245,17 @@ window.DHWANI_FORMS = {
     <a href="index.html">Home</a>
     <div class="has-dd">
       <a href="solutions.html">Solutions <span class="caret">&#9662;</span></a>
-      <button class="dd-toggle" aria-label="Toggle Solutions submenu">&#9662;</button>
+      <button class="dd-toggle" aria-label="Toggle Solutions submenu" aria-expanded="false">&#9662;</button>
       <div class="dd dd-mega">
-        <div class="dd-col"><h6>Products</h6><a href="mgrant-donors.html">mGrant for Donors</a><a href="mgrant-nonprofits.html">mGrant for Nonprofits</a><a href="mform.html">mForm</a><a href="anumati.html">Anumati</a><a href="radar.html">Radar</a></div>
-        <div class="dd-col"><h6>Systems</h6><a href="programme-mis.html">Programme MIS</a><a href="impact-dashboards.html">Impact Dashboards</a><a href="mgrant-donors.html">Grant Management</a><a href="mgrant-nonprofits.html">Donor Management</a><a href="mform.html">Field Data Apps</a><a href="back-office-it.html">Back-office IT</a><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></div>
-        <div class="dd-col"><h6>Consulting</h6><a href="dpdp-act-readiness.html">DPDP Act Readiness</a><a href="cloud-optimisation.html">CloudSahayak</a><a href="ai-for-impact.html">AI for Impact</a><a href="digital-transformation.html">Digital Transformation</a><a href="programme-management.html">Programme Management Support</a></div>
-        <div class="dd-col"><h6>Explore</h6><a href="our-work.html">Browse by sector</a></div>
+        <div class="dd-col"><p class="dd-lbl">Products</p><a href="mgrant-donors.html">mGrant for Donors</a><a href="mgrant-nonprofits.html">mGrant for Nonprofits</a><a href="mform.html">mForm</a><a href="anumati.html">Anumati</a><a href="radar.html">Radar</a></div>
+        <div class="dd-col"><p class="dd-lbl">Systems</p><a href="programme-mis.html">Programme MIS</a><a href="impact-dashboards.html">Impact Dashboards</a><a href="mgrant-donors.html">Grant Management</a><a href="mgrant-nonprofits.html">Donor Management</a><a href="mform.html">Field Data Apps</a><a href="back-office-it.html">Back-office IT</a><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></div>
+        <div class="dd-col"><p class="dd-lbl">Consulting</p><a href="dpdp-act-readiness.html">DPDP Act Readiness</a><a href="cloud-optimisation.html">CloudSahayak</a><a href="ai-for-impact.html">AI for Impact</a><a href="digital-transformation.html">Digital Transformation</a><a href="programme-management.html">Programme Management Support</a></div>
+        <div class="dd-col"><p class="dd-lbl">Explore</p><a href="our-work.html">Browse by sector</a></div>
       </div>
     </div>
     <div class="has-dd">
       <a href="who-we-serve.html">Who we serve <span class="caret">&#9662;</span></a>
-      <button class="dd-toggle" aria-label="Toggle Who we serve submenu">&#9662;</button>
+      <button class="dd-toggle" aria-label="Toggle Who we serve submenu" aria-expanded="false">&#9662;</button>
       <div class="dd">
         <a href="for-donors.html">For Donors &amp; CSRs</a>
         <a href="for-nonprofits.html">For Nonprofits</a>
@@ -267,7 +268,7 @@ window.DHWANI_FORMS = {
     <a href="careers.html">Careers</a>
     <div class="has-dd">
       <a class="n-active" href="about.html">About us <span class="caret">&#9662;</span></a>
-      <button class="dd-toggle" aria-label="Toggle About us submenu">&#9662;</button>
+      <button class="dd-toggle" aria-label="Toggle About us submenu" aria-expanded="false">&#9662;</button>
       <div class="dd">
         <a href="about.html">About</a>
         <a href="team.html">Team</a>
@@ -281,6 +282,7 @@ window.DHWANI_FORMS = {
   <div class="nav-right"><a href="contact.html" class="navpill">Book a call</a>
     <button class="menu-btn" id="menuBtn" aria-label="Menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button></div>
 </div></header>
+<span id="main-content" tabindex="-1"></span>
 
 <section class="section" style="padding-top:130px"><div class="wrap">
   <h1 class="shead">Sitemap</h1>
@@ -410,7 +412,7 @@ window.DHWANI_FORMS = {
 function s(){var a=document.querySelector('.ahero');if(!a){nav.classList.add('solid');return;}nav.classList.toggle('solid',window.scrollY>a.offsetHeight-70);}window.addEventListener('scroll',s,{passive:true});s();
 var mb=document.getElementById('menuBtn');if(mb){mb.addEventListener('click',function(){nav.classList.toggle('open');});
 nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');});});}
-  nav.querySelectorAll('.dd-toggle').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();b.parentElement.classList.toggle('open');});});})();
+  nav.querySelectorAll('.dd-toggle').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();var o=b.parentElement.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});});})();
 </script>
 
 <!-- ===== DHWANI CHAT ASSISTANT ===== -->
@@ -449,17 +451,17 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
 @media(max-width:520px){#dhwani-chat-panel{right:16px;bottom:86px}#dhwani-chat-btn{right:16px;bottom:16px}}
 </style>
 
-<button id="dhwani-chat-btn" aria-label="Chat with Dhwani">
+<button id="dhwani-chat-btn" aria-label="Chat with Dhwani" aria-expanded="false" aria-controls="dhwani-chat-panel">
   <svg class="chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-8.4 8.4c-1.2 0-2.3-.2-3.4-.7L4 20l1-5.4a8.3 8.3 0 0 1-.9-3.8A8.4 8.4 0 0 1 12.6 2a8.4 8.4 0 0 1 8.4 8.4z"/></svg>
   <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
 </button>
 
-<div id="dhwani-chat-panel">
+<div id="dhwani-chat-panel" role="dialog" aria-modal="false" aria-label="Ask Dhwani chat">
   <div class="dch-head">
     <div><b>Ask Dhwani</b><span>Usually replies instantly</span></div>
     <button class="dch-close" id="dhwani-chat-close" aria-label="Close chat">&times;</button>
   </div>
-  <div id="dhwani-chat-body"></div>
+  <div id="dhwani-chat-body" role="log" aria-live="polite" aria-relevant="additions"></div>
   <div class="dch-chips" id="dhwani-chat-chips">
     <button data-q="What do you build?">What do you build?</button>
     <button data-q="Who do you serve?">Who do you serve?</button>
@@ -543,6 +545,7 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
     opened=!opened;
     btn.classList.toggle('open',opened);
     panel.classList.toggle('open',opened);
+    btn.setAttribute('aria-expanded',opened?'true':'false');
     if(opened && !body.dataset.greeted){
       addMsg(GREETING,'bot');
       body.dataset.greeted='1';
@@ -580,6 +583,27 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
         +'&body='+encodeURIComponent('Please add this address to the Dhwani newsletter list: '+input.value);
       input.value=''; var b=f.querySelector('button'); if(b)b.textContent='Thanks';
     });
+  });
+})();
+</script>
+<script>
+(function(){
+  function activeModal(){
+    var m=document.querySelector('.cmodal.open[role="dialog"]');
+    if(m) return m;
+    var lb=document.getElementById('lb');
+    if(lb && !lb.hidden) return lb;
+    return null;
+  }
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='Tab') return;
+    var modal=activeModal();
+    if(!modal) return;
+    var f=modal.querySelectorAll('a[href],button:not([disabled]),input:not([disabled]),textarea:not([disabled]),select:not([disabled]),[tabindex]:not([tabindex="-1"])');
+    if(!f.length) return;
+    var first=f[0],last=f[f.length-1];
+    if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus();}
+    else if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus();}
   });
 })();
 </script>

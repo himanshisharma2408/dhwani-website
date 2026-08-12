@@ -115,15 +115,15 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .has-dd{position:relative;display:flex;align-items:center}
 .has-dd>a{display:inline-flex;align-items:center;gap:5px}
 .caret{font-size:.82rem;line-height:1;opacity:.85;transition:transform .2s;position:relative;top:1px}
-.has-dd:hover .caret{transform:rotate(180deg)}
+.has-dd:hover .caret,.has-dd:focus-within .caret{transform:rotate(180deg)}
 .dd-toggle{display:none;background:none;border:none;color:inherit;cursor:pointer;font-size:.85rem;padding:8px 4px;transition:transform .2s}
 .dd{position:absolute;top:100%;left:50%;margin-top:12px;transform:translateX(-50%);min-width:238px;background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:0 16px 40px rgba(21,16,15,.16);padding:12px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s ease;z-index:220}
 .dd::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px}
-.has-dd:hover>.dd{opacity:1;visibility:visible;pointer-events:auto}
+.has-dd:hover>.dd,.has-dd:focus-within>.dd{opacity:1;visibility:visible;pointer-events:auto}
 #topnav .dd a{display:block;color:var(--ink)!important;font-size:.9rem;font-weight:450;letter-spacing:0;padding:9px 12px;border-radius:8px;white-space:nowrap}
 #topnav .dd a:hover{background:var(--beige)}
 .dd-mega{left:0;margin-top:12px;transform:none;min-width:0;display:grid;grid-template-columns:repeat(4,max-content);gap:2px 18px;padding:20px 22px}
-.dd-col h6{font-family:var(--sans);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--maroon);font-weight:600;padding:6px 12px 4px}
+.dd-col .dd-lbl{font-family:var(--sans);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--maroon);font-weight:600;padding:6px 12px 4px;margin:0}
 @media(max-width:960px){
   .has-dd{flex-wrap:wrap;justify-content:space-between;border-bottom:1px solid var(--line)}
   #topnav .links .has-dd>a{flex:1;border-bottom:none!important}
@@ -134,7 +134,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
   .dd::before{display:none}
   .has-dd.open>.dd{display:block}
   #topnav .dd a{color:var(--muted)!important;padding:11px 12px}
-  .dd-col h6{padding:12px 12px 4px}
+  .dd-col .dd-lbl{padding:12px 12px 4px}
 }
 
 /* audience wayfinding + case grid */
@@ -384,6 +384,7 @@ window.DHWANI_FORMS = {
 </script>
 </head>
 <body>
+<a href="#main-content" style="position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;font-family:Inter,system-ui,sans-serif" onfocus="this.style.cssText='position:fixed;top:12px;left:12px;z-index:500;width:auto;height:auto;overflow:visible;background:#8a1420;color:#fff;padding:12px 20px;border-radius:8px;font-family:Inter,system-ui,sans-serif;font-size:.9rem;font-weight:600'" onblur="this.style.cssText='position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;font-family:Inter,system-ui,sans-serif'">Skip to main content</a>
 
 <!-- NAV -->
 <header id="topnav"><div class="nav-in">
@@ -392,17 +393,17 @@ window.DHWANI_FORMS = {
     <a href="index.html">Home</a>
     <div class="has-dd">
       <a href="solutions.html">Solutions <span class="caret">&#9662;</span></a>
-      <button class="dd-toggle" aria-label="Toggle Solutions submenu">&#9662;</button>
+      <button class="dd-toggle" aria-label="Toggle Solutions submenu" aria-expanded="false">&#9662;</button>
       <div class="dd dd-mega">
-        <div class="dd-col"><h6>Products</h6><a href="mgrant-donors.html">mGrant for Donors</a><a href="mgrant-nonprofits.html">mGrant for Nonprofits</a><a href="mform.html">mForm</a><a href="anumati.html">Anumati</a><a href="radar.html">Radar</a></div>
-        <div class="dd-col"><h6>Systems</h6><a href="programme-mis.html">Programme MIS</a><a href="impact-dashboards.html">Impact Dashboards</a><a href="mgrant-donors.html">Grant Management</a><a href="mgrant-nonprofits.html">Donor Management</a><a href="mform.html">Field Data Apps</a><a href="back-office-it.html">Back-office IT</a><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></div>
-        <div class="dd-col"><h6>Consulting</h6><a href="dpdp-act-readiness.html">DPDP Act Readiness</a><a href="cloud-optimisation.html">CloudSahayak</a><a href="ai-for-impact.html">AI for Impact</a><a href="digital-transformation.html">Digital Transformation</a><a href="programme-management.html">Programme Management Support</a></div>
-        <div class="dd-col"><h6>Explore</h6><a href="our-work.html">Browse by sector</a></div>
+        <div class="dd-col"><p class="dd-lbl">Products</p><a href="mgrant-donors.html">mGrant for Donors</a><a href="mgrant-nonprofits.html">mGrant for Nonprofits</a><a href="mform.html">mForm</a><a href="anumati.html">Anumati</a><a href="radar.html">Radar</a></div>
+        <div class="dd-col"><p class="dd-lbl">Systems</p><a href="programme-mis.html">Programme MIS</a><a href="impact-dashboards.html">Impact Dashboards</a><a href="mgrant-donors.html">Grant Management</a><a href="mgrant-nonprofits.html">Donor Management</a><a href="mform.html">Field Data Apps</a><a href="back-office-it.html">Back-office IT</a><a href="monitoring-evaluation.html">Monitoring &amp; Evaluation</a></div>
+        <div class="dd-col"><p class="dd-lbl">Consulting</p><a href="dpdp-act-readiness.html">DPDP Act Readiness</a><a href="cloud-optimisation.html">CloudSahayak</a><a href="ai-for-impact.html">AI for Impact</a><a href="digital-transformation.html">Digital Transformation</a><a href="programme-management.html">Programme Management Support</a></div>
+        <div class="dd-col"><p class="dd-lbl">Explore</p><a href="our-work.html">Browse by sector</a></div>
       </div>
     </div>
     <div class="has-dd">
       <a class="n-active" href="who-we-serve.html">Who we serve <span class="caret">&#9662;</span></a>
-      <button class="dd-toggle" aria-label="Toggle Who we serve submenu">&#9662;</button>
+      <button class="dd-toggle" aria-label="Toggle Who we serve submenu" aria-expanded="false">&#9662;</button>
       <div class="dd">
         <a href="for-donors.html">For Donors &amp; CSRs</a>
         <a href="for-nonprofits.html">For Nonprofits</a>
@@ -414,7 +415,7 @@ window.DHWANI_FORMS = {
     <a href="resources.html">Resources</a>
     <a href="careers.html">Careers</a><div class="has-dd">
       <a href="about.html">About us <span class="caret">&#9662;</span></a>
-      <button class="dd-toggle" aria-label="Toggle About us submenu">&#9662;</button>
+      <button class="dd-toggle" aria-label="Toggle About us submenu" aria-expanded="false">&#9662;</button>
       <div class="dd">
         <a href="about.html">About</a>
         <a href="team.html">Team</a>
@@ -428,6 +429,7 @@ window.DHWANI_FORMS = {
   <div class="nav-right"><a href="contact.html" class="navpill">Book a call</a>
     <button class="menu-btn" id="menuBtn" aria-label="Menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button></div>
 </div></header>
+<span id="main-content" tabindex="-1"></span>
 
 <!-- HERO -->
 <div class="ahero">
@@ -517,7 +519,7 @@ window.DHWANI_FORMS = {
 function s(){var h=(document.querySelector('.ahero')||{}).offsetHeight||520;nav.classList.toggle('solid',window.scrollY>h-70);}window.addEventListener('scroll',s,{passive:true});s();
 var mb=document.getElementById('menuBtn');if(mb){mb.addEventListener('click',function(){nav.classList.toggle('open');});
 nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');});});}
-  nav.querySelectorAll('.dd-toggle').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();b.parentElement.classList.toggle('open');});});
+  nav.querySelectorAll('.dd-toggle').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();var o=b.parentElement.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});});
 var logos=['gates-foundation.svg','tata-trusts','azim-premji-philanthropic-initiatives','ciff','omidyar-network-india','reliance-foundation','axis-bank-foundation','bajaj-finserv','hdfc-bank','icici-foundation','godrej','mahindra','amazon','adani-foundation','piramal-foundation','shiv-nadar-foundation','tech-mahindra-foundation','kotak-education-foundation','crisil-foundation','sehgal-foundation','vedanta-foundation','welspun-foundation','raintree-foundation','nasscom-foundation','yash-johar-foundation','chintu-gudiya-foundation'];
 var LOGOH={"access-development-services.png": 68.7, "adani-foundation.png": 56.3, "akrsp.png": 65.2, "amazon.png": 41.1, "arvind.png": 41.9, "ashoka-university.png": 45.8, "axis-bank-foundation.png": 33.6, "azim-premji-philanthropic-initiatives.png": 48.8, "azim-premji-university.png": 50.5, "bajaj-finserv.png": 62.5, "bajaj.png": 73.6, "bigbasket.png": 78.0, "breakthrough.png": 62.8, "bridgespan.png": 52.8, "bright-future.png": 45.8, "cams.svg": 43.5, "central-square-foundation.png": 36.8, "centre-for-civil-society.png": 47.5, "chintu-gudiya-foundation.png": 36.1, "ciff.png": 35.1, "cms-social-impact.png": 36.9, "crisil-foundation.png": 49.7, "danone-nutricia.png": 65.3, "dasra.png": 70.7, "dell.png": 70.7, "deloitte.png": 31.3, "educate-girls.png": 69.2, "ey.png": 72.5, "forbes-marshall.png": 35.8, "gates-foundation.svg": 35.4, "gdi.png": 50.6, "give.png": 54.8, "giz.png": 37.8, "godrej.png": 49.3, "google.png": 41.4, "hdfc-bank.png": 76.2, "heifer-international.svg": 40.6, "helpage-india.png": 52.1, "icici-foundation.png": 33.4, "idh.png": 44.7, "ifmr.png": 46.8, "indus-action.png": 33.8, "intellecap.png": 43.0, "irma.png": 57.9, "isdm.png": 46.0, "jan-sahas.png": 70.7, "janaagraha.png": 33.4, "jindal-stainless.png": 36.7, "kotak-education-foundation.png": 37.2, "kpmg.png": 45.0, "kyndryl.png": 70.7, "language-and-learning-foundation.png": 70.7, "learning-links-foundation.png": 61.9, "lic-hfl.png": 49.9, "lupin.png": 78.0, "mahindra.png": 49.8, "microsave-consulting.png": 53.5, "nafpo.png": 35.2, "nasscom-foundation.png": 44.8, "nielsen.png": 41.6, "nrlm.png": 74.0, "nudge.png": 59.2, "omidyar-network-india.png": 36.7, "onestage.png": 70.7, "piramal-foundation.png": 48.3, "pradan.png": 41.9, "pratham.png": 70.7, "pwc.png": 62.1, "raintree-foundation.png": 69.9, "reliance-foundation.png": 43.0, "renew.png": 41.0, "sattva.png": 53.5, "save-the-children.png": 63.0, "sehgal-foundation.png": 37.2, "shiv-nadar-foundation.png": 34.6, "smile-foundation.png": 62.7, "sun-pharma.png": 61.8, "swasti.png": 36.6, "tata-steel.png": 26.0, "tata-strive.png": 35.8, "tata-trusts.png": 26.8, "tech-mahindra-foundation.png": 46.4, "terre-des-hommes.png": 29.7, "transform-rural-india.png": 38.2, "udyogini.png": 73.6, "undp.png": 78.0, "unesco.png": 59.8, "unicef.png": 64.4, "unilever.png": 74.1, "unitus-capital.png": 29.6, "vedanta-foundation.png": 43.8, "vijayavahini-charitable-foundation.png": 37.7, "villgro.png": 48.9, "vrutti.png": 49.8, "wadhwani-ai.png": 42.4, "water-for-people.png": 78.0, "welspun-foundation.svg": 66.6, "who.png": 71.6, "world-bank.png": 33.8, "world-resources-institute.png": 42.4, "yash-johar-foundation.png": 38.0, "yuwaah.png": 69.9};
 function build(id,a){var el=document.getElementById(id);if(!el)return;el.innerHTML=a.concat(a).map(function(n){var f=n.indexOf('.')>-1?n:n+'.png';var h=LOGOH[f]||32;return '<img src="assets/img/clients/'+f+'" alt="" style="height:'+h+'px">';}).join('');}
@@ -560,17 +562,17 @@ build('row1',logos.slice(0,13));build('row2',logos.slice(13));})();
 @media(max-width:520px){#dhwani-chat-panel{right:16px;bottom:86px}#dhwani-chat-btn{right:16px;bottom:16px}}
 </style>
 
-<button id="dhwani-chat-btn" aria-label="Chat with Dhwani">
+<button id="dhwani-chat-btn" aria-label="Chat with Dhwani" aria-expanded="false" aria-controls="dhwani-chat-panel">
   <svg class="chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-8.4 8.4c-1.2 0-2.3-.2-3.4-.7L4 20l1-5.4a8.3 8.3 0 0 1-.9-3.8A8.4 8.4 0 0 1 12.6 2a8.4 8.4 0 0 1 8.4 8.4z"/></svg>
   <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
 </button>
 
-<div id="dhwani-chat-panel">
+<div id="dhwani-chat-panel" role="dialog" aria-modal="false" aria-label="Ask Dhwani chat">
   <div class="dch-head">
     <div><b>Ask Dhwani</b><span>Usually replies instantly</span></div>
     <button class="dch-close" id="dhwani-chat-close" aria-label="Close chat">&times;</button>
   </div>
-  <div id="dhwani-chat-body"></div>
+  <div id="dhwani-chat-body" role="log" aria-live="polite" aria-relevant="additions"></div>
   <div class="dch-chips" id="dhwani-chat-chips">
     <button data-q="What do you build?">What do you build?</button>
     <button data-q="Who do you serve?">Who do you serve?</button>
@@ -654,6 +656,7 @@ build('row1',logos.slice(0,13));build('row2',logos.slice(13));})();
     opened=!opened;
     btn.classList.toggle('open',opened);
     panel.classList.toggle('open',opened);
+    btn.setAttribute('aria-expanded',opened?'true':'false');
     if(opened && !body.dataset.greeted){
       addMsg(GREETING,'bot');
       body.dataset.greeted='1';
@@ -691,6 +694,27 @@ build('row1',logos.slice(0,13));build('row2',logos.slice(13));})();
         +'&body='+encodeURIComponent('Please add this address to the Dhwani newsletter list: '+input.value);
       input.value=''; var b=f.querySelector('button'); if(b)b.textContent='Thanks';
     });
+  });
+})();
+</script>
+<script>
+(function(){
+  function activeModal(){
+    var m=document.querySelector('.cmodal.open[role="dialog"]');
+    if(m) return m;
+    var lb=document.getElementById('lb');
+    if(lb && !lb.hidden) return lb;
+    return null;
+  }
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='Tab') return;
+    var modal=activeModal();
+    if(!modal) return;
+    var f=modal.querySelectorAll('a[href],button:not([disabled]),input:not([disabled]),textarea:not([disabled]),select:not([disabled]),[tabindex]:not([tabindex="-1"])');
+    if(!f.length) return;
+    var first=f[0],last=f[f.length-1];
+    if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus();}
+    else if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus();}
   });
 })();
 </script>
