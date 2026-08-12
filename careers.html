@@ -4,6 +4,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Careers | Dhwani RIS</title>
+<meta name="description" content="Engineering, product and delivery roles at Dhwani RIS, working on software that runs real programmes for millions of people. Gurugram, building since 2015.">
+<link rel="canonical" href="https://www.dhwaniris.com/careers.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dhwani RIS">
+<meta property="og:title" content="Careers | Dhwani RIS">
+<meta property="og:description" content="Engineering, product and delivery roles at Dhwani RIS, working on software that runs real programmes for millions of people. Gurugram, building since 2015.">
+<meta property="og:url" content="https://www.dhwaniris.com/careers.html">
+<meta property="og:image" content="https://www.dhwaniris.com/assets/img/og-cover.png">
+<meta property="og:image:alt" content="Dhwani RIS, technology the impact sector runs on">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Careers | Dhwani RIS">
+<meta name="twitter:description" content="Engineering, product and delivery roles at Dhwani RIS, working on software that runs real programmes for millions of people. Gurugram, building since 2015.">
+<meta name="twitter:image" content="https://www.dhwaniris.com/assets/img/og-cover.png">
+<meta name="theme-color" content="#15100f">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/og-cover.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
@@ -74,12 +90,8 @@ em{font-style:italic}
 a.pcard{display:flex;flex-direction:column;color:inherit;text-decoration:none;transition:.2s}
 a.pcard:hover{background:var(--beige-h)}
 a.pcard p{flex:1}
-.rolesnow{margin-top:34px;border-top:1px solid var(--line);padding-top:28px}
+.rolesnow{margin-top:30px;border-top:1px solid var(--line);padding-top:26px}
 .rolesnow h3{font-size:1.2rem;font-weight:500;margin-bottom:14px}
-.rolerow{display:flex;align-items:baseline;justify-content:space-between;gap:16px;background:var(--beige);border-radius:10px;padding:16px 20px;margin-bottom:9px;transition:.2s;flex-wrap:wrap}
-.rolerow:hover{background:var(--beige-h)}
-.rolerow b{font-family:var(--serif);font-size:1.1rem;font-weight:500;color:var(--ink)}
-.rolerow span{font-size:.86rem;color:var(--muted)}
 .rolenote{margin-top:14px;font-size:.9rem;color:var(--muted)}
 .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
 .pcard{background:var(--beige);border-radius:12px;padding:30px 28px}
@@ -216,6 +228,7 @@ window.DHWANI_FORMS = {
   FORM_ENDPOINT: '',
   FORM_ENCODING: 'json',   /* 'form' for FormSubmit / Formspree / Zoho Forms */
   NEWSLETTER_ACTION: '',
+  NEWSLETTER_FIELD: 'CONTACT_EMAIL',   /* must match the field name on the Zoho Campaigns form */
   NEWSLETTER_ARCHIVE: '',   /* Zoho Campaigns public archive, so new issues appear on their own */
   NOTIFY_EMAIL: 'partnerships@dhwaniris.com'
 };
@@ -299,11 +312,10 @@ window.DHWANI_FORMS = {
 <!-- AREAS -->
 <section class="section"><div class="wrap">
   <h2 class="shead">Open roles</h2>
-  <p class="lede" style="margin-top:6px;margin-bottom:22px">We hire across engineering, product, and delivery. These are open now.</p>
+  <p class="lede" style="margin-top:6px;margin-bottom:22px">We hire across engineering, product, and delivery. Every opening, with its full description and application form, is on our hiring board.</p>
   <div class="rolesnow">
-    <a class="rolerow" href="https://people.dhwaniris.com/jobs" target="_blank" rel="noopener"><b>Project Manager</b><span>Gujarat &middot; Contract &middot; closes 31 Aug 2026</span></a>
-    <a class="rolerow" href="https://people.dhwaniris.com/jobs" target="_blank" rel="noopener"><b>SDE-1 Frappe</b><span>Gurugram &middot; Full-time</span></a>
-    <p class="rolenote">Roles are pulled from our hiring board. <a class="tlink" href="https://people.dhwaniris.com/jobs" target="_blank" rel="noopener">See all openings <span class="arw">&#8594;</span></a></p>
+    <a class="pill pill-primary" href="https://people.dhwaniris.com/jobs" target="_blank" rel="noopener">See all openings <span class="arw">&#8594;</span></a>
+    <p class="rolenote">Nothing that fits right now? Write to <a class="tlink" href="mailto:careers@dhwaniris.com">careers@dhwaniris.com</a> and tell us what you do.</p>
   </div>
 </div></section>
 
@@ -347,35 +359,6 @@ window.DHWANI_FORMS = {
   <a class="pill pill-primary" href="mailto:careers@dhwaniris.com">Write to us <span class="arw">&#8594;</span></a>
 </div></div>
 
-<script>
-/* Live roles from the Frappe hiring board.
-   Needs guest read on the Job Opening doctype; until then the listed roles stand. */
-(function(){
-  var box=document.querySelector('.rolesnow'); if(!box)return;
-  var BOARD='https://people.dhwaniris.com';
-  var url=BOARD+'/api/resource/Job%20Opening?limit_page_length=20'
-        +'&filters=[["status","=","Open"]]'
-        +'&fields=["name","job_title","location","employment_type","closes_on","route"]';
-  fetch(url,{headers:{'Accept':'application/json'}})
-    .then(function(r){ if(!r.ok) throw 0; return r.json(); })
-    .then(function(d){
-      var rows=(d&&d.data)||[]; if(!rows.length) throw 0;
-      var html=rows.map(function(j){
-        var bits=[j.location,j.employment_type].filter(Boolean);
-        if(j.closes_on) bits.push('closes '+j.closes_on);
-        var href=BOARD+(j.route?'/'+j.route:'/jobs');
-        return '<a class="rolerow" href="'+href+'" target="_blank" rel="noopener">'
-             + '<b>'+(j.job_title||j.name)+'</b>'
-             + '<span>'+bits.join(' \u00b7 ')+'</span></a>';
-      }).join('');
-      box.querySelectorAll('.rolerow').forEach(function(el){el.remove();});
-      box.insertAdjacentHTML('afterbegin',html);
-      box.setAttribute('data-source','live');
-    })
-    .catch(function(){ box.setAttribute('data-source','listed'); });
-})();
-</script>
-
 <!-- FOOTER -->
 <footer><div class="wrap">
   <div class="fgrid">
@@ -386,7 +369,7 @@ window.DHWANI_FORMS = {
       <h5>Get the newsletter</h5>
       <p class="fnl">Practical tech-for-good, once a month.</p>
       <form class="fsform" onsubmit="return false" data-pending="newsletter-provider">
-        <input type="email" placeholder="Your work email" aria-label="Your work email">
+        <input type="email" name="CONTACT_EMAIL" required placeholder="Your work email" aria-label="Your work email">
         <button class="pill pill-primary" type="submit">Subscribe</button>
       </form>
       <p class="fcontact"><a href="tel:+919574655961">+91 95746 55961</a><br><a href="mailto:partnerships@dhwaniris.com">partnerships@dhwaniris.com</a><br><a class="faddr" href="https://www.google.com/maps/search/?api=1&amp;query=Dhwani+Rural+Information+Systems+Pvt.+Ltd.&amp;query_place_id=ChIJwd2BnNQfDTkRn-sT_EWOT8o" target="_blank" rel="noopener">Building 94, Sector 44, Gurugram 122002</a></p>
@@ -563,7 +546,10 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
   var cfg=window.DHWANI_FORMS||{};
   document.querySelectorAll('form[data-pending="newsletter-provider"]').forEach(function(f){
     var input=f.querySelector('input[type=email]');
-    if(cfg.NEWSLETTER_ACTION){f.setAttribute('action',cfg.NEWSLETTER_ACTION);f.setAttribute('method','post');f.removeAttribute('onsubmit');return;}
+    if(cfg.NEWSLETTER_ACTION){
+      if(input&&cfg.NEWSLETTER_FIELD) input.setAttribute('name',cfg.NEWSLETTER_FIELD);
+      f.setAttribute('action',cfg.NEWSLETTER_ACTION);f.setAttribute('method','post');
+      f.removeAttribute('onsubmit');return;}
     f.addEventListener('submit',function(e){
       e.preventDefault();
       if(!input.value){input.focus();return;}
