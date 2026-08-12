@@ -242,7 +242,7 @@ window.DHWANI_FORMS = {
 </head>
 <body>
 <!-- ===== NAV ===== -->
-<header id="topnav"><div class="nav-in">
+<header id="topnav" class="solid"><div class="nav-in">
   <a href="index.html" style="display:flex"><img class="logo logo-white" src="assets/img/dhwani-logo-all-white.png" alt="Dhwani RIS"><img class="logo logo-dark" src="assets/img/dhwani-logo-full.png" alt="Dhwani RIS"></a>
   <div class="links">
     <a href="index.html">Home</a>
@@ -270,7 +270,7 @@ window.DHWANI_FORMS = {
     <a href="resources.html">Resources</a>
     <a href="careers.html">Careers</a>
     <div class="has-dd">
-      <a class="n-active" href="about.html">About us <span class="caret">&#9662;</span></a>
+      <a href="about.html">About us <span class="caret">&#9662;</span></a>
       <button class="dd-toggle" aria-label="Toggle About us submenu">&#9662;</button>
       <div class="dd">
         <a href="about.html">About</a>
@@ -507,6 +507,15 @@ window.DHWANI_FORMS = {
       input.value=''; var b=f.querySelector('button'); if(b)b.textContent='Thanks';
     });
   });
+})();
+</script>
+<script>
+/* No hero on this page, so the nav is solid from the start and stays that way. */
+(function(){
+  var n=document.getElementById('topnav');
+  if(!n)return;
+  n.classList.add('solid');
+  window.addEventListener('scroll',function(){n.classList.add('solid');},{passive:true});
 })();
 </script>
 </body>
