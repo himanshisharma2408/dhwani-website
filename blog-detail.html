@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redirecting… | Dhwani RIS</title>
+<meta name="robots" content="noindex">
+<script>
+/* The previous site served every blog post from this one page as blog-detail.html?id=N.
+   This page only exists so those 17 already-indexed URLs land somewhere real instead of
+   404ing on cutover. */
+var POSTS = {
+  1: 'insights/what-i-ve-learned-about-impact-iteration-and-imperfection-at-dhwani-ris.html',
+  2: 'insights/mgrant-streamlining-grant-making-and-project-management-for-social-sector-pioneers.html',
+  3: 'insights/navigating-the-intersection-of-usability-and-accessibility-crafting-inclusive-digital-experiences.html',
+  4: 'insights/relevance-of-ui-ux-for-non-profits-and-social-impact-sector-in-india.html',
+  5: 'insights/aws-x-dhwani-s-tech-for-good-workshop-unleashing-social-impact-through-technovation.html',
+  6: 'insights/from-paper-to-progress-how-mform-is-streamlining-data-collection.html',
+  7: 'insights/using-technology-to-simplify-data-analysis-a-case-study-on-how-it-saves-time-and-effort.html',
+  8: 'insights/data-privacy-what-it-means-and-how-to-safeguard-data-in-the-social-sector.html',
+  9: 'insights/the-value-of-a-chief-of-staff-in-social-sector-organizations-insights-from-a-one-year-journey.html',
+  10: 'insights/exploring-business-intelligence.html',
+  11: 'insights/data-scraping-using-python.html',
+  12: 'insights/application-of-tech4good-in-livelihoods.html',
+  13: 'insights/data-overwhelming-in-the-indian-social-sector-part-ii-data-journey.html',
+  14: 'insights/data-overwhelming-in-the-indian-social-sector-part-i-data-journey.html',
+  15: 'insights/chatbots-make-conversations-about-change-easy.html',
+  16: 'insights/low-code-no-code-new-change-catalysts.html',
+  17: 'insights/disaster-relief-in-india-how-can-corporates-contribute.html'
+};
+var id = new URLSearchParams(location.search).get('id');
+var target = POSTS[id] || 'resources.html#insights';
+document.write('<link rel="canonical" href="https://www.dhwaniris.com/' + target + '">');
+document.write('<meta http-equiv="refresh" content="0; url=' + target + '">');
+location.replace(target);
+</script>
+</head>
+<body>
+<p>This post has moved. <a href="resources.html#insights">See all Insights &rarr;</a></p>
+</body>
+</html>
