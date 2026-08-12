@@ -249,7 +249,7 @@ border:1px solid var(--line-d);border-radius:6px;padding:4px 8px}
 .foot-bot .flegal a:hover{color:#fff;border-bottom-color:rgba(255,255,255,.4)}
 
 /* bento */
-.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(258px,auto);gap:16px;margin-top:34px}
+.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:minmax(258px,auto);grid-auto-flow:row dense;gap:16px;margin-top:34px}
 .bt{position:relative;border-radius:16px;overflow:hidden;background:var(--beige);
 display:flex;flex-direction:column;justify-content:center;padding:22px 24px;transition:.22s}
 .bt.w2{grid-column:span 2}
@@ -427,6 +427,11 @@ window.DHWANI_FORMS = {
     <div class="bt img w2"><div class="bph" style="background-image:url('assets/img/life/podium.jpg')"></div><div class="bcap"><b>On a stage somewhere</b><span>Talking about the work, and being asked about it.</span></div></div>
     <div class="bt img "><div class="bph" style="background-image:url('assets/img/life/holi.jpg')"></div><div class="bcap"><b>Holi at the office</b><span>Not much work got done that afternoon.</span></div></div>
     <div class="bt img w2"><div class="bph" style="background-image:url('assets/img/life/cricket.jpg')"></div><div class="bcap"><b>The cricket side</b><span>Kit and all. Results vary.</span></div></div>
+    <div class="bt img w2"><div class="bph" style="background-image:url('assets/img/life/desk-still.jpg')"></div><div class="bcap"><b>A desk, mid-morning</b><span>Most of the work looks like this.</span></div></div>
+    <div class="bt img h2"><div class="bph" style="background-image:url('assets/img/life/planning.jpg')"></div><div class="bcap"><b>Planning a release</b><span>The whole board on one wall.</span></div></div>
+    <div class="bt img "><div class="bph" style="background-image:url('assets/img/life/diwali-family.jpg')"></div><div class="bcap"><b>Diwali, families welcome</b><span>Dogs too.</span></div></div>
+    <div class="bt img w2"><div class="bph" style="background-image:url('assets/img/life/diwali.jpg')"></div><div class="bcap"><b>The office at Diwali</b><span>Marigolds, and nobody at their desk.</span></div></div>
+    <div class="bt img "><div class="bph" style="background-image:url('assets/img/life/sofa.jpg')"></div><div class="bcap"><b>Off the meeting room</b><span>Not every conversation needs one.</span></div></div>
     <div class="bt fill"><div class="bfig">Since 2015</div><h4>building for the sector</h4><p>Long enough to have learned most of this the hard way.</p></div>
     <div class="bt img w2"><div class="bph" style="background-image:url('assets/img/life/skoch.jpg')"></div><div class="bcap"><b>The Skoch Awards</b><span>For work delivered with our partners.</span></div></div>
     <a class="bt w2" href="careers.html"><h4>A hybrid week</h4><p>Out of Gurugram, and flexible about the days where a role allows it.</p></a>
