@@ -48,14 +48,14 @@ em{font-style:italic}
 /* nav (shared) */
 #topnav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .3s,box-shadow .3s}
 #topnav .nav-in{display:flex;align-items:center;justify-content:space-between;padding:28px 40px;gap:20px}
-#topnav .logo{height:56px;transition:.25s;display:block}#topnav .logo-dark{display:none}
+#topnav .logo{height:56px;width:auto;transition:.25s;display:block}#topnav .logo-dark{display:none}
 #topnav .links{display:flex;gap:30px;align-items:center}
 #topnav .links a{font-size:.92rem;color:rgba(255,255,255,.9)}#topnav .links a:hover{color:#fff}
 #topnav .nav-right{display:flex;align-items:center;gap:14px}
 #topnav .navpill{background:var(--maroon);color:#fff;padding:11px 21px;border-radius:999px;font-weight:500;white-space:nowrap}#topnav .navpill:hover{background:var(--maroon-2)}
 #topnav .menu-btn{display:none;background:none;border:none;color:#fff;cursor:pointer;padding:2px;line-height:0}
 #topnav.solid,#topnav.open{background:rgba(244,240,232,.96);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line),0 8px 24px rgba(21,16,15,.05)}
-#topnav.solid .nav-in{padding:11px 40px}#topnav.solid .logo{height:50px}
+#topnav.solid .nav-in{padding:11px 40px}#topnav.solid .logo{height:50px;width:auto}
 #topnav.solid .logo-white,#topnav.open .logo-white{display:none}#topnav.solid .logo-dark,#topnav.open .logo-dark{display:block}
 #topnav.solid .links a{color:var(--muted)}#topnav.solid .links a:hover{color:var(--ink)}
 #topnav.solid .menu-btn,#topnav.open .menu-btn{color:var(--ink)}
@@ -113,7 +113,7 @@ footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88
 .frow2{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;gap:36px;margin-top:48px}
 
 @media(max-width:900px){.cs-card{grid-template-columns:1fr}.cs-card .ph{min-height:240px}}
-@media(max-width:640px){.wrap{padding:0 22px}#topnav .nav-in{padding:22px 22px}#topnav .logo{height:50px}
+@media(max-width:640px){.wrap{padding:0 22px}#topnav .nav-in{padding:22px 22px}#topnav .logo{height:50px;width:auto}
   .ahero{margin:10px;border-radius:20px;padding:130px 24px 48px}
   .cta,}
 
