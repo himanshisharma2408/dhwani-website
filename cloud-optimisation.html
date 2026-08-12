@@ -426,7 +426,7 @@ a.ocard:hover>.pw{opacity:1;transform:translateY(-1px)}
 .cgrid>.ocard.fill:last-child:nth-child(10){grid-column:span 3}
 .cgrid>.ocard.fill:last-child:nth-child(5),
 .cgrid>.ocard.fill:last-child:nth-child(11){grid-column:span 2}
-.ocard.fill,.cgrid>.ocard.fill{background:var(--maroon)}
+.ocard.fill,.cgrid>.ocard.fill{background:linear-gradient(145deg,#9c1826 0%,var(--maroon) 42%,#660e18 100%)}
 .ocard.fill .ic{background:rgba(255,255,255,.15);color:#fff}
 .ocard.fill h5{color:#fff}
 .ocard.fill p{color:rgba(255,255,255,.84)}
@@ -435,9 +435,9 @@ a.ocard:hover>.pw{opacity:1;transform:translateY(-1px)}
 /* one tile in ink, where it holds a chart. Wide for the same reason. */
 .ocard.wide{grid-column:span 2}
 /* .ink is the colour, .wide is only the span, so a focal tile need not be wide */
-.ocard.ink{background:linear-gradient(150deg,#241d1a 0%,#15100f 100%)}
+.ocard.ink{--ac:#eab588;background:linear-gradient(150deg,#241d1a 0%,#15100f 100%)}
 .ocard.ink h5{color:#fff}
-.ocard.ink em{color:rgba(255,255,255,.9)}
+.ocard.ink em{color:var(--orange-soft)}
 .ocard.ink .fignum{color:#fff}
 .ocard.ink .figlbl{color:rgba(255,255,255,.6)}
 .ocard.ink p{color:rgba(255,255,255,.72)}
@@ -446,7 +446,7 @@ a.ocard:hover>.pw{opacity:1;transform:translateY(-1px)}
 .chart{position:absolute;right:0;bottom:0;left:34%;height:52%;z-index:1;pointer-events:none;
 -webkit-mask-image:linear-gradient(100deg,transparent 0,#000 22%);mask-image:linear-gradient(100deg,transparent 0,#000 22%)}
 .chart svg{width:100%;height:100%}
-.chart .ln{fill:none;stroke:rgba(255,255,255,.5);stroke-width:2;stroke-linecap:round;
+.chart .ln{fill:none;stroke:var(--ac,var(--maroon));stroke-width:2;stroke-linecap:round;
 stroke-dasharray:620;stroke-dashoffset:620;transition:stroke-dashoffset 1.5s cubic-bezier(.3,.8,.3,1)}
 .ocard.seen .chart .ln{stroke-dashoffset:0}
 .chart .gr{stroke:rgba(255,255,255,.13);stroke-width:1}
@@ -457,12 +457,13 @@ color:var(--ink);margin-bottom:4px;display:block}
 font-weight:600;display:block;margin-bottom:14px}
 .bars{position:absolute;left:52%;right:0;bottom:0;height:40%;z-index:1;display:flex;align-items:flex-end;
 gap:4px;padding:0 clamp(18px,2.4vw,24px) 0 0;pointer-events:none;opacity:.5}
-.bars i{flex:1;background:rgba(21,16,15,.13);border-radius:3px 3px 0 0}
+.bars i{flex:1;background:linear-gradient(180deg,var(--maroon),rgba(138,20,32,0));
+border-radius:3px 3px 0 0;opacity:.5}
 
 /* hover. The ink tile is excluded, so it can never repaint light under white text. */
 .ocard:not(.fill):not(.ink):hover{background:linear-gradient(152deg,#eae1d3 0%,#d5c5af 100%);transform:translateY(-3px)}
 .ocard.ink:hover{background:linear-gradient(150deg,#2e2521 0%,#1b1513 100%);transform:translateY(-3px)}
-.ocard.fill:hover{background:var(--maroon-2);transform:translateY(-3px)}
+.ocard.fill:hover{background:linear-gradient(145deg,#8d1522 0%,var(--maroon-2) 45%,#5a0c15 100%);transform:translateY(-3px)}
 a.ocard:hover{box-shadow:0 12px 28px -16px rgba(21,16,15,.42)}
 a.ocard:hover .ic{background:rgba(138,20,32,.10);color:var(--maroon)}
 a.ocard.ink:hover .ic{background:rgba(255,255,255,.2);color:#fff}
