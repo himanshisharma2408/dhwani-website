@@ -120,6 +120,11 @@ em{font-style:italic}
 .map-wrap{padding-bottom:var(--pad)}
 .map-card{display:grid;grid-template-columns:1fr 360px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:linear-gradient(152deg,#efe7db 0%,#ded0bd 100%)}
 .map-embed{width:100%;height:100%;min-height:380px;border:0;display:block}
+.map-facade{display:flex;align-items:center;justify-content:center;padding:24px;text-align:center}
+.map-load-btn{all:unset;cursor:pointer;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:16px 22px;display:flex;flex-direction:column;align-items:center;gap:8px;font-family:var(--sans);transition:.2s;max-width:280px}
+.map-load-btn:hover{background:var(--paper);border-color:var(--muted)}
+.map-load-btn b{color:var(--maroon);font-size:.95rem}
+.map-load-btn span{color:var(--muted);font-size:.78rem;line-height:1.5}
 .map-info{padding:34px 32px;display:flex;flex-direction:column;justify-content:center}
 .map-info h4{font-family:var(--serif);font-size:1.35rem;font-weight:500;color:var(--ink);margin-bottom:10px}
 .map-info .addr{font-family:var(--serif);font-size:1.15rem;font-weight:500;color:var(--muted);margin-bottom:8px}
@@ -349,7 +354,12 @@ window.DHWANI_FORMS = {
 <!-- ===== OFFICE MAP ===== -->
 <section class="wrap map-wrap" id="map">
   <div class="map-card">
-    <iframe class="map-embed" src="https://www.google.com/maps/embed?region=IN&pb=!1m18!1m12!1m3!1d3507.9083514975932!2d77.0717627!3d28.452178999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1fd49c81ddc1%3A0xca4f8e45fc13eb9f!2sDhwani%20Rural%20Information%20Systems%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1737994950385!5m2!1sen!2sin" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Dhwani RIS office location"></iframe>
+    <div class="map-embed map-facade" id="mapFacade">
+      <button type="button" class="map-load-btn" id="mapLoadBtn">
+        <b>Load the map</b>
+        <span>Loading it shares your visit with Google. Or use "Get directions" below without loading anything.</span>
+      </button>
+    </div>
     <div class="map-info">
       <h4>Visit us</h4>
       <div class="addr">Dhwani Rural Information Systems</div>
@@ -527,7 +537,7 @@ window.DHWANI_FORMS = {
 
   var FAQ=[
     {kw:['deck','overview','one-pager','brochure','pdf','presentation'],
-     a:"Our organisation profile covers what we build, the sectors we work in, and who we have built it for. <a href=\"assets/docs/dhwani-ris-organization-profile.pdf\">Download the profile &#8594;</a>"},
+     a:"Our organisation profile is a short download, gated behind a work email so we know who is asking. <a href=\"resources.html#featured\">Get it from Resources &#8594;</a>"},
     {kw:['open source','frappe','erpnext'],
      a:"Much of what we build sits on Frappe, the open-source framework behind ERPNext, and we try to give back where we can. <a href=\"technology.html\">Read about our open-source approach &#8594;</a>"},
     {kw:['radar','due diligence','risk intelligence'],
@@ -651,6 +661,22 @@ window.DHWANI_FORMS = {
     var first=f[0],last=f[f.length-1];
     if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus();}
     else if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus();}
+  });
+})();
+</script>
+<script>
+(function(){
+  var btn=document.getElementById('mapLoadBtn');
+  if(!btn) return;
+  btn.addEventListener('click',function(){
+    var facade=document.getElementById('mapFacade');
+    var ifr=document.createElement('iframe');
+    ifr.className='map-embed';
+    ifr.loading='lazy';
+    ifr.referrerPolicy='no-referrer-when-downgrade';
+    ifr.title='Dhwani RIS office location';
+    ifr.src='https://www.google.com/maps/embed?region=IN&pb=!1m18!1m12!1m3!1d3507.9083514975932!2d77.0717627!3d28.452178999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1fd49c81ddc1%3A0xca4f8e45fc13eb9f!2sDhwani%20Rural%20Information%20Systems%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1737994950385!5m2!1sen!2sin';
+    facade.replaceWith(ifr);
   });
 })();
 </script>

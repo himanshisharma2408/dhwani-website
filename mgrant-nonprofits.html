@@ -398,6 +398,7 @@ window.DHWANI_FORMS = {
           <input id="dgEmail" type="email" required placeholder="you@organisation.org"
             style="width:100%;border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;font-family:var(--sans);font-size:.95rem">
         </label>
+        <p style="font-size:.78rem;color:var(--muted);margin:-4px 0 14px">By requesting this, you agree to our <a href="privacy.html">Privacy Policy</a>.</p>
         <button type="submit" class="pill pill-primary">Get the download <span class="arw">&#8594;</span></button>
       </form>
       <p class="cm-p" id="dgDone" style="display:none;margin-top:16px">Thanks, your download should have started.</p>
@@ -508,7 +509,7 @@ build('row1',logos.slice(0,15));build('row2',logos.slice(15));})();
 
   var FAQ=[
     {kw:['deck','overview','one-pager','brochure','pdf','presentation'],
-     a:"Our organisation profile covers what we build, the sectors we work in, and who we have built it for. <a href=\"assets/docs/dhwani-ris-organization-profile.pdf\">Download the profile &#8594;</a>"},
+     a:"Our organisation profile is a short download, gated behind a work email so we know who is asking. <a href=\"resources.html#featured\">Get it from Resources &#8594;</a>"},
     {kw:['open source','frappe','erpnext'],
      a:"Much of what we build sits on Frappe, the open-source framework behind ERPNext, and we try to give back where we can. <a href=\"technology.html\">Read about our open-source approach &#8594;</a>"},
     {kw:['radar','due diligence','risk intelligence'],
@@ -626,7 +627,7 @@ build('row1',logos.slice(0,15));build('row2',logos.slice(15));})();
   var cur=null;
   function open(id,label){
     cur=DECKS[id]||{name:label||'this deck',file:DECKS['company-profile'].file};
-    document.getElementById('dgWhat').textContent=cur.name+' \u2014 PDF. We will email you the link as well.';
+    document.getElementById('dgWhat').textContent=cur.name+' \u2014 '+(/\.pptx?$/i.test(cur.file)?'PPTX':'PDF')+'. We will email you the link as well.';
     document.getElementById('dgForm').style.display='block';
     document.getElementById('dgDone').style.display='none';
     gate.classList.add('open'); document.body.style.overflow='hidden';
