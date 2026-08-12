@@ -163,6 +163,59 @@ def duplicate_selectors(files):
     return problems
 
 
+
+def css_debris(files):
+    """Debris left when a purge regex strips a selector but not its declarations.
+
+    Three kinds, all of which shipped undetected for days:
+
+      unbalanced braces, which force the parser into error recovery
+      a declaration run at top level with no selector, the tail of a stripped rule
+      a lone token at top level, which silently prepends itself to the NEXT selector
+
+    The third is the nastiest. A stray `a` before an empty media query is harmless, because the
+    empty query becomes its body and the whole thing is discarded. Delete the empty query and
+    the same `a` attaches to the following rule instead, turning `.cgrid` into `a .cgrid`, which
+    matches nothing. That is how the desktop tile grid died twice.
+    """
+    problems = []
+    for f in files:
+        s = io.open(f, encoding='utf-8').read()
+        if '<style>' not in s or '</style>' not in s: continue
+        css = s[s.index('<style>') + 7:s.index('</style>')]
+        name = os.path.basename(f)
+
+        bal = css.count('{') - css.count('}')
+        if bal:
+            problems.append('%s  stylesheet is %+d braces out of balance' % (name, bal))
+
+        empty = len(re.findall(r'@media[^{}]*\{\s*\}', css))
+        if empty:
+            problems.append('%s  %d empty media query shell(s)' % (name, empty))
+
+        depth, seg, frags = 0, '', 0
+        for ch in css:
+            if ch == '{': depth += 1; seg = ''
+            elif ch == '}':
+                if depth == 0 and ':' in seg and ';' in seg: frags += 1
+                depth = max(0, depth - 1); seg = ''
+            elif depth == 0: seg += ch
+        if frags:
+            problems.append('%s  %d declaration run(s) at top level with no selector' % (name, frags))
+
+        d = 0
+        marks = []
+        for i, ch in enumerate(css):
+            marks.append(d)
+            if ch == '{': d += 1
+            elif ch == '}': d -= 1
+        for m in re.finditer(r'\n[ \t]*([A-Za-z][\w-]{0,24})[ \t]*\n(?=[ \t]*(?:/\*|[.#@]))', css):
+            if marks[m.start(1)] == 0:
+                problems.append('%s  lone token %r at top level will prepend itself to the next selector'
+                                % (name, m.group(1)))
+    return problems
+
+
 def cmd_snapshot():
     json.dump(inventory(), io.open(SNAP, 'w', encoding='utf-8'))
     inv = inventory()
@@ -200,6 +253,10 @@ def cmd_verify():
 
     for msg in duplicate_selectors(sorted(glob.glob(os.path.join(ROOT, '*.html')))):
         print('DUPE   %s' % msg); problems += 1
+
+    pages = sorted(glob.glob(os.path.join(ROOT, '*.html'))) + sorted(glob.glob(os.path.join(ROOT, 'insights', '*.html')))
+    for msg in css_debris(pages):
+        print('DEBRIS %s' % msg); problems += 1
 
     print('\n%s' % ('no problems found' if not problems else '%d problem(s) above' % problems))
     return 1 if problems else 0
