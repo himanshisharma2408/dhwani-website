@@ -58,7 +58,7 @@ em{font-style:italic}
 
 /* what you get (tiles) */
 .wyg h2{margin-bottom:44px}
-.cgrid{display:grid;gap:16px;grid-template-columns:repeat(4,1fr)}
+
 /* the non-profit journey */
 @media(max-width:820px){}
 
@@ -68,13 +68,6 @@ em{font-style:italic}
 .sol2 h3{font-size:1.32rem;font-weight:500;margin-bottom:4px}
 .sol2 .rlede{color:var(--muted);font-size:.9rem;margin-bottom:18px}
 @media(max-width:900px){}
-
-.ocard{display:flex;flex-direction:column;min-height:0;background:var(--beige);border-radius:8px;padding:clamp(22px,3.4vw,34px);transition:.2s}
-.ocard:hover{background:var(--beige-h)}
-.ocard .ic{height:clamp(46px,5.4vw,60px);flex:none;display:flex;align-items:center;justify-content:flex-start;color:#4a423c;margin-bottom:16px}
-.ocard .ic svg{width:clamp(46px,6.8vw,78px);height:clamp(46px,6.8vw,78px);stroke-width:1.05}
-.ocard h5{font-size:clamp(1.2rem,1.9vw,1.34rem);font-weight:500;margin-bottom:9px;color:var(--ink)}
-.ocard p{color:var(--muted);font-size:.92rem;line-height:1.5;max-width:30ch;margin-top:2px}
 
 /* proof / case study */
 .proof.section{background:var(--paper)}
@@ -107,9 +100,9 @@ footer h5{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:v
 footer ul{list-style:none}footer li{margin-bottom:10px}footer li a{font-size:.88rem;color:var(--muted-d)}footer li a:hover{color:#fff}
 .frow2{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;gap:36px;margin-top:48px}
 
-@media(max-width:900px){.cgrid{grid-template-columns:1fr 1fr}.cs-card{grid-template-columns:1fr}.cs-card .ph{min-height:240px}}
+@media(max-width:900px){.cs-card{grid-template-columns:1fr}.cs-card .ph{min-height:240px}}
 @media(max-width:640px){.wrap{padding:0 22px}#topnav .nav-in{padding:22px 22px}#topnav .logo{height:50px}
-  .ahero{margin:10px;border-radius:20px;padding:130px 24px 48px}.cgrid{grid-template-columns:1fr}
+  .ahero{margin:10px;border-radius:20px;padding:130px 24px 48px}
   .cta,}
 
 /* ===== nav dropdowns ===== */
@@ -292,9 +285,7 @@ background:var(--muted);opacity:.45}
 .jfit span:not(.arw){display:block;font-size:.88rem;color:var(--muted);line-height:1.4}
 @media(max-width:820px){.jbody{grid-template-columns:1fr;gap:24px}}
 
-.ocard .ic{transition:color .22s,transform .22s cubic-bezier(.2,.7,.3,1)}
-.ocard:hover{transform:translateY(-3px)}
-a.ocard:hover{box-shadow:0 10px 26px -14px rgba(21,16,15,.42)}
+a
 a.ocard:hover .ic{color:var(--maroon);transform:translateY(-2px)}
 a.ocard:after{content:"\2192";position:absolute;right:clamp(18px,2.4vw,26px);bottom:clamp(18px,2.4vw,26px);
 font-size:1.02rem;color:var(--maroon);opacity:0;transform:translateX(-7px);
@@ -304,7 +295,7 @@ a.ocard.fill:hover .ic{color:#fff}
 a.ocard.fill:after{color:#fff}
 @media(prefers-reduced-motion:reduce){
 .ocard,.ocard .ic,a.ocard:after{transition:none}
-.ocard:hover{transform:none}
+
 a.ocard:hover .ic{transform:none}
 a.ocard:after{transform:none}}
 
@@ -407,7 +398,6 @@ font-family:var(--sans);font-size:.83rem;background:rgba(255,255,255,.05);color:
 align-items:center;gap:22px;flex-wrap:wrap;font-size:.8rem;color:rgba(255,255,255,.45)}
 .foot-bot .fbadges{margin:0;display:flex;gap:7px}
 
-
 .fbadges span{font-size:.63rem;font-weight:600;letter-spacing:.05em;color:var(--orange-soft);
 border:1px solid var(--line-d);border-radius:6px;padding:4px 8px}
 @media(max-width:1180px){.fgrid{grid-template-columns:1.3fr 1fr 1fr}}
@@ -422,6 +412,66 @@ border:1px solid var(--line-d);border-radius:6px;padding:4px 8px}
 .fsoc a:hover{color:#fff;border-bottom-color:rgba(255,255,255,.4)}
 .foot-bot .flegal a{color:rgba(255,255,255,.55);border-bottom:1px solid transparent}
 .foot-bot .flegal a:hover{color:#fff;border-bottom-color:rgba(255,255,255,.4)}
+
+/* bento tiles */
+.cgrid{display:grid;gap:14px;grid-template-columns:repeat(3,1fr);
+grid-auto-rows:minmax(198px,auto);grid-auto-flow:row dense}
+.ocard{display:flex;flex-direction:column;justify-content:flex-end;min-height:0;
+background:var(--beige);border-radius:16px;padding:clamp(22px,3vw,30px);transition:.22s;position:relative}
+.ocard .ic{height:auto;flex:none;display:flex;align-items:center;justify-content:flex-start;
+color:#4a423c;margin:0 0 auto;padding-bottom:16px;transition:color .22s,transform .22s cubic-bezier(.2,.7,.3,1)}
+.ocard .ic svg{width:clamp(40px,4.6vw,54px);height:clamp(40px,4.6vw,54px);stroke-width:1.15}
+.ocard h5{font-size:clamp(1.14rem,1.7vw,1.28rem);font-weight:500;margin-bottom:7px;color:var(--ink);line-height:1.28}
+.ocard p{color:var(--muted);font-size:.9rem;line-height:1.5;max-width:34ch;margin-top:0}
+
+/* the rhythm: a wide opener, a tall one further in, and a gentle tint alternation */
+.cgrid>.ocard:first-child{grid-column:span 2}
+.cgrid>.ocard:first-child h5{font-size:clamp(1.3rem,2.1vw,1.62rem)}
+.cgrid>.ocard:first-child .ic svg{width:clamp(46px,5.4vw,64px);height:clamp(46px,5.4vw,64px)}
+/* spans chosen per tile count, so every group divides evenly by three */
+.cgrid>.ocard:nth-child(4):last-child,
+.cgrid>.ocard:nth-child(6):last-child,
+.cgrid>.ocard:nth-child(7):last-child{grid-column:span 2}
+.cgrid>.ocard:nth-child(5):nth-last-child(2){grid-row:span 2}
+.cgrid>.ocard:nth-child(5):nth-last-child(2) .ic svg{width:clamp(46px,5.4vw,64px);height:clamp(46px,5.4vw,64px)}
+.cgrid>.ocard:nth-child(5):nth-last-child(2) h5{font-size:clamp(1.22rem,1.9vw,1.42rem)}
+.cgrid>.ocard:nth-child(4n+3){background:var(--tint)}
+.cgrid>.ocard:nth-child(4n+3):hover{background:#f1e2cf}
+.ocard.fill,.cgrid>.ocard.fill:nth-child(4n+3){background:var(--maroon)}
+.ocard.fill:hover,.cgrid>.ocard.fill:nth-child(4n+3):hover{background:var(--maroon-2)}
+.ocard.fill .ic{color:#fff}
+.ocard.fill h5{color:#fff}
+.ocard.fill p{color:rgba(255,255,255,.84)}
+.ocard.span2{grid-column:span 2}
+.ocard.span-all{grid-column:1/-1;padding:30px;align-items:center;text-align:center;justify-content:center}
+.ocard.span-all .ic{flex:0 0 auto;margin:0 0 14px;padding:0}
+.ocard.span-all .ic svg{width:38px;height:38px}
+.ocard.span-all p{max-width:none}
+@media(max-width:900px){.cgrid{grid-template-columns:1fr 1fr;grid-auto-rows:minmax(180px,auto)}
+.cgrid>.ocard:first-child,.ocard.span2{grid-column:span 2}
+.cgrid>.ocard:nth-child(4):last-child,.cgrid>.ocard:nth-child(6):last-child,
+.cgrid>.ocard:nth-child(7):last-child{grid-column:auto}
+.cgrid>.ocard:nth-child(5):nth-last-child(2){grid-row:auto}}
+@media(max-width:560px){.cgrid{grid-template-columns:1fr;grid-auto-rows:auto;gap:12px}
+.cgrid>.ocard:first-child,.ocard.span2{grid-column:auto}
+.ocard{min-height:0;padding:20px 22px}
+.ocard .ic{margin:0 0 12px;padding-bottom:0}
+.ocard .ic svg,.cgrid>.ocard:first-child .ic svg,
+.cgrid>.ocard:nth-child(5):nth-last-child(2) .ic svg{width:34px;height:34px}
+.cgrid>.ocard:first-child h5,
+.cgrid>.ocard:nth-child(5):nth-last-child(2) h5{font-size:1.14rem}}
+
+.ocard:hover{background:var(--beige-h);transform:translateY(-3px)}
+a.ocard:hover{box-shadow:0 12px 28px -16px rgba(21,16,15,.42)}
+a.ocard:hover .ic{color:var(--maroon);transform:translateY(-2px)}
+a.ocard:after{content:"\2192";position:absolute;right:clamp(18px,2.4vw,24px);bottom:clamp(18px,2.4vw,24px);
+font-size:1.02rem;color:var(--maroon);opacity:0;transform:translateX(-7px);
+transition:opacity .22s,transform .22s cubic-bezier(.2,.7,.3,1)}
+a.ocard:hover:after{opacity:1;transform:translateX(0)}
+a.ocard.fill:hover .ic{color:#fff}
+a.ocard.fill:after{color:#fff}
+@media(prefers-reduced-motion:reduce){.ocard,.ocard .ic,a.ocard:after{transition:none}
+.ocard:hover{transform:none}a.ocard:hover .ic{transform:none}a.ocard:after{transform:none}}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────

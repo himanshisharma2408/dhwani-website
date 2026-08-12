@@ -113,6 +113,56 @@ def structural():
     return faults
 
 
+def strip_media(css):
+    """Drop @media blocks so only unconditional rules remain."""
+    out, i = [], 0
+    while i < len(css):
+        m = re.compile(r'@media[^{]*\{').search(css, i)
+        if not m:
+            out.append(css[i:]); break
+        out.append(css[i:m.start()])
+        d, j = 1, m.end()
+        while j < len(css) and d:
+            if css[j] == '{': d += 1
+            elif css[j] == '}': d -= 1
+            j += 1
+        i = j
+    return ''.join(out)
+
+
+def duplicate_selectors(files):
+    """A selector defined twice outside a media query is only a fault when the two
+    copies set the SAME property to different values, because then one silently wins
+    and an edit to the other appears to do nothing. This is what made the repeated
+    footer edits look like they had no effect. Additive second copies are fine."""
+    problems = []
+    for f in files:
+        s = io.open(f, encoding='utf-8').read()
+        if '<style>' not in s: continue
+        css = strip_media(s[s.index('<style>'):s.index('</style>')])
+        blocks = {}
+        for m in re.finditer(r'(?m)^([.#][A-Za-z0-9_.#>:()\[\]="\-]+|footer|header|body)\s*\{([^}]*)\}', css):
+            blocks.setdefault(m.group(1).strip(), []).append(m.group(2))
+        for sel, bodies in sorted(blocks.items()):
+            if len(bodies) < 2: continue
+            seen, clash = {}, []
+            for b in bodies:
+                for d in b.split(';'):
+                    if ':' not in d: continue
+                    k, v = d.split(':', 1)
+                    k, v = k.strip(), v.strip()
+                    if k in seen and seen[k] != v: clash.append(k)
+                    seen[k] = v
+            # transition and transform are deliberately re-declared by the
+            # interaction layer. Layout and colour are not: those are the footer fault.
+            COSMETIC = {'transition', 'transform', 'box-shadow', 'will-change'}
+            hard = sorted(set(clash) - COSMETIC)
+            if hard:
+                problems.append('%s  %s set %s in more than one place, one copy wins'
+                                % (os.path.basename(f), sel, ', '.join(hard[:4])))
+    return problems
+
+
 def cmd_snapshot():
     json.dump(inventory(), io.open(SNAP, 'w', encoding='utf-8'))
     inv = inventory()
@@ -147,6 +197,9 @@ def cmd_verify():
 
     for name, fault in structural():
         print('FAULT  %-26s %s' % (name, fault)); problems += 1
+
+    for msg in duplicate_selectors(sorted(glob.glob(os.path.join(ROOT, '*.html')))):
+        print('DUPE   %s' % msg); problems += 1
 
     print('\n%s' % ('no problems found' if not problems else '%d problem(s) above' % problems))
     return 1 if problems else 0

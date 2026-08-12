@@ -92,23 +92,6 @@ em{font-style:italic}
 .grp{margin-bottom:30px}
 .grp:last-child{margin-bottom:0}
 .grp h4{font-family:var(--serif);font-size:1.85rem;font-weight:500;color:var(--ink);margin-bottom:22px;padding-bottom:16px;border-bottom:1px solid var(--line)}
-.cgrid{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
-.ocard{display:flex;flex-direction:column;min-height:0;background:var(--beige);border-radius:8px;padding:clamp(22px,3.4vw,34px);transition:.2s}
-.ocard:hover{background:var(--beige-h)}
-.ocard .ic{height:clamp(46px,5.4vw,60px);flex:none;display:flex;align-items:center;justify-content:flex-start;color:#4a423c;margin-bottom:16px}
-.ocard .ic svg{width:clamp(46px,6.8vw,78px);height:clamp(46px,6.8vw,78px);stroke-width:1.05}
-.ocard h5{font-size:clamp(1.2rem,1.9vw,1.34rem);font-weight:500;margin-bottom:9px;color:var(--ink)}
-.ocard p{color:var(--muted);font-size:.92rem;line-height:1.5;max-width:30ch;margin-top:2px}
-.ocard.fill{background:var(--maroon)}
-.ocard.fill:hover{background:var(--maroon-2)}
-.ocard.fill .ic{color:#fff}
-.ocard.fill h5{color:#fff}
-.ocard.fill p{color:rgba(255,255,255,.82)}
-.ocard.span2{grid-column:span 2}
-.ocard.span-all{grid-column:1/-1;min-height:0;padding:34px 30px;align-items:center;text-align:center}
-.ocard.span-all .ic{flex:0 0 auto;margin-bottom:16px}
-.ocard.span-all .ic svg{width:38px;height:38px}
-.ocard.span-all p{max-width:none}
 
 /* ============ WHO WE SERVE ============ */
 .serve h2{margin-bottom:44px}
@@ -170,7 +153,7 @@ footer li a{font-size:.88rem;color:var(--muted-d)}footer li a:hover{color:#fff}
 @media(max-width:960px){
   .hgrid{grid-template-columns:1fr;gap:22px}
   .cgrid,.serve-grid,
-  .ocard.span2{grid-column:auto}
+  
 }
 
 /* ===== nav dropdowns ===== */
@@ -222,9 +205,7 @@ footer li a{font-size:.88rem;color:var(--muted-d)}footer li a:hover{color:#fff}
 .tm-slide .who img.tmlogo{display:block;height:40px;width:auto;max-width:150px;object-fit:contain;
 margin:0 auto 15px;opacity:1}
 
-.ocard .ic{transition:color .22s,transform .22s cubic-bezier(.2,.7,.3,1)}
-.ocard:hover{transform:translateY(-3px)}
-a.ocard:hover{box-shadow:0 10px 26px -14px rgba(21,16,15,.42)}
+a
 a.ocard:hover .ic{color:var(--maroon);transform:translateY(-2px)}
 a.ocard:after{content:"\2192";position:absolute;right:clamp(18px,2.4vw,26px);bottom:clamp(18px,2.4vw,26px);
 font-size:1.02rem;color:var(--maroon);opacity:0;transform:translateX(-7px);
@@ -234,7 +215,7 @@ a.ocard.fill:hover .ic{color:#fff}
 a.ocard.fill:after{color:#fff}
 @media(prefers-reduced-motion:reduce){
 .ocard,.ocard .ic,a.ocard:after{transition:none}
-.ocard:hover{transform:none}
+
 a.ocard:hover .ic{transform:none}
 a.ocard:after{transform:none}}
 
@@ -327,7 +308,6 @@ font-family:var(--sans);font-size:.83rem;background:rgba(255,255,255,.05);color:
 align-items:center;gap:22px;flex-wrap:wrap;font-size:.8rem;color:rgba(255,255,255,.45)}
 .foot-bot .fbadges{margin:0;display:flex;gap:7px}
 
-
 .fbadges span{font-size:.63rem;font-weight:600;letter-spacing:.05em;color:var(--orange-soft);
 border:1px solid var(--line-d);border-radius:6px;padding:4px 8px}
 @media(max-width:1180px){.fgrid{grid-template-columns:1.3fr 1fr 1fr}}
@@ -345,6 +325,66 @@ border:1px solid var(--line-d);border-radius:6px;padding:4px 8px}
 
 a@media(max-width:980px){}
 @media(max-width:600px){}
+
+/* bento tiles */
+.cgrid{display:grid;gap:14px;grid-template-columns:repeat(3,1fr);
+grid-auto-rows:minmax(198px,auto);grid-auto-flow:row dense}
+.ocard{display:flex;flex-direction:column;justify-content:flex-end;min-height:0;
+background:var(--beige);border-radius:16px;padding:clamp(22px,3vw,30px);transition:.22s;position:relative}
+.ocard .ic{height:auto;flex:none;display:flex;align-items:center;justify-content:flex-start;
+color:#4a423c;margin:0 0 auto;padding-bottom:16px;transition:color .22s,transform .22s cubic-bezier(.2,.7,.3,1)}
+.ocard .ic svg{width:clamp(40px,4.6vw,54px);height:clamp(40px,4.6vw,54px);stroke-width:1.15}
+.ocard h5{font-size:clamp(1.14rem,1.7vw,1.28rem);font-weight:500;margin-bottom:7px;color:var(--ink);line-height:1.28}
+.ocard p{color:var(--muted);font-size:.9rem;line-height:1.5;max-width:34ch;margin-top:0}
+
+/* the rhythm: a wide opener, a tall one further in, and a gentle tint alternation */
+.cgrid>.ocard:first-child{grid-column:span 2}
+.cgrid>.ocard:first-child h5{font-size:clamp(1.3rem,2.1vw,1.62rem)}
+.cgrid>.ocard:first-child .ic svg{width:clamp(46px,5.4vw,64px);height:clamp(46px,5.4vw,64px)}
+/* spans chosen per tile count, so every group divides evenly by three */
+.cgrid>.ocard:nth-child(4):last-child,
+.cgrid>.ocard:nth-child(6):last-child,
+.cgrid>.ocard:nth-child(7):last-child{grid-column:span 2}
+.cgrid>.ocard:nth-child(5):nth-last-child(2){grid-row:span 2}
+.cgrid>.ocard:nth-child(5):nth-last-child(2) .ic svg{width:clamp(46px,5.4vw,64px);height:clamp(46px,5.4vw,64px)}
+.cgrid>.ocard:nth-child(5):nth-last-child(2) h5{font-size:clamp(1.22rem,1.9vw,1.42rem)}
+.cgrid>.ocard:nth-child(4n+3){background:var(--tint)}
+.cgrid>.ocard:nth-child(4n+3):hover{background:#f1e2cf}
+.ocard.fill,.cgrid>.ocard.fill:nth-child(4n+3){background:var(--maroon)}
+.ocard.fill:hover,.cgrid>.ocard.fill:nth-child(4n+3):hover{background:var(--maroon-2)}
+.ocard.fill .ic{color:#fff}
+.ocard.fill h5{color:#fff}
+.ocard.fill p{color:rgba(255,255,255,.84)}
+.ocard.span2{grid-column:span 2}
+.ocard.span-all{grid-column:1/-1;padding:30px;align-items:center;text-align:center;justify-content:center}
+.ocard.span-all .ic{flex:0 0 auto;margin:0 0 14px;padding:0}
+.ocard.span-all .ic svg{width:38px;height:38px}
+.ocard.span-all p{max-width:none}
+@media(max-width:900px){.cgrid{grid-template-columns:1fr 1fr;grid-auto-rows:minmax(180px,auto)}
+.cgrid>.ocard:first-child,.ocard.span2{grid-column:span 2}
+.cgrid>.ocard:nth-child(4):last-child,.cgrid>.ocard:nth-child(6):last-child,
+.cgrid>.ocard:nth-child(7):last-child{grid-column:auto}
+.cgrid>.ocard:nth-child(5):nth-last-child(2){grid-row:auto}}
+@media(max-width:560px){.cgrid{grid-template-columns:1fr;grid-auto-rows:auto;gap:12px}
+.cgrid>.ocard:first-child,.ocard.span2{grid-column:auto}
+.ocard{min-height:0;padding:20px 22px}
+.ocard .ic{margin:0 0 12px;padding-bottom:0}
+.ocard .ic svg,.cgrid>.ocard:first-child .ic svg,
+.cgrid>.ocard:nth-child(5):nth-last-child(2) .ic svg{width:34px;height:34px}
+.cgrid>.ocard:first-child h5,
+.cgrid>.ocard:nth-child(5):nth-last-child(2) h5{font-size:1.14rem}}
+
+.ocard:hover{background:var(--beige-h);transform:translateY(-3px)}
+a.ocard:hover{box-shadow:0 12px 28px -16px rgba(21,16,15,.42)}
+a.ocard:hover .ic{color:var(--maroon);transform:translateY(-2px)}
+a.ocard:after{content:"\2192";position:absolute;right:clamp(18px,2.4vw,24px);bottom:clamp(18px,2.4vw,24px);
+font-size:1.02rem;color:var(--maroon);opacity:0;transform:translateX(-7px);
+transition:opacity .22s,transform .22s cubic-bezier(.2,.7,.3,1)}
+a.ocard:hover:after{opacity:1;transform:translateX(0)}
+a.ocard.fill:hover .ic{color:#fff}
+a.ocard.fill:after{color:#fff}
+@media(prefers-reduced-motion:reduce){.ocard,.ocard .ic,a.ocard:after{transition:none}
+.ocard:hover{transform:none}a.ocard:hover .ic{transform:none}a.ocard:after{transform:none}}
 </style>
 <script>
 /* ── Form delivery ────────────────────────────────────────────────────────────
@@ -453,7 +493,7 @@ window.DHWANI_FORMS = {
       <a class="ocard" href="mform.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span><div class="txt"><h5>Field Data Apps</h5><p>Offline-first data from the field.</p></div></a>
       <a class="ocard" href="back-office-it.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="6" rx="1.5"/><rect x="2" y="14" width="20" height="6" rx="1.5"/><path d="M6 7h.01M6 17h.01"/></svg></span><div class="txt"><h5>Back-office IT</h5><p>Finance, HR, fundraising, and your website, connected.</p></div></a>
       <a class="ocard" href="monitoring-evaluation.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><path d="M12 11.5v1"/></svg></span><div class="txt"><h5>Monitoring &amp; Evaluation</h5><p>Track indicators and outcomes in real time.</p></div></a>
-      <a class="ocard fill span2" href="our-work.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><div class="txt"><h5>Explore our work</h5><p>Case studies &amp; solutions →</p></div></a>
+      <a class="ocard fill" href="our-work.html"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><div class="txt"><h5>Explore our work</h5><p>Case studies &amp; solutions →</p></div></a>
     </div>
   </div>
 
