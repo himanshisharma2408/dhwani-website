@@ -521,7 +521,7 @@ window.DHWANI_FORMS = {
   <p class="lede">Programmes running on this today.</p>
   <div class="ccards">
       <button type="button" class="ccard" data-case="livelihoods">
-        <div class="ccph" style="background-image:url('assets/img/cases/case-livelihoods.jpg')"></div>
+        <div class="ccph" data-bg="assets/img/cases/case-livelihoods.jpg"></div>
         <div class="ccbd">
           <h3>National Rural Livelihoods Dashboard</h3>
           <p class="cccl">For the world's largest rural women's livelihoods mission</p>
@@ -531,7 +531,7 @@ window.DHWANI_FORMS = {
         </div>
       </button>
       <button type="button" class="ccard" data-case="tribal">
-        <div class="ccph" style="background-image:url('assets/img/cases/case-tribalhealth.jpg')"></div>
+        <div class="ccph" data-bg="assets/img/cases/case-tribalhealth.jpg"></div>
         <div class="ccbd">
           <h3>Ministry of Tribal Affairs</h3>
           <p class="cccl">Mapping health and nutrition for tribal India</p>
@@ -541,7 +541,7 @@ window.DHWANI_FORMS = {
         </div>
       </button>
       <button type="button" class="ccard" data-case="nutrition">
-        <div class="ccph" style="background-image:url('assets/img/cases/case-nutrition.jpg')"></div>
+        <div class="ccph" data-bg="assets/img/cases/case-nutrition.jpg"></div>
         <div class="ccbd">
           <h3>Nutrition &amp; Fortification Data Platform</h3>
           <p class="cccl">For India's oldest philanthropy and the national nutrition research institute</p>
@@ -551,7 +551,7 @@ window.DHWANI_FORMS = {
         </div>
       </button>
       <button type="button" class="ccard" data-case="edtech">
-        <div class="ccph" style="background-image:url('assets/img/cases/case-edtech.jpg')"></div>
+        <div class="ccph" data-bg="assets/img/cases/case-edtech.jpg"></div>
         <div class="ccbd">
           <h3>EdTech Accelerator Dashboard</h3>
           <p class="cccl">For a leading education philanthropy's EdTech accelerator</p>
@@ -871,6 +871,25 @@ build('row1',logos.slice(0,15));build('row2',logos.slice(15));})();
     if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus();}
     else if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus();}
   });
+})();
+</script>
+<script>
+(function(){
+  var els=document.querySelectorAll('[data-bg]');
+  if(!els.length) return;
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(el){el.style.backgroundImage="url('"+el.dataset.bg+"')";});
+    return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      var el=entry.target;
+      el.style.backgroundImage="url('"+el.dataset.bg+"')";
+      io.unobserve(el);
+    });
+  },{rootMargin:'200px 0px'});
+  els.forEach(function(el){io.observe(el);});
 })();
 </script>
 </body>

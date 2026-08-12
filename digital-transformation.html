@@ -681,7 +681,7 @@ window.DHWANI_FORMS = {
   <p class="lede">Programmes running on this today.</p>
   <div class="ccards">
       <button type="button" class="ccard" data-case="tri">
-        <div class="ccph" style="background-image:url('https://images.unsplash.com/photo-1609252509229-364936a1d1a2?q=80&w=900&auto=format&fit=crop')"></div>
+        <div class="ccph" data-bg="https://images.unsplash.com/photo-1609252509229-364936a1d1a2?q=80&w=900&auto=format&fit=crop"></div>
         <div class="ccbd">
           <h3>Transform Rural India</h3>
           <p class="cccl">A technology partnership, 74 engagements deep</p>
@@ -691,7 +691,7 @@ window.DHWANI_FORMS = {
         </div>
       </button>
       <button type="button" class="ccard" data-case="mahindra">
-        <div class="ccph" style="background-image:url('https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=900&auto=format&fit=crop')"></div>
+        <div class="ccph" data-bg="https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=900&auto=format&fit=crop"></div>
         <div class="ccbd">
           <h3>Mahindra Group</h3>
           <p class="cccl">One CSR platform for 53 group companies</p>
@@ -701,7 +701,7 @@ window.DHWANI_FORMS = {
         </div>
       </button>
       <button type="button" class="ccard" data-case="pradan">
-        <div class="ccph" style="background-image:url('https://images.unsplash.com/photo-1707721690544-781fe6ede937?q=80&w=900&auto=format&fit=crop')"></div>
+        <div class="ccph" data-bg="https://images.unsplash.com/photo-1707721690544-781fe6ede937?q=80&w=900&auto=format&fit=crop"></div>
         <div class="ccbd">
           <h3>PRADAN &amp; NAFPO</h3>
           <p class="cccl">The FPO stack: producer groups to market linkages</p>
@@ -1114,6 +1114,25 @@ build('row1',logos.slice(0,15));build('row2',logos.slice(15));})();
     if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus();}
     else if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus();}
   });
+})();
+</script>
+<script>
+(function(){
+  var els=document.querySelectorAll('[data-bg]');
+  if(!els.length) return;
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(el){el.style.backgroundImage="url('"+el.dataset.bg+"')";});
+    return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      var el=entry.target;
+      el.style.backgroundImage="url('"+el.dataset.bg+"')";
+      io.unobserve(el);
+    });
+  },{rootMargin:'200px 0px'});
+  els.forEach(function(el){io.observe(el);});
 })();
 </script>
 </body>

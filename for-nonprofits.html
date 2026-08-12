@@ -462,15 +462,15 @@ window.DHWANI_FORMS = {
   <h2 class="shead">Case studies</h2>
   <div class="cases3">
     <a class="ccard" href="our-work.html?case=tri">
-      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1609252509229-364936a1d1a2?q=80&w=800&auto=format&fit=crop')"></div>
+      <div class="ph" data-bg="https://images.unsplash.com/photo-1609252509229-364936a1d1a2?q=80&w=800&auto=format&fit=crop"></div>
       <div class="bd"><h3>74 engagements, one partnership</h3><p>Project and donor management across every programme vertical.</p><div class="org">Transform Rural India</div></div>
     </a>
     <a class="ccard" href="our-work.html?case=pradan">
-      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1707721690544-781fe6ede937?q=80&w=800&auto=format&fit=crop')"></div>
+      <div class="ph" data-bg="https://images.unsplash.com/photo-1707721690544-781fe6ede937?q=80&w=800&auto=format&fit=crop"></div>
       <div class="bd"><h3>Digital rails for 3,000+ producer groups</h3><p>Registration, a national FPO database, and performance dashboards.</p><div class="org">PRADAN &amp; NAFPO</div></div>
     </a>
     <a class="ccard" href="our-work.html?case=watershed">
-      <div class="ph" style="background-image:url('assets/img/cases/case-watershed.jpg')"></div>
+      <div class="ph" data-bg="assets/img/cases/case-watershed.jpg"></div>
       <div class="bd"><h3>Seven rivers, 54 blocks, one portal</h3><p>Soil and water conservation works monitored ridge to valley.</p><div class="org">A grassroots nonprofit, under a state MGNREGA cell</div></div>
     </a>
   </div>
@@ -715,6 +715,25 @@ build('row1',logos.slice(0,12));build('row2',logos.slice(12));})();
     if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus();}
     else if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus();}
   });
+})();
+</script>
+<script>
+(function(){
+  var els=document.querySelectorAll('[data-bg]');
+  if(!els.length) return;
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(el){el.style.backgroundImage="url('"+el.dataset.bg+"')";});
+    return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      var el=entry.target;
+      el.style.backgroundImage="url('"+el.dataset.bg+"')";
+      io.unobserve(el);
+    });
+  },{rootMargin:'200px 0px'});
+  els.forEach(function(el){io.observe(el);});
 })();
 </script>
 </body>

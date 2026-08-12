@@ -432,7 +432,7 @@ window.DHWANI_FORMS = {
 <section class="section proof"><div class="wrap">
   <h2 class="shead">Case studies</h2>
   <a class="cs-card" href="our-work.html?case=tri">
-    <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1609252509229-364936a1d1a2?q=80&w=1200&auto=format&fit=crop')"></div>
+    <div class="ph" data-bg="https://images.unsplash.com/photo-1609252509229-364936a1d1a2?q=80&w=1200&auto=format&fit=crop"></div>
     <div class="body">
       <h3>Payment approvals, off paper</h3>
       <p class="res">Transform Rural India uses mForm to digitise payment approvals for the UP State Rural Livelihood Mission, alongside mGrant across every programme vertical, 74 engagements and counting.</p>
@@ -695,6 +695,25 @@ build('row1',logos.slice(0,15));build('row2',logos.slice(15));})();
     if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus();}
     else if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus();}
   });
+})();
+</script>
+<script>
+(function(){
+  var els=document.querySelectorAll('[data-bg]');
+  if(!els.length) return;
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(el){el.style.backgroundImage="url('"+el.dataset.bg+"')";});
+    return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      var el=entry.target;
+      el.style.backgroundImage="url('"+el.dataset.bg+"')";
+      io.unobserve(el);
+    });
+  },{rootMargin:'200px 0px'});
+  els.forEach(function(el){io.observe(el);});
 })();
 </script>
 </body>

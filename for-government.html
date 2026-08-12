@@ -461,15 +461,15 @@ window.DHWANI_FORMS = {
   <h2 class="shead">Case studies</h2>
   <div class="cases3">
     <a class="ccard" href="our-work.html?case=cityfinance">
-      <div class="ph" style="background-image:url('assets/img/cases/case-municipalfinance.jpg')"></div>
+      <div class="ph" data-bg="assets/img/cases/case-municipalfinance.jpg"></div>
       <div class="bd"><h3>4,000 cities&rsquo; finances, made public</h3><p>One of India&rsquo;s largest open municipal-finance datasets.</p><div class="org">City Finance Portal</div></div>
     </a>
     <a class="ccard" href="our-work.html?case=tribal">
-      <div class="ph" style="background-image:url('assets/img/cases/case-tribalhealth.jpg')"></div>
+      <div class="ph" data-bg="assets/img/cases/case-tribalhealth.jpg"></div>
       <div class="bd"><h3>Tribal health data for 177 districts</h3><p>A national portal mapping nutrition and health vulnerability.</p><div class="org">Ministry of Tribal Affairs</div></div>
     </a>
     <a class="ccard" href="our-work.html?case=livelihoods">
-      <div class="ph" style="background-image:url('assets/img/cases/case-livelihoods.jpg')"></div>
+      <div class="ph" data-bg="assets/img/cases/case-livelihoods.jpg"></div>
       <div class="bd"><h3>100 million women, one dashboard</h3><p>National-to-block drill-downs for a rural livelihoods mission.</p><div class="org">The world&rsquo;s largest rural livelihoods mission</div></div>
     </a>
   </div>
@@ -714,6 +714,25 @@ build('row1',logos.slice(0,5));build('row2',logos.slice(5));})();
     if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus();}
     else if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus();}
   });
+})();
+</script>
+<script>
+(function(){
+  var els=document.querySelectorAll('[data-bg]');
+  if(!els.length) return;
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(el){el.style.backgroundImage="url('"+el.dataset.bg+"')";});
+    return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      var el=entry.target;
+      el.style.backgroundImage="url('"+el.dataset.bg+"')";
+      io.unobserve(el);
+    });
+  },{rootMargin:'200px 0px'});
+  els.forEach(function(el){io.observe(el);});
 })();
 </script>
 </body>

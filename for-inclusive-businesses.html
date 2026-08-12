@@ -487,7 +487,7 @@ window.DHWANI_FORMS = {
   <p class="lede">Programmes running on this today.</p>
   <div class="ccards">
       <button type="button" class="ccard" data-case="bigbasket">
-        <div class="ccph" style="background-image:url('https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=900&auto=format&fit=crop')"></div>
+        <div class="ccph" data-bg="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=900&auto=format&fit=crop"></div>
         <div class="ccbd">
           <h3>bigbasket</h3>
           <p class="cccl">Quality and pricing systems for farm-to-retail</p>
@@ -497,7 +497,7 @@ window.DHWANI_FORMS = {
         </div>
       </button>
       <button type="button" class="ccard" data-case="pradan">
-        <div class="ccph" style="background-image:url('https://images.unsplash.com/photo-1707721690544-781fe6ede937?q=80&w=900&auto=format&fit=crop')"></div>
+        <div class="ccph" data-bg="https://images.unsplash.com/photo-1707721690544-781fe6ede937?q=80&w=900&auto=format&fit=crop"></div>
         <div class="ccbd">
           <h3>PRADAN &amp; NAFPO</h3>
           <p class="cccl">The FPO stack: producer groups to market linkages</p>
@@ -507,7 +507,7 @@ window.DHWANI_FORMS = {
         </div>
       </button>
       <button type="button" class="ccard" data-case="giz">
-        <div class="ccph" style="background-image:url('https://images.unsplash.com/photo-1623211269755-569fec0536d2?q=80&w=900&auto=format&fit=crop')"></div>
+        <div class="ccph" data-bg="https://images.unsplash.com/photo-1623211269755-569fec0536d2?q=80&w=900&auto=format&fit=crop"></div>
         <div class="ccbd">
           <h3>QSure &middot; GIZ India</h3>
           <p class="cccl">Crop insurance claims, digitised</p>
@@ -753,6 +753,25 @@ build('row1',logos.slice(0,12));build('row2',logos.slice(12));})();
     if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus();}
     else if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus();}
   });
+})();
+</script>
+<script>
+(function(){
+  var els=document.querySelectorAll('[data-bg]');
+  if(!els.length) return;
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(el){el.style.backgroundImage="url('"+el.dataset.bg+"')";});
+    return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      var el=entry.target;
+      el.style.backgroundImage="url('"+el.dataset.bg+"')";
+      io.unobserve(el);
+    });
+  },{rootMargin:'200px 0px'});
+  els.forEach(function(el){io.observe(el);});
 })();
 </script>
 </body>

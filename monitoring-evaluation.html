@@ -521,7 +521,7 @@ window.DHWANI_FORMS = {
   <p class="lede">Programmes running on this today.</p>
   <div class="ccards">
       <button type="button" class="ccard" data-case="ultrapoor">
-        <div class="ccph" style="background-image:url('assets/img/cases/case-ultrapoor.jpg')"></div>
+        <div class="ccph" data-bg="assets/img/cases/case-ultrapoor.jpg"></div>
         <div class="ccbd">
           <h3>Ultra-Poor Graduation Dashboard</h3>
           <p class="cccl">For a leading non-profit aiming to lift 1 million women out of ultra-poverty</p>
@@ -531,7 +531,7 @@ window.DHWANI_FORMS = {
         </div>
       </button>
       <button type="button" class="ccard" data-case="pds">
-        <div class="ccph" style="background-image:url('assets/img/cases/case-foodsupplies.jpg')"></div>
+        <div class="ccph" data-bg="assets/img/cases/case-foodsupplies.jpg"></div>
         <div class="ccbd">
           <h3>Food Supplies (PDS) Dashboard</h3>
           <p class="cccl">For a large western state's food &amp; civil supplies department</p>
@@ -541,7 +541,7 @@ window.DHWANI_FORMS = {
         </div>
       </button>
       <button type="button" class="ccard" data-case="english">
-        <div class="ccph" style="background-image:url('assets/img/cases/case-english.jpg')"></div>
+        <div class="ccph" data-bg="assets/img/cases/case-english.jpg"></div>
         <div class="ccbd">
           <h3>Spoken-English Program Dashboard</h3>
           <p class="cccl">For one of India's oldest public-policy think tanks</p>
@@ -861,6 +861,25 @@ build('row1',logos.slice(0,15));build('row2',logos.slice(15));})();
     if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus();}
     else if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus();}
   });
+})();
+</script>
+<script>
+(function(){
+  var els=document.querySelectorAll('[data-bg]');
+  if(!els.length) return;
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(el){el.style.backgroundImage="url('"+el.dataset.bg+"')";});
+    return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      var el=entry.target;
+      el.style.backgroundImage="url('"+el.dataset.bg+"')";
+      io.unobserve(el);
+    });
+  },{rootMargin:'200px 0px'});
+  els.forEach(function(el){io.observe(el);});
 })();
 </script>
 </body>

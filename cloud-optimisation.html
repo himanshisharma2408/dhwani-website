@@ -614,7 +614,7 @@ window.DHWANI_FORMS = {
   <p class="lede">Programmes running on this today.</p>
   <div class="ccards">
       <button type="button" class="ccard" data-case="cloudcost">
-        <div class="ccph" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=900&auto=format&fit=crop')"></div>
+        <div class="ccph" data-bg="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=900&auto=format&fit=crop"></div>
         <div class="ccbd">
           <h3>Cloud cost optimisation</h3>
           <p class="cccl">For Tech Mahindra Foundation, Transform Rural India, Jan Sahas, and Nasscom (Thinqbator)</p>
@@ -624,7 +624,7 @@ window.DHWANI_FORMS = {
         </div>
       </button>
       <button type="button" class="ccard" data-case="inframodern">
-        <div class="ccph" style="background-image:url('https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=900&auto=format&fit=crop')"></div>
+        <div class="ccph" data-bg="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=900&auto=format&fit=crop"></div>
         <div class="ccbd">
           <h3>Infrastructure modernisation</h3>
           <p class="cccl">For PRADAN, Sattva, Nasscom (Thinqbator), and Transform Rural India</p>
@@ -634,7 +634,7 @@ window.DHWANI_FORMS = {
         </div>
       </button>
       <button type="button" class="ccard" data-case="securecompliance">
-        <div class="ccph" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=900&auto=format&fit=crop')"></div>
+        <div class="ccph" data-bg="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=900&auto=format&fit=crop"></div>
         <div class="ccbd">
           <h3>Security and compliance hardening</h3>
           <p class="cccl">For Jan Sahas, Tech Mahindra Foundation, World Resources Institute, and Hindustan Unilever Foundation</p>
@@ -1088,6 +1088,25 @@ build('row1',logos.slice(0,15));build('row2',logos.slice(15));})();
     if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus();}
     else if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus();}
   });
+})();
+</script>
+<script>
+(function(){
+  var els=document.querySelectorAll('[data-bg]');
+  if(!els.length) return;
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(el){el.style.backgroundImage="url('"+el.dataset.bg+"')";});
+    return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      var el=entry.target;
+      el.style.backgroundImage="url('"+el.dataset.bg+"')";
+      io.unobserve(el);
+    });
+  },{rootMargin:'200px 0px'});
+  els.forEach(function(el){io.observe(el);});
 })();
 </script>
 </body>

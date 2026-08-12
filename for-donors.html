@@ -463,15 +463,15 @@ window.DHWANI_FORMS = {
   <h2 class="shead">Case studies</h2>
   <div class="cases3">
     <a class="ccard" href="our-work.html?case=mahindra">
-      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=800&auto=format&fit=crop')"></div>
+      <div class="ph" data-bg="https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=800&auto=format&fit=crop"></div>
       <div class="bd"><h3>One CSR platform for 53 companies</h3><p>Group-wide M&amp;E and budgets, with 300+ partner NGOs reporting in.</p><div class="org">Mahindra Group</div></div>
     </a>
     <a class="ccard" href="our-work.html?case=amazon">
-      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1722573783625-eceb04251036?q=80&w=800&auto=format&fit=crop')"></div>
+      <div class="ph" data-bg="https://images.unsplash.com/photo-1722573783625-eceb04251036?q=80&w=800&auto=format&fit=crop"></div>
       <div class="bd"><h3>Seventeen CSR projects, one platform</h3><p>The full lifecycle, from partner onboarding to impact assessment.</p><div class="org">Amazon India</div></div>
     </a>
     <a class="ccard" href="our-work.html?case=ciff">
-      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1578991624414-276ef23a534f?q=80&w=800&auto=format&fit=crop')"></div>
+      <div class="ph" data-bg="https://images.unsplash.com/photo-1578991624414-276ef23a534f?q=80&w=800&auto=format&fit=crop"></div>
       <div class="bd"><h3>Grant infrastructure for global funders</h3><p>programme management unit (PMU) support and portfolio dashboards across India portfolios.</p><div class="org">CIFF &amp; Charities Aid Foundation</div></div>
     </a>
   </div>
@@ -716,6 +716,25 @@ build('row1',logos.slice(0,13));build('row2',logos.slice(13));})();
     if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus();}
     else if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus();}
   });
+})();
+</script>
+<script>
+(function(){
+  var els=document.querySelectorAll('[data-bg]');
+  if(!els.length) return;
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(el){el.style.backgroundImage="url('"+el.dataset.bg+"')";});
+    return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      var el=entry.target;
+      el.style.backgroundImage="url('"+el.dataset.bg+"')";
+      io.unobserve(el);
+    });
+  },{rootMargin:'200px 0px'});
+  els.forEach(function(el){io.observe(el);});
 })();
 </script>
 </body>

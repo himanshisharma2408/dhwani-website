@@ -309,9 +309,9 @@ window.DHWANI_FORMS = {
   <h2 class="shead">Life at Dhwani</h2>
   <p class="lede">Gurugram-based, with chances to get out to the programmes we build for.</p>
   <div class="life-grid">
-    <div class="life-card"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1703745006226-98d4b948dc41?q=80&w=800&auto=format&fit=crop')"></div><div class="cap"><h4>Our Gurugram office</h4><p>Cross-functional teams sit together by design, in Sector 44.</p></div></div>
-    <div class="life-card"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1609252509229-364936a1d1a2?q=80&w=800&auto=format&fit=crop')"></div><div class="cap"><h4>Out in the field</h4><p>Visits to the programmes we build for, so the work does not stay abstract.</p></div></div>
-    <div class="life-card"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1722573783625-eceb04251036?q=80&w=800&auto=format&fit=crop')"></div><div class="cap"><h4>Tech for Good sessions</h4><p>Workshops and meetups, like our AWS &times; Dhwani Tech for Good session.</p></div></div>
+    <div class="life-card"><div class="ph" data-bg="https://images.unsplash.com/photo-1703745006226-98d4b948dc41?q=80&w=800&auto=format&fit=crop"></div><div class="cap"><h4>Our Gurugram office</h4><p>Cross-functional teams sit together by design, in Sector 44.</p></div></div>
+    <div class="life-card"><div class="ph" data-bg="https://images.unsplash.com/photo-1609252509229-364936a1d1a2?q=80&w=800&auto=format&fit=crop"></div><div class="cap"><h4>Out in the field</h4><p>Visits to the programmes we build for, so the work does not stay abstract.</p></div></div>
+    <div class="life-card"><div class="ph" data-bg="https://images.unsplash.com/photo-1722573783625-eceb04251036?q=80&w=800&auto=format&fit=crop"></div><div class="cap"><h4>Tech for Good sessions</h4><p>Workshops and meetups, like our AWS &times; Dhwani Tech for Good session.</p></div></div>
   </div>
   <p class="lede" style="margin-top:22px"><a class="tlink" href="life-at-dhwani.html">See more of life at Dhwani <span class="arw">&#8594;</span></a></p>
 </div></section>
@@ -567,6 +567,25 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
     if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus();}
     else if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus();}
   });
+})();
+</script>
+<script>
+(function(){
+  var els=document.querySelectorAll('[data-bg]');
+  if(!els.length) return;
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(el){el.style.backgroundImage="url('"+el.dataset.bg+"')";});
+    return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      var el=entry.target;
+      el.style.backgroundImage="url('"+el.dataset.bg+"')";
+      io.unobserve(el);
+    });
+  },{rootMargin:'200px 0px'});
+  els.forEach(function(el){io.observe(el);});
 })();
 </script>
 </body>

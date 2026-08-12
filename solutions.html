@@ -545,15 +545,15 @@ window.DHWANI_FORMS = {
   <p class="lede">A few of the programmes these solutions run.</p>
   <div class="cases3">
     <a class="ccard" href="our-work.html?case=godrej">
-      <div class="ph" style="background-image:url('assets/img/cases/case-csr.jpg')"></div>
+      <div class="ph" data-bg="assets/img/cases/case-csr.jpg"></div>
       <div class="bd"><h3>Five group companies, one CSR platform</h3><p>101 partner organisations and 5,08,701 people reached, in one live view.</p><div class="org">Godrej Group</div></div>
     </a>
     <a class="ccard" href="our-work.html?case=cityfinance">
-      <div class="ph" style="background-image:url('assets/img/cases/case-municipalfinance.jpg')"></div>
+      <div class="ph" data-bg="assets/img/cases/case-municipalfinance.jpg"></div>
       <div class="bd"><h3>4,000 cities&rsquo; finances, made public</h3><p>One of India&rsquo;s largest open municipal-finance datasets.</p><div class="org">City Finance Portal</div></div>
     </a>
     <a class="ccard" href="our-work.html?case=tri">
-      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1609252509229-364936a1d1a2?q=80&w=800&auto=format&fit=crop')"></div>
+      <div class="ph" data-bg="https://images.unsplash.com/photo-1609252509229-364936a1d1a2?q=80&w=800&auto=format&fit=crop"></div>
       <div class="bd"><h3>74 engagements, one partnership</h3><p>Project and donor management across every programme vertical.</p><div class="org">Transform Rural India</div></div>
     </a>
   </div>
@@ -811,6 +811,25 @@ nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',
     if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus();}
     else if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus();}
   });
+})();
+</script>
+<script>
+(function(){
+  var els=document.querySelectorAll('[data-bg]');
+  if(!els.length) return;
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(el){el.style.backgroundImage="url('"+el.dataset.bg+"')";});
+    return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      var el=entry.target;
+      el.style.backgroundImage="url('"+el.dataset.bg+"')";
+      io.unobserve(el);
+    });
+  },{rootMargin:'200px 0px'});
+  els.forEach(function(el){io.observe(el);});
 })();
 </script>
 </body>
