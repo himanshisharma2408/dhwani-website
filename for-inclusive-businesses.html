@@ -302,6 +302,10 @@ position:relative;overflow:hidden;isolation:isolate}
 background:rgba(21,16,15,.055);border-radius:13px;color:#4a423c;margin:0 0 auto;padding:0;
 transition:background .3s,color .3s}
 .ocard .ic svg{width:25px;height:25px;stroke-width:1.5}
+/* guaranteed minimum icon-to-title gap: the auto margin above can shrink to 0
+   when a tile carries extra in-flow content (e.g. a checklist), so this stacks
+   a fixed floor on top of it rather than relying on leftover space alone */
+.ocard .txt{margin-top:14px}
 .ocard h5{font-size:clamp(1.14rem,1.7vw,1.28rem);font-weight:500;margin-bottom:7px;color:var(--ink);line-height:1.28}
 .ocard p{color:var(--muted);font-size:.9rem;line-height:1.5;max-width:34ch;margin-top:0}
 /* a single accent word, which the type system already allows */
