@@ -273,7 +273,7 @@ a.rcard:hover .tlink .arw{transform:none}}
 /* footer */
 footer{background:var(--ink);color:var(--muted-d);border-radius:28px;margin:16px;padding:30px 0 14px}
 footer .wrap{max-width:none;padding:0 24px}
-.fgrid{display:grid;grid-template-columns:1.45fr 1.05fr 1.15fr 1.05fr 1fr;gap:30px;align-items:start}
+.fgrid{display:grid;grid-template-columns:1.9fr 1fr 1.1fr 1.15fr 1fr;gap:26px;align-items:start}
 .fgrid ul,.fgrid li{list-style:none;margin:0;padding:0}
 .fgrid li{margin-bottom:3px;line-height:1.3}
 .fgrid li a{font-size:.825rem}
@@ -448,8 +448,16 @@ color:#fff;display:flex;align-items:center;justify-content:center}
   .t-converge i,.t-sync .dot,.t-sync svg,.t-links .pulse,.t-pulseline path,.t-breathe,.t-trail path,.t-trail circle,.t-ticks li{animation:none !important;opacity:1 !important;transform:none !important;stroke-dashoffset:0 !important}
 }
 
-/* tiles are static at rest - no lift, no background swap, no arrow reveal;
-   the whole card is still a real link (cursor:pointer via the browser default) */
+/* hover. The label tile is excluded - it isn't a link, and shouldn't shift or
+   shine like one - so it just stays put; every real content tile still lifts
+   and reveals its arrow the same way it always has. */
+.ocard:not(.lbl):hover{background:linear-gradient(152deg,#eae1d3 0%,#d5c5af 100%);transform:translateY(-3px)}
+a.ocard:hover{box-shadow:0 12px 28px -16px rgba(21,16,15,.42)}
+a.ocard:hover .ic{background:rgba(138,20,32,.10);color:var(--maroon)}
+a.ocard:after{content:"\2192";position:absolute;right:clamp(18px,2.4vw,22px);bottom:clamp(18px,2.4vw,20px);
+z-index:3;font-size:1.02rem;color:var(--maroon);opacity:0;transform:translateX(-7px);
+transition:opacity .22s,transform .22s cubic-bezier(.2,.7,.3,1)}
+a.ocard:hover:after{opacity:1;transform:translateX(0)}
 @media(max-width:900px){.cgrid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:minmax(180px,auto)}
 .ocard.wide{grid-column:span 2}
 .ocard.wide .txt{max-width:70%}
@@ -464,8 +472,8 @@ color:#fff;display:flex;align-items:center;justify-content:center}
 .ocard.wide .txt{max-width:none}
 .chart{left:52%;height:44%}
 .bars{left:62%}}
-@media(prefers-reduced-motion:reduce){.ocard,.ocard .ic,.chart .ln{transition:none}
-.chart .ln{stroke-dashoffset:0}}
+@media(prefers-reduced-motion:reduce){.ocard,.ocard .ic,a.ocard:after,.chart .ln{transition:none}
+.ocard:hover{transform:none}a.ocard:after{transform:none}.chart .ln{stroke-dashoffset:0}}
 
 </style>
 <script>
@@ -595,7 +603,7 @@ window.DHWANI_FORMS = {
   <div class="grp">
     <div class="cgrid">
       <div class="ocard lbl"><h5><span class="lbl-line">Consulting &amp;</span><span class="lbl-line">advisory</span></h5><p><span class="lbl-cnt" data-target="5">0</span> advisory services, one team.</p></div>
-      <a class="ocard" href="dpdp-act-readiness.html"><span class="dpdp-tile-count"><b id="dpdpTileDays">274</b><span>DAYS TO DPDP</span></span><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 8.5-8 11-4.6-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></span><div class="txt"><h5>DPDP Act Readiness</h5><p>Readiness for the DPDP Act, stage by stage.</p></div></a>
+      <a class="ocard" href="dpdp-act-readiness.html"><span class="dpdp-tile-count"><b id="dpdpTileDays">274</b><span>DAYS TO ENFORCEMENT</span></span><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 8.5-8 11-4.6-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></span><div class="txt"><h5>DPDP Act Readiness</h5><p>Readiness for the DPDP Act, stage by stage.</p></div></a>
       <a class="ocard" href="cloud-optimisation.html"><div class="bars"><i style="height:92%"></i><i style="height:76%"></i><i style="height:82%"></i><i style="height:64%"></i><i style="height:70%"></i><i style="height:52%"></i><i style="height:58%"></i><i style="height:40%"></i><i style="height:46%"></i><i style="height:28%"></i><i style="height:34%"></i><i style="height:22%"></i></div><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 17a4 4 0 0 1 0-8 5.5 5.5 0 0 1 10.6-1.5A3.8 3.8 0 0 1 18 17z"/><path d="M12 12v5M9.5 14.5L12 12l2.5 2.5"/></svg></span><div class="txt"><span class="fignum">30&ndash;40%</span><span class="figlbl">AWS cost cut, proven</span><h5>CloudSahayak</h5><p>Cloud cost, migration and security, on non-profit budgets.</p></div></a>
       <a class="ocard" href="ai-for-impact.html"><span class="ic t-breathe"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l1.8 4.4L18 8l-4.2 1.6L12 14l-1.8-4.4L6 8l4.2-1.6z"/><path d="M18 15l.9 2.1L21 18l-2.1.9L18 21l-.9-2.1L15 18l2.1-.9z"/></svg></span><div class="txt"><h5>AI for Impact</h5><p>AI applied where it removes hours of manual work.</p></div></a>
       <a class="ocard" href="digital-transformation.html"><div class="t-trail"><svg viewBox="0 0 88 46" preserveAspectRatio="none"><path d="M4 38 L24 27 L42 31 L62 12 L84 5" fill="none" stroke="#8a1420" stroke-width="2" stroke-linecap="round"/><circle cx="84" cy="5" r="3" fill="#8a1420"/></svg></div><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20L20 4M9 4h11v11"/></svg></span><div class="txt"><h5>Digital Transformation</h5><p>Sequenced so you build the right thing first.</p></div></a>
