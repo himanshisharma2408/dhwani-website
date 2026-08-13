@@ -325,12 +325,12 @@ transition:background .3s,color .3s}
    when a tile carries extra in-flow content (e.g. a checklist), so this stacks
    a fixed floor on top of it rather than relying on leftover space alone */
 .ocard .txt{margin-top:14px}
-.ocard h5{font-size:clamp(1.3rem,2vw,1.5rem);font-weight:600;margin-bottom:7px;color:var(--ink);line-height:1.22}
+.ocard h5{font-size:clamp(1.14rem,1.7vw,1.28rem);font-weight:500;margin-bottom:7px;color:var(--ink);line-height:1.28}
 .ocard p{color:var(--muted);font-size:.9rem;line-height:1.5;max-width:34ch;margin-top:0}
 /* a single accent word, which the type system already allows */
 .ocard em{font-family:var(--serif);font-style:italic;color:var(--maroon);font-weight:500}
 /* the wordmark of the product a tile actually runs on */
-.ocard>.pw{position:absolute;top:18px;right:20px;z-index:3;height:26px;width:auto;opacity:.82}
+.ocard>.pw{position:absolute;top:18px;right:20px;z-index:3;height:20px;width:auto;opacity:.82}
 
 /* DPDP Act Readiness takes the wider cell now - it's the sole tile in its
    grid to get the whole countdown treatment, and being wide also happens to
@@ -419,8 +419,10 @@ border-radius:3px 3px 0 0;opacity:.5}
 /* the "Explore our work" CTA sits in the grid like any other tile, so it
    shares a row rather than needing a separate section below - but it's a
    maroon-tinted variant of the normal beige tile, not a solid block, so it
-   never reads as a repeat of the solid-maroon label tile beside it */
-.ocard.explore-tile{background:linear-gradient(152deg,#f2e2de 0%,#e8cdc6 100%)}
+   never reads as a repeat of the solid-maroon label tile beside it. It also
+   doesn't stretch to match a taller neighbour in the same row (e.g. PMU's
+   checklist) - align-self:start sizes it to its own short content instead. */
+.ocard.explore-tile{background:linear-gradient(152deg,#f2e2de 0%,#e8cdc6 100%);align-self:start;min-height:198px}
 .ocard.explore-tile .ic{background:rgba(138,20,32,.12);color:var(--maroon)}
 .ocard.explore-tile h5{color:var(--maroon)}
 
